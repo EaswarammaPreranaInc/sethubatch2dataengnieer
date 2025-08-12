@@ -1,7 +1,0 @@
-a=set('Rama rAo')
-print(a)
-print(len(a))
-print(set([10,20,15,20]))
-print(set([25,10.8,'Hyd',10.8]))
-print(set(range(10,20,3)))
-#print(set(25))

@@ -1,9 +1,0 @@
-a={25,10.8,'Hyd',True,3+4j,None,25,'Hyd'}
-print(a)
-print(type(a))
-print(len(a))
-#print(a[2])
-#print(a[1:4])
-#a[2]='Sec'
-#print(a*2)
-#print(a*a)

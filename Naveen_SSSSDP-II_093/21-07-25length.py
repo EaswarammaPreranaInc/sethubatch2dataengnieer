@@ -1,6 +1,0 @@
-print(len('Hyd'))
-print(len('Rama Rao'))
-print(len('9247'))
-print(len(''))
-print(len(' '))
-#print(len(689))

@@ -1,8 +1,0 @@
-print(ord('A'))  # 65   (Unicode/ASCII for uppercase 'A')
-print(ord('Z'))  # 90   (Unicode/ASCII for uppercase 'Z')
-print(ord('a'))  # 97   (Unicode/ASCII for lowercase 'a')
-print(ord('z'))  # 122  (Unicode/ASCII for lowercase 'z')
-print(ord('0'))  # 48   (Unicode/ASCII for digit '0')
-print(ord('9'))  # 57   (Unicode/ASCII for digit '9')
-print(ord('$'))  # 36   (Unicode/ASCII for dollar sign)
-print(ord(' '))  # 32   (Unicode/ASCII for space character)
