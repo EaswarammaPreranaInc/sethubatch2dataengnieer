@@ -1,0 +1,113 @@
+
+a=eval(input("Enter a:"))
+b=eval(input("Enter b:"))
+print(f'values before swapping a={a} b={b}')
+# a=b
+# b=a
+a,b=b,a
+print(f'values after swapping a={a} b={b}')
+     
+Enter a:5
+Enter b:"Ranjith"
+values before swapping a=5 b=Ranjith
+values after swapping a=Ranjith b=5
+
+#  Find  outputs  (Home  work)
+x = 25
+y = F'{x}'
+print(y) #25
+print(type(y)) #
+x = 10.8
+y = F'{x}'
+print(y) #10.8
+print(type(y)) #
+x = [10,20,30,40]
+y = F'{x}'
+print(y) #[10,20,30,40]
+print(type(y)) ##
+     
+25
+<class 'str'>
+10.8
+<class 'str'>
+[10, 20, 30, 40]
+<class 'str'>
+
+#Find  outputs  (Home  work)
+a ,  b , c = 25 , 10.8 , 'Hyd'
+print(F'{a}  \t   {b}   \t  {c}') #25 10.8  'Hyd'
+print(F'a = {a}  \t  b  =  {b}  \t  c  =  {c}') # a=25  b=10.8  c='Hyd'
+print(F'{a=}  \t   {b=}   \t  {c=}') #25 10.8  'Hyd'
+print(F'{a:}  \t   {b:.6f}   \t  {c:}') #a  =  {a}  	  b  =  {b}  	  c  =   {c}
+print('a  =  {a}  \t  b  =  {b}  \t  c  =   {c}') # a=25  b=10.8  c='Hyd'
+print(F'a  =  a  \t  b  =  b  \t  c  =  c') # a  =  a  	  b  =  b  	  c  =  c
+# print(F'{x =}  \t   {y =}   \t  {z=}') #Error
+     
+25  	   10.8   	  Hyd
+a = 25  	  b  =  10.8  	  c  =  Hyd
+a=25  	   b=10.8   	  c='Hyd'
+25  	   10.800000   	  Hyd
+a  =  {a}  	  b  =  {b}  	  c  =   {c}
+a  =  a  	  b  =  b  	  c  =  c
+
+x = 25
+print(F'{x}')  #  25
+print(F'{{x}}')   #  {x}
+print(F'{{{x}}}')  #   {25}
+print(F'{{{{x}}}}') # {{x}}
+print(F'{{{{{x}}}}}') #{{25}}
+print(F'{{{{{{x}}}}}}') # {{{x}}}
+print(F'{{{{{{{x}}}}}}}') # {{{25}}}
+print(F'{{{{{{{{x}}}}}}}}') #{{{{x}}}}
+
+
+'''
+1) What  is  printed  when  'x'  is  in  even  number  of  braces ?  --->  'x'  itself
+
+2) What  is  printed  when  'x'  is  in  odd  number  of  braces ?  --->  Value   of  'x'  in  the  form  of  string
+
+3) How  many  braces  are  printed  in  the  output ?  --->  Number  of  braces  //  2
+'''
+
+     
+25
+{x}
+{25}
+{{x}}
+{{25}}
+{{{x}}}
+{{{25}}}
+{{{{x}}}}
+"\n1) What  is  printed  when  'x'  is  in  even  number  of  braces ?  --->  'x'  itself\n\n2) What  is  printed  when  'x'  is  in  odd  number  of  braces ?  --->  Value   of  'x'  in  the  form  of  string\n\n3) How  many  braces  are  printed  in  the  output ?  --->  Number  of  braces\xa0\xa0//\xa0\xa02\n"
+
+'''Hint:  Use  F  string  to  print  results
+
+Let  inputs  be  10  and  7,
+What  is  the  sum ?  --->  17
+What  is  the  difference ?  --->  3
+What  is  the  product ?  ---> 70
+What  is  the  quotient ?  --->  1.42
+What  is  the  remainder ?  --->  3
+What  is  the  largest  number ?  ---> 10
+What  is  the  smallest  number ?  --->  7
+What  is  the  sqrt  of  1st  input ?  --->  3.16
+What  is  the  result  of  power?  --->  10000000
+What  is  the  gcd  of  2  numbers ?  ---> 1
+What  is  the  factorial   of  1st  input ?  ---> 10!
+'''
+import builtins
+import math
+intput1=eval(input("enter input1 value"))
+input2=eval(input("enter input2 value"))
+print(f'sum of {intput1} and {input2} is {intput1+input2}')
+print(f'difference of {intput1} and {input2} is {intput1-input2}')
+print(f'product of {intput1} and {input2} is {intput1*input2}')
+print(f'quotient of {intput1} and {input2} is {intput1/input2}')
+print(f'remainder of {intput1} and {input2} is {intput1%input2}')
+print(f'largest of {intput1} and {input2} is {max(intput1,input2)}')
+print(f'smallest of {intput1} and {input2} is {min(intput1,input2)}')
+print(f'sqrt of {intput1} is {intput1**0.5}')
+print(f'{intput1} power {input2} is {intput1**input2}')
+print(f'gcd of {intput1} and {input2} is {math.gcd(intput1,input2)}')
+print(f'factorial of {intput1} is {math.factorial(intput1)}')
+     
