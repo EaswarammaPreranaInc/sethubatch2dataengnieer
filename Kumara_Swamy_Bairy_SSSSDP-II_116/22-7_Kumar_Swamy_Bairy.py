@@ -8,7 +8,7 @@ z = x + y * 6#* is performs first and then + opertor
 print(z)#5*6=30,30+4=34
 #25 = a becoz int cant be an reference
 #a + b = x + y expressions cant be compared
-[22-07-2025 17:30] Manofmasses🧘‍♂️: a = b = c = 25
+ a = b = c = 25
 print(id(a))# prints address of a
 print(id(b))# prints address of b
 print(id(c))# prints address of c
@@ -100,3 +100,4 @@ print(p == q)#prints true
 m = range(5)
 n = range(5)
 print(m==n)#prints true
+
