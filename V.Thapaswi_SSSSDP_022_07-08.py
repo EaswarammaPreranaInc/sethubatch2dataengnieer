@@ -1,27 +1,3 @@
-#program to find largest command line input
-from sys import argv
-print(argv)
-if len(argv) == 1:
-    print("Please send inputs")
-else:
-    all_numbers = True
-    all_strings = True
-    a = []
-    for arg in argv[1:]:
-        try:
-            x = float(arg)
-            a.append(x)
-            all_strings = False  
-        except ValueError:
-            a.append(arg)
-            all_numbers = False  
-    if all_numbers:
-        print("Largest command input:", max(a))
-    elif all_strings:
-        print("Largest command input:", max(a))
-    else:
-        print("Inputs cannot be  numbers and strings")
-print()
 from sys import argv
 print(argv)
 try:
@@ -230,4 +206,27 @@ try:
     print(result)
 except:
     print("pls enter string with alternate char and digit")
-
+print()
+#program to find largest command line input
+from sys import argv
+print(argv)
+if len(argv) == 1:
+    print("Please send inputs")
+else:
+    all_numbers = True
+    all_strings = True
+    a = []
+    for arg in argv[1:]:
+        try:
+            x = float(arg)
+            a.append(x)
+            all_strings = False  
+        except ValueError:
+            a.append(arg)
+            all_numbers = False  
+    if all_numbers:
+        print("Largest command input:", max(a))
+    elif all_strings:
+        print("Largest command input:", max(a))
+    else:
+        print("Inputs cannot be  numbers and strings")

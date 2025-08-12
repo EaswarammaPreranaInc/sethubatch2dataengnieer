@@ -1,89 +1,80 @@
-# float  object  demo  program (Home  work)
-a = 10.8#assigns the object value 10.8 to reference value a
-print(a)# a prints the float object value 10.8
-print(type(a))#<prints the type of object a <class 'Float'>
-print(id(a))# prints the address of float object a
-b = 25. # assigns the object value 25.0 to reference value b
-print(b)# b prints the float object value 25.0
-print(type(b)) #<prints the type of object a class 'Float'
-c = .689# assigns the object value 0.689 to reference value c
-print(c)# c prints the float object value 0.689
-d = 3.4E2  # assigns the object value(mantissa exponent number) 3.4E2 to reference value d
-print(d)# d prints the float object value 3.4*10^2 i.e 340
-print(type(d)) #<prints the type of object a class 'Float'
-e = 9.62e-2# assigns the object value(mantissa exponent number) 9.62e-2 to reference value e
-print(e)# e prints the float object value 9.62*10^-2 i.e 0.0962
-#print(9.8.2)#error# e prints the float object value 9.62*10^-2 i.e 0.0962
-print()
-# complex object demo program
-a = 3 + 4j#assigns complex object 3+4j to reference value a
-print(a)#prints the complex object value assigned to a
-print(type(a))#prints type of object a i.e <class complex> 
-print(id(a))# prints the address of complex object a
-print(a . real)# prints the real part of complex object
-print(a . imag) # prints the imag part of complex object
-print(type(a . real))# prints the type of real part i.e float of complex object
-#print(type(a . image))#error prints the type of imag part i.e float of complex object
-print()
-# Find outputs (Home work)
-a = 6j# assigning the complex object 6j to reference value a
-print(a)#prints the complex object value stored in a i.e 6j
-print(type(a))#prints the type of a i.e typr of object 6j <class complex>
-print(a.real) # prints the real part of complex object there is no real part so prints 0.0
-print(a.imag)# prints the imag part of complex object 6.0
-#print(5 + j6)#error because j should be placed after the integer value of imag part
-#print(3 + 4i)#error  because j should be only used for imag part in python  
-#print(4+j)#error because the imag value is not there
-print(4 + 1j)#prints the complex object 4+ij
-print(4 + 0j)#prints the complex object 4+ij
-print()
-# bool object demo program  (Home  work)
-a = True#assign the bool object True to reference value a
-print(a)#prints the object value assigned to a
-print(type(a))#prints the type of a i.e type of object True <class bool>
-print(id(a))# prints the address of bool object a
-b = False#assign the bool object False to reference value b
-print(b)#prints the object value assigned to b
-print(type(b))#prints the type of b i.e type of object False <class bool>
-print(True + True)#as the operation is executing the type of the object will change to int so 1+1=2
-print(True + False)# operation is there so 1+0=1
-print(False + True)# operation is there so 0+1=1
-print(False + False)# operation is there so 0+0=0
-print(True + True + True)# operation is there so 1+1+0=2
-print(25 + 10.8 + True)# operation is there so 25+10.8+1=36.8
-print(True > False)# operation is there so checks for 1>0=true
-print(True)
-print(False)
-#print(true)#error
-#print(false)#error
-print()
-# Find  outputs (Home  work)
-a = 0O6247#assigns the decimal equivalent of object to the refernce value a
-print(a)#internally converts the octal number to decimal number and prints it i.e 0O6247 is converted to decimal 3239 and is printed
-print(type(a))# as the octal object is converted to decimal integer type is <class int>
-print(id(a))# prints the address of object a
-b = 0o6247  #assigns the decimal equivalent of object to the refernce value b
-print(id(b))# as the objects stored in refernce a and b is same b will have same id as a
-print(b) #internally converted to decimal number and prints it i.e 3239 is printed
-c = 3239#assigns the object to c
-print(c)
-print(id(c))# as the objects stored in refernce a,b and c are same c will have same id as a,b
-#print(0o9248)#error
-print()
-# Find  outputs  (Home  work)
-a = 0XA7B9#assigns the decimal equivalent of object to the refernce value a
-print(a)#prints the decimal integer object stored in a
-print(type(a))#converts the hexa decimal to decimal integer internally so type is <class int>
-b = 0xBEEF#assigns the decimal equivalent of object to the refernce value b
-print(b)
-#print(A7B9)#error
-print('A7B9')
-#print(0XBEER)#error
-#print(0XHYD)#error
-#print(0xA7G9B)#error
-print()
-# Find outputs (Home  work)
-a = 9248#assigns the decimal integer of object to the refernce value a
-print(a)#prints the object value assigned to a
-print(type(a))# as it is a decimal number type will be <class int>
+# int object 
+a=8  #  ref 'a' points to object 8
+print(a)  # 8 : value of object 'a'
+print(type(a))  # <class 'int'> : type of object 'a'
+print(id(a))  # address of object 'a'
 
+# float object
+b=10.8 # ref 'b' points to object 10.8
+print(b)  # 10.8 : value of object 'b'
+print(type(b))  # <class 'float'> : type of object 'b'
+print(id(b))  # address of object 'b'
+c=.689 # ref 'c' points to object 0.689
+print(c)  # 0.689 : value of object 'c'
+d=3.4E2  # ref 'd' points to object 3.4E2
+print(d) # 3.4*10^2=340
+print(type(d)) #  <class 'float'>
+e=9.62e-2  # ref 'e' points to object 9.62e-2
+print(e) # 9.62*10^-2=0.0962
+#print(9.4.3) # invalid synatax
+
+#complex object 
+a=3+4j # ref 'a' points to object 3+4j
+print(a) # (3+4j) : value of object 'a'
+print(type(a))  # <class 'complex'> : type of object 'a'
+print(id(a))  # address of object 'a'
+print(a.real)  # 3.0 
+print(a.imag)  # 4.0
+print(type(a.real)) # <class 'float'> : type of real part of complex number
+print(type(a.imag))  # <class 'float'> : type of imaginary part of complex number
+a=6j # ref 'a' points to object 6j
+print(a)  # 6j : value of object 'a'
+print(type(a))  # <class 'complex'> : type of object 'a'
+print(a.real) # 0.0 
+print(a.imag) # 6.0
+#print(5+j6) # error 
+#print(3+4i) # error
+#print(4+j) # error : it should be written as 4+1j
+print(4+1j) # o/p: 4+1j 
+print(4+0j) # o/p: 4+0j
+
+#bool object
+a=True # ref 'a' points to object True
+print(a) # True : value of object 'a'
+print(type(a)) # <class 'bool'> : type of object 'a'
+print(id(a)) # address of object 'a'
+b=False # ref 'b' points to object False
+print(b)    # False : value of object 'b'
+print(type(b)) # <class 'bool'> : type of object 'b'
+print(True+True)  # 2 : True is 1 and True is 1, so 1+1=2
+print(True+False) # 1 :  1+0=1
+print(False+False) # 0 : 0+0=0
+print(True+True+True)   # 3 : 1+1+1=3
+print(25+10.8+True) # 36.8 : 25+10.8+1=36.8
+print(True>False) # True : 1>0
+print(True) # True : value of object 'True'
+print(False) # False : value of object 'False'
+#print(true)  # error : 'true' is not defined
+#print(false)  # error : 'false' is not defined
+a=0xA7B9 # ref 'a' points to object 0xA7B9
+print(a) # 43033 : value of object 'a' in decimal
+print(type(a)) # <class 'int'> : type of object 'a'
+b=0xBEEf # ref 'b' points to object 0xBEEf
+print(b) # 48879 : value of object 'b' in decimal
+print('A7B9') # prints 'A7B9' because it is a string
+#print(0xbeer) # error: hexadecimal values are from 0 to 9 and A to F
+#print(0xHyd) # error: 'H' is not a valid hexadecimal digit
+#print(0xA7G9B) # error: 'G' is not a valid hexadecimal digit
+a=0o6427 # ref 'a' points to object 0o6427
+print(a)  # 3343 : value of object 'a' in decimal
+print(type(a)) # <class 'int'> : type of object 'a'
+print(id(a))  # address of object 'a'
+b=0o6427  # ref 'b' points to object 0o6427
+print(id(a))#id's of a and b are same
+c=3229 # ref 'c' points to object 3229
+print(c) # 3229 
+print(id(c)) # address of object 'c'
+#print(0o9248) # error: octal values are from 0 to 7
+a=9248 # ref 'a' points to object 9248
+print(a) # 9248 : value of object 'a'
+print(type(a)) # <class 'int'> : type of object 'a'
