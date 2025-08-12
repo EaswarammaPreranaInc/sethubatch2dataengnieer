@@ -27,25 +27,21 @@
 
 from sys import argv
 
-if len(argv) == 1:
-    print('Please send inputs')
-else:
-    a = []
-    num = str = False
+try: 
+    a = []  
+    for x in argv[1:]:  
+        a.append(eval(x))  
+    print('Largest input :', max(a))
 
-    for i in argv[1:]:
-        try:
-            num = a.append(float(i))
-            num = True
-        except:
-            a.append(i)
-            str = True
+except ValueError:
+    print('Send at least one input')
 
-    if num and str:
-        print('Inputs can not be number and string')
-    else:
-        print('List:', a)
-        print('Largest:', max(a))
+except NameError:
+    print('Input string has to be in single (or) triple quotes')
+
+except TypeError:
+    print('Inputs can not be number and string')
+
 
 '''
 #output:
@@ -605,4 +601,5 @@ Result  :   AEMPZ_DF
 Enter  any  string  with  alternate  character  and  digit  :  HYD
 Pls  enter  string  with  alternate  char  and  digit
 '''
+
 
