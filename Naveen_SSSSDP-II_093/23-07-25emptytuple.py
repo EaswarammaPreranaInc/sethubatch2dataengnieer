@@ -1,7 +1,0 @@
-a=()
-print(type(a))
-print(a)
-print(len(a))
-b=tuple()
-print(b)
-print(len(b))
