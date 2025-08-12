@@ -1,8 +1,0 @@
-print(chr(65))   # A  (Unicode for uppercase 'A')
-print(chr(90))   # Z  (Unicode for uppercase 'Z')
-print(chr(97))   # a  (Unicode for lowercase 'a')
-print(chr(122))  # z  (Unicode for lowercase 'z')
-print(chr(48))   # 0  (Unicode for digit '0')
-print(chr(57))   # 9  (Unicode for digit '9')
-print(chr(36))   # $  (Unicode for dollar sign)
-print(chr(32))   #   (Unicode for space character)

@@ -1,8 +1,0 @@
-a=list('Hyd')
-print(a)
-print(type(a))
-print(len(a))
-b=(10,20,15,18)
-print(list(b))
-print(list(range(5)))
-#print(list(25))

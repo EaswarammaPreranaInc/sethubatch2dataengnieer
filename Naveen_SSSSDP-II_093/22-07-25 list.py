@@ -1,9 +1,0 @@
-a=[25,'10.8','Hyd',True,3+4j,None,'Hyd',25]
-print(a)
-print(*a)
-print(type(a))
-print(id(a))
-print(len(a))
-a[2]='Sec'
-print(a)
-print(a[2:5])
