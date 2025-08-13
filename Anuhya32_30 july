@@ -1,0 +1,32 @@
+                                                           30-7-25
+'''
+Write  a  program  to  print  full  pyramid
+	  *
+   ***
+  *****
+ *******
+*********
+Input  is  number  of  lines
+'''
+How  many  lines ?  :  7
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+
+for i in range(1, lines + 1):
+    spaces = lines - i
+    stars = 2 * i - 1
+
+Enter the number of lines: 7
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+    print(' ' * spaces + '*' * stars)
