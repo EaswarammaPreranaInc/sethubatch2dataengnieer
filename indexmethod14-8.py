@@ -18,6 +18,7 @@ b = a .index('is')
 while  b != -1:
 	print(b)
 	b=a.index('is',b+1)
-print('End')
+print('End')#throws error
+
 
 
