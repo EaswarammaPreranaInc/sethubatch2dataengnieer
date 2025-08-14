@@ -1,0 +1,403 @@
+# Find  outputs  (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if  i % 3  == 0:
+			continue
+	else:
+			print('Sec')
+	print('Hello')
+# End of loop
+print('Outside loop')
+
+output:-
+
+'''
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+Outside loop
+'''
+
+
+
+# Identify Error  (Home  work)
+if ():
+	print('Hyd')
+	continue
+	print('Sec') # Error
+
+
+
+
+# Find outputs (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+output:-
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside loop
+
+
+
+
+
+# Identify Error  (Home  work)
+if(10 , 20 , 30): 
+	print('Hyd')
+	break # Can only be used in for loop or while loop
+	print('Sec')
+	
+	
+	
+
+
+
+
+# Find  outputs  (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		pass
+		print('Hyd')
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+output:-
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Hyd
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Hyd
+Hello
+7
+Sec
+Hello
+Outside loop
+
+
+
+# Find  outputs  (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		exit()
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+output:-
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+
+
+
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		continue
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+# End  of  the  loop
+print('Outside  loop')
+
+output:-
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+else  suite
+Outside  loop
+
+
+
+
+
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+#End   of  the  loop
+print('Outside  loop')
+
+output:-
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside  loop
+
+
+
+
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i == 8:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+# End  of  the  loop
+print('Outside loop')
+
+
+output:-
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Sec
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Sec
+Hello
+7
+Sec
+Hello
+else  suite
+Outside loop
+
+
+
+
+lst = eval(input("Enter any list: "))
+x = int(input("Enter the element to be searched : "))
+
+found = False
+
+for i in range(len(lst)):
+    if lst[i] == x:
+        print("Found  at   index  :  ", i)
+        found = True
+        break
+
+if not found:
+    print("Not found")
+
+
+
+
+
+
+lst = [10, 20, 15, 12, 18, 15, 19, 14, 15, 14]
+x = int(input("Enter the element to be searched: "))
+
+count = 0  # To track how many times x is found
+
+for i in range(len(lst)):
+    if lst[i] == x:
+        print(x, "is found at index", i)
+        count += 1
+
+if count > 0:
+    print(x, "is found", count, "times")
+else:
+    print(x, "is not found")
+
+
+
+
+
+#  Walrus   operator (:=)  demo  program
+print(a := 25)
+print(a = 25)
+print(a) # 25
+print(a := 6 + 7)
+print(a) # 13
+print((a := 6) + 7)
+print(a) # 6
+print((a = 6) + 7)
+
+
+
+
+
+
+# Find  outputs  (Home  work)
+a = 0
+if  a == 0:
+	print('Hyd') # Hyd
+else:
+	print('Sec') 
+if  b := 0:
+	print('Hyd') 
+else:
+	print('Sec : ' , b) # Sec : 0
+if  c = 0: # Error
+	print('Hyd') 
+else:
+	print('Sec') 
+
+
+
+
+
+sum = 0
+ctr = 0
+
+try:
+    while True:
+        val = input("Enter input  (ctrl + z  to  stop)  :  ")
+        val = eval(val)
+        sum += val
+        ctr += 1
+except EOFError:
+    pass
+
+if ctr > 0:
+    avg = sum / ctr
+    print("Average :", avg)
+else:
+    print("No input received.")
+
+
+
+
+#  del  operator  demo program  (Home  work)
+a = 25
+print(a) # 25
+del   a
+print(a) # Error
+
+
+
+
+
+# Find  outputs  (Home  work)
+a = b = c = 25
+print(a , b , c) # 25 25 25
+del   a
+print(b , c) # 25 25
+print(a) # error
+del   b
+print(c) # 25
+print(b) # error
+del   c
+print(c) # error
+
+
+
+
+#  Can  multiple  objects  be  deleted  with  same  del  operator ?
+a , b , c = 25 , 10.8 , 'Hyd'
+print(a , b , c) # 25 10.8 Hyd 
+del   a , b , c
+print(a) # Error
+print(b) # Error
+print(c) # Error
+
+
+
+
+# Find outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+print(a) # [10,20,15,18]
+del  a[2] 
+print(a) # [10,20,18] 
+del  a
+print(a) # Error
+print(a[0]) # Error
+
+
+
+
+
+# Find outputs  (Home work)
+a = (10 , 20 , 15 , 18)
+print(a) # (10,20,15,18)
+print(a[0]) # 10
+del  a[2] 
+del  a
+print(a) # Error
+print(a[0]) # Error

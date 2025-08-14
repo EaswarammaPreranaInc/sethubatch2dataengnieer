@@ -1,0 +1,362 @@
+##1
+import sys
+
+argv = sys.argv
+
+# Case when no inputs are given
+if len(argv) == 1:
+    print("Pls send inputs")
+    sys.exit()
+
+a = []
+
+# Try converting inputs to float or treat them as strings
+only_numbers = True
+only_strings = True
+
+for x in argv[1:]:
+    try:
+        val = float(x)
+        a.append(val)
+        only_strings = False
+    except ValueError:
+        a.append(x)
+        only_numbers = False
+
+# Handle mixed inputs
+if not only_numbers and not only_strings:
+    print("Inputs can not be number and string")
+    sys.exit()
+
+# Output results
+print("What is argv ? --->", argv)
+print("What is list 'a' ? --->", a)
+
+# Determine and print largest input
+largest = max(a)
+print("What is the largest command line input ? --->", largest
+
+##2
+import sys
+
+# Check if input is given
+if len(sys.argv) != 2:
+    print("Pls send an integer input")
+    sys.exit()
+
+input_val = sys.argv[1]
+
+# Try converting input to integer
+try:
+    num = int(input_val)
+except ValueError:
+    print("Pls send an integer input")
+    sys.exit()
+
+# Check even or odd
+if num % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+
+##3
+import sys
+
+argv = sys.argv
+
+# Case when no inputs are given
+if len(argv) == 1:
+    print("Pls send number inputs")
+    sys.exit()
+
+a = []
+
+for x in argv[1:]:
+    # Convert boolean strings to actual booleans
+    if x == 'True':
+        a.append(True)
+    elif x == 'False':
+        a.append(False)
+    else:
+        try:
+            # Try converting to float
+            val = float(x)
+            a.append(val)
+        except ValueError:
+            print("Pls send number inputs")
+            sys.exit()
+
+# Output intermediate details
+print("What is argv ? --->", argv)
+print("What is list 'a' ? --->", a)
+
+# Compute and print average
+average = sum(a) / len(a)
+print("Average --->", average)
+
+##4
+import sys
+
+argv = sys.argv
+
+# Check if inputs are given
+if len(argv) == 1:
+    print("Pls send inputs")
+    sys.exit()
+
+a = []
+only_numbers = True
+only_strings = True
+
+# Process inputs
+for x in argv[1:]:
+    try:
+        val = float(x)
+        a.append(val)
+        only_strings = False
+    except ValueError:
+        a.append(x)
+        only_numbers = False
+
+# Check for mixed inputs
+if not only_numbers and not only_strings:
+    print("Pls don't send number and string inputs together")
+    sys.exit()
+
+# Output argv and list
+print("What is argv ? --->", argv)
+print("What is list 'a' ? --->", a)
+
+# Sorting
+asc = sorted(a)
+desc = sorted(a, reverse=True)
+
+print("Ascending order --->", asc)
+print("Descending order --->", desc)
+
+##5
+# Find outputs  (Home  work)
+print( 'green'   in   'Hyd  is  green  city')
+print('day'   in   'Sankar  dayal  sarma')
+print('Green'   in   'Hyd  is  green  city')
+print('d  is'   in   'Hyd  is  green  city')
+print('dis'   in   'Hyd  is  green  city')
+print('iniv'   in   'Srinivas')
+print('iniv'   not   in   'Srinivas')
+
+True
+True
+False
+True
+True
+True
+False
+
+##6
+'''  (Home  work)
+Slice  demo  program
+0      1       2        3      4       5       6       7
+R      a      m        a               R       a       o
+-8    -7     -6      -5     -4      -3     -2      -1
+'''
+a = 'Rama Rao'
+print(a [ : 7 : 2])
+print(a [ : 7])
+print(a [2 : 4])
+print(a [2 : ])
+print(a [ : 4 ])
+print(a [ : : 2])
+print(a [-6 : -1])
+print(a [-6 : ])
+print(a [: -4 : -1])
+print(a [-3 : -1]) #  a[-3 : -1 : 1]  --->  string  from  indexes  -3  to  -2  in  steps  of  1  i.e.  Ra
+print(a [-3 : ])
+print(a [ : : ])
+print(a [ : ])
+print(a [ : : -1])
+print(a [ : : -2])
+print(a [ -2 : : -2])  #  a[-2 : -9 : -2]  --->  string  from  indexes  -2  to  -8  in  steps  of  -2  i.e.  a<space>mR
+print(a [2 : 8])
+print(a [2 : 8 : -1])
+print(a [ : -6 : -1])
+print(a [2 : -3])
+print(a [1 : 6 : 2])
+
+Rma 
+Rama Ra
+ma
+ma Rao
+Rama
+Rma 
+ma Ra
+ma Rao
+oa
+Ra
+Rao
+Rama Rao
+Rama Rao
+oa a maR
+o aR
+a mR
+ma Rao
+''
+oa
+ma
+aa 
+''
+''
+oa a m
+a
+
+##7
+# Inputs
+s1 = 'Java'
+s2 = 'Python'
+
+# Swap first two characters using slice
+new_s1 = s2[:2] + s1[2:]
+new_s2 = s1[:2] + s2[2:]
+
+# Concatenate with space
+result = new_s1 + ' ' + new_s2
+
+# Output
+print(result)
+
+##8
+# Input string
+s = input("Enter a string: ")
+
+# Check length
+if len(s) < 4:
+    print("")  # Empty string
+else:
+    result = s[:2] + s[-2:]  # First two + last two characters
+    print(result)
+
+##9
+# Input string
+s = input("Enter a string: ")
+
+# Forward direction using positive indices
+for i in range(len(s)):
+    print(f"Character at index {i} : {s[i]}")
+
+# Reverse direction using negative indices
+for i in range(-1, -len(s)-1, -1):
+    print(f"Character at index {i} : {s[i]}")
+
+##10
+# Input string
+s = input("Enter a string: ")
+
+# Initialize empty strings for even and odd indexed chars
+even = ''
+odd = ''
+
+# Loop over all indices
+for i in range(len(s)):
+    if i % 2 == 0:        # Even index
+        even += s[i]
+    else:                 # Odd index
+        odd += s[i]
+
+# Print results
+print("even =", even)
+print("odd =", odd)
+
+##11
+ # Input string
+a = 'A4B3C2$5'
+
+# Output string initialization
+out = ''
+
+# Loop through string in steps of 2
+for i in range(0, len(a), 2):
+    char = a[i]        # character at even index
+    count = int(a[i+1])  # number at odd index, convert to int
+    out += char * count
+
+print(out)
+
+##12
+
+# Input strings
+a = 'HYD'
+b = 'VAMSI'
+
+c = ''  # Result string
+i = 0
+
+# Loop until reaching the end of the shorter string
+while i < len(a) and i < len(b):
+    c += a[i] + b[i]
+    i += 1
+
+# Append the remaining part of the longer string
+if i < len(a):
+    c += a[i:]
+elif i < len(b):
+    c += b[i:]
+
+print(c)
+
+##13
+
+# Input string
+s = 'RAMA RAO'
+
+out = ''  # Result string to hold unique characters
+
+for char in s:
+    if char not in out:
+        out += char  # Add char if not already in out
+
+print(out)
+
+##14
+print(len('Hyd'))        # Works, prints 3
+print(len('Rama Rao'))   # Works, prints 8 (includes space)
+print(len('9247'))       # Works, prints 4
+print(len('+-$'))        # Works, prints 3
+print(len(''))           # Works, prints 0 (empty string)
+print(len(' '))          # Works, prints 1 (space counts as character)
+print(len('A2#'))        # Works, prints 3
+print(len(3456))         # Error! int object has no len()
+print('Sec'. len())      # Syntax error! method call should be 'Sec'.len() or len('Sec')
+
+##15
+print(chr(65))  # 'A'
+print(chr(90))  # 'Z'
+print(chr(97))  # 'a'
+print(chr(122)) # 'z'
+print(chr(48))  # '0'
+print(chr(57))  # '9'
+print(chr(36))  # '$'
+print(chr(32))  # ' ' (space)
+
+##16
+print(ord('A'))  # 65
+print(ord('Z'))  # 90
+print(ord('a'))  # 97
+print(ord('z'))  # 122
+print(ord('0'))  # 48
+print(ord('9'))  # 57
+print(ord('$'))  # 36
+print(ord(' '))  # 32
+
+##17
+a = 'A4M3Z5D2'
+
+out = ''
+for i in range(0, len(a), 2):
+    char = a[i]
+    num = int(a[i+1])
+    
+    # Calculate shifted character using ord() and chr()
+    shifted_char = chr(ord(char) + num)
+    
+    out += char + shifted_char
+
+print(out)

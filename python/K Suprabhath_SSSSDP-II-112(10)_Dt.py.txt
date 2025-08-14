@@ -1,0 +1,233 @@
+#  Find  outputs  (Home  work)
+x = 25
+y = F'{x}'
+print(y)#25
+print(type(y))#class str
+x = 10.8
+y = F'{x}'
+print(y)#10.8
+print(type(y))#class str
+x = [10,20,30,40]
+y = F'{x}'
+print(y)#[10,20,30,40]
+print(type(y))#class str
+
+#Find  outputs  (Home  work)
+a ,  b , c = 25 , 10.8 , 'Hyd'
+print(F'{a}  \t   {b}   \t  {c}')#25  	   10.8   	  Hyd
+print(F'a = {a}  \t  b  =  {b}  \t  c  =  {c}')#a = 25    b = 10.8  
+c =  Hyd
+print(F'{a=}  \t   {b=}   \t  {c=}')#a=25  	   b=10.8   	  c='Hyd'
+print(F'{a:}  \t   {b:}   \t  {c:}')#25  	   10.8   	  Hyd
+print('a  =  {a}  \t  b  =  {b}  \t  c  =   {c}')#
+a  =  {a}  	  b  =  {b}  	  c  =   {c}
+print(F'a  =  a  \t  b  =  b  \t  c  =  c')#a  =  a  	  b  =  b  	  c  =  c
+print(F'{x =}  \t   {y =}   \t  {z =}')#error x is not defined
+
+
+#  Find  outputs  (Home  work)
+x = 25
+print(F'{x}')  #  25
+print(F'{{x}}')   #  {x}
+print(F'{{{x}}}')  #   {25}
+print(F'{{{{x}}}}')#{{x}}
+print(F'{{{{{x}}}}}')#{{25}}
+print(F'{{{{{{x}}}}}}')#{{{x}}}
+print(F'{{{{{{{x}}}}}}}')#{{{25}}}
+print(F'{{{{{{{{x}}}}}}}}')#{{{{x}}}}
+
+##f string
+import math
+
+# Input from user
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+
+# Calculations
+sum_result = a + b
+difference = a - b
+product = a * b
+
+# Prevent division by zero
+if b != 0:
+    quotient = a / b
+    remainder = a % b
+else:
+    quotient = "Undefined (division by zero)"
+    remainder = "Undefined (modulo by zero)"
+
+largest = max(a, b)
+smallest = min(a, b)
+sqrt_a = math.sqrt(a) if a >= 0 else "Undefined (sqrt of negative number)"
+power = math.pow(a, b)
+gcd = math.gcd(a, b)
+factorial_a = math.factorial(a) if a >= 0 else "Undefined (factorial of negative number)"
+
+# Output
+print("\nResults:")
+print(f"Sum: {sum_result}")
+print(f"Difference: {difference}")
+print(f"Product: {product}")
+print(f"Quotient: {quotient}")
+print(f"Remainder: {remainder}")
+print(f"Largest: {largest}")
+print(f"Smallest: {smallest}")
+print(f"Square root of first number: {sqrt_a}")
+print(f"{a} raised to the power {b}: {power}")
+print(f"GCD of {a} and {b}: {gcd}")
+print(f"Factorial of {a}: {factorial_a}")
+
+#swap
+x = 25
+y = "Hyd"
+
+# Swap references in a single statement
+x, y = y, x
+
+# Output the result
+print("After swap:")
+print("x =", x)
+print("y =", y)
+
+##largest number
+# Input from user (can be any comparable type)
+a = input("Enter first value: ")
+b = input("Enter second value: ")
+c = input("Enter third value: ")
+
+# Automatically evaluate the inputs to handle types like int, float, list, etc.
+a = eval(a)
+b = eval(b)
+c = eval(c)
+
+# Determine the largest using nested ternary operator
+largest = a if a > b and a > c else (b if b > c else c)
+
+# Output the result
+print("Largest value is:", largest)
+
+##greater than program
+a = input("Enter first value: ")
+b = input("Enter second value: ")
+
+# Convert strings to actual Python types (e.g., int, float, list, etc.)
+a = eval(a)
+b = eval(b)
+
+# Use ternary operator to compare and print result
+result = '>' if a > b else ('<' if a < b else '=')
+
+print("Result:", result)
+
+##program
+# Take input from user and convert to number
+num = float(input("Enter a number: "))
+
+# Use nested ternary operator to determine the sign
+result = 1 if num > 0 else (-1 if num < 0 else 0)
+
+# Output the result
+print("Result:", result)
+
+##Program
+# Take input from user
+num = int(input("Enter an integer: "))
+
+# Use ternary operator to check even or odd
+result = "Even" if num % 2 == 0 else "Odd"
+
+# Output the result
+print("The number is:", result)
+
+##Program
+# Take inputs for length and breadth
+length = float(input("Enter the length of the rectangle: "))
+breadth = float(input("Enter the breadth of the rectangle: "))
+
+# Calculate area and perimeter
+area = length * breadth
+perimeter = 2 * (length + breadth)
+
+# Output the results
+print("Area of the rectangle:", area)
+print("Perimeter of the rectangle:", perimeter)
+
+##Volume
+import math
+
+# Input: radius of the sphere
+radius = float(input("Enter the radius of the sphere: "))
+
+# Calculate volume using the formula
+volume = (4 / 3) * math.pi * (radius ** 3)
+
+# Output: volume of the sphere
+print("Volume of the sphere:", volume)
+
+##SI,CI
+# Input: Principal, Time (in years), Rate of interest
+principal = float(input("Enter the principal amount: "))
+time = float(input("Enter the time (in years): "))
+rate = float(input("Enter the rate of interest: "))
+
+# Calculate Simple Interest
+simple_interest = (principal * time * rate) / 100
+
+# Calculate Compound Interest
+compound_interest = principal * ((1 + rate / 100) ** time) - principal
+
+# Output
+print("Simple Interest:", simple_interest)
+print("Compound Interest:", compound_interest)
+
+##swap using 3rd obj
+# Initial values
+x = 10
+y = 25
+
+# Swap using a 3rd variable
+temp = x
+x = y
+y = temp
+
+# Output after swap
+print("After swapping:")
+print("x =", x)
+print("y =", y)
+
+##Program
+# Initial values
+x = 25
+y = 10
+
+# Swap without using a third variable
+x = x + y    # x now becomes 35
+y = x - y    # y becomes 35 - 10 = 25 (original x)
+x = x - y    # x becomes 35 - 25 = 10 (original y)
+
+# Output after swap
+print("After swapping:")
+print("x =", x)
+print("y =", y)
+
+##Program
+# Initial values
+x = -200
+y = 100
+
+# Swap without third variable using multiplication and division
+x = x * y    # x = -200 * 100 = -20000
+y = x / y    # y = -20000 / 100 = -200 (original x)
+x = x / y    # x = -20000 / -200 = 100 (original y)
+
+# Convert to int if needed (since division results in float)
+x = int(x)
+y = int(y)
+
+# Output after swap
+print("After swapping:")
+print("x =", x)
+print("y =", y)
+
+
+
