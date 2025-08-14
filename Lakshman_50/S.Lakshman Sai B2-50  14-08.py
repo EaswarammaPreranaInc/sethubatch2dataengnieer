@@ -435,7 +435,6 @@ Write  a  program  to  reverse  order  of  words  in  the  sentence  without  sl
 
 a=input("enter string : ")
 b=a.split(' ')
-print(b)
 c=''
 for i in range(1,len(b)+1):
    c+=b[-i]+' '
@@ -455,10 +454,9 @@ a = input("Enter a sentence: ")
 b = a.split()
 for i in b:
    print(i[::-1], end=' ')
-print()
 
 
- '''
+'''
 Write  a  program  to  sort  string  in  alphabetical  order
 
 Let  input  be  RAJESH
