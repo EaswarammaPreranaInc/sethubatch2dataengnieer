@@ -14,9 +14,9 @@ string = input("Enter a string:")
 vowels = "AEIOU"
 output = ""
 
-for char in string.upper():
-    if char in vowels and char not in output:
-        output += char
+for ch in string.upper():
+    if ch in vowels and ch not in output:
+        output += ch
     
 print(output)
 
