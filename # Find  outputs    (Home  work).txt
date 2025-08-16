@@ -1,4 +1,4 @@
-# Find  outputs    (Home  work)
+Rohith Prakash Reddy
 
 
 a = range(10 , 50 , 5) #
@@ -36,3 +36,4 @@ r = range(3) #In this, the range is 3, so we need 3 objects: x,y,z
 x, y = r # There are 2 objects, so not possible
 p , q  , r , s = r # They are 4 Objects so not possible
 #a , b , c = *r # It can not be done as unpacks
+
