@@ -72,9 +72,9 @@ index = a . rfind('is')
 try:
     while  index != -1:
     	print(index)
-    	index = a . rfind('is' , index + 1)
+        index = a . rfind('is' , index + 1)
     print('End')
-except valueError:
+except ValueError:
     print('End')
 
     
