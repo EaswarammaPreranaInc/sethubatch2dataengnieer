@@ -659,7 +659,8 @@ print('Indexed for loop')
 for i in range(2,5)	
 print(a[i])	#How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed  based  for  loop
 
-not possible	#How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop   without  using  2nd  variable  and  slice
+#How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop   without  using  2nd  variable  and  slice 
+#not possible	
 
 
 
@@ -676,4 +677,5 @@ b = [10 , 20 , 15 , 18]
 for  x  in   b:
 	x += 1
 print('b :  ' ,  b)	# Output: [10, 20, 15, 18]
+
 
