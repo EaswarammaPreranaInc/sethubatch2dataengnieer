@@ -97,4 +97,5 @@ print(0xA7G9B) # Error because it is hexadecimal, it cannot conatain 'G'
 # Find outputs (Home  work)
 a = 9248 # Ref 'a' points to object 9248
 print(a) # prints the value of object 'a' i.e., 9248
+
 print(type(a)) # Type of object 'a' i.e., <class 'int'>
