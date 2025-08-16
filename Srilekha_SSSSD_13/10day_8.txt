@@ -1,0 +1,201 @@
+Write  a  program  to  determine  largest  command  line  input
+
+1) py   prog2.py   10     20     30.8   7  40    35.6
+    What  is  the  largest  command  line  input ?  ---> 40
+    What  is  argv ?  --->  ['prog2.py' , '10' , '20' , '30.8' , '7' , '40' , '35.6']
+    What  is  list  'a' ?  --->  [10 , 20 , 30.8 , 7 , 40 , 35.6]
+    How  to  determine  largest  element  of  list  'a' ?   ---> max(a)  i.e.  40
+    What  is  the  result  of  max(argv[1:]) ?  ---> '7'
+    What  is  the  issue  with  max(argv[1:])) ?  --->
+						Largest  string  is  obtained  but  not  largest  number
+
+2) py  prog2.py
+    What  is  the  output ?  ---> Pls  send  inputs
+
+3) py   prog2.py   'Rama'   'Sita'   'Rajesh'   'Manohar'   'Vamsi'   'Amar'
+    What  is  the  largest  command  line  input ?  --->  'Vamsi'
+
+4) py   prog2.py   25   'Ten'
+    What  is  the  output ?  --->  Inputs  can  not  be  number  and  string
+
+5) Hint1: Use  for  loop
+
+6) Hint2: Use  try  and  except
+
+
+
+
+from sys import argv
+args =argv
+if not args:
+    print("Please send input values.")
+else:
+    print("input  values are:", argv[:])
+
+
+valid_numbers = []
+
+for arg in argv:
+    try:
+        num = float(arg)
+        valid_numbers.append(num)
+    except ValueError:
+        print(f"Warning: '{arg}' is not a valid number and will be skipped.")
+
+if valid_numbers:
+    largest = max(valid_numbers)
+    print("The largest valid command-line input is:", largest)
+else:
+    print("No valid numeric inputs were provided.")
+
+----------------------------------------------------------------------------------------------------------------
+Write  a  program  to  determine  command  line  input  is  even  number  or  odd  number
+
+1) py  prog3.py  26
+    What  is  the  output ?  ---> Even  number
+
+2) py  prog3.py  45
+    What  is  the  output ?  ---> Odd  number
+
+3) py  prog3.py
+    What  is  the  output  ?  ---> Pls  send  an  integer  input
+
+4) py  prog3.py  10.8
+    What  is  the  output ?  --->  Pls  send   an  integer  input
+
+5) py  prog3.py  Ten
+    What  is  the  output  ?  --->  Pls  send   an  integer  input
+'''
+
+
+
+
+
+from sys import argv
+
+if len(argv) != 2:
+    print("Pls send an integer input")
+else:
+    try:
+        num = int(argv[1])
+        if num % 2 == 0:
+            print("Even number")
+        else:
+            print("Odd number")
+    except ValueError:
+        print("Pls send an integer input")
+-----------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+Write  a  program  to  sort  command  line  inputs  in  ascending  order  and  descending  order
+
+1) py  prog5.py  10   20    15.8   5   12.6
+    What  is  argv ?  ---> ['prog5.py' , '10' , '20' , '15.8' , '5' , '12.6']
+    What  is  list  'a' ?  --->  [10 , 20 , 15.8 , 5 , 12.6]
+    How  to  sort  list  'a' ?  --->  sorted(a)
+    How  to  sort  list  'a'  in  descending  order  ?  ---> sorted(a , reverse = True)
+
+2) py  prog5.py   25   'Ten'
+    What  is  the  output ?  --->  Pls  don't  send  number  and  string  inputs  together
+'''
+from sys import argv
+
+args = argv[1:]  # Skip script name
+list3 = []
+
+for arg in args:
+    try:
+        num = float(eval(arg))  # Handles True/False and numeric strings
+        list3.append(num)
+    except:
+        print(f"Invalid input: {arg} — please send a valid number")
+
+if list3:
+    print("Valid inputs:", list3)
+    sorted_list = sorted(list3)
+    print("Sorted ascending list:", sorted_list)
+    des_list = sorted(list3, reverse=True)
+    print("Sorted descending list:", des_list)
+else:
+    print("No valid numbers provided.")
+-----------------------------------------------------------------------------
+
+print( 'green'   in   'Hyd  is  green  city')    #True 
+print('day'   in   'Sankar  dayal  sarma')    #True
+print('Green'   in   'Hyd  is  green  city')   #false
+print('d  is'   in   'Hyd  is  green  city')    # True
+print('dis'   in   'Hyd  is  green  city')    # False
+print('iniv'   in   'Srinivas')         #   True
+print('iniv'   not   in   'Srinivas')   #False
+--------------------------------------------------------------------------------------
+Slice  demo  program
+0      1       2        3      4       5       6       7
+R      a      m        a               R       a       o
+-8    -7     -6      -5     -4      -3     -2      -1
+'''
+a = 'Rama Rao'
+print(a [ : 7 : 2])           # Rm a
+print(a [ : 7])            # Rama Rao
+print(a [2 : 4])          #ma
+print(a [2 : ])   #ma Rao
+print(a [ : 4 ])   #Ram
+print(a [ : : 2])   #Rm a
+print(a [-6 : -1])   #oaR a
+print(a [-6 : ])       #ma Rao
+print(a [: -4 : -1])
+print(a [-3 : -1]) #  a[-3 : -1 : 1]  --->  string  from  indexes  -3  to  -2  in  steps  of  1  i.e.  Ra
+print(a [-3 : ])         # Rao
+print(a [ : : ]) #Rama Rao
+print(a [ : ])   # Rama Rao
+print(a [ : : -1])  #oaR amaR
+print(a [ : : -2])
+print(a [ -2 : : -2])  #  a[-2 : -9 : -2]  --->  string  from  indexes  -2  to  -8  in  steps  of  -2  i.e.  a<space>mR
+print(a [2 : 8])        #ma Rao
+print(a [2 : 8 : -1])      # empty string
+print(a [ : -6 : -1])          # oaR a
+print(a [2 : -3])       # ma
+print(a [1 : 6 : 2])   # aaR
+print(a [ : -5 : -5])    #o
+print(a [2 : -5])     # m
+print(a [2 : -5 : 2])   # m
+print(a [ : 0 : -1])  # oaR amaR
+print(a [-5 : 0 : -2])  #  aa
+-----------------------------------------------------------------------------------------
+Write  a  program  to  concatenate  two  strings  separated  by  space  but  swap  first  two
+characters  of  the  two  strings.
+Assume  that  each  string  has  a   minimum  of  two  characters
+
+Let  inputs  be  Java  and  Python
+What  are  the  outputs ?  --->  Pyva<space>Jathon
+
+Hint:  Use  slice
+'''
+
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+
+
+new_str1 = str2[:2] + str1[2:]
+new_str2 = str1[:2] + str2[2:]
+
+result = new_str1 + " " + new_str2
+
+# Print result
+print("Output:", result)
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
