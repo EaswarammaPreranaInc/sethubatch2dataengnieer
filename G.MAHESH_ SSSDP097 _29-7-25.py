@@ -165,8 +165,7 @@ if c < min:
 mid = (a + b + c) - (max+ min)
 print("Largest number   : " ,max)
 print("Smallest number  : ",min)
-print("Middle nu
-mber    : ",mid)
+print("Middle number    : ",mid)
 
 '''
 output:
@@ -424,7 +423,7 @@ print('Bye')
 
 
 
-# '''
+'''
 15) Find  outputs  (Home  work)
 #How  to  print  each  element  of  list  [10 , 20 , 15 , 18]  with  for  loop
 #print()
@@ -436,32 +435,32 @@ print('Bye')
 l = [10, 20, 15, 18]
 for i in l:
     print(i)
-    
+'''
 #Output
 10
 20
 15
 18
-
+'''
 s = 'Hyd'
 for i in s:
     print(i)
-    
+'''
 #Output
 H
 y
 d
-
+'''
 for i in range(5):
     print(i)
-
+'''
 #Output
 0
 1
 2
 3
 4
-
+'''
 
 
 
@@ -677,3 +676,4 @@ b = [10 , 20 , 15 , 18]
 for  x  in   b:
 	x += 1
 print('b :  ' ,  b)	# Output: [10, 20, 15, 18]
+
