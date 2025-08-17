@@ -1,0 +1,227 @@
+# What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True]   (Home  work)
+a = input('Enter  list  :  ')
+print(type(a))
+print(a)
+b = eval(a)
+print(b)
+print(type(b)
+##Answer1
+<class 'str'>
+[25 , 10.8 , 'Hyd' , True]
+[25, 10.8, 'Hyd', True]
+<class 'list'>
+
+#  Find  outputs (Home  work)
+a = [10, 20, 15, 18]
+b = a
+print(a  is  b)
+print(a  ==  b)
+b[2] = 12
+print(a)
+
+##Answer2
+True
+True
+[10, 20, 12, 18]
+
+#  Find  outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+b = [100 , 200 , 150]
+print(a + b)
+print(a + 5)
+print(a + '5')
+print([10 , 20] + (30 , 40))
+
+##Answer3
+[10, 20, 15, 18, 100, 200, 150]
+TypeError
+TypeError
+TypeError
+
+#  Tricky  program
+#  Find  outputs
+a = [1,2,3]
+b = [4,5,6]
+print(a , id(a))
+a += b
+print(a , id(a))
+
+##Answer4
+[1, 2, 3] <some_id>
+[1, 2, 3, 4, 5, 6] <same_id>
+
+#  Tricky  program
+#  Find  outputs
+a = [1,2,3]
+b = [4,5,6]
+print(a , id(a))
+a  = a + b
+print(a , id(a))
+
+##Answer5
+[1, 2, 3] <old_id>
+[1, 2, 3, 4, 5, 6] <new_id>
+
+# List  packing
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+e = [a , b , c , d]
+print(e)
+print(type(e))
+
+##Answer6
+[25, 10.8, 'Hyd', True]
+<class 'list'>
+
+# Find  outputs
+list = [25 , 10.8 , 'Hyd' ,  True]
+a , *b , c = list
+print('a : ' , a)  #  a :  25
+print('b : ' , b) #  b : [10.8 , 'Hyd']
+print('c : ' , c) #  c :  True
+print(type(b))
+x , *y = list
+print('x : ' , x)
+print('y : ' , y)
+*p , q = list
+print('p : ' , p)
+print('q : ' , q)
+
+##Answer7
+a : 25
+b : [10.8, 'Hyd']
+c : True
+<class 'list'>
+x : 25
+y : [10.8, 'Hyd', True]
+p : [25, 10.8, 'Hyd']
+q : True
+
+# Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , c , d , e = list
+a , b , *c , d , e = list
+print('a : ' , a)
+print('b : ' , b)
+print('c : ' , c)
+print('d : ' , d)
+print('e : ' , e)
+a , b , *c , d , e , f = list
+
+##Answer8
+a , b , c , d , e = list
+ValueError: not enough values to unpack (expected 5, got 4)
+
+# Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , _  , d = list
+print('a : ' , a)
+print('b : ' , b)
+print('_ :  ' , _)
+print('d : ' , d)
+
+##Answer9
+a : 25
+b : 10.8
+_ :  Hyd
+d : True
+
+# Find  outputs (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b , a , d , a = list
+print('a : ' , a)
+print('b : ' , b)
+print('d : ' , d)
+
+##Answer10
+a : (3+4j)
+b : 10.8
+d : True
+
+#  Tricky  program
+# Find  outputs (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b ,  _ , d , _  = list
+print('a : ' , a)
+print('b : ' , b)
+print('_ : ' , _)
+print('d : ' , d)
+print('_: ' , _)
+
+##Answer11
+a : 25
+b : 10.8
+_ : (3+4j)
+d : True
+_: (3+4j)
+
+# Identify  error (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , *b , c , *d , e  = list
+##SyntaxError: two starred expressions in assignment
+
+# Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]   #  Nested  list
+a , b , c = list
+print('a :  ' , a)
+print('b :  ' , b)
+print('c :  ' , c)
+
+##Answer12
+a :  [25, 10.8]
+b :  Hyd
+c :  True
+
+# Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]
+[a , b] , c , d = list
+print('a : ' , a)
+print('b : ' , b)
+print('c : ' , c)
+print('d : ' , d)
+a , b , c , d = list
+
+##Answer13
+a : 25
+b : 10.8
+c : Hyd
+d : True
+ValueError: not enough values to unpack (expected 4, got 3)
+
+# Comparing  Lists
+a = [10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]
+c = [10 , 20 , 25 , 9]
+d = [10 , 20 , 7 , 22]
+print(a == b)
+print(a  is   b)
+print(a < c)
+print(a > d)
+print(a >= c)
+print(a <= d)
+print(a != c)
+print(a != b)
+print(a == c)
+
+##Answer14
+True
+False
+True
+True
+False
+False
+True
+False
+False
+# Comparing  Lists  (Home  work)
+a = [10 , 20 , 15 , 18]
+b = [20 , 18 , 15 , 10]
+print(a == b)
+print(a  is   b)
+##Answer15
+False
+False
+
+
