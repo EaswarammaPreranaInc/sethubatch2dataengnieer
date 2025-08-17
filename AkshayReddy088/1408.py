@@ -370,7 +370,7 @@ print('a2#' . islower()) # True
 # 2) When  does  it  return  True ?  --->  When  there  are  no  uppercase  alphabets  in  the  string
 # 																						and
 # at  least  one  character  is  an  lowercase  alphabet
-
+'''
 
 # isalnum()  method  demo  program  (Home  work)
 print('A7$g'  . isalnum())  #  False
@@ -382,8 +382,7 @@ print('9247' . isalnum()) #  True
 print('' . isalnum()) #  False
 print('A7g9'  . isalnum()) # True
 
-
-
+'''
 isalnum()  method
 ----------------------
 1) When  does  it  return  False ?  --->  When  at  least  one  character  of  the  string  is  speical  character
@@ -447,17 +446,16 @@ Write  a  program  to  determine  user  input  is  alphabet , digit , white spac
 7) What  is  the  output  if  input   is   <enter>   key ?  ---> White  space
 
 8) Hint2:  Use  nested  if  and   elif
+
+Enter  any  character  :  A
+Alpha  Numeric  Character
+Alphabet  Character
+Upper  case  Alphabet
+
+Enter  any  character  :  7
+Alpha  Numeric  Character
+Digit  character
 '''
-
-# Enter  any  character  :  A
-# Alpha  Numeric  Character
-# Alphabet  Character
-# Upper  case  Alphabet
-
-# Enter  any  character  :  7
-# Alpha  Numeric  Character
-# Digit  character
-
 ch = input("Enter a character: ")
 
 if ch.isalnum():  
@@ -495,10 +493,10 @@ Write  a  program  to  reverse  a  string  without  slice
      2       'y'             'd' + 'y' = 'dy'
      3       'H'            'dy' + 'H' = 'dyH'
   ---------------------------------------------
-'''
 
 # Enter  any  string : Rama Rao
 # Reverse  String :   oaR amaR
+'''
 
 x = input("Enter a String:")
 b = ''
