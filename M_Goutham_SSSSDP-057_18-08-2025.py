@@ -293,9 +293,9 @@ List  without   15's :  [10, 20, 18, 19, 17, 20, 14]
 
 # clear() method  demo program  (Home  work)
 list = [10 , 20 , 15 , 18]
-print(list)
-list . clear()
-print(list)
+print(list) #Rteurns the list i.e [10 , 20 , 15 , 18]
+list . clear() #Clear all the elements in the list 
+print(list) #Returns the empty list
 
 
 '''
@@ -310,9 +310,9 @@ clear()  method
 
 # reverse()  method  demo  program (Home  work)
 a = [10 , 20 , 15 , 18]
-print(a)
-a . reverse()
-print(a)
+print(a) #Returns the list elements of a i.e [10 , 20 , 15 , 18]
+a . reverse() #Reverse the list a 
+print(a) #Returns the reversed list i.e [18, 15, 20, 10] 
 
 
 '''
@@ -326,33 +326,33 @@ reverse()  method
 
 #  sort()  method  demo  program (Home  work)
 list = [10 , 20 , 15 , 18 , 5]
-print(list)
-list . sort()
-print(list)
-list . sort(reverse = True)
-print(list)
+print(list) #Returns the list [10 , 20 , 15 , 18 , 5]
+list . sort() #Sort the elements in the list in ascending order
+print(list) #Returns the sorted elements i.e [5, 10, 15, 18, 20]
+list . sort(reverse = True) #Here sort the list and reverse that list i.e 
+print(list) # [20, 18, 15, 10, 5]
 
 
 # Find  outputs (Home  work)
 a = ['Rama' , 'Rajesh' , 'Amar' ,  'Sita' ,  'Vamsi' , 'Kiran' , 'Rama  Rao']
-print(a)
-a . sort()
-print(a)
-a . sort(reverse = True)
-print(a)
+print(a) #Returns the list a i.e ['Rama' , 'Rajesh' , 'Amar' ,  'Sita' ,  'Vamsi' , 'Kiran' , 'Rama  Rao']
+a . sort() #Sort the elements in the list with their 1st character according to the asci value small to big
+print(a) #Returns the sorted list i.e ['Amar', 'Kiran', 'Rajesh', 'Rama', 'Rama  Rao', 'Sita', 'Vamsi']
+a . sort(reverse = True) #sort the list and reverse the sorted list 
+print(a) #['Vamsi', 'Sita', 'Rama  Rao', 'Rama', 'Rajesh', 'Kiran', 'Amar']
 
 
 # Identify  error (Home  work)
 a = [25 , 10.8 ,  'Hyd' ,  True]
-a . sort()
+a . sort() #Here the error is we cannot compare and sort these elements as their are of different types
 
 
 
 #  count()  method  demo    program (Home  work)
 a = [10 , 20 , 15 , 18 , 15 , 12 , 14 , 15 , 19]
-print(a . count(15))
-print(a . count(25))
-print(len(a))
+print(a . count(15)) #Returns the number of times 15 is repeated in the list i.e 3
+print(a . count(25)) #Returns 0 as there is no element 25 in the list
+print(len(a)) #Returns the length of list a i.e 9
 
 '''
 What  does  list . count(x)  do ?  ---> Returns  number  of  times  'x'  is  in  the  list
