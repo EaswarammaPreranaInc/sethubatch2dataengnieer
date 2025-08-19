@@ -127,7 +127,7 @@ print(a[2][1])   #How  to  print  100
 
 
 
-#  Find  outputs  (Home  work)
+#  Find  outputs (Home  work)
 a=[ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
 print(a[0])       #How  to  print  1st   inner  list
 print(a[1])       #How  to  print  2nd   inner  list
