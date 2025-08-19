@@ -239,4 +239,3 @@ print(not(6 < 4  or  9 >= 5 and 6!=6))#True
 
 
    # suprabhath
-   
