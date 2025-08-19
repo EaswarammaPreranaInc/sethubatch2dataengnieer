@@ -1,0 +1,53 @@
+a = {10 : 'Ramesh' , 20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'} #a is assigned to the dict obj with key and value 
+print(a) #10:Ramesh , 20:Kiran, 15:Amar, 18:Sita
+print(type(a)) #<class 'int'>
+print(How  to  obtain  value  key  10) #Print(a[10])
+print(How  to  obtain  value  key  20) #print(a[20])
+print(How  to  obtain  value  key  15) #print(a[15])
+print(How  to  obtain  value  key  18) #print(a[15])
+print(a[19]) #error due to 19 key is not in the dict a
+print(a[0]) # error due to dict has no  indexing
+print(a['Amar']) #error with value, key is not printed
+How  to  moify  value  of   key  15  to  'Krishna' #a[15]= 'Krishna'
+How  to  remove  20 :  'Kiran'  from  dict  'a' # a.delete(20)
+How  to  append  25 : 'Vamsi'  to  dict  'a' #a[25]='Vamsi'
+print(a) #{10: 'Ramesh', 15: 'Krishna', 18:'Sita', 25: 'Vamsi'}
+print(len(a)) #4
+print(a * 2) # error
+
+
+
+# Find  outputs  (Home  work)
+a = {10 : 'Hyd' , 10 : 'Sec'}
+print(a) #{10 : 'sec'}
+print(len(a)) #1
+b = {'R' : 'Red' , 'G' : 'Green' , 'B' : 'Blue' , 'Y' : 'Yellow' , 'G' : 'Gray' , 'B' : 'Black'}
+print(b) #{'R': 'Red'. 'G': 'Gray', 'B': 'Black', 'Y': 'Yellow'} 
+print(len(b)) #4
+
+
+#  Tricky  program
+# Find output  (Home  work)
+a = {True : 'Yes' , 1 : 'No' , 1.0 : 'May  be'}
+print(a) #{True: 'May be'}
+print(len(a)) #1
+
+# Find  outputs
+a = { [ ] : 25} 
+b = { ( ) : 25}
+print(b) #{() : 25
+c = { { } : 25} #error
+d = {'Ramesh' : [9948250500, 9848565090, 9440250404]} #error 
+print(d) #error
+print(len(d)) #error in d
+e = {set() : 10.8} #error
+
+# Find  outputs
+a = {}  # a is refferes to empty dict
+print(type(a)) <Class 'dict'>
+print(len(a)) #0
+print(a) #{}
+b = dict() #
+print(type(b)) <class 'dict'>
+print(len(b))  #0
+print(b) #{}
