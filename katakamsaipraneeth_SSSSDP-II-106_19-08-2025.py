@@ -2,7 +2,7 @@
 Modify  the  following  program  with  walrus  operator
 
 Hint:  Call  index()  method  only  once
-'''
+
 a = [10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25]
 try:
 	i = a . index(15)
@@ -22,7 +22,7 @@ try:
 		
 except:
 	print(F'15  is  found  {a . count(15)}  times ')
-
+'''
 Most   tricky  program
 Write  a  program  to  determine  first  list  is  a  sublist  of  2nd  list  or  not.
 Print  True  if  it  is  a  sublist  and  False  otherwise
@@ -222,4 +222,5 @@ print(sorted(a)) # [[5, 'Amar', 5000.0], [10, 'Rama', 1000.0], [15, 'Rajesh', 35
 print(sorted(a , reverse = True)) # [[20, 'Sita', 2000.0], [18, 'Kiran', 2800.0], [15, 'Rajesh', 3500.0], [10, 'Rama', 1000.0], [5, 'Amar', 5000.0]]
 
 print(a) # [[10, 'Rama', 1000.0], [20, 'Sita', 2000.0], [15, 'Rajesh', 3500.0], [18, 'Kiran', 2800.0], [5, 'Amar', 5000.0]]
+
 
