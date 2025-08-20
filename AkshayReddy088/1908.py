@@ -131,6 +131,17 @@ for x in a:
         ctr = a.count(x)
         mod = x
 print(f'{mod} repeated {ctr} times:: mod = {mod}')
+
+
+dict = {}
+for x in list:
+    dict[x] = dict.get(x, 0) + 1
+
+max_count = max(dict.values())
+
+mode = [k for k,v in dict.items() if v == max_count]
+
+print(f'mode is : {mode}' if len(mode) == 1 else f'modes are: {mode}')
     
 
 
