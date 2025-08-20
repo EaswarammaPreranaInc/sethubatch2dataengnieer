@@ -113,7 +113,11 @@ for x in set(lst):
 	if lst.count(x)>ctr:
 		mode=x
 		ctr=lst.count(x)
-print(f"{mode} is repeated {ctr} times in lst. So Mode is {mode}")
+emp_lst=[]
+for x in set(lst):
+	if lst.count(x)==ctr:
+		emp_lst.append(x)
+print(f"{emp_lst} is repeated {ctr} times in lst. So Mode is {emp_lst}")
 
 
 
