@@ -351,13 +351,13 @@ a = ['Swathi' , 'Anand' , 'Srinivas' , 'Zebra' , 'King' , 'Amar' ]
 b = []
 d = []
 for x in a:
-    if x[0] not in b:
-        b.append(x[0])
+    if x[0].upper() not in b:
+        b.append(x[0].upper())
 print(b)
 for y in b:
     c =[]
     for x in a:
-        if x[0] == y:
+        if x[0].upper() == y:
             c.append(x)
             a.remove(x)
     d.append(c)
