@@ -18,8 +18,8 @@ What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']
 '''
 lst=eval(input("Enter list of lower case strings : "))
 b = []
-for i in lst:
-   b.append(i[0].upper())
+for x in lst:
+   b.append(x[0].upper())
 print(b)
 
 #**************************************************************************
@@ -33,8 +33,9 @@ Input :  ['hyd' , 'pune' , 'chennai' , 'vijayawada']
 Output :  ['H' , 'P' , 'C' , 'V']
 '''
 lst=eval(input("Enter list of lower case strings : "))
-b = [lst[i][0].upper() for i in range(len(lst))]
+b=[x[0].upper() for x in lst]
 print(b)
+
 
 
 #**************************************************************************
@@ -327,19 +328,21 @@ Hint: Do  not  sort  the  lists
 Enter  list  of  strings :  ['Swathi' , 'Anand' , 'Srinivas' , 'Zebra' , 'King' , 'Amar' ]
 [['Swathi', 'Srinivas'], ['Anand', 'Amar'], ['Zebra'], ['King']]
 '''
-a = eval(input("Enter list of strings: "))
+a = eval(input("Enter the list: "))
 b = []
+d = []
 for i in a:
-   first_char = i[0]
-   found = False
-   for x in b:
-      if x[0][0] == first_char:
-         x.append(i)
-         found = True
-         break
-   if not found:
-      b.append([i])
+    if i[0] not in b:
+        b.append(i[0] )
 print(b)
+for y in b:
+    c = []
+    for x in a:
+        if x[0] == y:
+            c.append(x)
+            a.remove(x)
+    d.append(c)
+print(d)
 
 #**************************************************************************
 '''
@@ -354,30 +357,31 @@ Hint2 :  Use single while loop
 '''
 a = eval(input("Enter 1st sorted list: "))
 b = eval(input("Enter 2nd sorted list: "))
-c = []
-i = j = 0
-while i < len(a) and j < len(b):
-    if a[i] < b[j]:
-      c.append(a[i])
-      i += 1
-    elif a[i] > b[j]:
-      c.append(b[j])
-      j += 1
-    else:
-      c.append(a[i])
-      c.append(b[j])
-      i += 1
-      j += 1
-c.extend(a[i:])
-c.extend(b[j:])
-print(c)
-'''
-for i in range(len(a)):
-   for j in range(len(b)):
-      if a[i]<b[j]:
+a.extend(b)
+print(sorted(a))
+
+# a.sort()
+# b.sort()
+# c = []
+# i = j = 0
+# while i < len(a) and j < len(b):
+#     if a[i] < b[j]:
+#       c.append(a[i])
+#       i += 1
+#     elif a[i] > b[j]:
+#       c.append(b[j])
+#       j += 1
+#     else:
+#       c.append(a[i])
+#       c.append(b[j])
+#       i += 1
+#       j += 1
+# c.extend(a[i:])
+# c.extend(b[j:])
+# print(c)
          
 
-'''
+
 
 #**************************************************************************
 
@@ -394,9 +398,9 @@ Enter which largest which to be shown:4
 '''
 
 a=eval(input("enter the list: "))
-b=sorted(a)
+a.sort()
 c=int(input("enter which largest to be shown: "))
-print(f'{c}th largest element: {b[-c]}')
+print(f'{c}th largest element: {a[-c]}')
 
 #**************************************************************************
 '''
@@ -413,7 +417,7 @@ for i in range(len(a)):
    for j in range(i):
       if a[i]<a[j]:
          a[i],a[j]=a[j],a[i]
-   print(a)
+print(a)
 
 #**************************************************************************
 a=eval(input("enter The list: "))
@@ -421,5 +425,5 @@ for i in range(len(a)-1):
    for j in range(i+1):
       if a[j]>a[i+1]:
          a[j],a[i+1]=a[i+1],a[j]
-   print(a)
+print(a)
 
