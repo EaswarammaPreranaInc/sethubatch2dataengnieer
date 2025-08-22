@@ -23,7 +23,6 @@ d = range(-10 , 0) print(*d)
 →  -10,  -9  -8 -7 -6  -5 -4 -3 -2 -1 
  
  
- 
 e	= range(-10) print(*e)   → no output because there is no particular values and conditions 
 f	= range(2 , 2) print(*f)→ no output because  starting point and ending point is same so nothing will displayed  g = range(10 , 11 , 0.1)→error , there is float operator is not used for int datatype operator  
 h = range('A' , 'F') 
@@ -33,3 +32,4 @@ r = range(10 ,  17 , 3)
 a , b , c = r 
 print(a , b , c)→ 10 13 16 r = range(3) 
 x , y,z  = r p , q  , r , s = r a , b , c = *r 
+
