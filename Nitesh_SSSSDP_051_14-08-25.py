@@ -1,4 +1,4 @@
-
+'''
 1) Modify  following  program  with  walrus  operator
 Hint:  Combine  lines  7 , 8  and  10  to  a  single  line  with  walrus  operator
 '''
@@ -552,3 +552,4 @@ print(result)
 Enter  any  string :Z9K3PA7D51
 ADKPZ13579
 '''
+
