@@ -15,7 +15,6 @@ print(c) # Output: Hyd is green city.
 		Hyd is beautiful city.
 
 
-
 # Index   demo  program  (Home  work)
 a = 'Hyd'# Ref 'a' points to string object "Hyd"
 print(How  to  print  'H'  of  object  'a')# Output: H
@@ -79,7 +78,6 @@ print("""Hyd"""") # syntax error as it does not take the last quote gives error
 b = """""Hyd"""   # Ref 'b' points to string object """""Hyd"""
 print(b)# Output: ""Hyd
 print(len(b))  # Output: 5
-
 
 
 # Find  outputs
@@ -214,3 +212,4 @@ print(oct(0xA7B9)) # Converts Hexdecimal object  to Octal object : '0o123571'
 print(hex(25))   #  Converts decimal object  to Hexdecimal object : '0x19'
 print(hex(0B10101111010111)) #  Converts Binary object  to Hexdecimal object  : '0x2c57' 
 print(hex(0O6247))  #  Converts Octal object  to Hexdecimal object  : '0xca7'
+
