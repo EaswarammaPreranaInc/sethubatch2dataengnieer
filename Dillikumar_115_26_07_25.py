@@ -34,7 +34,7 @@ print(F'{{{{{{{x}}}}}}}')     :{{{25}}}
 print(F'{{{{{{{{x}}}}}}}}')   : 25
 
 Write  a  program  to  determine  sum , difference , product , quotient , largest  and  smallest  of  two  numbers.
-          a=12  
+a=12  
 b=6
 sum=a+b
 print("sum of " , a , "and" , b , "is" ,sum)
@@ -464,3 +464,4 @@ x=x/y
 print(f"after swap : x= {x}, y={y}")
 output : before  swap : x= -200, y=100
 after swap : x= 100.0, y=-200.0
+
