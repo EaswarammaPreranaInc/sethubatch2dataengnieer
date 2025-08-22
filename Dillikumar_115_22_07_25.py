@@ -12,14 +12,15 @@ print(a  is  b)  : yes // true
 x = 4
 y = 5
 z = x + y * 6
-print(z)    4+30 =34
-25 = a
-a + b = x + y  : 
+print(z)   
+4+30 =34
+25 = a   : error
+a + b = x + y  : error  
 # Find outputs (Home work)
 a = b = c = 25
-print(id(a))      :
-print(id(b))       :
-print(id(c))           :  
+print(id(a))      : 140711434028312
+print(id(b))       : 140711434028312
+print(id(c))           :  140711434028312
 print(a , b , c)
 # Find outputs (Home work)
 a , b , c = 3 , 4 , 5
@@ -101,5 +102,6 @@ a = [10,20,30]
 b = (10,20,30)
 print(a  is  b)    : false 
 print(a  ==  b)    : false 
+
 
 
