@@ -1,22 +1,22 @@
-# l=int(input("enter elements to perform :"))
+l=int(input("enter elements to perform :"))
 
-# l=[2 , 4 , 6 , 8 , 10]
-# res=[i**3  for i in l]
-# print(res)
+l=[2 , 4 , 6 , 8 , 10]
+res=[i**3  for i in l]
+print(res)
 
-# s='hyd'
-# res=s.capitalize()
-# print(res)
+s='hyd'
+res=s.capitalize()
+print(res)
 
-# s='hyd'
-# res=s[0].upper() 
-# print(res)
+s='hyd'
+res=s[0].upper() 
+print(res)
 
-# s=['hyd' , 'pune' , 'chennai' , 'vijayawada']
-# res=[]
-# for i in s :
-#    res.append(i[0].upper())
-# print(res)
+s=['hyd' , 'pune' , 'chennai' , 'vijayawada']
+res=[]
+for i in s :
+   res.append(i[0].upper())
+print(res)
 
 # s=['hyd' , 'pune' , 'chennai' , 'vijayawada']
 # res=[i[0].upper() for i in s]
@@ -145,5 +145,6 @@ for i in range(len(a)):
         if a[j] > a[j+1]:
           
             a[j], a[j+1] = a[j+1], a[j]
+
 
 print("Sorted list is :", a)
