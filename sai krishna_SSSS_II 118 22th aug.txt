@@ -1,0 +1,166 @@
+1.#index()  and  count()  methods  demo  program   (Home  work)
+a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
+#     0    1      2     3    4     5     6    7     8    9    10
+try:
+	i = a . index(15)                                         # 15 is found at index :  2
+	while  True:
+		print('15 is found at index : ' , i)              # 15 is found at index :  5
+		i = a . index(15 , i + 1)                         # 15 is found at index :  8
+except:
+		print(F'15  is  found  {a . count(15)}  times')   # 15  is  found  3  times
+
+
+
+2.a = 10, 20, 30, 40, 50
+print("Original tuple:", a)              # Original tuple: (10, 20, 30, 40, 50)
+print("Original id:", id(a))             # Original id: 136091119964688
+temp = list(a)
+temp[2] = 35
+a = tuple(temp)
+print("Modified tuple:", a)             # Modified tuple: (10, 20, 35, 40, 50)
+print("Modified id:", id(a))            # Modified id: 136091119966688
+
+
+3. a = 10, 20, 30, 40, 50
+print("Original tuple:", a)                   # Original tuple: (10, 20, 30, 40, 50)
+print("Original id:", id(a))                  # Original id: 137569193316880
+
+temp = list(a)
+
+temp.remove(30)
+
+a = tuple(temp)
+
+print("Modified tuple:", a)                  # Modified tuple: (10, 20, 40, 50)
+print("Modified id:", id(a))                 # Modified id: 137569191445824
+
+
+4.a = ((10, 20), (30, 40, 50), (60, 70, 80, 90))
+
+print(a)                                     #  ((10, 20), (30, 40, 50), (60, 70, 80, 90))
+print(type(a))                               #  <class 'tuple'>
+print(len(a))                                # 3
+
+print(a[0])                                  # (10, 20)
+print(a[1])                                  # (30, 40, 50)
+print(a[2])                                  # (60, 70, 80, 90)
+
+print(a[0][1])                               # 20
+print(a[1][2])                               # 50
+print(a[2][3])                               # 90
+
+
+5.a = ((10, 20, 30),)
+print(a[0])                                  # (10, 20, 30)
+print(a[-1])                                 # (10, 20, 30)
+print(a[0][0])                               # 10
+print(a[0][1])                               # 20
+print(a[0][2])                               # 30
+
+b = ((),)
+print(b[0])                                  # ()
+print(b[-1])                                 # ()
+
+
+6.#  Find  outputs (Home  work)
+a = ((10 , 20 , 30))
+print(a)                                     # (10, 20, 30)
+print(*a)
+b = (())      
+print(b)                                     # 10 20 30
+print(*b)                                    # ()
+
+
+7.# What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+a = input('Enter  Set  :  ')
+print(a)                      # {10 , 20 , 15 , 18 , 20 , 12 , 18}
+print(type(a))                    # <class 'str'>
+b = eval(a)                       # {18, 20, 10, 12, 15}
+print(b)
+print(type(b))                    # <class 'set'>
+
+
+
+8. a = {25, True, 'Hyd', 10.8}
+
+print('Set with print function:')                       # Set with print function:
+print(a)                                                # {25, 10.8, True, 'Hyd'}
+
+print('Iterate elements of set with for loop:')         # Iterate elements of set with for loop:
+for element in a:                                       
+    print(element)                                   # 25
+                                                       10.8
+                                                       True
+                                                       Hyd
+
+
+
+
+9.# Find  outputs  (Home  work)
+a = 'Hyd'
+b = True
+c = 25
+d = 1
+e = 'Hyd'
+s = {a , b , c , d , e}
+print(s)                                         # {True, 'Hyd', 25}
+print(len(s))                                    # {True, 'Hyd', 25}
+print(type(s))                                   # <class 'set'>
+
+
+10.# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)                                          # {25, 10.8, True, 'Hyd'}
+a , b , c , d = s
+print(a)                                          # 25
+print(b)                                          # 10.8
+print(c)                                          # True 
+print(d)                                          # Hyd
+
+
+
+11.# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)                                     # {25, 'Hyd', 10.8, True}
+a , *b = s
+print(a)                                     # 25
+print(b)                                     # ['Hyd', 10.8, True]
+print(type(b))                               # <class 'list'>
+
+
+12.# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)                                            # {25, 'Hyd', 10.8, True}
+a , *b , c = s
+print(a)                                            # 25
+print(b)                                            # ['Hyd', 10.8]
+print(c)                                            # True
+
+
+13.# Find  outputs  (Home  work)
+s = {20 , 10 , 20 , 10}
+print(s)                                    # {10, 20}
+x , y = s
+print(x)                                    # 10
+print(y)                                    # 20
+
+
+14.# set()  function  demo  program  (Home  work)
+a = range(100 , 151 , 10)
+b = set(a)
+print(b)                                         # {130, 100, 140, 110, 150, 120}
+c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18]
+d = set(c)
+print(d)                                         # {10, 12, 15, 18, 50, 20}
+e = set('Rama  rAo')
+print(e)                                         # {'m', 'a', 'A', 'o', 'r', ' ', 'R'}
+#print(set(25))                                  # 'int' object is not iterable
+print(set())                                     # set()
+
+
+
+
+
+
+  
+
