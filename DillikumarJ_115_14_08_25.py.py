@@ -23,4 +23,3 @@ for i in range(len(chars)):
 
 result = "".join(chars)
 print(result)
-
