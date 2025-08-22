@@ -1,8 +1,8 @@
-# s = input("Enter string: ")
-# rev = ""
-# for i in range(len(s) - 1, -1, -1):
-#     rev = rev + s[i]
-# print(rev)
+s = input("Enter string: ")
+rev = ""
+for i in range(len(s) - 1, -1, -1):
+    rev = rev + s[i]
+print(rev)
 
 s = input("Enter string: ")
 words = s.split()  # split string into words
@@ -23,3 +23,4 @@ for i in range(len(chars)):
 
 result = "".join(chars)
 print(result)
+
