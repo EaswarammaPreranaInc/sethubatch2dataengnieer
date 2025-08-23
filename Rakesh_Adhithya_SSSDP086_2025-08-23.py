@@ -1,0 +1,145 @@
+# add()  method  demo  program  (Home  work)
+a = set()
+a . add(True)          #True is added to set
+a . add(25)            #25 is added to set
+a . add(10.8)          #10.8 is added to set
+a . add(1)             #ignored as True is already there
+a . add('Hyd')         #'Hyd' is added to set
+a . add(25)            #ignored
+a . add(None)          #None is added to set
+a . add('Hyd')         #ignored as 'Hyd' is already there
+a . add(1.0)           #ignored as True is there
+print(a)               #{True, 25, 10.8, 'Hyd', None} in any order
+#a . add(10 , 20 , 30)  #Error, add method takes exactly one argument
+#a . add([10,20,30])    #Error, set cannnot store mutable element list
+
+
+
+# Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)       
+print(a)                   #{25 , 10.8 , 'Hyd' , True} in any order
+print(id(a))               #some address
+a . add(tpl)               #(10, 20, 30) is added to set
+a . add('Sec')             #'Sec' is added to set
+print(a)                   #{25 , 10.8 , 'Hyd' , True, (10,20,30), 'Sec'} in any order
+print(id(a))               #same address
+print(len(a))              #6
+#a . add([100 , 200 , 300]) #TypeError, set cannot have mutable element list
+#a . add(set())             #TypeError, set cannot have mutable element set
+#a . add({})                #TypeError, set cannot have mutable element dict
+
+
+
+
+# Find  outputs (Home  work)
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)                    #(10,20,15,18) is added to set s
+print(s)                        #{(10,20,15,18)}
+print(len(s))                   #1
+
+
+
+# update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()                 
+s . update(tpl)           #elements from tp1 are added to set   
+print(len(s))             #4
+print(s)                  #{10, 20, 15, 18}
+s . update(25)            #TypeError arg must be a sequence
+
+
+
+# Find  outputs  (Home  work)
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a , b , c)       #elemets from list a, set b, tuple c are added to set s
+print(s)                    #{10, 20, 30, 40, 50, 60, 70} in any order
+print(len(s))               #7
+#s . add(a , b , c)          #Error, add method takes only one argument
+
+
+
+
+
+# Find  outputs  (Home  work)
+a = set()
+a . update('Rama Rao')                #each char in string is added to set a
+print(a)                              #{'R', 'a', 'm', ' ', 'o'} in any order
+print(len(a))                         #5
+#a . update(3 + 4j , 10.8 , True)      #Error, args must be a sequence
+           
+
+
+# copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)
+b = a . copy()       #copy of set a is created and b is assigned to new set
+print(b)             #{10, 20, 15, 18}
+print(a  is  b)      #False
+print(a  ==  b)      #True
+c = a                #shallow copy
+print(a  is  c)      #True
+
+
+
+
+
+# pop()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd'  , True}
+print(a)                 #any order e.g. {10.8, 25, 'Hyd', True}
+print(a . pop())         #remove 10.8 and returns it
+print(a . pop())         #remove 25 and returns it
+print(a . pop())         #remove 'Hyd' and returns it
+print(a . pop())         #remove True and returns it
+#print(a . pop())         #Error empty set
+print(a)                 #set()
+b = {10 , 20 , 30 , 40} 
+#print(b . pop(2))        #Error set do not have indexes
+
+
+
+# remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)                #{10.8, 25, 'Hyd', True} in any order
+a . remove('Hyd')       #removes Hyd
+print(a)                #{10.8, 25, True}
+#a . remove('Sec')       #Error as 'Sec' is not present in set
+
+
+
+
+
+# discard()  method  demo  program (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)               #{10.8, 25, 'Hyd', True}
+a . discard('Hyd')     #Hyd is removed
+print(a)               #{10.8, 25, True}
+a . discard('Sec')     #does nothing 
+print(a)               #{10.8, 25, True}
+#a . remove('Sec')      #throws error
+
+
+
+
+
+# clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)         #{10,20,15,18} in any order
+a . clear()      #removes all elements from set
+print(a)         #set()
+print(len(a))    #0
+
+
+
+
+# Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b))     #{40, 10, 50, 20, 60, 30}, add all elements of list b in set a
+#print(a | b)           #error set and list can't be concatenated with |
+#print(b . union(a))    #error, list class do not have union method
+#print(a + b)           #error, set's cant be concatenated with +
