@@ -111,11 +111,11 @@ print({{}})                        # Error: unhashable type: 'set'
  # How  to  print  set  in  differnet ways  (Home  work)
 a = {25 , True , 'Hyd' , 10.8}
 print('set  with  print  function')
-print(a)
+print(a)   #{25,True,"Hyd",10.8}
 print('Iterate  elements  of  set  with  for  loop')
 
 for  x  in  a:
-   print(x)
+   print(x)     #print the set in order of set(a)
 How  to  iterate  set  with  for  loop
 
 #**************************************************************************
@@ -137,18 +137,18 @@ print(type(s))          # <class 'set'>
 s = {'Hyd',  25,  True,  10.8 }
 print(s)                 # {'Hyd',  25,  True,  10.8 } order may change
 a , b , c , d = s 
-print(a)               #any element from set because set is unordered
-print(b)              #any element from set because set is unordered                      
-print(c)              #any element from set because set is unordered
-print(d)          #any element from set because set is unordered
+print(a)               #print the a in order of set(s)
+print(b)              #print the element in order of set(s)                      
+print(c)              #print the element in order of set(s)
+print(d)          #print the element in order of set(s)
 
 #**************************************************************************
 
 # Find  outputs  (Home  work)
 s = {'Hyd',  25,  True,  10.8 }
 print(s)              # {'Hyd',  25,  True,  10.8 } order may change
-a , *b = s                   # a=any element from set because set is unordered, b=list of remaining elements
-print(a)                    #any element from set because set is unordered
+a , *b = s                   # a=print the element in order of set(s), b=list of remaining elements
+print(a)                    #print the element in order of set(s)
 print(b)                   #list of remaining elements
 print(type(b))             #<class 'list'>
 
@@ -157,17 +157,17 @@ print(type(b))             #<class 'list'>
 s = {'Hyd',  25,  True,  10.8 }
 print(s)                         # {'Hyd',  25,  True,  10.8 } order may change
 a , *b , c = s                   # a=any element from set because set is unordered, c=any element from set because set is unordered, b=list of remaining elements
-print(a)                         #any element from set because set is unordered
+print(a)                         #print the element in order of set(s)
 print(b)                       #list of remaining elements                                                  
-print(c)                       #any element from set because set is unordered
+print(c)                       #print the element in order of set(s)
 
 #***************************************************************************
 #  # Find  outputs  (Home  work)
 s = {20 , 10 , 20 , 10}
 print(s)                   # {10 , 20}
-x , y = s               # x=any element from set because set is unordered, y=any element from set because set is unordered
-print(x)              # any element from set because set is unordered
-print(y)             # any element from set because set is unordered
+x , y = s               # x=print the element in order of set(s), y=print the element in order of set(s)
+print(x)              # print the element in order of set(s)
+print(y)             # print the element in order of set(s)
 
 #***************************************************************************
 #  # set()  function  demo  program  (Home  work)
