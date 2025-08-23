@@ -1,0 +1,301 @@
+# Find  outputs
+a = 'Sankar Dayal Sarma'
+print(a[7 : 12])--------->'Dayal'
+print(a[7 : ])----------->'Dayal sarma'
+print(a[ : 6])------------>'sankar'
+print(a[ : ])  #  a[ 0 :  18  : 1]  --->   string  from  indexes  0  to  17  in  steps  of   1  i.e.  Sankar<space>Dayal<space>Sarma
+print(a[:  : ])----->slice step cannot be zero
+print(a[1 : 10 : 2])------>'akdryl'
+print(a[0 : : 2])---------->'SnkrDylSr'
+print(a[1 : : 2])---------->'akrdylsra'
+print(a[-5 : -1])---------> 'Sarm'
+print(a[::-1])--------->'amraS lay aD raknaS'
+print(a[-1:-5:-1])-------> 'amra'
+print(a[ : : -2]) #   a[-1 :  -19 : -2]  --->  string  from  indexes  -1  to  -18  in  steps  of   -2  i.e.  arSlyDrka
+print(a[3 : -3])------->'kar Dayal Sa'
+print(a[2 : -5])--------> 'nkar Dayal'
+print(a[-1:-5])--------->empty string becoz n step mentioned.
+print(a[3 : 3])-------->'empty string becoz stop and start same
+
+
+#   0      1      2      3      4       5       6           7       8       9     10     11     12           13     14       15      16     17
+#   S      a      n      k      a       r                    D       a       y      a       l                     S       a         r       m       a
+#  -18   -17   -16   -15    -14   -13    -12        -11     -10    -9     -8    -7      -6          -5      -4       -3      -2      -1
+
+
+
+#  Find  outputs  (Home  work)
+a =  'A'
+print(a[1])------>IndexError: string index out of range
+print(a[1:])------->(empty string)
+
+
+
+
+
+
+# int()  function  demo  program
+print(int(10.8))  #  Converts  float   object  10.8  to  int  object  10
+print(int(True))  #  Converts  bool   object    True  to  int  object 1
+print(int(False))-----> converts  bool object False to int object 0 
+print(int('25'))-------> String '25' → 25 (valid integer string)
+print(int('0075'))------>75 (leading zeros allowed in strings)
+print(int(0B11010))------->(1*2^4+1*2^3+0*2^2+1*2^1+0*2^0)=16+8+0+2+0=26
+print(0B11010)------->(1×16) + (1×8) + (0×4) + (1×2) + (0×1) = 16 + 8 + 0 + 2 + 0 = 26
+print(int(0O6247))----->6×8³ + 2×8² + 4×8¹ + 7×8 =6×512 + 2×64 + 4×8 + 7×1=3072+128+32+7=3239
+print(0O6247)-------->3239
+print(int(0XA7B9))----->10*16^3+7*16^2+11*16^1+9*16^0=40960+1792+176+9=42937
+print(0XA7B9)------>42937
+print(int(3 + 4j))--------> Can't convert complex to int
+print(int('25.4'))-------->error becoz '25.4' contains a decimal point, Python cannot convert it directly to int from a string.
+print(int('Ten'))-------->Error: 'Ten' is not a numeric string
+
+
+
+
+# complex()  function  demo  program
+print(complex(3 , 4))---->(3+4j)
+print(complex(0 , 4))---->4j
+print(complex(3))----->(3+0j)
+print(complex(3.8 , 4.6))-------->(3.8+4.6j)
+print(complex(3.8))----->(3.8+0j)
+print(complex(3 , 4.5))------>(3+4.5j)
+print(complex(True , False))-------->(1+0J)
+print(complex(True))------->(1+0j)
+print(complex(False))------>0
+print(complex(True , 4))----->(1+4j)
+print(complex('3'))------->(3+0j)
+print(complex('3.8'))------>(3.8+0j)
+print(complex(3 , '4'))------> **TypeError**: second argument must be a real number
+print(complex('3' , 4))------->error complex() can't take string as first argument if second is provided
+print(complex('3' , '4'))------>**TypeError**: both arguments can't be strings
+print(complex('Ten'))----------> **ValueError**: invalid literal for complex(): 'Ten'
+
+
+
+
+
+
+
+
+
+
+
+
+#  bool()  function  demo  program
+print(bool(0)) #   False
+print(bool(10)) #   True :  10  is  non-zero
+print(bool(-25))---->True → non-zero negative integer
+print(bool(0.0))---->False → 0.0 is falsy
+print(bool(0.1))---->True → non-zero float
+print(bool(0 + 0j))------>False → zero complex number
+print(bool(10 + 20j))-----> True → non-zero complex number
+print(bool(-15j))----->True → non-zero imaginary part
+print(bool('False'))------>True → non-empty string (content doesn't matter
+print(bool(''))----->False → empty string
+print(bool('Hyd'))--------->True → non-empty string
+print(bool(' '))------------>True → non-empty string (even just a space!)
+print(bool('True'))----------->.True → non-empty string
+
+
+'''
+bool()  function
+------------------
+1) What  does  bool(x)  do  ?  --->  Converts  object  'x'  to  True / False
+
+2) Is  0  True  (or)  False ? --->  False
+    What  about  non-zero ?  --->  True
+
+3) Is  ''(i.e.  Empty  string)  True  (or) False ?  --->  False
+    What  about  non-empty  string ?  --->	True
+
+4) When  is  x + yj  treated  as  False ?  --->  When  both  'x'  and  'y'  are  zeroes
+     When  is  x + yj  treated  as  True ?  --->  When  either  'x'  is   non-zero  (or)  'y'  is  non-zero
+'''
+
+
+
+
+
+
+
+
+
+
+# str()  function  demo  program
+print(str(25))  #  Converts   25  to  '25'
+print(str(10.8))------>Converts float 10.8 to string → '10.8'
+print(str(3 + 4j))-------->(3+4j)
+print(str(True))------->True
+print(str(False))---------->Flase
+print(str(None))------>None
+
+
+'''
+What  does  str(x)  do ?  --->  Converts  object  'x'  to  string
+'''
+
+
+
+
+
+
+# oct()  function  demo  program
+print(oct(195))---->0o303
+print(oct(0B10101110010))---->0o2572
+print(oct(0xA7B9))------> Hex 0xA7B9 = 42937 (decimal) → Octal: 0o122771
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+oct()  function
+-----------------
+1) What  does  oct(x)  do ?  --->  Converts  object  'x'  to  octal  number  where
+								                    'x'  can  be  binary / decimal / hexa-decimal  number
+
+
+
+
+
+
+
+
+
+
+
+# hex()  function  demo  program
+print(hex(25))---->0x19
+print(hex(0B10101111010111))----->0x33e1
+
+print(hex(0O6247)----->error becoz yours missing a closing paranahis )
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+hex()  function
+------------------
+1) What  does  hex(x)  do ?  --->  Converts  object  'x'  to  hexa-decimal  number  where
+								                     'x'  can  be  binary / decimal / octal  number
+
+#  Find  outputs  (Home  work)
+a = "Rama Rao"
+print(a)---->Rama Rao
+print(type(a))----><class 'str'>
+print(id(a))--->memory address (object ID) of the string a.
+b = 'Hyd'
+print(b)----->HYD
+c = '''Hyd is green city.
+Hyd is hitec city.
+Hyd is beautiful city.'''
+print(c)---->Hyd is green city.
+Hyd is hitec city.
+Hyd is beautiful city.
+
+
+
+
+# Index   demo  program  (Home  work)
+a = 'Hyd'
+print(How  to  print  'H'  of  object  'a')--------->H
+print(How  to  print  'y'  of  object  'a')--------->Y
+print(How  to  print  'd'  of  object  'a')-------->D
+print(a[3])--->Error: IndexError: string index out of range
+print(How  to  print  'd'  of  object  'a')------->d
+print(How  to  print  'y'  of  object  'a')------->y
+print(How  to  print  'H'  of  object  'a')------->h
+print(a[-4])------> string index out of range
+print(a[0] ==  a[-3])---------->True
+a[2] = 'c'------->TypeError: 'str' object does not support item assignment
+print(25[0])----->TypeError: 'int' object is not subscriptable
+print('25'[0])---->2
+print(True[1])--->'bool' object is not subscriptable
+print('True'[1])--->'r'
+
+e
+
+
+
+
+#  Find  outputs  (Home work)
+a = 'Hyd'
+print(a * 3)---->hyd hyd hyd 
+print(a * 2)--->HydHydHyd 140242487013072
+hyd hyd
+print(a * 1)-->hyd
+print(a * 0)--->empty line
+print(a * -1)---->empty line
+print(25 * 3)------>75
+print('25' * 3)----->25 25 25
+print('25' * 4.0)--->TypeError: can't multiply sequence by non-int of type 'float'
+print(3 * 'Hyd')------>hyd hyd hyd 
+print('25' * True)----->25
+
+
+
+
+
+
+
+
+
+
+
+#  Find  outputs  (Home work)
+a = 'Hyd'
+print(a , id(a))------>Hyd 140242487012464
+a = a * 3------->'hyd hyd hyd'
+print(a , id(a))---->HydHydHyd 140242487013072
+
+
+# len()  function  (Home  work)
+print(len('Hyd'))----->3
+print(len('Rama Rao'))---->8
+print(len('9247'))---.4
+print(len(''))------>0
+print(len(' '))----->1
+print(len(689))----->error int has no length 
+
+
+
+# Find  outputs  (Home  work)
+a = """"Hyd"""
+print(a)--->hyd
+print(len(a))--->3
+print(a[0])--->h
+print("""Hyd"""")----->hyd
+b = """""Hyd"""
+print(b)----->hyd
+print(len(b))----->3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
