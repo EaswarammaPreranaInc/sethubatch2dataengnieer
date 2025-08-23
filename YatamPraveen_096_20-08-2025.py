@@ -378,3 +378,21 @@ Output :  30
 lst = sorted(eval(input('Enter the list : ')))
 ip2 = int(input('Enter the number of largest input : '))
 print(lst[-ip2])
+
+
+
+
+
+'''
+Write  a  program  to  sort a  list  without  using  sorted()  function  and  sort()  method
+
+Input :  [10,20,30,25,40,35,12,5]
+Output :  [5,10,12,20,25,30,35,40]
+'''
+
+ip1, ip2 = eval(input('Enter the list : ')), []
+while ip1:
+    min_el = min(ip1)
+    ip2.append(min_el)
+    ip1.remove(min_el)
+print(ip2)    
