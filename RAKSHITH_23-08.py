@@ -199,4 +199,4 @@ print(a + b)        # Error + operator arguments should be the same
 '''
 a=5
 b=4
-print(a | b)
+print(a | b)	# 5
