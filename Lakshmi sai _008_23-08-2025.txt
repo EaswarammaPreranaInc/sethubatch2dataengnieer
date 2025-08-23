@@ -1,0 +1,113 @@
+Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)                 
+print(a)                                 # {25 , 10.8 , 'Hyd' , True}
+print(id(a))                             #  memory address
+a . add(tpl)                             # tuple is immutable
+a . add('Sec')                            # string is immutable
+print(a)                                 # {True,10.8,25,'Hyd',(10.20,30),'Sec}
+print(id(a))                             # same memory address
+print(len(a))                            # 6
+a . add([100 , 200 , 300])                # error becuase,list is mutable
+a . add(set())                            #error set is mutable
+a . add({ })                              #error dict is mutable
+
+
+
+ Find  outputs (Home  work)
+s = set()                                     # empty set             
+tpl = (10 , 20 , 15 , 18)                     # tuple
+s . add(tpl)                                  # tuple is imutable , set as a single element
+print(s)                                      # {(10,20,15,18)}
+print(len(s))                                 # 1
+
+
+ update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)                    # tuple as a duplicate values
+s = set()                                             # empty set
+s . update(tpl)                                       # {10,20,15,18}
+print(len(s))                                         # 4
+print(s)                                              # {10,20,15,18}
+s . update(25)                                        # error 25 is not a sequence
+
+
+Find  outputs  (Home  work)
+a = [10 , 20 , 30]                                    # list
+b = {30 , 40,50 }                                     # set
+c = (50 , 60 , 70)                                     # tuple
+s = set()                                              # empty set
+s . update(a , b , c)                                  # {10,20,30,40,50,60,70}
+print(s)                                                #{10,20,30,40,50,60,70}
+print(len(s))                                           # 7
+s . add(a , b , c)                                      # error set takes only argument
+
+
+
+# Find  outputs  (Home  work)
+a = set()                                            # EMPTY SET
+a . update('Rama Rao')                               # Remove duplicate values {'R',}
+print(a)                                             # {'R','a','m',' ','o'} 
+  print(len(a))                                      # 5                                                                                               
+a . update(3 + 4j , 10.8 , True)                     # {'R','a','m',' ','o',3 + 4j , 10.8 , True}        
+
+           
+           
+           
+            copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}                                 # ORGINAL SET
+print(a)                                                # {10 , 20 , 15 , 18}  
+b = a . copy()                                          # new set b ,because same elements
+print(b)                                                # {10 , 20 , 15 , 18} 
+print(a  is  b)                                         # false because b is new object
+print(a  ==  b)                                         # true elements are same
+c = a                                                   # set points to same object
+print(a  is  c)                                         # True 
+
+
+
+ pop()  method  demo  program  (Home  work)
+a = {25,10.8,'Hyd',True}                                # set
+print(a)                                                # {25,10.8,'Hyd',True}
+print(a . pop())                                        # removes and returns one random element from the set
+print(a . pop())                                         # empty set
+print(a . pop())                                          # empty set
+print(a . pop())                                          # empty set
+print(a . pop())                                          #  empty set
+print(a)                                                   #  empty set
+b = {10 , 20 , 30 , 40}                                    # set
+print(b . pop(2))                                           # error because pop does not take no arguments
+
+
+# remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}                                   # set
+print(a)                                                         # {25 , 10.8 , 'Hyd' , True}  
+a . remove('Hyd')                                                #{25 , 10.8 , True}  
+print(a)                                                         #{25 , 10.8 , 'Hyd' , True}  
+a . remove('Sec')                                                # error because 'Sec' not in sequence
+
+ discard()  method  demo  program (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}                                     # set
+print(a)                                                           #{25 , 10.8 , 'Hyd' , True}   in any order
+a . discard('Hyd')                                                 # {25 , 10.8 , True}  
+print(a)                                                           # {25 , 10.8 , 'Hyd' , True}  
+a . discard('Sec')                                                 # error 'Sec' not in sequence
+print(a)                                                           #{25 , 10.8 , 'Hyd' , True}  
+a . remove('Sec')                                                  # error 'Sec' is not present in set
+
+
+
+ clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}                                          # set
+print(a)                                                         # {10 , 20 , 15 , 18}  
+a . clear()                                                      # remove all elements empty set
+print(a)                                                         # empty set
+print(len(a))                                                    # 0
+
+ Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}                                         # set
+b = [30 , 40 , 50 , 60]                                         # list
+print(a . union(b))                                             # set with all union elements {10 , 20 , 30 , 40,50,60}       
+print(a | b)                                                    # error because b is list not set
+print(b . union(a))                                             # error because  b is list and list do not have union method
+print(a + b)                                                    # error sequence but not for set
+
