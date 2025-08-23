@@ -195,7 +195,7 @@ print(y) # Output: 20
 
 a = range(100 , 151 , 10)
 b = set(a) # range object is converted to set
-print(b) # Output: {100,110,120,130,140}
+print(b) # Output: {100,110,120,130,140,150}
 c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18]
 d = set(c) # list object is converted to set 
 print(d) # Output: {10, 12, 15, 18, 50, 20}
