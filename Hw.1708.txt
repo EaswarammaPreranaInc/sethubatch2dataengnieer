@@ -1,0 +1,280 @@
+1
+# What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True]   (Home  work)
+a = input('Enter  list  :  ')	#[25 , 10.8 , 'Hyd' , True] 
+print(type(a))		#<class str>
+print(a)			# [25 , 10.8 , 'Hyd' , True]
+b = eval(a)		# assigns the eval(a) to the object b		
+print(b)			# [25 , 10.8 , 'Hyd' , True]
+print(type(b))		# <class list>
+
+2
+#  Find  outputs (Home  work)
+a = [10, 20, 15, 18]		# reference a points to the list  object [10, 20, 15, 18]
+b = a			# assigns the a to the b
+print(a  is  b)		# True
+print(a  ==  b)		# True
+b[2] = 12			#  assigns the 12 in list at b[2]
+print(a)			# [10, 20, 12, 18]
+
+3.
+
+#  Find  outputs  (Home  work)
+a = [10 , 20 , 15 , 18]		# refernce a points to the list object i.e. [10 , 20 , 15 , 18]
+b = [100 , 200 , 150]		# refernce b points to the list object i.e. [100 , 200 , 150]
+print(a + b)		#[10 , 20 , 15 , 18, 100 , 200 , 150]
+print(a + 5)		#Error due can't concatenate list to non list
+print(a + '5')		#Error due can't concatenate list to non list
+print([10 , 20] + (30 , 40))	#Error due can't concatenate list to non list
+
+4
+
+#  Tricky  program
+#  Find  outputs
+a = [1,2,3]		#reference a points to the list object i.e.  [1,2,3]
+b = [4,5,6]		#reference b points to the list object i.e.  [4,5,6]
+print(a , id(a))	# [1,2,3]  1000(say)	
+a += b		#a=a+b
+print(a , id(a))	# [1,2,3,4,5,6]  1000(same address)
+
+5.
+#  Tricky  program
+#  Find  outputs
+a = [1,2,3]		#reference a points to the list object i.e.  [1,2,3]
+b = [4,5,6]		#reference b points to the list object i.e.  [4,5,6]
+print(a , id(a))	# [1,2,3]  1000(say)
+a  = a + b		# concatenate the a ,b list  and assigns the [1,2,3,4,5,6]		
+print(a , id(a))	# [1,2,3,4,5,6]  1000(same address)  
+
+6
+# List  packing
+a = 25		#assigns the reference a points to the int object 25
+b = 10.8		#assigns the reference b points to the float object 10.8
+c = 'Hyd'		#assigns the reference c points to the str object  Hyd
+d = True		#assigns the reference d points to the bool object  True
+e = [a , b , c , d]	# assigns the list of a,b,c,d to the e
+print(e)		#[25, 10.8, 'Hyd', True]
+print(type(e))	#<class list>
+
+7.
+# Find  outputs
+list = [25 , 10.8 , 'Hyd' ,  True]		#refernce list points to the object list  i.e. [25 , 10.8 , 'Hyd' , True ]
+a , *b , c = list			# assigns the list to object a, *b, c
+print('a : ' , a)  			#  a :  25		
+print('b : ' , b) 			#  b : [10.8 , 'Hyd']
+print('c : ' , c) 			#  c :  True
+print(type(b))			# <class list>
+x , *y = list			# assigns the list to object x, *y
+print('x : ' , x)			#x: 25
+print('y : ' , y)			#y: [10.8, 'Hyd', True]
+*p , q = list			#assigns the list to the object *p, q
+print('p : ' , p)			#p: [25, 10.8, 'Hyd']
+print('q : ' , q)			#q: True
+
+
+8
+# Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]		#refernce list points to the object list  i.e. [25 , 10.8 , 'Hyd' , True ]
+a , b , c , d , e = list			#  few elements in the list there is no enough values for unpack
+a , b , *c , d , e = list			# few elements in the list there is no enough values for unpack
+print('a : ' , a)			# Error a is not found there is no a		
+print('b : ' , b)			#Error b is not found there is no b
+print('c : ' , c)			#Error c is not found there is no c
+print('d : ' , d)			#Error d is not found there is no d
+print('e : ' , e)			#Error e is not found there is no e
+a , b , *c , d , e , f = list		#few elements in the list there is no enough values for unpack
+
+9.
+# Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]		#refernce list points to the object list  i.e. [25 , 10.8 , 'Hyd' , True ]
+a , b , _  , d = list			#assigns the list to the object a,b,_,d
+print('a : ' , a)			# a: 25
+print('b : ' , b)			#b: 10.8
+print('_ :  ' , _)			#_: Hyd
+print('d : ' , d)			#d: True
+
+10.
+# Find  outputs (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]	#refernce list points to the object list  i.e. [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b , a , d , a = list			#assigns the list to the object a,b,a,d,a
+print('a : ' , a)			#a:  3+4j
+print('b : ' , b)			#b: 10.8
+print('d : ' , d)			#d: True
+
+11.
+#  Tricky  program
+# Find  outputs (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]	#refernce list points to the object list  i.e. [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b ,  _ , d , _  = list			#assigns the list to the object a,b,_,d_
+print('a : ' , a)			#a: 25
+print('b : ' , b)			#b: 10.8
+print('_ : ' , _)			#_: 3+4j  due to namesless object has to only one if we have more than 1 first value del
+print('d : ' , d)			#True
+print('_: ' , _)			#_: 3+4j
+
+12.
+# Identify  error (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , *b , c , *d , e  = list		# multiple *expressions in the assignment  and * is preferred at last of exp
+
+13.
+# Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]   #  Nested  list
+a , b , c = list	#assigns the list to the a,b,c
+print('a :  ' , a)	#a: [25 , 10.8]
+print('b :  ' , b)	#b: Hyd
+print('c :  ' , c)	#c: True
+	
+14
+
+# Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]		# refernce list points to the nested list object
+[a , b] , c , d = list			#assigns the list to the [a,b],c,d objects		
+print('a : ' , a)			#a: 25
+print('b : ' , b)			#b: 10.8
+print('c : ' , c)			#c: Hyd
+print('d : ' , d)			#d: True
+a , b , c , d = list			#Error due to the few elements in the list
+
+15
+
+# Comparing  Lists
+a = [10 , 20 , 15 , 18]		# refernce a points to the list object  i.e.[10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]		# refernce b points to the list object  i.e.[10 , 20 , 15 , 18]
+c = [10 , 20 , 25 , 9]		# refernce c points to the list object  i.e.[10 , 20 , 25 , 9]
+d = [10 , 20 , 7 , 22]		# refernce d points to the list object  i.e.[10 , 20 , 7 , 22]
+print(a == b)		#True
+print(a  is   b)		#False
+print(a < c)		#True
+print(a > d)		#True
+print(a >= c)		#False
+print(a <= d)		#False
+print(a != c)		#True
+print(a != b)		#False
+print(a == c)		#False
+
+16.
+# Comparing  Lists  (Home  work)
+a = [10 , 20 , 15 , 18]		# refernce a points to the list object  i.e.[10 , 20 , 15 , 18]
+b = [20 , 18 , 15 , 10]		# refernce b points to the list object  i.e.[20 , 18 , 15 , 10]
+print(a == b)		# False
+print(a  is   b)		#False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,465 @@
+1
+
+
+# Find  outputs  (Home  work)
+m = 4              # assign ref m to object
+match  m:          
+	case  1:
+		print('One')
+	case  2:
+		print('Two')
+	case  3:
+		print('Three')
+print('Bye')                           # Bye
+
+
+
+2
+
+ # Identify  Error
+i = 2
+match  i:
+	case  1:
+		print('One')
+	case  _:
+		print('None of   the  above')     # Error due to case_ write at last
+	case  2:
+		print('Two')
+print('Bye')
+
+
+
+3
+
+ # Find  outputs  (Home  work)
+m = 2
+match  m:
+	case  1:
+		print('One')
+	case  _:
+		print('Hello')           # Error
+	case  _:
+		print('Bye')
+print('End')
+
+
+
+4
+
+#  Find  outputs  (Home  work)
+m = 1
+match  m:
+	case  1:
+		print('Hyd')  # Hyd
+	case  1:
+		print('Sec')
+	case  1:
+		print('Cyb')
+print('Bye')                    # Bye
+
+
+
+5
+
+ # Find  outputs  (Home  work)
+ch = 'B'
+match  ch:
+	case   'A':
+		print('Apple')
+	case  'B':
+		print('Book')        # Book
+	case  'C':
+		print('Cafe')
+	case  _:
+		print('None of  the  above')
+print('Bye')                                   # Bye
+
+
+
+
+6
+
+'''
+1) What  are  the  outputs  if  input  is  -6 ? --->         # Hyd <next line> Sec <next line> Cyb <next line> Bye
+2) What  are  the  outputs  if  input  is  15  ?  --->       # One <next line> Two <next line> Three <next line> Bye
+3) What  are  the  outputs  if  input  is  10.8  ?  --->     # India <next line> China <next line> Usa <next line> Bye
+4) What  are  the  outputs  if  input  is  0  ?  --->        # Hyd <next line> Sec <next line> Cyb <next line> Bye
+5) What  are  the  outputs  if  input  is  -10  ?  --->      # One <next line> Two <next line> Three <next line> Bye
+6) What  are  the  outputs  if  input  is  7  ?  --->        # Hyd <next line> Sec <next line> Cyb <next line> Bye
+'''
+x = eval(input('Enter any  number :  '))
+match  x:
+	case  7 |  -6  |  0:
+		print('Hyd')
+		print('Sec')
+		print('Cyb')
+	case  -10 | 15:
+		print('One')
+		print('Two')
+		print('Three')
+	case  _:
+		print('India')
+		print('China')
+		print('Usa')
+# End  of  match
+print('Bye')
+
+
+
+7
+
+'''
+1) What  is  the  output  when  input  is  (-10 , -20) ?  --->     #  Quadrant
+2) What  is  the  output  when  input  is  (10 , 0) ?  --->        # x-axis
+3) What  is  the  output  when  input  is  (0 , -20) ?  --->       # y-axis
+4) What  is  the  output  when  input  is  (0 , 0) ?  --->         # Origin
+5) What  is  the  output  when  input  is  (10 , 20 , 30) ?  --->  # Not a point
+6) What  is  the  output  when  input  is  [10 , 20]  ?  --->      # Quadrant
+7) What  is  the  output  when  input  is  [0 , -25]  ?  --->      # y-axis
+8) What  is  the  output  when  input  is  ()  ?  --->             #  Not a point
+9) What  is  the  output  when  input  is  {10 , 20} ?  --->       # Quadrant
+10) What  is  the  output  when  input  is  (25,) ?  --->          # x-axis
+11) What  is  the  output  when  input  is  {10 : 20} ?  --->      # Not a Point
+'''
+tpl = eval(input('Enter  any  point  in  the  form  of  (x , y) :  '))
+match  tpl:
+	case  (0 , 0):              
+		print('Origin')
+	case   (0 , y):
+		print('y - axis')
+	case   (x , 0):
+		print('x - axis')
+	case   (x , y):
+		print('Quadrant')
+	case  _:
+		print('Not  a  point')
+
+
+
+
+8
+
+'''
+Write  a  program  to  determine  bill  amount  and  input  is  units
+
+Units                                                      Cost
+------------------------------------------------------------
+First  100  units(0 - 99)					Rs. 3.00 / unit
+
+Next  100  units(100 - 199)				Rs. 3.50 / unit
+
+Next  200  units(200 - 399)		    	Rs. 4.00 / unit
+
+Next  300  units(400 - 699)				Rs. 4.50 / unit
+
+Above  700  units(>= 700)				Rs. 5.00 / unit
+---------------------------------------------------------------
+Let  units  be  1200
+What  is  the  bill  amount ? --->  100 * 3.00 + 100 * 3.50 + 200 * 4.00 + 300 * 4.50 + 500 * 5.00
+
+Hint:  Use  match  ...  case   but  not  if ... else
+'''
+units = int(input('Enter  units :   '))  #  75
+match  units // 100:
+	case  0:
+				cost = units * 3.00
+
+output:
+-------
+a = int(input('Enter  units :   '))  #  75
+match  a // 100:
+		case 0:
+			cost = a * 3.00
+		case 1:
+			cost = (100 * 3.00) + ((a-100) * 3.50)
+			print('case 1')
+		case 2 | 3 :
+			cost = (100 * 3.00) + (100 * 3.50) + ((a-200) * 4.00)
+			print('case 2 or 3')
+		case 4 | 5:
+			cost = (100 * 3.00) + (100 * 3.50) + (200 * 4.00) + ((a-400) * 4.50)
+			print('case 4 or 5')
+		case _:
+			cost = (100 * 3.00) + (100 * 3.50) + (200 * 4.00) + (300 * 4.50) + ((a-700) * 5.00)
+			print('last case')
+print(cost)
+
+
+
+9
+
+'''
+Write  a  program  to  print  fibonacci  series  upto   x
+
+Let  input  be   10
+What  are  the  outputs  ?  --->   0 , 1 ,  1 , 2 ,  3 ,5 , 8
+
+
+1) What  is  the  formula  for  10th  term ?  ---> 9th  term + 8th  term
+    What  is  the  formula  for   3rd  term ?  ---> 	2nd  term + 1st  term
+    What  is  the  formual  for  ith  term ?  --->  (i - 1)th  term +  (i - 2)  term
+
+2) What  are  the  first  two  terms ?  --->  0  and  1  (No  formula)
+
+3) Hint:  Use  while  loop
+'''
+
+Output:
+-------
+
+x=eval(input('Enter 1st  integer  number :  '))
+a,b= 0,1
+c = a + b
+print(a,b, sep='\n')
+while c<x:
+     a = b
+     b = c
+     print(c)
+     c = a + b
+
+
+Enter  value  of  x  :  10
+Fibonacci  Series
+0
+1
+1
+2
+3
+5
+8
+
+
+
+
+11
+
+ #  Find  outputs
+while  True:
+	print('Hello')    # Hello <next line> Hello Infinite
+print('Bye')
+
+
+
+12
+
+ #  Find  outputs
+while  False:
+	print('Hello')
+print('Bye')            # Bye
+
+
+
+13
+
+ # Find  outputs  (Home  work)
+How  to  print  each  element  of  list  [10 , 20 , 15 , 18]  with  for  loop
+             #  for x in ([10 , 20 , 15 , 18]):
+                   print(x)
+
+
+How  to  print  each  character  of   string  'Hyd'  with  for  loop
+# for x in ('Hyd'):
+      print (x)
+
+
+
+How  to  print  each  element  of   range(5)  with  for  loop
+
+ # for i in range(5):
+     print (i)
+
+
+
+14
+
+# Find  outputs  (Home  work)
+for  x  in  {10 : 20 , 30 : 40 , 50 : 60} . keys(): 
+	print(x)                                     # 10 <next line> 30 <next line> 50
+print()
+
+for  x  in  {10 : 20 , 30 : 40 , 50 : 60} . values(): # 
+	print(x) 					#20 <next line> 40 <next line> 60
+
+print()
+for  x  in  {10 : 20 , 30 : 40 , 50 : 60} . items():
+	print(x)					# 10:20 <next line> 30:40 <next line> 50:60
+print()
+for  x  in  {10 : 20 , 30 : 40 , 50 : 60}:
+	print(x)                                       # 10:20 <next line> 30:40 <next line> 50:60
+
+
+
+15
+
+ # Find outputs  (Home  work)
+a = {10 : 20 , 30 : 40 , 50 : 60}
+for  x , y  in   a . items():
+	print(x , y , sep = '...')   # 10...20 <next line> 30...40 <next line> 50...60
+for  x ,  y  in   a:
+	print(x , y                       #  Error due to ) missing
+for  x , y  in  {10 : 20 , 30 : 40 , 50 : 60}: 
+	print(x , y , sep = '...')                  # 10:20 <next line> 30:40 <next line> 50:60
+
+
+
+16
+
+# Identify  error  (Home  work)
+for  x  in   123:
+        print(x)               # Error due to 123 is not sequence
+
+
+
+
+17
+
+ # Find  outputs  (Home  work)
+for  x   in   ():
+        print(x)
+for  x   in  []:
+        print(x)
+for  x   in   {}:
+        print(x)
+for  x   in   set():
+        print(x)
+for  x   in   '':
+        print(x)
+for  x  in  range(10 , 10):
+	print(x)
+for  x  in   range():   # Error due to range not enter
+	print(x)
+for  x  in   (25):      # Error due to non-sequence 
+	print(x)
+
+
+
+
+18
+
+ #  Nested  Loop  demo  program
+for  i  in  range(1 , 4):
+	for  j  in  range(1 , 5):
+			print(i ,  j)  
+	print('Hello')
+print('Bye')
+
+#   1 1 <next line> 1 2 <next line> 1 3 <next line> 1 4 <next line> Hello <next line> 2 1 <next line> 2 2 <next line> 2 3 <next line> 2 4 <next line> Hello <next line> 3 1 <next line> 3 2 <next line> 3 3 <next line> 3 4 <next line> Hello <next line> Bye
+
+
+
+
+19
+
+# How  to  print  each  element  and  the  corresponding  index
+a = [25 , 10.8 , 'Hyd' , True]
+print('Indexed  based  for loop')
+
+a=[25 , 10.8 , 'Hyd' , True]
+for i in range(len(a)):
+      print(a[i])
+How  to  print  each  element  and  the  corresponding  index  with  index  based  for  loop
+
+a=[25 , 10.8 , 'Hyd' , True]
+for i in range(len(a)):
+      print(i, a[i])
+
+
+How  to  print  each  element  and  the  corresponding  index  with  for  ...  each  loop (Do  not  use  2nd  variable)
+
+i=0
+for a in ([25 , 10.8 , 'Hyd' , True]):
+      print(i,a)
+      i+=1
+
+
+
+
+20
+
+ #  How  to  print  list  elements  in  reverse  order   without  slice
+a = [25 , 10.8 , 'Hyd' , True]
+print('Indexed for loop')
+
+a = [25 , 10.8 , 'Hyd' , True]
+for i in range(len(a)):
+   print(a[::-1])
+
+How   to  print  each  element  of  list  in  reverse  order  with  indexed  based  for  loop
+a = [25 , 10.8 , 'Hyd' , True]
+for i in range(-1,-len(a)-1,-1):
+print(a[i])
+
+How   to  print  each  element  of  list  in  reverse  order  with  for  each  loop  (Do  not  use  2nd  variable  and  slice)
+for a in a[::-1]:
+	print(a)
+
+
+
+
+21
+
+ '''
+Write  a  program  to  add  two  lists  and  store  results  in  3rd  list
+
+1st  list  --->  [10 , 20 , 15 , 18]
+
+2nd  list  --->  [30 , 40 , 35 , 12 , 100 , 200 , 300]
+
+3rd  list ?  ---> [10 + 30 , 20 + 40 , 15 + 35 , 18 + 12]  =  [40 , 60 , 50 , 30]
+
+Hint:  Use  append()  method
+'''
+a = eval(input('Enter  1st  list  :  '))
+b = eval(input('Enter  2nd  list  :  '))
+c = []
+How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  indexed  based   for  loop
+print('3rd  list : ' , c)
+How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  for  each  loop (Do  not  use  2nd  variable)
+
+output:
+-------
+
+a=eval(input('Enter 1st  integer  number :  '))
+b=eval(input('Enter 1st  integer  number :  '))
+c=[]
+for i in range(len(a)):
+    c.append(a[i]+b[i])
+print(c)
+
+
+
+
+22 
+
+How  to  print  list  elements  from  indexes  2  to  4  without  slice
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+print('Indexed for loop')
+
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+for i in range(2,5,1):
+	print(a[i])
+
+
+How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed  based  for  loop
+for i in range(2,5,1):
+	print(a[i])
+
+How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop   without  using  2nd  variable  and  slice
+a=[25, 10.8, 'Hyd', True, 3 + 4j , None , 'Sec']
+for a in a[2:5:1]:
+	print(a)
+
+
+
+23
+
+ #  Tricky  program
+#  Find  outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+for  i  in  range(len(a)):
+	a[i] +=  1           
+print('a :  ' , a)            # a:[11,21,16,19]
+b = [10 , 20 , 15 , 18]
+for  x  in   b:
+	x += 1
+print('b :  ' ,  b)           # b:[10,20,15,18]

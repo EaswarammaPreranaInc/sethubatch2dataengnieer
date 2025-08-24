@@ -1,0 +1,324 @@
+ 1    # How  to  print  dictionary  in  different  ways
+a  =  {10 : 'Ramesh' ,  20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}	 # reference a points to dict 
+print('Dictionary  with  print  function')                        	#'Dictionary  with  print  function'
+How  to  print  dictionary  with  print()  function               	#print(a)  
+print('Keys  of  dictionary')                                    		 # 'Keys  of  dictionary'
+How  to  print  each  key  of  dict  'a'                    	      	#print(a.keys())
+print('Values  of  dictionary')                                   		#'Values  of  dictionary'
+How  to  print  each  value  of  dict  'a'                        		 #print(a.values())
+print('All  the  tuples  of  dict_items   object')                 	#print(a.items())
+How  to  print  each  tuple  of  the  list  in  dict_items  object  
+print('Elements  of  each   tuple')                                		#print(a.items()) 
+How  to  print  elements  of  each  tuple  in  the  list  of  dict_items  object
+print('Keys  and  values  of  dictionary')                        	  #print(a.items())
+How  to  print  each  key  and  corresponding  value  in  dict  'a'
+
+
+
+2
+
+#  Find  outputs (Home  work)
+a = {                                  		#refernce a points to set object
+		print('Hyd') ,         	# prints the "Hyd'
+		print('Sec') ,         	#prints the 'Sec'
+		print('Cyb')            	#prints the "cyb"
+	}
+print(type(a))                         		# class set
+print(a)                               		#{none}  due to set printb statements are execute and returns none
+print(len(a))                           		#1   due duplicates are not allowed
+
+
+
+
+3
+
+#  Anonymous  object  demo  program
+_ = 25                                	# anonymous object will be created
+print(_)                              	#25
+print(type(_))                       	 #class int 
+a , _ , c = 10 , 20 , 30              	#references a,_,c are pionts to int obj 10,20,30
+print(a)                              	#10
+print(_)                             	 #20
+print(c)                              	#30
+for  _  in  range(5):                 	# _ will be indexes start from 0 to 4 in steps of 1
+	print(_ , 'Hello')         #'Hello '
+                                      		#'Hello'
+                                      		#'Hello'
+                                      		#'Hello'
+                                      		#'Hello'
+                                    
+
+4
+
+
+#  Find  outputs
+a = 25             		 # reference a points  to int object 25
+print(id(a))        		#8903500(say)
+a = 35              		# a points the another address    25 will be del  due to no reference
+print(id(a))        		#256321001(  say) 
+
+
+5
+
+
+a = 25.7             	# reference a points  to float object 25.7 
+print(id(a))         	# 4567100(say)
+print(a)             	#25.7
+a = 35.6             	# reference a points another address   and 25.7 object will be del
+print(id(a))         	#25715047(say)
+print(a)             	#35.6
+b = True             	# reference b points to bool object i.e True
+print(id(b))         	#25003
+b = False            	#refernce will be change to another address 
+print(id(b))         	#5612160(say)
+c = None             	#c refernce points to  object none type
+print(id(c))        	#8521330(say)
+c = None             	# c reference points to same object
+print(id(c))         	#8521330(say)   same address  
+
+
+
+6
+
+
+a = 'Hyd'           		# refernce a points to str object i.e 'Hyd'
+print(id(a))        		# 56889 (say)
+a[1] = 'e'          		# error due to str  are immutable
+a = 'Sec'           		# a refrence changes to another address 
+print(id(a))        		#85452( say)
+b = (10 , 20 , 15 , 18)       	# b reference points to tuple object 
+print(id(b))                  	# 5798084(say)
+b[2] = 19                     		# error due to tuple is immutable
+b = (30 , 40 , 35 , 32)       	# refernce b will be changes to new refernce
+print(id(b))                  	#  65442(say)
+c = range(5)                   	# c  reference points to range object  (0,1,2,3,4)
+print(id(c))                   	#   68298( say)
+c[3] = 10                     		# error due to  immutable
+c = range(5)                   	# c  reference points to  same range object  (0,1,2,3,4) 
+print(id(c))                  	#   68298( say)
+
+
+
+7
+
+
+a = 25           	# refernce a points to int object 25             
+b = 25           	# refernce a points to same int object 25   
+print(a  is  b)  	#  True
+c = 'Hyd'        	#  refernce c points str object 'Hyd'
+d = 'Hyd'        	#  refernce c points  same str object 'Hyd'
+print(c  is  d)  	#  True 
+e = False         	# e refernce points to bool object False
+f = False         	# frefernce points  same to bool object False
+print(e  is  f)   	# True 
+g = range(10)      	# g refernce points to range  object range(10)
+h = range(10)      	# h refernce points to range  object range(10)
+print(g  is  h)    	#True
+
+
+
+8
+
+a = [10 , 20 , 15 , 18]   # refernce a points to list object i.e [10,20,15,18]
+b = [10 , 20 , 15 , 18]   # refernce b points to same list object i.e [10,20,15,18]
+print(a  is   b)          # True
+c =  {10 : 20, 30 : 40}   # refernce c points to dict object i.e {10:20,30:40}
+d =  {10 : 20, 30 : 40}   # refernce d points to dict object i.e {10:20,30:40}
+print(c  is  d)           #True
+e = (10 , 20 , 15 , 18)   # refernce e points to tuple object i.e (10,20,15,18)
+f = (10 , 20 , 15 , 18)   # refernce e points to same tuple object i.e (10,20,15,18) 
+print(e  is  f)           # True 
+g = {10 , 20 , 15 , 18}   # refernce d points to set object i.e {10,20,15,18}
+h = {10 , 20 , 15 , 18}    # refernce d points to same set object i.e {10,20,15,18}
+print(g  is  h)           # True
+
+
+9
+
+
+print(10 + 20)                                             # 30
+print(10.8 + 20.6)                                         #31.4
+print(3 + 4j + 5 + 6j)                                     #8+10j
+print(True + False)                                        #1
+print('Hyder' + 'abad')                                    # 'Hyderabad'
+print('Sankar' + 'Dayal' + 'Sarma')                        # 'SankarDayalSarma'
+print('10' + '20')                                         # '1020'
+print([10 , 20 , 30] + [1 , 2 , 3])                        # [10,20,30,1,2,3]
+print((25 , 10.8 , 'Hyd') + (3 + 4j , True , None))        # (25, 10.8, 'Hyd', (3+4j), True, None)
+print({10 , 20} + {30 , 40})                               # Error due to set are not indexed
+print({10 : 'Hyd'} + {20 : 'Sec'})                         # Error due to not supported
+print(range(4) + range(5))                                  # Error due to not supported                    
+print(10 + '20')                                           #   Error due to not supported                              
+print([10 , 20 , 30] + 5)                                    # Error due to not supported 
+print([10 , 20 , 30] + (40 , 50 , 60))                      # Error due to not supported 
+
+
+
+10.
+ 
+print(25 * 3)                         #75
+print(10.8 * 25.6)                    #276.48
+print(True * False)                   #0
+print((3 + 4j) * (5 + 6j))            #(-9+38j)
+print(3 + 4j * 5 + 6j)                #(3+26j)            
+print('25' * 3)                       #'252525'
+print(3 * '25')                       #'252525'
+print('Hyd' * 4)                      #'HydhydHydHyd'
+print([10 , 20 , 15] * 2)             # [10,20,15,10,20,15]
+print((25, 10.8, 'Hyd', True) * 3)    # (25,10.8,'Hyd',True,25,10.8,'Hyd',True,25,10.8,'Hyd',True)
+print([10 , 20 , 15] * 3.0)            #error due to cant multiply with seq and float
+print({10 , 20 , 15} * 2)              #Error due to cant mul with set seq with int
+print({10 : 20 , 30 : 40} * 2)            #Error due to cant mul with dict seq with int
+print([10] * [20])                       #Error due to cant mul with set seq with set
+
+
+11.
+
+print(9.0 / 2)   #   4.5
+print(9 / 2.0)    # 4.5
+print(9.0 / 2.0)  #4.5
+print(9 / 2)      #  4.5
+print(10.5 / 2)   #5.25
+print(10 / 3)    #3.333
+print(10 / 2)    #5.0
+
+
+
+12.
+print(9 // 2)  #   prev  integer  of (4.5) = 4
+print(9.0 // 2)   #prev  integer  with .0 (4.5) = 4.0
+print(9 // 2.0)     #prev  integer  with .0 of (4.5) = 4.0
+print(9.0 // 2.0)    #prev  integer with .0  of (4.5) = 4.0
+print(10.5 // 2)   #prev  integer  of (5.25) = 5.0
+print(10 // 3)      #prev  integer  of (3.33) = 3
+print(10.0 // 3)  #    prev  integer  of  3.33 = 3.0
+print(8.5 // 3)    # prev  integer  of (2.7) = 2.0
+print(18 // 4)     # 4
+print(-18 // 4)    #-5
+print(-(18 // 4))  #-4
+
+
+13.
+
+
+print(9 % 5)     #4
+print(9.0 % 5)   #4.0
+print(9 % 5.0)   #4.0
+print(9.0 % 5.0) #4.0
+print(10.5 % 2)  #   0.5
+print(8.9 % 3)    #2.9000000000000004
+
+
+14.
+
+print(7 / 0)     #Error 
+print(7 // 0)    #Error
+print(7 % 0)     # Error
+
+
+15.
+
+
+print(3 ** 4)    #81
+print(10 ** -2)  #0.01
+print(4 ** 3 ** 2)  #262144
+print(3 + 4 * 5 - 32 / 2 ** 3)   #19.0
+
+
+16.
+
+#  Relational  operators  demo  program (Home  work)
+print(9 >= 5)  #   True :  >  is  satisfied
+print(9 >= 9)   #   True :  =  is  satisfied
+print(9 >= 12)   #  False :  Both  are  not  satisfied
+print(6 <= 8)     #   True :  < is  satisfied
+print(6 <= 6)     #   True :  = is  satisfied
+print(6 <= 4)     #   True :  <  is  satisfied
+print(9 != 7)     #   True :  !=  is  satisfied
+print(6 == 8)     #   False : == not satisfied
+print(True  >  False)    #   True :  >  is  satisfied
+print(3 + 4j == 3 + 4j)    #   True :  == is  satisfied
+print(3 + 4j == 5 + 6j)     #   False:   == is not satisfied
+print(3 + 4j != 5 + 6j)    #   True :  !=  is  satisfied
+print(10 == 10.0)         # True   : == is satisified 
+print(3 + 4j >  3 + 4j)     #error due to not supported
+
+
+17.
+
+
+print('Rama'   >  'Rajesh')  #   True :  'm' > 'j'
+print('Rama'  <  'Sita') #  True : 'R' < 'S'
+print('Hyd'  ==  'Hyd')  # True
+print('Rama'  <=   'Ramana')    #   True  
+print('Rama  Rao'  >=  'Rama')  #True 
+print('Hyd'  != 'Sec')    # True
+print('HYD'  <   'hyd')    # True
+
+
+
+18.
+
+
+print(10 < 20 < 30)  #   True
+print(10 >= 20 < 30)  #   False : 10  is  not  >= 20
+print(10 < 20 > 30)  # False   : 20 is not  > 30
+print(1 < 2 < 3 < 4)   # True 
+print(1 < 2 > 3 > 1)    # False :  2 is not > 3
+print(4 > 3 >= 3 > 2)   # True
+
+
+
+19.
+
+print(True  or  False) #  True
+print(False  or  True) #   True
+print(True  or  True) #  True
+print(False  or   False)   #  False
+print(10  or  20)#  10
+print(0   or  20)  #  20
+print(-25  or  0)  #   -25
+print(''  or  35)  #35
+print(6j  or  'Hyd')  #6j
+print(0.0  or  3 + 4j)   # 3+4j
+print('Hyd'   or   10.8)   # 'Hyd'
+
+
+20.
+
+
+print(not  True) #   False
+print(not  False) #  True
+print(not  25)   # False
+print(not  0)     # True
+print(not  'Hyd')   # False
+print(not  '')      # True
+print(not  -10)     #  False
+print(not  not  'Hyd')   # True
+
+
+21.
+
+i = 10
+i = not  i > 14
+print(i)       #  True
+print(not(6 < 4  or  9 >= 5  and  6 != 6))  #True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

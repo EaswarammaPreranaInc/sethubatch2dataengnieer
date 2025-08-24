@@ -1,0 +1,68 @@
+1.
+
+x = 25        		#reference x points to the int object  25
+y = F'{x}' 		# converts the int type to the string
+print(y)		#25
+print(type(y))	#<class str>
+x = 10.8		#reference x points to the float 10.8 
+y = F'{x}'		# converts the float type to the string
+print(y)		#10.8
+print(type(y))	#<class str>
+x = [10,20,30,40]	# reference x points to the float  [10,20,30,40]
+y = F'{x}'		#converts the list type to the string
+print(y)		#[10,20,30,40]
+print(type(y))	#class str>
+
+2.
+
+a ,  b , c = 25 , 10.8 , 'Hyd'		# refernce a,b,c points to the multiple objects
+print(F'{a}  \t   {b}   \t  {c}')		#25<tab space>10.8<tab space>Hyd
+print(F'a = {a}  \t  b  =  {b}  \t  c  =  {c}')	#a = 25 <tab space>b  = 10.8<tab space>c  = Hyd
+print(F'{a=}  \t   {b=}   \t  {c=}')		#a = 25 <tab space>b  = 10.8<tab space>c  = Hyd
+print(F'{a:}  \t   {b:}   \t  {c:}')		#25<tab space>10.8<tab space>Hyd
+print('a  =  {a}  \t  b  =  {b}  \t  c  =   {c}')	#a  =  {a}  \t  b  =  {b}  \t  c  =   {c}
+print(F'a  =  a  \t  b  =  b  \t  c  =  c')	#a  =  a	b  =  b	c  =  c
+print(F'{x =}  \t   {y =}   \t  {z =}')	#Error
+
+
+
+3.
+
+x = 25
+print(F'{x}')  #  25
+print(F'{{x}}')   #  {x}
+print(F'{{{x}}}')  #   {25}
+print(F'{{{{x}}}}')  #{{x}}
+print(F'{{{{{x}}}}}')  #{{25}}
+print(F'{{{{{{x}}}}}}')#{{{x}}}
+print(F'{{{{{{{x}}}}}}}')#{{{25}}}
+print(F'{{{{{{{{x}}}}}}}}')#{{{x}}}
+
+
+
+
+25
+{x}
+{25}
+{{x}}
+{{25}}
+{{{x}}}
+{{{25}}}
+{{{{x}}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
