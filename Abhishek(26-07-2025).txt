@@ -1,0 +1,443 @@
+
+
+ABHISHEK NARAYANADASU
+26-07-2025 
+HOME WORK 
+
+--------------------------------------------------------------------------------------
+#  Find  outputs  (Home  work)
+
+
+x = 25
+y = F'{x}'
+print(y)                 #25
+print(type(y))           #<class 'str'>
+x = 10.8
+y = F'{x}'
+print(y)                 #10.8
+print(type(y))           #<class 'str'>
+x = [10,20,30,40]
+y = F'{x}'
+print(y)                 #[10,20,30,40]
+print(type(y))           #<class 'str'>
+
+----------------------------------------------------------------------------------------------
+
+#Find  outputs  (Home  work)
+
+
+a ,  b , c = 25 , 10.8 , 'Hyd'
+print(F'{a}  \t   {b}   \t  {c}')                      #25  <tab>   10.8   <tab>  Hyd
+print(F'a = {a}  \t  b  =  {b}  \t  c  =  {c}')        #a = 25  <tab>  b = 10.8  <tab>  c = Hyd
+print(F'{a=}  \t   {b=}   \t  {c=}')                   #a=25  <tab>  b=10.8  <tab>  c=Hyd
+print(F'{a:}  \t   {b:}   \t  {c:}')                   #25  <tab>  10.8  <tab>  Hyd
+print('a  =  {a}  \t  b  =  {b}  \t  c  =   {c}')      #a  =  25  <tab>  b  =  10.8  <tab>  c  =  Hyd
+print(F'a  =  a  \t  b  =  b  \t  c  =  c')            #a  =  a  <tab>  b  =  b  <tab>  c  =  c
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+#  Find  outputs  (Home  work)
+
+
+
+x = 25
+print(F'{x}')  #  25
+print(F'{{x}}')   #  {x}
+print(F'{{{x}}}')  #   {25}
+print(F'{{{{x}}}}')  #     {{x}}
+print(F'{{{{{x}}}}}')  #     {{25}}
+print(F'{{{{{{x}}}}}}') #       {{{x}}}
+print(F'{{{{{{{x}}}}}}}') #       {{{25}}}
+print(F'{{{{{{{{x}}}}}}}}')#        {{{{x}}}}
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+'''
+Write  a  program  to  determine  sum , difference , product , quotient , largest  and  smallest  of  two  numbers.
+Also  find  remainder,  sqrt  of  first  input , power, gcd  and  factorial  of  first  input
+
+Hint:  Use  F  string  to  print  results
+
+Let  inputs  be  10  and  7,     
+What  is  the  sum ?  --->  17
+What  is  the  difference ?  --->  3
+What  is  the  product ?  ---> 70
+What  is  the  quotient ?  --->  1.42
+What  is  the  remainder ?  --->  3
+What  is  the  largest  number ?  ---> 10
+What  is  the  smallest  number ?  --->  7
+What  is  the  sqrt  of  1st  input ?  --->  3.16
+What  is  the  result  of  power?  --->  10000000
+What  is  the  gcd  of  2  numbers ?  ---> 1
+What  is  the  factorial   of  1st  input?--->10!
+'''
+
+
+
+
+SYNTAX:                                            O/P:
+
+x = int(input('Enter a input x: '))               #Enter a input x: 10
+y = int(input('Enter a input y: '))               #Enter a input y: 7
+print(F' Sum of x and y = {x+y}')                 #Sum of x and y = 17
+print(F'Differnce between x and y = {x-y}')       #Differnce between x and y = 3
+print(F'Product of x and y = {x*y}')              #Product of x and y = 70
+print(F'Quotient of x and y = {x/y}')             #Quotient of x and y = 1.4285714285714286
+print(F'Remainder of x and y= {x%y}')             #Remainder of x and y= 3
+print(F'largest number = {max(x,y)}')             #largest number = 10
+print(F'Smallest number = {min(x,y)}')            #Smallest number = 7
+print(F'Square root of 1st input = {x}')          #Square root of 1st input = 10
+print(F'Result of power = {x**2}')                #Result of power = 100
+print(F'Gcd of two numbers = {x,y}')              #Gcd of two numbers = (10, 7)
+print(F'Factorial of 1st input = {x}')            #Factorial of 1st input = 10
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+'''
+Write  a  program  to  swap  values  of  any  two  objects  in  a  single  statement  without  using  3rd  object
+
+Let  'x'  be  25  and  'y'  be   'Hyd'
+What  are  'x'  and  'y'  after  swap ?  ---> Hyd  and  25
+
+Hint:  Swap  references  but  not  objects
+'''
+
+SYNTAX:
+
+x = 25
+y = 'Hyd'
+x, y = y, x
+print(x)    #Hyd
+print(y)    #25
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+'''
+Write  a  program  to  determine  largest  of  three  inputs  without  using  max()  function
+
+1) What  is  the  output  if  inputs  are  10 , 20  and  15 ?   --->  20
+
+2) What  is  the  output  if  inputs  are  35.8 , 42.8  and  27.9 ?   --->  42.8
+
+3) What  is  the  output  if  inputs  are  'RAMA'  , 'RAKESH'  and  'RAJESH' ?   --->  'RAMA'
+
+4) What  is   the  output  if  inputs  are  [10 , 20 , 15 , 18]  , [10 , 20 , 32, 19]  and  [10 , 20 , 25, 17] ?  ---> [10 , 20 , 32 , 19]
+
+5) Inputs  can  be  integers , floats , strings  and  so  on
+
+6) Use  nested  ternary operator
+'''
+
+
+SYNTAX:
+
+a = input('Enter 1st input = ')
+b = input('Enter 2nd input = ')
+c = input('Enter 3rd input = ')
+d = "enter corret one"
+print(a if (a>b and a>c) else b if b>c else c )
+
+O/P:
+20
+42.8
+RAMA
+[10,20,32,19]
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+'''
+Write  a  program  to  print   '>'  if  1st  input  >  2nd  input,
+                                               '<'  if  1st  input  <  2nd  input  and
+                                               '='  if  inputs  are  same
+
+1) What  is  the  result  if  inputs  are  10  and  20 ?  ---> <
+
+2) What  is  the  result  if  inputs  are  70  and  60 ?  --->  >
+
+3) What  is  the  result  if  inputs  are  25  and  25 ?  ---> =
+
+4) Inputs  can  be  integers , floats , strings  and  so  on
+
+5) Use  ternary  operator
+'''
+
+SYNTAX:
+
+x = input('Enter the first input = ')
+y = input('Enter the second input = ')
+print('>' if x>y else '<' if x<y else '=')
+
+
+o/p:
+1.Enter the first input = 10
+  Enter the second input = 20
+  <
+2.Enter the first input = 70
+  Enter the second input = 60
+  >
+3.Enter the first input = 25
+  Enter the second input = 25
+  =
+4.Enter the first input = 15.8
+  Enter the second input = 23
+  < 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+'''
+Write  a  program  to  print  1  if  input  is  +ve  ,  -1    if  input  is  -ve  and  0  if  input  is  0
+
+1) What  is  the  result  if  input  is  -25 ?  --->  -1
+
+2) What  is  the  result  if  input  is  75 ?  --->  1
+
+3) What  is  the  result  if  input  is  0 ?  --->  0
+
+4) Use  nested  ternary operator
+'''
+
+SYNTAX:
+
+x = eval(input('Enter input = '))
+print('1' if x>0 else '-1' if x<0 else 0)
+
+
+O/P:
+>>>Enter input = 25
+   1
+
+>>>Enter input = -25
+   -1
+
+>>>Enter input = 0
+    0
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+'''
+Write  a  program  to  test  input  is  even  number  or  odd  number
+
+1) What  is  an  even  number  ?  --->  Divisible  by  2
+
+2) What  is  an  odd  number  ?  --->  Not  divisible  by  2
+
+3) Use  ternary  operator
+
+'''
+
+SYNTAX:
+
+x = eval(input('Enter input = '))
+
+print('Input is an even number 'if x%2==0  else 'Input is an odd number' )
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+'''
+(Home  work)
+Write  a  program  to  determine  area  and  perimeter  of  rectangle
+
+1) What  are  the  inputs ?  ---> length  and   breadth
+
+2) What  are  the  outputs  ?  --->  area  and  perimeter
+
+3) What  is  the  area  of  rectangle  ?  --->  length * breadth
+
+4) What  is  the  perimeter  of  rectangle ?  --->  2 * (length + breadth)
+'''
+
+x = eval(input('Length of the rectangle = '))
+y = eval(input('Breadth of the rectangle = '))
+area = x*y
+perimeter = 2*(x+y)
+print('Area of Rectangle = ', area)
+print('Perimeter of a rectangle = ', perimeter)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+'''
+(Home  work)
+Write  a  program  to  determine  volume  of  a  sphere
+
+1) What  is  the  input ?  --->  radius
+
+2) What  is  the  output ?  --->  volume
+
+3) What  is  the  volume  of  sphere  ?  --->  4 / 3  * pi *  r ^ 3
+'''
+
+
+SYNTAX:
+
+from math import *
+r = eval(input('Enter Radius of Spehere = '))
+volume = 4 / 3  * pi * (r ^ 3)
+print('Volume of Sphere = ', volume)
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+'''
+(Home  work)
+Write  a  program  to  determine  simple  interest  and  compound  interest
+
+1) What  are  the  inputs  ?  --->  principle , time  and   rate  of  interest
+
+2) What  are  the  outputs ? --->  Simple  interest   and   compound  interest
+
+3) What  is  simple  interest  formula ?  ---> ptr / 100
+
+4) What  is  compound  interest  formula ?  --->  p * (1  +  r  /  100) ^  t  -  p
+'''
+
+
+SYNTAX:
+
+p = eval(input('Enter principle number = '))
+t = eval(input('Enter time in years  = '))
+r = eval(input('Enter Rate of interest = '))
+si = p * t * r / 100
+ci = p * (1 + r / 100) ** (t - p) 
+print('Simple interest = ', si)
+print('Compound interest = ', ci)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+'''
+(Home  work)
+Write  a  program  to  swap  values  of  two  objects  using  3rd   object
+
+Let  x = 10  and  y = 25
+What  are  the  values  of  x  and  y  after  swap ?  --->  x = 25  and   y = 10
+'''
+
+
+SYNTAX:
+
+
+X = eval(input('Enter input x = '))
+y = eval(input('Enter input y = '))
+z = y
+y = X
+x = z
+print('x = ', x)
+print('y = ', y)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+'''
+(Home  work)
+Write  a  program  to  swap  values  of  two  objects  without  using  3rd  object
+
+Hint: One  addition  and  two  subtractions
+
+x = 25
+y =  10
+'''
+
+SYNTAX:
+
+
+X = eval(input('Enter the value x = '))
+y = eval(input('Enter the value y = '))
+y = X + y 
+X = y - X
+y = y - X
+print('X = ', X)
+print('y = ', y)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+'''
+(Home  work)
+Write  a  program  to  swap  values  of  two  objects  without  using  3rd  object
+
+Hint: One  multiplication  and  two  divisions
+x =  -200
+y =  100
+'''
+
+
+SYNTAX:
+
+
+x = eval(input('Enter value x = '))
+y = eval(input('Enter value y = '))
+x = x * y #6
+y = x / y #3
+x = x / y
+print('x = ', x)
+print('y = ', y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
