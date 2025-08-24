@@ -1,0 +1,212 @@
+'''
+Write  a  program  to  add ,  subtract , multiply  and  divide  two  complex  numbers
+
+First  complex  number   --->  3 + 4j
+2nd   complex  number   --->  5 + 6j
+What  is  the  sum ? ---> (3 + 4j) + (5 + 6j) = 8 + 10j
+What  is  the  difference ?  ---> (3 + 4j) - (5 + 6j) =  -2 - 2j
+What  is  the  product ?  ---> (3 + 4j) * (5 + 6j) =  15 + 18j + 20j - 24 =  -9 + 38j
+
+
+What  is  the  division ?  ---> (3 + 4j) / (5 + 6j) = (3 + 4j) * (5 - 6j) / (5 + 6j) * (5 -6j)
+                                                                         =   (15 - 18j + 20j + 24) / (25 + 36)
+																		 = 39 / 61 + 2j / 61											   
+'''
+
+a=complex(input("enter first number:"))
+b=complex(input("enter second number"))
+sum=a+b
+diffrenece=a-b
+product=a*b
+division =a/b
+print("sum of complex numbers is :",sum)
+print("diffrence of complex number is:",diffrenece)
+print("product of complex number is:",product)
+print("division of complex  number is:",division)
+
+
+
+# Identify  error
+else:# we canot write else block with out if
+		print('else  suite')
+print('Outside')
+
+
+# Identify  error
+if 9 > 5 #there is no :
+	print('Hello')
+print('Bye')
+
+
+
+# Identify  error
+if  9 > 12:
+	print('Hyd')
+else  #there is no :
+	print('Sec')
+
+# Identify  error
+if  (10,20,15):
+print('Hyd')# indentation error
+else:
+print('Sec')
+
+
+# Identify  error
+if  ():
+			print('Hyd')
+	else: # indentation error
+					print('Sec')
+print('Bye')
+
+
+
+# Identify  error
+if  { }:
+{  #there is no {
+	print('One')
+	print('Two')
+	print('Three')
+}
+else:
+{
+	print('Four')
+	print('Five')
+	print('Six')
+}
+print('Bye')
+
+
+
+
+# Identify  error
+if  ():
+	print('One')
+	print('Two')
+	print('Three')
+else:
+if  []: #indention error
+	print('Four')
+	print('Five')
+	print('Six')
+else:
+if  {}:
+	print('Seven')
+	print('Eight')
+	print('Nine')
+else:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye')
+
+# Write  a  program  to  determine  a  number  is  even  or  odd  with   if  statement
+a=int(input("enter any number"))
+if(a%2==0):
+    print("even number")
+else:
+    print("odd number")
+    
+
+
+
+# Find outputs  (Home  work)
+if():
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+else:
+        print('One') # one 
+        print('Two')# two
+        print('Three')# three
+print('Bye')# bye
+
+
+# Find  outputs  (Home  work)
+if{10 : 20 , 30 : 40}:
+        print('Hyd') #hyd
+        print('Sec') #sec
+        print('Cyb') # cyb
+print('Bye') # bye
+
+
+
+# Find outputs  (Home  work)
+if { }:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye') # bye
+
+
+
+
+# Write   a  program  to  print  month  name  for  input  month  number  by  using  if  and  elif  (Home  work)
+
+
+try:
+    a=int(input("enter month number"))
+    if(a==1):
+        print("januray")
+    elif(a==2):
+        print("febuary")
+    elif(a==3):
+        print("march")
+    elif(a==4):
+        print("april")
+    elif(a==5):
+        print(" may")
+    elif(a==6):
+        print(" june")
+    elif(a==7):
+        print("july")
+    elif(a==8):
+        print("august")
+    elif(a==9):
+        print("september")
+    elif(a==10):
+        print("octomber")
+    elif(a==11):
+        print("november")
+    elif(a==12):
+        print("december")
+    else:  
+        print("Input  should  be  between  1  and   12")
+except ValueError:
+    print("Input  should  be  an  integer")
+
+
+
+'''
+Write  a  program  to  print  digit  in  words  with  else  and  if  (do  not  use  elif)
+0 - Zero
+1 - One
+2 - Two
+....
+9 - Nine
+10 - Invalid
+'''
+a=int(input("enter postive  Integer number :"))
+if (a<=9 ):
+    if(a==1):
+        print("one")
+    if(a==2):
+        print("two")
+    if(a==3):
+        print("three")
+    if(a==4):
+        print(" four")
+    if(a==5):
+        print(" five")
+    if(a==6):
+        print(" six")
+    if(a==7):
+        print("seven")
+    if(a==8):
+        print("eight")
+    if(a==9):
+        print("nine")
+    if(a==0):
+        print("zero")
+else:
+    print("invalid")

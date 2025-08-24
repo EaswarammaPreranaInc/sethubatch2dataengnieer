@@ -1,0 +1,111 @@
+# Write  a  program  to  create  a  list  with  cubes  of  2 , 4 , 6 , 8 , 10  with  list  comprehension (Home  work)
+
+
+numbers = [2, 4, 6, 8, 10]
+cubes = []
+for x in numbers:
+    cubes.append(x ** 3)
+print("Numbers :", numbers)
+print("Cubes   :", cubes)
+
+
+Numbers : [2, 4, 6, 8, 10]
+Cubes   : [8, 64, 216, 512, 1000]
+
+'''
+(Home  work)
+Write  a  program  to  extract  1st  character  of  each  string  in  capital  letters  in  a  list  of  srings  without  comprehension
+
+Let  input  be   ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']
+'''
+Enter  list  of  lower  case  strings :  ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+['H', 'P', 'C', 'V']
+
+
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+first_chars = []
+for city in cities:
+    first_chars.append(city[0].upper())
+print("Input  :", cities)
+print("Output :", first_chars)
+
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input :  ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+
+Output :  ['H' , 'P' , 'C' , 'V']
+'''
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+first_chars = [city[0].upper() for city in cities]
+print("Input  :", cities)
+print("Output :", first_chars)
+
+
+'''
+Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
+(word  should  be  in  capital  letters)  without  comprehension
+
+Let  input  be   hyd  is  green  city
+What  is  the  output ?  --->  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY', 3]]
+'''
+
+sentence = "hyd is green city"
+words = sentence.split()
+result = []
+for w in words:
+pair = [w.upper(), len(w)]
+result.append(pair)
+
+
+Enter  any  sentence :  Students are getting bored
+[['STUDENTS', 8], ['ARE', 3], ['GETTING', 7], ['BORED', 5]]
+
+sentence = "Students are getting bored"
+words = sentence.split()
+result = []
+for w in words:
+pair = [w.upper(), len(w)]
+ result.append(pair)
+print(result)
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input :  hyd  is  green  city
+
+Output :  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY' , 4]]
+'''
+
+
+sentence = "hyd is green city"
+result = [[w.upper(), len(w)] for w in sentence.split()]
+print("Input  :", sentence)
+print("Output :", result)
+
+
+Input  : hyd is green city
+Output : [['HYD', 3], ['IS', 2], ['GREEN', 5], ['CITY', 4]]
+
+
+
+'''
+Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+'''
+
+
+
+
+
+
