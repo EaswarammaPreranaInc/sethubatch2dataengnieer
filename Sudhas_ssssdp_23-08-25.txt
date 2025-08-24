@@ -1,0 +1,114 @@
+add()  method  demo  program  (Home  work)
+a = set()
+a . add(True)#{True}
+a . add(25) # {25,True}
+a . add(10.8) #{10.8,True,25}
+a . add(1) # 1 was not added because duplicate value
+a . add('Hyd') # {10.8,True,25,'Hyd}
+a . add(25) # 25 was not added duplicate value
+a . add(None) # {10.8,True,25,None,'Hyd'}
+a . add('Hyd') # 'Hyd' not added its duplicate value
+a . add(1.0) # 1.0 was also not added duplicate value
+print(a) # {10.8,True,25,None,'Hyd'}
+a . add(10 , 20 , 30) # Gets error add can insert one argument only
+a . add([10,20,30]) # get error add can insert only one argument
+
+
+Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a) # {25 , 10.8 , 'Hyd' , True}
+print(id(a)) # address of set a will get
+a . add(tpl) # {25 , 10.8 , 'Hyd' , True,(10 , 20 , 30)}
+a . add('Sec') # {25 , 10.8 , 'Sec','Hyd' , True,(10 , 20 , 30)}
+print(a) # {25 , 10.8 , 'Sec','Hyd' , True,(10 , 20 , 30)}
+print(id(a)) # address of same a will get
+print(len(a)) # 6
+a . add([100 , 200 , 300]) # get error add can insert only one argument
+a . add(set()) # get error 
+a . add({ }) # error
+
+
+Find  outputs (Home  work)
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl) # {(10 , 20 , 15 , 18)}
+print(s) #  {(10 , 20 , 15 , 18)}
+print(len(s)) # 1
+
+
+update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl) # tpl converted to set
+print(len(s)) # 4
+print(s) # {10,15,18,20}
+s . update(25) # get error update not take non sequences
+
+
+Find  outputs  (Home  work)
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a , b , c) # {10,30,50,20,40,60,70}
+print(s) #  {10,30,50,20,40,60,70}
+print(len(s)) # 7
+s . add(a,b,c) # we get error
+
+
+Find  outputs  (Home  work)
+a = set()
+a . update('Rama Rao')
+print(a) # {' ', 'a', 'R', 'm', 'o'}
+print(len(a)) # 5
+a . update(3 + 4j , 10.8 , True) #  Get error update not take non sequences
+
+
+copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a) #  {10 , 20 , 15 , 18}
+b = a . copy() # a objects copied to b reference
+print(b) #  {10 , 20 , 15 , 18}
+print(a  is  b) # False different memory locations
+print(a  ==  b) # True same memory locations
+c = a
+print(a  is  c) # True
+
+
+pop()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a) #  {25 , 10.8 , 'Hyd' , True}
+print(a . pop()) # 10.8
+print(a . pop()) # 'Hyd'
+print(a . pop()) # True
+print(a . pop()) # 25
+print(a . pop()) # error set is empty
+print(a) # empty set
+b = {10 , 20 , 30 , 40}
+print(b . pop(2)) # get error set has no indexing because unordered
+
+
+Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b)) # {10,20,30,40,50,60}
+print(a | b) # get error i accepts 2 sets only
+print(b . union(a)) # error list with set get error
+print(a + b) # error
+
+
+clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a) #  {10 , 20 , 15 , 18}
+a . clear() # clear all objects
+print(a) # empty set ()
+print(len(a)) # 0
+
+
+remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a) # {25 , 10.8 , 'Hyd' , True}
+a . remove('Hyd') # 'hyd' was removed
+print(a) #{25 , 10.8 , True}
+a . remove('Sec') # get error 'Sec' not in set
