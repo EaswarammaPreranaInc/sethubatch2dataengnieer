@@ -11,9 +11,9 @@ except:
 
 '''
 Outputs:
-2
-5		
-8
+15 is found at index : 2
+15 is found at index : 5		
+15 is found at index : 8
 15 is found 3 times
 '''
 
@@ -33,9 +33,9 @@ a  =  10 ,  20 ,  30 ,   40 ,  50
 a[2] = 35 # Error because tuple is immutable
 print(a) # (10, 20, 30, 40, 50)
 print(id(a)) # prints address of tuple 'a'
-a = a[0 : 3] + (35,) + a[3 : 6] # How  to  modify  30  in  tuple  to  35
-print(a) # prints tuple of 6 elements i.e., (10, 20, 30, 35, 40, 50)
-print(id(a)) # prints address of new tuple of 6 elements i.e., new address of new tuple
+a = a[0 : 2] + (35,) + a[3 : 5] # How  to  modify  30  in  tuple  to  35
+print(a) # prints tuple of 6 elements i.e., (10, 20, 35, 40, 50)
+print(id(a)) # prints address of new tuple of 5 elements i.e., new address of new tuple
 
 
 
@@ -55,8 +55,8 @@ del  a[2] # Error because tuple is immutable
 a . pop(2) # Error because tuple is immutable
 print(a) # prints tuple i.e., (10, 20, 30, 40, 50)
 print(id(a)) # prints address of tuple 'a'
-a = a[0 : 2] + a[3: 6] # How  to  remove  30  from  tuple  'a'
-print(a) # prints new tuple of 4 elements
+a = a[0 : 2] + a[3: 5] # How  to  remove  30  from  tuple  'a'
+print(a) # prints new tuple of 4 elements i.e., (10, 20, 30, 40, 50)
 print(id(a)) # prints address of new tuple of 4 elements
 
 
@@ -113,12 +113,12 @@ print(*b) # How to print inner tuple of tuple 'b' in another way
 
 
 #  Find  outputs (Home  work)
-a = ((10 , 20 , 30)) # Ref 'a' points to tuple of tuple
-print(a) # prints tuple i.e., ((10, 20, 30))
-print(*a) # prints inner tuple i.e., (10, 20, 30)
-b = (()) # Ref 'a' points to tuple of empty tuple
-print(b) # prints 'b' i.e.,  (())
-print(*b) # prints inner tuple of 'b' i.e., ()
+a = ((10 , 20 , 30)) # Ref 'a' points to tuple 
+print(a) # prints tuple i.e., (10, 20, 30)
+print(*a) # prints inner tuple i.e., 10<space>20<space>30
+b = (()) # Ref 'a' points to empty tuple
+print(b) # prints 'b' i.e., ()
+print(*b) # Error because there are no elements in tuple
 
 
 
@@ -131,11 +131,11 @@ print(*b) # prints inner tuple of 'b' i.e., ()
 
 
 # What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
-a = input('Enter  Set  :  ') # reads string input from user
+a = input('Enter  Set  :  ') # reads string set from user
 print(a) # prints 'a' i.e., '{10 , 20 , 15 , 18 , 20 , 12 , 18}'
 print(type(a)) # prints type of 'a' i.e., <class 'str'>
-b = eval(a) # converts string to set 
-print(b) # prints ''b' i.e., {10, 20, 15, 18, 20, 12, 18}
+b = eval(a) # converts string set to set 
+print(b) # prints ''b' i.e., {10, 20, 15, 18, 12} in any order
 print(type(b)) # prints type of 'b' i.e., <class 'set'>
 
 
@@ -150,9 +150,9 @@ print(type(b)) # prints type of 'b' i.e., <class 'set'>
 
 #  Find  outputs  (Home  work)
 print({(10 , 20 , 30)}) # prints set of tuple i.e., {(10, 20, 30)}
-print({[10 , 20 , 30]}) # prints set of list i.e., {[10, 20, 30]}
-print({{10 , 20 , 30}}) # prints set of set i.e., {{10, 20, 30}}
-print({{}}) # prints set of empty set i.e., {{}}
+print({[10 , 20 , 30]}) # Error because set cannot hold mutable elements
+print({{10 , 20 , 30}}) # Error because set cannot hold mutable elements
+print({{}}) # Error because set cannot hold mutable elements
 
 
 
@@ -181,9 +181,9 @@ set with print function
 {25 , True , 'Hyd' , 10.8} 
 Iterate elements of set with for loop
 25
-10.8
-Hyd
 True
+'Hyd'
+10.8
 '''
 
 
@@ -202,8 +202,8 @@ c = 25
 d = 1
 e = 'Hyd'
 s = {a , b , c , d , e}
-print(s) # prints set 's' i.e., {'Hyd', True, 25, 1} in any order
-print(len(s)) # number of elements in set 's' i.e., 4
+print(s) # prints set 's' i.e., {'Hyd', True, 25} in any order
+print(len(s)) # number of elements in set 's' i.e., 3
 print(type(s)) # prints type of 's' i.e., <class 'set'>
 
 
@@ -271,8 +271,8 @@ print(c) # prints 'c' i.e., 10.8
 s = {20 , 10 , 20 , 10} # Ref 'a' points to set of 4 elements
 print(s) # prints set 's' i.e., {20, 10} in any order
 x , y = s # unpacking set 's' 
-print(x) # prints 'x' i.e., 20 or 10
-print(y) # prints 'y' i.e., 10 0r 20
+print(x) # prints 'x' i.e., 20 
+print(y) # prints 'y' i.e., 10
 
 
 
@@ -288,14 +288,15 @@ print(y) # prints 'y' i.e., 10 0r 20
 # set()  function  demo  program  (Home  work)
 a = range(100 , 151 , 10) # Ref 'a' points to range object from index 100 to index 149 in steps of 10
 b = set(a) # range object 'a' is converted to set and assigned to 'b'
-print(b) # prints set 'b' i.e., {100, 110, 120, 130, 140} in any order
+print(b) # prints set 'b' i.e., {100, 110, 120, 130, 140, 150} in any order
 c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18] # Ref 'c' points to list of 9 elements
 d = set(c) # list 'c' converts to set and assigned to 'd'
-print(d) # prints set 'd' i.e., {10, 20, 15, 18, 10, 50, 20, 12, 18} any order
+print(d) # prints set 'd' i.e., {10, 20, 15, 18,  50, 12} any order
 e = set('Rama  rAo') # string 'Rama rAo' converts to set and assigned to 'e'
-print(e) # prints set 'e' i.e., {'R', 'a', 'm', 'a', ' ','r', 'A', 'o'} in any order
+print(e) # prints set 'e' i.e., {'R', 'a', 'm', ' ','r', 'A', 'o'} in any order
 print(set(25)) # Error because set argument must be sequence of no arguments
-print(set()) # prints empty set
+print(set()) # prints empty set i.e., set()
+
 
 
 
