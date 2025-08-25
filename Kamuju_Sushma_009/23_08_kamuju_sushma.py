@@ -86,7 +86,7 @@ s = set()
 # mutable and set cannot have mutable elements
 print(s) #{}
 print(len(s))#0
-s . add(a , b , c) #{([10 , 20 , 30],{30 , 40,50 }, (50 , 60 , 70) )}
+# s . add(a , b , c) #error, cannot take more than 1 argument
 
 #Home Work-6
 # Find  outputs  (Home  work)
@@ -94,7 +94,7 @@ a = set()
 a . update('Rama Rao') 
 print(a)#{'R','a','m',' ','o'}
 print(len(a))#5
-a . update(3 + 4j , 10.8 , True) # {'R','a','m',' ','o',3+4j,10.8,True}
+a . update(3 + 4j , 10.8 , True) #error, only sequence are allowed as input
 
 #Home Work-7
 # copy()  method  demo  program  (Home  work)
