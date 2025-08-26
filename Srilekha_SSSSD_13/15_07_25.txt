@@ -1,0 +1,100 @@
+    A.Srilekha
+
+a =10.8
+print(a)        # 10.8
+print(type(a))  # object of a value type float
+print(id(a))    #2241961564784
+b =25
+print(b)        # value of b 25
+print(type(b))  #object b type integer
+c =.689
+print(c)       #the value of c is .689
+d = 3.4E2
+print(d)        # the value of d is 340.0
+print(type(d))  # object type of d is float
+e =9.62e-2
+print(e)        # the value of e is 0.0962
+
+
+
+2)  complex ojject demo program
+a =3+4j
+print(a)               # the value of a 3+4j
+print(type(a))         # the value of a object type is complex
+print(id(a))          #1972348756592
+print(a .real)        # 3.0
+print(a.imag)           #4.0
+print(type(a.real))      # float
+print(type(a.imag))       # float
+
+
+3) find outputs
+
+
+a =6j
+print(a)        # the value of a is 6j
+print(type(a))   # object type of a complex
+print(a.real)    # 0.0
+print(a.imag)     # 6.0
+#print(5+j6)       # j6 is not defined
+#print(3+4i)        # invalid decimal 4i
+#print(4+j)          # j is not defined
+print(4+1j)          # (4+1j)
+print(4+0j)           #(4+0j)
+
+4)bool object demo program
+
+a =True
+print(a)           # True
+print(type(a))      # object type bool
+print(id(a))        #140732921266608
+b =False
+print(b)             #False
+print(type(b))       # object type bool
+print(True +True)    #2
+print(True +False)   #1
+print(False+True)     #1
+print(False+False)    #0 
+print(True+True+True)  #3
+print(25 +10.8+True)   #36.8
+print(True>False)        #True
+print(True)           #True
+print(False)          #False
+print(true)             # name 'true' is not defined
+print(false)              # name 'false' is not defined
+
+
+# a = 006247
+# print(a)           # the output of print a is leading zero in decimal integer literals are not permited
+# print(type(a))
+b =0o6247
+print(id(b))       # id of b is 3191903789680
+print(b)             # 3239
+c =3239
+print(id(c))         # id of c is 3191903789680
+#print(0o9248)           # output of this line is invalid digit '8' in octal literal
+
+
+Find outputs.....
+a = 0XA7B9
+print(a)            # 42937
+print(type(a))      # type of a is integer
+b =0xBEEF
+print(b)            # 48879
+# print(A7B9)
+print('A7B9')        #A7B9
+print(XBEER)
+print(0XHYD)           # output of this line is invalid hexadecimal literal
+print(0xA7G9B)         # output of this line is invalid hexadecimal literal
+
+a =9248
+print(a)            # the value of a is 9248
+print(type(a))         # type of object integer
+
+
+
+
+
+
+
+
