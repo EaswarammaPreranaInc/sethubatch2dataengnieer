@@ -1,0 +1,14 @@
+def print_distinct_vowels(input_str):
+vowels={'a','e','i','o','u'}
+input_str=input_str.lower()
+found_vowels=set()
+  for char in input_str:
+     if char in vowels:
+       found_vowels.add(char)
+#sort and joint vowels to maintain consistent output order
+output=''.joint(sorted(found_vowels)).upper()
+print(output)
+input_str="RaMa Rao"
+print_distinct_vowels(input_str)
+#out put for "RamA Rao":
+AO
