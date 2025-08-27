@@ -1,0 +1,127 @@
+ #  How  to  modify  an  element  of  tuple ?    (Home  work)
+a  =  10 ,  20 ,  30 ,   40 ,  50
+#     0      1       2       3      4
+a[2] = 35
+print(a)
+print(id(a))
+How  to  modify  30  in  tuple  to  35
+print(a)
+print(id(a))
+---------------------------------------------------
+ # How  to  delete  an  element  of  tuple ?   (Home  work)
+a = (10, 20, 30, 40, 50)
+# remove(), pop(), del won’t work (immutable)
+b = list(a)
+b.remove(30)     # or del b[2]
+a = tuple(b)
+print(a)         # (10, 20, 40, 50)
+-----------------------------------------------------
+ #  Nested   tuple  (Home  work)
+a = ((10, 20), (30, 40, 50), (60, 70, 80, 90))
+print(a)                  # whole tuple
+print(len(a))             # 3
+
+print(a[0])               # 1st inner tuple (10, 20)
+print(a[1])               # 2nd inner tuple (30, 40, 50)
+print(a[2])               # 3rd inner tuple (60, 70, 80, 90)
+
+print(a[0][1])            # 20
+print(a[1][2])            # 50
+print(a[2][3])            # 90
+--------------------------------------------------------
+ # Find  outputs  (Home  work)
+a = ((10, 20, 30),)
+print(a[0])        # inner tuple (10, 20, 30)
+print(a[-1])       # another way → (10, 20, 30)
+
+print(a[0][0])     # 10
+print(a[0][1])     # 20
+print(a[0][2])     # 30
+
+b = ((),)
+print(b[0])        # inner tuple ()
+print(b[-1])       # another way → ()
+
+--------------------------------------------------------------
+ #  Find  outputs (Home  work)
+a = ((10, 20, 30))   # careful: NOT a tuple, just parentheses → acts like (10,20,30)
+print(a)             # (10, 20, 30)
+print(*a)            # 10 20 30
+
+b = (())             # empty tuple
+print(b)             # ()
+print(*b)            # nothing printed
+------------------------------------------------------
+ # What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+a = input("Enter Set: ")
+print(a)             # "{10, 20, 15, 18, 20, 12, 18}" (string)
+print(type(a))       # <class 'str'>
+
+b = eval(a)
+print(b)             # {10, 12, 15, 18, 20}
+print(type(b))       # <class 'set'>
+---------------------------------------------------------
+ #  Find  outputs  (Home  work)
+print({(10, 20, 30)})    # {(10, 20, 30)}  
+print({[10, 20, 30]})    #  ERROR 
+print({{10, 20, 30}})    #  ERROR 
+print({{}})              # ERROR 
+---------------------------------------------------------
+ # How  to  print  set  in  differnet ways  (Home  work)
+a = {25 , True , 'Hyd' , 10.8}
+print('set  with  print  function')
+print(a)
+print('Iterate  elements  of  set  with  for  loop')
+How  to  iterate  set  with  for  loop
+--------------------------------------------------------
+ # Find  outputs  (Home  work)
+a = 'Hyd'
+b = True
+c = 25
+d = 1
+e = 'Hyd'
+s = {a, b, c, d, e}
+print(s)             # {'Hyd', True, 25}
+print(len(s))        # 3 (because True==1, 'Hyd' repeated)
+print(type(s))       # <class 'set'>
+---------------------------------------------------------
+ # Find  outputs  (Home  work)
+s = {'Hyd', 25, True, 10.8}
+print(s)
+
+a, b, c, d = s
+print(a, b, c, d)   # order is RANDOM
+
+a, *b = s
+print(a)            # one element
+print(b)            # rest in list
+print(type(b))      # <class 'list'>
+
+a, *b, c = s
+print(a)            # one element
+print(b)            # middle elements in list
+print(c)            # last element
+----------------------------------------------------------
+ # Find  outputs  (Home  work)
+s = {20, 10, 20, 10}
+print(s)        # {10, 20}
+x, y = s
+print(x)        # 10
+print(y)        # 20   (order not guaranteed)
+----------------------------------------------------------
+ # Find  outputs  (Home  work)
+a = range(100, 151, 10)
+b = set(a)
+print(b)        # {100, 110, 120, 130, 140, 150}
+
+c = [10, 20, 15, 18, 10, 50, 20, 12, 18]
+d = set(c)
+print(d)        # {10, 12, 15, 18, 20, 50}
+
+e = set("Rama rAo")
+print(e)        # unique characters → {'R', 'm', ' ', 'a', 'o', 'A', 'r'}
+
+print(set(25))  # ERROR → int not iterable
+print(set())    # empty set → set()
+----------------------------------------------------------
+
