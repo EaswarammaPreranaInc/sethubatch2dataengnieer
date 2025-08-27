@@ -275,31 +275,31 @@ Sec
 Cyb
 Bye
 
-outputs  if  input  is  15
+#outputs  if  input  is  15
 One
 Two
 Three
 Bye
 
-outputs  if  input  is  10.0
+#outputs  if  input  is  10.0
 India
 Chine
 Usa
 Bye
 
-outputs  if  input  is  0
+#outputs  if  input  is  0
 Hyd
 Sec
 Cyb
 Bye
 
-outputs  if  input  is  -10
+#outputs  if  input  is  -10
 One
 Two
 Three
 Bye
 
-outputs  if  input  is  7
+#outputs  if  input  is  7
 Hyd
 Sec
 Cyb
