@@ -1,0 +1,12 @@
+# Program to print distinct vowels using set
+
+s = input("Enter a string: ")
+vowels = "AEIOU"
+s = s.upper()
+result = set(s) & set(vowels)
+output = "".join(sorted(result))
+
+print(output)
+
+Input  : RamA Rao
+Output : AO
