@@ -1,0 +1,116 @@
+ Find outputs (Home  work)
+a = [ ('R' , 'Red') , ('G' , 'Green') , ('B' , 'Blue')]
+b = {'Y' : 'Yellow', 'G' : 'Gray'}
+b . update(a)
+print(b)
+a . update(b){
+    'Y': 'Yellow',
+    'G': 'Green',  # Overwritten
+    'R': 'Red',
+    'B': 'Blue'
+}
+
+{'Y': 'Yellow', 'G': 'Green', 'R': 'Red', 'B': 'Blue'}
+
+  Find  outputs  (Home  work)
+a = [ (10 , 20 , 30) , (40 , 50 , 60) , (70 , 80 , 90)]
+b = {}
+b.update(a)
+print(b)
+c = [(10,) , (20,) , (30,)]
+b . update(c)
+print(b)
+## the final out is
+ValueError: dictionary update sequence element #0 has length 3; 2 is required
+
+def f1():
+    print('Hyd')
+    print('Sec')
+    print('Cyb')
+# End of the function
+
+print('Begin')
+print(type(f1))
+print(id(f1))
+print('End')
+#Begin
+<class 'function'>
+140209876543216
+
+#  Find  outputs (Home  work)
+def   add(a , b):
+        return  a + b
+#End  of  the  function
+print(add(10 , 20))
+print(add('Hyder' , 'abad'))
+print(add(10.8 , 20.6))
+print(add(True , False))
+print(add(3 + 4j , 5 + 6j))
+print(add(25 , 10.8))
+print(add([25 , 10.8 , 'Hyd'] , [True , None , 3+4j , 'Sec']))
+print(add(10 , '20'))
+
+30
+Hyderabad
+31.4
+1
+(8+10j)
+35.8
+[25, 10.8, 'Hyd', True, None, (3+4j), 'Sec']
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+def f1():
+    print('No-argument  function')
+
+def f1(x):
+    print('Single  argument  function  : ' , x)
+
+def f1(x , y):
+    print('Two  argument  function : ' , x , y)
+
+def f1(x , y , z):
+    print('Three  argument  function : ' , x , y , z)
+
+Three  argument  function :  10 20 30
+TypeError: f1() missing 1 required positional argument: 'z'
+TypeError: f1() missing 2 required positional arguments: 'y' and 'z'
+TypeError: f1() missing 3 required positional arguments: 'x', 'y', and 'z'
+
+disp(25, 'Rama  Rao', 10000.0)
+Emp  Number  :  25 	  Emp Name  :  Rama  Rao 	  Salary  :  
+10000.0disp('Sita', 20000.0, 35)
+Emp  Number  :  Sita 	  Emp Name  :  20000.0 	  Salary  :  35
+
+Emp  Number  :  25 	  Emp Name  :  Rama  Rao 	  Salary  :  10000.0
+Emp  Number  :  Sita 	  Emp Name  :  20000.0 	  Salary  :  35
+
+print('Hello')
+
+def f1():
+    print('f1  function')
+
+print('Hi')
+print(f1())
+print(f1)
+print('Bye')
+Hello
+Hi
+f1  function
+None
+<function f1 at 0xXXXXXXXXXXXX>
+Bye
+def f1():
+    print('Hyd')
+    print('Sec')
+    print('Cyb')
+
+print('Begin')
+print(type(f1))
+print(id(f1))
+print('End')
+Begin
+<class 'function'>
+140711502941520
+End
+
+
