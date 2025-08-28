@@ -11,14 +11,14 @@ Enter String:RamA raO
 {'A': 3, 'O': 1}
 '''
 
-# x1 = input("Enter a string:")
-# b = {}
-# x1 = sorted(set(x1.upper()))
-# x2 = set('AEIOU')
-# for x in x1:
-#     if x in x2:
-#         b[x] = b.get(x,0)+1
-# print(b)
+x1 = input("Enter a string:")
+b = {}
+x1 = sorted(set(x1.upper()))
+x2 = set('AEIOU')
+for x in x1:
+    if x in x2:
+        b[x] = b.get(x,0)+1
+print(b)
 
 
 
