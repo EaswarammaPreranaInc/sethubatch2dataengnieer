@@ -37,7 +37,7 @@ a = [ ('R' , 'Red') , ('G' , 'Green') , ('B' , 'Blue')] #Reference a points to l
 b = {'Y' : 'Yellow', 'G' : 'Gray'} #Reference b points to dict obj 
 b . update(a) #Here dict a is concatinated to dict b #all the key-value pairs of dict a is added to dict b
 print(b) #{'Y': 'Yellow', 'G': 'Green', 'R': 'Red', 'B': 'Blue'}
-a . update(b) #Here all the key-value pairs of b is added to a and any repeated keys are modified with current new value
+a . update(b) #Error #a is a list where update() is not their in list class
 
 
 
@@ -260,4 +260,5 @@ def   disp(empno , ename , sal):
 # End  of  the  function
 disp(25 , 'Rama  Rao' , 10000.0) #Here the output will be i.e #Emp  Number  :  25        Emp Name  :  Rama  Rao          Salary  :  10000.0
 disp('Sita' , 20000.0 , 35)#Here the output will be i.e #Emp  Number  :  Sita      Emp Name  :  20000.0    Salary  :  35
+
 
