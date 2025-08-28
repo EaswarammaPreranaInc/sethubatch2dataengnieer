@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##1
 # Program to create a list with cubes of 2, 4, 6, 8, 10 using list comprehension
 
