@@ -13,7 +13,7 @@ Enter String:RamA raO
 
 x1 = input("Enter a string:")
 b = {}
-x1 = sorted(set(x1.upper()))
+x1 = sorted(x1.upper())
 x2 = set('AEIOU')
 for x in x1:
     if x in x2:
