@@ -1,4 +1,4 @@
-    # add()  method  demo  program  (Home  work)
+# add()  method  demo  program  (Home  work)
 a = set()
 a . add(True)#{True}
 a . add(25)#{25,True}
