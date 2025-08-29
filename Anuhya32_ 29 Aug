@@ -115,6 +115,44 @@ f1(70 , 80 , 90)      # Error
 f1(c = 15 , b = 25 , 35)   # Error
 
 # Identify error (Home  work)
+def   f1(a  , b , *): Error 
+        pass
+
+#  Positional  only  arguments  demo  program
+def   f1(a , b , /):
+        print(F'a  :  {a}  \t  b  :  {b}')
+# End  of   the  function
+f1(10 , 20) # a : 10    b : 20
+f1(a = 30 ,  b = 40) # Error 
+f1(50 , b = 60) # Error 
+f1(a = 70 , 80) # Error
+
+
+# Find  outputs (Home  work)
+def  f1(a , b , / , c):
+        print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
+# End  of  function
+f1(10 , 20 , 30) # a  :  10 	 b :  20 	 c  :  30
+f1(40 , 50 , c = 60) # a  :  40 	 b :  50 	 c  :  60
+f1(a = 70 , b = 80 , c = 90) # Error 
+f1(a = 100 , b = 110 , 120) # Error 
+f1(a = 130 , 140 , c = 150) # Error 
+f1(160 , b = 170 , 180) # Error 
+f1(190 , b = 200 , c = 210) # Error
+
+# Find outputs(Home  work)
+def  f1(a , b , / , c , d , * , e  , f):
+        print(F'a  :  {a}  \t  b  :  {b}  \t  c  :  {c}  \t  d  :  {d}  \t  e  :  {e}  \t  f  :  {f}')
+# End of the function
+f1(10 , 20 , 30 , d = 40 , e = 50 , f = 60) # a  :  10 	 b  :  20 	 c  :  30 	 d  :  40 	 e  :  50 	 f  :  60
+f1(1 , b = 2 , c = 3 , d = 4 , e = 5 , f = 6) # Error 
+f1(1 , 2 , 3 , 4 , 5 , f = 6) # Error 
+f1(10 , 20 , c = 30 , 40 , e = 50 , f = 60) # Error 
+f1(10 , 20 , 30 , 40 , e = 50 , f = 60) #a  :  10 	 b  :  20 	 c  :  30 	 d  :  40 	 e  :  50
+f  :  60
+
+
+# Identify error (Home  work)
 def  f1(/ , a , b ,  c): # Error 
         pass
 def   f2(a , b , c , *): # Error 
@@ -245,6 +283,18 @@ print(add(100))   # 4-argument  function
 109
 print(add())     # 4-argument  function
 10
+
+# Find outputs  (Home  work)
+def  disp(a , b):
+        print('2-argument function  :  ' , a , b)
+def  disp(a , b , c , d):
+        print('4-argument  function  :  ' , a , b , c , d)
+def disp(a , b , c = 25):
+        print('3-argument  function  :  ' , a , b , c)
+#end
+disp(10 , 20 , 30) # 3-argument  function  :   10 20 30
+disp(40 , 50 , 60 , 70) # Error 
+disp(80 , 90) # 3-argument  function  :   80 90 25
 
 
 # Find outputs(Home  work)
