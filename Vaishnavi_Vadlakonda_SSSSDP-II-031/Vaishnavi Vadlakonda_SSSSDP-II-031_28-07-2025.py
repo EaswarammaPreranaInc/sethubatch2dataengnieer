@@ -26,6 +26,7 @@ print(F'Division = {a / b}')
 
 
 
+
 # Identify  error
 else:  # else should not be there without if
     print('else  suite')
@@ -36,6 +37,20 @@ print('Outside')
 
 
 
+
+
+# Identify  error
+if  9 > 5 # if statement must be end with colon ':' 
+	print('Hello')
+print('Bye')
+
+
+
+
+
+
+
+
 # Identify  error
 if  9 > 5 # if statement must be end with colon ':' 
 	print('Hello')
@@ -44,12 +59,6 @@ print('Bye')
 
 
 
-
-
-# Identify  error
-if  9 > 5 # if statement must be end with colon ':' 
-	print('Hello')
-print('Bye')
 
 
 
@@ -63,6 +72,9 @@ print('Sec')  # beginning of print statement there should be space or tab space,
 
 
 
+
+
+ 
 
 
 
@@ -126,6 +138,9 @@ print('Bye')
 
 
 
+
+
+
 # Write  a  program  to  determine  a  number  is  even  or  odd  with   if  statement
 
 a = int(input("Enter input:"))
@@ -171,11 +186,14 @@ print('Bye') # prints Bye
 
 
 # Find outputs  (Home  work)
-if { }:
+if {}:
 	print('Hyd')
 	print('Sec')
 	print('Cyb') # if condtion is False so prints nothing
 print('Bye') # prints Bye
+
+
+
 
 
 
