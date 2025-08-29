@@ -17,6 +17,11 @@ print(9.8.2) # Error because double decimal is not allowed or float can't have m
 
 
 
+
+
+
+
+
 # complex object demo program
 a = 3 + 4j # Ref 'a' points to object 3 + 4j
 print(a) # prints the value of object 'a' i.e., (3 + 4j)
@@ -26,6 +31,11 @@ print(a . real) # prints real part of the object 3 + 4j i.e., 3.0
 print(a . imag) # prints imaginary part of the object 3 + 4j i.e., 4.0
 print(type(a . real)) # prints type of real part of the object 'a' i.e., <class 'float'>
 print(type(a . imag)) # prints type of imaginary part of the object 'a' i.e., <class 'float'>
+
+
+
+
+
 
 
 
@@ -40,6 +50,12 @@ print(3 + 4i)  # Error because python does not support 'i' as imaginary value.it
 print(4+j) # Error because 'j' should be followed by a digit
 print(4 + 1j) # prints (4 + 1j)
 print(4 + 0j) # prints (4 + 0j)
+
+
+
+
+
+
 
 
 
@@ -65,6 +81,13 @@ print(false) # Error because False is a keyword and F must be in uppercase
 
 
 
+
+
+
+
+
+
+
 # Find  outputs (Home  work)
 a = 0O6247 # Ref 'a' points to object decimal equivalent 3239
 print(a) # Value of object 'a' i.e., 3239
@@ -72,7 +95,7 @@ print(type(a)) # Type of object 'a' i..e, <class 'int>
 print(id(a)) # prints address of object 3239
 b = 0o6247 # Ref 'b' points to same object 0o6247
 print(id(b))  # prints same address of object 3239
-print(b) # Value of object 'b' i.e., 3238
+print(b) # Value of object 'b' i.e., 3239
 c = 3239 # Ref 'c' points to same object 3239
 print(c) # Value of object 'c' i.e., 3239
 print(id(c))  # prints same address of object 3239
@@ -80,10 +103,18 @@ print(0o9248) # Error because it is octal so it should not contain 9 and 8,it mu
 
 
 
+
+
+
+
+
+
+
+
 # Find  outputs  (Home  work)
 a = 0XA7B9 # Ref 'a' points to object decimal equivalent 42937
 print(a) # prints the value of object 'a' i.e.,42937
-print(type(a)) # prints type of object i.e., <class 'int'>
+print(type(a)) # prints type of object 'a' i.e., <class 'int'>
 b = 0xBEEF # Ref 'b' points to object decimal equivalent 48879
 print(b) # prints the value of object 'a' i.e., 48879
 print(A7B9) # Error because number should be followed by 0X, because it is hexadecimal
@@ -91,6 +122,12 @@ print('A7B9') # prints 'A7B9'
 print(0XBEER) # Error because it is hexadecimal,it cannot contain 'R'
 print(0XHYD) # Error because it is hexadecimal, it cannot conatain 'H' and 'Y'
 print(0xA7G9B) # Error because it is hexadecimal, it cannot conatain 'G'
+
+
+
+
+
+
 
 
 
