@@ -17,9 +17,7 @@ for x in b:
 	for y in "AEIOU":
 		if x==y:
 			c[x]=c.get(x,0)+1
-		else:
-			pass
-print(c)
+print(c)       
 
 
 Enter String:RamA raO
@@ -39,11 +37,12 @@ a . update(b)     #Error
  #  Find  outputs  (Home  work)
 a = [ (10 , 20 , 30) , (40 , 50 , 60) , (70 , 80 , 90)]
 b = {}
-b.update(a)     
-print(b)      #error
+# b.update(a)     
+print(b)      # {}
 c = [(10,) , (20,) , (30,)]
 b . update(c)
-print(b)   #Error
+print(b)   #{}
+
 
 #******************************************************************************
 
@@ -135,11 +134,11 @@ End
 #************************************************************************
 
  #  Find  outputs
-f1()            #Error
+# f1()            #Error
 def   f1():
 		  print('Hello')
 print(f1())  #Hello <nl> None
-print(f1)
+print(f1)    #Type and address 
 
 #************************************************************************
 
@@ -175,7 +174,7 @@ print('End')
 '''
 Begin
 <class func>
-adrees(f1)
+address (f1)
 End
 '''
 
@@ -191,7 +190,7 @@ print(add(10.8 , 20.6)) #31.4
 print(add(True , False)) #1
 print(add(3 + 4j , 5 + 6j)) #8+10j
 print(add(25 , 10.8)) #35.8
-print(add([25 , 10.8 , 'Hyd'] , [True , None , 3+4j , 'Sec']))    
+print(add([25 , 10.8 , 'Hyd'] , [True , None , 3+4j , 'Sec']))    #[25,10.7,'Hyd',True,None,3+4j,Sec]
 print(add(10 , '20'))#Error
 
 #************************************************************************
@@ -243,7 +242,6 @@ elif prime(n):
 	print("Prime number")
 else:
 	print("Composite Number")
-
 
 	# return  true   when  'n'  is  prime  number  and  False  otherwise
 '''
