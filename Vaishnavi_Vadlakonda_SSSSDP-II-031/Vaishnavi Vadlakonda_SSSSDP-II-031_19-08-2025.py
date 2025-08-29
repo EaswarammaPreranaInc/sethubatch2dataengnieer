@@ -109,6 +109,7 @@ print(a  ==  d) # prints True
 
 
 
+
 '''
 Tricky  program
 Write  a  program  to  determine  mode
@@ -174,8 +175,10 @@ print(a[2][1]) # How to print 100, prints 100 at index 1 of inner list at index 
 
 
 
+
+
 #  Find  outputs  (Home  work)
-a=[ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]] # # Ref 'a' points to list of lists or nested list
+a=[ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]] # Ref 'a' points to list of lists or nested list
 print(a[0]) # How to print 1st inner list
 print(a[1]) # How to print 2nd inner list
 print(a[2]) # How to print 3rd inner list
@@ -183,6 +186,8 @@ print(len(a[0])) # How to print number of elements in 1st inner list
 print(len(a[1])) # How to print number of elements in 2nd inner list
 print(len(a[2])) # How to print number of elements in 3rd inner list
 	  
+
+
 
 
 
