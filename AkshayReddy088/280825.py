@@ -17,7 +17,8 @@ x1 = sorted(x1.upper())
 x2 = set('AEIOU')
 for x in x1:
     if x in x2:
-        b[x] = b.get(x,0)+1
+        # b[x] = b.get(x,0)+1 
+        b[x] = x1.count(x)
 print(b)
 
 
@@ -113,7 +114,7 @@ print('Begin') # Begin
 x = f1()
 print(x) # 10
 print('End') # End
-return 100   # Error
+# return 100   # Error
 
     
 #  Find  outputs
