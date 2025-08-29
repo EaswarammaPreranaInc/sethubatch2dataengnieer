@@ -32,7 +32,7 @@ print(a) # prints 'a' i.e.,  {25, 10.8, 'Hyd', True} in any order
 print(id(a)) # prints address of set 'a' 
 a . add(tpl) # adds tpl to set 'a'
 a . add('Sec') # adds 'Sec' to set 'a'
-print(a) # {25, 10.8, 'Hyd', True, (10, 20, 30), 'Sec'} in any order
+print(a) # {25, 10.8, 'Hyd', True, 'Sec',  (10, 20, 30)} in any order
 print(id(a)) # prints address of new set of 6 elements
 print(len(a)) # prints number of elements in set 'a'i.e., 6
 a . add([100 , 200 , 300]) # Error because set cannot hold mutable elements
@@ -92,7 +92,7 @@ s . update(25) #  Error argument should be sequence only
 
 # Find  outputs  (Home  work)
 a = [10 , 20 , 30] # Ref 'a' points to list [10, 20, 30]
-b = {30 , 40,50 } # Ref 'b' points to set {30 , 40, 50}
+b = {30 , 40, 50 } # Ref 'b' points to set {30 , 40, 50}
 c = (50 , 60 , 70) # Ref 'c' points to tuple (50, 60, 70)
 s = set() # Ref 's' points to empty set
 s . update(a , b , c) # Ref 's' is updated with elements of 'a', 'b' and 'c'
@@ -133,7 +133,7 @@ b = a . copy() # elements of set 'a' are copied to set 'b',deep copy
 print(b) # prints set 'b' i.e., {10, 20, 15, 18} in any order
 print(a  is  b) # False because Ref 'a' and Ref 'b' points to different sets
 print(a  ==  b) # True because elements of set 'a' and 'b' are same
-c = a # REference 'a' is copied to 'c', wherever 'a' points to the same set 'c' also points
+c = a # Reference 'a' is copied to 'c', wherever 'a' points to the same set 'c' also points
 print(a  is  c) # True because Ref 'a' and 'c' points to same set
 
 
@@ -177,7 +177,7 @@ a = {25 , 10.8 , 'Hyd' , True} # Ref 'a' points to set of 4 elements
 print(a) # prints set 'a' i.e., {25, 10.8, 'Hyd', True} in any order
 a . remove('Hyd') # removes element 'Hyd' from set 's'
 print(a) # prints set 's' i.e., {25, 10.8, True} in same order because it is same set
-a . remove('Sec') # Error because there is no element 'Sec
+a . remove('Sec') # Error because there is no element 'Sec'
 
 
 
@@ -241,17 +241,3 @@ print(a . union(b)) # Concatenates set 'a' and list 'b' and prints new set of 6 
 print(a | b) # Error because set and list cannot be concatenated with pipe operator
 print(b . union(a)) # Error because list has no method union
 print(a + b) # Error because set and list cannot be concatenated with '+' operator
-
-
-
-
-
-
-
-
-
-
-
-
-
-
