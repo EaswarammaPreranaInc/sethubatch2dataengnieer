@@ -76,6 +76,10 @@ Enter list of lower case strings:['hyd' , 'pune' , 'chennai' , 'vijayawada']
 
 
 
+
+
+
+
 '''
 Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
 (word  should  be  in  capital  letters)  without  comprehension
@@ -143,7 +147,7 @@ Enter any sentence:Students are getting bored
 Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
 
 Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
-What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300, 40+400]
 Enter  1st  list  :  [10,20,30,40,50,60,70]
 Enter  2nd  list  :  [1,2,3,4]
 [11, 22, 33, 44]
@@ -164,6 +168,8 @@ Enter 1st list:[10,20,30,40,50,60,70]
 Enter 2nd list:[1,2,3,4]
 [11, 22, 33, 44]
 '''
+
+
 
 
 
@@ -196,6 +202,11 @@ Enter 2nd string:[100 , 200 , 300 , 400]
 
 
 
+
+
+
+
+
 '''
 Write   a  program  to  initialize  a  nested  list  with  zeroes  without  comprehension
 
@@ -205,7 +216,7 @@ What  is  the  output ?  --->  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 ,
 Hint:  Use  repetition operator *
 How  many  lists  ?  :  3
 How  many  elements  in  each  list ?  :  5
-[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 '''
 
 a = int(input("How many lists? :"))
@@ -228,13 +239,16 @@ How many elements in each list? :5
 
 
 
+
+
+
 '''
 (Home  work)
 Repeat   previous  program  with  comprehension
 
 Inputs :  3  and  4
 
-Output :  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+Output :  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
 '''
 
 a = int(input("How many lists? :"))
@@ -323,6 +337,8 @@ Enter 2nd list:[30,40,10,25,15]
 
 
 
+
+
 #  Write   a  program  to  print  even  numbers  between  1  and  20  with  comprehension
 #Even numbers  between  1  and  20 :   [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
@@ -334,6 +350,9 @@ Outputs:
 
 Even numbers between 1 and 20: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 '''
+
+
+
 
 
 
@@ -354,6 +373,10 @@ Outputs:
 
 Even numbers between 1 and 20: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 '''
+
+
+
+
 
 
 
@@ -441,6 +464,9 @@ Enter 2nd list:[30,40,35,12]
 
 
 
+
+
+
 '''
 (Home  work)
 Repeat   previous  program  with  comprehension
@@ -491,6 +517,9 @@ Enter 1st string:HYD
 Enter 2nd string:PUNE
 ['HP', 'HU', 'HN', 'HE', 'YP', 'YU', 'YN', 'YE', 'DP', 'DU', 'DN', 'DE']
 '''
+
+
+
 
 
 
@@ -644,6 +673,9 @@ List of strings:['Swathi', 'Anand', 'Srinivas', 'Zebra', 'King', 'Amar']
 ['S', 'A', 'Z', 'K']
 [['Swathi', 'Srinivas'], ['Anand', 'Amar'], ['Zebra'], ['King']]
 '''
+
+
+
 
 
 
