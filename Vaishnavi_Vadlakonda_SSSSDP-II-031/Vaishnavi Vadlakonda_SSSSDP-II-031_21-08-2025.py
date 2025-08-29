@@ -40,6 +40,10 @@ print(a, id(a)) # prints tuple 'a' and address of the tuple i.e., (1,2,3,4,5,6)<
 
 
 
+
+
+
+
 #  What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?   (Home  work)
 a = input('Enter  Tuple  :  ') # reads string input from user
 print(a) # '(10 , 20 , 30 , 40)'
@@ -95,7 +99,7 @@ a = 25 # Ref 'a' points integer object 25
 b = 10.8 # Ref 'b' points to float object 10.8
 c = 'Hyd' # Ref 'c' points to string object 'Hyd'
 d = True # Ref 'd' points to boolean object True
-x = a , b , c , d # Ref 'x' points to tuple
+x = a , b , c , d # packs all elements to a tuple 'x'
 print(x) # prints tuple 'x' i.e., (25, 10.8, 'Hyd', True)
 print(type(x)) # prints type of'x' i.e., <class 'tuple'>
 
@@ -109,7 +113,7 @@ print(type(x)) # prints type of'x' i.e., <class 'tuple'>
 
 # Find  outputs   (Home  work)
 x = 25 , 10.8 , 'Hyd' , True  # Ref 'x' points to tuple
-a , b , c , d = x
+a , b , c , d = x # upacks all elements of tuple 'x'
 print(a) # prints 25
 print(b) # prints 10.8
 print(c) # prints Hyd
@@ -169,7 +173,7 @@ print(_) # prints (3 + 4j)
 
 
 
-
+ 
 
 
 
