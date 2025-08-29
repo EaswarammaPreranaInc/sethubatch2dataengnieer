@@ -1,5 +1,5 @@
 #  len()  function demo   program  (Home  work)
-a = [ 25, 10.8, 'Hyd', True]  # Ref 'a' points to list of 4 elements
+a = [25, 10.8, 'Hyd', True]  # Ref 'a' points to list of 4 elements
 print(len(a)) # prints number of elements in the list i.e., 4
 b = [] # Ref 'b' points to empty list
 print(len(b)) # prints number of elements in list i.e., 0
@@ -32,12 +32,16 @@ print(sum(e)) # Error because string cannot be added
 
 
 
+
+
 #  Find  outputs
 a = [[10 , 20 , 15 , 18]] # Ref 'a' points to list of 1 element
 print(sum(a)) # Error because because there is only one element in list 
 print(a) #How  to  determine  sum  of  inner  list  elements
 print(sum(a[0])) #How  to  determine  sum  of  inner  list  elements  in  another  way
       
+
+
 
 
 
@@ -112,7 +116,7 @@ print(list(None)) # Error because Nonetype object cannot be convertted to list
 a = ((10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)) # Ref 'a' points to tuple of tuples
 print(list(a)) # converts tuple of tuples into list of tuples and prints [(10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)]
 b = { (10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)} # Ref 'b' points to set of tuples
-print(list(b)) # converts set of tuples into list of tuples and prints [(10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)]
+print(list(b)) # converts set of tuples into list of tuples and prints [(10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)] in any order
 c = ([10 , 20] , (30 , 40) , {50 , 60}) # Ref 'c' points to tuple of sequences
 print(list(c)) # converts tuple of sequences to list of sequences and prints [[10 , 20] , (30 , 40) , {50 , 60}]
 
@@ -272,10 +276,10 @@ a = [10 , 20 , 30] # Ref 'a' points to list of 3 elements
 a . append('Hyd') # inserts 'Hyd' at the end of list 'a'
 print(a) # prints 'a' i.e., [10, 20, 30, 'Hyd']
 print(len(a)) # prints number of elements in the list 'a' i.e., 4
-print(a[4]) # How to print 4th element of list 'a'
-print(a[4][0]) # How to print 'H'
-print(a[4][1]) # How to print 'y'
-print(a[4][2]) # How to print 'd'
+print(a[3]) # How to print 4th element of list 'a'
+print(a[3][0]) # How to print 'H'
+print(a[3][1]) # How to print 'y'
+print(a[3][2]) # How to print 'd'
       
 
 
@@ -316,7 +320,7 @@ What  is  the  output ?  ---> [10, 20,  18, 19, 17, 20, 14]
 
 Enter List  :  [10 , 20 , 15 , 18 , 19 , 15 , 17 , 20 , 15 , 14]
 Enter  element  to  be  deleted : 15
-List  without   15's :  [10, 20, 18, 19, 17, 20, 14]
+List  without   15's :  [10, 20, 18, 19, 17, 20, 14]
 '''
 
 a = eval(input("Enter any list:"))
@@ -464,6 +468,9 @@ Enter any list:[10 , 20 , 15 , 10 , 14 , 10 , 18 , 20 , 19]
 
 
 
+
+
+
 '''
 Write  a  program  to  determine  all  the  list  elements  are  identical  or  not
 
@@ -513,7 +520,7 @@ List elements are not identical
 
 # index()  method  demo  program  (Home  work)
 a = [10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25]
-#     0     1     2    3    4     5    6    7     8    9    10
+#    0    1    2    3    4    5    6    7    8    9    10
 try:
 	i = a . index(15) 
 	while  True:
