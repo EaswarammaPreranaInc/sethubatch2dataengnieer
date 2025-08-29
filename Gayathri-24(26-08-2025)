@@ -1,0 +1,10 @@
+Write a program to print distinct vowels of the string using Set
+
+a = input('Enter  mixed  case  string :  ')  #  Read a  string
+a = a . upper()  #  Converts  string  to   uppercase
+b = set(a)  #  Converts  uppercase string  to  set
+d = b . intersection('AEIOU')  #  Common elements  between  set 'b'  and  string  'AEIOU'
+e = '' . join(d)   #  Converts  set  'd'  to  string
+print('Distinct  vowels :  ' , e)
+
+
