@@ -215,7 +215,7 @@ Write   a  function  to  test  a  number  is  prime  (or)  not.
 '''
 def   prime(n):
 	# return  true   when  'n'  is  prime  number  and  False  otherwise
-	for i in range(2,n/2+1):
+	for i in range(2,n//2+1):
 		if n%i==0:
 			return False
 	return True
