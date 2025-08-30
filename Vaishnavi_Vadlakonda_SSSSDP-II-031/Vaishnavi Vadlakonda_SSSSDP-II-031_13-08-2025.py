@@ -6,14 +6,14 @@ Write  a  program  to  print  distinct  vowels  of  the  string  without  using 
 
 2) Hint  1:  Same  as   prog3e  with  minor  changes
 
-3) What  does  'hyd' . upper()  do ? --->  Returns  'HYD'
+3) What  does  'hyd' . upper()  do ? --->  Returns 'HYD'
 '''
 a = input("Enter any string:")
-a = a.upper()
-print(a)
+b = a.upper()
+print(b)
 vowels = "AEIOU"
 result = ''
-for i in a:
+for i in b:
     if i in vowels and i not in result:
         result += i
 print(result)

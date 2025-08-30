@@ -1,0 +1,197 @@
+# intersection() method demo program
+a = {10, 20, 30, 40}
+b = {30, 40, 50, 60}
+c = a.intersection(b)
+print(c)              # {40, 30}
+print(type(c))        # <class 'set'>
+d = a & b
+print(d)              # {40, 30}
+print(type(d))        # <class 'set'>
+print(c is d)         # False
+print(c == d)         # True
+
+# difference() method demo program
+a = {10, 20, 30, 40}
+b = {30, 40, 50, 60}
+c = a.difference(b)
+print(c)              # {10, 20}
+print(type(c))        # <class 'set'>
+d = a - b
+print(d)              # {10, 20}
+print(type(d))        # <class 'set'>
+print(c is d)         # False
+print(c == d)         # True
+
+
+# symmetric_difference() method demo program
+a = {10, 20, 30, 40}
+b = {30, 40, 50, 60}
+c = a.symmetric_difference(b)
+print(c)              # {10, 20, 50, 60}
+print(type(c))        # <class 'set'>
+d = a ^ b
+print(d)              # {10, 20, 50, 60}
+print(type(d))        # <class 'set'>
+print(c is d)         # False
+print(c == d)         # True
+
+
+# Find outputs
+a = {x * x for x in range(10)}
+print(a)              # {0, 1, 64, 4, 36, 9, 16, 49, 81, 25}
+print(type(a))        # <class 'set'>
+
+
+# Program: Remove duplicate characters of string using set
+s = "Rama Rao"
+result = "".join(set(s))
+print(result)         # Output may vary (sets are unordered), e.g., "ao mR"
+
+# Program: Remove duplicate elements from list using set
+lst = [False, 25, 10.8, 1, 25, 0, 'Hyd', 10.8, 1.0, None, 'Sec', 'Hyd', True]
+result = list(set(lst))
+print(result)         # [False, 1, None, 'Sec', 10.8, 25, 'Hyd']
+
+
+# Program: Obtain common elements between two lists using sets
+l1 = [10, 20, 30, 40, 50, 60]
+l2 = [30, 40, 70, 80, 20]
+common = list(set(l1) & set(l2))
+print(common)         # [40, 20, 30]
+
+# How to access dictionary values
+a = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65}
+print(a['Empno'])     # 25
+print(a['Ename'])     # Rama Rao
+print(a['Sal'])       # 1000.65
+
+
+# Modify values in dictionary
+a = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65}
+a['Sal'] = 2000
+a['Ename'] = 'Sita'
+a['Empno'] = 35
+print(a)              # {'Empno': 35, 'Ename': 'Sita', 'Sal': 2000}
+
+
+# Append key:value pairs to dictionary
+a = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65}
+a['Gender'] = 'M'
+a['Married'] = True
+print(a)              # {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65, 'Gender': 'M', 'Married': True}
+
+
+# Append values to empty dictionary
+a = {}
+a[10] = 'Rama'
+a[20] = 'Sita'
+a[15] = 'Rajesh'
+a[18] = 'Kiran'
+print(a)              # {10: 'Rama', 20: 'Sita', 15: 'Rajesh', 18: 'Kiran'}
+
+
+# Remove key:value pairs from dictionary
+a = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65}
+a.pop('Sal')
+print(a)              # {'Empno': 25, 'Ename': 'Rama Rao'}
+
+
+# in and not in operators
+a = {10: 20, 30: 40, 50: 60, 70: 80}
+print(30 in a.keys())     # True
+print(60 in a.keys())     # False
+print(60 in a.values())   # True
+print(30 in a.values())   # False
+print(50 in a)            # True
+print(20 in a)            # False
+print(70 not in a.keys()) # False
+print(40 not in a.values()) # False
+print(25 not in a)        # True
+
+
+# Program: Create dictionary with emp names and salaries
+n = 4
+a = {}
+a["AAA"] = 100000
+a["BBB"] = 200000
+a["CCC"] = 150000
+a["DDD"] = 175000
+print(a)  # {'AAA': 100000, 'BBB': 200000, 'CCC': 150000, 'DDD': 175000}
+
+
+# Program: Convert string to dictionary
+s = "Emp no = 25 , Emp name = Rama Rao , sal = 10000.0 , gender = m"
+pairs = [x.split("=") for x in s.split(",")]
+d = {k.strip(): v.strip() for k, v in pairs}
+print(d)  # {'Emp no': '25', 'Emp name': 'Rama Rao', 'sal': '10000.0', 'gender': 'm'}
+
+
+# len() function
+a = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 1000.65}
+print(len(a))     # 3
+b = {}
+print(len(b))     # 0
+
+
+# sum() function
+a = {10: 20, 30: 40, 50: 60}
+print(sum(a.keys()))    # 90
+print(sum(a.values()))  # 120
+print(sum(a))           # 90
+#print(sum(a.items()))   # TypeError (cannot sum tuples)
+
+# max() and min() functions
+a = {10: 20, 30: 25, 40: 5, 7: 28, 9: 50}
+print(max(a.keys()))    # 40
+print(min(a.keys()))    # 7
+print(max(a.values()))  # 50
+print(min(a.values()))  # 5
+print(max(a.items()))   # (40, 5)
+print(min(a.items()))   # (7, 28)
+print(max(a))           # 40
+print(min(a))           # 7
+
+
+# sorted() function
+a = {10: 'Red', 20: 'Green', 15: 'Blue', 18: 'Yellow', 5: 'White'}
+print(sorted(a.keys()))   # [5, 10, 15, 18, 20]
+print(sorted(a.values())) # ['Blue', 'Green', 'Red', 'White', 'Yellow']
+print(sorted(a.items()))  # [(5, 'White'), (10, 'Red'), (15, 'Blue'), (18, 'Yellow'), (20, 'Green')]
+print(sorted(a, reverse=True)) # [20, 18, 15, 10, 5]
+print(a)
+
+
+# Tricky Program: Sort dictionary wrt keys
+a = {10: 'A', 20: 'B', 15: 'C', 5: 'D', 12: 'E'}
+b = dict(sorted(a.items()))
+print(b)  # {5: 'D', 10: 'A', 12: 'E', 15: 'C', 20: 'B'}
+
+
+# clear() method
+a = {10: 20, 30: 40, 50: 60}
+a.clear()
+print(a)  # {}
+
+
+# copy() method
+a = {'R': 'Red', 'G': 'Green', 'B': 'Blue'}
+b = a.copy()
+print(b)         # {'R': 'Red', 'G': 'Green', 'B': 'Blue'}
+print(a is b)    # False
+print(a == b)    # True
+
+
+# keys(), values(), items()
+a = {10: 'Hyd', 20: 'Sec', 15: 'Cyb', 18: 'Pune'}
+print(a.keys())     # dict_keys([10, 20, 15, 18])
+print(a.values())   # dict_values(['Hyd', 'Sec', 'Cyb', 'Pune'])
+print(a.items())    # dict_items([(10, 'Hyd'), (20, 'Sec'), (15, 'Cyb'), (18, 'Pune')])
+
+# Program: Frequency of each alphabet (ignoring case)
+s = "RamA raO"
+s = s.upper()
+a = {}
+for ch in sorted(s):
+    if ch.isalpha():
+        a[ch] = a.get(ch, 0) + 1
+print(a)  # {'A': 3, 'M': 1, 'O': 1, 'R': 2}

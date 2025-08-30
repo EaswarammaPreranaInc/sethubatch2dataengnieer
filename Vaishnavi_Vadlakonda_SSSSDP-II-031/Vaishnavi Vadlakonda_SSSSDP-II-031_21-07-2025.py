@@ -6,11 +6,21 @@ for k in a.keys():
 for v in a.values():
     print(v) # prints all the values in the dictionary i.e., Ramesh<nextline>Kiran<nextline>Amar<nextline>Sita
 for i in a.items():
-    print(i) # prints each tuple of the listin dict_items object i.e., (10, 'Ramesh')<nextline>(20, 'Kiran')<nextline>(15, 'Amar')<nextline>(18, 'Sita')
+    print(i) # prints each tuple in dict_items object i.e., (10, 'Ramesh')<nextline>(20, 'Kiran')<nextline>(15, 'Amar')<nextline>(18, 'Sita')
 for k, v in a.items():
     print(k, v) # prints elements of each tuple in the list of dict_items i.e., 10 Ramesh<nextline>20 Kiran<nextline>15 Amar<necxtline>18 Sita
-for key in a:
-    print("Key:", key, "Value:", a[key]) # prints each key and  corresponding value  in  dict  'a' i.e., Key: 10 Value: Ramesh<nextline>Key: 20 Value: Kiran<nextline>Key: 15 Value: Amar<nextline>Key: 18 Value: Sita
+for k in a:
+    print("Key:", k, "Value:", a[k]) # prints each key and  corresponding value  in  dict  'a' i.e., Key: 10 Value: Ramesh<nextline>Key: 20 Value: Kiran<nextline>Key: 15 Value: Amar<nextline>Key: 18 Value: Sita
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,6 +33,12 @@ a = {
 print(type(a))  # prints <class 'set'>
 print(a)  # prints set 'a' i.e. {None}
 print(len(a)) # prints number of elements in the set 'a' i.e., 1
+
+
+
+
+
+
 
 
 
@@ -39,11 +55,25 @@ for  _  in  range(5):
 
 
 
+
+
+
+
+
+
+
 #  Find  outputs
 a = 25 # Ref 'a' points to int object 25
 print(id(a)) # prints address of object 25
 a = 35  # Ref 'a' is modified and points to object 35
 print(id(a)) # prints new address of object 'a'
+
+
+
+
+
+
+
 
 
 
@@ -62,6 +92,12 @@ c = None # ref 'c' points to  object None
 print(id(c)) # prints address of object None
 c = None  # ref points to same NoneType object None 
 print(id(c))# prints same address of object None
+
+
+
+
+
+
 
 
 
@@ -84,6 +120,13 @@ print(id(c)) # prints address of new range object
 
 
 
+
+
+
+
+
+
+
 # Find  outputs  (Home  work)
 a = 25 # ref 'a' points to int object 25
 b = 25 # ref 'b' also points to same int object 25
@@ -100,19 +143,34 @@ print(g is h) # False, because address of both objects is different even though 
 
 
 
+
+
+
+
+
+
+
 #Find  outputs(Home  work)
 a = [10 , 20 , 15 , 18] # ref 'a' points to list
 b = [10 , 20 , 15 , 18] # ref 'b' points to another list
-print(a  is  b) # False because both have different address
+print(a  is  b) # False because both pointing to different lists
 c =  {10 : 20, 30 : 40} # ref 'c' points to dictionary
 d =  {10 : 20, 30 : 40} # ref 'd' points to another dictionary
-print(c  is  d) # False because both have different address
+print(c  is  d) # False because both pointing to different dictionaries
 e = (10 , 20 , 15 , 18) # ref 'e' points to tuple
 f = (10 , 20 , 15 , 18) # ref 'f' points to same tuple
-print(e  is  f)  # True because both have same address
+print(e  is  f)  # True because both pointing to same tuple
 g = {10 , 20 , 15 , 18} # ref 'g' points to set
-h = {10 , 20 , 15 , 18} # ref 'h' points to another tuple
-print(g is h) # False because both have different address
+h = {10 , 20 , 15 , 18} # ref 'h' points to another set
+print(g is h) # False because both pointing to diffferent sets
+
+
+
+
+
+
+
+
 
 
 
@@ -135,12 +193,19 @@ print([10 , 20 , 30] + (40 , 50 , 60)) # Error because list and tuple cannot be 
 
 
 
+
+
+
+
+
+
+
 # Find outputs (Home work)
 print(25 * 3) # 25 is multiplied with 3 and prints 75
 print(10.8 * 25.6) # 10.8 is multiplied with 25.6 and prints 276.48
-print(True * False) # True is treated as 1 and False is treated as o and prints 0
-print((3 + 4j) * (5 + 6j)) # Error because complex object cannot be multiplied
-print(3 + 4j * 5 + 6j) # Error because complex object cannot be multiplied
+print(True * False) # True is treated as 1 and False is treated as 0 and prints 0
+print((3 + 4j) * (5 + 6j)) # prints (-9+38j)
+print(3 + 4j * 5 + 6j) # prints (3+26j)
 print('25' * 3) # when an str object multiplied with int object then str object is repeated and prints '252525'
 print(3 * '25') # when an str object multiplied with int object then str object is repeated and prints '252525'
 print('Hyd' * 4) # 'Hyd' repeats 4 times i.e., 'HydHydHydHyd'
@@ -149,7 +214,15 @@ print((25, 10.8, 'Hyd', True) * 3) # Tuple repeats thrice i.e., (25, 10.8, 'Hyd'
 print([10 , 20 , 15] * 3.0) # Error because list cannot be multiplied with float object,only int object is allowed
 print({10 , 20 , 15} * 2) # Error because set cannot allow duplicates, so it cannot be allowed
 print({10 : 20 , 30 : 40} * 2) # Error because dictionary cannot have duplicates, so it cannot be allowed
-print([10] * [20]) # Error because sequence cannot be multiplied by set,it can only multiplied by int type object
+print([10] * [20]) # Error because list cannot be multiplied by list,it can only multiplied by int type object
+
+
+
+
+
+
+
+
 
 
 
@@ -164,18 +237,9 @@ print(10 / 2) # prints 5.0
 
 
 
-#  //  operator  demo  program
-print(9 // 2)  #   prints previous integer of (4.5) i.e., 4
-print(9.0 // 2) # prints previous integer of (4.5) i.e., 4.0
-print(9 // 2.0) # prints previous integer of (4.5) i.e., 4.0
-print(9.0 // 2.0) # prints previous integer of (4.5) i.e., 4.0
-print(10.5 // 2) # prints previous integer of (5.25) i.e., 5.0
-print(10 // 3) # prints previous integer of (3.33) i.e., 3
-print(10.0 // 3) # prints previous integer of (3.33) i.e., 3.0
-print(8.5 // 3) # prints previous integer of (2.83) i.e., 2.0
-print(18 // 4) # prints previous integer of (4.45) i.e., 4
-print(-18 // 4) # prints previous integer of (4.45) i.e., -4
-print(-(18 // 4)) # prints previous integer of (4.45) i.e., -4
+
+
+
 
 
 
@@ -189,8 +253,16 @@ print(10 // 3) # prints previous integer of (3.33) i.e., 3
 print(10.0 // 3) # prints previous integer of (3.33) i.e., 3.0
 print(8.5 // 3) # prints previous integer of (2.83) i.e., 2.0
 print(18 // 4) # prints previous integer of (4.45) i.e., 4
-print(-18 // 4) # prints previous integer of (4.45) i.e., -4
+print(-18 // 4) # prints previous integer of (4.45) i.e., -5
 print(-(18 // 4)) # prints previous integer of (4.45) i.e., -4
+
+
+
+
+
+
+
+
 
 
 
@@ -201,11 +273,27 @@ print(7 % 0) #Error because modulo by zero is not possible
 
 
 
+
+
+
+
+
+
+
 # ** operator demo program
 print(3 ** 4) # 3 power of 4, prints 81
 print(10 ** -2) # 10 power of -2,prints 0.01
 print(4 ** 3 ** 2) # first evaluates 3 power 2,i.e., 9 and 4 power 9 i.e., 262144
 print(3 + 4 * 5 - 32 / 2 ** 3) # first evaluates 2 power 3 i.e., 8,next evaluates 32/2 i.e., 4.0,next evaluates 4*5 i.e., 20 and 3 + 20 - 4.0 i.e., 19.0
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,7 +311,15 @@ print(3 + 4j == 3 + 4j) # True : == is satisfied
 print(3 + 4j == 5 + 6j) # False : == is not satisfied
 print(3 + 4j != 5 + 6j) # True : != is not satisfied
 print(10 == 10.0) # True : == is satisfied
-print(3 + 4j >  3 + 4j) # Error because > is not supported complex
+print(3 + 4j >  3 + 4j) # Error because > is not supported for complex
+
+
+
+
+
+
+
+
 
 
 
@@ -238,13 +334,26 @@ print('HYD'  <   'hyd') # True : 'HYD' < 'Hyd'
 
 
 
+
+
+
+
+
+
 # Chaining  relational  opeartors  (Home work)
 print(10 < 20 < 30) # True :10 is < 20 and 20 is < 30
 print(10 >= 20 < 30) # False : 10  is  not  >= 20
 print(10 < 20 > 30) # False : 10 is < 20 but 20 is not > 30
 print(1 < 2 < 3 < 4) # True : 1 is < 2, 2 is < 3 and 3 is < 4
 print(1 < 2 > 3 > 1) # False : 1 is < 2 and 2 is not > 3 
-print(4 > 3 >= 3 > 2) # True : 4 is > 3, 3 is >= 3 and 3 is > 2
+print(4 > 3 >= 3 > 2) # True : 4 is > 3, 3 is = 3 and 3 is > 2
+
+
+
+
+
+
+
 
 
 
@@ -252,14 +361,21 @@ print(4 > 3 >= 3 > 2) # True : 4 is > 3, 3 is >= 3 and 3 is > 2
 print(True  or  False) # prints True
 print(False  or  True) # prints True
 print(True  or  True) # prints True
-print(False  or   False)   # prints False
-print(10  or  20) #  prints 10
-print(0   or  20)  # prints 20
-print(-25  or  0) # prints -25
-print(''  or  35) # prints 35
-print(6j  or  'Hyd') # prints 6j
-print(0.0  or  3 + 4j) # prints (3 + 4j)
-print('Hyd'   or   10.8) # prints 'Hyd'
+print(False  or False)   # prints False
+print(10 or 20) # prints 10
+print(0  or 20) # prints 20
+print(-25 or 0) # prints -25
+print('' or 35) # prints 35
+print(6j or 'Hyd') # prints 6j
+print(0.0 or 3 + 4j) # prints (3 + 4j)
+print('Hyd' or 10.8) # prints 'Hyd'
+
+
+
+
+
+
+
 
 
 
@@ -275,7 +391,12 @@ print(not  not  'Hyd') # prints True
 
 
 
-#  Find   outputs (Home work)
+
+
+
+
+
+#  Find   outputs (Home work)  
 i = 10 
 i = not  i > 14 
 print(i) # prints True because i is 10 and here not 10 is > 14

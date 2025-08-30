@@ -1,0 +1,199 @@
+# Identify  error
+if  9 > 5
+	print('Hello')
+print('Bye')                         #Hello
+                                      Bye
+-------------------------------------------------------
+if  9 > 12:
+	print('Hyd')
+else
+	print('Sec')         #Sec
+----------------------------------------------------------
+# Identify  error
+if  (10,20,15):
+print('Hyd')
+else:
+print('Sec')            #error because after : we should maintain indentation
+-----------------------------------------------------------------------
+
+if  ():
+			print('Hyd')                                   #error because  if  and else statements are not in same column
+	else:
+					print('Sec')
+print('Bye')
+-----------------------------------------------------------------------------------------
+if  { }:
+{
+	print('One')
+	print('Two')
+	print('Three')
+}
+else:
+{
+	print('Four')
+	print('Five')
+	print('Six')
+}
+print('Bye')                     #error because in python curly braces used for sets and dictionaries not for indentation
+--------------------------------------------------------------------------------------
+if  ():
+	print('One')
+	print('Two')
+	print('Three')
+else:
+if  []:
+	print('Four')
+	print('Five')
+	print('Six')
+else:
+if  {}:
+	print('Seven')
+	print('Eight')
+	print('Nine')
+else:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye')                   #error because after else statement indentation require
+-----------------------------------------------------------------------------------------
+# Write  a  program  to  determine  a  number  is  even  or  odd  with   if  statement
+
+a =int(input("enter a value:"))
+if a%2==0:
+    print("even number")
+
+------------------------------------------------------------
+
+if():
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+else:
+        print('One')
+        print('Two')
+        print('Three')
+print('Bye')
+
+#  output......
+One
+Two
+Three
+Bye
+------------------------------------------------------------------------
+if{10 : 20 , 30 : 40}:
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+print('Bye')            
+
+##output..........
+Hyd
+Sec
+Cyb
+Bye
+----------------------------------------------------------------------------------
+if { }:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye')
+
+#output.........
+Bye
+----------------------------------------------
+# Write   a  program  to  print  month  name  for  input  month  number  by  using  if  and  elif  (Home  work)
+
+month_number = int(input("enter month number from(1-12):"))
+try:
+    if month_number==1:
+        print("January")
+    elif month_number==2:
+        print("february")
+    elif month_number==3:
+        print("march")
+    elif month_number==4:
+        print("April")
+    elif month_number==5:
+        print("may")
+    elif month_number==6:
+        print("June")
+    elif month_number==7:
+        print("July")
+    elif month_number==8:
+        print("August")
+    elif month_number==9:
+        print("septerber")
+    elif month_number==10:
+        print("October")
+    elif month_number==11:
+        print("November")
+    elif month_number==12:
+        print("December")
+    else:
+       print("input should between (1-12)")
+except ValueError:
+       print("input should be an integer")
+-------------------------------------------------------------------------------------------
+Write  a  program  to  print  digit  in  words  with  else  and  if  (do  not  use  elif)
+
+number = int(input("enter numer from(1-9):"))
+
+if number ==1:
+    print("1-One")
+else:
+     if number ==2:
+          print("2-Two")
+     else:
+         if number ==3:
+            print("3-Three")
+         else:
+             if number ==4:
+                 print("4-four")
+             else:
+                 if number ==5:
+                      print("5-five")
+                 else:
+                      if number ==6:
+                          print("6-six")
+                      else:
+                           if number ==7:
+                                  print("7-seven")
+                           else:
+                                if number==8:
+                                       print("eight")
+                                else:
+                                     if number ==9:
+                                           print("Nine")
+                                     else:
+                                         print("Invalid")
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,290 @@
+#  Find  outputs  (Home  Work)
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Hyd' , 25]
+print(a)      #[25,10.8 ,'Hyd',True ,3+4j ,None, 'Hyd',25]
+print(*a)       #25 10.8 'Hyd' True 3+4j None Hyd 25 
+print(type(a))     # object type is string
+print(id(a))   # identifier of string
+print(len(a))   # 8
+a[2] = 'Sec'   # at index 2 object a modify element 'Sec'
+print(a)        #   [25,10.8 ,'Sec',True ,3+4j ,None, 'Hyd',25]
+print(a[2 : 5])      # Hyd True 3 + 4j
+
+
+# append()  and  remove()  methods  (Home  work)
+a = [ ]
+print(a)    # empty string
+a . append(25)    # [25]
+a . append(10.8)    #[25,10.8]
+a . append('Hyd')  #[25,10.8,'Hyd']
+a . append(True)    # [25, 10.8 ,'Hyd',True]
+print(a)            # [25, 10.8 ,'Hyd',True]
+
+a . remove('Hyd')   # [25, 10.8 ,True]
+
+print(a)
+a . remove('25')
+print(a)      # [10.8 ,'Hyd',True]
+
+
+
+
+#  Find  outputs  (Home  work)
+a = [25 , 10.8 , 'Hyd']
+print(a)             # [25 , 10.8 , 'Hyd']
+print(id(a))         # idetifier of object a
+print(a * 3)            #[25 , 10.8 , 'Hyd',25, 10.8 ,'Hyd',25, 10.8, 'Hyd']
+print(a * 2)             #  [25 , 10.8 , 'Hyd',25, 10.8 ,'Hyd']
+print(a * 1)              # [25 , 10.8 , 'Hyd']
+print(a * 0)           # empty string
+print(a * -1)          # empty string
+print(a * 4.0)          # can not mutliply non_int
+a = a * 3          
+print(a)                 #[25 , 10.8 , 'Hyd',25, 10.8 ,'Hyd',25, 10.8, 'Hyd']
+print(id(a))           # identifier of object a
+a = [25]
+print(a * a)           # can not multiply with list
+
+
+# list()  function  demo  program
+a = list('Hyd')
+print(a)         #['H, y,d']
+print(type(a))    # list
+print(len(a))    #  3
+b = (10 , 20 , 15 , 18)
+print(list(b))    #[10 ,20 ,15,18]
+print(list(range(5)))     #[0,1,2,3,4,5]
+print(list(25))           # int object is not iterable
+
+
+# Find  outputs
+a = [ ]
+print(type(a))     # list
+print(a)             [ ]
+print(len(a))      #0
+b = list()
+print(b)         # empty list
+print(len(b))    #0
+
+
+# Slice  demo  program (Home  work)
+#        0      1          2         3         4       5     6         7
+list = [25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+#       -8     -7       -6        -5         -4      -3       -2        -1
+print(list[2 : 7])    # [3 + 4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+print(list[ : : ])
+print(list[:]) #  list[0 :  8 :  1]  --->  List  from  indexes  0  to  7  in  steps  of  1  i.e.  [25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+print(list[ : : -1])     # ['Hyd', 10.8 , None, True ,'Hyd', 3 +4j , 10.8 ,25]
+print(list[ : : 2])     # [25 , 3+4j ,True ,10.8 ]
+print(list[1 : : 2])     #   [10.8 ,'Hyd', None ,'Hyd']
+print(list[ : : -2]) #  list[-1 :  -9 : -2]  --->  List  from  indexes   -1  to  -8  in  steps  of   -2   i.e.  ['Hyd' , None , 'Hyd' , 10.8]
+print(list[-2 : : -2])       # ['Hyd', None, 'Hyd', 10.8] 
+print(list[1 : 4])      #  [10.8 ,3+ 4j ,'Hyd',True,]
+print(list[-4 : -1])       #[True , None , 10.8 ]
+print(list[3 : -3])        #[True, None]
+print(list[2 : -5])     #[3 + 4 j]
+print(list[-1:-5])          #[]
+
+
+
+
+list = [25 , 10.8 , 3+4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+x ,  y = list[3 : 5]      #['Hyd', True]
+print('x : ' , x)     # x :hyd
+print('y : ' , y)    #  y: True
+for  x  in  list[2:7]:
+	print(x)       # none
+
+
+
+#     0     1     2    3     4
+a = [10 , 20 , 30 , 40 , 50]
+print(a , id(a))              # [10 , 20 , 30 , 40 , 50],    idetifier of object list
+a[1 : 4] = [60 , 70] 
+print(a , id(a))                 # [10 , 20 , 30  , 50]
+a[2: 4] = [100 , 200 ,  300]
+print(a , id(a))           # [10 ,20 ,100,200,300]
+
+
+
+
+#  Find  outputs  (Home  work)
+a =  [25]
+print(a[1])   # index out of range
+print(a[1:])     # empty list
+
+
+
+
+a = (25)
+b = 25,
+c = 25
+d = (25,)
+print(type(a))   # int 
+print(type(b))   # tuple
+print(type(c))  # int
+print(type(d))  # tuple
+print(a * 4)     # 100
+print(b * 4)     #(25, 25,25 ,25)
+print(c * 4)  #100
+print(d * 4)    # (25, 25 ,25 ,25)
+
+
+
+
+a = tuple('Hyd')
+print(a)      ('H','y','d')
+print(type(a))    # tuple
+print(len(a))     #3
+b = [10 , 20 , 15 , 18]
+print(tuple(b))             (10 , 20 , 15 , 18)
+print(tuple(range(5)))      (0 ,1, 2, 3, 4)
+print(tuple(25))   # int not iterable
+
+
+
+
+a = ()
+print(type(a))     # tuple
+print(a)    #()
+print(len(a))  #0
+b = tuple() 
+print(b)  # ()
+print(len(b))   #0
+
+
+
+
+
+
+
+# Tricky program
+a = (10 , 20 , 30)
+print(a)      #(10 ,20 ,30)
+print(id(a))  # idetifier of object tuple
+a = a * 2
+print(a)      #  (10, 20 ,30 ,10 ,20 ,30 )
+print(id(a))    # identifier object tuple
+
+
+
+
+
+
+
+a = {25 , 10.8 , 'Hyd' , True , 3+4j , None , 25 , 'Hyd'}
+print(a)      #{25 , 10.8 , 'Hyd' , True , 3+4j , None , 25 , 'Hyd'}
+print(type(a))      # set
+print(len(a)) # 8
+print(a[2])   # not possible indexing
+print(a[1 : 4])   #not possible indexing
+a[2] = 'Sec'       # indexing is not possible to set
+print(a * 2)     # duplicate can  not possible
+print(a * a)   # duplicate can  not possible
+ 
+
+
+
+
+# Find  outputs (Home  work)
+a = {1 , 'Hyd' , False , True , 0.0 , '' , 1.0 ,  0}
+print(a)      #{1 , 'Hyd' , False , True , 0.0 , '' , 1.0 ,  0}
+print(len(a))   #7
+print(type(a))   # set
+
+
+
+
+a = set('Rama rAo')
+print(a)                                            #{'Rama rAo'}
+print(len(a))                                         # 7
+print(set([10 , 20 , 15 , 20]))                #{10,20 ,15 , 20}
+print(set((25 , 10.8 , 'Hyd' , 10.8)))              #   {25, 10.8, 'Hyd'}
+print(set(range(10 , 20 , 3)))                      #{16, 10, 19, 13}
+print(set(25))                                       # int object not iterable
+print(set([25 , 10.8 , [] , 'Hyd']))                #set type casting can not be possible in list
+
+
+
+
+
+
+
+
+a =   [ ]
+b =   ( )
+c =   {}
+d =   set()
+print(type(a))     # list   
+print(type(b))   # tuple
+print(type(c))  # set
+print(type(d))    # set
+print(a)    # []
+print(b)   # ()
+print(c)      #{}
+print(d)      #{}
+
+
+
+
+
+add()  and  remove()  methods  (Home  work)
+a = set()
+a . add(25)
+a . add(10.8)
+a . add('Hyd')
+a . add(True)
+a . add(None)
+a . add('Hyd')
+a . add(1)    # {None, True, 10.8, 'Hyd'}
+print(a)
+print(len(a))   #7
+a . remove(25)
+print(a)
+a . append(100)   #error 
+a . add(set())    # error
+a . add(())
+a . add([])
+print(a)
+a . add({})    #error
+
+a = {25 , True , 'Hyd' , 10.8}
+print('set  with  print  function')    # print(set()
+print(How  to  print  set)                       # print(a)
+print('Iterate  thru  set  with  for  loop')         
+How  to  iterate  thru  set  with  for  loop     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

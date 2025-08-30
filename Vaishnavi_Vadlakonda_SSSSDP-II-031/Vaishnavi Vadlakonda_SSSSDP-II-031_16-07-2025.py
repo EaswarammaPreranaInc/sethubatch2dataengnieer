@@ -12,7 +12,15 @@ print(c)  # Value of object 'c' i.e., 'Hyd is green city.<nextline> Hyd is hitec
 
 
 
-# Index   demo  program  (Home  work)
+
+
+
+
+
+
+
+
+# Index demo program (Home  work)
 a = 'Hyd'  # Ref 'a' points to the object 'Hyd'
 print(a[0])  # prints element of the string at index 0 i.e., 'H'
 print(a[1])   # prints element of the string at index 1 i.e., 'y'
@@ -23,11 +31,20 @@ print(a[-2])  # prints the element of the string at index -2 i.e., 'y'
 print(a[-3])  # prints the element of the string at index -3 i.e., 'H'
 print(a[-4])  # Error because object 'a' has only 3 characters i.e., index -1 to index -3,index -4 is out of range
 print(a[0] ==  a[-3])  # prints 'True' because a[0] = 'H' and a[-3] = 'H'
-a[2] = 'c' # Error because strings are immutable
-print(25[0])  # Error because 25 should be enclosed by quotes to access the characters and 25 is int object and a non-sequence,non-sequence no index
+a[2] = 'c' # Error because string is immutable
+print(25[0])  # Error because 25 should be enclosed by quotes to access the characters and 25 is int object and a non-sequence,non-sequence has no index
 print('25'[0])  # prints '2' because the index 0 of the string '25' is '2'
 print(True[1])  #Error because True should be enclosed by quotes to access the characters and True is bool object and it is non-sequence, so it has no index
 print('True'[1])  # prints 'r' because the index 1 of the string 'True' is 'r'
+
+
+
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,26 @@ print('25' * True)  # prints '25' once because boolean True is treated as 1
 
 
 
+
+
+
+
+
+
+
 #  Find  outputs  (Home work)
 a = 'Hyd' # Ref 'a' points to the object 'Hyd'
 print(a , id(a))  # prints 'Hyd' and address of the object 'Hyd'
-a = a * 3 # String Hyd repetition and creates new address for the object 'HydHydHyd'
+a = a * 3 # String Hyd repeats thrice and creates new address for the object 'HydHydHyd'
 print(a , id(a)) # prints HydHydHyd<space>Address of object HydHydHyd
+
+
+
+
+
+
+
+
 
 
 
@@ -60,7 +92,14 @@ print(len('Rama Rao')) # prints '8'
 print(len('9247'))  # prints '4'
 print(len('')) # prints '0' because of empty string
 print(len(' ')) # prints '1' because of space
-print(len(689)) # Error because int has no length,'689' should be enclosed by quotes
+print(len(689)) # Error because int has no length, 689 should be enclosed by quotes,int has no length function
+
+
+
+
+
+
+
 
 
 
@@ -69,16 +108,23 @@ a = """"Hyd"""  # Ref 'a' points to object """"Hyd"""
 print(a)  # prints "Hyd because it treates the extra " in the beginning as a character in string
 print(len(a)) # prints '4' because object """"Hyd""" has 4 characters
 print(a[0])  # prints " because the index 0 of the object """"Hyd""" is "
-print("""Hyd"""") # Error because of quotes at the start can exceed but not at the end string
+print("""Hyd"""") # Error because of quotes at the start can exceed but not at the end of the string
 b = """""Hyd"""  # Ref 'b' points to object """""Hyd"""
-print(b)  # prints ""Hyd because it treates the extra quotes in the beginning as characters in string
+print(b)  # prints ""Hyd because it treates the extra quotes in the beginning as characters of the string
 print(len(b)) # prints '5' because object """""Hyd""" has 5 characters
+
+
+
+
+
+
+
 
 
 
 # Find  outputs
 a = 'Sankar Dayal Sarma' # Ref 'a' points str object 'Sankar Dayal Sarma'
-print(a[7 : 12]) # a[7 : 11 : 1] prints string from indexes 7 to 11 in steps of 1 i.e., Dayal
+print(a[7 : 12]) # a[7 : 12 : 1] prints string from indexes 7 to 11 in steps of 1 i.e., Dayal
 print(a[7 : ]) # a[7 : 18 : 1] prints string from indexes 7 to 17 steps of 1 i.e., Dayal<space>Sarma 
 print(a[ : 6]) # a[0 : 6 : 1] prints string from indexes 0 to 5 in steps of 1 i.e., Sankar
 print(a[ : ])  # a[0 : 18 : 1] prints string from indexes 0 to 17 in steps of 1 i.e., Sankar<space>Dayal<space>Sarma
@@ -97,10 +143,24 @@ print(a[3 : 3]) # a[3 : 3 : 1] prints string from indexes 3 to 2 in steps of 1 i
 
 
 
+
+
+
+
+
+
+
 #  Find  outputs  (Home  work)
 a =  'A'  # Ref 'a' points to object 'A'
 print(a[1]) # Error because index 1 is out of range and there is only one character in string and its index is 0
-print(a[1:]) # prints space as the string has only one character and has index is 0
+print(a[1:]) # prints space as the string has only one character and has index is 0 and slicing never throws error
+
+
+
+
+
+
+
 
 
 
@@ -122,6 +182,14 @@ print(int('Ten'))  # Error because 'Ten' cannot be converted to int
 
 
 
+
+
+
+
+
+
+
+
 # float()  function  demo  program
 print(float(25))  #  Converts  int  object  25  to  float  object   25.0
 print(float(True))   #  Converts  bool  object   True   to  float  object   1.0
@@ -134,6 +202,14 @@ print(float(0O6247)) # converts octal object 0O6247 to float object 3239.0
 print(float(0XA7B9)) # converts hex object 0XA7B9 to float object 42937.0
 print(float(3 + 4j)) # Error because argument must be string or real number but not complex
 print(float('Ten')) # Error because invalid string format cannot be converted to complex
+
+
+
+
+
+
+
+
 
 
 
@@ -157,6 +233,14 @@ print(complex('Ten'))  # Error because cannot convert string that has alphabets 
 
 
 
+
+
+
+
+
+
+
+
 #  bool()  function  demo  program
 print(bool(0)) #   False because it is 0
 print(bool(10)) # True :  10  is  non-zero
@@ -174,10 +258,24 @@ print(bool('True')) # True because argument is non-empty string
 
 
 
+
+
+
+
+
+
+
 # oct()  function  demo  program
 print(oct(195)) # converts int object 195 to octal object 0O303
 print(oct(0B10101110010))  # converts bin object 0B10101110010 to octal object 0O2562
 print(oct(0xA7B9)) # converts hex object 0xA7B9 to octal object 0O123671
+
+
+
+
+
+
+
 
 
 
@@ -191,8 +289,14 @@ print(str(None)) # converts NoneType object None to str object 'None'
 
 
 
+
+
+
+
+
+
+
 # hex()  function  demo  program
 print(hex(25)) # converts int object 25 to hex object 0X19
 print(hex(0B10101111010111)) # converts bin object 0B10101111010111 to hex object 0X2bd7
 print(hex(0O6247))  # converts octal object 0O6247 to hex object 0Xca7
- 

@@ -1,0 +1,6 @@
+Write  a  program  to  print  distinct  vowels  of  the  string  by  using  set:
+
+s = input("Enter mixed case string : ").upper()
+vowels = {'A','E','I','O','U'}
+result = "".join(set(s) & vowels)
+print("Distinct vowels :", result)

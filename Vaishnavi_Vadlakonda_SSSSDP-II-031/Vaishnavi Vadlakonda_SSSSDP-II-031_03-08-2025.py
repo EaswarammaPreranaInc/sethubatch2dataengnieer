@@ -35,6 +35,10 @@ Outside loop
 
 
 
+
+
+
+
 # Identify Error  (Home  work)
 if (): 
 	print('Hyd') 
@@ -72,12 +76,22 @@ Outside loop
 
 
 
+
+
+
+
+
 # Identify Error  (Home  work)
 if(10 , 20 , 30): 
 	print('Hyd')
 	break  # Error because break must be in either for loop or while loop
 	print('Sec')
 	
+
+
+
+
+
 
 
 
@@ -125,6 +139,10 @@ Outside loop
 
 
 
+
+
+
+
 # Find  outputs  (Home  work)
 for  i   in   range(1 , 8):
 	print(i)
@@ -146,6 +164,9 @@ Sec
 Hello
 3
 '''
+
+
+
 
 
 
@@ -193,6 +214,9 @@ Outside loop
 
 
 
+
+
+
 # Find  outputs  (Home  work)
 for  i  in  range(1 , 8):
 	print(i)
@@ -217,6 +241,9 @@ Hello
 3
 Outside loop
 '''
+
+
+
 
 
 
@@ -268,6 +295,9 @@ Outside loop
 
 
 
+
+
+
 '''
 Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
 print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
@@ -298,6 +328,10 @@ for i in range(len(list)):
 else:
     print("Not Found")
 	
+
+
+
+
 
 
 
@@ -335,6 +369,9 @@ else:
 
 
 
+
+
+
 #  Walrus   operator (:=)  demo  program
 print(a := 25) # Value of 'a' is 25 and result of 'a' is also 25 so prints 25
 print(a = 25) # Error because value of 'a' is 25 and result of 'a' is nothing
@@ -344,6 +381,9 @@ print(a) # print 13
 print((a := 6) + 7) # prints 13, value of 'a' is 6 and result of 'a' is 6 so print(6 + 7)
 print(a) # prints 6
 print((a = 6) + 7) # Error 
+
+
+
 
 
 
@@ -366,6 +406,10 @@ if  c = 0: # Error because value 'c' is 0 and result of 'c' is nothing
 else: # Error
 	print('Sec') # prints Sec
 	
+
+
+
+
 
 
 
@@ -410,11 +454,19 @@ except EOFError:
 
 
 
+
+
+
+
 #  del  operator  demo program  (Home  work)
 a = 25 # object 25 assigned to ref 'a'
 print(a) # prints 25
 del  a # deletes ref 'a' and object automatically deleted by PVM
 print(a) # Error because ref 'a' is already deleted
+
+
+
+
 
 
 
@@ -436,6 +488,11 @@ print(c) # Error because ref 'c' is already deleted
 
 
 
+
+
+
+
+
 #  Can  multiple  objects  be  deleted  with  same  del  operator ?
 a , b , c = 25 , 10.8 , 'Hyd' # ref 'a' points to int object 25,ref 'b' points to float object 10.8 and ref 'c' points to string object 'Hyd'
 print(a , b , c) # prints 25<space>10.8<space>Hyd
@@ -443,6 +500,11 @@ del   a , b , c # deletes ref a, ref b, ref c and objects are also automatically
 print(a) # Error because ref 'a' is already deleted
 print(b) # Error because ref 'b' is already deleted
 print(c) # Error because ref 'c' is already deleted
+
+
+
+
+
 
 
 
@@ -461,6 +523,9 @@ print(a[0]) # Error because ref 'a' is already deleted
 
 
 
+
+
+  
 
 
 # Find outputs  (Home work)

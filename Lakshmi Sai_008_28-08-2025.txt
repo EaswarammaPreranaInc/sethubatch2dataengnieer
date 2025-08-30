@@ -1,0 +1,202 @@
+ Find outputs (Home  work)
+a = [ ('R' , 'Red') , ('G' , 'Green') , ('B' , 'Blue')]                              # convert list to tuple
+b = {'Y' : 'Yellow', 'G' : 'Gray'}                                                   # dict with 2 key value pairs
+b . update(a)                                                                        #   {'Y': 'Yellow', 'G': 'Green', 'R': 'Red', 'B': 'Blue'}  key value pairs
+    print(b)                                                                         # {'Y': 'Yellow', 'G': 'Green', 'R': 'Red', 'B': 'Blue'}
+a . update(b)                                                                        # error because there is no update metphd to list
+
+
+
+ Find  outputs  (Home  work)
+a = [ (10 , 20 , 30) , (40 , 50 , 60) , (70 , 80 , 90)]                              # convert list to tuple
+b = {}                                                                               # empty set
+b.update(a)                                                                          # error because tuple is three elements  it treats only 2 elements
+print(b)                                                                             # error
+c = [(10,) , (20,) , (30,)]                                                          # error
+b . update(c)                                                                        #error
+print(b)                                                                             #error
+
+
+
+ Find  outputs (Home  work)
+d = {x : x ** 3   for    x   in  range(5)}                                          # range from 0 to 4 dict comprehension
+print(d)                                                                            #{0: 0, 1: 1, 2: 8, 3: 27, 4: 64}
+print(type(d))                                                                      # class dict
+
+
+  Find outputs   (Home  work)
+d = { x :  2 * x    for    x   in   range(5) }                                       # range 0 to 4 dict comprehension
+print(d)                                                                             # {0: 0, 1: 2, 2: 4, 3: 6, 4: 8}
+
+
+
+ Find outputs  (Home  work)
+a = {10 : 'Rama' , 15 : 'Sita' , 18 : 'Rajesh' , 17 : 'Kiran' , 12 : 'Rama Rao'}             # dic
+b = { k :  v  for   k , v  in   a .items()   if    k % 2 != 0}                               #add keys
+print(b)                                                                                     #{15:'sita',17:'kiran}
+c = {k : a[k]   for   k   in    a    if   a[k] . startswith('R')}                            #value start with R
+print(c)                                                                                     #{10:'Rama',18:'Rajesh,12:'Rama Rao'}
+
+
+
+ Find outputs  (Home  work)
+def   f1():                                                                              # funtion define and returns none
+	print('Hyd')                                                                         # Hyd
+	print('Sec')                                                                         # Sec
+	print('Cyb')                                                                         # Cyb
+# End  of  the  function
+print('Begin')                                                                            # begin
+x = f1()                                                                                   # None
+print(x)                                                                                  # None
+print(type(x))                                                                            # None type
+print('End')                                                                              # End
+
+
+
+ Find  outputs  (Home  work)
+def  f1():                                                                               # function define return tuple
+	return  10 , 20 , 30                                                                 # 10,20,30 returns multiple values
+# End  of  the  function                                                                 #
+x = f1()                                                                                 # (10,20,30)
+print(x)                                                                                 # (10,20,30)
+print(type(x))                                                                           # tuple
+a , b , c =  f1()                                                                        # tuple unpacking
+print(a)                                                                                 # 10
+print(b)                                                                                 # 20
+print(c)                                                                                 # 30
+print('for  loop')                                                                       # loops print each element
+for  k   in   f1():                                                                      # 
+	print(k)                                                                             # 10
+                                                                                           20
+                                                                                           30
+ 
+
+
+
+  Find  outputs
+def    f1():                                                                              # function exit and always returns
+        return  10                                                                        # 10 exit
+        return  20                                                                        # 20 exit
+        return  30                                                                        # 30 excute
+# End  of  the  function
+print('Begin')                                                                            # Begin
+x = f1()                                                                                  # f1(call convert return 10)
+print(x)                                                                                  # 10
+print('End')                                                                              # End
+return   100                                                                              # 100 error because return function statement is out side 
+
+
+
+ Find  outputs
+f1()                                                                                     # error because call before function def
+def   f1():                                                                              # function def returns none
+        print('Hello')                                                                   # hello
+print(f1())                                                                              # print hello funtion returns none
+print(f1)                                                                                # function object
+
+
+
+Find  outputs  (Home  work)
+print('Hello')                                                                           # Hello
+def  f1():                                                                               # no output because funtion f1 is defined , only store in memory
+        print('f1  function')                                                             # None
+#End  of   function                                                                       #
+print('Hi')                                                                               # Hi
+print(f1())                                                                               # f1 function
+print(f1)                                                                                 # f1 function excuted inside the function
+print('Bye')                                                                               # Bye
+
+
+
+ Find  outputs
+def    f1():                                                                            # function define nothing is excuted just store in memory
+        print('Hyd')                                                                    
+        print('Sec')                                                                    
+        print('Cyb')                                                                   
+#End  of  the  function
+print('Begin')                                                                          # Begin
+print(type(f1))                                                                         # class function
+print(id(f1))                                                                           #  memory address
+print('End')                                                                            # End
+
+
+
+ Find  outputs (Home  work)
+
+def   add(a , b):                                                                       # function define
+        return  a + b                                                                   # a + b
+#End  of  the  function
+print(add(10 , 20))                                                                     # 10 +20 = 30
+print(add('Hyder' , 'abad'))                                                            # Hyderabad
+print(add(10.8 , 20.6))                                                                 # 31.4
+print(add(True , False))                                                                # 1
+print(add(3 + 4j , 5 + 6j))                                                             # (8+10j)
+print(add(25 , 10.8))                                                                   # 35.8
+print(add([25 , 10.8 , 'Hyd'] , [True , None , 3+4j , 'Sec']))                          #  [25, 10.8, 'Hyd', True, None, (3+4j), 'Sec']
+print(add(10 , '20'))                                                                    # error because int + str not allowed
+          
+
+
+
+          Find  outputs (Home  work)
+def  f1():                                                                                 # three arguments function
+	print('No-argument  function')                                                         # 10 20 30
+def  f1(x):                                                          
+	print('Single  argument  function  : ' , x)                                            # error because positional argument , z is missing
+def  f1(x , y):
+	print('Two  argument  function : ' , x , y)                                             # error becuase positional argument , y , z missing
+def  f1(x , y , z):
+	print('Three  argument  function : ' , x , y , z)                                        # error because positional argument x,y,z is missing
+f1(10 , 20 , 30)
+f1(40 , 50)
+f1(60)
+f1()
+
+
+
+Find  outputs  (Home  work)
+def   disp(empno , ename , sal):                                                                         # creates function call object so , no output
+        print(F'Emp  Number  :  {empno} \t  Emp Name  :  {ename} \t  Salary  :  {sal}')                  # empno = 25 , ename = 'Rama Rao',sal= 10000.0 
+# End  of  the  function
+disp(25 , 'Rama  Rao' , 10000.0)                                                                          #2nd call
+disp('Sita' , 20000.0 , 35)                                                                               # empno = 'Sita,ename 20000.0,sal=35
+
+
+
+write a function to test a number is prime or not ?
+
+
+    try:
+    n = int(input("Enter a number: "))
+    if prime(n):
+        print("Prime number")
+    else:
+        print("Composite number")
+except ValueError:
+    print("Invalid input")
+
+
+
+    Write  a  program  to  determine  frequency  of  each  vowel  in  the  string  in  alphabetical  order (Ignoring  the  case)
+
+Let  input  be  RamA    raO
+What  is  the  output ?  --->  {'A' : 3 , 'O' : 1}
+
+Hint:  Same  as  prog23a  with  minor  changes
+
+
+def vowel_frequency(s):
+    s = s.upper()   # convert to uppercase (ignore case)
+    vowels = "AEIOU"
+    freq = {}
+
+    for ch in vowels:         # check vowels in alphabetical order
+        count = s.count(ch)   # count occurrences
+        if count > 0:         # only add if vowel exists
+            freq[ch] = count
+    return freq
+
+# Example
+text = "RamA    raO"
+print(vowel_frequency(text))
+'''

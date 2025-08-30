@@ -1,0 +1,318 @@
+'''
+Write  a  program  to  determine  largest  command  line  input
+
+1) py   prog2.py   10     20     30.8   7  40    35.6
+    What  is  the  largest  command  line  input ?  ---> 40
+    What  is  argv ?  --->  ['prog2.py' , '10' , '20' , '30.8' , '7' , '40' , '35.6']
+    What  is  list  'a' ?  --->  [10 , 20 , 30.8 , 7 , 40 , 35.6]
+    How  to  determine  largest  element  of  list  'a' ?   ---> max(a)  i.e.  40
+    What  is  the  result  of  max(argv[1:]) ?  ---> '7'
+    What  is  the  issue  with  max(argv[1:])) ?  --->
+													Largest  string  is  obtained  but  not  largest  number
+
+2) py  prog2.py
+    What  is  the  output ?  ---> Pls  send  inputs
+
+3) py   prog2.py   'Rama'   'Sita'   'Rajesh'   'Manohar'   'Vamsi'   'Amar'
+    What  is  the  largest  command  line  input ?  --->  'Vamsi'
+
+4) py   prog2.py   25   'Ten'
+    What  is  the  output ?  --->  Inputs  can  not  be  number  and  string
+
+5) Hint1: Use  for  loop
+
+6) Hint2: Use  try  and  except
+
+
+import sys
+
+args = sys.argv[1:]
+if len(args) == 0:
+    print("Pls send inputs")
+    sys.exit()
+
+a = []
+try:
+    for item in args:
+        a.append(float(item))
+    largest = max(a)
+    print("Largest command line input:", largest)
+
+except ValueError:
+   
+    try:
+        float(args[0])  # try first element
+        numeric_start = True
+    except ValueError:
+        numeric_start = False
+
+    if any(item.replace('.', '', 1).isdigit() for item in args) and not all(item.replace('.', '', 1).isdigit() for item in args):
+        print("Inputs can not be number and string")
+    else:
+        largest = max(args)  # String comparison
+        print("Largest command line input:", largest)
+print("argv:", sys.argv)
+try:
+    print("list a:", a)
+except NameError:
+    pass
+
+
+'''
+Write  a  program  to  determine  command  line  input  is  even  number  or  odd  number
+
+1) py  prog3.py  26
+    What  is  the  output ?  ---> Even  number
+
+2) py  prog3.py  45
+    What  is  the  output ?  ---> Odd  number
+
+3) py  prog3.py
+    What  is  the  output  ?  ---> Pls  send  an  integer  input
+
+4) py  prog3.py  10.8
+    What  is  the  output ?  --->  Pls  send   an  integer  input
+
+5) py  prog3.py  Ten
+    What  is  the  output  ?  --->  Pls  send   an  integer  input
+
+
+import sys
+
+args = sys.argv[1:]
+
+if len(args) == 0:
+    print("Pls send an integer input")
+    sys.exit()
+
+value = args[0]
+
+try:
+    num = int(value)  
+    if num % 2 == 0:
+        print("Even number")
+    else:
+        print("Odd number")
+except ValueError:
+    print("Pls send an integer input")
+
+
+'''
+Write  a  program  to  determine  average  of  command  line  inputs
+
+1) py   prog4.py   10.8   25   True   14.6   19   False   7.4
+    What  is  argv ?  --->['prog4.py' , '10.8' , '25' , 'True' , '14.6' , '19' , 'False' , '7.4']
+    What  is  list  'a'  ?  ---> 	[10.8 , 25 , True , 14.6 , 19 , False , 7.4]
+	How  to  determine  sum  of  list  elements ?  ---> sum(a)
+    How  to  determine  number  of  list  elements ?  ---> len(a)
+
+2) py   prog4.py
+    What  is  the  output ?  ---> Pls  send  number  inputs
+
+3) py   prog4.py  25   'Ten'
+    What  is  the  output  ?  --->  Pls  send  number  inputs
+
+
+import sys
+
+args = sys.argv[1:]
+if len(args) == 0:
+    print("Pls send number inputs")
+    sys.exit()
+
+a = []
+
+try:
+    for item in args:
+        if item.lower() == "true":
+            a.append(True)
+        elif item.lower() == "false":
+            a.append(False)
+        else:
+            a.append(float(item))
+
+    avg = sum(a) / len(a)
+
+    print("argv:", sys.argv)
+    print("list a:", a)
+    print("Average:", avg)
+
+except ValueError:
+    print("Pls send number inputs")
+
+'''
+Write  a  program  to  sort  command  line  inputs  in  ascending  order  and  descending  order
+
+1) py  prog5.py  10   20    15.8   5   12.6
+    What  is  argv ?  ---> ['prog5.py' , '10' , '20' , '15.8' , '5' , '12.6']
+    What  is  list  'a' ?  --->  [10 , 20 , 15.8 , 5 , 12.6]
+    How  to  sort  list  'a' ?  --->  sorted(a)
+    How  to  sort  list  'a'  in  descending  order  ?  ---> sorted(a , reverse = True)
+
+2) py  prog5.py   25   'Ten'
+    What  is  the  output ?  --->  Pls  don't  send  number  and  string  inputs  together
+
+
+import sys
+
+args = sys.argv[1:]
+
+if len(args) == 0:
+    print("Pls send number inputs")
+    sys.exit()
+
+a = []
+
+try:
+    for item in args:
+        a.append(float(item))
+
+    print("argv:", sys.argv)
+    print("list a:", a)
+    print("Ascending order:", sorted(a))
+    print("Descending order:", sorted(a, reverse=True))
+
+except ValueError:
+    has_number = any(arg.replace('.', '', 1).isdigit() for arg in args)
+    has_string = any(not arg.replace('.', '', 1).isdigit() for arg in args)
+
+    if has_number and has_string:
+        print("Pls don't send number and string inputs together")
+    else:
+        print("argv:", sys.argv)
+        print("list a:", args)
+        print("Ascending order:", sorted(args))
+        print("Descending order:", sorted(args, reverse=True))
+
+'''
+Write  a  program  to  determine  largest  command  line  input
+
+1) py   prog2.py   10     20     30.8   7  40    35.6
+    What  is  the  largest  command  line  input ?  ---> 40
+    What  is  argv ?  --->  ['prog2.py' , '10' , '20' , '30.8' , '7' , '40' , '35.6']
+    What  is  list  'a' ?  --->  [10 , 20 , 30.8 , 7 , 40 , 35.6]
+    How  to  determine  largest  element  of  list  'a' ?   ---> max(a)  i.e.  40
+    What  is  the  result  of  max(argv[1:]) ?  ---> '7'
+    What  is  the  issue  with  max(argv[1:])) ?  --->
+													Largest  string  is  obtained  but  not  largest  number
+
+2) py  prog2.py
+    What  is  the  output ?  ---> Pls  send  inputs
+
+3) py   prog2.py   'Rama'   'Sita'   'Rajesh'   'Manohar'   'Vamsi'   'Amar'
+    What  is  the  largest  command  line  input ?  --->  'Vamsi'
+
+4) py   prog2.py   25   'Ten'
+    What  is  the  output ?  --->  Inputs  can  not  be  number  and  string
+
+5) Hint1: Use  for  loop
+
+6) Hint2: Use  try  and  except
+
+import sys
+
+args = sys.argv[1:]
+if len(args) == 0:
+    print("Pls send inputs")
+    sys.exit()
+
+a = []
+
+try:
+    for item in args:
+        a.append(float(item))
+    largest = max(a)
+    print("Largest command line input:", largest)
+    print("argv:", sys.argv)
+    print("list a:", a)
+
+except ValueError:
+    has_number = any(arg.replace('.', '', 1).isdigit() for arg in args)
+    has_string = any(not arg.replace('.', '', 1).isdigit() for arg in args)
+
+    if has_number and has_string:
+        print("Inputs can not be number and string")
+    else:
+        
+        largest = max(args)
+        print("Largest command line input:", largest)
+        print("argv:", sys.argv)
+        print("list a:", args)
+
+ 
+
+print('green' in 'Hyd  is  green  city')      # True  
+print('day' in 'Sankar  dayal  sarma')        # True  
+print('Green' in 'Hyd  is  green  city')      # False 
+print('d  is' in 'Hyd  is  green  city')      # True  
+print('dis' in 'Hyd  is  green  city')        # False 
+print('iniv' in 'Srinivas')                   # True  
+print('iniv' not in 'Srinivas')               # False
+
+
+a = 'Rama Rao'  
+  0  1  2  3  4  5  6  7
+  R  a  m  a     R  a  o
+ -8 -7 -6 -5 -4 -3 -2 -1
+
+print(a[:7:2])        # 'RmaR'    
+print(a[:7])          # 'Rama Ra'  
+print(a[2:4])         # 'ma'       
+print(a[2:])          # 'ma Rao'   
+print(a[:4])          # 'Rama'     
+print(a[::2])         # 'RmaR'     
+print(a[-6:-1])       # 'ma Ra'    
+print(a[-6:])         # 'ma Rao'   
+print(a[:-4:-1])      # 'o a'      
+print(a[-3:-1])       # 'Ra'    
+print(a[-3:])         # 'Rao'      
+print(a[::])          # 'Rama Rao' 
+print(a[:])           # 'Rama Rao' 
+print(a[::-1])        # 'oaR amaR' 
+print(a[::-2])        # 'oRaR'     
+print(a[-2::-2])      # 'a mR'     
+print(a[2:8])         # 'ma Rao'
+
+
+'''
+Let  input  be  A4M3Z5D2
+
+What  is  the  output ?  --->  AEMPZ_DF
+
+ 0     1     2     3    4    5    6     7
+ A    4     M    3    Z    5    D     2
+
+
+   i       a[i]      a[i + 1]         out
+--------------------------------------------------------------------------------
+                                          ''
+  0       'A'           '4'          '' + 'A' + chr(65 + 4) = '' + 'A' + 'E' = 'AE'
+
+  2       'M'           '3'          'AE' + 'M' + chr(77 + 3) = 'AE' + 'M' + 'P' = 'AEMP'
+
+  4       'Z'           '5'          'AEMP' + 'Z' + chr(90 + 5) = 'AEMP' + 'Z' + '' = 'AEMPZ'
+
+  6       'D'           '2'          'AEMPZ_' + 'D' + chr(68 + 2) = 'AEMPZ_' + 'D' + 'F' = 'AEMPZ_DF'
+-----------------------------------------------------------------------------------
+Hint: Use  chr()  and  ord()  functions
+''' no need of 
+
+s = "A4M3Z5D2"
+out = ""
+
+for i in range(0, len(s), 2):
+    ch = s[i]
+    num = int(s[i+1])
+    new_ch = chr(ord(ch) + num) if ord(ch) + num <= 90 else ''
+    out += ch + (new_ch if new_ch else '_')
+
+print(out)
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,342 @@
+1)for i in range(1,8):
+    print(i)
+    if i%3==0:
+        continue
+    else:
+        print("Sec")
+    print("Hello")
+print("ooutside loop")
+
+
+#output-----
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+--------------------------------------------
+2) if():
+      print('Hyd')
+      continue
+      print('Sec')     #output   error
+----------------------------------------------------
+3) for i in range(1,8):
+      print(i)
+      if i%3==0:
+           break
+      else:
+          print('Sec')
+      print("Hello")
+print("outside loop")
+
+#output----
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+outside loop
+-----------------------------------------------------------------------------------
+if (10,20,30):
+   print("Sec")
+   break
+   print(Hyd)  #error
+------------------------------------------------------------
+for i in range(1,8):
+      print(i)
+      if i%3==0:
+           pass
+      else:
+          print('Sec')
+      print("Hello")
+print("outside loop")
+
+#output
+1
+Sec
+Hyd
+2
+Sec
+Hyd
+3
+Hello
+4
+Sec
+Hyd
+5
+Sec
+Hyd
+6
+Hello
+7
+Sec
+Hello
+-------------------------------------------------------------------------
+for i in range(1,8):
+      print(i)
+      if i%3==0:
+           exit()
+      else:
+          print('Sec')
+      print("Hello")
+print("outside loop")
+
+#output----
+1
+Sec
+Hyd
+2
+Sec
+Hyd
+3
+
+------------------------------------------------------------------------
+for i in range(1,8):
+    print(i)
+    if i%3==0:
+         continue
+    else:
+         print("Sec")
+    print("Hello")
+else:
+    print("else suite")
+print('end of loop")
+
+#output----
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+else suite
+end of loop
+------------------------------------------------------------
+
+for i in range(1,8):
+    print(i)
+    if i%3==0:
+         break
+    else:
+         print("Sec")
+    print("Hello")
+else:
+    print("else suite")
+print('end of loop")
+
+#output----
+1
+Sec
+Hyd
+2
+Sec
+Hyd
+3
+end of loop
+---------------------------------------------------------------------------------
+
+for i in range(1,8):
+    print(i)
+    if i%8==0:
+         break
+    else:
+         print("Sec")
+    print("Hello")
+else:
+    print("else suite")
+print('end of loop")
+
+#output-----
+1
+Sec  
+Hello
+2    
+Sec  
+Hello
+3    
+Sec  
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Sec
+Hello
+7
+Sec
+Hello
+else suite
+end of loop
+--------------------------------------------------------------------
+
+Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
+print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
+
+Let  list  be   [10 , 20 , 15 , 12 , 18]
+1) What  is  the  output  if  15  is  seacrhed ?  --->  Found  at  index  2
+
+2) What  is  the  output  if  19  is  seacrhed ?  --->  Not  found
+
+3) What  action  to  be  made  when  'x'  does  not  match  with  the  current  element  of  list ?  --->
+									   Compare  'x'  with  next  element  of  list
+
+4) What  action  to  be  made  when  'x'  matches   with  list  element ?  --->
+										Print  found   message  along  with  index  and
+									    do  not  search  for  'x'  in  rest  of  the  list
+
+5) What  action  to  be  made  when  'x'   does  not  match  with  all  the  elements  of  list ?  --->
+											Print  not  found   message
+
+6) Hint: Use  for  loop
+'
+lst = input("Enter numbers separated by space: ").split()
+lst = [int(x) for x in lst]
+ele = int(input("Enter the element to search: "))
+for i in range(len(lst)):
+    if lst[i] == ele:
+        print("Found at index", i)
+     else:
+        print("Not found")
+--------------------------------------------------------------------------------------------------------------
+Write  a  program  to  search  for  an  element  in  the  list  and  print  index  of  each  element
+and  also  number  of  times  it  is  found (Assume  that  list  may  contain  duplicate  elements)
+
+List :   [10 , 20 , 15 , 12 , 18 , 15 , 19 , 14 , 15 , 14]
+
+Search  for  15
+
+Outputs :  15  is  found  at  index  2
+                 15  is  found  at  index  5
+                 15  is  found  at  index  8
+                 15  is  found   3  times
+'''
+ 
+
+lst = input("Enter numbers separated by space: ").split()
+lst = [int(x) for x in lst]
+ele = int(input("Enter the element to search: "))
+count =0
+for i in range(len(lst)):
+    if lst[i] == ele:
+        count +=1
+        print("Found at index", i)
+        print(f"{i} found {count} times")
+     else:
+        print("Not found")
+-------------------------------------------------------------------------------------------------------------------
+print(a := 25)      # 25
+print(a = 25)     #errror
+print(a)    #  25
+print(a := 6 + 7)    #13
+print(a)      #13
+print((a := 6) + 7)  #13
+print(a)        #6
+print((a = 6) + 7)    #  error
+
+
+---------------------------------------------------------------------------------------------
+
+a = 0
+if  a == 0:
+	print('Hyd')
+else:
+	print('Sec')
+if  b := 0:
+	print('Hyd')
+else:
+	print('Sec : ' , b)
+if  c = 0:
+	print('Hyd')
+else:
+	print('Sec')
+
+
+output-----------
+Hyd
+Sec :  0
+--------------------------------------------------------------------------------------------
+a = 25 
+print(a)        #25
+del   a
+print(a)      #error
+------------------------------------------------------------------------------
+a = b = c = 25
+print(a , b , c)  # 25 25 25
+del   a
+print(b , c)   #25 25
+print(a)         # error
+del   b
+print(c)               # 25
+print             #error
+del   c
+print(c)                  #error
+----------------------------------------------------------------------------------
+a , b , c = 25 , 10.8 , 'Hyd'
+print(a , b , c)         #  25 10.8  Hyd
+del   a , b , c
+print(a)          #error
+print(b)         #error
+print(c)       #error
+-----------------------------------------------------------------------------------
+a = [10 , 20 , 15 , 18]
+print(a)               #[10 , 20 , 15 , 18]
+del  a[2]            
+print(a)              [10 , 20 , 18]
+del  a
+print(a)                #error
+print(a[0])             #error
+-------------------------------------------------------------------------
+a = (10 , 20 , 15 , 18)
+print(a)            #(10 , 20 , 15 , 18)
+print(a[0])      #10
+del  a[2]       #(10 , 20 , 18)
+del  a                   #error
+print(a)
+print(a[0])         #error
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

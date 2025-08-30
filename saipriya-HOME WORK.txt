@@ -1,0 +1,149 @@
+# endswith()  method  demo  progrram (Home  work)
+a = 'Hyd is green city'
+print(a . endswith('city'))  # True
+print(a . endswith('town'))  #FALSE
+print(a . endswith('green' , 3 , 12)) #TRUE
+print(a . endswith('green' , 3 , 13))  #FALSE
+print(a . endswith(' ' , 3 , 13)) # TRUE
+--------------------------------------------------------------
+
+Write  a  program  to  append  'ing'  to  input  string.
+Append  'ly'  to  the  string  if  the  string  already  ends  with  'ing'.
+Leave  the  string  unchanged  if  string  has  lessthan  three  characters
+
+n = input("Enter a string: ")
+
+if len(n) < 3:
+    result = n
+elif s.endswith("ing"):
+    result = n + "ly"
+else:
+    result = n + "ing"
+
+print(result)
+---------------------------------------------------------------------
+
+
+ #  isalpha()  method  demo  program (Home  work)
+print('Hyd'  . isalpha())  #   True
+print('Rama  Rao'  . isalpha()) #   False
+print('Hyd4'  . isalpha())   # FALSE
+print('Hyd$'  . isalpha())   # FALSE
+print('9247'  .  isalpha())   # FALSE
+print('+-$'    .  isalpha())  # FALSE
+print('A2#'  .   isalpha())  # FALSE
+print(''  .  isalpha())  # FALSE
+print(' '  .  isalpha())  #  FALSE
+
+---------------------------------------------------------------------
+
+# isdigit()  method  demo  program  (Home  work)
+print('9247' . isdigit())  # True
+print('92a47' . isdigit())  # False
+print('92$47' . isdigit())  # FALSE
+print('Hyd' . isdigit())  #FALSE
+print('+-$' . isdigit()) # FALSE
+print('A2#' . isdigit()) # FALSE
+print('' . isdigit()) #FALSE
+print(' ' . isdigit())# FALSE
+print(9247 . isdigit()) # ERROR
+-------------------------------------------------------------------
+# isupper()  method  demo  program  (Home  work)
+print('HYd' . isupper())  #   False
+print('HYD' . isupper()) #   True
+print('9247' . isupper())  #   False
+print('RAMA  RAO' . isupper()) # TRUE
+print('+-$' . isupper()) # FALSE
+print('HYD123' . isupper()) # TRUE
+print('HYD+-$' . isupper()) # TRUE
+print('' . isupper()) # FALSE
+print('A2#' . isupper()) # TRUE
+
+--------------------------------------------------------------
+ # islower()  method  demo  program  (Home  work)
+Print('hyD' . islower())  #  False
+print('hyd' . islower())  #  True
+print('9247' . islower())  #  False
+print('rama  rao' . islower()) # TRUE
+print('+-$' . islower()) #FALSE
+print('hyd+-$' . islower()) #TRUE
+print('abc123' . islower()) #TRUE
+print('' . islower()) #FALSE
+print('a2#' . islower()) #TRUE
+------------------------------------------------------------
+
+ # isalnum()  method  demo  program  (Home  work)
+print('A7$g'  . isalnum())  #  False
+print('HYD' . isalnum())  #  True
+print('+-$' . isalnum())  # FALSE
+print('hyd' . isalnum()) #TRUE
+print('hYd' . isalnum()) #TRUE
+print('9247' . isalnum()) #TRUE
+print('' . isalnum()) #FALSE
+print('A7g9'  . isalnum()) #TRUE
+-----------------------------------------------------
+
+
+ # isspace()  method  demo  program  (Home  work)
+print('\n  A\t' . isspace())  #  False
+print('\n  \t' . isspace()) #  True
+print('\n  7\t' . isspace()) #FALSE
+print('\n' . isspace()) #TRUE
+print('\n  $\t' . isspace()) #FALSE
+print('\t' . isspace()) #TRUE
+print('' . isspace()) #FALSE
+print(' ' . isspace()) #TRUE
+------------------------------------------
+
+
+ # Find  outputs  (Home  work)
+a , b , c = 25 , 10.8 , 'Hyd'
+print('a  :  {}  \t  b  :  {}  \t  c  :  {}  '  .  format(a , b , c))  # a  :  25    b  :  10.8    c  :  Hyd
+print('a  :  {0}  \t  b  :  {1}  \t  c  :  {2}  ' . format(a , b , c)) # a  :  25    b  :  10.8    c  :  Hyd
+print('a  :  {2}  \t  b  :  {1}  \t  c  :  {0}  ' . format(a , b , c)) # a  :  Hyd    b  :  10.8    c  :  25
+print('a  :  {2}  \t  b  :  {2}  \t  c  :  {2}  ' . format(a , b , c))  #a  :  Hyd    b  :  Hyd    c  :  Hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(x = a , y = b , z = c))  # a  :  25    b  :  10.8    c  :  Hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(z = a , y = b , x = c)) # a  :  Hyd    b  :  10.8    c  :  25
+print('a  :  {z}  \t  b  :  {z}  \t  c  :  {z}  ' . format(z = a , y = b , x = c)) # a  :  25    b  :  25    c  :  25
+
+------------------------------------------------------------------------
+Write  a  program  to  determine  user  input  is  alphabet , digit , white space  or  special  character
+
+ch = input("Enter a single character: ")
+
+if len(ch) != 1:
+    print("Please enter only one character.")
+elif ch.isalpha():
+    print("Alphabet")
+elif ch.isdigit():
+    print("Digit")
+elif ch.isspace():
+    print("Whitespace")
+else:
+    print("Special character")
+---------------------------------------------------------------------------
+Write  a  program  to  reverse  a  string  without  slice
+
+s = input("Enter a string: ")
+reversed_str = ""  
+for ch in s:       
+    reversed_str = ch + reversed_str  
+print("Reversed string:", reversed_str)
+----------------------------------------------------------------------
+Write  a  program  to  reverse  each  word  of  the  sentence
+
+sentence = input("Enter a sentence: ")
+
+result = ' '.join(word[::-1] for word in sentence.split())
+
+print(result)
+-------------------------------------------------------------------
+Write  a  program  to  sort  string  in  alphabetical  order
+
+s = input("Enter a string: ")
+
+sorted_str = ''.join(sorted(s)) 
+print("String in alphabetical order:", sorted_str)
+
+---------------------------------------------------------------
+

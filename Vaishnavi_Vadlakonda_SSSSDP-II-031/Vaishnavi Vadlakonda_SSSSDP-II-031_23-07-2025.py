@@ -12,11 +12,26 @@ print(-+a) # -(+a) = -(25) = -25
 
 
 
+
+
+
+
+
+
+
 #  Semicolon  demo  program
 print('One'); # prints 'One'
 print('Two'); # prints 'Two'
 print('Three'); # prints 'Three'
 print('Hyd')  ;   print('Sec')  ; print('Cyb') # prints 'Hyd'<nextline>'Sec'<nextline>'Cyb'
+
+
+
+
+
+
+
+
 
 
 
@@ -37,18 +52,34 @@ print(ceil(3.5)) # Error, we should import math explicitly
 
 
 
+
+
+
+
+
+
+
+
 # gcd()  function  demo  program
 import  math
 print(math . gcd(12 , 15)) # prints 3 because greatest common divisor of 12 and 15 is 3
 print(math . gcd(12 , 18)) # prints 6 because greatest common divisor of 12 and 18 is 6
 print(math . gcd(4 , 7)) # prints 1 because greatest common divisor of 4 and 7 is 1
-print(math . gcd(7 , 7)) # prints 3 because greatest common divisor of 12 and 15 is 3
-print(math . gcd(-18 , -27)) # prints -9 because greatest common divisor of -18 and -27 is -9
+print(math . gcd(7 , 7)) # prints 7 because greatest common divisor of 7 and 7 is 7
+print(math . gcd(-18 , -27)) # prints 9 because greatest common divisor of -18 and -27 is 9
 print(math . gcd(-4 , 6)) # prints 2 because greatest common divisor of -4 and 6 is 2
 print(math . gcd(0 , 7)) # prints 7 because greatest common divisor of 0 and 7 is 3
 print(math . gcd(3 , 0)) # prints 3 because greatest common divisor of 3 and 0 is 3
 print(math . gcd(0 , 0)) # prints 0 because greatest common divisor of 0 and 0 is 0
 print(gcd(5 , 15)) # Error because there is no gcd function in current module, so we should use should math.gcd()
+
+
+
+
+
+
+
+
 
 
 
@@ -63,6 +94,14 @@ print(builtins . abs(-25)) # searches for abs function in builtins module and co
 
 
 
+
+
+
+
+
+
+
+
 #  max()  and  min()   functions  demo  program
 from  builtins  import   max , min
 print(max(10.8 , 20.6)) # prints maximum value of 10.8 and 20.6 i.e., 20.6
@@ -70,7 +109,15 @@ print(min(10.8 , 20.6 , 5.9 , 12.3))  # prints minimum value of 10.8, 20.6, 5.9 
 print(max(25 , 10.8)) # prints maximum value of 25 and 10.8 i.e., 25
 import  builtins # imports builtins module
 print(builtins . max(10 , 20 , 30)) # it searches for max() function in builtins module and prints maximum value of 10, 20 and 30 i.e., 30
-print(builtins . min(10 , 20 , 15 , 5 , 12)) # it searches for min() function in builtins module and prints minimum value of 10, 20, 15, 5 and 12 i.e., 5
+print(builtins . min(10, 20, 15, 5, 12)) # it searches for min() function in builtins module and prints minimum value of 10, 20, 15, 5 and 12 i.e., 5
+
+
+
+
+
+
+
+
 
 
 
@@ -84,12 +131,26 @@ print(builtins . pow(-2 , -3)) # it searches for pow() function in builtins modu
 
 
 
+
+
+
+
+
+
+
 # Find  outputs
 from keyword import kwlist # imports kwlist from keyword module
 print(kwlist) # prints keywords in kwlist i.e., 
-print(len(kwlist)) # prints number of keywordd in kwlist i.e., 35
+print(len(kwlist)) # prints number of keyword in kwlist i.e., 35
 print(type(kwlist)) # prints type of kwlist i.e., <class 'list'>
 print(keyword . kwlist) # Error because cannot use keyword module without importing keyword module
+
+
+
+
+
+
+
 
 
 

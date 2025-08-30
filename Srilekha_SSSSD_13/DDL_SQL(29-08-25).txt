@@ -1,0 +1,154 @@
+
+
+Assignment: DDL Commands – Student Database
+Design a simple Student Database for a college. The database should store information about students, their courses, and enrollments.
+
+Questions
+Q1. CREATE Tables (with & without constraints)
+
+Create a table students with the following columns (add constraints where needed):
+
+student_id (INT, Primary Key)
+
+first_name (VARCHAR(50), NOT NULL)
+
+last_name (VARCHAR(50))
+
+dob (DATE, NOT NULL)
+
+gender (CHAR(1), check constraint: only 'M' or 'F')
+
+# query-------
+
+create table student
+(student_id int,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50),
+ dob DATE NOT NULL ,
+gender CHAR(1) CHECK (gender = 'M' OR gender = 'F'));
+---------------------------------------------------------
+
+Create another table courses without constraints with the following columns:
+
+course_id (INT)
+
+course_name (VARCHAR(100))
+
+credits (INT)
+
+#query---
+
+create table courses(course_id int,
+course_name VARCHAR(100),
+credits  INT)
+----------------------------------------------------------------------------------------------------------------------
+
+Q2. Add Constraints using ALTER
+
+Using ALTER TABLE, modify the courses table to add:
+
+Primary key on course_id
+
+NOT NULL on course_name
+
+Check constraint on credits (must be between 1 and 6)
+
+#query---
+
+ALTER TABLE courses
+ADD constraint pk_course_id primary key(course_id) ;
+ALTER TABLE courses
+MODIFY course_name VARCHAR(100) NOT NULL;
+ALTER TABLE courses
+ADD CONSTRAINT chk_credits CHECK (credits >= 1 AND credits <= 6);
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Q3. Create a Relationship with Foreign Key
+
+Create an enrollments table with:
+
+enroll_id (INT Primary Key)
+
+student_id (INT)
+
+course_id (INT)
+
+Add foreign key constraints so that:
+
+student_id references students(student_id)
+
+course_id references courses(course_id)
+
+Try creating this with and without ON DELETE CASCADE, and note the difference.
+
+#query--
+
+CREATE TABLE enrollments (
+    enroll_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES students(student_id),
+    CONSTRAINT fk_course FOREIGN KEY (course_id) REFERENCES courses(course_id)
+) ENGINE=InnoDB;
+
+----------------------------------------------------------------------------------------------------------------------
+
+Q4. ALTER Commands Practice 
+
+Perform the following changes:
+
+Add a new column email (VARCHAR(100)) to the students table.
+
+# alter table student add column email varchar(100) ;
+
+Rename the column dob in students to date_of_birth.
+
+#ALTER TABLE students
+CHANGE dob date_of_birth DATE;
+
+
+Drop the column credits from the courses table.
+#ALTER TABLE courses
+DROP COLUMN credits;
+
+
+Q5. DROP vs TRUNCATE
+
+Insert a few rows into students and courses.
+# insert into student(student_id ,first_name,last_name,dob, gender) values(1,'srilekha','Ananthoju','2003-07-08','F');
+insert into student(student_id ,first_name,last_name,dob, gender) values(2,'sree','bairi','2003-07-03','F');
+insert into student(student_id ,first_name,last_name,dob, gender) values(3,'riya','baithi','2005-07-03','F');
+insert into student(student_id ,first_name,last_name,dob, gender) values(4,'giri','bainsa','2008-06-03','M');
+
+
+
+
+
+Use TRUNCATE on the enrollments table and observe the difference vs DELETE.
+# TRUNCATE TABLE enrollments;
+#DELETE FROM enrollments
+WHERE enroll_id = 1;
+
+# Drop table enrollments;
+
+Finally, use DROP TABLE to remove the courses table completely.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

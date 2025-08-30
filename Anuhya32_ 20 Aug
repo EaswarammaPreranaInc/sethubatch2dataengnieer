@@ -1,0 +1,491 @@
+# Write  a  program  to  create  a  list  with  cubes  of  2 , 4 , 6 , 8 , 10  with  list  comprehension (Home  work)
+
+nums = [2, 4, 6, 8, 10]
+cubes = [x**3 for x in nums]
+print("Numbers:", nums)
+print("Cubes:", cubes)
+
+Numbers: [2, 4, 6, 8, 10]
+Cubes: [8, 64, 216, 512, 1000]
+
+'''
+(Home  work)
+Write  a  program  to  extract  1st  character  of  each  string  in  capital  letters  in  a  list  of  srings  without  comprehension
+
+Let  input  be   ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']
+'''
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+
+result = []
+
+for city in cities:
+  
+    result.append(city[0].upper())
+
+print(result)
+
+Enter  list  of  lower  case  strings :  ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+['H', 'P', 'C', 'V']
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input :  ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+
+Output :  ['H' , 'P' , 'C' , 'V']
+'''
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada'
+result = [city[0].upper() for city in cities]
+
+print(result)
+
+
+'''
+Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
+(word  should  be  in  capital  letters)  without  comprehension
+
+Let  input  be   hyd  is  green  city
+What  is  the  output ?  --->  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY', 3]]
+'''
+
+sentence = "hyd is green city"
+words = sentence.split()
+
+result = []
+for word in words:
+    
+    result.append([word.upper(), len(word)])
+
+print(result)
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input :  hyd  is  green  city
+
+Output :  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY' , 4]]
+'''
+
+a = 'hyd is green city'
+
+out = [[word.upper(), len(word)] for word in a.split()]
+
+print(out)
+
+
+'''
+Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+'''
+
+a = [10, 20, 30, 40, 50, 60, 70]
+b = [100, 200, 300, 400]
+
+result = []
+
+for i in range(len(b))
+    result.append(a[i] + b[i])
+
+print(result)
+
+Enter  1st  list  :  [10,20,30,40,50,60,70]
+Enter  2nd  list  :  [1,2,3,4]
+[11, 22, 33, 44]
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input1 : [10 , 20 , 30 , 40 , 50 , 60 , 70]
+Input2 :  [100 , 200 , 300 , 400]
+Output :  [110 , 220 , 330 , 440]
+'''
+
+
+a = [10, 20, 30, 40, 50, 60, 70]
+b = [100, 200, 300, 400]
+
+result = [a[i] + b[i] for i in range(len(b))]
+
+print(result)
+
+
+'''
+Write   a  program  to  initialize  a  nested  list  with  zeroes  without  comprehension
+
+Let inputs  be  3  and  4
+What  is  the  output ?  --->  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+
+Hint:  Use  repetition  operator  *
+'''
+
+rows = 3
+cols = 4
+
+row = [0] * cols
+
+matrix = [row] * rows
+
+print(matrix)
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Inputs :  3  and  4
+
+Output :  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+'''
+
+rows = 3
+cols = 4
+
+matrix = [[0 for j in range(cols)] for i in range(rows)]
+
+print(matrix)
+
+How  many  lists  ?  :  3
+How  many  elements  in  each  list ?  :  5
+[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+
+'''
+Write  a  program  to  extract  those  elements  of  1st  list  which  are  not  in  2nd  list   without  comprehension
+
+Let  1st  list  be  [10 , 20 , 15 , 18 , 25 , 32]  and  2nd  list  be  [30 , 40 , 10 , 25 , 15]
+What  is  the  output ?  --->  [20 , 18 ,  32]
+'''
+
+
+a = [10, 20, 15, 18, 25, 32]
+b = [30, 40, 10, 25, 15]
+
+result = []
+
+for item in a:           
+    if item not in b:       # check if it's missing in list b
+        result.append(item) # add to result
+
+print(result)
+
+
+Enter 1st  list  :  [10,20,15,18,25,32]
+Enter 2nd  list  :  [30,40,10,25,15]
+Elements  of  1st  list  which  are  not  in  2nd  list  :   [20, 18, 32]
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input1 :   [10 , 20 , 15 , 18 , 25 , 32]
+Input2 :  [30 , 40 , 10 , 25 , 15]
+Output :  [20 , 18 , 32]
+'''
+
+
+a = [10, 20, 15, 18, 25, 32]
+b = [30, 40, 10, 25, 15]
+
+result = [x for x in a if x not in b]
+
+print(result)
+
+
+#  Write   a  program  to  print  even  numbers  between  1  and  20  with  comprehension
+
+
+evens = [x for x in range(1, 21) if x % 2 == 0]
+
+print(evens)
+
+
+Even numbers  between  1  and  20 :   [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+
+'''
+Repeat  previous  program  with  comprehension  and  without  using  if
+
+Output: [Even  numbers  between  1  and  20]
+'''
+
+evens = [x for x in range(2, 21, 2)]
+
+print(evens)
+
+'''
+Write  a  program  to  add  each  element  of  1st  list  with  all  the  elements  of  2nd  list  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 15]  and  2nd  list  be  [30 , 40 , 35 , 32]
+What  is  the  result ?  --->
+					[10 + 30 , 10 + 40 , 10 + 35 , 10 + 32 , 20 + 30 , 20 + 40 , 20 + 35 , 20 + 32 , 15 + 30 , 15 + 40 , 15 + 35 , 15 + 32]
+
+Hint : Nested  for  loops
+'''
+
+
+a = [10, 20, 15]
+b = [30, 40, 35, 32]
+
+result = []
+
+for x in a:          # take each element from list a
+    for y in b:      # add it with each element from list b
+        result.append(x + y)
+
+print(result)
+
+
+Enter 1st list : [10,20,15]
+Enter 2nd list : [30,40,35,12]
+[40, 50, 45, 22, 50, 60, 55, 32, 45, 55, 50, 27]
+
+
+'''
+Write  a  program  to  print  those  squares  of  1 , 2 , 3 , 4 , ... 20  which  are  divisible   by  2  with  comprehension
+
+What  is  the  output ?  ---> [4 , 16 , 36 , ... ,  400]
+'''
+
+squares = [x**2 for x in range(1, 21) if (x**2) % 2 == 0]
+
+print(squares)
+
+Squares  of  1  to  20  which  are  divisible  by   2 :   [4, 16, 36, 64, 100, 144, 196, 256, 324, 400]
+
+
+#  Repeat  previous  program  with  comprehension  and  without  using  if
+
+
+squares = [x**2 for x in range(2, 21, 2)]
+
+print(squares)
+
+
+'''
+(Home  work)
+Repeat   previous  program  with  comprehension
+
+Input1 :  [10 , 20 , 15]
+Input2 :  [30 , 40 , 35 , 32]
+Output :  [10 + 30 , 10 + 40 , 10 + 35 , 10 + 32 , 20 + 30 , 20 + 40 , 20 + 35 , 20 + 32 , 15 + 30 , 15 + 40 , 15 + 35 , 15 + 32]
+'''
+
+
+a = [10, 20, 15]
+b = [30, 40, 35, 32]
+
+result = [x + y for x in a for y in b]
+
+print(result)
+
+'''
+Write  a  program  to  concatenate  each  character  of  1st  string  with  every  character  of   2nd  string  with  comprehension
+
+Let  1st string  be  HYD  and   2nd string  be   PUNE
+What  is  the  result  ?  --->  ['HP' , 'HU' , 'HN' , 'HE' , 'YP' , 'YU' , 'YN' , 'YE' , 'DP' , 'DU' , 'DN' , 'DE']
+
+Hint: Same  as  previous  program
+'''
+
+
+s1 = "HYD"
+s2 = "PUNE"
+
+result = [ch1 + ch2 for ch1 in s1 for ch2 in s2]
+
+print(result)
+
+
+'''
+Write  a  program  to  convert  a  nested  list  to  list  without  comprehension
+
+Let  input  be  [ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+What  is  the  output ?  --->  [10 , 20 , 30 , 40 , 50 , 60 , 70 , 80 , 90]
+'''
+
+
+nested = [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
+flat = []
+
+for sublist in nested:        # go through each inner list
+    for item in sublist:      # go through each element of inner list
+        flat.append(item)
+
+print(flat)
+
+Enter nested list : [ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+[10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+
+'''
+Write  a  program  to  convert  a  nested  list  to  list  with  comprehension
+
+Let  input  be  [ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+
+What  is  the  output ?  --->  [10 , 20 , 30 , 40 , 50 , 60 , 70 , 80 , 90]
+'''
+
+
+nested = [[10, 20], [30, 40, 50], [60, 70, 80, 90]]
+
+flat = [item for sublist in nested for item in sublist]
+
+print(flat)
+
+
+# Find  outputs (Home  work)
+a = [[10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+b = [ x  for  x  in  a  for  y  in  x]
+print(b)    # [[10, 20], [10, 20], [30, 40, 50], [30, 40, 50], [30, 40, 50], [60, 70, 80, 90], [60, 70, 80, 90], [60, 70, 80, 90], [60, 70, 80, 90]]
+
+
+#  Nested  comprehension  demo  program (Home  work)
+a = [ [ j  for   j  in   range(i)]   for   i   in   range(5)]
+print(a)   # [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]
+
+'''
+Most  tricky  program
+Input :   List  of  strings
+              Eg: ['Swathi' , 'Anand' , 'Srinivas' , 'Zebra' , 'King' , 'Amar' ]
+Output :  Nested  list
+		        i.e.  [['Swathi' , 'Srinivas'] , ['Anand' , 'Amar'] , ['Zebra'] , ['King']]
+
+Hint: Do  not  sort  the  lists
+
+1) b = ['S' , 'A' ,  , 'Z' , 'K' ]
+
+2) c = []
+
+3) Iteartion  1 :  d  = ['Swathi' , 'Srinivas']
+                           c =  [['Swathi' , 'Srinivas']]
+
+4) Iteartion  2 :  d  =  ['Anand' , 'Amar']
+                           c =   [['Swathi' , 'Srinivas'] , ['Anand' , 'Amar']]
+
+5) Iteartion  3 :  d  =  ['Zebra']
+                           c =   [['Swathi' , 'Srinivas'] , ['Anand' , 'Amar'] , ['Zebra']]
+
+6) Iteartion  4 :  d  =  ['King']
+                           c =   [['Swathi' , 'Srinivas'] , ['Anand' , 'Amar'] , ['Zebra'] , ['King']]
+'''
+
+
+names = ['Swathi', 'Anand', 'Srinivas', 'Zebra', 'King', 'Amar']
+result = []
+used = set()  
+
+for name in names:
+    first = name[0]          # first character
+    if first not in used:
+        group = [x for x in names if x[0] == first]
+        result.append(group)
+        used.add(first)
+
+print(result)
+
+
+Enter  list  of  strings :  ['Swathi' , 'Anand' , 'Srinivas' , 'Zebra' , 'King' , 'Amar' ]
+[['Swathi', 'Srinivas'], ['Anand', 'Amar'], ['Zebra'], ['King']
+
+'''
+Write  a  program  to  merge  two  sorted  lists  to  produce  another  sorted  list
+
+
+                                0      1      2       3         4
+Eg:  List  'a'   --->  [10  ,  20  , 30   ,  40   ,  50]
+       List  'b'   --->  [5  ,  12  , 20   ,  37]
+	                            0     1       2       3
+	   List  'c' --->  [5 , 10 , 12 , 20 , 20 , 30 , 37 , 40 , 50]
+
+Hint1 :  Unsorted  lists  can  not  be  merged
+
+Hint2 :  Use  single  while  loop
+'''
+
+
+a = [10, 20, 30, 40, 50]
+b = [5, 12, 20, 37]
+c = []
+
+i = j = 0
+
+# Merge while both lists have elements
+while i < len(a) and j < len(b):
+    if a[i] <= b[j]:
+        c.append(a[i])
+        i += 1
+    else:
+        c.append(b[j])
+        j += 1
+
+# Add remaining elements
+while i < len(a):
+    c.append(a[i])
+    i += 1
+
+while j < len(b):
+    c.append(b[j])
+    j += 1
+
+print(c)
+
+[5, 10, 12, 20, 20, 30, 37, 40, 50]
+
+
+'''
+Write  a  program  to  determine  n-th  largest  element   of   a   list
+
+Input1 :  [10,20,30,25,40,35,12,5]
+Input2 :  3  (3rd  largest)
+Output :  30
+'''
+Enter list:[10,20,30,25,40,35,12,5]
+Enter which largest which to be shown:3
+4th  largest  element  :  30
+
+lst = [10, 20, 30, 25, 40, 35, 12, 5]
+n = 3   # 3rd largest
+
+lst_sorted = sorted(lst, reverse=True)   # sort descending
+nth_largest = lst_sorted[n-1]
+
+print(nth_largest)
+
+'''
+Write  a  program  to  sort a  list  without  using  sorted()  function  and  sort()  method
+
+Input :  [10,20,30,25,40,35,12,5]
+Output :  [5,10,12,20,25,30,35,40]
+'''
+
+
+lst = [10, 20, 30, 25, 40, 35, 12, 5] 
+# Selection sort
+
+
+for i in range(len(lst)):
+    min_index = i
+    for j in range(i+1, len(lst)):
+        if lst[j] < lst[min_index]:
+            min_index = j
+    # Swap
+    lst[i], lst[min_index] = lst[min_index], lst[i]
+
+print(lst)
+
+Enter list:[10,20,15,12,5]
+[5, 10, 12, 15, 20]
+
+

@@ -78,7 +78,7 @@ try:
         else:
             print("Odd number")
 except ValueError:
-    print("Please seend an integer input")
+    print("Please send an integer input")
 
 
 
@@ -106,7 +106,7 @@ Write  a  program  to  determine  average  of  command  line  inputs
     What  is  the  output ?  ---> Pls  send  number  inputs
 
 3) py   prog4.py  25   'Ten'
-    What  is  the  output  ?  --->  Pls  send  number  inputs
+    What  is  the  output  ?  --->  Pls  send  number inputs
 '''
 from sys import argv
 print(argv)
@@ -199,7 +199,7 @@ print('iniv' not in 'Srinivas') # prints False
 Slice  demo  program
 0      1       2        3      4       5       6       7
 R      a      m        a               R       a       o
--8    -7     -6      -5     -4      -3     -2      -1
+-8    -7     -6       -5      -4      -3       -2     -1
 '''
 a = 'Rama Rao'
 print(a [ : 7 : 2]) # a[0 : 7 : 2] prints string from indexes  0 to 6 in steps of 2 i.e., Rm<space>a
@@ -402,7 +402,7 @@ print("String at odd indexes:", odd)
 
 '''
 Let  input  be    A   4   B   3   C   2   $   5
-                         0   1    2   3   4   5   6   7
+                  0   1   2   3   4   5   6   7
 
 What  is  the  output ?  --->  AAAABBBCC$$$$$
 
@@ -687,4 +687,3 @@ try:
   print("Result:", result)
 except ValueError:
    print("Pls  enter  string  with  alternate  char and digit")
-

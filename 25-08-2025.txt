@@ -1,0 +1,176 @@
+intersection()   method  demo  program (Home  work)
+a = {10 , 20 , 30 , 40}                                    # set
+b = {30 , 40 , 50 , 60}                                    # set
+c = a . intersection(b)                                    # {30,40}
+print(c)                                                   # {30,40}  common elements in both set
+print(type(c))                                             # set
+d = a & b                                                  # {30,40}
+print(d)                                                   # {30,40}
+print(type(d))                                             # set
+print(c  is  d)                                            #  false because different objects
+print(c  ==  d)                                            # True values are same
+
+
+
+ difference()   method  demo  program  (Home  work)
+a = {10 , 20 , 30 , 40}                                       # set
+b = {30 , 40 , 50 , 60}                                       # set
+c = a . difference(b)                                         # {10,20}
+print(c)                                                      #{10,20} the set which is in a but not in b
+print(type(c))                                                # set
+d = a - b                                                     # difference objects
+print(d)                                                      #{10,20}
+print(type(d))                                                #set
+print(c  is  d)                                               # False, because  c and d are different objects
+print(c  ==  d)                                               #true because values are same
+
+
+
+ symmetric_difference()   method  demo  program  (Home  work)
+a = {10 , 20 , 30 , 40}                                                 # set
+b = {30 , 40 , 50 , 60}                                                 # set
+c = a . symmetric_difference(b)                                         # {10,20,50,60}
+print(c)                                                                # {10,20,50,60}
+print(type(c))                                                          # class set
+d = a ^ b                                                               # {10,20,50,60}
+print(d)                                                                #{10,20,50,60}
+print(type(d))                                                          # set
+print(c   is   d)                                                       # false because different objects 
+print(c  ==   d)                                                        # True same elements
+
+
+
+ Find  outputs  (Home  work)
+a = {x * x  for   x   in   range(10)}                                     # ranges from 0 to 9
+print(a)                                                                  # {0,1 4,9,16,25,36,49,64,81}
+print(type(a))                                                            #  class set
+
+
+
+#  How  to  access  values  of  dictionary (Home  work)
+a  =  {'Empno'  :  25 ,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }               # dict
+print(How  to  print  value  25  in  dict  'a')                                         # print (a['Empho'])                                       
+print(How  to  print  'Rama Rao'  in  dict  'a')                                        # print (a['Ename'])   
+print(How  to  print  value  1000.65   in  dict  'a')                                   #print (a['Sai'])   
+
+
+
+
+How  to  modify  values  of  dictionary  (Home  work)
+a  =  {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }                     # dict
+print(a)                                                                                     # {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }         
+print(id(a))                                                                                 # memory address
+How  to  modify  1000.65  to  2000                                                           # a['sai'],2000
+How  to  modify  'Rama  Rao'  to  'Sita'                                                     #a['Ename']= 'sita'
+How  to  modify  25   to  35                                                                 # a['Empo']=35
+print(a)                                                                                     # {'Empno'  :  35,  'Ename'  :  'Sita'  ,  '2000'  :  1000.65  }    
+print(id(a))                                                                                 # memory adress
+
+
+
+#  How  to  append  key : value  pairs  to dictionary  (Home  work)
+a  =  {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }                     # dict
+print(a)                                                                                      #{'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }   
+How  to  append  'Gender' : 'M'  to  dictionary  'a'                                          # adds a new key 'Gender' with value 'M'
+How  to  append  'Married' :  True  to  dictionary  'a'                                       # adds a new key 'Married with value True
+print(a)                                                                                      # {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65 ,'Gender' :'M','Mrried': True }   
+
+
+
+
+ Find  outputs (Home  work)
+a = { }                                                                                       # empty dict
+How  to  append  10 : 'Rama'  to  dictionary  'a'                                             # a[10]='Rama'
+How  to  append  20 : 'Sita'  to  dictionary  'a'                                             # a[20]='Sita'
+How  to  append  15 : 'Rajesh'  to  dictionary  'a'                                           # a[15]='Rajesh'
+How  to  append  18 : 'Kiran'  to  dictionary  'a'                                            # a[18]='Kiran'
+print(a)                                                                                      #{10:'Rama, 20 :'Rama',15:'Rjesh',18:'Kiran'}
+
+
+
+
+ How  to  remove  key : value  pairs  of  dictionary  (Home  work)
+a =  {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }                     # dict
+print(a)                                                                                    # {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  } 
+How  to  remove  'Sal' : 1000.65  from  dictionary  'a'                                     # a.pop('Sai')
+print(a)                                                                                    #{'Empno'  :  25,  'Ename'  :  'Rama  Rao' } 
+
+
+
+#  in  and  not  in  operators  (Home  work)
+a =  {10 : 20 , 30 : 40 , 50 : 60 , 70 : 80}                                                 # dict
+print(30  in  a . keys())                                                                    # True
+print(60  in  a . keys())                                                                     # Flase
+print(60  in  a . values())                                                                  # True
+print(30  in  a . values())                                                                  # False
+print(50  in  a)                                                                             # True
+print(20  in  a)                                                                             # False
+print(70  not  in  a . keys())                                                               # False
+print(40  not  in  a . values())                                                             # False
+print(25  not  in  a)                                                                        # True
+
+
+
+
+What  are  the  outputs  if  input  is  {10: 'A', 20: 'B', 15: 'C' , 20 : 'D'}
+a = input('Enter  dictionary  :  ')                                                              # {10: 'A', 20: 'B', 15: 'C' , 20 : 'D'}                                                                                                      
+print(a)                                                                                         # {10: 'A', 20: 'B', 15: 'C' , 20 : 'D'}
+print(type(a))                                                                                   # string input always will be writen as string
+b = eval(a)                                                                                       # {10: 'A', 15: 'C' ,20: 'D'}
+print(b)                                                                                         #  {10: 'A', 15: 'C' ,20: 'D'}
+print(type(b))                                                                                   # dict
+
+
+
+
+  Find  outputs  (Home  work)
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh' , 18 : 'Kiran'}                                     # dict
+b = {**a}                                                                                          # dict unpack with same key values
+print(b)                                                                                           # {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh' , 18 : 'Kiran'}    
+print(a  is  b)                                                                                    # False because same objects
+print(a  ==  b)                                                                                    # True values are equal
+c = a                                                                                              # {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh' , 18 : 'Kiran'}   same dict 
+print(a  is   c)                                                                                   # True same objects
+print(a  ==  c)                                                                                    # True values are same 
+
+
+#Find  outputs  (Home  work)
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh'}                                                    # dict
+b = {18 : 'Kiran' , 14 : 'Amar' , 20  : 'Manohar'}                                                 # dict
+c = {25 : 'Ramesh' , 19 : 'Krishna' , 15 : 'Radha' , 14 : 'Srinivas'}                              # dict                             
+d = {*a , *b , *c}                                                                                 # creates a set of all keys
+print(d)                                                                                           # {10.14,15,18,19,20,25}
+print(type(d))                                                                                     # set
+e = {**a , **b , **c}                                                                              # creates a new dict
+print(e)                                                                                           # {10: 'Rama', 20: 'Manohar', 15: 'Radha', 18: 'Kiran', 14: 'Srinivas', 25: 'Ramesh', 19: 'Krishna'}
+print(type(e))                                                                                     # dict
+
+
+
+#  Find  outputs  (Home  work)
+a = {10 : 20 , 30 : 40}                                         # dict
+b = {30 : 50 , 10 : 60}                                         # dict
+print(a + b)                                                    # error because false operator is not support
+c = {**a , **b}                                                 # dict unpacked
+print(c)                                                        # {10:60,30:50}
+= a | b                                                       # merge dict
+print(d)                                                        # {10:60 ,30:50}
+
+
+
+
+len()  function  demo  program  (Home  work)
+a  =  {'Empno'  :  25,  'Ename'  :  'Rama  Rao'  ,  'Sal'  :  1000.65  }                # dict
+print(len(a))                                                                           # 3
+b = {}                                                                                  # empty
+print(len(b))                                                                           # 0
+
+
+
+ sum()  function demo  program  (Home  work)
+a = {10 : 20 , 30 : 40 , 50 : 60}                                                          # dict
+print(sum(a . keys()))                                                                     # 10+30+50=90
+print(sum(a . values()))                                                                   # 20+40+60=120
+print(sum(a))                                                                              # 10,30,50 = 90
+print(sum(a . items()))                                                                    # error because cannot sum tuple
+
