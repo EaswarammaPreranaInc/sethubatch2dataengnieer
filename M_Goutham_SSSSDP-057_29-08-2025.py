@@ -1,0 +1,375 @@
+# Modify  following  program  such  that  every  function  should  be  executed
+def  f1():
+	print('No-argument  function')
+def  f1(x):
+	print('Single  argument  function  : ' , x)
+def  f1(x , y):
+	print('Two  argument  function : ' , x , y)
+def  f1(x , y , z):
+	print('Three  argument  function : ' , x , y , z)
+	
+
+
+
+'''
+Write  a  program  to  generate  all   prime  numbers  between  2  and  n   and
+also  print  how  many  prime  numbers  are  existing
+
+Hint:  Use  the  prime()  function  defined  in   prog3a(prime).py  but  do  not  rewrite
+
+What  are  the  outputs  if  input  is  10  ?  --->  Prime   numbers
+																		   2
+																		   3
+																		   5
+																		   7
+																		  Number  of   prime  numbers : 4
+'''
+'''
+How  to  read  a  number
+How  to  print  all  prime  numbers  between  2  and  user  input
+print('Number  of  prime numbers  :  ' ,  ???)
+'''
+
+
+
+
+# Find  outputs  (Home  work)
+def    f1(a , b , c):
+          print(F'a  :  {a}    \t  b  :  {b}  \t  c :  {c}')
+# End  of  the  function
+f1(a = 10 , b = 20 , c = 30) #here we are using keyword arguments ,This function call returns the output as a  :  10          b  :  20        c :  30
+f1(25 , 10.8 , 'Hyd') #here positional arguments it returns i.e a  :  25          b  :  10.8      c :  Hyd
+f1(b = 40.7 , a = 50.2 , c = 60.5) #Here we are using keyword arguments i.e a  :  50.2        b  :  40.7      c :  60.5
+f1(c = 'Hyd' , b = 'Sec' , a = 'Cyb') #Same here also i.e a  :  Cyb         b  :  Sec       c :  Hyd
+f1(c = 3 + 4j , a = True , b = None) #Same here also i.e a  :  True        b  :  None      c :  (3+4j)
+f1(25 , c = 10.8 , b = 'Hyd') #here positional and then key word arguments valid i.e a  :  25          b  :  Hyd       c :  10.8
+f1(a = 100 , 200 , 300)  #  Error
+f1(True , None , b = 'Hyd') #Error #because we have already give None to b and we cannot give another argument for b 
+f1(10 , 20 , x = 30) #Error #as there is no x is defined in the function header 
+f1(10 , 20) #Error #we have to give 3 arguments as function taking 3 arguments 
+
+
+
+
+# Find  outputs (Home  work)
+def    disp(empno , ename , sal):
+        print(F'Emp  Number : {empno:4}  \t  Emp  Name : {ename:15}  \t  Salary : {sal}')
+# End  of  the  function
+disp(25 , 'Rama Rao' , 10000.0) #We are using positinal argument values and gives output as i.e Emp  Number :   25        Emp  Name : Rama Rao            Salary : 10000.0
+disp(ename = 'Sita' , sal = 20000.0 , empno = 35) #Here we are using key-word arguments i.e Emp  Number :   35        Emp  Name : Sita                Salary : 20000.0
+x = 'Rama  Rao' #Reference x points to string 'Rama  Rao'
+y = 30000.0     #Reference y points to float 30000.0
+z = 20          #Reference z points to int 20
+disp(x , y , z) #Returns the output i.e Emp  Number : Rama  Rao           Emp  Name :         30000.0     Salary : 20
+#Here instead of giving direct argument values we are storing them in a reference and we are using that references as argument values
+
+
+
+
+#  Tricky  program
+# Find  outputs (Home  work)
+def    f1(a , b , c):
+	return  a + b * c
+#end  of  the  function
+print(f1(3 , 4 , 5)) #Prints the result of 4*5 + 3 i.e 23
+print(f1(*[6 , 7 , 8])) #Here list is unpacked and elements of lists are used as arguments i.e 7*8+6 i.e 62
+print(f1([6 , 7 , 8])) #Error #Here we are giving list as one argument but function is expecting 3 arguments 
+print(f1(*{1 : 2 , 3 : 4 , 5 : 6})) #Here dict obj keys are unpacked and 3*5+1 i.e 16
+print(f1({'c' : 2 , 'b' :  4 , 'a' : 6})) #Error #Function is expecting 3 arguments but we are giving only one argument i.e dict obj
+print(f1({'c' : 2 , 'b' :  4 , 'a' : 6})) #Same error but we are giving that one argument as tuple of dict
+print({{'c' : 2 , 'b' :  4 , 'a' : 6}}) #Error #We cannot use set in dict
+print(f1({'c' : 2 , 'a' : 4 , 'x' : 6})) #Error #Function is expecting 3 arguments but we are giving only one argument i.e dict obj
+
+
+
+
+# Identify  Error (Home  work)
+a = [10 , 20 , 15 , 5 , 12]
+print(sorted(reverse = True , a))#Error #We cannot give positional argument after key-word argument
+print(sorted(a , rev = True)) #Error #Invalid keyword argument
+print(25 , 10.8 , 'Hyd' , separator = '\t') #Error #Invalid keyword argument
+print(25 , 10.8 , 'Hyd' , endofline = '\t') #Error #Invalid keyword argument
+print(25 ,  sep = '\t' , 10.8 , end = '\t' , 'Hyd') #Error #there is a rule that after keyword arguments we cannot use positional arguments
+
+
+
+
+
+# Keyword  only   arguments  demo  program
+def   f1(* , a , b): #Here '*' is used for arguments in the functions should be keyword arguments only after the '*'
+        print(F'a  :  {a}  \t  b :  {b}')
+# End  of  the  function
+f1(a = 10 , b = 20) #Valid because we are passing all keyword arguments only i.e a  :  10          b :  20
+f1(b = 30 , a = 40) #Valid we can give keyword arguments in any order i.e a  :  40          b :  30
+f1(50 , 60) #Error #We have to pass only keyword arguments but here we are passing positional arguments
+f1(70 , b = 80) #Error #as after * we have a and b so for a and b we have to pass only key-word arguments only
+f1(a = 15 , 25) #Error #We cannot pass positional arguments after keyword arguments
+
+
+
+
+#Find  outputs (Home  work)
+def  f1(a , * , b , c): #Here for a we can pass positional or keyword argments but for b and c we have pass only keyowrd arguments only
+        print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
+# End  of  function
+f1(10 , b = 20 , c = 30) #Valid i.e a  :  10          b :  20         c  :  30 
+f1(a = 40 , b = 50 , c = 60) #Valid i.e a  :  40          b :  50         c  :  60 
+f1(c = 100 , b = 90 , a = 80) #Valid i.e a  :  80          b :  90         c  :  100
+f1(70 , 80 , c = 90) #Error #here for b we are passing positional argument and b is after the "*" so error
+f1(70 , 80 , 90) #Error #for b and c we have pass only keyword arguments only
+f1(c = 15 , b = 25 , 35) #Error #the rule is we cannot pass positional arguments after keyword arguments
+
+
+
+# Identify error (Home  work)
+def   f1(a  , b , *): 
+        pass
+#In the function header after * operator we have to pass arguments * should be used after arguments defined 
+#so after * there must be atleast 1 argument	
+
+
+
+
+
+#  Positional  only  arguments  demo  program
+def   f1(a , b , /): #Here we are using '/' to use only positional arguments for a and b
+        print(F'a  :  {a}  \t  b  :  {b}')
+# End  of   the  function
+f1(10 , 20) #Valid i.e a  :  10          b  :  20
+f1(a = 30 ,  b = 40) #Error #We have to pass only positional arguments but here we are passing keyword arguments 
+f1(50 , b = 60) #Error #Both for a and b we have to pass only positional arguments  
+f1(a = 70 , 80) #Error #Same here and also we cannot pass positional arguments after keyword arguments 
+
+
+
+# Find  outputs (Home  work)
+def  f1(a , b , / , c): #Here for a and b we should pass only positional arguments and for c we can pass both
+        print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
+# End  of  function
+f1(10 , 20 , 30)                #Valid i.e a  :  10          b :  20         c  :  30 
+f1(40 , 50 , c = 60)            #Valid i.e a  :  40         b :  50         c  :  60 
+f1(a = 70 , b = 80 , c = 90)    #Error #For a and b we should pass only positional arguments only
+f1(a = 100 , b = 110 , 120)     #Error #We cannot pass positional argument after keyword arguments and in this case we cannot use keyword arguments for both a and b
+f1(a = 130 , 140 , c = 150)     #Error #and same case
+f1(160 , b = 170 , 180)         #Error #same case 
+f1(190 , b = 200 , c = 210)     #Error #we should pass positional arguments for both a and b
+
+
+
+
+# Find outputs(Home  work)
+def  f1(a , b , / , c , d , * , e  , f):    #For a, b we have to pass positional arguments.
+                                            #For c, d we can use positional or keyword arguments
+                                            #For e, f we should pass only keyword arguments
+        print(F'a  :  {a}  \t  b  :  {b}  \t  c  :  {c}  \t  d  :  {d}  \t  e  :  {e}  \t  f  :  {f}')
+# End of the function
+f1(10 , 20 , 30 , d = 40 , e = 50 , f = 60)     #Valid i.e a  :  10          b  :  20        c  :  30        d  :  40        e  :  50        f  :  60
+f1(1 , b = 2 , c = 3 , d = 4 , e = 5 , f = 6)   #Error #For b we are passing keyword argument
+f1(1 , 2 , 3 , 4 , 5 , f = 6)                   #Error #For e we are passing positional arguments
+f1(10 , 20 , c = 30 , 40 , e = 50 , f = 60)     #Error #After keyword argument we cannot use positional arguments
+f1(10 , 20 , 30 , 40 , e = 50 , f = 60)         #Valid i.e a  :  10          b  :  20        c  :  30        d  :  40        e  :  50        f  :  60
+
+
+
+
+# Identify error (Home  work)
+def  f1(/ , a , b ,  c): #Here '/' should be used after the arguments #There should be atleast one argument before '/'
+        pass
+def   f2(a , b , c , *): #Here '*' should be used before the arguments #There should be atleast one argument after '*'
+        pass
+		
+
+
+
+# Identify  error  (Home  work)
+def  f4(* , a , b , c , /): #Here we are using '/' after using '*' it is not possible 
+	        pass
+			
+
+
+
+# Find  outputs  (Home  work)
+def  f1(x):
+	print('1st  function : ' , x)
+def  f1(y):
+	print('2nd  function : ' , y)
+def  f1(z):
+	print('3rd  function : ' , z)
+f1(z = 10) #This function will be called i.e 3rd  function :  10 #rest will raise error #Because the last function will be called if functions are defined with same name
+f1(y = 20) #Raise error
+f1(x = 30)
+
+
+
+
+# Default  arguments  demo  program
+def   add(a  , b = 20 , c = 30):
+        return   a + b + c
+#end  of  the  functiom
+print(add(100))
+print(add(100 , 200))
+print(add(100 , 200 , 300))
+print(add(100 , c = 200))
+print(add(c = 100 , b = 200 , a = 300))
+print(add(c = 100 , a = 200))
+print(add())
+print(add(a = 100 , 200))
+print(add(100 ,  , 300))
+print(add(100 ,  b , 300))
+
+
+
+
+# Identify  Error
+def   f1(a = 10 ,  b ,  c = 20 ,  d): #Here we are giving default arguments and after giving default arguments and the next arguments should also be default arguments 
+	pass
+def   f2(b , d , a = 10 , c = 20): #Here b,d,a=10 so for a , b and c the default argument is 10 and for c = 20 so very much valid
+	pass
+	
+
+
+
+#  Find  outputs (Home  work)
+def   f1(a = 10): #Here we are defining the default argument a = 10 
+        print(a)
+# End  of  the  function
+f1(20) # When f1 is called, it prints 20.
+       # This happens because if we explicitly provide a value for a parameter 
+       # that already has a default value, the default gets overridden 
+       # by the new value passed during the function call.
+f1() #here it prints the default argument value i.e 10
+f1(a = 30) #Here we are giving keyword argument so it is printed i.e 30
+
+
+
+# Find  outputs (Home  work)
+def  add(a , b , c = 10 , d = 20): #Here we have a , b are positional arguments and c and d are default arguments 
+        return  a + b + c + d
+# End  of  the  function
+print(add(100 , 200)) #Function is called and return a + b + c + d and the result i.e 330
+print(add(100 , 200 , 300)) #Here for c default value is replaced with 300 and return the result i.e 620
+print(add(100 , 200 , 300 , 400)) #Here for 100 and 200 are positional arguments and for c and d default values are replaced with 300 and 400 returns the output i.e 1000
+print(add(b = 100 , a = 200)) #Here we are passing keyword arguments for a, b for c ,d default values are considered and returns the result i.e 320
+print(add(100 , 200 , d = 300)) #Here for a , b we are passing positional arguments and for d keyword argument which will replace the default argument and c will be default argument result:610  
+print(add(d = 100 , a = 200 , b = 300)) #Here for a , b , d we are passing keyword arguments and for d keyword argument which will replace the default argument and c will be default argument result:610
+print(add(c = 100 , d = 200 , 300 , 400)) #Error #Here the rule is we cannot pass psoitional arguments after the keyword arguments
+print(add(100 , 200 , c = 300 , x = 400)) #Error #Here x is not defined in the function header but we are passing x = 400 as keyword argument
+print(add()) #Error #We should pass for a and b values
+
+
+
+#  Find  outputs (Home  work)
+def    f1(x = 25): #Here we have given default argument x = 25
+        return  x
+def   f2(x): #Here we have given positional argument x
+        return  x
+# End  of  the  function
+print(f1(10)) #Here default argument x = 25 is replaced with 10 and returns 10
+print(f1()) #Here we are not passing any argument so default argument is returned i.e 25
+print(f2(20)) #Here we are passing positional argument 20 to x returns result : 20
+print(f2()) #Error #Here we are not passing any argument but it expects for one argument
+
+
+
+# Find  outputs (Home  work)
+def   disp(ch = '*' , n = 4): #Here we are giving default arguments ch = '*' and n = 4 
+        print(ch *  n)
+# End of the function
+disp('-' , 6) #Here we are passing positional arguments for ch and n i.e '-' and 6 result will be: ------
+disp('$') #Here we are passing positional argument for ch i.e '$' and for n it will be considered as default argument i.e $$$$
+disp() #Here we are not giving any arguments so it takes default arguments i.e ****
+disp(n = 5) #Here we are passing keyword argument for n and for ch it will take default argument i.e ***** 
+disp(5) #Here we are passing positional argument for ch and n will be default result 5*4 i.e 20
+disp(n = 7 , ch = '%') #Here we are passing keyword arguments for both ch and n and result will be : %%%%%%%
+disp(7 , '@') #Here we are passing positional arguments for both ch and n i.e @@@@@@@
+disp(7 , n = 6) #Here we are passing positional argument for ch and keyword argument for n i.e 42
+disp(ch = '!' ,  5) #Error #As there is a rule that we cannot pass positional argument after the keyword argument
+
+
+
+# Find  outputs (Home  work)
+def  power(a , b  =  2): #Here in the function header a is the positional argument and b is default argument
+        return  a ** b
+#end of the function
+print(power(2 , 6)) #Here we are passing two positional arguments so default argument b=2 is replaced with 6 and result: 64
+print(power(5)) #Here a = 5 and b will be default argument i.e 5**2 = 25
+print(power(b = 3 , a = 4.5)) #Here b is replaced with 3 and a will be 4.5 result : 4.5**3=9.125
+print(power(3 + 4j)) #Here complex number is passed for a and b will be default and result will be : (-7+24j)
+print(power(True)) #Here a will be True and true means 1 and 1**2 will be 1
+def   power(b = 2 , a): #Error #Here in the function header we cannot use positional argument after default argument 
+ 	 pass
+	  
+
+
+
+# Find outputs  (Home  work)
+def   add(a , b):
+	print('2-argument  function')
+	return a + b
+def  add(a , b , c):
+	print('3-argument  function')
+	return a + b + c
+def  add(a  = 1 , b  = 2 , c   = 3 , d = 4):
+	print('4-argument  function')
+	return a + b  + c + d
+# End  of  the  function
+# last function will be called 
+print(add(10 , 20 , 30 , 40)) #Here positional arguments 10 20 30 40 are replaced with default arguments and returns result:100
+print(add(50 , 60 , 70)) #Here positional arguments 50 60 70 are replaced with default arguments a , b , c and d will be default result : 184
+print(add(80 , 90)) #Here for a and b we are passing positional arguments so default arguments are replaced and rest c d remains default and result will be :177 
+print(add(100)) #Here for a we are passing positional arguments so default arguments are replaced and rest b c d remains default result :109
+print(add()) #Here we are not passing any arguments so default arguments remains same result will be : 10
+
+
+
+
+# Find outputs  (Home  work)
+def  disp(a , b):
+        print('2-argument function  :  ' , a , b)
+def  disp(a , b , c , d):
+        print('4-argument  function  :  ' , a , b , c , d)
+def disp(a , b , c = 25): #Here for c default argument is given
+        print('3-argument  function  :  ' , a , b , c)
+#end 
+#Here only last function is called
+disp(10 , 20 , 30) #Here for a and b we are passing positional arguments and 30 is replaced with default argument and result will be : 3-argument  function  :   10 20 30
+disp(40 , 50 , 60 , 70) #Error #Here the last argument accepts only 3 arguments but here we are given 4 arguments
+disp(80 , 90) #Here for a and b we are passing positional arguments and c will be default argument i.e 3-argument  function  :   80 90 25
+
+
+
+
+# Find outputs(Home  work)
+def   add(* , a = 10 , b = 20): #Here we have given * and after '*' a and b are default arguments
+        return  a + b
+# End of  the  function
+print(add(a = 30 , b = 40)) #Prints the result of 30 + 40 i.e 70 and here we are passing keyword arguments
+print(add()) #Prints the result of 10 + 20 i.e 30
+print(add(a = 50)) #Here we are passing one keyword argument and b will be default argument i.e 70
+print(add(b = 60 , a = 70)) #Here we are passing keyword arguments and default arguments are replaced with keyword arguments i.e 130
+print(add(80 , 90)) #Error #As there is a '*' before arguments a and b so we cannot pass positional arguments 
+
+
+
+
+
+# Find  outputs(Home  work)
+def add(a = 10, b, c):   # Error  #Non-default argument (b, c) cannot follow default argument (a=10)
+    pass
+
+# Function with keyword-only arguments using *
+def add(*, a = 10, b, c):  
+    return a + b + c
+
+# Function calls
+print(add(a = 30, b = 40, c = 50))   # Output: 120  (30 + 40 + 50)
+print(add(b = 60, c = 70))           # Output: 140  (a takes default = 10, so 10 + 60 + 70)
+print(add(c = 80, b = 90, a = 100))  # Output: 270  (100 + 90 + 80)
+print(add(c = 25, a = 43))           # Error → missing required argument 'b'
+print(add(1, 2, 3))                  # Error → Function requires keyword arguments because of *  
+
+# Another function definition
+def add(a, b = 10, c, *, d, e = 20, f):  
+    # Error → Non-default argument (c) follows default argument (b = 10)
+    # Also, positional arguments cannot come after keyword-only arguments (*)
+    pass
