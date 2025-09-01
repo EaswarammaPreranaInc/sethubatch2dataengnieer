@@ -21,11 +21,11 @@ also  print  how  many  prime  numbers  are  existing
 Hint:  Use  the  prime()  function  defined  in   prog3a(prime).py  but  do  not  rewrite
 
 What  are  the  outputs  if  input  is  10  ?  --->  Prime   numbers
-																		   2
-																		   3
-																		   5
-																		   7
-																		  Number  of   prime  numbers : 4
+					                2
+					                3
+					                5
+		                                        7
+		  Number  of   prime  numbers : 4
 '''
 
 def prime():
