@@ -252,9 +252,9 @@ f1(10 , 20 , 30 , 40 , e = 50 , f = 60) # prints a : 10 \t b : 20 \t c : 30 \t d
 
 
 # Identify error (Home  work)
-def f1(/ , a , b ,  c): # Error because / should be followed by parameters in function header
+def f1(/ , a , b ,  c): # Error because atleast one argument should be before slash /
     pass
-def f2(a , b , c , *): # Error because * should be before paramenters in function header
+def f2(a , b , c , *): # Error because atleast one argument should be after start *
     pass
 
 
@@ -266,7 +266,7 @@ def f2(a , b , c , *): # Error because * should be before paramenters in functio
 
 
 # Identify  error  (Home  work)
-def f4(* , a , b , c , /): # Error because keyword arguments should be followed by positional arguments but not vice versa
+def f4(* , a , b , c , /): # Error because of contradiction
     pass
 	
 
@@ -285,8 +285,8 @@ def f1(y):
 def f1(z):
     print('3rd  function : ' , z)
 f1(z = 10) # prints 3rd function : 10
-f1(y = 20) # Error 
-f1(x = 30) # Error 
+f1(y = 20) # Error because there is no argument y
+f1(x = 30) # Error because there is no argument x
 
 
    
@@ -308,8 +308,8 @@ print(add(c = 100 , b = 200 , a = 300)) # prints 600
 print(add(c = 100 , a = 200)) # prints 320
 print(add()) # Error because it requires one positional argument 'a'
 print(add(a = 100 , 200)) # Error because keyword argument should be followed by positional argument but not vice versa
-print(add(100 ,  , 300)) # Error
-print(add(100, b , 300)) # Error
+print(add(100 ,  , 300)) # Error because two commas are not allowed
+print(add(100, b , 300)) # Error 
 		  
 
 
@@ -320,9 +320,9 @@ print(add(100, b , 300)) # Error
 
 
 # Identify  Error
-def f1(a = 10 ,  b ,  c = 20 ,  d): # Error because keyword arguments should be followed by positional arguments but not vice versa
+def f1(a = 10 ,  b ,  c = 20 ,  d): # Error because non-default arguments cannot be passed after default arguments
     pass
-def f2(b , d , a = 10 , c = 20): 
+def f2(b , d , a = 10 , c = 20): # Valid
     pass
 	
 
@@ -361,7 +361,7 @@ print(add(100 , 200 , d = 300)) # prints 710
 print(add(d = 100 , a = 200 , b = 300)) # prints 610
 print(add(c = 100 , d = 200 , 300 , 400)) # Error because keyword argument should be followed by positional argument but not vice versa
 print(add(100 , 200 , c = 300 , x = 400)) # Error because 'x' is not defined
-print(add()) # Error 
+print(add()) # Error because there are no arguments for a and b
 
 
 
@@ -380,7 +380,7 @@ def f2(x):
 print(f1(10)) # prints 10
 print(f1()) # prints 25
 print(f2(20)) # prints 20
-print(f2()) # Error because needs argument
+print(f2()) # Error because needs atleast one argument
 
 
 
@@ -421,8 +421,7 @@ print(power(5)) # prints 25
 print(power(b = 3 , a = 4.5)) # prints 91.125
 print(power(3 + 4j)) # prinst (-7+24j)
 print(power(True)) # prints 1
-def power(b = 2 , a): # Error because keyword arguments should be followed by positional arguments but not vice versa
-    pass
+def power(b = 2 , a): # Error because non-default argument cannot be passes after default argument
 
 
 
@@ -467,8 +466,8 @@ def disp(a , b , c = 25):
     print('3-argument  function  :  ' , a , b , c)
 #end
 disp(10 , 20 , 30) # prints 3-argument<nextline>10 20 30
-disp(40 , 50 , 60 , 70) # Error because it requires only 3 arguments
-disp(80, 90) # Error because it requires 3 arguments
+disp(40 , 50 , 60 , 70) # Error because it requires only 3 arguments but 4 are given
+disp(80, 90) # Error because it requires 3 arguments but 2 are given
 	 
 
 
@@ -505,7 +504,7 @@ def add( * , a = 10 , b , c ):
 print(add(a = 30 , b = 40 , c = 50)) # prints 120
 print(add(b = 60 , c = 70)) # prints 140
 print(add(c = 80 , b = 90 , a = 100)) # prints 270
-print(add(c = 25 , a = 43)) # 
-print(add(1 , 2 , 3))
-def add(a , b = 10 ,  c ,  * , d  , e = 20, f): # Error because keyword arguments must be followed by positional arguments but not vice versa
+print(add(c = 25 , a = 43)) # Error because there is no argument for b
+print(add(1 , 2 , 3)) # Error because arguments must be keyword arguments
+def add(a , b = 10 ,  c ,  * , d  , e = 20, f): # Error because non-default arguments cannot be passed after default arguments
     pass
