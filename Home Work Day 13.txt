@@ -1,0 +1,320 @@
+1.   # Find  outputs  (Home  work)
+for  i   in   range(1 , 8):		# 1
+	print(i)			1
+	if  i % 3  == 0:		#false
+			continue   
+	else:
+			print('Sec')	#sec
+	print('Hello')			Hello
+# End of loop
+print('Outside loop')
+
+#  1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+Outsideloop
+-------------------------------------------------------------------------------------------
+2].
+# Identify Error  (Home  work)
+if ():
+	print('Hyd')
+	continue 		# continue is not use with if 
+	print('Sec')
+---------------------------------------------------------------------------------------------------
+3].
+# Identify Error  (Home  work)
+if(10 , 20 , 30):
+	print('Hyd')
+	break		# break is not use with if
+	print('Sec')
+------------------------------------------------------------------------------------------------
+4].
+# Find outputs (Home  work)
+for  i   in   range(1 , 8):		#1	2	3
+	print(i)			1	2	3
+	if   i % 3 == 0:		false	false	true
+		break				break execute
+	else:			
+		print('Sec')	#sec	sec	
+	print('Hello')		#hello	hello
+# End  of  the  loop
+print('Outside loop')					out side loop		
+	
+
+1
+sec
+hello
+2
+sec
+hello
+3
+outside loop
+
+
+----------------------------------------------------------------------------------------
+
+5].
+# Find  outputs  (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		pass
+		print('Hyd')
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+1	for the first iteration
+Sec	when condition false
+Hello
+2
+Sec	when condition false
+Hello
+3
+Hyd	when condition true
+Hello
+4
+Sec	when condition false
+Hello
+5
+Sec	when condition false
+Hello
+6
+Hyd	when condition true
+Hello
+7
+Sec	when condition false
+Hello
+Outside loop
+------------------------------------------------------------------------------
+
+6].
+# Find  outputs  (Home  work)
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		exit()
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+     at 3 if condition is true then exit()
+    stops the entire program
+
+----------------------------------------------------------------------------------------
+7]# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):	# range from 1-7 in steps of 1
+	print(i)    		# prints the i 
+	if   i % 3 == 0:	# checks the condition
+		continue	# executes when condition is true then moves to next iteration
+	else:
+		print('Sec')	# when if condition is false
+	print('Hello')		# prints Hello in every iteration
+else:				# after for loop else block is execute
+	print('else  suite')		# prints the else suite
+# End  of  the  loop
+print('Outside  loop')
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+else  suite
+Outside loop
+
+------------------------------------------------------------------------
+8].
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i == 8:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+# End  of  the  loop
+print('Outside loop')
+
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Sec
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Sec
+Hello
+7
+Sec
+Hello
+else  suite
+Outside loop
+
+---------------------------------------------------------------->
+9].
+#  Walrus   operator (:=)  demo  program
+print(a := 25)  # assigns the a=25 and returns the value 25  -----25
+print(a = 25)# throws the error 
+print(a)		# 25
+print(a := 6 + 7)	#a=6 -->6+7=13   # returns the 13	
+print(a)		#13
+print((a := 6) + 7)	#13
+print(a)		# 6 due a:=6 here assigns the 6 to a then add 7
+print((a = 6) + 7)	# throws the error
+-------------------------------------------------------------------->
+
+10].
+# Find  outputs  (Home  work)
+a = 0      		# assigns the value 0 to a
+if  a == 0:		# compares the a with 0    true
+	print('Hyd') # hyd    
+else:			
+	print('Sec')
+if  b := 0:		# here assigns the 0 to b 
+	print('Hyd')
+else:		# else execute dute condition is not correct
+	print('Sec : ' , b)	sec: 0
+if  c = 0:			# throws the error
+	print('Hyd')
+else:
+	print('Sec')
+----------------------------------------------------------------------->
+11].
+#  del  operator  demo program  (Home  work)
+a = 25		# assigns the reference  to the 25
+print(a)		# prints the 25
+del   a		# deletes the a 
+print(a)		# Throws the error due to reference a is deleted
+
+------------------------------------------------------------------------>
+12].
+# Find  outputs  (Home  work)
+a = b = c = 25	# assigns the object 25 to three references a,b,c
+print(a , b , c)	#25  25  25
+del   a		# delete the a 
+print(b , c)	# 25  25
+print(a)		# throws the Error
+del   b		# delete the b 
+print(c)		#25
+print(b)		#Throws the Error
+del   c		# delete the c
+print(c)		#Throws the error
+
+-------------------------------------------------------------------------->
+13].
+
+a , b , c = 25 , 10.8 , 'Hyd'	# assigning the value 25 to a, 10.8 to b, Hyd to c
+print(a , b , c)		# 25  10.8  Hyd
+del   a , b , c		# deleting the a, b, c
+print(a)			# Throws the error 
+print(b)			# Throws the error 
+print(c)			# Throws the error 
+
+---------------------------------------------------------------------------->
+14].
+
+a = [10 , 20 , 15 , 18]		#  assigning the  list to a
+print(a)			# [10 , 20 , 15 , 18]
+del  a[2]			# delete the a[2] value i.e. 15
+print(a)			#[10 , 20 , 18]
+del  a			#delete the entire list
+print(a)			# throws the  error due to list is deleted
+print(a[0])		#throws the error
+
+-------------------------------------------------------------------------------->
+
+15].
+# Find outputs  (Home work)
+a = (10 , 20 , 15 , 18)		# assigns the tuple to a
+print(a)			# prints the a (10 , 20 , 15 , 18)
+print(a[0])		#10
+del  a[2]			#tuple doesnot have the del  method
+del  a			# delete the refernce a
+print(a)			# error due to there is no reference a 
+print(a[0])		# Error
+
+--------------------------------------------------------------------------------->
+
+16].
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+#End   of  the  loop
+print('Outside  loop')
+
+
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside loop
+
+------------------------------------------------------------------->
+
+
+
+
+
+
+
+
