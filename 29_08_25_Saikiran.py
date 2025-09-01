@@ -5,6 +5,7 @@
 
 
 # Modify  following  program  such  that  every  function  should  be  executed
+"""
 def  f1():
     print('No-argument  function')
 f1()
@@ -17,7 +18,7 @@ f1(1,2)
 def  f1(x , y , z):
     print('Three  argument  function : ',x,y,z)
 f1(1,2,3)
-
+"""
 
 # In[3]:
 
@@ -49,7 +50,7 @@ for i in range(2,t+1):
         print(i)
         a+=1
 print("Number  of   prime  numbers :",a)
-
+"""
 # Find  outputs  (Home  work)
 def    f1(a , b , c):
           print(F'a  :  {a}    \t  b  :  {b}  \t  c :  {c}')
@@ -66,7 +67,7 @@ f1(10 , 20 , x = 30) #error due to x
 f1(10 , 20)#error# Find  outputs (Home  work)
 def    disp(empno , ename , sal):
         print(F'Emp  Number : {empno:4}  \t  Emp  Name : {ename:15}  \t  Salary : {sal}')
-# End  of  the  function
+# End  of  the  function"""
 disp(25 , 'Rama Rao' , 10000.0) #Emp  Number : 25<tab>Emp  Name : Rama Rao<tab>Salary : 10000.0
 disp(ename = 'Sita' , sal = 20000.0 , empno = 35)#Emp  Number : 35<tab>Emp  Name : Sita<tab>Salary : 20000.0
 x = 'Rama  Rao'
