@@ -134,3 +134,87 @@ except:
     #     Input  should  be  between  1  and   12
     #     Enter month number (1 - 12): 10.8
     #     Input  should  be  an  integer
+
+Program to check whether a number is completely divisible by another number 
+
+while True:
+    try:
+        num1 = input('Enter divisor : ')
+        num2 = input('Enter divident : ')
+        num1 = int(num1)
+        num2 = int(num2)
+        if num1 % num2 == 0:
+            print('The two numbers are completely divisble by eachother.')
+        else:
+            print('The two numbers are not completely divisble by eachother.')
+        break
+    except:
+        print('Invalid entry. Enter integer values.')
+
+
+program to get a new string from a given string where "Is" has been added to the front
+
+
+def main():
+    while True:
+        try:
+            string = input('Enter a string : ')
+            if string.startswith('Is'):
+                print('Your string' , string , 'is correct.')
+            else:
+                new_string = 'Is'+string
+                print('Your string' , string , 'has been formatted to' , new_string)
+            break
+        except:
+            print('Invalid entry.')
+main()
+
+program to test whether a passed letter is a vowel or not
+
+def main():
+        letter = input('Enter a letter to check if its a vowel or not : ')
+        check(letter)
+def check(let):
+    if let == 'a' or let == 'e' or let == 'i' or let == 'o' or let == 'u' or let =='A' or let == 'E' or let == 'I' or let == 'O' or let == 'U':
+        print('The letter is a vowel')
+    else:
+        print('The letter is not a vowel')
+main()
+
+GCD (Greatest Common Divisor) ----
+
+print('To find GCD enter ')
+num1 = int(input('number 1 : '))
+num2 = int(input('number 2 : '))
+if num1 > num2:
+        greater = num2
+else:
+        greater = num1
+for i in range(1, greater+1):
+    if((num1 % i == 0) and (num2 % i == 0)):
+        gcd = i
+print('The gcd of' , num1 , 'and' , num2 , 'is' , gcd)
+
+program that will return true if the two given integer values are equal or their sum or difference is 5 
+
+def main():
+    while True:
+        try:
+            num1 = input('Enter first integer : ')
+            num2 = input('Enter second integer : ')
+            num1 = int(num1)
+            num2 = int(num2)
+            value = check(num1, num2)
+            print(value)
+            break
+        except:
+            print('Invalid entry, enter integral values.')
+def check(n1, n2):
+    if n1 == n2 or n1 - n2 == 5 or n1 + n2 == 5:
+        return True
+    else:
+        return False
+main()
+
+
+
