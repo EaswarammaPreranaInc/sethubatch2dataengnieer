@@ -1,0 +1,250 @@
+8 #  Find  outputs  (Home  work)
+a = "Rama Rao"  # Ref a Assigns to object Rama Rao
+print(a) # Rama Rao
+print(type(a)) # Type of Object A i.e. <class Str>
+print(id(a)) # Address of the object a i.e. 1000
+b = 'Hyd' # Ref b assigns to object Hyd
+print(b) # Hyd
+c = '''Hyd is green city.
+       Hyd is hitec city.         #refernce c points to str object i.eHyd is green city       Hyd is beautiful city.    Hyd is beautiful city.
+       Hyd is beautiful city.'''
+print(c) # Hyd is green city.  #  Hyd is green city
+           Hyd is hitec city.     Hyd is hitech city
+           Hyd is beautiful city.        Hyd is beautiful city
+
+
+9 # Index   demo  program  (Home  work)
+a = 'Hyd' # ref a assigns to object hyd
+print(How  to  print  'H'  of  object  'a') # H a
+print(How  to  print  'y'  of  object  'a') # y a
+print(How  to  print  'd'  of  object  'a') # d a
+print(a[3]) # Error due to out of index range
+print(How  to  print  'd'  of  object  'a') # d a
+print(How  to  print  'y'  of  object  'a') # y A
+print(How  to  print  'H'  of  object  'a')  # H a
+print(a[-4])  # Error
+print(a[0] ==  a[-3])  # True
+a[2] = 'c' # Error
+print(25[0]) # 
+print('25'[0]) #
+print(True[1]) #
+print('True'[1]) #
+
+
+
+10 #  Find  outputs  (Home work)
+a = 'Hyd'   #refernce a points to str object i.e hyd
+print(a * 3)  'HydHydHyd'
+print(a * 2)   'HydHyd'
+print(a * 1)     'Hyd'
+print(a * 0)    ''
+print(a * -1)   #error due to invalid syntax
+print(25 * 3)    #75
+print('25' * 3)   '252525'
+print('25' * 4.0)  '25252525'
+print(3 * 'Hyd')    'HydHydHyd'
+print('25' * True)   '25'
+
+
+
+11 #  Find  outputs  (Home work)
+a = 'Hyd'                          #reference a points to str obj hyd
+print(a , id(a))                    # Hyd , 45012(say addres of the a object )
+a = a * 3                           assigns a*3 to reference a
+print(a , id(a))                    #"HydHydHyd', 45036(say)
+
+
+
+# len()  function  (Home  work)  
+print(len('Hyd'))    # length of the string returns i.e 3
+print(len('Rama Rao'))  #length of the string returns i.e 8
+print(len('9247'))   # length of the string returns i.e 4
+print(len(''))      #length of the string returns i.e 0
+print(len(' '))    #length of the string returns i.e 1
+print(len(689))     #error due to int has no length
+
+
+
+12 # Find  outputs  (Home  work)
+a = """"Hyd"""     #refernce a points to str object i.e "Hyd 
+print(a)          # value of the object a i.e "Hyd
+print(len(a))      # length of the string returns  i.e 4
+print(a[0])         # returns the indexes 0 of  str a i.e "
+print("""Hyd"""")    # returns the value of the str object i.e Hyd"
+b = """""Hyd"""      # reference a points to the str object i.e ""Hyd
+print(b)         # returns the value of the str object i.e ""Hyd
+print(len(b))   # returns the length  of  the  str object b i.e 5
+
+
+13 # Find  outputs
+a = 'Sankar Dayal Sarma' # ref a assigns to object Sankar Dayal Sarma  
+print(a[7 : 12]) # Dayal
+print(a[7 : ]) # Dayal Sarma
+print(a[ : 6]) # Sankar
+print(a[ : ])  #  a[ 0 :  18  : 1]  --->   string  from  indexes  0  to  17  in  steps  of   1  i.e.  Sankar<space>Dayal<space>Sarma
+print(a[:  : ]) # Sankar Dayal Sarma
+print(a[1 : 10 : 2]) #Sankar Dayal Sarma
+print(a[0 : : 2]) # akrDy
+print(a[1 : : 2]) # Sna aa am
+print(a[-5 : -1]) # akrDylSra
+print(a[::-1])  # Sarm
+print(a[-1:-5:-1]) # arSlyDrka
+print(a[ : : -2]) #   a[-1 :  -19 : -2]  --->  string  from  indexes  -1  to  -18  in  steps  of   -2  i.e.  arSlyDrka
+print(a[3 : -3]) # kar Dayal Sa
+print(a[2 : -5]) # nkar Dayal
+print(a[-1:-5]) # <Space>
+print(a[3 : 3]) # <Space>
+
+
+#   0      1      2      3      4       5       6           7       8       9     10     11     12           13     14       15      16     17
+#   S      a      n      k      a       r                    D       a       y      a       l                     S       a         r       m       a
+#  -18   -17   -16   -15    -14   -13    -12        -11     -10    -9     -8    -7      -6          -5      -4       -3      -2      -1
+
+
+
+14 #  Find  outputs  (Home  work)
+a =  'A' # Ref a assigns to object A 
+print(a[1])  # Error due to index out of range
+print(a[1:]) # <space>
+
+
+15 # int()  function  demo  program
+print(int(10.8))  #  Converts  float   object  10.8  to  int  object  10
+print(int(True))  #  Converts  bool   object    True  to  int  object 1
+print(int(False)) # 0
+print(int('25'))  # 25
+print(int('0075')) #0075
+print(int(0B11010)) # 26
+print(0B11010)  # 26
+print(int(0O6247)) # 3239
+print(0O6247) # 3239
+print(int(0XA7B9))  # 42937
+print(0XA7B9)  # 42937
+print(int(3 + 4j))  Error
+print(int('25.4')) # 25
+print(int('Ten'))  # Error due to str
+
+
+
+'''
+int()  function
+----------------
+1) What  does  int(x)  do  ?  --->  Converts  object  'x'  to  integer
+
+
+
+15 # float()  function  demo  program
+print(float(25))  #  Converts  int  object  25  to  float  object   25.0
+print(float(True))   #  Converts  bool  object   True   to  float  object   1.0
+print(float(False)) # 0.0
+print(float('92')) # 92.0
+print(float('36.4')) # 36.4
+print(float('0075')) # 75.0
+print(float(0B1010101)) # 85.0
+print(float(0O6247)) # 3239.0
+print(float(0XA7B9)) # 42937.0
+print(float(3 + 4j)) # Error
+print(float('Ten')) # Error
+
+
+
+
+
+'''
+float()   function
+--------------------
+1) What  does  float(x)  do  ?  --->  Converts  object  'x'  to  float
+
+
+
+16 # complex()  function  demo  program
+print(complex(3 , 4)) # 3+4j
+print(complex(0 , 4)) # 4j 
+print(complex(3)) # 3+0j
+print(complex(3.8 , 4.6)) # 3.8+4.6j
+print(complex(3.8))  # 3.8+0j
+print(complex(3 , 4.5))  # 3+4.5j
+print(complex(True , False)) # 1+0j
+print(complex(True)) # 1+0j 
+print(complex(False)) # 0
+print(complex(True , 4)) # 1+4j
+print(complex('3')) # 3+0j
+print(complex('3.8')) # 3.8+ 0j
+print(complex(3 , '4')) # error
+print(complex('3' , 4))  # Error
+print(complex('3' , '4'))  # Error
+print(complex('Ten'))  # error
+
+
+17 #  bool()  function  demo  program
+print(bool(0)) #   False
+print(bool(10)) #   True :  10  is  non-zero
+print(bool(-25)) # True
+print(bool(0.0)) # False
+print(bool(0.1)) # True
+print(bool(0 + 0j)) # False
+print(bool(10 + 20j)) # True 
+print(bool(-15j))  # True
+print(bool('False')) # True
+print(bool('')) # False
+print(bool('Hyd')) # True
+print(bool(' ')) # True 
+print(bool('True')) True
+
+
+'''
+bool()  function
+------------------
+1) What  does  bool(x)  do  ?  --->  Converts  object  'x'  to  True / False
+
+2) Is  0  True  (or)  False ? --->  False
+    What  about  non-zero ?  --->  True
+
+3) Is  ''(i.e.  Empty  string)  True  (or) False ?  --->  False
+    What  about  non-empty  string ?  --->	True
+
+4) When  is  x + yj  treated  as  False ?  --->  When  both  'x'  and  'y'  are  zeroes
+     When  is  x + yj  treated  as  True ?  --->  When  either  'x'  is   non-zero  (or)  'y'  is  non-zero
+'''
+
+
+18 # str()  function  demo  program
+print(str(25))  #  Converts   25  to  '25'
+print(str(10.8)) # 10.8
+print(str(3 + 4j)) # 3+4j
+print(str(True)) # True
+print(str(False)) # False
+print(str(None)) # None
+
+
+'''
+What  does  str(x)  do ?  --->  Converts  object  'x'  to  string
+'''
+
+
+
+19 # oct()  function  demo  program
+print(oct(195)) # 0O303
+print(oct(0B10101110010)) # 0O2562
+print(oct(0xA7B9)) # 0O123671
+
+
+
+
+'''
+oct()  function
+-----------------
+1) What  does  oct(x)  do ?  --->  Converts  object  'x'  to  octal  number  where
+								                    'x'  can  be  binary / decimal / hexa-decimal  number
+
+
+20 # hex()  function  demo  program
+print(hex(25))    # 0X 19
+print(hex(0B10101111010111)) # 0x2BD7
+print(hex(0O6247)) # 0XCA7
+
+'''
+hex()  function
+------------------
+1) What  does  hex(x)  do ?  --->  Converts  object  'x'  to  hexa-decimal  number  where
+								                     'x'  can  be  binary / decimal / octal  number
