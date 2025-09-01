@@ -1,0 +1,44 @@
+Write a Python function that takes a list of strings as input and returns another list containing the unique elements from the input list, sorted in alphabetical order.
+
+def remove_duplicates(s: str)  #Removes duplicate characters from a string."""
+    return ''.join(set(s))
+
+def main():
+    user_input = input("Enter a string: ")
+    result = remove_duplicates(user_input)
+    print("String without duplicates:", result)
+
+if __name__ == "__main__": # Execution starts from here
+    main() # calling the function
+
+Write a Python function that takes a string as input and returns a dictionary containing the number of uppercase and lowercase characters in the string. Any characters that cannot be categorized as uppercase or lowercase (e.g., symbols) should be counted as "other".
+
+def count_upper_lower_chars(input_string):
+    char_count = {"UC": 0, "LC": 0, "Other": 0}
+    for char in input_string:
+        if char.isupper():
+            char_count["uppercase"] += 1
+        elif char.islower():
+            char_count["lowercase"] += 1
+        else:
+            char_count["other"] += 1
+    return char_count
+ 
+sentence = "Hai Siri, What are you doing?"
+result = count_upper_lower_chars(sentence)
+ 
+print(result)
+
+
+Write a Python function that prompts the user to enter a number. Then, given that number, it prints the sentence "Hello, Python!" that many times.
+
+def print_sentence_multiple_times():
+    num = int(input("Enter a number: "))
+    for _ in range(num):
+        print("Hello, Python!")
+ 
+ 
+print_sentence_multiple_times()
+
+
+
