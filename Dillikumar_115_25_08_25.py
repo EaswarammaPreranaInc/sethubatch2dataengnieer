@@ -1,5 +1,4 @@
-
-.0#  intersection()   method  demo  program (Home  work)
+#  intersection()   method  demo  program (Home  work)
 a = {10 , 20 , 30 , 40}
 b = {30 , 40 , 50 , 60}
 c = a . intersection(b)
@@ -552,4 +551,5 @@ What  is  the  output ?  ---> {'A' : 3 , 'M' : 1 , 'O' : 1 , 'R' : 2}  in  alpha
 '''
 
  Enter  mixed  case  string : RamA raO
+
 {'A': 3, 'M': 1, 'O': 1, 'R': 2}
