@@ -2,12 +2,13 @@
 Write  a  program  to  generate  all   prime  numbers  between  2  and  n   and
 also  print  how  many  prime  numbers  are  existing
 Hint:  Use  the  prime()  function  defined  in   prog3a(prime).py  but  do  not  rewrite
-What  are  the  outputs  if  input  is  10  ?  --->     Prime   numbers
+What  are  the  outputs  if  input  is  10  ?  --->     
+							Prime   numbers
 							2
 							3
-			      			        5
-						        7
-						        Number  of   prime  numbers : 4
+			      			5
+						    7
+						    Number  of   prime  numbers : 4
 '''
 
 def checkprime(num):
@@ -359,11 +360,11 @@ disp(80 , 90)                   #3-argument  function  :   80 90 25
 def   add(* , a = 10 , b = 20):
         return  a + b
 # End of  the  function
-print(add(a = 30 , b = 40))         #70
-print(add())                        #30
-print(add(a = 50))                  #70
-print(add(b = 60 , a = 70))         #130
-print(add(80 , 90))                 #Throws error as add() expects keyword arguments not positional
+print(add(a = 30 , b = 40))         	#70
+print(add())                        	#30
+print(add(a = 50))                  	#70
+print(add(b = 60 , a = 70))         	#130
+print(add(80 , 90))                 	#Throws error as add() expects keyword arguments not positional
 
 
 
@@ -381,4 +382,5 @@ print(add(c = 80 , b = 90 , a = 100))           #270
 print(add(c = 25 , a = 43))                     #Throws error as keyword argument for b is missing
 print(add(1 , 2 , 3))                           #add() expects keyword arguments only not positional
 def   add(a , b = 10 ,  c ,  * , d  , e = 20 , f):  #Throws error as positional argument c can't follow keyword argument b
+
 		pass
