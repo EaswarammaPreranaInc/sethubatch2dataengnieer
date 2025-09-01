@@ -2,15 +2,14 @@
 a = {10 : 'Ramesh' , 20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
 print(a)    #{10 : 'Ramesh' , 20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
 print(type(a))   #<class 'dict'>
-print(How  to  obtain  value  key  10)      #print(a[10])
-print(How  to  obtain  value  key  20)      #print(a[20])
-print(How  to  obtain  value  key  15)      #print(a[15])
-print(How  to  obtain  value  key  18)      #print(a[18])
-print(a[19])   #Returns error as key 19 is not present in dictionary a.
-print(a[0])   #Returns error as key 0 is not present in dictionary a.
-print(a['Amar'])   #Returns error as key 'Amar' is not present in dictionary a.
-How  to  modify value  of   key  15  to  'Krishna'     #a[15]='Krishna'
-How  to  remove  20 :  'Kiran'  from  dict  …
+print(How  to  obtain  value  key  10)                      #print(a[10])
+print(How  to  obtain  value  key  20)                      #print(a[20])
+print(How  to  obtain  value  key  15)                      #print(a[15])
+print(How  to  obtain  value  key  18)                      #print(a[18])
+print(a[19])                                                #Returns error as key 19 is not present in dictionary a.
+print(a[0])                                                 #Returns error as key 0 is not present in dictionary a.
+print(a['Amar'])                                            #Returns error as key 'Amar' is not present in dictionary a.
+a[15]='Krishna'                                  #How  to  modify value  of   key  15  to  'Krishna'          
 
 
 
@@ -18,11 +17,11 @@ How  to  remove  20 :  'Kiran'  from  dict  …
 
 # Find  outputs  (Home  work)
 a = {10 : 'Hyd' , 10 : 'Sec'}
-print(a)             #{10: 'Sec'}
-print(len(a))      #1
+print(a)                                               #{10: 'Sec'}
+print(len(a))                                          #1
 b = {'R' : 'Red' , 'G' : 'Green' , 'B' : 'Blue' , 'Y' : 'Yellow' , 'G' : 'Gray' , 'B' : 'Black'}
-print(b)             #{'R': 'Red', 'G': 'Gray', 'B': 'Black', 'Y': 'Yellow'}
-print(len(b))      #4
+print(b)                                               #{'R': 'Red', 'G': 'Gray', 'B': 'Black', 'Y': 'Yellow'}
+print(len(b))                                          #4
 
 
 
@@ -30,22 +29,22 @@ print(len(b))      #4
 #  Tricky  program
 # Find output  (Home  work)
 a = {True : 'Yes' , 1 : 'No' , 1.0 : 'May  be'}
-print(a)           #{True:'May be'}
-print(len(a))    #1
+print(a)                                                 #{True:'May be'}
+print(len(a))                                            #1
 
 
 
 
 
 # Find  outputs
-a = { [ ] : 25}    #Returns error as dict key can't be mutable.
+a = { [ ] : 25}                                          #Returns error as dict key can't be mutable.
 b = { ( ) : 25}
-print(b)            #{ ( ) : 25}
-c = { { } : 25}    #Returns error as dict key can't be mutable.
+print(b)                                                 #{ ( ) : 25}
+c = { { } : 25}                                          #Returns error as dict key can't be mutable.
 d = {'Ramesh' : [9948250500, 9848565090, 9440250404]}
-print(d)           #{'Ramesh' : [9948250500, 9848565090, 9440250404]}
-print(len(d))      #1
-e = {set() : 10.8}     #Returns error as dict key can't be mutable.
+print(d)                                                 #{'Ramesh' : [9948250500, 9848565090, 9440250404]}
+print(len(d))                                            #1
+e = {set() : 10.8}                                       #Returns error as dict key can't be mutable.
 
 
 
@@ -53,10 +52,11 @@ e = {set() : 10.8}     #Returns error as dict key can't be mutable.
 
 # Find  outputs
 a = {}
-print(type(a))  #<class 'dict'>
-print(len(a))     #0
-print(a)            #{}
+print(type(a))                                          #<class 'dict'>
+print(len(a))                                           #0
+print(a)                                                #{}
 b = dict()
-print(type(b))  #<class 'dict'>
-print(len(b))     #0
-print(b)            #{}
+print(type(b))                                          #<class 'dict'>
+print(len(b))                                           #0
+
+print(b)                                                #{}
