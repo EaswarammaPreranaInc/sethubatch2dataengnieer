@@ -25,12 +25,12 @@ print(How  to  print  'd'  of  object  'a')    # print(a[2])
 print(How  to  print  'y'  of  object  'a')    # print(a[1])
 print(How  to  print  'H'  of  object  'a')    # print(a[0])
 print(a[-4])                                   # Returns error as available negative indices are -1, -2 and -3
-print(a[0] ==  a[-3])			       # True
+print(a[0] ==  a[-3])			                     # True
 a[2] = 'c'                                     # Returns error as string object is immutable.
-print(25[0])      			       # Returns error as 25 here is int and there is no concept of indexing in int objects.
-print('25'[0]) 				       # 2
-print(True[1])           		       # Returns error as True here is bool object and there is no concept of indexing in bool objects.
-print('True'[1])         		       # r
+print(25[0])      			                       # Returns error as 25 here is int and there is no concept of indexing in int objects.
+print('25'[0]) 				                         # 2
+print(True[1])           		                   # Returns error as True here is bool object and there is no concept of indexing in bool objects.
+print('True'[1])         		                   # r
 
 
 
@@ -40,12 +40,12 @@ print(a * 3)                            # HydHydHyd
 print(a * 2)                            # HydHyd
 print(a * 1)                            # Hyd
 print(a * 0)                            # No output 
-print(a * -1)   		        # No output
-print(25 * 3) 			        # 75
-print('25' * 3)         	        # 252525
-print('25' * 4.0)  		        # returns error as 4.0 is float
-print(3 * 'Hyd')		        # HydHydHyd
-print('25' * True)   #25
+print(a * -1)   		                    # No output
+print(25 * 3) 			                    # 75
+print('25' * 3)         	              # 252525
+print('25' * 4.0)  		                  # returns error as 4.0 is float
+print(3 * 'Hyd')		                    # HydHydHyd
+print('25' * True)                      #25
 
 
 
@@ -86,15 +86,15 @@ print(len(b))
 # Find outputs 
 a = 'Sankar Dayal Sarma' 
 print(a[7 : 12])          #Dayal 
-print(a[7 : ])		  #Dayal Sarma 
-print(a[ : 6])		  #Sankar 
-print(a[ : ])		  # a[ 0 : 18 : 1] ---> string from indexes 0 to 17 in steps of 1 i.e. Sankar<space>Dayal<space>Sarma 
-print(a[: : ])  	  #Sankar Dayal Sarma 
-print(a[1 : 10 : 2]) 	  #Sna a 
-print(a[0 : : 2]) 	  #Sna aa am 
-print(a[1 : : 2]) 	  # akrDylSra 
-print(a[-5 : -1])	  # Sarma 
-print(a[::-1]) 		  # amraS layad raknaS 
+print(a[7 : ])		        #Dayal Sarma 
+print(a[ : 6])		        #Sankar 
+print(a[ : ])		          # a[ 0 : 18 : 1] ---> string from indexes 0 to 17 in steps of 1 i.e. Sankar<space>Dayal<space>Sarma 
+print(a[: : ])  	        #Sankar Dayal Sarma 
+print(a[1 : 10 : 2]) 	    #Sna a 
+print(a[0 : : 2]) 	      #Sna aa am 
+print(a[1 : : 2]) 	      # akrDylSra 
+print(a[-5 : -1])	        # Sarma 
+print(a[::-1]) 		        # amraS layad raknaS 
 print(a[-1:-5:-1])        # amra 
 print(a[ : : -2])         # a[-1 : -19 : -2] ---> string from indexes -1 to -18 in steps of -2 i.e. arSlyDrka 
 print(a[3 : -3])          # kar Dayal Sa 
@@ -110,4 +110,5 @@ print(a[3 : 3])           # no o/p since both start and stop are same
 #  Find  outputs  (Home  work)
 a =  'A'
 print(a[1])       # Returns error as index is 1 but max index is 0
+
 print(a[1:])      # no o/p since start is beyond the max index of object
