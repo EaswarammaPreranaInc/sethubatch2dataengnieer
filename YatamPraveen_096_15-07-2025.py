@@ -4,12 +4,12 @@ print(a)           # 10.8
 print(type(a))     # <class 'float'>
 print(id(a))       # returns the address of object 10.8
 b = 25. 
-print(b)	   # 25.0
+print(b)	         # 25.0
 print(type(b)) 	   # <class 'float'>
 c = .689 
-print(c) 	   # 0.689
+print(c) 	         # 0.689
 d = 3.4E2 
-print(d)	   # 340.0
+print(d)	         # 340.0
 print(type(d))     # <class 'float'>
 e = 9.62e-2 
 print(e)           # 0.0962
@@ -50,14 +50,14 @@ print(4 + 0j)      # 4+0j
 a = True 
 print(a)                   # True 
 print(type(a))             # <class 'bool'>
-print(id(a))      	   # returns the address at which object True is stored.
+print(id(a))      	       # returns the address at which object True is stored.
 b = False 
-print(b) 	  	   # False 
-print(type(b)) 	  	   # <class 'bool'>
-print(True + True)	   # 2 
-print(True + False)	   # 1 
-print(False + True)	   # 1 
-print(False + False)	   # 0 
+print(b) 	  	             # False 
+print(type(b)) 	  	       # <class 'bool'>
+print(True + True)	       # 2 
+print(True + False)	       # 1 
+print(False + True)	       # 1 
+print(False + False)	     # 0 
 print(True + True + True)  # 3
 print(25 + 10.8 + True)    # 36.8 
 print(True > False)        # True
@@ -102,3 +102,4 @@ print(0xA7G9B)            # returns error as a hexadecimal number has only digit
 a = 9248 
 print(a)             # 9248 
 print(type(a))       # <class 'int'>
+
