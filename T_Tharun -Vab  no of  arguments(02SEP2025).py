@@ -246,6 +246,134 @@ print() # Hyd
 f1(10.8 , 25 , 'Hyd' , True , EmpNo = 12 , EmpName = 'Rama  Rao' , Salary = 10000.0) # 10.8
 																(25, 'Hyd', True)
 																{'EmpNo': 12, 'EmpName': 'Rama Rao', 'Salary': 10000.0}
+   --------------------------------------------------------------------------------------------------------------------------------
+   
+1) #Write a  program to print following pyramid
+
+
+n = int(input("How many lines ? : "))
+
+for i in range(1, n + 1):  
+    # Print spaces before letters
+    print(" " * (n - i), end="")
+
+    # Print letters from 'A' to 'A' + i - 1
+    for j in range(i):  
+        print(chr(65 + j), end=" ")
+
+    print()  
+
+
+
+2) Write  a  program  to  print  mathematical  table  of  a  number
+
+
+n = int(input("Enter a number : "))
+
+for i in range(1, 11):
+    print(n, "x", i, "=", n * i)
+
+
+3)#Write  a  program  to  print  all  the  rotations  of  the  string
+
+
+s = input("Enter a string : ")
+
+n = len(s)
+
+for i in range(n):
+    rotated = s[i:] + s[:i]
+    print(rotated)
+
+
+
+4) Write  a  program  to  print  each  digit  of  the  number  in  words
+
+Let  input  be  9247
+What  is  the  output  ?  ---> Nine  Two  Four  Seven
+
+
+a = ['Zero', 'One', 'Two', 'Three', 'Four',
+     'Five', 'Six', 'Seven', 'Eight', 'Nine']
+
+num = input("Enter a number : ")
+
+for ch in num:
+    print(a[int(ch)], end=" ")
+
+
+
+5) Write  a program  to  print  roman  equivalent  of  a  number
+
+
+def to_roman(num):
+    values = [1000, 900, 500, 400,
+              100, 90, 50, 40,
+              10, 9, 5, 4, 1]
+    symbols = ["M", "CM", "D", "CD",
+               "C", "XC", "L", "XL",
+               "X", "IX", "V", "IV", "I"]
+
+    roman = ""
+    i = 0
+    while num > 0:
+        q = num // values[i]              
+        roman += symbols[i] * q           
+        num = num % values[i]            
+        i += 1
+    return roman
+
+
+n = int(input("Enter a number : "))
+print("Roman Equivalent :", to_roman(n))
+
+6) Write  a  program  to  evaluate  expression  like  calculator
+
+Let  input  be  3 + 4 * 5 - 6 / 2 =
+What  is  the  output ? --->  14.5
+
+Hint:  Use  while  loop
+
+
+7) Program to evaluate expression like a calculator
+
+expr = input("Enter any expression terminated by = : ")
+
+i = 0
+a = ""  # to store the first number
+
+# Read the first number (before any operator)
+while expr[i].isdigit():
+    a += expr[i]
+    i += 1
+
+a = float(a)   
+
+while i < len(expr):
+    op = expr[i]   # operator (+, -, *, /, =)
+    if op == "=":
+        break  # end of expression
+    i += 1
+
+    # read next number 'b'
+    b = ""
+    while expr[i].isdigit():
+        b += expr[i]
+        i += 1
+    b = float(b)
+
+    # perform operation
+    if op == "+":
+        a = a + b
+    elif op == "-":
+        a = a - b
+    elif op == "*":
+        a = a * b
+    elif op == "/":
+        a = a / b
+
+print("Result :", a)
+
 
 
 
