@@ -1,0 +1,63 @@
+'''
+Write  a  program  to  extract  those  elements  of  1st  list  which  are  not  in  2nd  list   without  comprehension
+
+Let  1st  list  be  [10 , 20 , 15 , 18 , 25 , 32]  and  2nd  list  be  [30 , 40 , 10 , 25 , 15]
+What  is  the  output ?  --->  [20 , 18 ,  32]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = []
+for item in list1:
+    if item not in list2:
+        result.append(item)
+print("Elements of 1st list which are not in 2nd list :", result)
+
+
+
+
+'''
+Write   a  program  to  initialize  a  nested  list  with  zeroes  without  comprehension
+
+Let inputs  be  3  and  4
+What  is  the  output ?  --->  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+
+Hint:  Use  repetition  operator  *
+rows = int(input("Enter number of rows: "))
+columns = int(input("Enter number of columns: "))
+result = []
+
+for i in range(rows):
+    result.append([0] * columns)
+print(result)
+
+
+
+'''
+Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+n = min(len(list1), len(list2))
+result = []
+for i in range(n):
+    result.append(list1[i] + list2[i])
+
+print(result)
+
+
+
+'''
+Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
+(word  should  be  in  capital  letters)  without  comprehension
+
+Let  input  be   hyd  is  green  city
+What  is  the  output ?  --->  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY', 3]]
+
+sentence =input("enter a sentence: ")
+words = sentence.split()
+result = []
+for word in words:
+    result.append([word.upper(), len(word)])
+
+print(result)

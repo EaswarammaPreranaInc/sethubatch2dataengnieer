@@ -1,0 +1,245 @@
+# Homework Program
+
+a = input('Enter list : ')
+print(type(a))        # <class 'str'>
+print(a)              # [25 , 10.8 , 'Hyd' , True]
+
+b = eval(a)
+print(b)              # [25, 10.8, 'Hyd', True]
+print(type(b))        # <class 'list'>
+# Homework
+a = [10, 20, 15, 18]
+b = a
+print(a is b)     # True  
+print(a == b)     # True  
+b[2] = 12
+print(a)          # [10, 20, 12, 18]
+# Homework
+a = [10, 20, 15, 18]
+b = [100, 200, 150]
+
+print(a + b)                # [10, 20, 15, 18, 100, 200, 150]
+print(a + 5)                # error
+print(a + '5')              # error
+print([10, 20] + (30, 40))  # error
+ # Tricky program
+# Find outputs
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+print(a, id(a))     # [1, 2, 3]  
+a += b             
+print(a, id(a))     # [1, 2, 3, 4, 5, 6 ]
+ # Tricky program
+# Find outputs
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+print(a, id(a))      # [1, 2, 3]  
+a = a + b           
+print(a, id(a))      # [1, 2, 3, 4, 5, 6]
+# List packing
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+e = [a, b, c, d]
+
+print(e)        # [25, 10.8, 'Hyd', True]
+print(type(e))  # <class 'list'
+# Find outputs
+list = [25, 10.8, 'Hyd', True]
+
+a, *b, c = list
+print('a : ', a)   # a : 25
+print('b : ', b)   # b : [10.8, 'Hyd']
+print('c : ', c)   # c : True
+print(type(b))     # <class 'list'>
+
+x, *y = list
+print('x : ', x)   # x : 25
+print('y : ', y)   # y : [10.8, 'Hyd', True]
+
+*p, q = list
+print('p : ', p)   # p : [25, 10.8, 'Hyd']
+print('q : ', q)   # q : True
+# Homework
+list = [25, 10.8, 'Hyd', True]
+
+a, b, _, d = list
+
+print('a : ', a)   # a :  25
+print('b : ', b)   # b :  10.8
+print('_ : ', _)   # _ :   Hyd
+print('d : ', d)   # d :  True
+# Homework
+list = [25, 10.8, 'Hyd', True, 3 + 4j]
+
+a, b, a, d, a = list
+
+print('a : ', a)   # a :  (3+4j)
+print('b : ', b)   # b :  10.8
+print('d : ', d)   # d :  True
+# Comparing Lists (Homework)
+a = [10, 20, 15, 18]
+b = [20, 18, 15, 10]
+
+print(a == b)   # False 
+print(a is b)   # False
+ # Comparing Lists
+a = [10, 20, 15, 18]
+b = [10, 20, 15, 18]
+c = [10, 20, 25, 9]
+d = [10, 20, 7, 22]
+
+print(a == b)    # True  
+print(a is b)    # False  
+print(a < c)     # True  
+print(a > d)     # True   
+print(a >= c)    # False  
+print(a <= d)    # False  
+print(a != c)    # True   
+print(a != b)    # False  
+print(a == c)    # False
+# Homework
+list = [[25, 10.8], 'Hyd', True]
+
+[a, b], c, d = list
+print('a : ', a)   # a :  25
+print('b : ', b)   # b :  10.8
+print('c : ', c)   # c :  Hyd
+print('d : ', d)   # d :  True
+
+a, b, c, d = list  # error
+
+
+
+# Write  a  program  to  create  a  list  with  cubes  of  2 , 4 , 6 , 8 , 10  with  list  comprehension (Home  work)
+numbers=[2,4,6,8,10]
+cubes=[x**3 for x in numbers]
+print('numbers:',numbers)
+print('cubes:',cubes)
+
+
+'''
+(Home  work)
+Write  a  program  to  extract  1st  character  of  each  string  in  capital  letters  in  a  list  of  srings  without  comprehension
+
+Let  input  be   ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']
+
+'''
+(Home  work)
+Write  a  program  to  extract  1st  character  of  each  string  in  capital  letters  in  a  list  of  srings  without  comprehension
+
+Let  input  be   ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']'''
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+result = []
+for city in cities:
+    result.append(city[0].upper())
+
+print(result)
+
+
+
+'''
+Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
+(word  should  be  in  capital  letters)  without  comprehension
+
+Let  input  be   hyd  is  green  city
+What  is  the  output ?  --->  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY', 3]]
+
+sentence =input("enter a sentence: ")
+words = sentence.split()
+result = []
+for word in words:
+    result.append([word.upper(), len(word)])
+
+print(result)
+
+
+
+# with comprehension
+sentence = input("Enter a sentence: ")
+result = [[word.upper(), len(word)] for word in sentence.split()]
+
+print(result)
+
+
+'''
+Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+n = min(len(list1), len(list2))
+result = []
+for i in range(n):
+    result.append(list1[i] + list2[i])
+
+print(result)
+
+
+#with comprehension
+
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = [list1[i] + list2[i] for i in range(min(len(list1), len(list2)))]
+
+print(result)
+
+
+'''
+Write   a  program  to  initialize  a  nested  list  with  zeroes  without  comprehension
+
+Let inputs  be  3  and  4
+What  is  the  output ?  --->  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+
+Hint:  Use  repetition  operator  *
+rows = int(input("Enter number of rows: "))
+columns = int(input("Enter number of columns: "))
+result = []
+
+for i in range(rows):
+    result.append([0] * columns)
+print(result)
+
+#with comprehension
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+result = [[0] * cols for i in range(rows)]
+
+print(result)
+
+
+'''
+Write  a  program  to  extract  those  elements  of  1st  list  which  are  not  in  2nd  list   without  comprehension
+
+Let  1st  list  be  [10 , 20 , 15 , 18 , 25 , 32]  and  2nd  list  be  [30 , 40 , 10 , 25 , 15]
+What  is  the  output ?  --->  [20 , 18 ,  32]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = []
+for item in list1:
+    if item not in list2:
+        result.append(item)
+print("Elements of 1st list which are not in 2nd list :", result)
+
+#with comprehension
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = [item for item in list1 if item not in list2]
+print("Elements of 1st list which are not in 2nd list :", result)
+
+#  Write   a  program  to  print  even  numbers  between  1  and  20  with  comprehension      
+a = [num for num in range(1, 21) if num % 2 == 0]
+
+print(a)
+
+
+
