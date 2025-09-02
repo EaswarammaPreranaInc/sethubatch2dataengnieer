@@ -231,14 +231,16 @@ num=int(input("enter: "))
 a={1:"hundred", 0:None}
 b={1:'ten', 2:'twenty',3:'Thirty',4:'forty',5:'fifty',6:'sixty',7:'seventy',8:'eighty',9:'ninty', 0:None}
 c={1:'one', 2:'tw0',3:'Three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine', 0:None}
-n=num//100
-m=(num-(n*100))//10
-p=num-((n*100)+(m*10))
+n=int(num//100)
+m=int((num-(n*100))//10)
+p=int(num-((n*100)+(m*10)))
 print(n)
 print(m)
 print(p)
-print(b[1].values)
-
+if n*100>100:
+   print(c[n],a[1],b[m],c[p])
+else:
+   print(b[m],c[p])
 
 
 num=int(input("enter your number: "))
