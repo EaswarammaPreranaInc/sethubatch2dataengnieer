@@ -13,6 +13,8 @@ print(c)
 Hyd is hitec city.
 Hyd is Beautiful city.'''
 
+print()
+
 #Indexing
 print(a[0])#H
 print(a[1])#y
@@ -29,34 +31,40 @@ print('25'[0])#2
 print(True[1])#TypeError: 'bool' object is not subscriptable
 print('True'[1])#r
 
+print()
+
 #Star Operator as Repeater
 a='Hyd'
 print(a*3)#HydHydHyd
 print(a*2)#HydHyd
 print(a*1)#Hyd
 print(a*0)#Empty
-
 print(a*-1)#empty
-
 print(25*3)#75
 print('25'*3)#252525
 print('25'*4.0)#TypeError: can't multiply sequence by non-int of type 'float'
 print(3*'Hyd')#HydHydHyd
 print('25'*True)#25
 
-#Length Function
-print(3*'Hyd')#HydHydHyd
-print('25'*True)#25
+print()
+
+#Find outputs
 a='Hyd'
-print(a,id(a))#Hyd 1635613762544
+print(a,id(a))#Hyd address of a
 a=a*3
-print(a,id(a))#HydHydHyd 1635613152432
+print(a,id(a))#HydHydHyd address of new object
+
+print()
+
+#len() Function
 print(len('Hyd'))#3
 print(len('Rama Rao'))#8
 print(len('9247'))#4
 print(len(''))#0
 print(len(' '))#1
 print(len(689))#TypeError: object of type 'int' has no len()
+
+print()
 
 #multiple quotes
 a=""""Hyd"""
@@ -67,8 +75,10 @@ print("""Hyd"""")#SyntaxError: unterminated string literal (detected at line 1)
 b=""""""Hyd"""
 print(b)
 print(len(b))#"""
-#Slicing
 
+print()
+
+#Slicing
 a = 'Sankar Dayal Sarma'
 print(a[7 : 12])#Dayal
 print(a[7 : ])#Dayal Sarma
@@ -87,7 +97,16 @@ print(a[2 : -5])#nkar Dayal
 print(a[-1:-5])#empty
 print(a[3 : 3])#empty
 
-#Input Functions
+print()
+
+#Find Outputs
+a='A'
+print(a[1])#Out of range
+print(a[1:])#out of Range
+
+print()
+
+#Int() Functions
 print(int(10.8))  #  Converts  float object  10.8  to  int  object  10
 print(int(True))  #  Converts  bool object    True  to  int  object 1
 print(int(False)) #0
@@ -100,12 +119,13 @@ print(0O6247)#3239
 print(int(0XA7B9))#42937
 print(0XA7B9)#42937
 print(int(3 + 4j))#ERROR!TypeError: int() argument must be a string, a bytes-like object or a real number, not 'complex'
-
 print(int('25.4'))#ERROR!ValueError: invalid literal for int() with base 10: '25.4'
-
 print(int('Ten'))#ValueError: invalid literal for int() with base 10: 'Ten'
 
 
+print()
+
+#Float Function
 print(float(25))  #  Converts  int  object  25  to  float  object   25.0
 print(float(True))   #  Converts  bool  object   True   to  float  object   1.0
 print(float(False))#0.0
@@ -116,10 +136,11 @@ print(float(0B1010101))#85.0
 print(float(0O6247))#3239.0
 print(float(0XA7B9))#42937.0
 print(float(3 + 4j))#TypeError: float() argument must be a string or a real number, not 'complex'
-
 print(float('Ten'))#ValueError: could not convert string to float: 'Ten'
 
+print()
 
+#complex()
 print(complex(3 , 4))#3+4j
 print(complex(0 , 4))#4j
 print(complex(3))#3+0j
@@ -134,10 +155,12 @@ print(complex('3'))#3+0j
 print(complex('3.8'))#3.8+0j
 print(complex(3 , '4'))#TypeError: complex() second arg can't be a string
 print(complex('3' , 4))#TypeError: complex() can't take second arg if first is a string
-
 print(complex('3' , '4'))#TypeError: complex() can't take second arg if first is a string
 print(complex('Ten'))#ValueError: complex() arg is a malformed string      
 
+print()
+
+#bool Function
 print(bool(0)) #   False
 print(bool(10)) #   True :  10  is  non-zero
 print(bool(-25))#True
@@ -151,19 +174,28 @@ print(bool(''))#False
 print(bool('Hyd'))#True
 print(bool(' '))#True
 print(bool('True'))#True
-      
+
+print()
+
+#Str Function      
 print(str(25))  #  Converts   25  to  '25'
 print(str(10.8))#10.8
 print(str(3 + 4j))#3+4j
 print(str(True))#True
 print(str(False))#False
 print(str(None))#None
-      
+
+print()
+
+#oct Funtion
 print(oct(195))#0o303
 print(oct(0B10101110010))#0o2562
 print(oct(0xA7B9))#0o123671
 
+print()
 
+#hex()
 print(hex(25))#0x19
 print(hex(0B10101111010111))#0x2bd7
 print(hex(0O6247))#0xca7
+
