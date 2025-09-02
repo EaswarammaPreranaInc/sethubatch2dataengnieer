@@ -1,0 +1,212 @@
+a = {10: 'Rama', 15: 'Sita', 18: 'Rajesh', 17: 'Kiran', 12: 'Rama Rao'}
+b = {k: v for k, v in a.items() if k % 2 != 0}  
+print(b)  # {15: 'Sita', 17: 'Kiran'}
+c = {k: a[k] for k in a if a[k].startswith('R')}  
+print(c)  # {10: 'Rama', 18: 'Rajesh', 12: 'Rama Rao'}
+
+
+d = {x: 2 * x for x in range(5)}  
+print(d)                           # {0: 0, 1: 2, 2: 4, 3: 6, 4: 8}
+
+d = {x: x ** 3 for x in range(5)}  
+print(d)                             # {0: 0, 1: 1, 2: 8, 3: 27, 4: 64}
+print(type(d))                        #  <class 'dict'>
+
+
+a = [(10, 20, 30), (40, 50, 60), (70, 80, 90)]  # list of tuples with 3 elements
+b = {}                                           # empty dictionary
+
+b.update(a)                                     #  ERROR
+
+print(b)                                        # not execute due to the error
+
+c = [(10,), (20,), (30,)]                       
+b.update(c)                                     #  ERROR:
+print(b)
+
+a = [('R', 'Red'), ('G', 'Green'), ('B', 'Blue')]  # list of tuples 
+b = {'Y': 'Yellow', 'G': 'Gray'}                  # dictionary
+
+b.update(a)                                       # update dict b with items from list a
+print(b)                                          # {'Y': 'Yellow', 'G': 'Green', 'R': 'Red', 'B': 'Blue'}
+
+# a.update(b)                                    # Error
+
+
+def f1(a , b , c):
+    print(F'a  :  {a}    \t  b  :  {b}  \t  c :  {c}')
+# End of the function
+
+f1(a = 10 , b = 20 , c = 30)          # a  :  10    b  :  20   c :  30
+f1(25 , 10.8 , 'Hyd')                 # a  :  25    b  :  10.8   c :  Hyd
+f1(b = 40.7 , a = 50.2 , c = 60.5)    # a  :  50.2  	b  :  40.7   c :  60.5
+f1(c = 'Hyd' , b = 'Sec' , a = 'Cyb') # a  :  Cyb   	b  :  Sec  c :  Hyd
+f1(c = 3 + 4j , a = True , b = None)  # a  :  True   b  :  None  c :  (3+4j)
+f1(25 , c = 10.8 , b = 'Hyd')         # a  :  25    b  :  Hyd   c :  10.8
+f1(a = 100 , 200 , 300)               # Error
+f1(True , None , b = 'Hyd')           # Error
+f1(10 , 20 , x = 30)                  # Error
+f1(10 , 20)                           # Error
+
+
+# Find outputs (Home work)
+def disp(empno , ename , sal):
+    print(F'Emp  Number : {empno:4}  \t  Emp  Name : {ename:15}  \t  Salary : {sal}')
+# End of the function
+
+disp(25 , 'Rama Rao' , 10000.0)          # Emp  Number :   25    Emp  Name : Rama Rao    Salary : 10000.0
+disp(ename = 'Sita' , sal = 20000.0 , empno = 35)   # Emp  Number :   35    Emp  Name : Sita    Salary : 20000.0
+
+x = 'Rama  Rao'
+y = 30000.0
+z = 20
+
+disp(x , y , z)                          # Emp  Number : Rama  Rao   Emp  Name : 30000.0   Salary : 20
+
+
+# Tricky program
+# Find outputs (Home work)
+def f1(a , b , c):
+    return a + b * c
+# end of the function
+
+print(f1(3 , 4 , 5))                        # 23   (3 + 4*5)
+
+print(f1(*[6 , 7 , 8]))                     # 62   (6 + 7*8)
+
+print(f1([6 , 7 , 8]))                      #  Error
+
+print(f1(*{1 : 2 , 3 : 4 , 5 : 6}))         # 23   (keys {1,3,5} unpack → 1,3,5 → 1 + 3*5 = 16)  
+                                           
+
+print(f1({'c' : 2 , 'b' : 4 , 'a' : 6}))    # Error
+
+print(f1({'c' : 2 , 'b' : 4 , 'a' : 6}))    # error 
+
+print({{'c' : 2 , 'b' : 4 , 'a' : 6}})      # Error
+
+print(f1({'c' : 2 , 'a' : 4 , 'x' : 6}))    # Error
+
+
+# Identify Error (Home work)
+a = [10 , 20 , 15 , 5 , 12]
+
+print(sorted(reverse = True , a))              #  Error
+
+print(sorted(a , rev = True))                  # Error
+
+print(25 , 10.8 , 'Hyd' , separator = '\t')    # Error
+
+print(25 , 10.8 , 'Hyd' , endofline = '\t')    # error
+
+print(25 ,  sep = '\t' , 10.8 , end = '\t' , 'Hyd')   # Error
+
+
+
+# Keyword only arguments demo program
+def f1(* , a , b):
+    print(F'a  :  {a}  \t  b :  {b}')
+# End of the function
+
+f1(a = 10 , b = 20)        # a  :  10    b :  20
+f1(b = 30 , a = 40)        # a  :  40    b :  30
+f1(50 , 60)                #  Error
+f1(70 , b = 80)            #  Error
+f1(a = 15 , 25)            #  Error
+
+
+# Find outputs (Home work)
+def f1(a , * , b , c):
+    print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
+# End of function
+
+f1(10 , b = 20 , c = 30)             # a  :  10    b :  20    c  :  30
+f1(a = 40 , b = 50 , c = 60)         # a  :  40    b :  50    c  :  60
+f1(c = 100 , b = 90 , a = 80)        # a  :  80    b :  90    c  :  100
+f1(70 , 80 , c = 90)                 #  Error
+f1(70 , 80 , 90)                     #  Error
+f1(c = 15 , b = 25 , 35)             # Error
+
+# Positional only arguments demo program
+def f1(a , b , /):
+    print(F'a  :  {a}  \t  b  :  {b}')
+# End of the function
+
+f1(10 , 20)                 # a  :  10  	b  :  20
+f1(a = 30 ,  b = 40)        #  Error
+f1(50 , b = 60)             #  Error
+
+# Find outputs (Home work)
+def f1(a , b , / , c):
+    print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
+# End of function
+
+f1(10 , 20 , 30)                     # a  :  10  	b :  20  	c  :  30
+f1(40 , 50 , c = 60)                  # a  :  40  	b :  50  	c  :  60
+f1(a = 70 , b = 80 , c = 90)          # Error
+f1(a = 100 , b = 110 , 120)           #  Error
+f1(a = 130 , 140 , c = 150)           #  Error
+f1(160 , b = 170 , 180)               #  Error
+f1(190 , b = 200 , c = 210)           #  Error
+
+
+
+# Find outputs (Home work)
+def f1(a , b , / , c , d , * , e  , f):
+    print(F'a  :  {a}  \t  b  :  {b}  \t  c  :  {c}  \t  d  :  {d}  \t  e  :  {e}  \t  f  :  {f}')
+# End of the function
+
+f1(10 , 20 , 30 , d = 40 , e = 50 , f = 60)      # a  :  10  	b :  20  	c  :  30  	d  :  40  	e  :  50  	f  :  60
+f1(1 , b = 2 , c = 3 , d = 4 , e = 5 , f = 6)    #  Error
+f1(1 , 2 , 3 , 4 , 5 , f = 6)                    # Error
+f1(10 , 20 , c = 30 , 40 , e = 50 , f = 60)      #  Error
+f1(10 , 20 , 30 , 40 , e = 50 , f = 60)          # a  :  10  	b :  20  	c  :  30  	d  :  40  	e  :  50  	f  :  60
+
+
+# Find outputs (Home work)
+def f1(x):
+    print('1st  function : ' , x)
+
+def f1(y):
+    print('2nd  function : ' , y)
+
+def f1(z):
+    print('3rd  function : ' , z)
+
+f1(z = 10)      # 3rd  function :  10
+f1(y = 20)      # Error
+f1(x = 30)      # Error
+
+
+# Find outputs (Home work)
+def disp(ch = '*' , n = 4):
+    print(ch * n)
+# End of the function
+
+disp('-' , 6)                 # ------     (6 times '-')
+disp('$')                     # $$$$       ('$' * 4)
+disp()                        # ****       (default ch='*', n=4)
+disp(n = 5)                   # *****      (default ch='*', n=5)
+disp(5)                       # 20         (5 * 4 → arithmetic multiplication, since ch=5 (int), n=4)
+disp(n = 7 , ch = '%')        # %%%%%%%    ('%' * 7)
+disp(7 , '@')                 # @@@@@@@    ('@' * 7)
+disp(7 , n = 6)               #  Error
+disp(ch = '!' ,  5)           # Error
+
+
+print(add(a = 30 , b = 40 , c = 50))    # 120  (30 + 40 + 50)
+print(add(b = 60 , c = 70))             # 140  (10 + 60 + 70) 
+print(add(c = 80 , b = 90 , a = 100))   # 270  (100 + 90 + 80)
+print(add(c = 25 , a = 43))             #  Error
+print(add(1 , 2 , 3))                   # Error
+
+print(add(a = 30 , b = 40))   # 70   (30+40)
+print(add())                  # 30   (10+20, both defaults)
+print(add(a = 50))            # 70   (50+20)
+print(add(b = 60 , a = 70))   # 130  (70+60)
+print(add(80 , 90))           # Error
+
+
+
+
+
