@@ -27,7 +27,7 @@ else:
 '''
 Write  a  program  to  determine  largest  of  three  numbers  with  if  and  else
 
-Hint:  Write  multiple  conditions
+Hint:  Write  multiple conditions
 '''
 a = eval(input("Enter 1st input:"))
 b = eval(input("Enter 2nd input:"))
@@ -47,12 +47,15 @@ else:
 
 
 
+
+
+
 '''
 Write  a  program  to  convert  celsius  temperature  to  farenheit  and  vice-versa
 
 1) What  is  the  formula  to  convert  celsius  to  farenheit ? --->  1.8 * temp + 32
 
-2) What  is  the  formula  to  convert  farenheit  to  celsius ?  --->  (temp - 32) / 1.8
+2) What  is  the  formula  to  convert  farenheit  to  celsius ?  --->  (temp-32)/1.8
 '''
 a = int(input("Enter 1 to convert celsius to farenheit and 2 to convert farenheit to celsius:"))
 if a == 1:
@@ -65,6 +68,9 @@ elif a == 2:
     print("Celsius Equivalent:", celsius)
 else:
     print("Input should be 1 or 2")
+
+
+
 
 
 
@@ -137,7 +143,7 @@ mid =  (10 + 20 + 7) - (20 + 7) = 10
 
 5) How  to  obtain  middle  number ?  ---> Eliminate  max  and  min  from  a , b , c
 
-6) Hint : Do  not  use  else  in  the  program
+6) Hint : Do  not  use  else  in  the program
 '''
 
 a = int(input("Enter first input:"))
@@ -157,6 +163,10 @@ mid = (a + b+ c) - (max + min)
 print("Largest number:",max)
 print("Smallest number:",min)
 print("Middle number:", mid)
+
+
+
+
 
 
 
@@ -220,6 +230,9 @@ else:
 
 
 
+
+
+
 '''
 Write  a  program  to  determine  roots  of  a  quadtratic  equation  a * x ^ 2 + b * x + c = 0  where  a  ! = 0
 
@@ -273,6 +286,9 @@ else:
 
 
 
+
+
+
 '''
 Write  a  program   to  determine  a  point (x , y)  lies  inside , outside  or  on  the  circle.
 Center  is  origin  and  radius  is  'r'
@@ -304,6 +320,8 @@ else:
 
 
 
+
+
 # Find  outputs  (Home  work)
 m = 4
 match  m:
@@ -314,6 +332,10 @@ match  m:
 	case  3:
 		print('Three') # prints nothing because there is no case 4
 print('Bye')  #prints Bye
+
+
+
+
 
 
 
@@ -336,7 +358,10 @@ print('Bye')
 
 
 
- # Find  outputs  (Home  work)
+
+
+
+# Find  outputs  (Home  work)
 m = 2
 match  m:
 	case  1:
@@ -346,6 +371,9 @@ match  m:
 	case  _:
 		print('Bye')
 print('End')
+
+
+
 
 
 
@@ -362,6 +390,9 @@ match  m:
 	case  1:
 		print('Cyb')
 print('Bye') # prints Bye
+
+
+
 
 
 
@@ -424,6 +455,8 @@ print('Bye') # Error should be indented with case
 
 
 
+
+
 '''
 1) What  is  the  output  when  input  is  (-10 , -20) ?  --->
 2) What  is  the  output  when  input  is  (10 , 0) ?  --->
@@ -439,16 +472,18 @@ print('Bye') # Error should be indented with case
 '''
 tpl = eval(input('Enter  any  point  in  the  form  of  (x , y) :  '))
 match  tpl:
-	case  (0 , 0):
+	case (0 , 0):
 		print('Origin')
-	case   (0 , y):
+	case (0 , y):
 		print('y - axis')
-	case   (x , 0):
+	case  (x , 0):
 		print('x - axis')
-	case   (x , y):
+	case (x , y):
 		print('Quadrant')
-	case  _:
+	case _:
 		print('Not  a  point')
+
+
 
 
 
@@ -508,6 +543,8 @@ print("Bill amount = Rs.", cost)
 
 
 
+
+
 '''
 Write  a  program  to  print  fibonacci  series  upto   x
 
@@ -537,10 +574,19 @@ while(f3 <= n):
 
 
 
+
+
+
+
+
 #  Find  outputs
 while  True:
 	print('Hello') # prints Hello Infinitely
 print('Bye')
+
+
+
+
 
 
 
@@ -555,6 +601,9 @@ print('Bye') # prints Bye
 
 
 
+
+
+
 # Find  outputs  (Home  work)
 for x in [10, 20, 15, 18]:# How  to  print  each  element  of  list  [10 , 20 , 15 , 18]  with  for  loop 
     print(x) # prints each element in list
@@ -562,6 +611,9 @@ for x in 'Hyd':#How  to  print  each  character  of   string  'Hyd'  with  for  
     print(x) # prints each character in string
 for x in range(5):# How  to  print  each  element  of   range(5)  with  for  loop  
     print(x) # prints from 0 to 4 
+
+
+
 
 
 
@@ -585,6 +637,11 @@ for  x  in  {10 : 20 , 30 : 40 , 50 : 60}:
 
 
 
+
+
+
+
+
  # Find outputs  (Home  work)
 a = {10 : 20 , 30 : 40 , 50 : 60}
 for x , y  in a.items(): 
@@ -598,9 +655,18 @@ for x , y in {10 : 20 , 30 : 40 , 50 : 60}:
 
 
 
+
+
+
+
+
 # Identify  error  (Home  work)
 for  x  in   123:
         print(x)   # Error because int object cannot be traversed
+
+
+
+
 
 
 
@@ -615,14 +681,18 @@ for  x   in   {}:
         print(x) # No output
 for  x   in   set():
         print(x) # No output
-for  x   in   '':
+for x in  '':
         print(x) # No output
-for  x  in  range(10 , 10):
+for x in range(10 , 10):
 	print(x) # No output because range is from 10 to 10
-for  x  in   range():# Error because atleast 1 argument is mandatory
+for x in range():# Error because atleast 1 argument is mandatory
 	print(x) 
-for  x  in   (25):
+for x in (25):
 	print(x)   # Error because cannot be traversed through int object
+
+
+
+
 
 
 
@@ -635,6 +705,7 @@ for  i  in  range(1 , 4):
 	print('Hello')
 print('Bye')
 ''' Outputs
+1 1
 1 2
 1 3
 1 4
@@ -651,6 +722,8 @@ Hello
 Hello
 Bye 
 '''
+
+
 
 
 
@@ -684,6 +757,9 @@ for x in a:
 
 
 
+
+
+
 # How   to  print  each  element  of  list  in  reverse  order  with  indexed  based  for  loop  
 for i in range(-1,-(len(a)+1),-1):
     print(a[i])   
@@ -691,6 +767,8 @@ for i in range(-1,-(len(a)+1),-1):
 a = [25 , 10.8 , 'Hyd' , True]   #i have used reversed method  for  reversing   
 for x in reversed(a):
     print(x)         
+
+
 
 
 
@@ -738,6 +816,11 @@ print(c)
 
 
 
+
+
+
+
+
 #index based loop 
 a = [25, 10.8, 'Hyd', True, 3 + 4j, None, 'Sec']
 for i in range(2,5):   
@@ -750,12 +833,17 @@ for idx, val in enumerate(a):
 
 
 
- #  Tricky  program
+
+
+
+
+
+#  Tricky  program
 #  Find  outputs  (Home  work)
 a = [10 , 20 , 15 , 18]
 for  i  in  range(len(a)):
 	a[i] +=  1
-print('a :  ' , a) # prints a : [11 , 20 , 15 , 18]
+print('a :  ' , a) # prints a : [11 , 21 , 16 , 19]
 b = [10 , 20 , 15 , 18]
 for  x  in   b:     
 	x += 1

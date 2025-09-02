@@ -7,14 +7,24 @@ print(a[20]) # prints the value of key 20 from the dictionary i.e., Kiran
 print(a[15]) # prints the value of key 15 from the dictionary i.e., Amar
 print(a[18]) # prints the value of key 18 from the dictionary i.e., Sita
 print(a[19]) # Error because key 19 is not there in the dictionary 'a'
-print(a[0]) # Error because key 19 is there in the dictionary 'a'
-print(a['Amar']) # Error because when give value,key is not printed but when given key,value is printed
+print(a[0]) # Error because key 0 is not there in the dictionary 'a'
+print(a['Amar']) # Error because when given value, key is not printed but when given key,value is printed
 a[15] =  'Krishna' # Amar at key 15 is replaced with Krishna in the dictionary 'a'
 a.remove[20] # removes key value pair at key 20  in the dictionary
 a[25]: 'Vamsi' # appends new key value pair to the dictionary i.e., 25 : 'Vamsi'
-print(a) # prints the modified dicationary 'a' i.e., {10 : 'Ramesh' , 15 : ;Krishna , 18 : 'Sita' , 25 : 'Vamsi'}
+print(a) # prints the modified dictionary 'a' i.e., {10 : 'Ramesh' , 15 : ;Krishna , 18 : 'Sita' , 25 : 'Vamsi'}
 print(len(a)) # prints number of key value pairs in the dictionary 'a' i.e., 4
 print(a * 2) # Error because dictionary cannot have duplicate keys
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -28,6 +38,12 @@ print(len(b)) # prints number of key value pairs in the dictionary i.e., 4
 
 
 
+
+
+
+
+
+
 #  Tricky  program
 # Find output  (Home  work)
 a = {True : 'Yes' , 1 : 'No' , 1.0 : 'May  be'}
@@ -36,15 +52,29 @@ print(len(a)) # prints number of key value pairs in the dictionary 'a' i.e., 1
 
 
 
+
+
+
+
+
+
+
 # Find  outputs
-a = { [ ] : 25}  # Error because in dictionary 'a' , key is [] and list is mutable,but dictionary does not contain duplicate keys 
-b = { ( ) : 25} # key can be tuple because tuple is immutable
+a = {[] : 25}  # Error because in dictionary 'a' , key is [] and list is mutable,but dictionary does not contain duplicate keys 
+b = {() : 25} # key can be tuple because tuple is immutable
 print(b) # prints dictionary 'b' i.e., { () : 25},because tuple is immutable
-c = { { } : 25} # Error because key is dictionary and dictionary is mutable
+c = {{} : 25} # Error because key is dictionary and dictionary is mutable
 d = {'Ramesh' : [9948250500, 9848565090, 9440250404]}
 print(d)  # prints dictionary 'd' i.e., {'Ramesh': [9948250500, 9848565090, 9440250404]}
 print(len(d)) # prints number of key value pairs in dictionary 'd' i.e., 1
 e = {set() : 10.8} # Error because set is mutable and dictionary cannot have duplicate keys
+
+
+
+
+
+
+
 
 
 

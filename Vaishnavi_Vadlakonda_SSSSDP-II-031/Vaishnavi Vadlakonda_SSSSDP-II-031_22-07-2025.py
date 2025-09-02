@@ -1,5 +1,4 @@
-#  Find  
-
+#  Find outputs
 print({10 , 20}  |  {30 , 20}) # prints {10, 20, 30}
 print({10 : 'Hyd' , 20 : 'Sec'} |  {30 : 'Cyb' , 20 : 'Vja'}) # prints {10 : 'Hyd' , 20 : 'Vja' , 30 : 'Sec'}
 print(range(4) | range(5)) # Error range cannot be concatenated
@@ -7,10 +6,17 @@ print([10 , 20] | [30 , 20]) # Error because '+' should be used to concatenate l
 
 
 
+
+
+
+
+
+
+
 #  Assignment  operators  demo  program  (Home  work)
 a = 25 # ref 'a' is assigned to object 25
 print(a) # prints 25
-b =  a # ref 'b' is assigned to object 'a'
+b = a # ref 'b' points where ref 'a' points
 print(b) # prints 25
 print(a  is  b) # True because both a and b pointing to same object 25
 x = 4 # ref 'x' assigned to object 4
@@ -19,6 +25,13 @@ z = x + y * 6 # ref 'z' is assigned to result of the expression
 print(z) # prints 34
 25 = a # Error because operand 1 is object but it should be reference
 a + b = x + y # Error because operand 1 is expression but it should be reference
+
+
+
+
+
+
+
 
 
 
@@ -31,6 +44,12 @@ print(a , b , c) # prints 25<space>25<space>25
 
 
 
+
+
+
+
+
+
 # Multiple  Assignment (Home work)
 x , y , z = 25 , 10.8 , 'Hyd' # ref 'a' assigned to object 25, ref 'b' points to object 10.8 and ref 'z' assigned to object 'Hyd'
 print(x) # prints 25
@@ -39,10 +58,22 @@ print(z) # prints 'Hyd'
 
 
 
+
+
+
+
+
+
 # Find outputs (Home work)
 a , b , c = 3 , 4 , 5 # ref 'a' is assigned to object 3, ref 'b' points to object 4 and ref 'c' points to object 5
-a *= b + c # a = a * (b + c) first * operator b + c i.e.,  4 + 5 = 9 and 3 * 9 = 27 so, ref 'a' is assigned to object 27
+a *= b + c # a = a * (b + c) first () operator b + c i.e.,  4 + 5 = 9 and 3 * 9 = 27 so, ref 'a' is assigned to object 27
 print(a) # prints 27 
+
+
+
+
+
+
 
 
 
@@ -53,10 +84,24 @@ print(a) # prints 9
 
 
 
+
+
+
+
+
+
+
 # Find outputs (Home work)
 a = 3 # ref 'a' points to object 3
 a **= 4 # a = a ** 4 i.e., a = 3 ** 4, a = 81
 print(a) # prints 81
+
+
+
+
+
+
+
 
 
 
@@ -69,12 +114,25 @@ print(a == b) # True because object of a and b are same i.e., 25
 
 
 
+
+
+
+
+
+
 # Find outputs (Home work)
 a = 25 # ref 'a' points to object 25
 b = 25.0 # ref 'b' points to object 25.0
-print(a  is  b) # False because a and b both pointing to different objects 
-print(a  is  not  b) # True because a and b both pointing to different objects
+print(a is b) # False because a and b both pointing to different objects 
+print(a is not b) # True because a and b both pointing to different objects
 print(a == b) # True because objects a and b are same 
+
+
+
+
+
+
+
 
 
 
@@ -100,6 +158,14 @@ print(x == m) # False because 'x' is a list and 'm' is a tuple
 
 
 
+
+
+
+
+
+
+
+
 # Membership operators demo program (Home work)
 list = [10 , 20 , 15 , 12 , 18] 
 print(15 in list) # True because 15 is present in the list
@@ -119,6 +185,13 @@ print('' not in s) # True because '' is not present in s
 
 
 
+
+
+
+
+
+
+
 # Find outputs (Home work)
 x = [1 , 2 , 3 , 4] # ref 'x' points to list
 y = [1 , 2 , 4 , 3] # ref 'y' points to another list
@@ -132,6 +205,13 @@ print(p == q) # True because both sets are same and set has no order
 m = range(5) # ref 'm' points to range object from indexes 0 to 4
 n = range(5) # ref 'n' points to another range object from indexes 0 to 4
 print(m == n) # True because values in both the ranges are same
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,154 @@
+# add()  method  demo  program  (Home  work)
+a = set()
+a . add(True)
+a . add(25)
+a . add(10.8)
+a . add(1)
+a . add('Hyd')
+a . add(25)
+a . add(None)
+a . add('Hyd')
+a . add(1.0)
+print(a)     # {True,25,10.8,'Hyd',None,}
+a . add(10 , 20 , 30)   #  error add method take exactly one argument 
+a . add([10,20,30])   # error can not have mutable sequence
+-----------------------------------------------------------------------------------------------------------------------------
+
+# Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a)   # {25 , 10.8 , 'Hyd' , True}
+print(id(a))  # adress of object a  
+a . add(tpl)  #   {25 , 10.8 , 'Hyd' ,(10,20,30), True}
+a . add('Sec')     #  {25 , 10.8 , 'Hyd' , True,'Sec'}
+print(a)
+print(id(a))    #same adress of set a
+print(len(a))    # 5
+a . add([100 , 200 , 300])   # error because set cannot contain mutable object 
+a . add(set())   # error
+a . add({ })   # error
+-------------------------------------------------------------------------------------------------------------------------
+# Find  outputs (Home  work)
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)  # {(10 , 20 , 15 , 18)}
+print(s)
+print(len(s))  # 1
+------------------------------------------------------------------------------------------
+
+
+# update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl)  
+print(len(s))  # 4
+print(s)    #  {10 , 20 , 15, 18}
+s . update(25)
+--------------------------------------------------------------------------------------------------------
+
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a , b , c)
+print(s)   # {50, 20, 70, 40, 10, 60, 30}
+print(len(s))  # 7
+s . add(a , b , c)  # error add method  take one argument
+--------------------------------------------------------------------------------------------------
+
+# Find  outputs  (Home  work)
+a = set()
+a . update('Rama Rao')
+print(a)   #  {'R','a','m','', o'}
+print(len(a))    # 5
+a . update(3 + 4j , 10.8 , True)  # update take only sequence
+----------------------------------------------------------------------------------------------------------------------------
+
+# copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)     # {10 , 20 , 15 , 18}
+b = a . copy()
+print(b)    #  {10 , 20 , 15 , 18}
+print(a  is  b)   # False
+print(a  ==  b)  # True
+c = a
+print(a  is  c)  # True
+-----------------------------------------------------------------------------------------------
+
+# pop()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)        # {25 , 10.8 , 'Hyd' , True}
+print(a . pop())   # 25
+print(a . pop()) # 10.8
+print(a . pop())  # 'Hyd'
+print(a . pop())   # True
+print(a . pop())    # error pop empty set
+print(a)
+b = {10 , 20 , 30 , 40}
+print(b . pop(2))  # in set pop method does not any argument
+----------------------------------------------------------------------------------------------------------
+# remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)   #  {25 , 10.8 , 'Hyd' , True}
+a . remove('Hyd')  #{25 , 10.8 , True}
+print(a)
+a . remove('Sec')  # error there is no 'Sec'
+---------------------------------------------------------------------------------------
+ 
+
+
+# discard()  method  demo  program (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)  #   {25 , 10.8 , 'Hyd' , True}
+a . discard('Hyd')   # {25 , 10.8  , True}
+print(a)   #  {25 , 10.8  , True}
+a . discard('Sec')  # {25 , 10.8  , True}
+print(a)
+a . remove('Sec')   # error  remove throws error if value not found in set
+-------------------------------------------------------------------------------------------------------
+
+# clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)   # {10 , 20 , 15 , 18}
+a . clear()
+print(a)   # set()
+print(len(a))  # 0
+--------------------------------------------------------------------------------
+
+
+# Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b))  #  {10 , 20 ,30 , 40 , 50 , 60}
+print(a | b)  # error with | can cancatenate two set only
+print(b . union(a))   #error
+print(a + b)   # error
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

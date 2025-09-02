@@ -1,0 +1,119 @@
+# Write  a  program  to  create  a  list  with  cubes  of  2 , 4 , 6 , 8 , 10  with  list  comprehension (Home  work)
+numbers=[2,4,6,8,10]
+cubes=[x**3 for x in numbers]
+print('numbers:',numbers)
+print('cubes:',cubes)
+
+
+
+'''
+(Home  work)
+Write  a  program  to  extract  1st  character  of  each  string  in  capital  letters  in  a  list  of  srings  without  comprehension
+
+Let  input  be   ['hyd' , 'pune' , 'chennai' , 'vijayawada']
+What  is  the  output ?  ---> ['H' , 'P' , 'C' , 'V']'''
+
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+result = []
+for city in cities:
+    result.append(city[0].upper())
+
+print(result)
+
+#with comprehension
+cities = ['hyd', 'pune', 'chennai', 'vijayawada']
+
+result = [city[0].upper() for city in cities]
+
+print(result)
+
+'''
+Write  a  program  to  append  each  word  of  the  sentence  and  its  length  to  a  list
+(word  should  be  in  capital  letters)  without  comprehension
+
+Let  input  be   hyd  is  green  city
+What  is  the  output ?  --->  [['HYD' , 3] , ['IS' , 2] , ['GREEN' , 5] , ['CITY', 3]]
+
+sentence =input("enter a sentence: ")
+words = sentence.split()
+result = []
+for word in words:
+    result.append([word.upper(), len(word)])
+
+print(result)
+
+#with comprehension
+sentence = input("Enter a sentence: ")
+result = [[word.upper(), len(word)] for word in sentence.split()]
+
+print(result)
+
+
+'''
+Write  a  program  to  add  two  lists  of  unequal  length  without  comprehension
+
+Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60 , 70]  and  2nd  list  be  [100 , 200 , 300 , 400]
+What  is   the  result ?  ---> [10 + 100 , 20 + 200 , 30 + 300 , 40 + 400]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+n = min(len(list1), len(list2))
+result = []
+for i in range(n):
+    result.append(list1[i] + list2[i])
+
+print(result)
+
+#with comprehension
+
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = [list1[i] + list2[i] for i in range(min(len(list1), len(list2)))]
+
+print(result)
+
+'''
+Write   a  program  to  initialize  a  nested  list  with  zeroes  without  comprehension
+
+Let inputs  be  3  and  4
+What  is  the  output ?  --->  [[0 , 0 , 0 , 0] , [0 , 0 , 0 , 0] , [0 , 0 , 0 , 0]]
+
+Hint:  Use  repetition  operator  *
+rows = int(input("Enter number of rows: "))
+columns = int(input("Enter number of columns: "))
+result = []
+
+for i in range(rows):
+    result.append([0] * columns)
+print(result)
+
+#with comprehension
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+result = [[0] * cols for i in range(rows)]
+
+print(result)
+
+
+'''
+Write  a  program  to  extract  those  elements  of  1st  list  which  are  not  in  2nd  list   without  comprehension
+
+Let  1st  list  be  [10 , 20 , 15 , 18 , 25 , 32]  and  2nd  list  be  [30 , 40 , 10 , 25 , 15]
+What  is  the  output ?  --->  [20 , 18 ,  32]
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = []
+for item in list1:
+    if item not in list2:
+        result.append(item)
+print("Elements of 1st list which are not in 2nd list :", result)
+
+#with comprehension
+list1 = eval(input("Enter 1st list : "))
+list2 = eval(input("Enter 2nd list : "))
+result = [item for item in list1 if item not in list2]
+print("Elements of 1st list which are not in 2nd list :", result)
+
+#  Write   a  program  to  print  even  numbers  between  1  and  20  with  comprehension         evens = [num for num in range(1, 21) if num % 2 == 0]
+
+print(evens)0

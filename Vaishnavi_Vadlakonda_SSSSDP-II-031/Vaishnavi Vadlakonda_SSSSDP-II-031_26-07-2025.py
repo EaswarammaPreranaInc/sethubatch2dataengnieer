@@ -8,9 +8,15 @@ y = F'{x}' # Ref 'y' points to object F'{x}'
 print(y) # prints 10.8
 print(type(y)) # prints type of object i.e., <class 'str'>
 x = [10,20,30,40] # Ref 'x' points to object to list
-y = F'{x}' # Ref 'y' points to object to F'{x}'
+y = F'{x}' # Ref 'y' points to object  F'{x}'
 print(y) # prints [10,20,30,40]
 print(type(y)) # prints type of object i.e., <class 'str'>
+
+
+
+
+
+
 
 
 
@@ -26,6 +32,13 @@ print(F'{x =}  \t   {y =}  \t  {z =}') # Error because there are no x,y and z ob
 
 
 
+
+
+
+
+
+
+
 #  Find  outputs  (Home  work)
 x = 25
 print(F'{x}') # prints 25
@@ -36,6 +49,10 @@ print(F'{{{{{x}}}}}') # prints {{25}}
 print(F'{{{{{{x}}}}}}') # prints {{{x}}}
 print(F'{{{{{{{x}}}}}}}') # prints {{{25}}}
 print(F'{{{{{{{{x}}}}}}}}') # prints {{{{x}}}}
+
+
+
+
 
 
 
@@ -59,7 +76,7 @@ What  is  the  smallest  number ?  --->  7
 What  is  the  sqrt  of  1st  input ?  --->  3.16
 What  is  the  result  of  power?  --->  10000000
 What  is  the  gcd  of  2  numbers ?  ---> 1
-What  is  the  factorial   of  1st  input ?  ---> 10!
+What  is  the  factorial   of  1st  input?---> 10!
 '''
 a = eval(input("Enter 1st integer number : "))
 b = eval(input("Enter 2nd integer number : "))
@@ -72,9 +89,12 @@ print("max(10,7) =",max(a , b))
 print("min(10,7) =",min(a , b))
 print("10^7 =", a ** b)
 import math
-print("sqrt(10) =",math.sqrt(a ** b))
+print("sqrt(10) =",math.sqrt(a))
 print("gcd(10,7) =",math.gcd(a ,b))
-print("fact(10) =",math.factorial(a , b))
+print("factorial(10) =", math.factorial(a))
+
+
+
 
 
 
@@ -89,13 +109,16 @@ Write  a  program  to  swap  values  of  any  two  objects  in  a  single  state
 Let  'x'  be  25  and  'y'  be   'Hyd'
 What  are  'x'  and  'y'  after  swap ?  ---> Hyd  and  25
 
-Hint:  Swap  references  but  not  objects
+Hint:  Swap  references  but  not objects
 '''
 x = eval(input("Enter 1st input:"))
 y = eval(input("Enter 2nd input:"))
 print("Before swap: x =",x ,"\t y =", y)
 x, y = y, x
 print("After swap: x =",x ,"\t y =", y)
+
+
+
 
 
 
@@ -136,6 +159,9 @@ else:
 
 
 
+
+
+
 '''
 Write  a  program  to  print   '>'  if  1st  input  >  2nd  input,
                                                '<'  if  1st  input  <  2nd  input  and
@@ -164,6 +190,8 @@ print('>' if a > b else '<' if a < b else '=' )
 
 
 
+
+
 '''
 Write  a  program  to  print  1  if  input  is  +ve  ,  -1    if  input  is  -ve  and  0  if  input  is  0
 
@@ -177,6 +205,8 @@ Write  a  program  to  print  1  if  input  is  +ve  ,  -1    if  input  is  -ve
 '''
 a = eval(input("Enter any number:"))
 print("Result:",'1' if a >= 1 else '-1' if a <= -1 else '0')
+
+
 
 
 
@@ -216,7 +246,7 @@ Write  a  program  to  determine  area  and  perimeter  of  rectangle
 
 3) What  is  the  area  of  rectangle  ?  --->  length * breadth
 
-4) What  is  the  perimeter  of  rectangle ?  --->  2 * (length + breadth)
+4) What  is  the  perimeter  of  rectangle ?  --->  2 * (length + breadth)
 '''
 a = eval(input("Enter length of rectangle:"))
 b = eval(input("Enter breadth of rectangle:"))
@@ -242,7 +272,7 @@ Write  a  program  to  determine  volume  of  a  sphere
 
 2) What  is  the  output ?  --->  volume
 
-3) What  is  the  volume  of  sphere  ?  --->  4 / 3  * pi *  r ^ 3
+3) What  is  the  volume  of  sphere  ?  --->  4/3*pi*r^3
 '''
 from math import pi
 r = eval(input("Enter radius of sphere:"))
@@ -267,7 +297,7 @@ Write  a  program  to  determine  simple  interest  and  compound  interest
 
 3) What  is  simple  interest  formula ?  ---> ptr / 100
 
-4) What  is  compound  interest  formula ?  --->  p * (1  +  r  /  100) ^  t  -  p
+4) What  is  compound  interest  formula ?  --->  p*(1+r/100)^t-p
 '''
 p = eval(input("Enter principle of interest:"))
 t = eval(input("Enter time of interest:"))
@@ -299,6 +329,9 @@ temp = x
 x = y
 y = temp
 print("After swap: x =",x,"y =",y)
+
+
+
 
 
 
@@ -350,5 +383,3 @@ y = x * y
 x = y // x
 y = y // x
 print("After swap: x =",x ,"\t y =",y)
-
-

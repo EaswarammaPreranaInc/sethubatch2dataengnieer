@@ -39,7 +39,6 @@ try:
     while  True:
         print(b)
         b = a . index ('is' , b + 1)
-    print('End')
 except ValueError:
 	print("index() method throws error when substring is not found")
 
@@ -295,7 +294,7 @@ print(',' . join(c)) # prints '10,20,15,25,52'
 d = ['www' , 'gmail', 'com']
 print('.' . join(d)) # prints 'www.gmail.com'
 e = [15 , 36 , 48]
-#print(':' . join(e)) # Error because it should be list of strings but not list of integers and there is no join method in list class
+print(':' . join(e)) # Error because it should be list of strings but not list of integers and there is no join method in list class
 f = ['Sankar' , 'Dayal' , 'Sarma']
 print('' . join(f)) # prints 'SankarDayalSarma'
 g = range(5)
@@ -314,7 +313,7 @@ print('-' . join(g)) # Error because range function returns integers but not str
 
 
 
-# endswith()  method  demo  progrram (Home  work)
+# endswith()  method  demo  program (Home  work)
 a = 'Hyd is green city'
 print(a . endswith('city'))  # prints True
 print(a . endswith('town')) # prints False
@@ -605,7 +604,7 @@ Write  a  program  to  reverse  a  string  without  slice
     What  is  the  output ?  --->  dyH
 
 2)   H       y      d
-      -3     -2     -1
+    -3      -2     -1
 
       i       a[-i]            b
     ---------------------------------------
@@ -780,3 +779,5 @@ Enter any string:Z9K3PA7D51
 ADKPZ13579
 
 '''
+
+

@@ -18,7 +18,7 @@ print(type(b)) # prints type of object 'b' i.e., <class list>
 
 #  Find  outputs (Home  work)
 a = [10, 20, 15, 18] # Ref 'a' points to list
-b = a # Ref 'b' points to ref 'a'
+b = a # Ref 'b' points where ref 'a' points
 print(a  is  b) # prints True
 print(a  ==  b) # prints True
 b[2] = 12 # replaces 15 at index 2 of list with 12
@@ -96,7 +96,7 @@ a = 25 # Ref 'a' points to int object 25
 b = 10.8 # Ref 'b' points to float object 10.8
 c = 'Hyd' # Ref 'c' points to str object 'Hyd'
 d = True # Ref 'd' points to bool object True 
-e = [a , b , c , d] # Ref 'e' points list of 6 elements
+e = [a , b , c , d] # Ref 'e' points list of 4 elements
 print(e) # prints list i.e., [25, 10.8, 'Hyd', True]
 print(type(e)) # prints type of 'e' i.e., <class list>
 
@@ -139,12 +139,12 @@ print('q : ' , q) # prints q : True
 # Find  outputs  (Home  work)
 list = [25 , 10.8 , 'Hyd' , True]
 a , b , c , d , e = list # Error because of few values to unpack
-a , b , *c , d , e = list # Error because of few values to unpack
-print('a : ' , a) # Error because 'a' is not defined
-print('b : ' , b) # Error because 'b' is not defined
-print('c : ' , c) # Error because 'c' is not defined
-print('d : ' , d) # Error because 'd' is not defined
-print('e : ' , e) # Error Error because 'e' is not defined
+a , b , *c , d , e = list #
+print('a : ' , a) # prints 25
+print('b : ' , b) # prints 10.8
+print('c : ' , c) # prints []
+print('d : ' , d) # prints "Hyd"
+print('e : ' , e) # prints True
 a , b , *c , d , e , f = list # Error because few values to unpack
 
 
@@ -192,6 +192,7 @@ print('d : ' , d) # prints d : True
 
 
 
+
 #  Tricky  program
 # Find  outputs (Home  work)
 list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
@@ -215,7 +216,7 @@ print('_: ' , _) # prints _ : (3 + 4j)
 
 # Identify  error (Home  work)
 list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
-a , *b , c , *d , e =list # Error because there should not be multiple *s
+a , *b , c , *d , e =list # Error because there should not be multiple *
 
 
 
