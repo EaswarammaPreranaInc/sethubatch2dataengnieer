@@ -1,0 +1,90 @@
+a = set()           
+a.add(True)         # Adds True to the set
+a.add(25)           # Adds 25 to the set
+a.add(10.8)         # Adds 10.8 to the set
+a.add(1)            # Not added as new because True == 1 (already present)
+a.add('Hyd')        # Adds 'Hyd' to the set
+a.add(25)           # Duplicate, ignored (25 already present)
+a.add(None)         # Adds None to the set
+a.add('Hyd')        # Duplicate, ignored ('Hyd' already present)
+a.add(1.0)          # Not added as new because 1.0 == 1 == True (already present)
+print(a)            # {None, True, 10.8, 25, 'Hyd'}
+
+a.add(10, 20, 30)   # Error(it takes only one argument but 3 given)
+a.add([10,20,30])   # Error(list is mutable)
+
+
+a = {25, 10.8, 'Hyd', True}   
+tpl = (10, 20, 30)           # Create a tuple
+print(a)                     # Prints the set (unordered): {25, 10.8, 'Hyd', True}
+print(id(a))                 # Prints the memory address of set 'a'
+a.add(tpl)                   # Adds the tuple (10, 20, 30) to the set (tuples are immutable)
+a.add('Sec')                 # Adds the string 'Sec' to the set
+print(a)                     # Prints the updated set with tuple and 'Sec'
+print(id(a))                 # Same id as before 
+print(len(a))                # Prints number of elements in set 
+
+a.add([100, 200, 300])       # Error(mutable)
+a.add(set())                 # Error(sets are mutable,we are trying to add another empty set )
+a.add({})                    # Error(dictionary)
+
+s = set()            
+tpl = (10, 20, 15, 18) # Create tuple
+s.add(tpl)           # Add tuple to set 
+print(s)             # {(10, 20, 15, 18)}
+print(len(s))        # 1
+
+
+tpl = (10, 20, 15, 18, 10, 20) 
+s = set()                     # Empty set
+s.update(tpl)                 # Add unique tuple elements
+print(len(s))                 # 4
+print(s)                      # {10, 20, 15, 18}
+s.update(25)                  # Error(non-sequence)
+
+a = [10, 20, 30]       # List
+b = {30, 40, 50}       # Set
+c = (50, 60, 70)       # Tuple
+s = set()              # Empty set
+s.update(a, b, c)      # Adds all unique elements from a, b, c
+print(s)               # {10, 20, 30, 40, 50, 60, 70}
+print(len(s))          # 7
+s.add(a, b, c)         # Error
+
+
+s = set()            
+tpl = (10, 20, 15, 18) # Tuple
+s.add(tpl)           # Add tuple to set
+print(s)             # {(10, 20, 15, 18)}
+print(len(s))        # 1
+
+
+tpl = (10, 20, 15, 18, 10, 20) s = set()                     # Empty set
+s.update(tpl)                 # Add unique elements from tuple
+print(len(s))                 # 4
+print(s)                      # {10, 20, 15, 18}
+s.update(25)                  # Error
+
+
+a = {25, 10.8, 'Hyd', True}  
+print(a)                     # Prints set (unordered)
+print(a.pop())               # Removes & returns random element
+print(a.pop())               # Removes & returns random element
+print(a.pop())               # Removes & returns random element
+print(a.pop())               # Removes & returns random element
+print(a.pop())               # Error
+print(a)                     # set()
+
+b = {10, 20, 30, 40}         # Set with 4 elements
+print(b.pop(2))              # Error
+
+
+a = {25, 10.8, 'Hyd', True} 
+print(a)                    # {25, 10.8, 'Hyd', True}
+a.remove('Hyd')            # Removes 'Hyd'
+print(a)                    # {25, 10.8, True}
+a.remove('Sec')            # Error
+
+
+
+

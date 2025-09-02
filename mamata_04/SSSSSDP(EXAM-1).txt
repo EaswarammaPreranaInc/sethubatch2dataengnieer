@@ -1,0 +1,150 @@
+Q 1:write a program to evaluate expression like calculator.
+let input be((3+4)*5-6/2=14.5
+output=14.5
+
+expression = input("Enter expression: ")   
+result = eval(expression)                 
+print("Result:", result)
+
+
+Q 2:write a program to print roman equivalent of a number
+(1000-M,900-CM,500-D,400-CD,100-C,90-XC,50-L,40-XL,10-X,9-IX,5-V,4-IV,1-I)
+if input is 3878
+output is MMMMDCCCLXXVIII
+
+def int_to_roman(num):
+    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    syms = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+
+    roman_num = ""
+    i = 0
+    while num > 0:
+        count = num // val[i]
+        roman_num += syms[i] * count
+        num -= val[i] * count
+        i += 1
+    return roman_num
+
+number = int(input("Enter number: "))
+print("Roman Numeral:", int_to_roman(number))
+
+Q 3:writea program to print each digit of a number in words
+input: 9247
+output: nine two four seven
+  
+num = input("Enter a number: ")
+
+for digit in num:
+    if digit == '0':
+        print("Zero", end=" ")
+    elif digit == '1':
+        print("One", end=" ")
+    elif digit == '2':
+        print("Two", end=" ")
+    elif digit == '3':
+        print("Three", end=" ")
+    elif digit == '4':
+        print("Four", end=" ")
+    elif digit == '5':
+        print("Five", end=" ")
+    elif digit == '6':
+        print("Six", end=" ")
+    elif digit == '7':
+        print("Seven", end=" ")
+    elif digit == '8':
+        print("Eight", end=" ")
+    elif digit == '9':
+        print("Nine", end=" ")
+
+
+
+
+Q 4:write a program to determine transpose of matrix
+
+input: 10 30 40 50
+      50 60 70 80
+      90 100 110 120
+output: 10 50 40 
+        20 60 100
+        30 70 110
+        40 80 120
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+matrix = []
+for i in range(rows):
+    row = list(map(int, input(f"Enter row {i+1} elements separated by space: ").split()))
+    matrix.append(row)
+
+transpose = []
+for i in range(cols):          #columns
+    row = []
+    for j in range(rows):      #rows
+        row.append(matrix[j][i])
+    transpose.append(row)
+
+print("Transpose Matrix:")
+for row in transpose:
+    print(row)
+
+Q 5:write a program to rotate a string
+input: S P A C E
+ O/P:SPACE
+     PACES
+     ACESP
+     CESPA
+     ESPAC
+
+s = input("Enter a string: ")
+
+for i in range(len(s)):
+    print(s[i:] + s[:i])
+#| i | s\[i:] | s\[:i] | rotated (= s\[i:] + s\[:i]) |
+| - | ------ | ------ | --------------------------- |
+| 0 | SPACE  | ""     | SPACE                       |
+| 1 | PACE   | S      | PACES                       |
+| 2 | ACE    | SP     | ACESP                       |
+| 3 | CE     | SPA    | CESPA                       |
+| 4 | E      | SPAC   | ESPAC                       |
+   
+
+
+Q 6: write a program to print mathematical table of a number
+input:7
+o/p:7*1=7
+    7*2=14....
+
+n = int(input("Enter number: "))
+
+for i in range(1, 11):
+    print(f"{n} * {i} = {n*i}")
+
+
+Q 7: write a program to print following pyramid
+input:5
+      A
+     A B
+    A B C
+   A B C D
+  A B C D E
+
+
+rows = int(input("Enter number of rows: "))
+
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+for i in range(rows):
+    print(alphabet[:i+1])
+    
+       (OR)
+ #using nested loop
+rows = int(input("Enter number of rows: "))
+
+for i in range(rows):
+    for j in range(i+1):
+        print(chr(65+j), end="")
+    print()
+ 
+ 
+
+
