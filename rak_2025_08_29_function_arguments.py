@@ -27,7 +27,7 @@ What  are  the  outputs  if  input  is  10  ?  --->  Prime   numbers
                                                                            7
                                                                       Number  of   prime  numbers : 4
 '''
-from Rakesh_Adhithya_SSSDP086_2025_08_28 import is_prime
+from rak_2025_08_28_dict_methods_and_functions import is_prime
 n = int(input('Enter any number:  '))
 count = 0
 primes = []
@@ -122,9 +122,9 @@ f1(c = 100 , b = 90 , a = 80)    #a : 80 <t> b : 90 <t> c : 100
    
 
 
-# Identify error (Home  work)
-def f1(a  , b , *):             # * cannot be at the end
-    pass
+# # Identify error (Home  work)
+# def f1(a  , b , *):             # * cannot be at the end
+#     pass
 
 
 
@@ -166,16 +166,16 @@ f1(10 , 20 , 30 , 40 , e = 50 , f = 60)          #a : 10 <t> b : 20 <t> c : 30 <
 
 
 
-# Identify error (Home  work)
-def f1(/ , a , b ,  c):            #error: / cannot be at start
-    pass
-def f2(a , b , c , *):             #error: * cannot be at end
-    pass
+# # Identify error (Home  work)
+# def f1(/ , a , b ,  c):            #error: / cannot be at start
+#     pass
+# def f2(a , b , c , *):             #error: * cannot be at end
+#     pass
 
 
-# Identify  error  (Home  work)
-def f4(* , a , b , c , /):            # / must appear before *
-    pass
+# # Identify  error  (Home  work)
+# def f4(* , a , b , c , /):            # / must appear before *
+#     pass
     
 
 # Find  outputs  (Home  work)
