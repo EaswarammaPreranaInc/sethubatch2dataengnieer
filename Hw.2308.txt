@@ -1,0 +1,129 @@
+1
+
+# add()  method  demo  program  (Home  work)
+a = set().  #creates an empty set
+a . add(True).  #insert True in empty set
+a . add(25) #insert 25 in  set
+a . add(10.8)#insert 10.8 in  set
+a . add(1). #insert 1 in  set but 1 is already there
+a . add('Hyd') #insert 'Hyd' in  set
+a . add(25)  #already 25 is there
+a . add(None)   #insert None in  set
+a . add('Hyd') #already Hyd is there
+a . add(1.0)  # already 1.0=1/True exist
+print(a).  # {True,25,10.8,'Hyd',None} in any order
+a . add(10 , 20 , 30). #Error due only single argument can take
+a . add([10,20,30]). #Error due arg should not be mutables ki
+
+
+'''
+add()   method
+-----------------
+1) What  does  add(x)  do ?  --->  Inserts   'x'  any  where  in  the  set  becoz  set  is  unordered
+
+2) How  many  arguments  can  add()  method  take ?  --->  Single
+
+3) Is  set . add(mutable-object)  valid ? ---> No  becoz  set  can  not  hold  mutable  element
+
+4) In  other  words,  argument  of  add()  method  should  be  immutable  object  only
+
+5) What  does  set .  add(sequence)  do  ?  --->
+               Inserts  sequence  any  where  in  the  set  but  not  elements  of  sequence
+               (Like  append()  method  of  list  class)
+'''
+
+
+2
+
+# Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a) # {25 , 10.8 , 'Hyd' , True}
+print(id(a)) #1000say
+a . add(tpl)  #insert tpl in set a
+a . add('Sec') #insert Sec in set
+print(a)  #{25 , 10.8 , 'Hyd' , (10 , 20 , 30),'Sec',True}
+print(id(a)) #1000say same set due to it is mutable
+print(len(a))#6
+a . add([100 , 200 , 300])# Error
+a . add(set())#Error
+a . add({ })#Error
+
+
+3
+
+# Find  outputs (Home  work)
+s = set()# create an empty set and assign to s
+tpl = (10 , 20 , 15 , 18)#tpl is point to the tuple
+s . add(tpl)# insert the tuple in s an empty set
+print(s). # {(10 , 20 , 15 , 18),}
+print(len(s)). #1
+
+
+4
+
+ # update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20) #create the tuple and assign to tpl
+s = set() #creates the empty set
+s . update(tpl) #update the tuple in set
+print(len(s)) #4
+print(s) #{10 , 20 , 15, 18 }
+s . update(25)#error due update arg is must be sequence
+
+
+
+'''
+update()  method
+--------------------
+1) What  does  update(sequence)  do ?  ---> Inserts  elements  of  sequence  anywhere  in  the  set  but  not  sequence
+                                    (Like  extend()  method  of  list  class)
+
+2) Is  update(non-sequnece)  valid ?   --->  No  becoz  agument  should  be  sequence  only
+
+3) How  many  arguments  can  update()  method  take ?  --->  One  (or)  more
+'''
+
+
+5
+
+ # Find  outputs  (Home  work)
+a = [10 , 20 , 30] # ref a points to list
+b = {30 , 40,50 } #ref b points to set
+c = (50 , 60 , 70) #ref c points to tuple
+s = set() #s points to empty set
+s . update(a , b , c) #updates the elements of list,set,tuple
+print(s) #{10 , 20 , 30,40,50,60,70}
+print(len(s)) #7
+s . add(a , b , c) #Error arg must be a single
+
+6
+
+# Find  outputs  (Home  work)
+a = set() #creates empty set
+a . update('Rama Rao') # update the elements of string
+print(a)# {'R','a','m','o',' '} in any order
+print(len(a)) #4
+a . update(3 + 4j , 10.8 , True) #Error arg should be sequence
+
+
+7
+
+# copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18} #creates set
+print(a)# {10 , 20 , 15 , 18}
+b = a . copy() #copy the elements
+print(b)# {10 , 20 , 15 , 18}
+print(a  is  b)#False
+print(a  ==  b)#True
+c = a #ref c points to same set which a is point
+print(a  is  c) #True
+
+
+'''
+copy()  method
+------------------
+1) What  does  copy()  method  do ?  --->  Returns  a  new  set  with  same  elements
+
+2) a = b
+    What  does  the  statement  do ?  --->  Reference  copy
+        �
