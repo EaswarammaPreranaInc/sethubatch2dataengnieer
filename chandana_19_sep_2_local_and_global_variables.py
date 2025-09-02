@@ -1,0 +1,58 @@
+#Find  outputs 
+a = 10
+def   f1():
+	b = 40
+	print('a : ' , a) 
+	print('b : ' , b) 
+	print('c : ' , c) 
+	print()
+# End  of  f1()  function
+b = 20
+def    f2():
+	a = 50
+	print('a : ' , a)
+	print('b : ' , b)
+	print('c : ' , c)
+# End  of  f2()  function
+c = 30
+print('a : ' , a)
+print('b : ' , b)
+print('c : ' , c)
+print()
+a +=  1
+b +=  1
+c +=  1
+f1()
+a +=  1
+b +=  1
+c +=  1
+f2()
+print('Bye')
+'''
+a :  10
+b :  20
+c :  30
+
+a :  11
+b :  40
+c :  31
+
+a :  50
+b :  22'''
+
+
+# Find  outputs 
+def   f1():
+	a = 20
+	print(a)
+	a += 1
+#End  of  the  function
+a = 10
+print(a)
+a += 1
+f1()
+print(a)
+'''
+10
+20
+11'''
