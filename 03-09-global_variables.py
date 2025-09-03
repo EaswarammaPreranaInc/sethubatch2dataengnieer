@@ -70,7 +70,7 @@ def   f3():
 	y += 1
 def   f4():
 	x = 50
-	global   x
+	#global   x
 #  End  of  the  functions
 x = 10
 print(x)                                      #10
@@ -161,7 +161,7 @@ print(a)                             #40
 #  Find  outputs (Home  work)
 def  f1():
         a = 10
-        global  a
+      z#  global  a
         print(a)
         global  b
         b = 20
@@ -210,7 +210,7 @@ print(a)                           #10
 # Find outputs (Home  work)
 def  f1():
 	a = 20
-	global   a                        
+	#global   a                        
 	print(a)                          #
 	print(globals()['a'])
 	a = 30
@@ -219,7 +219,7 @@ def  f1():
 a = 10
 print(a)                           #10
 a += 1 
-f1()                               #20 #10 
+f1()                               #20 #10
 print(a)                           #40
 
 
