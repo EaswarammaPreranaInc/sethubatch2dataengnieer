@@ -213,19 +213,19 @@ for i in range(n):
     for j in range(n - i):
         print(chr(65 + j), end="")
     if i > 0:
-        print(" " * (2 * i - 1), end="")
+        print(" " * (2 * i - 1), end=" ")
     for j in range(n - i - 1, -1, -1):
         print(chr(65 + j), end="")
     print()
 
 """
 Output: enter no.of lines: 6
-ABCDEFFEDCBA
-ABCDE  EDCBA
-ABCD    DCBA
-ABC      CBA
-AB        BA
-A          A
+ABCDEFEDCBA
+ABCDE EDCBA
+ABCD   DCBA
+ABC     CBA
+AB       BA
+A         A
 """
 
 
