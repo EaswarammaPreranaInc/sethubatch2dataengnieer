@@ -9,29 +9,29 @@ def   f1(*t):
 # End  of  the  function
 f1(10 , 20 , 15 , 18)  
 (10, 20, 15, 18)
-<class 'tuple'>
+# <class 'tuple'>
 4
 
 f1()
 ()
-<class 'tuple'>
+# <class 'tuple'>
 0
 
 f1([10 , 20] , (30 , 40 , 50) , {60 , 70 , 80 , 90})
 ([10, 20], (30, 40, 50), {80, 90, 60, 70})
-<class 'tuple'>
+# <class 'tuple'>
 3
 
 f1('Hyd')
 ('Hyd',)
-<class 'tuple'>
-1
+# <class 'tuple'>
+# 1
 
 tpl = (100 , 200 , 150)
 f1(tpl)
 ((100, 200, 150),)
-<class 'tuple'>
-1
+# <class 'tuple'>
+# 1
 
 f1(t = (10 , 20 , 30)) # error
 
@@ -41,7 +41,7 @@ f1(t = (10 , 20 , 30)) # error
 #  Write  a  function  to  determine  average  of  arguments  passed  to  the  function  (Home  work)
 def  avg(*a):
 	return sum(a) /  len(a) if len(a)
-	Write  code  to  return  average  of  arguments  passed  from  the  function  call  (single  line)
+	# Write  code  to  return  average  of  arguments  passed  from  the  function  call  (single  line)
 # End  of  the  function
 print(avg(10 , 20 , 15 , 18)) # 15.75
 print(avg(25 , 10.8 , True)) # 12.6
@@ -57,7 +57,7 @@ print(avg(tpl)) # error
 def  concat(*a):
 	return  ''.join(a)
 	
-	Write  code  to  return  join  of  all  the  strings  passed  from  the  function  call  (1  line)
+	# Write  code  to  return  join  of  all  the  strings  passed  from  the  function  call  (1  line)
 # End   of  the   function
 print(concat('Sankar', 'Dayal', 'Sarma')) # SankarDayalSarma
 print(concat('Hyd', 'Is', 'Green', 'City')) # HydIsGreenCity
@@ -285,8 +285,8 @@ Iteration         a          op        b        result
 	   5            14.5       =          ---           ----
 '''
 
-Enter  any  expression  terminated  by  =  :  3+4*5-6/2=
-Result :  14.5
+# Enter  any  expression  terminated  by  =  :  3+4*5-6/2=
+# Result :  14.5
 
 
 
@@ -322,8 +322,21 @@ Write  a   program  to  print  roman  equivalent  of  a  number
       and  so  on
 '''
 
-Enter  any  number :  3878
-Roman  Equivalent :   MMMDCCCLXXVIII
+# Enter  any  number :  3878
+# Roman  Equivalent :   MMMDCCCLXXVIII
+
+def to_roman(num):
+    val = [1000, 900, 500, 400,  100,90,   50,  40,  10,   9,    5,   4,   1]
+    syb = ["M", "CM", "D", "CD","C", "XC", "L", "XL","X", "IX", "V", "IV","I"]
+    roman_num = ''
+    i = 0
+    while num > 0:
+        for _ in range(num // val[i]):
+            roman_num += syb[i]
+            num -= val[i]
+        i += 1
+    return roman_num
+print(to_roman(3878))
 
 
 '''
@@ -346,9 +359,15 @@ Iteration     ch     int(ch)       a[int(ch)]         s
 	 4             '7'       7               'Seven'        'Nine Two Four ' + 'Seven' + ' '
 '''
 
-Enter  any   number :  9247
-Nine Two Four Seven
+# Enter  any   number :  9247
+# Nine Two Four Seven
 
+n = input("Enter a number:")
+result = ''
+numbers = {'1':'one','2':'Two','3':'Three','4':'Four','5':'Five','6':'Six','7':'Seven','8':'Eight','9':'Nine'}
+for x in n:
+  result += numbers[x]+' '
+print(result)
 
 
 
