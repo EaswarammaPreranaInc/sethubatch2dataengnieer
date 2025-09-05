@@ -1,0 +1,121 @@
+#1) What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True]   (Home  work)
+a = input('Enter  list  :  ')
+print(type(a))        #<class 'str'>
+print(a)              #[25,10.8,'hyd',true]
+b = eval(a)
+print(b)#[25,10.8,'hyd',true]
+print(type(b))        #<class 'list'>
+
+#2)  Find  outputs (Home  work)
+a = [10, 20, 15, 18]
+b = a
+print(a  is  b)         #true
+print(a  ==  b)         #true
+b[2] = 12#a = [10, 20, 12, 18]
+              b = [10, 20, 12, 18]
+print(a)#[10, 20, 15, 18]
+
+#4)  Find  outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+b = [100 , 200 , 150]
+print(a + b)           #[10, 20, 15, 18, 100, 200, 150]
+print(a + 5)           #errror 
+print(a + '5')         #error
+print([10 , 20] + (30 , 40)) #error 
+
+
+#5)  Tricky  program
+#  Find  outputs
+a = [1,2,3]
+b = [4,5,6]
+print(a , id(a))       #[1, 2, 3]  140721464033280
+a += b
+print(a , id(a))       #[1, 2, 3, 4, 5, 6]  140721464033280
+
+#6)  Tricky  program
+#  Find  outputs
+a = [1,2,3]
+b = [4,5,6]
+print(a , id(a))       #[1, 2, 3]  140721464033280
+a  = a + b
+print(a , id(a))       #[1, 2, 3, 4, 5, 6]  140721464034048
+
+#7) Find  outputs
+list = [25, 10.8, 'Hyd', True]
+a, b, c, d, e = list    #Error
+a, b, *c, d, e = list
+print('a : ', a)   # a : 25
+print('b : ', b)   # b : 10.8
+print('c : ', c)   # c : []
+print('d : ', d)   # d : Hyd
+print('e : ', e)   # e : True
+a, b, *c, d, e, f = list  #Error
+
+#8) Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , c , d , e = list
+a , b , *c , d , e = list
+print('a : ' , a)      #25
+print('b : ' , b)     #10.8
+print('c : ' , c)     #'hyd'
+print('d : ' , d)     #true
+print('e : ' , e)     #error
+a , b , *c , d , e , f = list
+
+#9) Find  outputs  (Home  work)
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , _  , d = list
+print('a : ' , a)       #25
+print('b : ' , b)       #10.8
+print('_ :  ' , _)      #hyd
+print('d : ' , d)       #true
+
+#10) Find  outputs (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b , a , d , a = list
+print('a : ' , a)      #(3+4j)
+print('b : ' , b)      #10.8
+print('d : ' , d)      #true
+
+#11) Identify  error (Home  work)
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , *b , c , *d , e  = list #error
+
+#12) Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]   #  Nested  list
+a , b , c = list
+print('a :  ' , a)     #[25 , 10.8]
+print('b :  ' , b)     #hyd
+print('c :  ' , c)     #true
+
+
+#13) Find  outputs  (Home  work)
+list = [[25 , 10.8] , 'Hyd' , True]
+[a , b] , c , d = list
+print('a : ' , a)      #25
+print('b : ' , b)      #10.8
+print('c : ' , c)      #hyd
+print('d : ' , d)      #true
+a , b , c , d = list
+
+
+#14) Comparing  Lists
+a = [10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]
+c = [10 , 20 , 25 , 9]
+d = [10 , 20 , 7 , 22]
+print(a == b)         #true
+print(a  is   b)      #false
+print(a < c)          #true
+print(a > d)          #true
+print(a >= c)         #false
+print(a <= d)         #false
+print(a != c)         #true
+print(a != b)         #false
+print(a == c)         #false
+
+#15) Comparing  Lists  (Home  work)
+a = [10 , 20 , 15 , 18]
+b = [20 , 18 , 15 , 10]
+print(a == b)         #false
+print(a  is   b)     #false
