@@ -1,0 +1,139 @@
+#Find  outputs  (Home  work)
+a = [lambda   x  :  x * 2 , lambda   x  :  x * 3 ,  lambda   x  :  x ** 4]
+for   fun   in   a:
+        print(fun(5))     # 10 
+                            # 15
+                          # 625
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#  Find  outputs
+def   f1():
+	print('Hyd')      # Hyd
+def   f2():
+	print('Sec')      # Sec
+a = [f1 , f2] 
+for  x  in  a:
+	     x()
+a = [def   f1():  print('Hyd') ,  def   f2():  print('Sec')]
+print(a)         #  error here  syntax error cannot define inside list
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+# Find output  (Home  work)
+a = {'power_2'  :  lambda   x  :  x ** 2 ,
+       'power_3'  :  lambda   x  :  x ** 3 ,
+  	   'power_4'  :  lambda   x  :  x ** 4}
+key = 'power_3'
+print(a[key])    #  prints type and address of the  power_3 lambda function
+print(a[key](5))     #  125
+
+---------------------------------------------------------------------------------------------------------
+# Find  outputs  (Home  work)
+def   f1(x):
+        return  lambda  n  :  x ** n
+lamb = f1(3)     #here calling  function lambda n: 3**n 
+print(type(f1))   # <class 'function'>
+print(type(lamb))    # <class 'function'>
+print(lamb(2))   # 9
+print(lamb(5))   # 243
+print(lamb)  # prints type and address of the function
+print(lamb())   # error not given argument n
+
+---------------------------------------------------------------------------------------------------------------------------
+
+def   eval(a , b , c):
+        return   lambda    x  :    a *   x **  2  +   b * x  +  c
+lam  = eval(3 , 4 , 5)   # calling eval function return lambda function 
+print(lam(2))   #  25
+print(lam(2.5))   # 33.75
+print(lam(4))  # 69
+
+------------------------------------------------------------------------------------------------------------------
+
+#Nested  lambda  function  (Home  work)
+add  =  lambda    x = 10   :    lambda   y  :  x  +  y
+a = add()
+print(a(20))   #  30
+print(add(30)(40))  # 70
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# Find  outputs
+a= ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2000.0) , (15 ,'Rajesh' , 500.0) ,  (18 , 'Kiran' , 2800.0) , (5 , 'Amar' , 1300.0))
+b = sorted(a)
+print(b)           #  [(5 , 'Amar' , 1300.0),(10 , 'Rama' , 1000.0),(15 ,'Rajesh' , 500.0), (18 , 'Kiran' , 2800.0),(20 , 'Sita' , 2000.0)]
+print()            # empty line
+c = sorted(a , reverse = True)  #  [(20 , 'Sita' , 2000.0),(18 , 'Kiran' , 2800.0),(15 ,'Rajesh' , 500.0),(10 , 'Rama' , 1000.0),(5 , 'Amar' , 1300.0)]
+print(c)
+print()            # prints empty line
+d = sorted(a ,  key =  lambda   x  :  x[1])
+print(d)           # [(5, 'Amar', 1300.0),(18, 'Kiran', 2800.0),(15, 'Rajesh', 500.0),(10, 'Rama', 1000.0),(20, 'Sita', 2000.0)]
+print()
+e = sorted(a , key =  lambda   x  :  x[2])
+print(e)          # [(15, 'Rajesh', 500.0),(10, 'Rama', 1000.0),(5, 'Amar', 1300.0),(20, 'Sita', 2000.0),(18, 'Kiran', 2800.0)]
+print()
+f = sorted(a , key = lambda   x  :  x[0])
+print(f)          # [(5, 'Amar', 1300.0),(10, 'Rama', 1000.0),(15, 'Rajesh', 500.0),(18, 'Kiran', 2800.0),(20, 'Sita', 2000.0)]
+print()
+g = sorted(a , key = lambda  x : x[1] , reverse = True)
+print(g)          #  [(20, 'Sita', 2000.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (5, 'Amar', 1300.0)]
+print(sorted(a , key = x[1]))
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+# Find outputs  (Home  work)
+a = [ {'Make' : 'Ford' , 'Model' : 'Focus' , 'Year' : 2013} ,
+        {'Make' : 'Tesla' , 'Model' : 'X' , 'Year' : 1999} ,
+        {'Make' : 'Mercedes' , 'Model' : 'C350E' , 'Year' : 2008} ]
+b = sorted(a , key = lambda  x  :  x['Year']) 
+           # [{'Make' : 'Tesla' , 'Model' : 'X' , 'Year' : 1999},{'Make' : 'Mercedes' , 'Model' : 'C350E' , 'Year' : 2008},{'Make' : 'Ford' , 'Model' : 'Focus' , 'Year' : 2013}]
+print(b)
+print(sorted(a))    # error beacause sorted function tries compare values
+
+-------------------------------------------------------------------------------------------------------------------------
+# Find outputs  (Home  work)
+a = ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2800.0) , (15 , 'Vamsi' , 2000.0) , (25 , 'Kiran' , 1500.0) ,  (5 , 'Amar' , 1300.0))
+print(max(a , key = lambda  x  :  x[0] )) # (25 , 'Kiran' , 1500.0)
+print(max(a , key = lambda  x  :  x[1] ))   #(15 , 'Vamsi' , 2000.0))
+print(max(a , key = lambda  x  :  x[2] ))   # (20 , 'Sita' , 2800.0)
+print(max(a))     #   (25 , 'Kiran' , 1500.0)
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Find  output  (Home  work)
+add = lambda  x  :   x == 25
+print(add(10))  # False
+add = lambda  x = 25 :   x == 35
+print(add())   # False
+add = lambda  x  :   x = 25
+add = lambda  x  :   x := 25  
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
