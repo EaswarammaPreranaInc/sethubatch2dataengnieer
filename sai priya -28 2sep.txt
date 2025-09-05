@@ -1,0 +1,128 @@
+# -----------------------------------------------------------
+# Homework Programs with Outputs
+# -----------------------------------------------------------
+
+# Q1) Find outputs
+def f1(a, *b, **c):
+    print(a)
+    if b:
+        print(b)
+    if c:
+        print(c)
+# End of the function
+
+print("Q1) Function with *args and **kwargs")
+f1(25)
+print()
+f1('Hyd', 10, 20, 30)
+print()
+f1(10.8, 25, 'Hyd', True, EmpNo=12, EmpName='Rama Rao', Salary=10000.0)
+print("-----------------------------------------------------------")
+
+# Q2) Evaluate expression like calculator
+print("Q2) Calculator Expression")
+expr = "3+4*5-6/2="
+exp = expr.strip("=")
+res = eval(exp)
+print("Enter any expression terminated by = : ", expr)
+print("Result :", res)   # 14.5
+print("-----------------------------------------------------------")
+
+# Q3) Roman Equivalent of a number
+print("Q3) Roman Equivalent")
+num = 3878
+val = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+rom = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+res = ""
+n = num
+for i in range(len(val)):
+    while n >= val[i]:
+        n -= val[i]
+        res += rom[i]
+print("Enter any number :", num)
+print("Roman Equivalent :", res)   # MMMDCCCLXXVIII
+print("-----------------------------------------------------------")
+
+# Q4) Print digits in words
+print("Q4) Digits in Words")
+a = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+n = "9247"
+s = ""
+for ch in n:
+    s += a[int(ch)] + " "
+print("Enter any number :", n)
+print(s.strip())   # Nine Two Four Seven
+print("-----------------------------------------------------------")
+
+# Q5) All rotations of string
+print("Q5) Rotations of String")
+st = "SPACE"
+print("Enter any string :", st)
+print("Rotations")
+for i in range(len(st)):
+    print(st[i:] + st[:i])
+print("-----------------------------------------------------------")
+
+# Q6) Multiplication table
+print("Q6) Multiplication Table")
+n = 7
+print("Enter table number :", n)
+for i in range(1, 11):
+    print(n, "*", i, "=", n * i)
+print("-----------------------------------------------------------")
+
+# Q7) Pyramid of Alphabets
+print("Q7) Pyramid")
+lines = 7
+print("How many lines ? :", lines)
+for i in range(1, lines+1):
+    print(" " * (lines - i), end="")
+    for j in range(i):
+        print(chr(65+j), end=" ")
+    print()
+print("-----------------------------------------------------------")
+
+# Q8) Find outputs with global & local variables
+print("Q8) Global and Local Variables")
+a = 10
+def f1():
+    b = 40
+    print('a :', a)
+    print('b :', b)
+    print('c :', c)
+    print()
+b = 20
+def f2():
+    a = 50
+    print('a :', a)
+    print('b :', b)
+    print('c :', c)
+c = 30
+print('a :', a)
+print('b :', b)
+print('c :', c)
+print()
+a += 1
+b += 1
+c += 1
+f1()
+a += 1
+b += 1
+c += 1
+f2()
+print('Bye')
+print("-----------------------------------------------------------")
+
+# Q9) Find outputs
+print("Q9) Local variable increment")
+def f1():
+    a = 20
+    print(a)
+    a += 1
+a = 10
+print(a)
+a += 1
+f1()
+print(a)
+print("-----------------------------------------------------------")
+
