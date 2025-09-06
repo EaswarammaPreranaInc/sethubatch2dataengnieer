@@ -1,0 +1,182 @@
+#25th august
+#matchsticks problem
+'''
+There  are  21  matchsticks.
+User  can  pick  1 , 2 , 3  or  4  matchsticks.
+Computer  picks  after  user  and  whoever  picks  the  last  matchstick, they  lose  the  game.
+Write  a  program  such  that  computer  wins
+
+Logic:  Total  should  be  5
+
+Hint: Use while  loop
+
+						n = 21
+   Iteration     user         computer             n
+-------------------------------------------------------------
+         1               2                 3               n = 21 - 5 = 16
+
+		 2              3                 2               n = 16 - 5 = 11
+
+		 3              1                 4               n = 11 - 5 = 6
+
+		 4              4                 1               n =6 - 5 = 1
+---------------------------------------------------------------
+'''
+
+n = 21
+while n > 1:
+    user = int(input("Enter the number of matchsticks you want to pick (1-4): "))
+    if user < 1 or user > 4:
+        print("Invalid input! Please pick between 1 and 4 matchsticks.")
+        continue
+    n -= user
+    computer = 5 - user
+    n -= computer
+    print(f"Computer picks {computer} matchsticks.")
+    if n <= 1:
+        print("You picked the last matchstick. You lose!")
+        break
+
+
+
+
+#roman to arabic conversion
+'''
+Write  a  program  to  convert  roman number to  arabic  number
+
+1) What is the output  if input is  III ? --->  3
+
+2) What is the output if input is  IV --->  4
+
+3) What is the output if input is  IX --->  9
+
+4) What is the output if input is  LVIII --->  58
+
+5) What is the output if input is MCMXCIV ---> 1994
+
+6) What is the output  if  input  is  MMMCDXXIV --->  3424
+
+7) Reverse  the  string
+
+8) {'I' : 1  , 'V' : 5 , 'X' : 10 , 'L' : 50 , 'C' : 100 ,  'D' : 500 , 'M' : 1000}
+    What  action  to   be  made  if  the  char  is  >=  prev ?  --->  Add  the  corresponding  value  to  sum
+																							       and  assign  prev  = correponding  value
+
+9) What  action  to   be  made  if  the  char  is  <  prev ?  --->  Subtract  the  corresponding  value  from  sum
+																							      and  assign  prev  = correponding  value
+
+'''
+roman_numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+s = input("Enter a Roman numeral: ")
+s = s[::-1]  # Reverse the string
+total = 0
+prev= 0
+for char in s:
+    value = roman_numerals[char]
+    if value >= prev:
+        total += value
+    else:
+        total -= value
+        prev = value
+print(f"The Arabic numeral is: {total}")
+
+
+
+
+
+#number in words
+'''
+Write  a  program  to  convert  number  to  words
+ex: input=123456789
+output=tweleve crore thirty four lakhs fifty six thousand seven hundred eighty nine
+'''
+
+num = int(input("Enter a number : "))
+ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"," Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+thousands = ["", "Thousand", "Lakh", "Crore"]
+def number_to_words(n):
+    if n == 0:
+        return "Zero"
+    
+    words = ""
+    if n >= 10000000:
+        words += number_to_words(n // 10000000) + "Crore "
+        n %= 10000000
+    if n >= 100000:
+        words += number_to_words(n // 100000) + "Lakh "
+        n %= 100000
+    if n >= 1000:
+        words += number_to_words(n // 1000) + "Thousand "
+        n %= 1000
+    if n >= 100:
+        words += number_to_words(n // 100) + "Hundred "
+        n %= 100
+    if n >= 20:
+        words += tens[n // 10] + " "
+        n %= 10
+    if n > 0:
+        words += ones[n] + " "
+    
+    return words
+result = number_to_words(num)
+print(result)
+  
+
+
+#multiplication of two matrices 
+def multiply_matrices(A, B):
+    r1, c1 = len(A), len(A[0])
+    r2, c2 = len(B), len(B[0])
+    if c1 != r2:
+       print("Matrix multiplication not possible. Columns of first matrix must equal rows of second matrix.")
+    result = [[0 for _ in range(c2)] for _ in range(r1)]
+    for i in range(r1):
+        for j in range(c2):
+            for k in range(c1):
+                result[i][j] += A[i][k] * B[k][j]
+    return result
+A =eval(input("Enter 1st matrix: "))
+B =eval(input("Enter 2nd matrix: "))
+result = multiply_matrices(A, B)
+print("Resultant matrix:")
+for row in result:
+    print(row)
+  
+
+
+
+#palindrome of a string without using reverse function or slicing
+s = input("Enter a string: ")
+length = len(s)
+for i in range(length // 2):
+    if s[i] != s[length - 1 - i]:
+        print(f"{s} is not a palindrome")
+        break
+else:
+    print(f"{s} is a palindrome")
+
+  
+
+
+#test if a number is armstrong or not
+num = int(input("Enter a number: "))
+n = len(str(num))
+sum = 0
+for digit in str(num):
+    sum += int(digit) ** n
+if num == sum:
+    print(f"{num} is an Armstrong number")
+else:
+    print(f"{num} is not an Armstrong number")
+
+
+
+
+#numbers pyramid pattern
+n = int(input("Enter the number of rows: "))
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+    for j in range(1, 2 * i):
+        print(j, end="")
+    print()
