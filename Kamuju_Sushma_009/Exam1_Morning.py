@@ -192,34 +192,26 @@ for i in range(n):
         print(chr(j+65),end=' ')
     print()
 
-#HW
-#Find  outputs (Home  work)
-a = 10
-def   f1():
-	b = 40
-	print('a : ' , a) 
-	print('b : ' , b)
-	print('c : ' , c)
-	print()
-# End  of  f1()  function
-b = 20
-def    f2():
-	a = 50
-	print('a : ' , a)
-	print('b : ' , b)
-	print('c : ' , c)
-# End  of  f2()  function
-c = 30
-print('a : ' , a) #a:10
-print('b : ' , b)#b:20
-print('c : ' , c)#c:30
-print()
-a +=  1 
-b +=  1
-c +=  1
-f1() #a: 11 b:40 c: 31
-a +=  1
-b +=  1
-c +=  1
-f2() #50 21 31
-print('Bye') #Bye
+#q4 Transpose of matrix
+def Transpose(mat,r,c):
+     for i in range(r):
+          for j in range(c):
+               if i<j:
+                    t=mat[i][j]
+                    mat[i][j]=t
+                    mat[j][i]=t
+     return mat
+r=int(input("Enter no of rows: "))
+c=int(input("Enter no of cols: "))
+l=input("Enter matrix:")
+l=l.split()
+mat=[]
+x=0
+for i in range(r):
+    t=[]
+    for j in range(c):
+        t.append(int(l[x]))
+        x=x+1
+    mat.append(t)
+print(Transpose(mat))
+
