@@ -1,0 +1,22 @@
+#1  recursive  function  to  determine  gcd (or) hcf  of  2 numbers
+
+def  gcd(m , n):
+	if  n==0:
+		return m
+	else:
+		return gcd(n, m%n)
+m = int(input('Enter  any  number  :  '))
+n = int(input('Enter  any  number  :  '))
+print('Gcd : ', gcd(m, n))
+
+#2 recursive  function  to  find  sum of  the  digits  of  a  number
+
+def a(n):
+    if n == 0:
+        return 0
+    else:
+        return n % 10 + a(n // 10)
+n = int(input('Enter any number: '))
+print('Sum of the digits : ', a(n))
+
+
