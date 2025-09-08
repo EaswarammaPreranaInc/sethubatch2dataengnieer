@@ -1,0 +1,16 @@
+def convert_binary2decimal(s):
+    for i in range(1,11):
+            2**i*s                   
+    return convert_binary2decimal
+
+def pascal_traingle(n):
+    for i in range(n,0):
+        while n>0:
+           return( '', i, end == '' )
+       
+           
+        
+           
+        
+        
+
