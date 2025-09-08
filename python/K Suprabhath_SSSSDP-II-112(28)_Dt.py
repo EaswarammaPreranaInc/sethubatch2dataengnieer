@@ -76,14 +76,156 @@ def   f4():
 	global   x
 #  End  of  the  functions
 x = 10
-print(x)
+print(x)# 10
 x += 1
-f1()
-print(x)
-f2()
-print(x)
+f1()# 20
+print(x)# 10
+f2()# 30
+print(x)# 31
 x += 1
-f3()
-print(y)
-f4()
-print(x)
+f3()# 40
+print(y)# 41
+f4()# Error
+print(x)# 31
+
+# Find outputs (Home  work)
+def  f1():
+	global  a
+	a = 20
+	print(a)# 20
+	print(globals()['a'])# 20
+	a = 30
+# End of the function
+a = 10
+print(a)# 10
+f1()# 20
+print(a)# 30
+
+# Find  outputs(Home  work)
+def  f1():
+	global  a
+	print(a)# 10
+	a = 10
+	print(globals()['a'])# 10
+	a = 20
+	print(a)# 20
+	a = 30
+def  f2():
+	print(a)# 30
+# End  of   f2   function
+f1()# 10 10 20
+f2()# 30
+print(a)# 30
+
+# Find outputs (Home  work)
+def  f1():
+	global   a
+	a = 10
+	print(a)# 10
+	a = 20
+def  f2():
+	global  a
+	print(a)# 20
+	a = 30
+def  f3():
+	print(a)# 30
+	globals()['a'] = 40
+# End  of  the  function
+f1()# 10
+f2()# 20
+f3()# 30
+print(a)# 40
+
+# Find outputs (Home  work)
+def  f1():
+	global   a
+	a = 10
+	print(a)# 10
+	a = 20
+def  f2():
+	print(a)# 20
+	a = 30
+	print(a)# 30
+def  f3():
+	print(a)# 30
+	globals()['a'] = 40
+# End  of  the  function
+f1()# 10
+f2()# 20 30
+f3()# 30
+print(a)# 40
+
+#  Find  outputs (Home  work)
+def  f1():
+        a = 10
+        global  a
+        print(a)
+        global  b
+        b = 20
+# End  of  f1()  function
+f1()# Error
+print(a)# Error
+print(b)# 20
+
+# Find outputs (Home  work)
+def  f1():
+        global  a
+        print(a)# 10
+        a += 1
+def  f2():
+        global  a
+        print(a)# 11
+        a += 1
+# End  of  the  function
+a = 10
+print(a)# 10
+a += 1
+f1()# 10
+print(a)# 11
+a += 1
+f2()# 11
+print(a)# 12
+
+# Find  outputs (Home  work)
+def   f1():
+	a = 20
+	print(a)# 20
+def  f2():
+	print(a)# 10
+	a += 1
+# End of the function
+a = 10
+print(a)# 10
+f1()# 20
+a += 1
+f2()# Error
+print(a)# 11
+
+# Find outputs (Home  work)
+def  f1():
+	a = 20
+	global   a
+	print(a)# 20
+	print(globals()['a'])# 10
+	a = 30
+	globals()['a'] = 40
+#  End  of  f1()   function
+a = 10
+print(a)# 10
+a += 1
+f1()# 20
+print(a)# 40
+
+#  Find   outputs
+def   f1():
+	x = x + 5
+# End  of  f1  function
+def  f2():
+	x = globals()['x'] + 5
+	print(x)# 15
+# End of f2  function
+x = 10
+f1()# Error
+f2()# 15
+print(x)# 10
+
