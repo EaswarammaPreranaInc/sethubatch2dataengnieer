@@ -1,0 +1,31 @@
+try:
+    sum = cnt = 0
+    while True:
+        x = eval(input("Enter input (Ctrl+Z to stop): "))
+        sum += x
+        cnt += 1
+except EOFError:
+    try:
+        print("Average:", sum/cnt)
+    except ZeroDivisionError:
+        print("Enter at least one input!")
+except (NameError, TypeError):
+    print("Input cannot be string")
+    
+    
+    modify program 
+    
+    try:
+    sum = cnt = 0
+    while True:
+        # using walrus operator to combine x assignment and sum update
+        sum += (x := eval(input("Enter input (Ctrl+Z to stop): ")))
+        cnt += 1
+except EOFError:
+    try:
+        print(f'Average: {sum / cnt}')
+    except ZeroDivisionError:
+        print('Enter at least one input')
+except (NameError, TypeError):
+    print('Input cannot be string')
+    

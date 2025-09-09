@@ -1,0 +1,13 @@
+# Program to print distinct vowels of the string without using set
+
+s = "Rama Rao"
+s = s.upper()
+vowels = "AEIOU"
+result = ""
+
+for ch in s:
+    if ch in vowels and ch not in result:
+        result += ch
+
+print(result)
+
