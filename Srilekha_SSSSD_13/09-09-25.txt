@@ -1,0 +1,12 @@
+practice:
+
+merged two sorted lists:
+
+list1 =sorted(eval(input("enter a list:")))
+list2 = sorted(eval(input("enter a list2:")))
+def merge(list1,list2):
+    merged_list= list1+list2
+    return merged_list
+print(merge(list1,list2))
+
+---------------------------------------------------------------------------
