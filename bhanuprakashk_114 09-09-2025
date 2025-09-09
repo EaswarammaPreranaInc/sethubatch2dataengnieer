@@ -1,0 +1,163 @@
+#  Tricky  program
+#   Find  outputs
+def  f1():
+	global  a
+	if  a:
+		print(a)
+		a = a - 1
+		f1()
+		print('Hello')
+		print('Hi')
+		print(a)
+	print('Bye')
+# End  of  the  function
+a = 3
+f1()
+print('End')
+the output
+3
+2
+1
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+End
+3
+3
+3
+3
+3
+...
+RecursionError: maximum recursion depth exceeded
+
+#  Most  tricky   program
+# Find  outputs  (Home  work)
+def  f1(x , y):
+	if   x > 40:
+		return
+	x += y
+	f1(x , y)
+	print(x)
+#End  of  the  function
+x = 10
+f1(x , x := x + 1)
+print(x)
+##the output is....
+43
+32
+21
+11
+#the output is...
+3
+2
+1
+0
+0
+1
+2
+3
+# Find  outputs  (Home  work)
+def    f1():
+        print('f1    function')
+def    f2():
+        print('f2  function')
+# End  of  the  function
+f1()
+f2()
+print(f1  is  f2)
+f2 = f1
+f2()
+print(f1  is  f2)
+f2 = f1()
+print(f2)
+f2()
+the output is...
+f1    function
+f2  function
+False
+f1    function
+True
+f1    function
+None
+
+# Find  outputs (Home  work)
+How  to  assign  ref  'p'  to  print()  function
+How  to  call  print()  function  thru  ref  'p'  and   print  'Hyderabad'
+print = None
+print('Hello')
+How  to  call  print()  function  thru  ref  'p'  and   print  'Hello'
+the output is....
+Hyderabad
+Hello
+
+# Find  output(Home  work)
+def    f1(a):
+	def   f2():
+		return  10
+	# End  of  f2  function
+	return  f2() + 20 +  a
+# End  of  f1  function
+print(f1(30))
+output is...
+60
+
+# Find  outputs  (Home  work)
+x = 10
+def  outer():
+	x = 20
+	def   inner():
+		x = 30
+		print(x)
+		print(globals()['x'])
+	inner()
+outer()
+print('Bye')
+the output is...
+30
+10
+Bye
+# Find  outputs  (Home  work)
+x = 10
+def  outer():
+	def   inner():
+		print(x)
+	inner()
+outer()
+the output is..
+  10
+# Find  outputs  (Home  work)
+def  outer():
+	x = 10
+	def  inner():
+		x = 20
+		print(x)
+		x +=  7
+	# End  of  inner  function
+	print(x)
+	x += 5
+	inner()
+	print(x)
+# End  of  the  function
+outer()
+print('Bye')
+output
+10
+10
+20
+15
+Bye
+
+
+
+
+
