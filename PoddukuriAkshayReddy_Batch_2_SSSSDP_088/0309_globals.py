@@ -76,7 +76,7 @@ def   f3():
 	y += 1
 def   f4():
 	x = 50
-	global   x
+	# global   x   error due # first we have to declare global and assign value to it 
 #  End  of  the  functions
 x = 10
 print(x) # 10
@@ -88,7 +88,7 @@ print(x) # 31
 x += 1
 f3() # 40
 print(y) # 
-f4()
+f4() # first we have to declare global and assign value to it 
 print(x) # 32
 
 
@@ -171,7 +171,7 @@ print(a) # 40
 # Find  outputs (Home  work)
 def  f1():
         a = 10
-        global  a # a should be assigned after the globals() declaration
+        # global  a # a should be assigned after the globals() declaration
         print(a)
         global  b
         b = 20
@@ -222,7 +222,7 @@ print(a)
 # Find outputs (Home  work)
 def  f1():
 	a = 20
-	global   a # a is assigned before global declared
+	# global   a # a is assigned before global declared
 	print(a)
 	print(globals()['a'])
 	a = 30
