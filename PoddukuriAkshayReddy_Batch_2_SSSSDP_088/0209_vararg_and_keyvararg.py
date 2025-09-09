@@ -40,7 +40,7 @@ f1(t = (10 , 20 , 30)) # error
 
 #  Write  a  function  to  determine  average  of  arguments  passed  to  the  function  (Home  work)
 def  avg(*a):
-	return sum(a) /  len(a) if len(a)
+	return sum(a) /  len(a) if len(a) else 0
 	# Write  code  to  return  average  of  arguments  passed  from  the  function  call  (single  line)
 # End  of  the  function
 print(avg(10 , 20 , 15 , 18)) # 15.75
