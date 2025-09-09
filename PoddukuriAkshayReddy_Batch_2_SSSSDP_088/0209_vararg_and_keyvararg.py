@@ -392,7 +392,7 @@ Write  a  program  to  print  all  the  rotations  of  the  string
      What  are  the  indexes  of  ESPAC ?  ---> 4  to  4 , 0  to  3
 
 3) What  are  the  indexes  in  general ?  --->  i  to  length - 1   and   0  to  i - 1
-'''
+
 
 
 Enter any string :  SPACE
@@ -402,7 +402,7 @@ PACES
 ACESP
 CESPA
 ESPAC
-
+'''
 
 s = 'SPACE'
 for i in range(len(s)):
@@ -418,7 +418,7 @@ What  is  the  output ?  --->  7 * 1 = 7
 			  								 7 * 3 = 21
 												 .....
 											 7 * 10 = 70
-'''
+
 Enter  table  number :  7
 7 * 1 = 7
 7 * 2 = 14
@@ -430,10 +430,12 @@ Enter  table  number :  7
 7 * 8 = 56
 7 * 9 = 63
 7 * 10 = 70
+'''
 
+n = int(input("Enter the table number:"))
 
 for i in range(1,11):
-  print(f'7 *{i:2} = {7*i:2}')
+  print(f'{n} *{i:2} = {n*i:2}')
 
 '''
 Write a  program to print following pyramid
@@ -457,7 +459,7 @@ Input: 5
 	   4         'A'  to  'D'
 
 	   5         'A'  to  'E'
-'''
+
 
 How  many  lines ?  :  7
        A
@@ -467,16 +469,16 @@ How  many  lines ?  :  7
    A B C D E
   A B C D E F
  A B C D E F G
+'''
 
-
-'''n = int(input("Enter the no of lines:"))
+n = int(input("Enter the no of lines:"))
 for i in range(1,n+1):
   for j in range(n-i):
     print(' ',end='')
   for k in range(1,i+1):
     print(chr(64+k),end=' ')
   print()
-'''
+
 
 #Find  outputs (Home  work)
 a = 10
