@@ -492,6 +492,19 @@ Write  a  program  to  convert  roman number to  arabic  number
 3424
 '''
 
+char = input('Enter  any  roman  number :  ')
+dict = {'I' : 1  , 'V' : 5 , 'X' : 10 , 'L' : 50 , 'C' : 100 ,  'D' : 500 , 'M' : 1000}
+sum = 0
+prev = 0
+for x in char:
+  current = dict[x]
+  if dict[x] > prev:
+    sum += current - 2*prev
+  else:
+      sum += current 
+      
+  prev = current
+print(sum)
 
 
 
