@@ -1,0 +1,426 @@
+Write  a  recursive  function  for  fibonacci  term
+Use  the  function  to  generate  fibonacci  series
+
+1) What  is  the  fibonacci  series ?  --->  0 ,  1 ,  1 ,  2 , 3 ,  5 , 8 , ...
+
+2) What  is  the  formula  for  10th  term ?  ---> 9th  term +  8th  term
+     What  is  the  formula  for  3rd  term ?  --->  2nd  term +  1st  term
+     What  is  the  formula  for  ith  term ?  ---> (i - 1)th   term +  (i - 2)  term
+
+3) What  are  the  first   two  terms ?  ---> 0  and  1
+'''
+def fib(i):  # 'i' is the term number
+    if i == 0:
+        return 0  # First term
+    if i == 1:
+        return 1  # Second term
+    return fib(i-1) + fib(i-2)
+
+'''
+n = int(input('How many terms ? :  '))
+print('Fibonacci  series')
+How  to  print  first  'n'  terms  of  fibonacci  series
+
+
+n = int(input('How many terms ? :  '))
+print('Fibonacci series')
+for i in range(n):
+    print(fib(i))
+------------------------------------------------------------------------
+
+
+Write  a  recursive  power  function
+
+1) What  is  the  formula  for  4.5 ^ 3 ?  --->  4.5 * 4.5 ^ 2
+
+2) What  is  the  formula  for  4.5 ^ -3 ?  ---> 1/4.5 * 4.5 ^ -2
+
+3) What  is  4.5 ^ 0 ?  ---> 1
+'''
+
+def power(a, b):
+    if b == 0:
+        return 1
+    if b > 0:
+        return a * power(a, b - 1)
+    return (1 / a) * power(a, b + 1)
+
+'''
+1) power(4.5 , 3) =
+
+2) power(4.5 , -3) =
+
+3) How  many  function  calls  are  in  power(a , b)  ? --->
+'''
+
+a = float(input('Enter  base :  '))
+b = int(input('Enter  power :  '))
+How  to  print  a , b  and  a ^ b
+a = float(input('Enter base: '))
+b = int(input('Enter power: '))
+print('a:', a)
+print('b:', b)
+print('a^b:', power(a, b))
+-------------------------------------------------------------------------
+
+Write  a   recursive  function  to  reverse  a  number
+
+rev(678) =  678 % 10 *  10 ^ (3 - 1)  +  rev(678 // 10)
+              =  800  +  rev(67)
+              =  800  +  67 % 10 * 10 ^ (2 - 1) + rev(67 // 10)
+              =  800  +  70 + rev(6)
+              =  800  +  70 + 6 % 10 * 10 ^ (1 - 1) + rev(6 // 10)
+              =  800  +  70 + 6 + rev(0)
+              =  800  +  70 + 6 + 0
+			  = 876
+
+1) How  many  function  calls  are  in  rev(678) ?  --->   4
+
+2) How  many  function  calls  are  in  rev(n-digit number)  ? ---> n + 1
+
+3) How  to  obtain  length  of a  number ?  --->  len(str(n))
+
+
+'''from math import *
+
+def rev(n):
+    # Base case: when n == 0, return 0
+    if n == 0:
+        return 0
+    else:
+        # Get the number of digits in n
+        length = len(str(n))
+        # Formula: last digit * 10^(length-1) + recur for the remaining digits
+        return (n % 10) * int(pow(10, length - 1)) + rev(n // 10)
+
+'''
+
+
+
+rev(946)  =
+'''
+n = int(input('Enter  any  number :  '))
+print('Reverse   Number :  ' , rev(n))
+
+
+from math import *
+
+def rev(n):
+    if n == 0:
+        return 0
+    else:
+        length = len(str(n))
+        return (n % 10) * int(pow(10, length - 1)) + rev(n // 10)
+
+n = int(input('Enter any number : '))
+print('Reverse Number :', rev(n))
+--------------------------------------------------------------------------
+
+#  Tricky  program
+#   Find  outputs
+def  f1():
+	global  a
+	if  a:
+		print(a)
+		a = a - 1
+		f1()
+		print('Hello')
+		print('Hi')
+		print(a)
+	print('Bye')
+# End  of  the  function
+a = 3
+f1()
+print('End')
+
+##final outputs
+3
+2
+1
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+End
+---------------------------------------------------
+#   Find  outputs
+def  f1():
+	a = 3
+	if  a:
+		print(a)
+		a = a - 1
+		f1()
+		print('Hello')
+		print('Hi')
+		print(a)
+	print('Bye')
+#End  of  the  function
+a = 3
+f1()
+print('End')   #End
+---------------------------------------------------------
+#  Most  tricky   program
+# Find  outputs  (Home  work)
+def  f1(x , y):
+	if   x > 40:
+		return
+	x += y
+	f1(x , y)
+	print(x)
+#End  of  the  function
+x = 10
+f1(x , x := x + 1)
+print(x)
+ 
+#Final out puts
+43
+32
+21
+10
+10
+--------------------------------------------------------------
+# Find  outputs   (Home  work)
+def  f1(x):
+	print(x)
+	if   x:Write  a  recursive  function  for  fibonacci  term
+Use  the  function  to  generate  fibonacci  series
+
+1) What  is  the  fibonacci  series ?  --->  0 ,  1 ,  1 ,  2 , 3 ,  5 , 8 , ...
+
+2) What  is  the  formula  for  10th  term ?  ---> 9th  term +  8th  term
+     What  is  the  formula  for  3rd  term ?  --->  2nd  term +  1st  term
+     What  is  the  formula  for  ith  term ?  ---> (i - 1)th   term +  (i - 2)  term
+
+3) What  are  the  first   two  terms ?  ---> 0  and  1
+'''
+def fib(i):  # 'i' is the term number
+    if i == 0:
+        return 0  # First term
+    if i == 1:
+        return 1  # Second term
+    return fib(i-1) + fib(i-2)
+
+'''
+n = int(input('How many terms ? :  '))
+print('Fibonacci  series')
+How  to  print  first  'n'  terms  of  fibonacci  series
+
+
+n = int(input('How many terms ? :  '))
+print('Fibonacci series')
+for i in range(n):
+    print(fib(i))
+------------------------------------------------------------------------
+
+
+Write  a  recursive  power  function
+
+1) What  is  the  formula  for  4.5 ^ 3 ?  --->  4.5 * 4.5 ^ 2
+
+2) What  is  the  formula  for  4.5 ^ -3 ?  ---> 1/4.5 * 4.5 ^ -2
+
+3) What  is  4.5 ^ 0 ?  ---> 1
+'''
+
+def power(a, b):
+    if b == 0:
+        return 1
+    if b > 0:
+        return a * power(a, b - 1)
+    return (1 / a) * power(a, b + 1)
+
+'''
+1) power(4.5 , 3) =
+
+2) power(4.5 , -3) =
+
+3) How  many  function  calls  are  in  power(a , b)  ? --->
+'''
+
+a = float(input('Enter  base :  '))
+b = int(input('Enter  power :  '))
+How  to  print  a , b  and  a ^ b
+a = float(input('Enter base: '))
+b = int(input('Enter power: '))
+print('a:', a)
+print('b:', b)
+print('a^b:', power(a, b))
+-------------------------------------------------------------------------
+
+Write  a   recursive  function  to  reverse  a  number
+
+rev(678) =  678 % 10 *  10 ^ (3 - 1)  +  rev(678 // 10)
+              =  800  +  rev(67)
+              =  800  +  67 % 10 * 10 ^ (2 - 1) + rev(67 // 10)
+              =  800  +  70 + rev(6)
+              =  800  +  70 + 6 % 10 * 10 ^ (1 - 1) + rev(6 // 10)
+              =  800  +  70 + 6 + rev(0)
+              =  800  +  70 + 6 + 0
+			  = 876
+
+1) How  many  function  calls  are  in  rev(678) ?  --->   4
+
+2) How  many  function  calls  are  in  rev(n-digit number)  ? ---> n + 1
+
+3) How  to  obtain  length  of a  number ?  --->  len(str(n))
+
+
+'''from math import *
+
+def rev(n):
+    # Base case: when n == 0, return 0
+    if n == 0:
+        return 0
+    else:
+        # Get the number of digits in n
+        length = len(str(n))
+        # Formula: last digit * 10^(length-1) + recur for the remaining digits
+        return (n % 10) * int(pow(10, length - 1)) + rev(n // 10)
+
+'''
+
+
+
+rev(946)  =
+'''
+n = int(input('Enter  any  number :  '))
+print('Reverse   Number :  ' , rev(n))
+
+
+from math import *
+
+def rev(n):
+    if n == 0:
+        return 0
+    else:
+        length = len(str(n))
+        return (n % 10) * int(pow(10, length - 1)) + rev(n // 10)
+
+n = int(input('Enter any number : '))
+print('Reverse Number :', rev(n))
+--------------------------------------------------------------------------
+
+#  Tricky  program
+#   Find  outputs
+def  f1():
+	global  a
+	if  a:
+		print(a)
+		a = a - 1
+		f1()
+		print('Hello')
+		print('Hi')
+		print(a)
+	print('Bye')
+# End  of  the  function
+a = 3
+f1()
+print('End')
+
+##final outputs
+3
+2
+1
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+Hello
+Hi
+0
+Bye
+End
+---------------------------------------------------
+#   Find  outputs
+def  f1():
+	a = 3
+	if  a:
+		print(a)
+		a = a - 1
+		f1()
+		print('Hello')
+		print('Hi')
+		print(a)
+	print('Bye')
+#End  of  the  function
+a = 3
+f1()
+print('End')   #End
+---------------------------------------------------------
+#  Most  tricky   program
+# Find  outputs  (Home  work)
+def  f1(x , y):
+	if   x > 40:
+		return
+	x += y
+	f1(x , y)
+	print(x)
+#End  of  the  function
+x = 10
+f1(x , x := x + 1)
+print(x)
+ 
+#Final out puts
+43
+32
+21
+10
+10
+--------------------------------------------------------------
+# Find  outputs   (Home  work)
+def  f1(x):
+	print(x)
+	if   x:
+		f1(x - 1)
+	print(x)
+# End  of  the  function
+f1(3)
+#Final out puts 
+3
+2
+1
+0
+0
+1
+2
+3
+----------------------------------------------------------------
+
+
+
+
+
+
+		f1(x - 1)
+	print(x)
+# End  of  the  function
+f1(3)
+#Final out puts 
+3
+2
+1
+0
+0
+1
+2
+3
+----------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,173 @@
+def f1():
+    global a
+    if a:
+        print(a)          # 3 
+        a = a - 1
+        f1()
+        print('Hello')    # Hello 
+        print('Hi')       # Hi
+        print(a)          # 0
+    print('Bye')          # Bye 
+
+a = 3
+f1()
+print('End')              # End
+
+# in order:
+# 3
+# 2
+# 1
+# Bye
+# Hello
+# Hi
+# 0
+# Bye
+# Hello
+# Hi
+# 0
+# Bye
+# Hello
+# Hi
+# 0
+# Bye
+# End
+
+
+
+def f1():
+    a = 3
+    if a:
+        print(a)       # 3
+        a = a - 1
+        f1()
+        print('Hello') # Hello
+        print('Hi')    # Hi
+        print(a)       # 2
+    print('Bye')       # Bye
+
+a = 3
+f1()                  
+print('End')           # End
+
+# Output:
+# 3
+# 3
+# 3
+# Bye
+# Hello
+# Hi
+# 2
+# Bye
+# Hello
+# Hi
+# 2
+# Bye
+# Hello
+# Hi
+# 2
+# Bye
+# End
+
+
+def f1(x, y):
+    if x > 40:
+        return
+    x += y
+    f1(x, y)
+    print(x)  
+
+x = 10
+f1(x, x := x + 1)  
+print(x)            #  updated global x
+
+# Output 
+# 32
+# 21
+# 11
+
+
+def f1():
+    print('f1    function')
+
+def f2():
+    print('f2  function')
+
+# End  of  the function
+f1()                   # f1    function
+f2()                   # f2  function
+
+print(f1 is f2)        # False
+
+f2 = f1                
+f2()                    # f1    function 
+print(f1 is f2)         # True
+
+f2 = f1()               # Calls f1()
+print(f2)               # None
+
+# f2()                 # error
+
+
+def f1(a):
+    def f2():
+        return 10
+    # End of f2 function
+    return f2() + 20 + a  # f2() = 10, 10 + 20 + a
+
+# End of f1 function
+print(f1(30))  #  60
+
+
+def outer():
+    print('Outer  function')       #  outer function
+    def inner1():
+        print('1st  inner  function')
+    def inner2():
+        print('2nd  inner  function')
+    print('Hi')                    # hi
+    inner2()                       # calls inner2 
+    print('Hello')                 #  Hello
+    inner1()                       # calls inner1
+    print('Back  to  outer  function')  # back to outer function
+
+# End of the function
+print('Begin')                      #  Begin
+outer()                             # calls outer
+print('Bye')                        #  Bye
+
+# output :
+# Begin
+# Outer  function
+# Hi
+# 2nd  inner  function
+# Hello
+# 1st  inner  function
+# Back  to  outer  function
+# Bye
+
+
+#fibbonaci series
+
+def fib(i):
+    if i==0:
+        return 0
+    if  i==1:
+        return 1
+    else:
+       return fib(i-1)+fib(i-2)
+        
+i=int(input("how many terms: "))
+print("fibonacci: ",fib(i))
+
+
+
+#power function
+def power(a,b):
+    if a==0 or b==0:
+        return 1
+    if  a!=0 and b!=0:
+        return a**b
+        
+a=int(input("enter 1st number: "))
+b=int(input("enter 2nd number: "))
+print("power : ",power(a,b))

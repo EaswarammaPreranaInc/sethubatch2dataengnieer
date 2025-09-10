@@ -1,0 +1,327 @@
+#!/usr/bin/env python
+# coding: utf-8
+#  Find  outputs  (Home  work)
+def  change(b):
+	b . append(25)
+	b[2] = 17
+	del  b[1]
+# End  of  the  function
+a = [10 , 20 , 15 , 18]
+print(a) #[10, 20, 15, 18]
+change(a)
+print(a)  #[10, 17, 18, 25]
+  # Find  outputs  (Home  work)
+def  change(b):
+	b  = [50 , 60 , 70 , 80]
+	print(b) #[50, 60, 70, 80]
+# End  of  the  function
+a = [10 , 20 , 30 , 40]
+print(a) #[10, 20, 30, 40]
+change(a)
+print(a) #[10, 20, 30, 40]#  Find  outputs  (Home  work)
+def   f1(x):
+	x = 20
+	print(x) #20
+# End  of   the   function
+x = 10
+print(x) #10
+f1(x)
+print(x)#10#  Find  outputs  (Home  work)
+def  f1(b):
+	b[2] = 25
+#end  of  the  function
+a = (10 , 20 , 15 , 18)
+print(a) #(10, 20, 15, 18)
+f1(a)
+print(a) #error tuple is immutable# Find  outputs (Home  work)
+square = lambda  x = 10  :   x * x
+print(square(5)) #25
+print(square())#100# Find  outputs  (Home  work)
+print((lambda   x  :   x * x) (7))  #49
+print( lambda   x  :  x * x(7)) #< type and address of lambda>
+print( lambda   x  :   x * x)  #< type and address of lambda>
+print( (lambda  x = 25 :  x * x) () ) #625
+square = lambda  x :  x  *  x 
+print(square(5)) #25# Find  output (Home  work)
+add=lambda x,y:x+y #How  to  define  lambda  function   to  return  sum   of  two  arguments
+print(type(add)) #<class 'function'>
+print(add(10 , 20)) #30
+print(add(10.6 , 20.8)) #31.4
+print(add('Hyder' , 'abad')) #Hyderabad
+print(add(True , False)) #1
+print(add(25 , 10.8)) #35.8
+print(add(3 + 4j , 5 + 6j)) #8+10j
+print(add(10 , '20')) #error
+print(add()) #error
+print(add)  #<function <lambda> at add of lambda >#  Find  outputs (Home  work)
+add = lambda  a = 1 , b = 2 :  a + b
+print(add(10 , 20)) #30
+print(add()) #3#  Find  outputs (Home work)
+print((lambda  x , y : x + y) (10 , 20) ) #30
+print((lambda  x , y : x + y) (10.8 , 20.6)) #31.4
+print((lambda  x , y : x + y) ('Hyder' , 'abad')) #Hyderabad
+print(lambda  x , y : x + y  ('Hyder'  ,  'abad')) #<type and add of lambda function>#  Find  outputs (Home  work)
+large = lambda x,y: x if x>y else y #How  to  define  lambda  to  detrmine  largest  of  two  arguments
+print(large(10  ,  20)) #20
+print(large(10.7  ,  5.6)) #10.7
+print(large('g'  ,  's')) #s
+print(large('Rama'  ,  'Rajesh')) #Rama
+print(large(True  ,  False)) #True#Find  outputs (Home  work)
+power = lambda  a = 3.5 , b = 2  :  a ** b
+print(power(2 , 3))  #8
+print(power(4.5 , 4)) #410.06
+print(power()) #12.25
+print(power(9)) #81# Find  outputs
+all = lambda  a , b :  (a + b ,  a - b , a * b , a / b)
+x = all(10 , 7)
+print(type(x)) #<class 'tuple'>
+print(x) (17, 3 , 70, 1.42)
+p , q , r , s = all(9 , 2)
+print(p)#11
+print(q) #7
+print(r) #18
+print(s)#4.5#  Find  outputs
+a  =  lambda  :  'Hyd'
+print(a())  #Hyd
+print(a) #type and add of a  # Find  outputs
+a  =  lambda  :  print('Hyd')  ;  print('Sec');  print('Cyb')
+print(a()) #Sec <next line> Cyd <next line> Hyd<next line> None# Find  outputs (Home  work)
+a  =  lambda  : 'Hyd' ;  print('Sec') ;  print('Cyb')
+print(a())  #Sec <next line> Cyd <next line> Hyd# Find  outputs   (Home  work)
+a  =  lambda  :  print('Hyd')  , print('Sec')  , print('Cyb')
+print(type(a)) 
+print(a) 
+for  x  in  a:
+	print(x)
+a() 
+print(a[0]())
+"""
+#outputs:
+Sec
+Cyb
+<class 'tuple'>
+(<function <lambda> at add , None, None)
+<function <lambda> at add>
+None
+None
+Hyd
+None
+"""#  Find  outputs  (Home  work)
+s = 'Hyd'
+print(lambda  s  :  print(s)) #<function <lambda> and add>
+print(lambda  x  :  print(x) (s)) ##<function <lambda> and add> 
+print((lambda  x  :  print(x)) (s)) #Hyd <next line> None
+(lambda  x  :  print(x)) (s) #Hyd# Find outputs  (Home  work)
+x = 5
+adder1 = lambda  y , x = x  : x + y
+x = 10
+adder2 = lambda  y , x = x : x + y
+x = 20
+print(adder1(100)) #105
+print(adder2(200))#210
+print(adder1(300 , 400))#700#Find  outputs  (Home  work)
+a = [lambda   x  :  x ** 2 , lambda   x  :  x ** 3 ,  lambda   x  :  x ** 4]
+for   fun   in   a:
+        print(fun(5)) #25 <next line> 125 <next line> 625#  Find  outputs
+def   f1():
+	print('Hyd')
+def   f2():
+	print('Sec')
+a = [f1 , f2]
+for  x  in  a:
+	     x()
+a = [def   f1():  print('Hyd') ,  def   f2():  print('Sec')] #error
+print(a)
+"""
+output:
+Hyd
+Sec
+[<function f1 at add>, <function f2 at add>]
+"""
+# Find output  (Home  work)
+a = {'power_2'  :  lambda   x  :  x ** 2 ,
+       'power_3'  :  lambda   x  :  x ** 3 ,
+  	   'power_4'  :  lambda   x  :  x ** 4}
+key = 'power_3'
+print(a[key]) #<type and add of lambda >
+print(a[key](5)) #125# Find  outputs  (Home  work)
+def   f1(x):
+        return  lambda  n  :  x ** n
+lamb = f1(3)
+print(type(f1)) #<class 'function'>
+print(type(lamb)) #<class 'function'>
+print(lamb(2)) #9
+print(lamb(5))#243
+print(lamb)
+print(lamb()) #errordef   eval(a , b , c):
+        return   lambda    x  :    a *   x **  2  +   b * x  +  c
+lam  = eval(3 , 4 , 5)
+print(lam(2))
+print(lam(2.5))
+print(lam(4))
+
+"""#Output:
+25
+33.75
+69"""
+
+
+#Nested  lambda  function  (Home  work)
+add  =  lambda    x = 10   :    lambda   y  :  x  +  y
+a = add()
+print(a(20))
+print(add(30)(40))
+'''
+#Output:
+30
+70'''
+# Find  outputs
+a= ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2000.0) , (15 ,'Rajesh' , 500.0) ,  (18 , 'Kiran' , 2800.0) , (5 , 'Amar' , 1300.0))
+b = sorted(a)
+print(b)
+print()
+c = sorted(a , reverse = True)
+print(c)
+print()
+d = sorted(a ,  key =  lambda   x  :  x[1])
+print(d)
+print()
+e = sorted(a , key =  lambda   x  :  x[2])
+print(e)
+print()
+f = sorted(a , key = lambda   x  :  x[0])
+print(f)
+print()
+g = sorted(a , key = lambda  x : x[1] , reverse = True)
+print(g)
+print(sorted(a , key = x[1]))			#Error
+"""
+#Output:
+[(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+
+[(20, 'Sita', 2000.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0)]
+
+[(5, 'Amar', 1300.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (20, 'Sita', 2000.0)]
+
+[(15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0), (20, 'Sita', 2000.0), (18, 'Kiran', 2800.0)]
+
+[(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+
+[(20, 'Sita', 2000.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (5, 'Amar', 1300.0)]
+
+"""
+# Find outputs  (Home  work)
+a = [ {'Make' : 'Ford' , 'Model' : 'Focus' , 'Year' : 2013} ,
+        {'Make' : 'Tesla' , 'Model' : 'X' , 'Year' : 1999} ,
+        {'Make' : 'Mercedes' , 'Model' : 'C350E' , 'Year' : 2008} ]
+b = sorted(a , key = lambda  x  :  x['Year'])
+print(b)
+print(sorted(a))	#Error
+
+#Output:
+[{'Make': 'Tesla', 'Model': 'X', 'Year': 1999}, {'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008}, {'Make': 'Ford', 'Model': 'Focus', 'Year': 2013}]
+
+
+
+# Find outputs  (Home  work)
+a = ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2800.0) , (15 , 'Vamsi' , 2000.0) , (25 , 'Kiran' , 1500.0) ,  (5 , 'Amar' , 1300.0))
+print(max(a , key = lambda  x  :  x[0] ))
+print(max(a , key = lambda  x  :  x[1] ))
+print(max(a , key = lambda  x  :  x[2] ))
+print(max(a))
+
+'''#Output:
+(25, 'Kiran', 1500.0)
+(15, 'Vamsi', 2000.0)
+(20, 'Sita', 2800.0)
+(25, 'Kiran', 1500.0)'''# Find  output  (Home  work)
+add = lambda  x  :   x == 25
+print(add(10))
+add = lambda  x = 25 :   x == 35
+print(add())
+add = lambda  x  :   x = 25		#Error
+add = lambda  x  :   x := 25		#Error
+# In[11]:
+
+
+'''
+There  are  21  matchsticks.
+User  can  pick  1 , 2 , 3  or  4  matchsticks.
+Computer  picks  after  user  and  whoever  picks  the  last  matchstick, they  lose  the  game.
+Write  a  program  such  that  computer  wins
+
+Logic:  Total  should  be  5
+
+Hint: Use while  loop
+
+						n = 21
+   Iteration     user         computer             n
+-------------------------------------------------------------
+         1               2                 3               n = 21 - 5 = 16
+
+		 2              3                 2               n = 16 - 5 = 11
+
+		 3              1                 4               n = 11 - 5 = 6
+
+		 4              4                 1               n =6 - 5 = 1
+---------------------------------------------------------------
+'''
+b=21
+while b>1:
+    a=int(input("How  many  matchsticks  would  you  like  to  pick (1 , 2 ,  3 or  4) ?  :  "))
+    while a>4 or a<1:
+        a=int(input('Input  can  not  be >  4  nor  <  1,  Reenter  :  '))
+    print(f'Computer  picks  {5-a} matchsticks')
+    b=b-5
+print("You  have  lost  the  game  and  Computer  wins")
+        
+    
+
+
+# In[15]:
+
+
+'''
+Write  a  program  to  convert  roman number to  arabic  number
+
+1) What is the output  if input is  III ? --->  3
+
+2) What is the output if input is  IV --->  4
+
+3) What is the output if input is  IX --->  9
+
+4) What is the output if input is  LVIII --->  58
+
+5) What is the output if input is MCMXCIV ---> 1994
+
+6) What is the output  if  input  is  MMMCDXXIV --->  3424
+
+7) Reverse  the  string
+
+8) {'I' : 1  , 'V' : 5 , 'X' : 10 , 'L' : 50 , 'C' : 100 ,  'D' : 500 , 'M' : 1000}
+    What  action  to   be  made  if  the  char  is  >=  prev ?  --->  Add  the  corresponding  value  to  sum
+																							       and  assign  prev  = correponding  value
+
+9) What  action  to   be  made  if  the  char  is  <  prev ?  --->  Subtract  the  corresponding  value  from  sum
+																							      and  assign  prev  = correponding  value
+'''
+ro={'I' : 1  , 'V' : 5 , 'X' : 10 , 'L' : 50 , 'C' : 100 ,  'D' : 500 , 'M' : 1000}
+a=input("Enter  any  roman  number : ")
+b=0
+d=0
+c=a[::-1].upper()
+for i in c:
+    if ro[i] >= d:
+        b+=ro[i]
+        d=ro[i]
+    else:
+        b-=ro[i]
+        d=ro[i]
+print(b)
+
+
+# In[ ]:
+
+
+
+
