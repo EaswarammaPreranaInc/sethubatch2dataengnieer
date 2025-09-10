@@ -44,8 +44,8 @@ def  power(a , b):
 	if  b == 0:
 		return  1
 	if  b < 0:
-		return  ((1/b)*(a**(b+1)))
-	return  a*a**(b-1)
+		return  (1/b)*power(a,b+1)
+	return  a*power(a,b-1)
 '''
 1) power(4.5 , 3) =
 
@@ -389,4 +389,5 @@ Outputs:
 20
 15
 Bye
+
 '''
