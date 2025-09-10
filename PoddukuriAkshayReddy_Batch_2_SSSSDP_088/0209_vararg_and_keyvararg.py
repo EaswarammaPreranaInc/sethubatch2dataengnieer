@@ -287,6 +287,41 @@ Iteration         a          op        b        result
 
 # Enter  any  expression  terminated  by  =  :  3+4*5-6/2=
 # Result :  14.5
+expr = input("Enter any expression terminated by = : ")
+
+i = 0
+a = ''
+# Extract the first number
+while i < len(expr) and expr[i].isdigit():
+    a += expr[i]
+    i += 1
+
+a = float(a)
+
+while i < len(expr):
+    op = expr[i]
+    if op == '=':
+        break
+    i += 1
+    
+    b = ''
+    while i < len(expr) and (expr[i].isdigit() or expr[i] == '.'):
+        b += expr[i]
+        i += 1
+    
+    b = float(b)
+
+    # Apply operation
+    if op == '+':
+        a = a + b
+    elif op == '-':
+        a = a - b
+    elif op == '*':
+        a = a * b
+    elif op == '/':
+        a = a / b
+
+print("Result:", a)
 
 
 
