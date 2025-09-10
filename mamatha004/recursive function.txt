@@ -1,0 +1,20 @@
+#gcd function
+
+def gcd(a,b):
+    if b==0:
+        return a
+    else:
+        return gcd(b,a%b)
+a=int(input("enter 1st number:"))
+b=int(input("enter second number:"))
+print("gcd of " f'{a},{b}={gcd(a,b)}')
+
+#sum of the digits
+
+def sod(n):
+    if n==0:
+        return 0
+    
+    return n%10+sod(n//10)
+n=int(input("enter a number: "))
+print("sum of the digits",sod(n))
