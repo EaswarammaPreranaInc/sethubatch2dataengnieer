@@ -1,0 +1,137 @@
+def change(b):
+    b.append(25)     #  [10, 20, 15, 18, 25]
+    b[2] = 17        #  [10, 20, 17, 18, 25]
+    del b[1]         # Delet [10, 17, 18, 25]
+# End of the function
+
+a = [10, 20, 15, 18]
+print(a)    # [10, 20, 15, 18]
+
+change(a)
+print(a)    # [10, 17, 18, 25]
+
+
+def change(b):
+    b = [50, 60, 70, 80]   # new list assigned to b (local only, doesn't affect 'a')
+    print(b)               # 50, 60, 70, 80]
+# End of the function
+
+a = [10, 20, 30, 40]
+print(a)                   #  [10, 20, 30, 40]
+
+change(a)
+
+print(a)                   #  [10, 20, 30, 40]
+
+
+
+def f1(x):
+    x = 20
+    print(x)        # 20
+# End of the function
+
+x = 10
+print(x)            # 10
+
+f1(x)
+
+print(x)            # 10
+
+
+def f1(b):
+    b[2] = 25         # ERROR
+# end of the function
+
+a = (10, 20, 15, 18)
+print(a)              # (10, 20, 15, 18)
+
+f1(a)                 # Error
+
+print(a)              #  NOT executed
+
+
+square = lambda x = 10 : x * x  
+
+print(square(5))   # 25
+print(square())    # 100
+
+
+
+print((lambda x : x * x)(7))          # 49
+print((lambda x=25 : x * x)())        # 625
+
+square = lambda x : x * x
+print(square(5))                      # 25
+
+
+add = lambda a = 1, b = 2 : a + b
+
+print(add(10, 20))   #  30   (10 + 20)
+print(add())         # 3
+
+print((lambda x, y : x + y)(10, 20))          # 30
+print((lambda x, y : x + y)(10.8, 20.6))      # 31.4
+print((lambda x, y : x + y)('Hyder', 'abad')) # Hyderabad
+
+power = lambda a = 3.5, b = 2 : a ** b
+
+print(power(2, 3))      #  8
+print(power(4.5, 4))    #  410.0625
+print(power())          # 12.25
+print(power(9))         # 81
+
+all = lambda a, b : (a + b, a - b, a * b, a / b)
+
+x = all(10, 7)
+print(type(x))   # <class 'tuple'>
+print(x)         # (17, 3, 70, 1.4285714285714286)
+
+p, q, r, s = all(9, 2)
+print(p)         # 11   
+print(q)         # 7   
+print(r)         # 18   
+print(s)         # 4.5
+
+
+
+a = lambda : 'Hyd'
+
+print(a())   # 'Hyd'  
+print(a)     # <function <lambda>
+
+
+a = lambda : print('Hyd') ; print('Sec'); print('Cyb')
+
+print(a())     # Sec
+               # Cyb
+               # Hyd
+               # None
+
+a = lambda : print('Hyd'), print('Sec'), print('Cyb')  
+
+print(type(a))      # <class 'tuple'> 
+
+print(a)            # none
+
+for x in a:         
+    print(x)       
+                    # <function <lambda> at 0x...>
+                    # None
+                    # None
+
+a()                 # ERROR
+
+print(a[0]())      # returns None
+
+
+add = lambda x : x == 25
+print(add(10))       # False   
+add = lambda x = 25 : x == 35
+print(add())         # False  
+
+add = lambda x : x = 25   
+# Error 
+
+add = lambda x : x := 25   
+# Error
+
