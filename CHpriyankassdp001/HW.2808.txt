@@ -6,10 +6,10 @@ Let  input  be  RamA    raO
 What  is  the  output ?  --->  {'A' : 3 , 'O' : 1}
 
 Hint:  Same  as  prog23a  with  minor  changes
-'''
+
 
 Enter String:RamA raO
-{'A': 3, 'O': 1}
+{'A': 3, 'O': 1}  '''
 
 s = input("Enter String: ")
 s = s.upper()
