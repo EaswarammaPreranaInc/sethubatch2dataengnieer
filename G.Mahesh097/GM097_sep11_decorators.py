@@ -1,3 +1,4 @@
+
 # 1) Find  outputs  (Home  work)
 
 def  f1():
@@ -282,10 +283,10 @@ def  f3(x , y , z):
 def   f4():
 	print('f4 function')
 # end of function
-f1(10)
-f2(25 , 10.8)
-f3('Hyd' , True, 3+4j)
-f4()
+f1(10)                  # 1 arg
+f2(25 , 10.8)           # 2 args
+f3('Hyd' , True, 3+4j)  # 3 args
+f4()                    # 0 args
 
 '''
 Outputs:
