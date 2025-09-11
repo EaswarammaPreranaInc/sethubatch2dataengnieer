@@ -48,7 +48,7 @@ for i in range(n + 1):
         break
     """
    Enter number of lines: 5
-     
+
     *
    * *
   * * *
@@ -66,7 +66,7 @@ for i in range(n + 1):
         break
 """
 Enter number of lines: 5
-* * * * * 
+* * * * *
  * * * *
   * * *
    * *
@@ -83,7 +83,7 @@ for i in range(n + 1):
         break
     """
    Enter number of lines: 5
-     
+
     *
    **
   ***
@@ -213,20 +213,163 @@ for i in range(n):
     for j in range(n - i):
         print(chr(65 + j), end="")
     if i > 0:
-        print(" " * (2 * i - 1), end=" ")
+        print(" " * (2 * i - 1), end="")
     for j in range(n - i - 1, -1, -1):
         print(chr(65 + j), end="")
     print()
 
 """
 Output: enter no.of lines: 6
-ABCDEFEDCBA
-ABCDE EDCBA
-ABCD   DCBA
-ABC     CBA
-AB       BA
-A         A
+ABCDEFFEDCBA
+ABCDE  EDCBA
+ABCD    DCBA
+ABC      CBA
+AB        BA
+A          A
 """
+
+
+n=int(input("enter: "))
+for i in range(n):
+   for _ in range(i+1):
+      print(' '*(n-i-1),end='')
+      print('* '*(i+1))
+      break
+for i in range(n):
+   for _ in range(i+1):
+      print(' '*(i+1),end='')
+      print('* '*(n-i-1))
+      break
+
+'''
+   *
+   * *
+  * * *
+ * * * *
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+'''
+
+
+n=int(input("enter: "))
+for i in range(1,n+1):
+   print(' '*(n-i),end='')
+   for j in range(i):
+      print(j+1,end=' ')
+   print()
+
+for i in range(n-1,0,-1):
+   print(' '*(n-i),end='')
+   for j in range(1,i+1):
+      print(j,end=' ')
+   print()
+
+
+'''
+enter: 5
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+'''
+
+n=int(input("enter: "))
+for i in range(1,n+1):
+   print(' '*(n-i),end='')
+   for j in range(i):
+      print(chr(ord('A')+j),end=' ')
+   print()
+
+for i in range(n-1,0,-1):
+   print(' '*(n-i),end='')
+   for j in range(i):
+      print(chr(ord('A')+j),end=' ')
+   print()
+
+'''
+enter: 5
+    A
+   A B
+  A B C
+ A B C D
+A B C D E
+ A B C D
+  A B C
+   A B
+    A
+'''
+
+n=int(input("enter no.of lines: "))
+a=1
+for i in range(n):
+   for j in range(i+1):
+      print(a+j,end=' ')
+   # a+=i+1
+   print()
+'''
+enter no.of lines: 5
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+'''
+
+
+n=int(input("enter no.of lines: "))
+a=1
+for i in range(n):
+   for j in range(i+1):
+      print(a+j,end=' ')
+   a+=i+1
+   print()
+'''
+enter no.of lines: 5
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+'''
+
+n=int(input("enter no.of lines: "))
+for i in range(n):
+   for j in range(i+1):
+      print(chr(ord('A')+j),end=' ')
+   print()
+'''
+enter no.of lines: 5
+A
+A B
+A B C
+A B C D
+A B C D E
+'''
+
+n=int(input("enter no.of lines: "))
+a='A'
+for i in range(n):
+   for j in range(i+1):
+      print(chr(ord(a)+j),end=' ')
+   a=chr(ord(a)+i)
+   print()
+
+'''
+enter no.of lines: 5
+A
+A B
+B C D
+D E F G
+G H I J K
+'''
 
 
 import math
