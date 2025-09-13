@@ -1,0 +1,343 @@
+#  How  to  iterate  generator  with  for  loop
+import  time
+def   f1():
+	print('One')
+	yield  25
+	print('Two')
+	yield  10.8
+	print('Three')
+	yield  'Hyd'
+	print('Four')
+# End  of  generator
+g = f1()
+for   x   in   g:
+	print(x)
+	time . sleep(1)
+	print('Hello')
+# End  of  for  loop
+print('End')
+print(g)
+print(next(g))
+g = f1()
+print(next(g))
+
+#output--
+One
+25
+<one second>
+Hello
+Two
+10.8
+<onse second>
+Hello
+Three
+Hyd
+<one second>
+Hello
+Four
+End
+type and address of generator
+create generator
+one
+25
+---------------------------------------------------------------------------------------------------------------
+ # Most  tricky  program
+# Find  outputs(Home  work)
+import  time
+def   f1():
+	yield  25
+	yield  10.8
+	yield  'Hyd'
+# End  of  generator
+g = f1()
+print(next(g))
+for  x  in   g:
+	print(x)
+print()
+for  x  in   f1():
+	print(x)
+print()
+gen = f1()
+print(next(gen))
+for  x  in   f1():
+	print(x)
+print(next(gen))
+
+output---
+
+25
+10.8
+Hyd
+<empty line>
+25
+10.8
+Hyd
+<empty line>
+25
+25
+10.8
+Hyd
+10.8
+------------------------------------------------------------------------------------------------------------------------
+#Find  outputs (Home  work)
+import  time
+g = (x * x   for    x    in    range(5))
+for  y  in   g:
+	print(y)
+	time . sleep(2)
+	print('Hello')
+for  y  in   g:
+	print(y)
+#output---
+0
+<wait two seconds>
+Hello
+1
+<two seconds>
+Hello
+4
+<two seconds>
+Hello
+9
+<two seconds>
+Hello
+16
+<two seconds>
+Hello
+
+next for loop generator exhausted only executes generator once
+
+----------------------------------------------------------------------------------------------------------------------
+# Find  outputs (Home  work)
+import  time
+for  y  in   (x * x   for    x    in    range(5)):
+	print(y)
+	time . sleep(2)
+for  y  in   (x * x   for    x    in    range(5)):
+	print(y)
+	time . sleep(2)
+#output---
+0
+<wait two seconds>
+1
+<two seconds>
+4
+<two seconds>
+9
+<two seconds>
+16
+<two seconds>
+0
+<wait two seconds>
+1
+<two seconds>
+4
+<two seconds>
+9
+<two seconds>
+16
+<two seconds>
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+# Find  outputs(Home  work)
+import  time
+g1 = (x * x   for  x  in  range(5))
+g2 = g1
+for  y  in  g1:
+	print(y)
+	time . sleep(2)
+for  y  in  g2:
+	print(y)
+print(g1  is  g2)
+0
+<two second>
+1
+<two second>
+4
+<two second>
+9
+<two second>
+16
+<Two second>
+True
+
+------------------------------------------------------------------------------------------------------------------------
+#  Find  outputs (Home  work)
+l = [x * x   for   x   in   range(5)]
+print(l)   # [0,1,4,9,16]
+print(type(l))   # <class 'List'>
+
+s = {x * x   for   x   in   range(5)}
+print(s)    # {0,1,4,9,16}
+print(type(s))  # <class 'set'>
+
+d = {x : x * x    for   x   in   range(5)}
+print(d)   # {0:0,1:1,2:4,3:9,4:16}
+print(type(d))   # <class 'dict'>
+
+g = (x * x   for   x   in   range(5))
+print(g)    # type and address of the generator
+print(type(g))  # <class 'generator'>
+--------------------------------------------------------------------------------------------------------------------------
+#  Find  outputs (Home  work)
+def  f1():
+	return  10
+	return  20
+	return  30
+def  f2():
+	yield  10
+	yield  20
+	yield  30
+# End  of  the  function
+print(f1())
+print(f1())
+print(f1())
+print()
+g = f2()
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+
+#output----
+
+10
+10
+10
+<emptyline>
+10
+20
+30
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+#  Prove  that  there  is  no  waiting  time  for  generator
+from  timeit  import   timeit
+print(timeit('[x * x   for  x  in  range(500) ]'))
+print(timeit('( x * x   for  x  in  range(500) )'))
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ # Prove  that  there  is  no  memory  error  for  generator
+import  sys
+list = [x * x   for   x   in    range(10000)]
+print(list)
+gen = (x * x   for   x   in    range(100000000000000000000000000000000000000000000000))
+for x in gen:
+    print(x)
+print(sys . getsizeof(list))  # 85176  --large
+print(sys . getsizeof(gen))  # 200  ---small
+
+generaor yield one value at a time on demand, making them ideal for huge
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Write  a  generator  to  yield  sum , difference , product  and  division  of  2  numbers
+
+Hint:  Use  generator  function  and  for  loop  to  iterate  element
+'''
+
+
+
+
+Enter   first  number  :   10
+Enter   second  number  :   7
+Sum : 17
+Differnece :  3
+Product :  70
+Division : 1.4285714285714286
+Enter   first  number  :   10
+Enter   second  number  :   0
+Sum : 10
+Differnece :  10
+Product :  0
+Division  by zero  is  not  permitted
+
+#programme----------
+
+a = int(input("enter a value:"))
+b = int(input("enter b value:"))
+def cal(a,b):
+    yield f"sum :{a + b}"
+    yield f"difference :{a - b}"
+    yield f"mutliply:{a * b}"
+    if b!=0:
+        try:
+            yield f"Division: {a / b}"
+        except :
+            print("Division by zero is not permited")
+g =cal(a,b) 
+for x in g:
+    print(x)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Design  a  generator  to  yield  from  x (may  be  10)  to   y (may  be  20)
+
+Hint:  Use  generator  function  and  for  loop
+
+Hint:  Do  not  use  range  object
+'''
+
+Enter  start  value :  10
+Enter  end  value :  20
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+#programme---
+n1 = int(input("Enter first number: "))
+n2 = int(input("Enter second number: "))
+
+def number(n1, n2):
+    while n1 <= n2:
+        yield n1
+        n1 += 1
+
+g = number(n1, n2)
+for x in g:
+    print(x)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Write  a   generator  to  generate  fibonacci  series
+
+1) What  is  fibonacci  series ?  --->  0 , 1 , 1 , 2 , 3 , 5 , 8 , .....
+
+2) What  is  the  formula  for  10th  term ?  --->  9th  term + 8th  term
+    What  is  the  formula  for  3rd  term ?  ---> 2nd  term + 1st  term
+
+3) What  are  the  first  two  terms ?  --->  0  and  1
+
+4) Use  generator  function  and  for  loop
+'''
+Enter the last value of fibonacci series:10
+0
+1
+1
+2
+3
+5
+8
+End
+
+#  programme--
+n = int(input("Enter how many terms you want: "))
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+
+for num in fibonacci(n):
+    print(num)
+print("End")
+-----------------------------------------------------------------------------
