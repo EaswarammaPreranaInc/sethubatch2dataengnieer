@@ -36,14 +36,20 @@ ALTER TABLE course MODIFY course_name VARCHAR(100) NOT NULL;
 -- Check constraint on credits (must be between 1 and 6)
 ALTER TABLE course ADD CONSTRAINT credits_num CHECK (credits BETWEEN 1 AND 6);
 
-CREATE TABLE enrollments  (
+select * from course;
+select * from student_info;
+select * from course;
 
-    enroll_id      INT PRIMARY KEY,
-    student_id     INT,
-    CONSTRAINT fk_enroll1 FOREIGN KEY (Roll_no) REFERENCES student_info(Roll_no),
-    course_id     INT,
+
+
+CREATE TABLE enrollments (
+    enroll_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    CONSTRAINT fk_enroll1 FOREIGN KEY (student_id) REFERENCES student_info(Roll_no),
     CONSTRAINT fk_enroll2 FOREIGN KEY (course_id) REFERENCES course(course_id)
 );
+
 
 -- Add a new column email (VARCHAR(100)) to the students table.
 ALTER TABLE student_info ADD email VARCHAR(100);
@@ -69,7 +75,7 @@ values (102,'Maths'),
 -- Use TRUNCATE on the enrollments table and observe the difference vs DELETE.
 
 -- Finally, use DROP TABLE to remove the courses table completely.
-DROP TABLE course;
+DROP TABLE student_info;
 
 
 
