@@ -1,0 +1,65 @@
+# Find  outputs
+def   f1():
+        yield   [10 , 20]
+        yield  {30 , 40 , 50}
+        yield  60  , 70 , 80 , 90
+        yield  100
+# End  of  generator
+g = f1()
+for   x   in   g:
+	print(x)
+	print(type(x))
+[10, 20]
+<class 'list'>
+{40, 50, 30}
+<class 'set'>
+(60, 70, 80, 90)
+<class 'tuple'>
+100
+<class 'int'>
+#  Find  outputs
+def   f1():
+	x = 1
+	while  x <=  100000000000000000000:
+		yield  x
+		x +=  1
+# End of  generator
+g = f1()
+print('Begin')
+print(*g)
+print('End')
+Begin
+1 2 3 4 5 6 7 8 9 10
+End
+One
+1
+Two
+2
+Three
+3
+End
+One
+Two
+Three
+1
+2
+3
+#  Find  outputs (Home  work)
+def   f1():
+	yield    1
+	yield    2
+	yield    3
+# End  of  generator
+g =  f1()
+print(len(g))
+print(g * 3)
+print(g[0])
+print(g[1 : 3])
+print(*g)
+g = f1()
+print(len(g))        
+print(g * 3)        
+print(g[0])          
+print(g[1:3])      
+print(*g)          
+
