@@ -66,10 +66,12 @@ Begin
 '''
 #=================================================== #  Find  outputs
 
-g = (x * x  for  x  in  range(5001))
+g = (x * x  for  x  in  range(1000000000000000000000))
 print(*g)
+# for x in g:
+# 	print(x)
 '''
-depands on iteration
+Error memory error
 '''
 #=================================================== # Find  outputs  (Home  work)
 
@@ -86,6 +88,7 @@ print(list(g))
 print('After')
 # print(next(g))
 '''
+Begin
 Hello
 Hello
 Hello
@@ -166,6 +169,6 @@ def   f1():
 g =  f1()
 print(len(g)) #generator has no len()
 print(g * 3) #unsupported opernd * for gen() and int
-print(g[0]) #gen object is not sliceable
-print(g[1 : 3]) ##gen object is not sliceable
+print(g[0]) #gen object is not sliceable or indexed
+print(g[1 : 3]) ##gen object is not sliceable or indexed 
 print(*g)   #1 2 3
