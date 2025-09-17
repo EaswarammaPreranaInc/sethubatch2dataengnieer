@@ -69,23 +69,16 @@ output: 10 50 40
         30 70 110
         40 80 120
 
-rows = int(input("Enter number of rows: "))
-cols = int(input("Enter number of columns: "))
-matrix = []
-for i in range(rows):
-    row = list(map(int, input(f"Enter row {i+1} elements separated by space: ").split()))
-    matrix.append(row)
-
-transpose = []
-for i in range(cols):          #columns
-    row = []
-    for j in range(rows):      #rows
-        row.append(matrix[j][i])
-    transpose.append(row)
-
-print("Transpose Matrix:")
-for row in transpose:
-    print(row)
+matrix=eval(input("enter matrix (as nested lis): "))
+rows=len(matrix)
+cols=len(matrix[0])
+trans=[]
+for j in range(cols):
+    new_row=[]
+    for i in range(rows):
+        new_row.append(matrix[i][j])
+    trans.append(new_row)
+print("Transpose of matrix",trans)
 
 Q 5:write a program to rotate a string
 input: S P A C E
@@ -146,5 +139,6 @@ for i in range(rows):
     print()
  
  
+
 
 
