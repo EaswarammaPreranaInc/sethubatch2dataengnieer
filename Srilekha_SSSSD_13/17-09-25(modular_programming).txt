@@ -21,14 +21,15 @@ f1()   # error
 
 ---------------------------------------------------------------------------------------------
 #  Find  outputs  (Home  work)
-print('Before')
 import runpy
-runpy.run_module('mod2')
-print(mod2 . x)      # error
-mod2 . f1()
-print('After')
-run_module('mod2')   # error   
-runpy . run_module(mod2)  #error
+print('Before')
+runpy.run_module('mod2')  #How  to  run  mod2
+print(mod2 . x) # error as mod2 is not imported
+mod2 . f1() # error as mod2 is not imported
+print('After')  # prints after
+run_module('mod2')  # module name should be there as prefix
+runpy . run_module(mod2)    # arg should be string mod
+
 
 -------------------------------------------------------------------------------------------------
 #cal . py
@@ -263,6 +264,15 @@ print('Begining  of  mod2')
 import   mod1
 print('End  of  mod2')
 
+# Begining of mod2
+One
+Two
+Three
+Seven
+Eight
+Nine
+End  of  mod2
+
 -----------------------------------------------------------------------------------------------
 #  cal . py
 __all__ =  ['add' , 'x'  , 'mul' , 'c1' , 'z']
@@ -323,7 +333,7 @@ cal.py  is  not  a  homework
 #  Find  outputs
 from  cal  import  *
 print(x)  # 100
-print(y)    # error
+print(y)    # 200
 print(add(10 , 7))   # 17
 print(sub(10 , 7))  # 3
 print(mul(10 , 7))  # 70
@@ -370,17 +380,37 @@ mod1.py is  not  a  home  work
 import  mod1
 import  mod1
 import  mod1
-----------------------------------------------------------------------------------
-reload()  function  demo  program   (Home  work)
-import    importlib
-import  mod1
-print()
-importlib . reload(mod1)
-print()
-importlib . reload(mod1)
-importlib . reload('mod1')   # error
-reload(mod1)    # error
 
+'''
+Hyd
+Sec
+Cyb
+'''
+
+----------------------------------------------------------------------------------
+# reload()  function  demo  program   (Home  work)
+import    importlib
+import  mod1    # mod 1 is imported and statements of mod1 are executed
+print()
+importlib . reload(mod1) # mod 1 is loaded to memory and executed
+print()
+importlib . reload(mod1) # mod 1 is loaded to memory and executed
+importlib . reload('mod1')  # arg should be non string so error
+reload(mod1)    # relaod function is not there in current prgm so error
+
+'''
+Hyd
+Sec
+Cyb
+
+Hyd
+Sec
+Cyb
+
+Hyd
+Sec
+Cyb
+'''
 
 
 
