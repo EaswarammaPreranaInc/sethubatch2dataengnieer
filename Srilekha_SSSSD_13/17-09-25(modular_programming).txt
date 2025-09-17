@@ -1,0 +1,409 @@
+#  How  to  reuse  mod2  ?  (Home  work)
+print('Hello')
+import  mod2
+print(mod2.x)  # How  to  print   variable  'x'   of  mod2)
+print(mod2.f1()) # How  to  call  function  f1()  of  mod2
+print('Bye')
+import  mod4
+print(x)    # error
+f1()      # error  here python search for current module
+
+----------------------------------------------------------------------------------------------------------
+#  How  to  reuse  mod2  ?  (Home  work)
+print('Hello')
+import  mod2
+print(mod2.x)    # How  to  print   variable  'x'   of  mod2)
+print(mod2.f1())  #How  to  call  function  f1()  of  mod2
+print('Bye')
+import  mod4
+print(x)  # error
+f1()   # error
+
+---------------------------------------------------------------------------------------------
+#  Find  outputs  (Home  work)
+print('Before')
+import runpy
+runpy.run_module('mod2')
+print(mod2 . x)      # error
+mod2 . f1()
+print('After')
+run_module('mod2')   # error   
+runpy . run_module(mod2)  #error
+
+-------------------------------------------------------------------------------------------------
+#cal . py
+x = 100
+y = 200
+def  add(a , b):
+	return  a + b
+def	 sub(a , b):
+	return  a - b
+def	 mul(a , b):
+	return  a * b
+def	 div(a , b):
+	return  a / b
+class   c1:
+	def  m1(self):
+		print('m1  method')
+
+
+'''
+1) What  is  the  module  name ?  ---> cal
+
+2) What  are  the  members  of  cal  module ?  --->  Two  objects  x  and  y ,
+																			      Four  functions  add() , sub() , mul()  and  div()  and
+																				  class  c1
+
+3) Is  m1()  a  member  of  cal  module ?  ---> No  becoz  it  is  a  method  of  class
+
+4) How  many  statements  are  in  cal  module ?  --->  Two
+																				     i.e.  x =  100   and  y = 200
+
+5) py  cal . py
+    What  are  the  outputs ?  ---> Nothing  becoz  there  are  no  print  statements  in  cal  module
+'''
+ cal.py  is  not  a  home  work
+
+
+--------------------------------------------------------------------------------------
+ # How  to  use  members  of  cal  module  with  from  statement ?  (Home  work)
+print('Begin')
+from cal import * #  How  to  import  all  the  members  of  cal  module
+print(x)  # How  to  print  variable  'x'  of  cal   module)
+print(x)  #How  to  print  variable  'y'  of  cal   module)
+print(cal . x)    # error
+print(add(10,7))   #How  to  call  add()  function  of  cal  module  by  passing  10  and  7)
+print(sub(10,7))  #How  to  call  sub()  function  of  cal  module  by  passing  10  and  7)
+print(mul(10,7))  #How  to  call  mul()  function  of  cal  module  by  passing  10  and  7)
+print(div(10,7))   #How  to  call  div()  function  of  cal  module  by  passing  10  and  7)
+print(cal . add(x , y))   # error  we are not importing module 
+# How  to  call  m1()  method  of  class  c1  in  cal  module
+b = c1() 
+b.m1()        
+b = cal.c1() #  error                                                        __all__= ['x',add(),mul(), c1] 
+
+--------------------------------------------------------------------------------------------------------------
+# How  to  import  only  variable  'x' ,  functions  add()   and  mul()  and  class  c1  of  cal  module ?  (Home  work)
+print('Begin')
+from cal import x, add, mul, c1   #How  to  import  members   x , add , mul  and  class  c1  of  cal  moudle
+print(x)   #How  to  print  variable  'x'  of  cal   module)
+print(y)  #  error y is not imported
+print(cal . x)   #  error module not importd
+print(add(10,7))  #How  to  call  add()  function  of  cal  module  by  passing  10  and  7)
+print(sub(10 , 7))   #error
+print(mul(10,7))  #How  to  call  mul()  function  of  cal  module  by  passing  10  and  7)
+print(div(10 , 7))   # error not imported div function
+b =c1()  # How  to  call  m1()  method  of  class  c1  in  cal  module
+b.m1()
+------------------------------------------------------------------------------------------------------------------
+ # Module  alias
+print('Begin')
+import cal as c  # How  to  import  cal  module  with   another  name  using  import  statement
+print(c.x)  # How  to  print  variable  'x'  of  cal   module)
+print(c.y)   #How  to  print  variable  'y'  of  cal   module)
+print(c.add(10,7))  #How  to  call  add()  function  of  cal  module  by  passing  10  and  7)
+print(c.sub(10,7))  #How  to  call  sub()  function  of  cal  module  by  passing  10  and  7)
+print(c.mul(10,7))   #How  to  call  mul()  function  of  cal  module  by  passing  10  and  7)
+print(c.div(10,7))   #How  to  call  div()  function  of  cal  module  by  passing  10  and  7)
+b =c.c1()  #How  to  call  m1()  method  of  c1  class  in  cal  module
+b.m1()   
+print(cal . x)   # error
+from  math  as   m  import  *    #  error
+ 
+----------------------------------------------------------------------------------------------------------
+
+# Member  alias
+from cal import x as r,add as a,mul as m,c1 as c   #How  to  import  members   x , add , mul  and  class  c1  of  cal  moudle   with  another  name   using   from  statement
+print(cal.r)  # How  to  print  variable  'x'  of  cal   module)
+print(x)  # error we are aliased with another name
+print(a)  #How  to  call  add()  function  of  cal  module  by  passing  10  and  7)
+print(m)  #How  to  call  mul()  function  of  cal  module  by  passing  10  and  7)
+b =c()
+b.m1()  # How  to  call  m1()  method  of  class  c1  in  cal  module
+print(add(10 , 7))
+b = c1()   #  error
+--------------------------------------------------------------------------------------------------------------
+
+ # mod1.py
+x = 10
+def  disp():
+	print('disp  function  of  mod1')
+class   c1:
+	def   m1(self):
+		print('m1  method  of  class  c1  in  mod1')
+
+
+'''
+What  are  the  members  of  mod1 ?   ---> Object  'x' , function  disp()  and  class  c1
+'''
+
+---------------------------------------------------------------------------------------------------------------
+ #mod2.py
+x = 20
+def   disp():
+	print('disp  function  of  mod2')
+class   c1:
+	def   m1(self):
+		print('m1  method of  class  c1  in  mod2')
+
+
+'''
+What  are  the  members  of  mod2 ? --->  Object  'x' ,  function  disp()  and  class  c1
+'''
+ mod1  and  mod2  are  not  homeworks
+
+---------------------------------------------------------------------------------------------------------------------
+# Find  outputs  (Home  work)
+x = 3
+def   disp():
+		print('disp  function  of  same  module ')
+class   c1:
+	def   m1(self):
+		print('m1  method of  class  c1  in  same  module')
+from  mod2  import   *
+from  mod1  import   *
+print(x)   #  10  from mod1 
+disp()    # disp() from mod1 because latest module will execute
+a = c1()     # calss of mod 1
+a . m1()
+
+---------------------------------------------------------------------------------------------------------------------------
+# Find outputs  (Home  work)
+from  mod1  import  *
+from  mod2  import  *
+x = 30
+def   disp():
+	print('disp  function  of  same  module ')
+class   c1:
+	def   m1(self):
+		print('m1  method of  class  c1  in  same  module')
+print(x)    # 30 from current module
+disp()   # disp() from current module
+a = c1()
+a . m1()   # c1 cls from current module
+---------------------------------------------------------------------------------------------------------------------------
+ # How  to  use  members  of  all  the  3  modules(mod1 , mod2  and  current  module)  with  import  statement ?
+import mod1 as m1  #How  to  import  mod1  and  mod2
+import mod2 as m2
+x = 30
+def   disp():
+		print('disp  function  of  same  module')
+class   c1:
+	def   m1(self):
+		print('m1  method of  class  c1  in  same  module')
+print(m1.x)  #How  to  print  variable  'x'  of  mod1
+print(m1.disp())   #How  to  call  disp()  function  of  mod1
+b1 = m1.c1()
+b1.m1()  #How  to  call  method  m1()  of  class   c1  in  mod1
+print()   #  emptyline
+
+print(m2.x)  #How  to  print  variable  'x'  of  mod2
+print(m2.disp())  # How  to  call  disp()  function  of  mod2
+b2 = m2.c1()  #
+b2.m1()  #How  to  call  method  m1()  of  class   c1  in  mod2
+print()  # emptyline
+
+print(x)  #How  to  print  variable  'x'  of  current  module)
+print(disp())  #How  to  call  disp()  function  of current  module
+b3 = c1()  #How  to  call  method  m1()  of  class   c1  in  current  module
+b3.m1()
+
+------------------------------------------------------------------------------------------------------------------------------
+
+# How  to  use  members  of  all  the  three  modules  with  from  statement ?
+from mod1 import x as x1, disp as disp1, c1 as c1_mod1  #How  to  import  members  of  mod1
+from mod2 import x as x2, disp as disp2, c1 as c2_mod2 #How  to  import  members  of  mod2
+x = 30
+def   disp():
+        print('disp  function  of  same  module')
+class  c1:
+	def   m1(self):
+		print('m1   method  of  class  c1  in  same  module')
+print(x1)  #How  to  print  variable  'x'  of  mod1)
+print(disp1())  #How  to  call  disp()  function  of  mod1
+b1 = c1_mod1()  #How  to  call  method  m1()  of  class   c1  in  mod1
+b1.m1()
+
+print() # emptyline
+print()
+print(x2)  #How  to  print  variable  'x'  of  mod2)
+print(disp2()  #How  to  call  disp()  function  of  mod2
+b2 = c2_mod2
+b2.m1()     #How  to  call  method  m1()  of  class   c1  in  mod2
+print()
+
+print(x)   #How  to  print  variable  'x'  of  current  module)
+print(disp())  #How  to  call  disp()  function  of current  module
+b = ca()  #How  to  call  method  m1()  of  class   c1  in  current  module
+b.m1() 
+----------------------------------------------------------------------------------------------------------------------------
+# mod1.py  (Home  work)
+#  How  to  prevent  execution  the  middle  3  statements  when  mod1  is  imported  elsewhere
+print('One')
+print('Two')
+print('Three')
+if --name__ ="__main__":
+    print('Four')
+    print('Five')
+    print('Six')
+print('Seven')
+print('Eight')
+print('Nine')
+
+
+'''
+py  mod1.py
+What  are  the  outputs ?  ---> Four
+                               Five
+                               Six
+'''
+-----------------------------------------------------------------------------------------------------------------------
+# Find  outputs (Home  work)
+print('Begining  of  mod2')
+import   mod1
+print('End  of  mod2')
+
+-----------------------------------------------------------------------------------------------
+#  cal . py
+__all__ =  ['add' , 'x'  , 'mul' , 'c1' , 'z']
+x = 100
+y = 200
+def  add(a , b):
+	return   a + b
+def	  sub(a , b):
+	return   a - b
+def	  mul(a , b):
+	return   a * b
+def	  div(a  ,  b):
+	return  a / b
+class   c1:
+	def  m1(self):
+		print('m1  method')
+from  cal  import  *
+print(x)
+print(y)
+print(add(10 , 7))
+print(sub(10 , 7))
+print(mul(10 , 7))
+print(div(10 , 7))
+a = c1()
+a . m1()
+
+
+
+'''
+__all__
+----------
+1) What  is   __all__ ?  ---> List  of  members  of  the  module  which  are  to  be  imported  when  *  is  used
+
+2) from  cal   import   *
+    Which  members  are  imported ?  ---> Those  members  which  are  in  __all__  list  of  cal  module
+
+3) What  happens  when  __all__  list  has  an  invalid  member ?  --->  from  module  import  *  throws  ImportError
+
+4) Where  is  __all__  list  defined  ?  ---> Inside  the  module  i.e.  Any  where  in  the  module
+
+5) from  cal   import   *
+    Which  members  are  imported  when  __all__  list  is  not  defined  in  cal  module ?  --->
+										All  the  members  are  imported  becoz  default  __all__  is   every  member  of  the  module
+
+6) from  cal   import   *
+    Which  members  are  imported  when  __all__  list  is  empty  in  cal  module ?  --->  No  member  is  imported
+
+7) from  cal  import   y , sub , mul
+    Which  members  are  imported ? ---> y , sub  and  mul  but  not  members  of  __all__  list
+
+8) __all__  list  plays  a  key  role  only  when  *  is  used  in  import  clause  of  from  statement
+
+9) import  module
+    Which  members  are  imported ?  ---> No  member  is  imported  becoz  import  statement  imports  module  but  not  members
+'''
+cal.py  is  not  a  homework
+--------------------------------------------------------------------------------------------------------------
+#  Find  outputs
+from  cal  import  *
+print(x)  # 100
+print(y)    # error
+print(add(10 , 7))   # 17
+print(sub(10 , 7))  # 3
+print(mul(10 , 7))  # 70
+print(div(10 , 7))  # 1.42
+a = c1()
+a . m1()
+
+---------------------------------------------------------------------------------------------------------------
+#  Find  outputs
+import  cal
+print(cal . x)     #  100
+print(cal . y)   # 200
+print(cal . add(10 , 7))  # 17
+print(cal . sub(10 , 7))   # 3
+print(cal . mul(10 , 7))  # 70
+print(cal . div(10 , 7)) # 1.42
+a = cal . c1()
+a . m1()
+
+--------------------------------------------------------------------------------------------------
+#  Find  outputs
+from  cal  import   y , sub , mul
+print(x)   # error x is not imported
+print(y)        #  200
+print(add(10 , 7))  # error
+print(sub(10 , 7))   # 3
+print(mul(10 , 7))  # 70
+print(div(10 , 7))  #error
+a = c1()        # error
+
+
+----------------------------------------------------------------------------------------------------
+# mod1.py  (Home  work)
+print('Hyd')  
+print('Sec')  
+print('Cyb')  
+#print('India')
+#print('USA')
+
+------------------------------------------------------------------------------
+
+mod1.py is  not  a  home  work
+# Find  outputs  (Home  work)
+import  mod1
+import  mod1
+import  mod1
+----------------------------------------------------------------------------------
+reload()  function  demo  program   (Home  work)
+import    importlib
+import  mod1
+print()
+importlib . reload(mod1)
+print()
+importlib . reload(mod1)
+importlib . reload('mod1')   # error
+reload(mod1)    # error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
