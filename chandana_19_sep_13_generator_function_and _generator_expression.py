@@ -193,7 +193,7 @@ print(next(g))
 #  Prove  that  there  is  no  waiting  time  for  generator
 from  timeit  import   timeit
 print(timeit('[x * x   for  x  in  range(500) ]')) # give approximate execution time of the statement but the statement is not executed
-print(timeit('( x * x   for  x  in  range(500) )')) # # give approximate execution time of the statement but the statement is not executed
+print(timeit('( x * x   for  x  in  range(500) )')) # give approximate execution time to create an empty generator.
 
 
 
