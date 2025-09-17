@@ -252,4 +252,5 @@ importlib . reload(mod1) #mod1 is loaded into the memory for 2nd time and execut
 print()
 importlib . reload(mod1)#mod1 is loaded into the memory for 3rd time and executed
 importlib . reload('mod1')#error, argument cannot be a string for reload function
-reload(mod1)#error ,there is function reload()
+reload(mod1)#error ,there is no function reload() in current module
+
