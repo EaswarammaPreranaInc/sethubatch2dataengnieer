@@ -1,0 +1,203 @@
+#  Find  outputs  (Home  work)
+a = "Rama Rao"
+print(a)    # Rama Rao
+print(type(a))  # <class 'str'>
+print(id(a))    # may be 2108310
+b = 'Hyd'
+print(b)        # Hyd
+c = '''Hyd is green city.
+Hyd is hitec city.
+Hyd is beautiful city.'''
+print(c) #Hyd is green city.
+        # Hyd is hitec city.
+        # Hyd is beautiful city.
+
+
+# Index   demo  program  (Home  work)
+a = 'Hyd'
+print(How  to  print  'H'  of  object  'a')   #print(a[0])
+print(How  to  print  'y'  of  object  'a')   # print(a[1]) 
+print(How  to  print  'd'  of  object  'a')     #print(a[2])
+print(a[3]) # error
+print(How  to  print  'd'  of  object  'a')     # print(a[-1])
+print(How  to  print  'y'  of  object  'a')     #print(a[-2])
+print(How  to  print  'H'  of  object  'a')     #print(a[-3])
+print(a[-4])    # error
+print(a[0] ==  a[-3])   # True
+a[2] = 'c'      
+print(25[0])       #error due to 'int'
+print('25'[0])      # 2
+print(True[1])     # error due to 'bool'
+print('True'[1])    # r
+
+
+
+#  Find  outputs  (Home work)
+a = 'Hyd'
+print(a * 3)    # HydHydHyd
+print(a * 2)    # HydHyd
+print(a * 1)    # Hyd
+print(a * 0)    # empty ''
+print(a * -1)   # empty ''
+print(25 * 3)   # 75
+print('25' * 3) # 252525
+#print('25' * 4.0)   # error due to 'float'
+print(3 * 'Hyd')    # HydHydHyd
+print('25' * True)  # 25
+
+
+#  Find  outputs  (Home work)
+a = 'Hyd'
+print(a , id(a))    # Hyd 2134576
+a = a * 3
+print(a , id(a))    # HydHydHyd 12345098
+
+
+# len()  function  (Home  work)
+print(len('Hyd'))       # 3
+print(len('Rama Rao'))  # 8
+print(len('9247'))  # 4
+print(len(''))  # 0
+print(len(' ')) # 1
+print(len(689)) # error due to 'int'
+
+
+# Find  outputs  (Home  work)
+a = """"Hyd"""
+print(a)    #Error 
+print(len(a))   # 4
+print(a[0]) # "
+print("""Hyd"""")  # error
+b = """""Hyd"""
+print(b)    # ""Hyd
+print(len(b))   # 5
+
+
+
+# Find  outputs
+a = 'Sankar Dayal Sarma'
+print(a[7 : 12])    # Dayal
+print(a[7 : ])  #Dayal Sarma
+print(a[ : 6])  #Sankar
+print(a[ : ])  #  a[ 0 :  18  : 1]  --->   string  from  indexes  0  to  17  in  steps  of   1  i.e.  Sankar<space>Dayal<space>Sarma
+print(a[:  : ]) # Sankar Dayal Sarma
+print(a[1 : 10 : 2])    # akrdy
+print(a[0 : : 2])       #sna aa am
+print(a[1 : : 2])   # akrDylsra
+print(a[-5 : -1])   # Sarm
+print(a[::-1])  #amraS layaD raknaS
+print(a[-1:-5:-1])  # amra
+print(a[ : : -2]) #   a[-1 :  -19 : -2]  --->  string  from  indexes  -1  to  -18  in  steps  of   -2  i.e.  arSlyDrka
+print(a[3 : -3])    #kar Dayal Sa
+print(a[2 : -5])    #nkar Dayal 
+print(a[-1:-5])     # ''
+print(a[3 : 3])     # ''
+
+
+#  Find  outputs  (Home  work)
+a =  'A'
+#print(a[1]) # error
+print(a[1:])    # ''
+
+
+# int()  function  demo  program
+print(int(10.8))  #  Converts  float   object  10.8  to  int  object  10
+print(int(True))  #  Converts  bool   object    True  to  int  object 1
+print(int(False))   # Converts  bool   object    Flase  to  int  object 0
+print(int('25'))  # converts string object '25' to int object 25
+print(int('0075')) #75
+print(int(0B11010)) # 26
+print(0B11010)  #26
+print(int(0O6247))  # 3239
+print(0O6247)    # 3239
+print(int(0XA7B9))  # 42937
+print(0XA7B9)   # 42937
+print(int(3 + 4j))  # error due to complex
+print(int('25.4'))  # Error 
+print(int('Ten'))   # error
+
+
+
+
+# float()  function  demo  program
+print(float(25))  #  Converts  int  object  25  to  float  object   25.0
+print(float(True))   #  Converts  bool  object   True   to  float  object   1.0
+print(float(False)) # 0.0
+print(float('92'))  # 92.0
+print(float('36.4')) #36.4
+print(float('0075'))    #75.0
+print(float(0B1010101)) # 85.0
+print(float(0O6247))    # 3239.0
+print(float(0XA7B9))    # 42937.0
+print(float(3 + 4j))    # error due to complex
+print(float('Ten'))     #error due to str
+
+
+
+# complex()  function  demo  program
+print(complex(3 , 4))   # (3+4j)
+print(complex(0 , 4))   #  4j
+print(complex(3))   #(3+0j)
+print(complex(3.8 , 4.6))   # (3.8+4.6j)
+print(complex(3.8)) #(3.8+0j)
+print(complex(3 , 4.5)) # (3+4.5j)
+print(complex(True , False)) # (1+0j)
+print(complex(True))    # (1+0j)
+print(complex(False))   #0j
+print(complex(True , 4))    # (1+4j)
+print(complex('3')) #(3+0j)
+print(complex('3.8'))   #(3.8+0j)
+print(complex(3 , '4')) # error due to 'str'
+print(complex('3' , 4)) # error due to second arg
+print(complex('3' , '4')) # error due to second arg
+print(complex('Ten'))   # error
+
+
+#  bool()  function  demo  program
+print(bool(0))  # False
+print(bool(10))     # True :  10  is  non-zero
+print(bool(-25))    # True
+print(bool(-25))    # True
+print(bool(-25))    # True
+print(bool(0.0))    #True
+print(bool(0.1))    #False
+print(bool(0 + 0j)) #True
+print(bool(10 + 20j))#True
+print(bool(-15j)) # False
+print(bool('False')) # True
+print(bool('')) # False
+print(bool('Hyd'))  # True
+print(bool(' ')) # True
+print(bool('True'))# True
+
+# str()  function  demo  program
+print(str(25))  #  Converts   25  to  '25'
+print(str(10.8)) # 10.8
+print(str(3 + 4j)) # (3+4j)
+print(str(True))# True
+print(str(False))#False
+print(str(None)) # None
+
+
+# oct()  function  demo  program
+print(oct(195)) #0o303
+print(oct(0B10101110010)) # 0o2562
+print(oct(0xA7B9))	# 0o123671
+'''
+oct()  function
+-----------------
+1) What  does  oct(x)  do ?  --->  Converts  object  'x'  to  octal  number  where
+								                    'x'  can  be  binary / decimal / hexa-decimal  number'''
+
+# hex()  function  demo  program
+print(hex(25)) #0x19
+print(hex(0B10101111010111)) #(11223)0x2bd7
+print(hex(0O6247)) # (3239) 0xca7
+
+'''
+hex()  function
+------------------
+1) What  does  hex(x)  do ?  --->  Converts  object  'x'  to  hexa-decimal  number  where
+								                     'x'  can  be  binary / decimal / octal  number'''
+
+
