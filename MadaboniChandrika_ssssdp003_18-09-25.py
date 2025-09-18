@@ -1,4 +1,4 @@
-'''def  add(a , b):
+def  add(a , b):
 	return  a + b
 def  sub(a , b):
 	return  a - b
@@ -127,7 +127,7 @@ for _ in range(10):
 import random
 list=input('enter any list:')
 for _ in range(10):
-    print(random.choice(list))'''
+    print(random.choice(list))
 
 
 #14th program(rock paper scissor game)
@@ -150,6 +150,7 @@ if (user_choice=='rock' and computer_choice=='scissor') or (user_choice=='paper'
         print('you win')
 else:
      print('computer win ')
+
 
 
 
