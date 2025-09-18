@@ -1,0 +1,138 @@
+
+
+def words(s):
+    for w in s.split():
+        yield w
+for w in words("Hyd is green city"):
+    print(w)
+# OUTPUT:
+# Hyd
+# is
+# green
+# city
+
+
+def f1():
+    yield [10, 20]
+    yield {30, 40, 50}
+    yield 60, 70, 80, 90
+    yield 100
+g = f1()
+for x in g:
+    print(x)
+    print(type(x))
+# OUTPUT:
+# [10, 20]
+# <class 'list'>
+# {40, 50, 30}
+# <class 'set'>
+# (60, 70, 80, 90)
+# <class 'tuple'>
+# 100
+# <class 'int'>
+
+
+def f1():
+    x = 1
+    while x <= 100000000000000000000:
+        yield x
+        x += 1
+g = f1()
+print('Begin')
+print(*g)
+print('End')
+# OUTPUT:
+# Begin
+# (prints numbers 1 ... 100000000000000000000 →  infinite loop)
+
+
+g = (x * x for x in range(500000000000000000))
+print(*g)
+# OUTPUT:
+# (prints squares 0, 1, 4, 9, ... up to 500000000000000000**2 → infinite)
+
+
+def f1(begin, end):
+    while begin <= end:
+        print('Hello')
+        yield begin
+        begin += 1
+    print('End of generator')
+g = f1(10, 20)
+print('Before')
+print(list(g))
+print('After')
+print(next(g))
+# OUTPUT:
+# Before
+# Hello
+# Hello
+# ...
+# Hello   (11 times)
+# End of generator
+# [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# After
+# error 
+
+
+# Q18
+def f1():
+    print('One')
+    yield 1
+    print('Two')
+    yield 2
+    print('Three')
+    yield 3
+    print('End')
+g = f1()
+for m in g:
+    print(m)
+x, y, z = f1()
+print(x)
+print(y)
+print(z)
+# OUTPUT:
+# One
+# 1
+# Two
+# 2
+# Three
+# 3
+# End
+# One
+# 1
+# Two
+# 2
+# Three
+# 3
+# End
+# 1
+# 2
+# 3
+
+
+# Q19 → Identify error
+def f1():
+    yield 10
+    yield 20
+    yield 30
+    yield 40
+a, b, c = f1()         # error 
+p, q, r, s, m = f1()   # error 
+# OUTPUT:
+# error
+
+
+# Q20
+def f1():
+    yield 1
+    yield 2
+    yield 3
+g = f1()
+print(len(g))
+print(g * 3)
+print(g[0])
+print(g[1:3])
+print(*g)
+# OUTPUT:
+# error 
