@@ -186,11 +186,11 @@ End  of  mod2
 #  Find  outputs
 from  cal  import  *
 print(x)    # 100
-print(y)    # 200
+print(y)    # error as y is not there in __all__
 print(add(10 , 7))  # 17
-print(sub(10 , 7))  # 3
+print(sub(10 , 7))  # error as sub is not there in __all__
 print(mul(10 , 7))  # 70
-print(div(10 , 7))  # 1.428
+print(div(10 , 7))  # error as div is not there in __all__
 a = c1()
 a . m1()  # m1  method
 
@@ -249,4 +249,5 @@ Hyd
 Sec
 Cyb
 '''
+
 
