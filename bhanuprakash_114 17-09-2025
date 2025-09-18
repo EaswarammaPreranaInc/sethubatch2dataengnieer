@@ -1,0 +1,145 @@
+#  How  to  reuse  mod2  ?  (Home  work)
+print('Hello')
+How  to  import  mod2
+print(How  to  print   variable  'x'   of  mod2)
+How  to  call  function  f1()  of  mod2
+print('Bye')
+import  mod4
+print(x)print('Hello')
+
+import mod2
+print(mod2.x)
+mod2.f1()
+
+print('Bye')
+
+import mod4
+print(mod4.x)
+mod4.f1()
+
+f1()
+print('Hello')
+
+import mod2
+print(mod2.x)
+mod2.f1()
+
+print('Bye')
+
+import mod4
+print(mod4.x)
+mod4.f1()
+
+# Find  outputs  (Home  work)
+x = 30
+def   disp():
+		print('disp  function  of  same  module ')
+class   c1:
+	def   m1(self):
+		print('m1  method of  class  c1  in  same  module')
+from  mod2  import   *
+from  mod1  import   *
+print(x)
+disp()
+a = c1()
+a . m1()
+30
+disp  function  of  same  module 
+m1  method of  class  c1  in  same  module
+# mod1.py  (Home  work)
+#  How  to  prevent  execution  the  middle  3  statements  when  mod1  is  imported  elsewhere
+print('One')
+print('Two')
+print('Three')
+print('Four')
+print('Five')
+print('Six')
+print('Seven')
+print('Eight')
+print('Nine')
+the output....
+One
+Two
+Three
+Four
+Five
+Six
+Seven
+Eight
+Nine
+print('Begining  of  mod2')
+import mod1
+print('End  of  mod2')
+Begining  of  mod2
+One
+Two
+Three
+Seven
+Eight
+Nine
+End  of  mod2
+#  cal . py
+__all__ =  ['add' , 'x'  , 'mul' , 'c1' , 'z']
+x = 100
+y = 200
+def  add(a , b):
+	return   a + b
+def	  sub(a , b):
+	return   a - b
+def	  mul(a , b):
+	return   a * b
+def	  div(a  ,  b):
+	return  a / b
+class   c1:
+	def  m1(self):
+		print('m1  method')
+
+
+'''
+__all__
+----------
+1) What  is   __all__ ?  ---> List  of  members  of  the  module  which  are  to  be  imported  when  *  is  used
+
+2) from  cal   import   *
+    Which  members  are  imported ?  ---> Those  members  which  are  in  __all__  list  of  cal  module
+
+3) What  happens  when  __all__  list  has  an  invalid  member ?  --->  from  module  import  *  throws  ImportError
+
+4) Where  is  __all__  list  defined  ?  ---> Inside  the  module  i.e.  Any  where  in  the  module
+
+5) from  cal   import   *
+    Which  members  are  imported  when  __all__  list  is  not  defined  in  cal  module ?  --->
+										All  the  members  are  imported  becoz  default  __all__  is   every  member  of  the  module
+
+6) from  cal   import   *
+    Which  members  are  imported  when  __all__  list  is  empty  in  cal  module ?  --->  No  member  is  imported
+
+7) from  cal  import   y , sub , mul
+    Which  members  are  imported ? ---> y , sub  and  mul  but  not  members  of  __all__  list
+
+8) __all__  list  plays  a  key  role  only  when  *  is  used  in  import  clause  of  from  statement
+
+9) import  module
+    Which  members  are  imported ?  ---> No  member  is  imported  becoz  import  statement  imports  module  but  not  members
+'''
+__all__ = ['add', 'x', 'mul', 'c1', 'z']  # List of members exposed by "from cal import *"
+x = 100
+y = 200
+
+def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+
+class c1:
+    def m1(self):
+        print('m1 method')
+
+
