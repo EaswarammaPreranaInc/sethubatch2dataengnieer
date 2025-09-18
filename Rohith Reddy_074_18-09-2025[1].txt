@@ -1,0 +1,405 @@
+# cal.py
+def  add(a , b):
+	return  a + b
+def  sub(a , b):
+	return  a - b
+def  mul(a , b):
+	return  a * b
+def  div(a , b):
+	return  a / b
+class    c1:
+	def    m1(self):
+		pass
+#End  of  the  class
+x = 100
+y = 200
+if  __name__ ==  '__main__':
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+
+
+'''
+1) What  is  the  module  name ?  --->  cal
+
+2) py  cal.py
+    What  is  the  value  of  __name__ ?  ---> '__main__'
+    What  are  the  outputs ?  --->  Hyd ,  Sec  and  Cyb  becoz  if  condition  is  True
+
+3) import  cal
+    What  is  the  value  of  __name__ ?  ---> The  imported  module  name  i.e. 'cal'
+	What  are  the  outputs ?  ---> Nothing  becoz  if  condition  is   False
+'''
+Hyd
+Sec
+Cyb
+"\n1) What  is  the  module  name ?  --->  cal\n\n2) py  cal.py\n   
+ What  is  the  value  of  __name__ ?  ---> '__main__'\n  
+  What  are  the  outputs ?  --->  Hyd ,  Sec  and  Cyb  becoz  if  condition  is  True\n\n3) import  cal\n   
+ What  is  the  value  of  __name__ ?  ---> The  imported  module  name  i.e. 'cal'\n\t
+What  are  the  outputs ?  ---> Nothing  becoz  if  condition  is   False\n"
+
+
+
+
+
+
+
+#  Find  outputs  (Home  work)
+import  sys , time , math
+print(dir(sys)) # returns members and environment variables of sys module
+print()
+print()
+print(dir(time))  # returns members and environment variables of sys module
+print()
+print(dir(math)) # returns members and environment variables of sys module 
+#  Find  outputs  (Home  work)
+import  cal
+print(dir(cal)) # cal and members of cal module(add,sub,mul,div,x,y) and __name__
+#  Find  outputs  (Home  work)
+x = 25
+def  disp():
+	print('Hello')
+class  c1:
+        def  m1(self):
+                pass
+print(dir())    # environment variables
+print(type(dir()))      # <class list>
+print(type(dir))        # <class buitin_method_function>
+
+
+
+
+'''
+Write  a  program  to  print  all  the  members  of  cal  module  without  environment  variables
+
+1) What  is  the  result  of  '__name__' . startswith('__')  ?  ---> True
+
+2) What  is  the  result  of  '__spec__' . endswith('__')  ?  --->  True
+
+3) What  is  the  result  of  'spec__' . startswith('__')  ?  ---> False
+
+4) a = []
+    Append  all  the  elements  of  list  returned  by  dir()  function  to  list  'a'  except  environment  variables
+'''
+import cal
+a=[]
+for name in dir(cal):
+    if not (name.startswith("__") and name.endswith("__")):
+        a.append(name)
+print("members of a cal module:",a)
+
+
+
+
+
+
+#  Find  outputs
+print(dir())    # environment variables
+print()
+import  cal 
+print()
+print(dir())   # environment variables and cal module
+
+
+
+
+#  Find  outputs
+print(dir())    # environment variables
+print()
+from  cal  import  *
+print()
+print(dir())    # environment variables and members-x,y,add,sub,mul,div,c1
+
+
+
+
+#  Find  outputs
+print(dir())    # environment variables
+print()
+from  cal  import  add , mul , x
+print()
+print(dir())    # environment variables and add,mul,x
+
+
+
+
+
+# sys . path  demo   program
+import  sys
+print('Original  sys.path')
+for  x  in   sys . path:
+	print(x)		# prints cwd, 5 standard directories
+print(len(sys . path))	# length of sys.path
+#import  cal
+
+
+
+
+
+''' 
+original sys.path
+'''
+# Store  sample.py  module  in  c:\\sairam  folder  before  the  program  is  executed  (Home  work)
+print(len(sys.path)) #How  to  print  number  of  directories  (or)  folders  in  sys.path
+sys.path.append('c:\\sairam') #How  to  append  c:\sairam  folder  to  sys.path
+print(len(sys.path)) #How  to  print  number  of  directories  (or)  folders  in  sys.path
+import sample
+print(sample.x) #How  to  print  object  'x'  of  sample   module  which  is  in  c:\sairam  folder
+print(sample.f1()) #How  to  call   function  f1()  of  sample  module  which  is  in  c:\sairam  folder
+a=sample.c1() #How  to  call   method  m1()  of  class  c1  of  sample  module  which  is  in  c:\sairam  folder
+a.m1()
+from  random  import  *
+print(random()) # generates random numbers from 0 to 1 in float exclude 0 and 1(may be 0.3,0.5)
+print(randint(1 , 100)) # generate random integer numbers from 1 to 100(both are inclusive)
+print(uniform(1 , 100)) #generate random float numbers from 1 to 100(both are exclusive)
+print(randrange(10))    # genarate random numbers from 0 to 10(x is exclusive)-may be 3 
+print(randrange(1 , 11)) # genarate random numbers from 0 to 11(y is exclusive)-may be 6
+print(randrange(1 , 11 , 2))  #genarate random numbers from 0 to 11 in steps of 2-- may be 4
+list = [10 , 20 , 15 , 12 , 18]
+print(choice(list)) #gives any value from list- may be 15 
+print(choice('RAJESH')) # gives any char from string--may be 'A'
+set  =  {10 , 20 , 30 , 40}
+print(choice(set))  # error
+
+
+
+
+
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)
+''' 
+Enter  any  string :  Rama Rao
+R
+
+a
+R
+R
+a
+R
+R
+m
+'''
+import random
+st=input('Enter any string: ')
+for i in range(10):
+    a=random.choice(st)
+    print(a)
+a
+o
+R
+ 
+a
+R
+a
+m
+R
+o
+
+
+
+
+
+
+
+'''Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits
+
+U7U2X8
+V9I6X8
+G4M8S2
+M4U3C3
+I7K2B8
+F0E9Q1
+Y8H8L7
+K1U5S0
+W7G0J3
+Y9B9J6'''
+import random
+for k in range(10):
+    psw=''
+    for i in range(6):
+        if i%2==0:
+            psw+=chr(random.randint(65,90))
+        else:
+            psw+=str(random.randint(0,9))
+    print('password: ',psw)
+password:  Q3V5W4
+password:  B5B4I1
+password:  V4R9X9
+password:  J2A9Q8
+password:  D6B8Y7
+password:  J7R7C5
+password:  U6I7Q4
+password:  O1X4P9
+password:  T1R1O6
+password:  A3M0B7
+
+
+
+
+
+
+# Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
+''' 
+Enter a List : [25,10.8,'Hyd',True,3+4j,None]
+True
+Hyd
+Hyd
+None
+Hyd
+(3+4j)
+None
+True
+25
+10.8
+
+
+
+
+
+
+'''
+import random
+list=eval(input('Enter any list: '))
+for i in range(10):
+    print(random.choice(list))
+True
+Hyd
+25
+25
+10.8
+None
+10.8
+Hyd
+Hyd
+Hyd
+
+
+
+
+
+
+
+# Write  a  program  to  generate  ten  six-digit  OTP's  (Home  work)
+''' 
+700690
+664735
+472299
+820818
+886311
+912752
+323114
+971162
+930848
+404338'''
+import random
+for i in range(10):
+    otp=''
+    for k in range(6):
+        otp+=str(random.randint(0,9))
+    print('otp :',otp)
+otp : 717042
+otp : 613130
+otp : 578628
+otp : 976483
+otp : 925999
+otp : 579453
+otp : 154097
+otp : 913502
+otp : 030567
+otp : 886548
+
+
+
+
+
+
+
+'''
+Write  a  program to  open  any  website  from  gmail ,  google ,  rediff ,  ...   with  a  time  gap  of  5  to  20   sec
+
+1) What  does  open('http://google.com')  do ?  ---> Opens  google.com  website
+
+2) Where  is  open()  function  defined  ?  ---> In  webbrowser  module
+
+3) list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+
+4) Provide  a  time  gap  of  5  to  20 sec  between  the  websites
+'''
+import webbrowser
+import time
+import random
+#list=eval(input('Enter any website links: '))
+list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+for i in list:
+    webbrowser.open("http://"+i)
+    time.sleep(random.randint(5,20))
+
+
+
+
+
+
+
+'''
+(Home  work)
+Write  a  program  to  implement  Rock , paper  and  scissors  game  between  user  and  computer
+
+1) What  is  the  result  if  user  input  and  computer  random  number  are  same  ?  ---> Draw
+
+2) What  is  the  result  if  computer  selects  paper  and  user  input  is  rock ?  --->
+																												Computer  wins  becoz  parer  dominates  rock
+
+3) What  is  the  result  if  computer  selects  scissors  and  user  input  is  paper ?  --->
+																										Computer  wins  becoz  scissors  dominates  paper
+
+4) What  is  the  result  if  computer  selects  rock  and  user  input  is  scissors ?  --->
+																										Computer  wins  becoz  rock  dominates  scissors
+
+5) What  is  the  result  in  all  other  cases  ?  --->  User  wins
+'''
+'''What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
+User  :   Paper
+Computer  :   Rock
+User  wins
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  2
+User  :   Scissors
+Computer  :   Scissors
+Draw
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  0
+User  :   Rock
+Computer  :   Rock
+Draw
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
+User  :   Paper
+Computer  :   Scissors
+Computer  wins
+Continue  (  y / n)  ?  n
+End  of  the  game'''
+import random
+
+
+
+choices=['Rock','Paper','Scissors']
+while True:
+	n=int(input('What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :'))
+	user=choices[n]
+	computer=choices[random.randint(0,2)]
+	if user==computer:
+		print('Draw')
+	elif (computer=='Paper' and user=='Rock') or (computer == 'Scissors' and user == 'Paper') or (computer == 'Rock' and user == 'Scissors'):
+		print('Computer wins')
+	else:
+		print('User wins')
+	c=input("continue (y/n)? ").lower()
+	if c!='y':
+		print('End of the game')
+		break
+Draw
+Draw
+User wins
+Computer wins
+End of the game
