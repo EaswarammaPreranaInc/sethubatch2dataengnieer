@@ -1,0 +1,365 @@
+#  Find  outputs  (Home  work)
+import  sys , time , math
+print(dir(sys)) # till['_displayhook', 'doc', 'loader', 'name', 'package_',
+ '_spec_', 'argv', 'builtin_module_names', 'byteorder', 'exc_info',
+ 'exit', 'getdefaultencoding', 'getsizeof', 'maxsize', 'path', 'platform',
+ 'stdin', 'stdout', 'stderr', 'version', 'version_info', ...]
+print()
+print()
+print(dir(time)) # ['_doc', 'loader', 'name', 'package', 'spec_',
+ 'altzone', 'asctime', 'ctime', 'gmtime', 'localtime', 'mktime',
+ 'sleep', 'strftime', 'strptime', 'time', 'timezone', 'tzname']
+print()
+print(dir(math)) # ['_doc', 'loader', 'name', 'package', 'spec_',
+ 'acos', 'asin', 'atan', 'ceil', 'cos', 'degrees', 'e', 'exp', 'fabs',
+ 'factorial', 'floor', 'gcd', 'hypot', 'inf', 'isnan', 'log', 'log10',
+ 'pi', 'pow', 'radians', 'sin', 'sqrt', 'tan', 'tau', 'trunc']
+
+
+ #  Find  outputs  (Home  work)
+import  cal
+print(dir(cal)) # ['_builtins', 'cached', 'doc', 'file_',
+ '_loader', 'name', 'package', 'spec_', 'add', 'sub', 'x']
+
+
+#  Find  outputs  (Home  work)
+x = 25
+def  disp():
+	print('Hello')
+class  c1:
+        def  m1(self):
+                pass
+print(dir()) # ['_annotations', 'builtins', 'doc', 'loader_', 
+ '_name', 'package', 'spec_', 'c1', 'disp', 'x']
+print(type(dir())) # <class 'list'>
+print(type(dir)) # <class 'builtin_function_or_method'>
+
+
+'''
+Write  a  program  to  print  all  the  members  of  cal  module  without  environment  variables
+
+1) What  is  the  result  of  '_name' . startswith('_')  ?  ---> True
+
+2) What  is  the  result  of  '_spec' . endswith('_')  ?  --->  True
+
+3) What  is  the  result  of  'spec_' . startswith('_')  ?  ---> False
+
+4) a = []
+    Append  all  the  elements  of  list  returned  by  dir()  function  to  list  'a'  except  environment  variables
+'''
+
+
+import cal
+a = []
+
+for name in dir(cal):
+     
+    if not (name.startswith("") and name.endswith("")):
+        print(name)      
+        a.append(name)  
+
+print("Final list without environment variables:", a)
+
+
+add
+sub
+x
+Final list without environment variables: ['add', 'sub', 'x']
+
+
+#  Find  outputs
+print(dir())
+print()  # ['_annotations', 'builtins', 'doc', 'loader_', 
+ '_name', 'package', 'spec_']
+import  cal
+print() 
+print(dir()) # ['_annotations', 'builtins', 'doc', 'loader_', 
+ '_name', 'package', 'spec_', 'cal']
+
+
+#  Find  outputs
+print(dir())
+print() # ['_annotations', 'builtins', 'doc', 'loader_',
+ '_name', 'package', 'spec_', 'add', 'sub', 'x']
+from  cal  import  *
+print()
+print(dir()) # ['_annotations', 'builtins', 'doc', 'loader_',
+ '_name', 'package', 'spec_', 'add', 'sub', 'x']
+
+
+#  Find  outputs
+print(dir())
+print() # ['_annotations', 'builtins', 'doc', 'loader_',
+ '_name', 'package', 'spec_']
+from  cal  import  add , mul , x
+print() 
+print(dir()) # ['_annotations', 'builtins', 'doc', 'loader_',
+ '_name', 'package', 'spec_', 'add', 'mul', 'x']
+
+
+# sys . path  demo   program
+import  sys
+print('Original  sys.path') # Original  sys.path
+for  x  in   sys . path:
+	print(x)Original sys.path
+/home/user/myproject      
+/usr/lib/python311.zip
+/usr/lib/python3.11
+/usr/lib/python3.11/lib-dynload
+/usr/local/lib/python3.11/dist-packages
+/usr/lib/python3/dist-packages
+print(len(sys . path)) # 6
+#import  cal
+
+
+# Store  sample.py  module  in  c:\\sairam  folder  before  the  program  is  executed  (Home  work)
+How  to  print  number  of  directories  (or)  folders  in  sys.path
+How  to  append  c:\sairam  folder  to  sys.path
+How  to  print  number  of  directories  (or)  folders  in  sys.path
+How  to  print  object  'x'  of  sample   module  which  is  in  c:\sairam  folder
+How  to  call   function  f1()  of  sample  module  which  is  in  c:\sairam  folder
+How  to  call   method  m1()  of  class  c1  of  sample  module  which  is  in  c:\sairam  folder
+
+
+import sys
+
+print("Number of directories before append:", len(sys.path))
+
+sys.path.append("c:\\sairam")
+
+print("Number of directories after append:", len(sys.path))
+
+import sample
+
+print("x =", sample.x)
+
+sample.f1()
+
+obj = sample.c1()
+obj.m1()
+
+
+
+Number of directories before append: 6
+Number of directories after append: 7
+x = 100
+Hello from f1
+Hello from m1
+
+
+from  random  import  *
+print(random())  # 0.7264
+print(randint(1 , 100))  # 57
+print(uniform(1 , 100))  # 48.3627
+print(randrange(10))  # 7
+print(randrange(1 , 11))  # 4
+print(randrange(1 , 11 , 2))  # 5
+list = [10 , 20 , 15 , 12 , 18]
+print(choice(list)) # 20
+print(choice('RAJESH'))  # J
+set  =  {10 , 20 , 30 , 40}
+print(choice(set))  # Error
+
+
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)
+
+from random import choice
+
+s = "RamaRao"   # you can replace with any string
+
+for i in range(10):
+    print(choice(s))
+
+Enter  any  string :  Rama Rao
+R
+
+a
+R
+R
+a
+R
+R
+m
+
+
+Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits
+
+
+import random
+import string
+
+letters = string.ascii_letters   
+digits = string.digits           
+
+for _ in range(10):   
+    password = ""
+    for pos in range(1, 7):  
+        if pos % 2 == 1:   
+            password += random.choice(letters)
+        else:                 
+            password += random.choice(digits)
+    print(password)
+
+
+U7U2X8
+V9I6X8
+G4M8S2
+M4U3C3
+I7K2B8
+F0E9Q1
+Y8H8L7
+K1U5S0
+W7G0J3
+Y9B9J6
+
+
+# Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
+
+from random import choice
+
+lst = [25,10.8,'Hyd',True,3+4j, None]
+for i in range(10):
+    print(choice(lst))
+
+
+Enter a List : [25,10.8,'Hyd',True,3+4j,None]
+True
+Hyd
+Hyd
+None
+Hyd
+(3+4j)
+None
+True
+25
+10.8
+
+
+# Write  a  program  to  generate  ten  six-digit  OTP's  (Home  work)
+
+import random
+
+for i in range(10):   
+    otp = random.randint(100000, 999999)  
+    print(otp)
+
+492813
+650271
+138904
+754320
+219587
+832065
+409821
+995312
+174608
+567204d
+
+
+'''
+Write  a  program to  open  any  website  from  gmail ,  google ,  rediff ,  ...   with  a  time  gap  of  5  to  20   sec
+
+1) What  does  open('http://google.com')  do ?  ---> Opens  google.com  website
+
+2) Where  is  open()  function  defined  ?  ---> In  webbrowser  module
+
+3) list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+
+4) Provide  a  time  gap  of  5  to  20 sec  between  the  websites
+'''
+
+
+import webbrowser
+import time
+import random
+
+sites = ['google.com', 'rediff.com', 'gmail.com', 'amazon.com', 'netflix.com']
+
+def ensure_http(url):
+    if not url.startswith(('http://', 'https://')):
+        return 'http://' + url
+    return url
+
+try:
+    for site in sites:
+        url = ensure_http(site)
+        print(f"Opening: {url}  (time: {time.strftime('%H:%M:%S')})")
+        webbrowser.open(url, new=2)   
+
+        gap = random.uniform(5, 20)
+        print(f"Waiting {gap:.2f} seconds before next site...\n")
+        time.sleep(gap)
+
+    print("Done opening all sites.")
+except KeyboardInterrupt:
+    print("\nStopped by user.")
+
+
+
+'''
+(Home  work)
+Write  a  program  to  implement  Rock , paper  and  scissors  game  between  user  and  computer
+
+1) What  is  the  result  if  user  input  and  computer  random  number  are  same  ?  ---> Draw
+
+2) What  is  the  result  if  computer  selects  paper  and  user  input  is  rock ?  --->
+																												Computer  wins  becoz  parer  dominates  rock
+
+3) What  is  the  result  if  computer  selects  scissors  and  user  input  is  paper ?  --->
+																										Computer  wins  becoz  scissors  dominates  paper
+
+4) What  is  the  result  if  computer  selects  rock  and  user  input  is  scissors ?  --->
+																										Computer  wins  becoz  rock  dominates  scissors
+
+5) What  is  the  result  in  all  other  cases  ?  --->  User  wins
+'''
+
+
+import random
+
+print("Rock, Paper, Scissors Game")
+print("--------------------------")
+
+choices = ["rock", "paper", "scissors"]
+
+
+user = input("Enter your choice (rock/paper/scissors): ").lower()
+
+computer = random.choice(choices)
+
+print(f"\nYou chose: {user}")
+print(f"Computer chose: {computer}\n")
+
+if user == computer:
+    print("Result: Draw")
+elif (computer == "paper" and user == "rock") \
+     or (computer == "scissors" and user == "paper") \
+     or (computer == "rock" and user == "scissors"):
+    print("Result: Computer wins!")
+else:
+    print("Result: You win!")
+
+
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
+User  :   Paper
+Computer  :   Rock
+User  wins
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  2
+User  :   Scissors
+Computer  :   Scissors
+Draw
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  0
+User  :   Rock
+Computer  :   Rock
+Draw
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
+User  :   Paper
+Computer  :   Scissors
+Computer  wins
+Continue  (  y / n)  ?  n
+End  of  the  game
+
+\
