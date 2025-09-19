@@ -1,0 +1,173 @@
+SELECT NOW();   # timestamp
+SELECT current_time();
+create database dates
+use dates;
+
+select CURDATE();    # DATE
+SELECT CURTIME();    #  TIME
+#  2 Display each employee’s hire year, month number, and month name.
+create table employees(emp_no int,birth_date date ,first_name varchar(200),last_name varchar(200),gender char(1),hire_date date,dept_no int);
+INSERT INTO employees (emp_no, birth_date, first_name, last_name, gender, hire_date, dept_no)
+VALUES
+(102, '1992-03-10', 'Anita', 'Shah', 'F', '2021-06-01', 2),
+(103, '1991-07-15', 'John', 'Doe', 'M', '2022-08-01', 1),
+(104, '1993-11-25', 'Meera', 'Patel', 'F', '2023-01-10', 4);
+
+select hire_date,
+month(hire_date) as month_number,
+monthname(hire_date) as month_name
+from employees;
+
+# Find which quarter each employee was hired in.
+select hire_date ,
+quarter(hire_date) as quartr from employees;
+#4 Display hire dates with their corresponding week numbers.
+select hire_date,
+week(hire_date) as in_week
+from employees;
+
+#5 Show the 200th day of the year 2025 using MAKEDATE.
+
+SELECT MAKEDATE(2025, 200) AS day_200;
+
+#6 Create a time value '09:15:00' using MAKETIME.
+select maketime(9,15,0) as time_value;
+
+select maketime(9,11,0) as time_value;
+#7 Find out the difference in time between '14:45:00' and '09:30:00'.
+select timediff('14:45:00', '09:30:00');
+
+#8 Convert '15/08/2025' into a proper date using STR_TO_DATE.
+select  str_to_date('15/08/2025','%d/%m/%y') as str_todate;
+
+#9 Show employee hire date and extract day, month, year separately.
+
+select hire_date,
+day(hire_date),
+month(hire_date),
+year(hire_date)
+from employees;
+#10 Find employees hired in the month of January.
+select first_name from employees where month(hire_date )=1;
+
+#string functions
+
+#1 Concatenate first name and last name into one column.
+select concat(first_name ,' ' ,last_name)as name from employees;
+
+#2 Display first 3 characters of last name.
+
+select left(last_name ,3) as lastname from employees 
+#-----------------------------------------------------------
+#3 Show names in upper and lower case.
+
+select upper(first_name) from employees;
+select lower(first_name) from employees;
+#---------------------------------------------------
+#4 Find position of '@' in each email.
+
+create table school(email varchar(250));
+insert into school values("srileka@gmail.com");
+insert into school values("giri@gmail.com"),
+("neha@gmail.com"),
+("rena@gmail.com"),
+("jera@gmail.com");
+
+SELECT 
+  email,
+  INSTR(email, '@') AS at_position
+FROM school;
+#-------------------------------------------------------
+
+#Replace domain 'example.com' with 'company.org'.
+use dates;
+create table emp(name int, domain varchar(200));
+insert into emp values(1,"siri.com"),
+(2,"example.com"),
+(3,"example.com"),
+(4,"neha.com");
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE emp SET domain = "company.org";
+SET SQL_SAFE_UPDATES = 1;  
+select * from emp;
+#-----------------------------------------------------
+#Reverse the first name of each employee.
+set sql_safe_updates =0;
+ update  employees set first_name = reverse(first_name);
+ set sql_safe_updates =1;
+ #------------------------------------------------------
+ #Show the length of each employee email.
+ select email from school;
+#---------------------------------------------------------
+# Trim spaces from ' SQL Practice '.
+select trim("  practice ");
+select rtrim("practice  "); 
+select ltrim("   practice3  "); 
+#---------------------------------------------------------------
+
+#Extract the last 4 characters from email addresses (domain).
+select right(email,4) from school;
+
+#----------------------------------------------------------------
+
+#Display employees whose last name starts with 'S'.
+select  last_name  from employees where last_name like "s%" ;
+select * from employees where last_name like "s%";
+#----------------------------------------------------------------
+#NUMERIC FUNCTIONS--------
+# 1 Show absolute value of -1000.
+select abs(-1000);
+select abs(-200);
+select abs(-2.35);
+
+#------------------------------------------------------------------
+#Find the ceiling and floor values of 123.45.
+select ceil(123.44);
+select floor(123.45);
+#--------------------------------------------------------------------
+#Round the number 98.7654 to 2 decimals.
+select round(98.7654);
+#------------------------------------------------------------------
+#Show modulus when 55 is divided by 6.
+select 55%6 as modulus;
+select mod(55,6) as modulus;
+#-------------------------------------------------------------
+#Find square root of 121.
+select sqrt(121);
+#--------------------------------------------------------------------
+#Raise 2 to the power of 8.
+select pow(8,2);
+select pow(10,2);
+select pow(4,3);
+#------------------------------------------------------------
+#Find natural log and base-10 log of 1000.
+SELECT LN(1000)as log_e;       
+SELECT LOG10(1000)as log_10;    
+#------------------------------------------------------------
+#Display the sign of -45, 0, and 20.
+SELECT 
+  SIGN(22) AS SIGN_POS;
+SELECT SIGN(-45) AS SIGN_NEG;
+ SELECT SIGN(0) AS SIGN_ZERO;
+ #--------------------------------------------------------------
+ #Show 3 random numbers between 0 and 1.
+ SELECT RAND() AS NUM1,RAND() AS NUM2, RAND() AS NUM3;
+#------------------------------------------------------------------
+use dates;
+alter table  employees add column salary int ;
+insert into employees (salary ) values(2000);
+select * from employees;
+update employees set salary=12000  where emp_no =102;
+SELECT max(salary) as max_salary,min(salary) as min_salary from employees;
+
+
+
+#-------------------------------------------------------------------------------------------
+use dates;
+
+#Display employee salary truncated to 2 decimals-- 
+SELECT emp_no, first_name, TRUNCATE(salary, 2) AS truncated_salary
+FROM employees;
+
+#------------------------------------------------------------------------------------
