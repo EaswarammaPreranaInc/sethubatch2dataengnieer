@@ -1,11 +1,11 @@
 #  Find  outputs  (Home  work)
 import  sys , time , math
-print(dir(sys)) # prints all the members of sys module and environment variables in the form of list of strings
+print(dir(sys)) # prints sys module and 9 environment variables in the form of list of strings
 print() # prints nothing
 print() # prints nothing
-print(dir(time)) # prints all the members of time module and environment variables in the form of list of strings
+print(dir(time)) # prints time module and 9 environment variables in the form of list of strings
 print() # prints nothing
-print(dir(math)) # prints all the members of math module and environment variables in the form of list of strings
+print(dir(math)) # prints math module and 9 environment variables in the form of list of strings
 
 
 
@@ -17,10 +17,8 @@ print(dir(math)) # prints all the members of math module and environment variabl
 
 #  Find  outputs  (Home  work)
 import  cal # cal module is imported
-print(dir(cal)) # prints all the members of cal module and environment variables  
-'''
-['add', 'sub', 'mul', 'div', 'c1', 'x', 'y', '__name__', '__annotations__'.... ]
-'''
+print(dir(cal)) # prints cal module and 9 environment variables  
+
 
 
 
@@ -42,9 +40,9 @@ print(type(dir())) # prints the type of dir
 print(type(dir))
 '''
 Outputs
-['x', 'disp', 'c1']
+[9EV's, 'x', 'disp', 'c1']
 <class 'list'>
-<class 'builtin_function'>
+<class 'builtin_function_or_method'>
 '''
 
 
@@ -71,10 +69,13 @@ import cal
 a = dir(cal)
 b = []
 for i in a:
-	if not i.startswith('__') and not i.endswith('__'):
+	if not (i.startswith('__') and i.endswith('__')):
 		b.append(i)
 print(b)
-
+'''
+Output
+['cal' ]
+'''
 
 
 
@@ -83,11 +84,11 @@ print(b)
 
 
 #  Find  outputs
-print(dir()) # prints all the members of the current module in the form of list of strings i.e., []
+print(dir()) # prints all the members of the current module in the form of list of strings i.e., [9Ev's]
 print() # prints nothing
 import cal # imports cal module
 print() # prints nothing
-print(dir()) # prints all the members of the current module in the form of list of strings i.e., ['add', 'sub', 'mul', 'div','c1', 'x', 'y']
+print(dir()) # prints all the members of the current module in the form of list of strings i.e., [9EV's, 'c1']
 
 
 
@@ -98,11 +99,11 @@ print(dir()) # prints all the members of the current module in the form of list 
 
 
 #  Find  outputs
-print(dir()) # prints all the members of the current module in the form of list of strings i.e., []
+print(dir()) # prints all the members of the current module in the form of list of strings i.e., [9EV's]
 print() # prints nothing
 from cal import  * # imports all the members of cal module
 print() # prints nothing
-print(dir()) # prints ['add', 'sub', 'mul', 'div', 'c1', 'x', 'y']
+print(dir()) # prints [9EV's, 'add', 'sub', 'mul', 'div', 'c1', 'x', 'y']
 
 
 
@@ -113,11 +114,11 @@ print(dir()) # prints ['add', 'sub', 'mul', 'div', 'c1', 'x', 'y']
 
 
 #  Find  outputs
-print(dir()) # prints members of current module i.e., []
+print(dir()) # prints members of current module i.e., [9EV's]
 print() # prints nothing
 from  cal  import  add , mul , x # imports members of cal module
 print() # prints nothing
-print(dir()) # prints ['add', 'mul', 'x']
+print(dir()) # prints [9EV's, 'add', 'mul', 'x']
 
 
 
@@ -134,6 +135,9 @@ for x in sys.path:
 	print(x) # cwd<nextline>2nd<nextline>3rd<nextline>4th<nextline>5th<nextline>6th<nextline>
 print(len(sys.path)) # prints 6 or more, minimum 6
 #import cal
+
+
+
 
 
 
@@ -159,9 +163,8 @@ a.m1() # How  to  call   method  m1()  of  class  c1  of  sample  module  which 
 
 
 
-
 from random import  *
-print(random()) # prints random number
+print(random()) # prints random number from 0 to 9
 print(randint(1 , 100)) # prints random integer number from 1 to 100 and 1 and 100 are included
 print(uniform(1 , 100)) # prints random float number between 1 and 100 and 1 and 100 are excluded
 print(randrange(10)) # prints random number between 0 and 9 and 0 and 9 is included
@@ -212,16 +215,6 @@ r
 '''
 Write  a  program to  generate  10  passwords  each  of  6 character  length  where
 1st , 3rd , 5th characters are alphabets and  2nd , 4th , 6th characters are digits
-U7U2X8
-V9I6X8
-G4M8S2
-M4U3C3
-I7K2B8
-F0E9Q1
-Y8H8L7
-K1U5S0
-W7G0J3
-Y9B9J6
 '''
 from random import *
 a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -257,16 +250,6 @@ J2G5M1
 '''
 # Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
 Enter a List : [25,10.8,'Hyd',True,3+4j,None]
-True
-Hyd
-Hyd
-None
-Hyd
-(3+4j)
-None
-True
-25
-10.8
 '''
 from random import *
 a = eval(input("Enter any list:"))
@@ -294,18 +277,9 @@ True
 
 
 
+
 '''
 # Write  a  program  to  generate  ten  six-digit  OTP's (Home work)
-700690
-664735
-472299
-820818
-886311
-912752
-323114
-971162
-930848
-404338
 '''
 from random import *
 for i in range(10):
@@ -325,6 +299,10 @@ Outputs
 600817
 074436
 '''
+
+
+
+
 
 
 
@@ -357,7 +335,6 @@ for i in range(10):
 
 
 
-
 '''
 (Home  work)
 Write a program to implement Rock , paper  and  scissors  game  between  user  and  computer
@@ -374,28 +351,6 @@ Write a program to implement Rock , paper  and  scissors  game  between  user  a
 																			Computer  wins  becoz  rock  dominates  scissors
 
 5) What  is  the  result  in  all  other  cases  ?  ---> User wins
-
-What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
-User  :   Paper
-Computer  :   Rock
-User  wins
-Continue  (  y / n)  ?  y
-What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  2
-User  :   Scissors
-Computer  :   Scissors
-Draw
-Continue  (  y / n)  ?  y
-What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  0
-User  :   Rock
-Computer  :   Rock
-Draw
-Continue  (  y / n)  ?  y
-What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
-User  :   Paper
-Computer  :   Scissors
-Computer  wins
-Continue  (  y / n)  ?  n
-End of the game
 '''
 from random import *
 list = ["Rock", "Paper", "Scissors"]
