@@ -1,0 +1,213 @@
+# Find  outputs
+import  os
+os . system('dir') # Volume in drive C has no label.
+ Volume Serial Number is 1234-ABCD
+
+ Directory of C:\path\to\your\folder
+
+09/19/2025  07:50 AM    <DIR>          .
+09/19/2025  07:50 AM    <DIR>          ..
+09/18/2025  10:12 AM             1,234 test.py
+09/18/2025  09:00 AM           123,456 data.csv
+09/17/2025  05:00 PM    <DIR>          _pycache_
+              3 File(s)        124,690 bytes
+              3 Dir(s)  120,000,000,000 bytes free
+os . system('pause') # Press any key to continue . . .
+os . system('cls') # No visible output
+os . system('py  test.py') # print("Hello from test.py")
+
+
+Write  a  program  to  create  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory
+
+
+import os
+
+dir_name = input("Enter directory name or full path: ")
+
+try:
+    
+    os.makedirs(dir_name, exist_ok=True)
+    print(f"Directory '{dir_name}' created successfully.")
+except Exception as e:
+    print(f"Error: {e}")
+
+
+Enter  directory  name  (or) path :  sssdc2
+Directory  sssdc2  created
+
+Enter  directory  name  (or) path :  sssdc2
+Directory  sssdc2  already  exists
+
+Enter  directory  name  (or) path :  sssdc2/khairtabad
+Directory  sssdc2/khairtabad  created
+
+
+'''
+Write  a  program  to  create  a  group  of  directories.
+Input :  a/b/c
+'''
+
+import os
+
+
+path = input("Enter directory path (e.g., a/b/c): ")
+
+try:
+    
+    os.makedirs(path, exist_ok=True)
+    print(f"Directories '{path}' created successfully.")
+except Exception as e:
+    print(f"Error: {e}")
+
+Enter  directory  path :  a/b/c
+Directory  (or) directories  created
+
+
+Write  a  program  to  delete  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory
+
+import shutil
+import os
+
+path = input("Enter directory path to delete: ")
+
+try:
+    if os.path.exists(path):
+        shutil.rmtree(path)
+        print(f"Directories '{path}' deleted successfully.")
+    else:
+        print(f"Path '{path}' does not exist.")
+except Exception as e:
+    print(f"Error: {e}")
+
+Enter  directory  name  (or)  path :  temp
+Directory  temp  is  removed
+
+Enter  directory  name  (or)  path :  temp
+Directory  temp  does  not  exist
+
+Enter  directory  name  (or)  path :  sairam
+Directory  sairam  is  non-empty
+
+Write  a  program  to  delete  a  group  of  directories
+Input  is  directory  path
+
+import shutil
+import os
+
+path = input("Enter directory path to delete: ")
+
+try:
+    if os.path.exists(path):
+        shutil.rmtree(path)
+        print(f"Directories '{path}' deleted successfully.")
+    else:
+        print(f"Path '{path}' does not exist.")
+except Exception as e:
+    print(f"Error: {e}")
+
+Directories 'a/b/c' deleted successfully.
+
+Path 'x/y/z' does not exist.
+
+
+Write  a  program  to  rename  a  file  and  directory
+
+Input  is  filename  (or)  directory  name
+
+
+import os
+
+old_name = input("Enter current file or directory name: ")
+new_name = input("Enter new name: ")
+
+try:
+    if os.path.exists(old_name):
+        os.rename(old_name, new_name)
+        print(f"Renamed '{old_name}' to '{new_name}' successfully.")
+    else:
+        print(f"'{old_name}' does not exist.")
+except Exception as e:
+    print(f"Error: {e}")
+
+Enter current file or directory name: test.txt
+Enter new name: notes.txt
+Renamed 'test.txt' to 'notes.txt' successfully.
+
+Enter current file or directory name: project
+Enter new name: final_project
+Renamed 'project' to 'final_project' successfully.
+
+Enter current file or directory name: abc.txt
+Enter new name: xyz.txt
+'abc.txt' does not exist.
+
+
+Write  a  program  to  print  all  the  files  and  sub-directories  of  input  directory
+Input :  Directory  (or)  path
+Output:  Print  Two  lists  where  1st  list  is  all  the  files  and  2nd  list  is  all  the  directories
+
+
+import os
+
+
+path = input("Enter directory path: ")
+
+try:
+    if os.path.exists(path):
+        files = []
+        dirs = []
+
+        for item in os.listdir(path):
+            full_path = os.path.join(path, item)
+            if os.path.isfile(full_path):
+                files.append(item)
+            elif os.path.isdir(full_path):
+                dirs.append(item)
+
+        print("Files:", files)
+        print("Directories:", dirs)
+    else:
+        print(f"Path '{path}' does not exist.")
+except Exception as e:
+    print(f"Error: {e}")
+
+
+Enter  directory  name (or) path :  c:\sssdc2
+List  of  the  files :   ['file1.txt', 'file2.txt', 'file3.txt']
+
+List  of  the  directories :   ['dir1', 'dir2']
+
+# Write  a  program  to  iterate  thru  sairam  directory  present  in  current  working  directory
+
+import os
+
+cwd = os.getcwd()
+
+path = os.path.join(cwd, "sairam")
+
+if os.path.exists(path) and os.path.isdir(path):
+    print(f"Iterating through directory: {path}\n")
+    for item in os.listdir(path):
+        full_path = os.path.join(path, item)
+        if os.path.isfile(full_path):
+            print(f"File: {item}")
+        elif os.path.isdir(full_path):
+            print(f"Directory: {item}")
+else:
+    print(f"'sairam' directory not found in {cwd}")
+
+
+Directory  Path :  sairam
+Sub  Directories :  ['karnataka', 'Telangana']
+Files :  ['file1.txt', 'file2.txt', 'file3.txt']
+
+Directory  Path :  sairam\karnataka
+Sub  Directories :  ['banglore']
+Files :  ['file1.txt']
+
+Directory  Path :  sairam\karnataka\banglore
+Sub  Directories :  []
+Files :  []
+Directories 'a/b/c' deleted successfully.
