@@ -1,0 +1,168 @@
+a = [10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25]
+
+try:
+    i = -1
+    while (i := a.index(15, i + 1)):
+        print(i)
+except ValueError:
+    print(f'15 is found {a.count(15)} times')
+
+
+
+
+def is_sublist(sub, main):
+    try:
+        pos = -1
+        for item in sub:
+            pos = main.index(item, pos + 1)
+        return True
+    except ValueError:
+        return False
+
+print(is_sublist([10,20,30], [15,18,10,12,19,20,14,12,30,25,16]))  # True
+print(is_sublist([10,20,20], [15,18,10,12,19,20,14,12,30,25,16]))  # False
+print(is_sublist([2,2,5], [2,2,3,4,5]))  # True
+print(is_sublist([2,4,3], [2,2,3,4,5]))  # False
+
+
+
+
+a = [10 , 20 , 15 , 18]
+b = a.copy()
+print(b)            # [10, 20, 15, 18]
+print(a is b)       # False
+print(a == b)       # True
+c = a[:]
+print(c)            # [10, 20, 15, 18]
+print(a is c)       # False
+print(a == c)       # True
+d = a
+print(d)            # [10, 20, 15, 18]
+print(a is d)       # True
+print(a == d)       # True
+
+
+
+
+a = [12,20,18,15,10,15,10,15,20,18,15,10,20,15,10]
+
+mode = None
+ctr = 0
+for x in set(a):
+    if (c := a.count(x)) > ctr:
+        ctr = c
+        mode = x
+print("Mode :", mode)
+
+
+
+
+a = [[10 , 20 , 30 , 40], [50 , 60 , 70 , 80], [90 , 100 , 110 , 120]]
+print(a)                    # [[10, 20, 30, 40], [50, 60, 70, 80], [90, 100, 110, 120]]
+print(len(a))               # 3
+print(a[0])                 # [10, 20, 30, 40]
+print(a[1])                 # [50, 60, 70, 80]
+print(a[2])                 # [90, 100, 110, 120]
+print(a[0][2])              # 30
+print(a[1][3])              # 80
+print(a[2][1])              # 100
+
+
+
+
+a=[ [10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+print(a[0])        # [10, 20]
+print(a[1])        # [30, 40, 50]
+print(a[2])        # [60, 70, 80, 90]
+print(len(a[0]))   # 2
+print(len(a[1]))   # 3
+print(len(a[2]))   # 4
+
+
+
+
+a = [[10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+
+print('Nested list with print function')
+print(a)
+
+print('Each inner list of outer list without indexes')
+for lst in a:
+    print(lst)
+
+print('Elements in the form of matrix without using indexes')
+for lst in a:
+    for val in lst:
+        print(val, end="    ")
+    print()
+
+print('Elements in the form of matrix using indexes')
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        print(a[i][j], end="    ")
+    print()
+
+
+
+
+a = [[10 , 20] , [30 , 40] , [50 , 60] , [70 , 80]]
+for x in a:
+    print(x)
+# [10, 20]
+# [30, 40]
+# [50, 60]
+# [70, 80]
+
+print()
+for x, y in a:
+    print(x , y , sep = '...')
+# 10...20
+# 30...40
+# 50...60
+# 70...80
+
+
+
+
+a = [[10 , 20 , 30] , [40 , 50 , 60] , [70 , 80 , 90]]
+for x in a:
+    print(x)
+# [10, 20, 30]
+# [40, 50, 60]
+# [70, 80, 90]
+
+print()
+for x, y, z in a:
+    print(x , y , z , sep = '...')
+# 10...20...30
+# 40...50...60
+# 70...80...90
+
+
+
+
+a = [[10 , 20] , [30 , 40 , 50] , [60 , 70 , 80 , 90]]
+for x in a:
+    print(x)
+# [10, 20]
+# [30, 40, 50]
+# [60, 70, 80, 90]
+
+for x , y in a:
+    print(x , y , sep = '...')
+# error
+
+
+
+
+a = [[]]
+print(a[0])     # []
+print(a[-1])    # []
+
+
+
+
+a = [[10 , 'Rama' , 1000.0] , [20 , 'Sita' , 2000.0] , [15 , 'Rajesh' , 3500.0] , [18 , 'Kiran' , 2800.0] , [5 , 'Amar' ,5000.0]]
+print(sorted(a))                 # [[5, 'Amar', 5000.0], [10, 'Rama', 1000.0], [15, 'Rajesh', 3500.0], [18, 'Kiran', 2800.0], [20, 'Sita', 2000.0]]
+print(sorted(a , reverse=True))  # [[20, 'Sita', 2000.0], [18, 'Kiran', 2800.0], [15, 'Rajesh', 3500.0], [10, 'Rama', 1000.0], [5, 'Amar', 5000.0]]
+print(a)                         # [[10, 'Rama', 1000.0], [20, 'Sita', 2000.0], [15, 'Rajesh', 3500.0], [18, 'Kiran', 2800.0], [5, 'Amar', 5000.0]]
