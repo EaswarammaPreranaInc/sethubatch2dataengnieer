@@ -1,0 +1,203 @@
+#  Repeat  previous  program  such  that  OTP  can  be  between  000000  and   999999  (may  be   000156)
+
+
+import random
+num = int(input("enter number:"))
+for i in range(num):
+   print(random.randint(000000,999999))
+
+
+#output:
+
+258447
+739842
+112185
+681428
+054290
+219889
+056740
+845508
+384423
+587572
+
+----------------------------------------------------------------------------------------------------------
+# Find  outputs
+import  os
+os . system('dir')  # import sys module and directories of sys module
+os . system('pause')  #  pause until user enter any key
+os . system('cls')   # clear the screen
+os . system('py  test.py')   # run the test.py file if not  exist - no such file 
+
+--------------------------------------------------------------------------------------------------
+ Write  a  program  to  create  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory
+Enter  directory  name  (or) path :  sssdc2
+Directory  sssdc2  created
+Enter  directory  name  (or) path :  sssdc2
+Directory  sssdc2  already  exists
+Enter  directory  name  (or) path :  sssdc2/khairtabad
+Directory  sssdc2/khairtabad  created
+
+
+#programme--
+
+ import os 
+ try:
+    file = input("enter directory name or path of the directory:").strip()
+    os.mkdir(file)
+    print(f"{file} directory is created ")
+
+ except FileExistsError:
+    print(f"{file} directory already there")
+
+---------------------------------------------------------------------------------------------------
+
+Write  a  program  to  create  a  group  of  directories.
+Input :  a/b/c
+
+
+import os 
+try:
+   file = input("enter directory name or path of the directory:").strip()
+   os.makedirs(file)
+   print(f"{file} directory is created ")
+
+except FileExistsError:
+   print(f"{file} directory already there")
+
+----------------------------------------------------------------------------------------------------------
+'''
+ Enter  directory  path :  a/b/c
+Directory  (or) directories  created
+
+--------------------------------------------------------------------------------------------------
+ Write  a  program  to  delete  a  directory.
+
+Input  is  directory  name  (or)  path  of  the  directory
+ Enter  directory  name  (or)  path :  temp
+Directory  temp  is  removed
+ Enter  directory  name  (or)  path :  temp
+Directory  temp  does  not  exist
+ Enter  directory  name  (or)  path :  sairam
+Directory  sairam  is  non-empty
+
+
+
+#programme--
+import os 
+try:
+    file = input("enter directory name or path of the directory:").strip()
+    os.rmdir(file)
+    print(f"{file} directory is removed ")
+except FileNotFoundError:
+    print(f"{file} is not exist")
+except OSError:
+    print(f"{file} is non empty")
+--------------------------------------------------------------------------------------------------
+Write  a  program  to  delete  a  group  of  directories
+Input  is  directory  path
+
+import os 
+try:
+    file = input("enter directory name or path of the directory:").strip()
+    os.removedirs(file)
+    print(f"{file} directory is removed ")
+except FileNotFoundError:
+    print(f"{file} is not exist")
+except OSError:
+    print(f"{file} is non empty")
+--------------------------------------------------------------------------------------------------------------------
+
+
+Write  a  program  to  rename  a  file  and  directory
+
+Input  is  filename  (or)  directory  name
+
+
+import os
+old_name = input("Enter the current file or folder name: ")
+new_name = input("Enter the new name : ")
+
+old_path = os.path.abspath(old_name)
+new_path = os.path.abspath(new_name)
+
+try:
+
+    if not os.path.exists(old_path):
+        raise FileNotFoundError(f"'{old_path}' does not exist.")
+    
+    if os.path.exists(new_path):
+        raise FileExistsError(f"Cannot rename. '{new_path}' already exists.")
+    os.rename(old_path, new_path)
+    print(f"Renamed from '{old_path}' to '{new_path}'.")
+
+except FileNotFoundError as fnf:
+    print(f"Error: {fnf}")
+except FileExistsError as Fee:
+    print(f"Error: {Fee}")
+
+
+------------------------------------------------------------------------------------------------------
+ Write  a  program  to  print  all  the  files  and  sub-directories  of  input  directory
+Input :  Directory  (or)  path
+Output:  Print  Two  lists  where  1st  list  is  all  the  files  and  2nd  list  is  all  the  directories
+
+Enter  directory  name (or) path :  c:\sssdc2
+List  of  the  files :   ['file1.txt', 'file2.txt', 'file3.txt']
+
+List  of  the  directories :   ['dir1', 'dir2']
+
+# programme-----
+
+import os 
+files = input("enter directory name:")
+lst=os.listdir(files)
+l1=[]
+l2=[]
+for file in lst:
+   
+   if '.' in file:
+      l1.append(file)
+   else:
+      l2.append(file)
+print("list of the files:",l1)
+print("list of the directories:",l2)
+
+-----------------------------------------------------------------------------------------------------------------
+# Write  a  program  to  iterate  thru  sairam  directory  present  in  current  working  directory
+: Directory  Path :  sairam
+Sub  Directories :  ['karnataka', 'Telangana']
+Files :  ['file1.txt', 'file2.txt', 'file3.txt']
+
+ Directory  Path :  sairam\karnataka
+Sub  Directories :  ['banglore']
+Files :  ['file1.txt']
+Directory  Path :  sairam\karnataka\banglore
+Sub  Directories :  []
+Files :  []
+
+
+#programme---
+
+import os
+def iterate_directory(file):
+    for path, dirs, files in os.walk(file):
+        print(f"Directory Path: {path}")
+        print(f"Sub Directories: {dirs}")
+        print(f"Files: {files}")
+file= input("Enter directory name (or) path: ")
+iterate_directory(file)
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
