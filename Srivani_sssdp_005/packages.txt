@@ -1,0 +1,228 @@
+(1)# Save  in  cwd \  p1 \ mod1 . py
+x = 10
+def  f1():
+	print('p1  --->  mod1   --->  f1  function')
+class   c1:
+	def  m1(self):
+		print('p1  ---> mod1  ---> c1  ---> m1 method')
+
+
+
+'''
+1) What  is  the  name  of  module ?  --->  p1 . mod1
+
+2) What  are  the  members  of  p1 . mod1 ?  --->  Object  'x' ,  Function   f1()  and  class  c1
+'''
+
+
+
+ (2)# Save  in  cwd \ p1 \ mod2 . py
+x = 20
+def   f1():
+	print('p1  ---> mod2  ---> f1')
+class   c1:
+	def  m1(self):
+		print('p1  ---> mod2 ---> c1 ---> m1 ')
+
+
+
+'''
+1) What  is  the  name  of  module ?  --->  p1 . mod2
+
+2) What  are  the  members  of  p1 . mod2 ?  --->  Object  'x' ,  Function   f1()  and  class  c1
+'''
+
+
+
+ (3)#  Save  in  any  file  of  cwd  (Homework)
+from p1 import mod1,mod2  #How  to  import  mod1   and  mod2  of  package  p1  with  from  statement
+print(mod1.x)  #How  to  print  object  'x'  of   mod1  in  package  p1
+mod1.f1()  #How  to  call  function  f1()  of   mod1  in  package  p1
+a=mod1.c1() 
+a.m1() #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+print(mod2.x) #How  to  print  object  'x'  of   mod2  in  package  p1
+mod2.f1() #How  to  call  function  f1()  of   mod2  in  package  p1
+a=mod2.c1() 
+a.m1() #How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+print(p1 . mod1 . x) #error because package is not imported
+print(x) #error there is no x in current module
+
+
+
+
+(4) #  Save  in  any  file  of  cwd
+from p1.mod1 import *  #How  to  import  members  of  mod1  in  package  p1
+x  #How  to  print  object  'x'  of   mod1  in  package  p1
+f1() #How  to  call  function  f1()  of   mod1  in  package  p1
+a=c1()
+a.m1()  #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+from p1.mod2 import *  #How  to  import   members  of  mod2   in  package  p1
+x #How  to  print  object  'x'  of   mod2  in  package  p1
+f1() #How  to  call  function  f1()  of   mod2  in  package  p1
+a=c1()
+a.m1() #How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+print(p1 . mod1 . x) #error 
+print(mod1 . x) #error
+from  p1   import  mod1 . * #error
+
+
+
+ (5)'''  (Home  work)
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+'''
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+from  p1 . mod1    import    *
+from  p1 . mod2    import    *
+print(x) #20 of mod2
+f1() #function of mod2
+a = c1() #class1 of mod2
+a . m1() # method of class 1 of mod2
+
+
+
+
+(6)
+'''  (Home  work)
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+'''
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+from  p1 . mod2    import   *
+from  p1 . mod1    import   *
+print(x) #10 of mod1
+f1() #function of mod1
+a = c1() #class 1 of mod 1
+a . m1() #method of class1 of mod1
+
+
+(7)
+
+''' (Home work)
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+'''
+from  p1 . mod1    import    *
+from  p1 . mod2    import    *
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+print(x) #30
+f1() #function of same module
+a = c1()
+a . m1() #method of class c1 in same module
+
+
+
+
+
+(8)
+
+
+ '''  (Home  work)
+Save  the  following  code  in  any  file  of  cwd
+How  to  use  members  of  both  the  modules
+'''
+from p1.mod1 import * #How  to  import   members  of  mod1   in  package  p1  with  from  statement
+from p1.mod2 import *   #How  to  import   members  of  mod2   in  package  p1  with  from  statement
+#How  to  print  object  'x'  of   mod1  in  package  p1----can't define whether it is from mod1 or mod2
+#How  to  call  function  f1()  of   mod1  in  package  p1----can't define whether it is from mod1 or mod2
+#How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1----can't define whether it is from mod1 or mod2
+print()
+print()
+#How  to  print  object  'x'  of   mod2  in  package  p1----can't define whether it is from mod1 or mod2
+#How  to  call  function  f1()  of   mod2  in  package  p1----can't define whether it is from mod1 or mod2
+#How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1----can't define whether it is from mod1 or mod2
+
+
+
+(9)
+ # Save  in   cwd \ p1 \ mod1.py
+x = 10
+def   f1():
+	print('p1  --->  mod1  --->  f1 function')
+class   c1:
+	def  m1(self):
+		print('p1 ---> mod1 ---> c1 ---> m1 method ')
+
+
+
+'''
+1) What  is  the  name  of  module ?  ---> p1 . mod1
+
+2) What  are  the  members  of  p1 . mod1 ?  --->  Object  'x'  ,  Function   f1()  and  class  c1
+'''
+
+
+(10)
+ # Save  in   cwd \ p1 \ p2 \ mod2.py
+x = 20
+def   f1():
+	print('p1 ---> p2 ---> mod2 ---> f1 function')
+class   c1:
+	def  m1(self):
+		print('p1 ---> p2 ---> mod2 ---> c1 ---> m1 method')
+
+
+
+'''
+1) What  is  the  name  of  module  ?  --->  p1 . p2 . mod2
+
+2) What  are  the  members  of  p1 . p2 . mod2 ?  --->  Object  'x'  ,  Function   f1()  and  class  c1
+'''
+
+
+
+
+(11)
+# Save  in  any  file  of  cwd
+from p1 import mod1 #How  to  import  mod1  of  package  p1  with  from  statement
+x #How  to  print  object  'x'  of   mod1  in  package  p1
+f1() #How  to  call  function  f1()  of   mod1  in  package  p1
+a=c1() 
+a.m1() #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print(p1 . mod1 . x)  #error
+print()
+print()
+from p1.p2 import mod2 #How  to  import  mod2  of  sub-package  p2  in  package  p1  with  from  statement
+mod2.x #How  to  print  object  'x'  of   mod2  in  sub-package  p2  of  package  p1
+mod2.f1() #How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
+a=mod2.c1() 
+a.m1() #How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
+print(p1 . p2 . mod2 . x) #error
+from  p1  import   p2 . mod2 #error
+from  p2  import  mod2 #error
+
+
+(12)
+
+ # Save  in  any  file  of  cwd
+import p1.mod1 # How  to  import  members  of  mod1  in   package  p1
+p1.mod1.x #How  to  print  object  'x'  of   mod1  in  package  p1
+p1.mod1.f1() #How  to  call  function  f1()  of   mod1  in  package  p1
+a=p1.mod1.c1() 
+a.m1()#How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+import p1.p2.mod2 #How  to  import  members  of  mod2  in  sub-package  p2  of   package  p1
+p1.p2.mod2.x #How  to  print  object  'x'  of   mod2  in  sub-package  p2  of  package  p1
+p1.p2.mod2.f1() #How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
+a=p1.p2.c1() #How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
+from  p1  import  mod1 . *#error
