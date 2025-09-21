@@ -1,0 +1,88 @@
+Given a sorted array of distinct integers and a target value, return the index if the target is found. 
+If not, return the index where it would be if it were inserted in order.
+
+def search_insert(nums, target):
+    for i in range(len(nums)):
+        if nums[i] >= target:
+            return i
+    return len(nums)
+nums = sorted(eval(input("enter lit:")))
+print(nums)
+target = 2
+print(search_insert(nums, target))  
+          
+-------------------------------------------------------------------------------------------------------------------
+
+You are given a string s, you need to print its characters at even indices(index starts at 0).
+# programme---
+
+def stringJumper(s):
+    for i in range(0,len(s),2):
+        # from 0 to length of str and skip 2
+        print(s[i], end="")
+        #printing character and separating characters by nothing
+--------------------------------------------------------------------------------------------------------------
+
+Input: x = 3
+Output: 3 2 1 0
+Explanation:
+Numbers in decreasing order from 3
+are 3, 2, 1, 0.
+
+--------
+
+def printInDecreasing(x):
+    # code here
+    while (x >= 0):
+
+        # your statement below to print the number
+        # in decreasing order
+        # Note: use end=" " parameter with print to seperate numbers by space.
+        ##Output for testcases will automatically separated by a new line by the print() in driver code
+        print(x, end=' ')
+        x -= 1
+      ---------------------------------------------------------------------------------------------------
+
+Input: n = 4
+Output:
+* * * *
+*     *
+*     *
+* * * *
+
+
+
+n = int(input("enter a number:"))
+for i in range(1,n+1):
+    if i==1 or i ==n:
+        print("*"*n,end='')
+        print()
+    else:
+        print("*" +" "*(n-2)+ "*",end='')
+      
+        print()
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
