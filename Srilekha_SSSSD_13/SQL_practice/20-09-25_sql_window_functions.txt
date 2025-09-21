@@ -1,0 +1,207 @@
+use dates;
+create table employees(emp_id int unique, emp_name varchar(200),dept_id int,project_id int,manager_id int );
+
+drop  table if exists  employees;
+
+
+INSERT INTO Employees (emp_id, emp_name, dept_id, project_id, manager_id) VALUES
+(1, 'Alice',   10, 101, NULL),   -- Manager
+(2, 'Bob',     10, 101, 1),      -- Reports to Alice
+(3, 'Charlie', 20, 100, 1),      -- Reports to Alice
+(4, 'David',   30, 102, 2),      -- Reports to Bob
+(5, 'Eve',     40, NULL, 3),     -- No project
+(6, 'Frank',   50, 103, 3),      -- Reports to Charlie
+(7, 'Grace',   20, 104, 1),      -- Working on project from different dept
+(8, 'Hannah',  30, NULL, 4);     -- IT dept, no project
+
+#---------------------------------------------------------------------------------
+create table Departments(dept_id int, dept_name varchar(200) ,location varchar(200));
+
+INSERT INTO Departments (dept_id, dept_name, location) VALUES
+(10, 'HR',        'New York'),
+(20, 'Finance',   'London'),
+(30, 'IT',        'New York'),
+(40, 'Sales',     'Chicago'),
+(50, 'Marketing', 'Chicago');
+
+#-----------------------------------------------------------------------------------
+
+create table projects(project_id int, dept_id int,project_name varchar(200));
+
+INSERT INTO Projects (project_id, dept_id, project_name) VALUES
+(100, 20, 'Budgeting'),
+(101, 10, 'Recruitment'),
+(102, 30, 'Migration'),
+(103, 50, 'Campaign'),
+(104, 40, 'Client Acquisition');
+
+#----------------------------------------------------------------------------------
+
+create table Sales(sale_id int, emp_id int, sale_date date, sale_amount int);
+
+INSERT INTO Sales (sale_id, emp_id, sale_date, sale_amount) VALUES
+(1, 2, '2025-01-01', 500),
+(2, 2, '2025-01-05', 700),
+(3, 2, '2025-01-10', 400),
+(4, 3, '2025-01-03', 600),
+(5, 3, '2025-01-07', 800),
+(6, 3, '2025-01-12', 750),
+(7, 5, '2025-01-04', 300),
+(8, 5, '2025-01-08', 450),
+(9, 6, '2025-01-06', 900),
+(10, 6, '2025-01-11', 1200);
+
+#--------------------------------------------------------------------------------------
+
+#Retrieve all employees along with their department names.
+select e.emp_name, d.dept_name from Employees as e 
+join Departments as d on e.dept_id = d.dept_id;
+#--------------------------------------------------------------------------------
+#List all employees and the projects they are working on (show NULL if no project).
+select e.emp_name ,p.project_name from employees as e
+left join projects as p on e.dept_id = p.dept_id; 
+
+
+#--------------------------------------------------------------------------------------
+
+#Show all departments and employees (include departments with no employees).
+select emp_name , dept_name from departments  as d
+left join employees as e on  d.dept_id = e.dept_id;
+
+
+#--------------------------------------------------------------------------------------
+#Show all projects and employees working on them (include projects without employees).
+select emp_name , dept_name from    employees as e  left join  departments  as d
+ on  d.dept_id = e.dept_id;
+
+#-----------------------------------------------------------------------
+
+#Retrieve employees along with both department and project details.
+select  e.emp_name ,d.dept_name , p.project_name
+from employees as e
+join departments as d on d.dept_id = e.dept_id
+join projects as p on d.dept_id = p.dept_id;
+
+#--------------------------------------------------------------------------------------------
+#Find employees who are working on projects belonging to a different department than their own.
+
+SELECT 
+    e.emp_name,
+    e.dept_id AS employee_dept,
+    p.project_name,
+    p.dept_id AS project_dept
+FROM 
+    employees e
+JOIN 
+    projects p ON e.project_id = p.project_id
+WHERE 
+    e.dept_id <> p.dept_id;
+    
+    #----------------------------------------------------------------------
+    
+   # List all employees along with their manager’s name (self-join).
+   select m1.emp_name as employee, 
+   m2.emp_name as manager 
+   from employees as m1
+   left join employees as m2
+   on   m1.manager_id =  m2.emp_id ;
+   
+   
+   #----------------------------------------------------------------------------
+#   Show the number of employees working in each department.
+
+SELECT 
+    d.dept_name,
+    COUNT(e.emp_id) AS employee_count
+FROM  departments AS d
+LEFT JOIN  employees AS e ON d.dept_id = e.dept_id
+GROUP BY  d.dept_name;
+
+#--------------------------------------------------------------------------------
+#Show the departments which do not have any employees.
+
+SELECT d.dept_name
+FROM departments AS d
+LEFT JOIN employees AS e ON d.dept_id = e.dept_id
+WHERE e.emp_id IS NULL;
+
+#---------------------------------------------------------------------------------
+SELECT 
+    d.dept_name,
+    p.project_name
+FROM  departments AS d
+CROSS JOIN  projects AS p;
+
+
+#--------------------------------------------------------------------------------
+#  Window functions
+#For each employee’s sales, show the previous sale amount (using LAG).
+
+SELECT 
+    emp_id,
+    sale_date,
+    sale_amount,
+    LAG(sale_amount) OVER (
+        PARTITION BY emp_id 
+        ORDER BY sale_date
+    ) AS previous_sale
+FROM 
+    sales;
+#-----------------------------------------------------------------------------------
+
+#For each employee’s sales, show the next sale amount (using LEAD).
+
+SELECT 
+    emp_id,
+    sale_date,
+    sale_amount,
+    LEAD(sale_amount) OVER (
+        PARTITION BY emp_id 
+        ORDER BY sale_date
+    ) AS next_sale
+FROM 
+    sales;
+    
+#Show the difference between each employee’s current sale and their previous sale.
+SELECT 
+    emp_id,
+    sale_date,
+    sale_amount,
+    LAG(sale_amount) OVER (
+        PARTITION BY emp_id 
+        ORDER BY sale_date
+    ) AS previous_sale,
+    sale_amount - LAG(sale_amount) OVER (
+        PARTITION BY emp_id 
+        ORDER BY sale_date
+    ) AS sale_difference
+FROM 
+    sales;
+
+#-------------------------------------------------------------------------------------
+#Assign a row number to each sale of every employee ordered by sale_date.
+
+SELECT 
+    emp_id,
+    sale_date,
+    sale_amount,
+    ROW_NUMBER() OVER (
+        PARTITION BY emp_id 
+        ORDER BY sale_date
+    ) AS sale_rank
+FROM 
+    sales;
+
+
+#---------------------------------------------------------------------------------
+#Find the highest sale made by each employee using a window function (not GROUP BY).
+
+SELECT 
+    emp_id,
+    sale_date,
+    sale_amount,
+    MAX(sale_amount) OVER (
+        PARTITION BY emp_id
+    ) AS highest_sale
+FROM 
+    sales;
