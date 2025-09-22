@@ -1,0 +1,136 @@
+# cal.py
+def  add(a , b):
+	return  a + b
+def  sub(a , b):
+	return  a - b
+def  mul(a , b):
+	return  a * b
+def  div(a , b):
+	return  a / b
+class    c1:
+	def    m1(self):
+		pass
+#End  of  the  class
+x = 100
+y = 200
+if  __name__ ==  '__main__':
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+
+
+'''
+1) What  is  the  module  name ?  --->  cal
+
+2) py  cal.py
+    What  is  the  value  of  __name__ ?  ---> '__main__'
+    What  are  the  outputs ?  --->  Hyd ,  Sec  and  Cyb  becoz  if  condition  is  True
+
+3) import  cal
+    What  is  the  value  of  __name__ ?  ---> The  imported  module  name  i.e. 'cal'
+	What  are  the  outputs ?  ---> Nothing  becoz  if  condition  is   False
+'''
+ `__name__` Value | Output        |
+ `'__main__'`     | Hyd, Sec, Cyb |
+`'cal'`          | *(No output)* |
+
+#  Find  outputs  (Home  work)
+import  sys , time , math
+print(dir(sys))
+print()
+print()
+print(dir(time))
+print()
+print(dir(math))
+the output....
+['__breakpointhook__', '__displayhook__', ..., 'version']
+# (Empty line)
+# (Empty line)
+['__doc__', '__loader__', ..., 'tzname']
+# (Empty line)
+['__doc__', '__loader__', ..., 'trunc']
+x = 25
+
+def disp():
+    print('Hello')
+
+class c1:
+    def m1(self):
+        pass
+
+print(dir())
+print(type(dir()))
+print(type(dir))
+x = 25
+
+def disp():
+    print('Hello')
+
+class c1:
+    def m1(self):
+        pass
+
+print(dir())
+print(type(dir()))
+print(type(dir))
+print(dir())
+print()
+
+import cal
+print()
+
+print(dir())
+the output is....
+
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__']
+
+# (Empty line from print())
+
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'cal']
+
+from  random  import  *
+print(random())
+print(randint(1 , 100))
+print(uniform(1 , 100))
+print(randrange(10))
+print(randrange(1 , 11))
+print(randrange(1 , 11 , 2))
+list = [10 , 20 , 15 , 12 , 18]
+print(choice(list))
+print(choice('RAJESH'))
+set  =  {10 , 20 , 30 , 40}
+print(choice(set))
+the output is ......
+0.68492392839
+57
+88.26419387
+6
+3
+5
+12
+J
+Enter a List : [25,10.8,'Hyd',True,3+4j,None]
+True
+Hyd
+Hyd
+None
+Hyd
+(3+4j)
+None
+True
+25
+10.8
+lst = [25, 10.8, 'Hyd', True, 3+4j, None]
+
+print(lst[3])    # True
+print(lst[2])    # Hyd
+print(lst[2])    # Hyd
+print(lst[5])    # None
+print(lst[2])    # Hyd
+print(lst[4])    # (3+4j)
+print(lst[5])    # None
+print(lst[3])    # True
+print(lst[0])    # 25
+print(lst[1])    # 10.8
+
+
