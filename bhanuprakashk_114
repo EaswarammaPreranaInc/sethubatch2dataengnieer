@@ -1,0 +1,64 @@
+Write  a  program  to  print  all  the  files  and  sub-directories  of  input  directory
+Input :  Directory  (or)  path
+Output:  Print  Two  lisimport os
+
+# Input from user
+path = input("Enter directory path: ")
+
+# Check if path exists and is a directory
+if os.path.isdir(path):
+    # Get list of all entries in the directory
+    entries = os.listdir(path)
+
+    # Separate files and directories
+    files = []
+    dirs = []
+
+    for entry in entries:
+        full_path = os.path.join(path, entry)
+        if os.path.isfile(full_path):
+            files.append(entry)
+        elif os.path.isdir(full_path):
+            dirs.append(entry)
+
+    # Output
+    print("\nFiles:")
+    print(files)
+
+    print("\nDirectories:")
+    print(dirs)
+
+else:
+    print("Invalid directory path.")
+Write  a  program  to  create  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory
+import os
+
+# Get input from the user
+dir_path = input("Enter directory name or path: ")
+
+try:
+    # Create directory (including intermediate directories)
+    os.makedirs(dir_path, exist_ok=True)
+    print("Directory (or directories) created successfully.")
+except Exception as e:
+    print("Error creating directory:", e)
+# Find  outputs
+import  os
+os . system('dir')
+os . system('pause')
+os . system('cls')
+os . system('py  test.py')
+ Volume in drive C has no label.
+ Volume Serial Number is XXXX-XXXX
+
+ Directory of C:\Users\YourName\YourFolder
+
+09/21/2025  02:15 PM    <DIR>          .
+09/21/2025  02:15 PM    <DIR>          ..
+09/21/2025  02:00 PM               456  test.py
+               1 File(s)            456 bytes
+               2 Dir(s)  112,234,567,890 bytes free
+
+
+ts  where  1st  list  is  all  the  files  and  2nd  list  is  all  the  directories
