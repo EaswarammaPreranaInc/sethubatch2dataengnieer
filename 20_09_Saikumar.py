@@ -49,8 +49,8 @@ print(mod1.x)                       # How  to  print  object  'x'  of   mod2  in
 mod1.f1()                           # How  to  call  function  f1()  of   mod2  in  package  p1
 obj1 = mod1.c1()
 obj1.m1()                           # How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
-print(p1.mod1.x)
-print(x)
+print(p1.mod1.x)					# p1 is not imported
+print(x)							# x is not in the current module
 
 '''
 Output:
@@ -67,14 +67,14 @@ p1 ---> mod2 ---> c1 ---> m1
 
 # Save in any file of cwd (Homework)
 
-from p1.mod1 import x, f1, c1       # How to import members of mod1 in package p1
+from p1.mod1 import *		        # How to import members of mod1 in package p1
 print(x)                            # How to print object 'x' of mod1 in package p1
 f1()                                # How to call function f1() of mod1 in package p1
 obj1 = c1()
 obj1.m1()                           # How to call method m1() of class c1 in mod1 of package p1
 print()
 print()
-from p1.mod2 import x, f1, c1       # How to import members of mod2 in package p1
+from p1.mod2 import  *		        # How to import members of mod2 in package p1
 print(x)                            # How to print object 'x' of mod2 in package p1
 f1()                                # How to call function f1() of mod2 in package p1
 obj2 = c1()
@@ -295,4 +295,6 @@ print(x)                        # How to print object 'x' of mod2 in sub-package
 f1()                            # How to call function f1() of mod2 in sub-package p2 of package p1
 obj2 = c1()
 obj2.m1()                       # How to call method m1() of class c1 in mod2 of sub-package p2 in package p1
+
+
 
