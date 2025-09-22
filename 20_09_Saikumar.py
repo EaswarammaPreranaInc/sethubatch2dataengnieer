@@ -49,8 +49,8 @@ print(mod1.x)                       # How  to  print  object  'x'  of   mod2  in
 mod1.f1()                           # How  to  call  function  f1()  of   mod2  in  package  p1
 obj1 = mod1.c1()
 obj1.m1()                           # How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
-print(p1.mod1.x)
-print(x)
+print(p1.mod1.x)					# p1 is not imported
+print(x)							# x is not in the current module
 
 '''
 Output:
@@ -295,5 +295,6 @@ print(x)                        # How to print object 'x' of mod2 in sub-package
 f1()                            # How to call function f1() of mod2 in sub-package p2 of package p1
 obj2 = c1()
 obj2.m1()                       # How to call method m1() of class c1 in mod2 of sub-package p2 in package p1
+
 
 
