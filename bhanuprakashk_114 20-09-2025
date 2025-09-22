@@ -1,0 +1,81 @@
+# Save  in  cwd \  p1 \ mod1 . py
+x = 10
+def  f1():
+	print('p1  --->  mod1   --->  f1  function')
+class   c1:
+	def  m1(self):
+		print('p1  ---> mod1  ---> c1  ---> m1 method')
+
+
+
+'''
+1) What  is  the  name  of  module ?  --->  p1 . mod1
+
+2) What  are  the  members  of  p1 . mod1 ?  --->  Object  'x' ,  Function   f1()  and  class  c1
+'''
+      the output....
+['__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'c1', 'f1', 'x']
+
+# Save  in  cwd \ p1 \ mod2 . py
+x = 20
+def   f1():
+	print('p1  ---> mod2  ---> f1')
+class   c1:
+	def  m1(self):
+		print('p1  ---> mod2 ---> c1 ---> m1 ')
+
+
+
+'''
+1) What  is  the  name  of  module ?  --->  p1 . mod2
+
+2) What  are  the  members  of  p1 . mod2 ?  --->  Object  'x' ,  Function   f1()  and  class  c1
+'''
+the output
+['__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'c1', 'f1', 'x']
+#  Save  in  any  file  of  cwd  (Homework)
+How  to  import  mod1   and  mod2  of  package  p1  with  from  statement
+How  to  print  object  'x'  of   mod1  in  package  p1
+How  to  call  function  f1()  of   mod1  in  package  p1
+How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+How  to  print  object  'x'  of   mod2  in  package  p1
+How  to  call  function  f1()  of   mod2  in  package  p1
+How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+print(p1 . mod1 . x)
+print(x)
+the output is.....
+From mod1:
+10
+p1  --->  mod1   --->  f1  function
+p1  ---> mod1  ---> c1  ---> m1 method
+
+
+From mod2:
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1 
+'''  (Home  work)
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+'''
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+from  p1 . mod1    import    *
+from  p1 . mod2    import    *
+print(x)
+f1()
+a = c1()
+a . m1()
+the output...
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1 
+
+
+
