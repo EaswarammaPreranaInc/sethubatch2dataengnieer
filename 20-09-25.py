@@ -1,132 +1,116 @@
 #1st program
-#  Save  in  any  file  of  cwd  (Homework)
-from p1 import mod1
-from p1 import mod2 #How  to  import  mod1   and  mod2  of  package  p1  with  from  statement
-print(mod1.x)#How  to  print  object  'x'  of   mod1  in  package  p1
-mod1.f1()#How  to  call  function  f1()  of   mod1  in  package  p1
-a=mod1.c1()
-a.m1()#How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
-print()
-print()
-print(mod2.x)#How  to  print  object  'x'  of   mod2  in  package  p1
-mod2.f1()#How  to  call  function  f1()  of   mod2  in  package  p1
-b=mod2.c1()
-b.m1()#How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
-#print(p1 . mod1 . x)#error members cannot be called through packages
-#print(x)#error x is not defined
+#  Repeat  previous  program  such  that  OTP  can  be  between  000000  and   999999  (may  be   000156)
+import random 
+for i in range(10):
+    t=random.randint(0,999999)
+    s=str(t)
+    n=len(s)
+    print('0'*(6-n)+s)
 
 
 #2nd program
-#  Save  in  any  file  of  cwd  (Homework)
-from p1.mod1 import * #How  to  import  members  of  mod1  in  package  p1
-print(x)#How  to  print  object  'x'  of   mod1  in  package  p1
-f1()#How  to  call  function  f1()  of   mod1  in  package  p1
-p=c1()
-p.m1() #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
-print()
-print()
-from p1.mod2 import * #How  to  import   members  of  mod2   in  package  p1
-print(x)#How  to  print  object  'x'  of   mod2  in  package  p1
-f1()#How  to  call  function  f1()  of   mod2  in  package  p1
-q=c1()
-q.m1()#How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
-#print(p1 . mod1 . x)#error , as here module is not imported
-#print(mod1 . x) #error, mod1 is not defined as it is not imported
-#from  p1   import  mod1 . * #error cannot import module and members in the same import clause of from statement
+# Find  outputs
+import  os
+os . system('dir') #all files and sub directories of cwd
+os . system('pause') #stops the execution until a key is pressed
+os . system('cls') #screen is cleared
+os . system('py  test.py') #executes the test file
 
 
 #3rd program
-x = 30
-def   f1():
-	print('Function  of  same  module')
-class  c1:
-	def  m1(self):
-		print('Method  of  class  c1  in same  module')
-from  p1 . mod1    import    *
-from  p1 . mod2    import    *
-print(x)#20
-f1()#p1  ---> mod2  ---> f1
-a = c1()
-a . m1()#p1  ---> mod2 ---> c1 ---> m1
+# Write  a  program  to  create  a  directory.
+# Input  is  directory  name  (or)  path  of  the  directory
+import os
+d=input("Enter the directory name or path: ")
+try:
+    os.mkdir(d)
+    print(f'created directory {d}')
+except FileExistsError:
+    print(f'directory {d} already exists')
 
 
 #4th program
-x = 30
-def   f1():
-	print('Function  of  same  module')
-class  c1:
-	def  m1(self):
-		print('Method  of  class  c1  in same  module')
-from  p1 . mod2    import   *
-from  p1 . mod1    import   *
-print(x)#10
-f1() #p1  --->  mod1   --->  f1  function
-a = c1()
-a . m1()#p1  ---> mod1  ---> c1  ---> m1 method
+'''
+Write  a  program  to  create  a  group  of  directories.
+Input :  a/b/c
+'''
+import os
+d=input("Enter the path: ")
+try:
+    os.makedirs(d)
+except:
+    print("directory already exits")
 
 
 #5th program
-from  p1 . mod1    import    *
-from  p1 . mod2    import    *
-x = 30
-def   f1():
-	print('Function  of  same  module')
-class  c1:
-	def  m1(self):
-		print('Method  of  class  c1  in same  module')
-print(x)#30
-f1()#Function of same module
-a = c1()
-a . m1()#Method of class c1 in same module
+# Write  a  program  to  delete  a  directory.
+# Input  is  directory  name  (or)  path  of  the  directory
+import os
+d=input("Enter the directory or path: ")
+try:
+    os.rmdir(d)
+    print("Directory deleted")
+except FileNotFoundError:
+    print("file not found")
+    exit()
+except OSError:
+    print("The directory is not empty")
+    exit()
 
 
 #6th program
-from p1.mod1 import x as a ,f1 as fa ,c1 as ca #How  to  import   members  of  mod1   in  package  p1  with  from  statement
-from p1.mod2 import x as b ,f1 as fb ,c1 as cb #How  to  import   members  of  mod2   in  package  p1  with  from  statement
-print(a)#How  to  print  object  'x'  of   mod1  in  package  p1
-fa()#How  to  call  function  f1()  of   mod1  in  package  p1
-p=ca()
-p.m1() #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
-print()
-print()
-print(b)#How  to  print  object  'x'  of   mod2  in  package  p1
-fb()#How  to  call  function  f1()  of   mod2  in  package  p1
-q=cb()
-q.m1()#How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+# Write  a  program  to  delete  a  group  of  directories
+# Input  is  directory  path
+import os
+d=input("Enter the path: ")
+try:
+    os.removedirs(d)
+except FileNotFoundError:
+    print("File Not found")
 
 
 #7th program
-# Save  in  any  file  of  cwd
-from p1 import mod1 #How  to  import  mod1  of  package  p1  with  from  statement
-print(mod1.x)#How  to  print  object  'x'  of   mod1  in  package  p1
-mod1.f1()#How  to  call  function  f1()  of   mod1  in  package  p1
-a=mod1.c1()
-a.m1()#How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
-#print(p1 . mod1 . x) #error incorrect syntax to call members of imported module
-print()
-print()
-from p1.p2 import mod2#How  to  import  mod2  of  sub-package  p2  in  package  p1  with  from  statement
-print(mod2.x)#How  to  print  object  'x'  of   mod2  in  sub-package  p2  of  package  p1
-mod2.f1()#How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
-a=mod2.c1()
-a.m1()#How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
-#print(p1 . p2 . mod2 . x)#error,incorrect syntax to call the mod2 osbject
-#from  p1  import   p2 . mod2 #error . operator cannot be used in import clause
-#from  p2  import  mod2 #module not found found error
+# Write  a  program  to  rename  a  file  and  directory
+# Input  is  filename  (or)  directory  name
+import os
+d=input("Enter directory name to be renamed: ")
+new_name=input("Enter the new name: ")
+try:
+    os.rename(d,new_name)
+    print("Rename Succesful! ")
+except FileNotFoundError:
+    print("File not found")
+    exit()
 
 
 #8th program
-# Save  in  any  file  of  cwd
-from p1.mod1 import * #How  to  import  members  of  mod1  in   package  p1
-print(x)#How  to  print  object  'x'  of   mod1  in  package  p1
-f1()#How  to  call  function  f1()  of   mod1  in  package  p1
-a=c1()
-a.m1()#How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
-print()
-print()
-from p1.p2.mod2 import * #How  to  import  members  of  mod2  in  sub-package  p2  of   package  p1
-print(x)#How  to  print  object  'x'  of   mod2  in  sub-package  p2  of  package  p1
-f1()#How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
-a=c1()
-a.m1()#How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
-#from  p1  import  mod1 . * #error, invalid syntax
+# Write  a  program  to  print  all  the  files  and  sub-directories  of  input  directory
+# Input :  Directory  (or)  path
+# Output:  Print  Two  lists  where  1st  list  is  all  the  files  and  2nd  list  is  all  the  directories
+import os 
+l1=[]
+l2=[]
+d=input("Enter directory or path: ")
+try:
+    for x in os.listdir(d):
+        if '.' in x:
+            l1.append(x)
+        else:
+            l2.append(x)
+    print(f'Files: {l1}')
+    print(f'Directories: {l2}')
+except FileNotFoundError:
+    print("File not found")
+
+
+#9th program
+# Write  a  program  to  iterate  thru  sairam  directory  present  in  current  working  directory
+import os
+d=input("Enter directory or path: ")
+g=os.walk(d)
+try:
+    while True:
+        tuple=next(g)
+        print('Directory path: ',tuple[0], 'Sub Directories: ',tuple[1], 'Files: ',tuple[2])
+except:
+    print("Fully Iterated")
