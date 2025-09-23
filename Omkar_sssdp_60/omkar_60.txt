@@ -1,0 +1,15 @@
+def permutations(a,b,c):
+    n=lists(n)
+    print(n)
+    print(1)
+    print(2)
+    print(3)
+    for i in range(len(n)):
+        len(count,(a[1]))
+    n=map(input("enter a string"))
+    res=[1]
+    return res
+n=list(input("enter a listof string:").split())
+print(list(n))
+print(1,2,3)
+
