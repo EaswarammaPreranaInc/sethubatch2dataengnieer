@@ -154,4 +154,9 @@ from p1 import mod1         # Imports mod1 directly
 from p1.mod1 import *       # Imports all members of mod1 directly
 import p1._init_            # Error __init__.py is not imported by this statement. It automatically runs __init__.py when you import the package.
 
+'''
+Output:
+
+__init__ module of package p1 is executed
+'''
 
