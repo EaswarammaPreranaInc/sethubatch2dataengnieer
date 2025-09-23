@@ -1,0 +1,204 @@
+import  sys , time , math
+print(dir(sys))#['_breakpointhook', 'displayhook', 'doc', 'excepthook', 'interactivehook', 'loader', 'name', 'package', 'spec', 'stderr', 'stdin', 'stdout', 'unraisablehook_', '_base_executable', '_clear_type_cache', '_current_exceptions', '_current_frames', '_debugmallocstats', '_enablelegacywindowsfsencoding', '_framework', '_getframe', '_getframemodulename', '_git', '_home', '_setprofileallthreads', '_settraceallthreads', '_stdlib_dir', '_vpath', '_xoptions', 'activate_stack_trampoline', 'addaudithook', 'api_version', 'argv', 'audit', 'base_exec_prefix', 'base_prefix', 'breakpointhook', 'builtin_module_names', 'byteorder', 'call_tracing', 'copyright', 'deactivate_stack_trampoline', 'displayhook', 'dllhandle', 'dont_write_bytecode', 'exc_info', 'excepthook', 'exception', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info', 'float_repr_style', 'get_asyncgen_hooks', 'get_coroutine_origin_tracking_depth', 'get_int_max_str_digits', 'getallocatedblocks', 'getdefaultencoding', 'getfilesystemencodeerrors', 'getfilesystemencoding', 'getprofile', 'getrecursionlimit', 'getrefcount', 'getsizeof', 'getswitchinterval', 'gettrace', 'getunicodeinternedsize', 'getwindowsversion', 'hash_info', 'hexversion', 'implementation', 'int_info', 'intern', 'is_finalizing', 'is_stack_trampoline_active', 'maxsize', 'maxunicode', 'meta_path', 'modules', 'monitoring', 'orig_argv', 'path', 'path_hooks', 'path_importer_cache', 'platform', 'platlibdir', 'prefix', 'pycache_prefix', 'set_asyncgen_hooks', 'set_coroutine_origin_tracking_depth', 'set_int_max_str_digits', 'setprofile', 'setrecursionlimit', 'setswitchinterval', 'settrace', 'stderr', 'stdin', 'stdlib_module_names', 'stdout', 'thread_info', 'unraisablehook', 'version', 'version_info', 'warnoptions', 'winver']
+print()
+print()
+print(dir(time))#['STRUCT_TM_ITEMS', 'doc', 'loader', 'name', 'package', 'spec_', 'altzone', 'asctime', 'ctime', 'daylight', 'get_clock_info', 'gmtime', 'localtime', 'mktime', 'monotonic', 'monotonic_ns', 'perf_counter', 'perf_counter_ns', 'process_time', 'process_time_ns', 'sleep', 'strftime', 'strptime', 'struct_time', 'thread_time', 'thread_time_ns', 'time', 'time_ns', 'timezone', 'tzname']
+print()
+print(dir(math)) #['_doc', 'loader', 'name', 'package', 'spec_', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'exp2', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'sumprod', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+
+import  cal
+print(dir(cal))
+ #['_buitins','cached','doc','file','loader','name','package','spec_','add','sub','mul','div','c1','x','y']
+
+x = 25
+def  disp():
+	print('Hello')
+class  c1:
+        def  m1(self):
+                pass
+# print(dir())
+# print(type(dir()))
+# print(type(dir))
+print(dir()) # ['_annotations','buitins','cached','doc','file','loader','name','package','spec_','c1','disp','x']
+print(type(dir())) # <class 'list'>
+print(type(dir))#<class 'buitin_function_or_method'>
+
+'''
+Write  a  program  to  print  all  the  members  of  cal  module  without  environment  variables
+
+1) What  is  the  result  of  'name' . startswith('')  ?  ---> True
+
+2) What  is  the  result  of  'spec' . endswith('')  ?  --->  True
+
+3) What  is  the  result  of  'spec_' . startswith('_')  ?  ---> False
+
+4) a = []
+    Append  all  the  elements  of  list  returned  by  dir()  function  to  list  'a'  except  environment  variables
+'''
+import cal
+b=dir(cal)
+a=[]
+for i in b:
+    if not (i.startswith('') and i.endswith('')):
+        a.append(i)
+print(a)
+
+print(dir()) #['_annotations','buitins','cached','doc','file','loader','name','package','spec_']
+print()
+import  cal
+print()
+print(dir()) #['_annotations','buitins','cached','doc','file','loader','name','package','spec_','cal',']
+# here we imported the cal so directory has we get the cal
+
+print(dir()) #['_annotations','cached','builtins','doc','file','loader','name','package','spec_']
+print()
+from  cal  import  *
+print()
+print(dir()) #['_annotations','builtins','cached','doc','file','loader','name','package','spec_','add','sub','mul','div','c1','x','y']
+
+print(dir()) #['_annotations', 'builtins', 'cached', 'doc', 'file', 'loader', 'name', 'package', 'spec_']
+print()
+from  cal  import  add , mul , x
+print()
+print(dir()) #['_annotations', 'builtins', 'cached', 'doc', 'file', 'loader', 'name', 'package', 'spec_', 'add',  'mul', 'x']
+
+# sys . path  demo   program
+import  sys
+print('Original  sys.path')
+for  x  in   sys . path:
+	print(x) # c:\Users\USER\Desktop  <nl> python 312.zip <nl> DLLS <nl> Lib <nl> python312 <nl> site-packages
+print(len(sys . path)) # 6
+# Store  sample.py  module  in  c:\\sairam  folder  before  the  program  is  executed  (Home  work)
+# How  to  print  number  of  directories  (or)  folders  in  sys.path
+# How  to  append  c:\sairam  folder  to  sys.path
+# How  to  print  number  of  directories  (or)  folders  in  sys.path
+# How  to  print  object  'x'  of  sample   module  which  is  in  c:\sairam  folder
+# How  to  call   function  f1()  of  sample  module  which  is  in  c:\sairam  folder
+# How  to  call   method  m1()  of  class  c1  of  sample  module  which  is  in  c:\sairam  folder
+import sys
+sys.path.append("C:\\Users\\USER\\Desktop\\sairam")
+for i in sys.path:
+    print(i)
+import cal
+
+print(dir(cal))
+from  random  import  *
+print(random()) # 0 to 1 any value float 0.5
+print(randint(1 , 100))  # 90
+print(uniform(1 , 100)) # 89.999
+print(randrange(10))  # 4
+print(randrange(1 , 11))  # 7
+print(randrange(1 , 11 , 2)) #5
+list = [10 , 20 , 15 , 12 , 18]
+print(choice(list))  # 20
+print(choice('RAJESH')) # A
+set  =  {10 , 20 , 30 , 40}
+print(choice(set)) #error
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)
+from random import *
+n=input("enter a string")
+for i in range(10):
+    print(choice(n))
+
+Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits
+from random import *
+for _ in range(10):
+    a=''
+    for j in range(6):
+        if j%2==0:
+            a+=(chr(randint(65,90)))
+        else:
+            a+=str(randint(0,9))
+    print(a)
+Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
+import random
+
+# Input list
+lst = [25, 10.8, 'Hyd', True, 3+4j, None]
+
+# Print random element 10 times
+for _ in range(10):
+    print(random.choice(lst))    
+
+Write  a  program  to  generate  ten  six-digit  OTP's  (Home  work)
+import random
+
+for _ in range(10):
+    otp = random.randint(100000, 999999)  # ensures exactly 6 digits
+    print(otp)
+
+'''
+Write  a  program to  open  any  website  from  gmail ,  google ,  rediff ,  ...   with  a  time  gap  of  5  to  20   sec
+
+1) What  does  open('http://google.com')  do ?  ---> Opens  google.com  website
+
+2) Where  is  open()  function  defined  ?  ---> In  webbrowser  module
+
+3) list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+
+4) Provide  a  time  gap  of  5  to  20 sec  between  the  websites
+'''
+from random import *
+from webbrowser import * 
+import time
+# Input list
+sites = [
+    "https://www.google.com",
+    "https://www.rediff.com",
+    "https://mail.google.com",   # gmail
+    "https://www.amazon.com",
+    "https://www.netflix.com"
+]
+try:
+    url = random.choice(sites)        
+    open(url,new=2)
+    wait=randint(0,5)
+    print(f"Opened {url} — waiting {wait} sec...")
+    time.sleep(wait)
+except:
+    print("\nStopped by user.")
+
+'''
+(Home  work)
+Write  a  program  to  implement  Rock , paper  and  scissors  game  between  user  and  computer
+
+1) What  is  the  result  if  user  input  and  computer  random  number  are  same  ?  ---> Draw
+
+2) What  is  the  result  if  computer  selects  paper  and  user  input  is  rock ?  --->
+																												Computer  wins  becoz  parer  dominates  rock
+
+3) What  is  the  result  if  computer  selects  scissors  and  user  input  is  paper ?  --->
+																										Computer  wins  becoz  scissors  dominates  paper
+
+4) What  is  the  result  if  computer  selects  rock  and  user  input  is  scissors ?  --->
+																										Computer  wins  becoz  rock  dominates  scissors
+
+5) What  is  the  result  in  all  other  cases  ?  --->  User  wins
+'''
+import random
+m={0 : "Rock" , 1 :"Paper" , 2 : "Scissors"}
+o=["Rock","Paper","Scissors"]
+while True:
+    n=int(input("What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :"))
+    print("User  : ",m[n])
+    z=random.choice(o)
+    print("Computer  :",z)
+    if (m[n] == z):
+        print("Draw")
+    elif (m[n]=="Rock" and z=="Paper"):
+        print("Computer Wins")
+    elif (m[n]=="Paper" and z=="Rock"):
+        print("User Wins")
+    elif (m[n]=="Paper" and z=="Scissors"):
+        print("Computer Wins")
+    elif (m[n]=="Scissors" and z=="Paper"):
+        print("User Wins")
+    elif (m[n]=="Rock" and z=="Scissors"):
+        print("User Wins")
+    elif (m[n]=="Scissors" and z=="Rock"):
+        print("Computer Wins")
+    p=input("Continue  (  y / n)  ?")
+    if (p.lower()=="n"):
+        print("End of the game")
+        break
