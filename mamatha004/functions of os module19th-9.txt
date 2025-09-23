@@ -1,0 +1,61 @@
+#  Repeat  previous  program  such  that  OTP  can  be  between  000000  and   999999  (may  be   000156)                                                                              import random
+
+def generate_otp():
+    n = random.randint(0, 999999)   
+    return f"{n:06d}" 
+             
+for _ in range(10):
+    print(generate_otp())
+
+
+# Find outputs
+import os
+os.system('dir')        # files & folders list
+os.system('pause')      #pauses execution until  press any key message
+os.system('cls')        # clears screen
+os.system('py test.py') # runs test.py / error if missing
+
+
+Write  a  program  to  create  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory                                                                                                                                                                                import os
+
+while True:
+    dir_name = input("Enter directory name (or) path : ")
+    if dir_name == "":   
+        break
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+        print(f"Directory {dir_name} created")
+    else:
+        print(f"Directory {dir_name} already exists")
+
+
+
+Write  a  program  to  create  a  group  of  directories.
+Input :  a/b/c
+import os
+
+dir_path = input("Enter directory path : ")
+
+try:
+    os.makedirs(dir_path)   
+    print("Directory (or) directories created")
+except FileExistsError:
+    print("Directory already exists")
+
+
+
+
+Write  a  program  to  delete  a  directory.
+Input  is  directory  name  (or)  path  of  the  directory                                                                                                                                                                          import os
+
+dir_name = input("Enter directory name (or) path : ")
+
+if os.path.exists(dir_name):
+    try:
+        os.rmdir(dir_name)   
+        print(f"Directory {dir_name} is removed")
+    except OSError:
+        print(f"Directory {dir_name} is not empty, cannot remove")
+else:
+    print(f"Directory {dir_name} does not exist")

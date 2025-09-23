@@ -1,0 +1,180 @@
+#  Find  outputs  (Home  work)
+import sys, time, math
+
+print(dir(sys))
+# Output: 
+ ['_displayhook', 'doc', 'excepthook', 'loader', 'name_',
+ '_package', 'spec', 'stderr', 'stdin', 'stdout_', 
+ '_clear_type_cache', '_current_frames', '_debugmallocstats', 
+ 'argv', 'builtin_module_names', 'byteorder', 'call_tracing', 
+ 'displayhook', 'exc_info', 'excepthook', 'exit', 'flags', 'getdefaultencoding', 
+ 'getfilesystemencoding', 'getrecursionlimit', 'intern', 'maxsize', 'modules', 
+'path', 'platform', 'setrecursionlimit', 'stderr', 'stdin', 'stdout', 'version', 'version_info', ...]
+
+print()
+print()
+
+print(dir(time))
+# Output:
+ ['_doc', 'loader', 'name', 'package', 'spec_',
+ 'altzone', 'asctime', 'ctime', 'daylight', 'gmtime', 'localtime', 
+'mktime', 'sleep', 'strftime', 'strptime', 'time', 'timezone', 'tzname']
+
+print()
+
+print(dir(math))
+ Output:
+ ['_doc', 'loader', 'name', 'package', 'spec_',
+ 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 
+ 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 
+ 'exp', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gcd', 'hypot', 
+ 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'log', 'log10', 
+ 'log2', 'modf', 'nan', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 
+ 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
+
+
+
+
+#  Find  outputs  (Home  work)
+import cal
+
+print(dir(cal))
+# Output :
+ ['_builtins', 'cached', 'doc', 'file_', 
+  '_loader', 'name', 'package', 'spec_', 
+  'add', 'sub', 'mul', 'div', 'c1', 'x', 'y']
+
+
+#  Find  outputs  (Home  work)
+x = 25
+def disp():
+    print('Hello')
+class c1:
+    def m1(self):
+        pass
+
+print(dir())
+# Output: 
+ ['_builtins', 'doc', 'loader', 'name_', 
+  '_package', 'spec_', 'c1', 'disp', 'x']
+
+print(type(dir()))
+#  <class 'list'>
+
+print(type(dir))
+# <class 'builtin_function'>
+
+
+# sys.path demo program
+import sys
+
+print('Original sys.path')
+#  Original sys.path
+
+for x in sys.path:
+    print(x)
+# prints a list of directory paths (one per line).
+
+print(len(sys.path))
+#  number of paths printed above (depends on system, usually ~8–12)
+
+
+# sys.path + sample module demo (Home work)
+import sys
+
+#  Print number of directories before
+print("Before:", len(sys.path))
+
+#  Append c:\sairam folder to sys.path
+sys.path.append("C:\\sairam")
+
+#  Print number of directories after
+print("After:", len(sys.path))
+
+#  Import sample module (which is inside c:\sairam)
+import sample
+
+#  Print object x of sample module
+print(sample.x)          # 100
+
+#  Call function f1() of sample module
+sample.f1()              # Hello from f1
+
+# Call method m1() of class c1 of sample module
+obj = sample.c1()
+obj.m1()                 # Hello from m1
+
+
+
+from random import *
+
+print(random())
+#  Random float between 0.0 and 1.0 
+
+print(randint(1, 100))
+#  Random integer between 1 and 100 (inclusive)
+
+print(uniform(1, 100))
+#  Random float between 1 and 100 
+
+print(randrange(10))
+# Random integer from 0 to 9
+
+print(randrange(1, 11))
+# Random integer from 1 to 10
+
+print(randrange(1, 11, 2))
+#  Random odd integer from 1, 3, 5, 7, 9
+
+list = [10, 20, 15, 12, 18]
+print(choice(list))
+# Random element from list (10, 20, 15, 12, or 18)
+
+print(choice('RAJESH'))
+# Random character from string "RAJESH" (R, A, J, E, S, or H)
+
+set = {10, 20, 30, 40}
+print(choice(set))
+#error
+
+
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)                                                                                      from random import choice
+s=input("enter a string: ")
+print(choice(s))
+
+Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits                                                                                                                   import random
+alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num="0123456789"
+for i in range(10):
+ result = ""
+ for i in range(3):   
+    ch = random.choice(alpha)   
+    n = random.choice(num)  
+    result += ch + n            
+
+ print(result)
+
+
+'''
+Write  a  program to  open  any  website  from  gmail ,  google ,  rediff ,  ...   with  a  time  gap  of  5  to  20   sec
+
+1) What  does  open('http://google.com')  do ?  ---> Opens  google.com  website
+
+2) Where  is  open()  function  defined  ?  ---> In  webbrowser  module
+
+3) list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+
+4) Provide  a  time  gap  of  5  to  20 sec  between  the  websites
+'''    import webbrowser
+import random
+import time
+
+urls =  ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+
+for _ in range(5):
+    url = random.choice(urls)
+    webbrowser.open(url)  
+    time.sleep(5)
+
+
