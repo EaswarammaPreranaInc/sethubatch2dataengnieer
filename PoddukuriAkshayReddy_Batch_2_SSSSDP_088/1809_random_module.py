@@ -38,7 +38,7 @@ Cyb
 	What  are  the  outputs ?  ---> Nothing  becoz  if  condition  is   False
 '''
 
- cal.py  is  not  a  home  work
+#  cal.py  is  not  a  home  work
 
  #  Find  outputs  (Home  work)
 

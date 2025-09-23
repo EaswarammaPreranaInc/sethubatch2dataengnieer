@@ -194,3 +194,19 @@ except FileExistsError:
 except Exception as e:
     print("Error:", e)
     
+    
+'''
+Write a program to iterate thru sairam directory present in current working directory
+'''
+dname = input("Enter the directory path: ")
+g = os.walk(dname)
+try:
+    while True:
+        root, dirs, files = next(g)
+        print("Directory Path :", root)
+        print("Sub Directories :", dirs)
+        print("Files :", files)
+        os.system('Pause')
+        os.system('cls')
+except StopIteration:
+    print("No more directories to explore.")
