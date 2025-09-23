@@ -1,0 +1,387 @@
+# home work 25/08/2025 
+
+
+############################
+
+'''
+Tricky  program
+Write  a  program  to  sort  dictionary  wrt  keys  (Home  work)
+
+1) Let  input  be   {10 : 'A' , 20 : 'B' , 15 : 'C' , 5 : 'D' , 12 : 'E'}
+    What  is  the  output ?  ---> {5 : 'D' , 10 : 'A' ,  12 : 'E' ,  15 : 'C' , 20 : 'B'}
+
+2) Both  input  and  output  are  dictionaries
+
+3) Hint:  Use  sorted()  function
+'''
+
+Enter  dictionary  :  {10 : 'A' , 20 : 'B' , 15 : 'C' , 5 : 'D' , 12 : 'E'}
+{5: 'D', 10: 'A', 12: 'E', 15: 'C', 20: 'B'}
+
+Enter  dictionary  :  {10 : 'A' , 20 : 'B' , 15 : 'C' , 5 : 'D' , 12 : 'E'}
+{5: 'D', 10: 'A', 12: 'E', 15: 'C', 20: 'B'}
+ 
+#### answere #####
+
+
+a = {10: 'A', 20: 'B', 15: 'C', 5: 'D', 12: 'E'}
+b = dict(sorted(a.items()))
+print("Input dictionary :", a)
+print("Sorted dictionary:", b)
+
+
+###############################
+
+# clear()  method  demo  program (Home  work)
+a = {10 : 20 , 30 : 40 , 50 : 60}
+print(a) # {10 : 20 , 30 : 40 , 50 : 60}
+a . clear()
+print(a) # {}
+del  a
+print(a) # error
+
+####################################
+
+# copy()  method demo  program  (Home  work)
+a = {'R' : 'Red' , 'G' : 'Green' , 'B' : 'Blue'}
+b = a . copy()
+print(b) # {'R' : 'Red' , 'G' : 'Green' , 'B' : 'Blue'}
+print(a  is  b) # False
+print(a  ==  b) # True
+
+#######################################
+
+#  keys()  method  demo  program
+a = {10 : 'Hyd' , 20 : 'Sec' , 15 : 'Cyb' , 18 : 'Pune'}
+b = a . keys()
+print(b) # {10,20,15,18}
+print(type(b)) # <class 'dict'>
+for  x  in   b:
+        print(x) # 10 <next line>  # 10 <next line>   20  <next line>   15 <next line > 18 
+
+
+'''
+What  does  keys()  method  do  --->  Returns  dict_keys  object  which  has  list  of  all  the  dictionary  keys
+'''
+
+######################################
+
+# values()  method  demo  program
+a = {10 : 'Hyd' , 20 : 'Sec' , 15 : 'Cyb' , 18 : 'Pune'}
+b = a . values()
+print(b) # dict_values(['Hyd', 'Sec', 'Cyb', 'Pune'])
+print(type(b)) # <class 'dict_values'>
+for  x   in   b:
+	print(x) # Hyd
+# Sec
+# Cyb
+# Pune
+
+
+
+'''
+What  does  values()  method  do  --->  Returns  dict_values  object  which  has  list  of  all  the  dictionary  values
+'''
+
+########################################
+
+#  items()  method  demo  program
+a = {10 : 'Hyd' , 20 : 'Sec' , 15 : 'Cyb' , 18 : 'Pune'}
+b = a . items() # 
+print(b) # dict_items([(10, 'Hyd'), (20, 'Sec'), (15, 'Cyb'), (18, 'Pune')])
+print(type(b)) # <class 'dict_items'>
+for  x   in   b:
+        print(x) # (10, 'Hyd')
+		#  (20, 'Sec')
+		# (15, 'Cyb')
+		# (18, 'Pune')
+
+for  x , y   in  b:
+        print(x , y , sep = ' ... ') # 10 ... Hyd
+					#20 ... Sec
+					#15 ... Cyb
+					#18 ... Pune
+
+
+
+'''
+1) What  does  items()  method  do  --->  Returns  dict_items  object  which  has  list  of  tuples
+
+2) What  are  the  two  elements  of  each  tuple ?  ---> (key , value)
+'''
+
+########################################
+
+# Find  outputs (Home  work)
+a = {10 : 'Hyd' , 20 : 'Sec' , 15 : 'Cyb' , 18 : 'Pune'}
+for  x , y   in  a . items():
+       print(x , y , sep = ' ... ') # 10 ... Hyd
+ 					#20 ... Sec
+ 					#15 ... Cyb
+ 					#18 ... Pune
+
+for  x , y   in  a . keys():
+       print(x , y , sep = ' ... ') # 10 ... 
+ 					#20 ... 
+ 					#15 ... 
+ 					#18 ... 
+
+for  x , y   in  a . values():
+       print(x , y , sep = ' ... ') #  Hyd...
+ 				    # Sec...
+ 				    # Cyb...
+ 				    # Pune...
+
+for  x , y   in  a:
+       print(x , y , sep = ' ... ') # 10 
+ 				    #20 
+ 				    #15 
+ 				    #18 
+
+####################################
+
+#  Find  outputs  (Home  work)
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh'}
+x , y , z = a . keys()
+print(x) # 10
+print(y) #20
+print(z) #15
+print() # 
+x , y , z = a . values()
+print(x) # Rama
+print(y) # Sita
+print(z) # Rajesh
+print() #
+x , y ,  z = a . items()
+print(x) # 10 : 'Rama'
+print(y) # 20 : 'Sita'
+print(z) #  15 : 'Rajesh'
+print() #  {10 : 'Rama' , 20 : 'Sita' , 15 : 'Rajesh'}
+(rno1 , sname1) , (rno2 , sname2) , (rno3 , sname3) = a . items()
+a['rno1'] = sname1 # print(rno1 , sname1)
+a['rno2'] = sname2 # print(rno2 , sname2)
+a['rno3'] = sname3 # print(rno3 , sname3)
+# a = {10: 'Rama', 20: 'Sita', 15: 'Rajesh', 'rno1': 'Rama', 'rno2': 'Sita', 'rno3': 'Rajesh'}
+
+
+##################################
+
+'''
+Tricky  program
+(Home  work)
+Write  a program  to  determine  frequency  of  each  alphabet  in  the  string   in   alphabetical  order
+(ignoring  the  case)
+
+Let  input  be   RamA raO
+What  is  the  output ?  ---> {'A' : 3 , 'M' : 1 , 'O' : 1 , 'R' : 2}  in  alphabetical  order
+
+1) What  is  the  string  after  it  is  converted  to  uppercase ?  --->  'RAMA RAO'
+
+2) What  is  the  result  of  sorted('RAMA RAO') ?  --->  [' ' , 'A' , 'A' , 'A' , 'M' , 'O' , 'R' , 'R']
+
+3) What  is  dictionary  'a'  initially ?  --->  { }
+
+4) What  is  the  first  element  in  list ?  --->  ' '
+    What  action  to  be  made  for  ' ' ?  --->  Ignore  becoz  it  is  not  an  alphabet
+
+5) What  is  the  2nd  element  in  list ?  ---> 'A'
+    What  is  a['A']  ?  --->  a . get('A' , 0) + 1 = 0 + 1 = 1
+    What  does  a['A']  =  1  do ?  --->  Appends  'A' : 1  to  dict  'a'
+    What  is  dictionary  'a' ?  --->  {'A' : 1}
+
+6) What  is  the  3rd  element  in  list ?  --->  'A'
+    What  is  a['A']  ?  --->  a . get('A' , 0) + 1 =  1 + 1 = 2
+    What  does  a['A']  =  2  do ?  --->  Modifies  value  of  'A'  to  2  in dict  'a'
+    What  is  dictionary  'a' ?  --->  {'A' : 2}
+
+7) What  is  the  4th  element  in  list ?  --->  'A'
+    What  is  a['A']  ?  --->  a . get('A' , 0) + 1 =  2 + 1 = 3
+    What  does  a['A'] = 3  do ?  --->  Modifies  value  of  'A'  to  3  in dict  'a'
+    What  is  dictionary  'a' ?  ---> {'A' : 3}
+
+8) What  is  the  5th  element  in  list ?  --->  'M'
+     What  is  a['M']  ?  --->  	 a . get('M' , 0) + 1 =  0 + 1 = 1
+    What  does  a['M'] = 1  do ?  --->  Appends  'M' : 1  to  dict  'a'
+    What  is  dictionary  'a' ?  ---> {'A' : 3 , 'M' : 1}
+
+9) What  is  the  6th  element  in  list ?  ---> 'O'
+     What  is  a['O']  ?  --->  a . get('O' , 0) + 1 =  0 + 1 = 1
+     What  does  a['O'] = 1  do ?  ---> Appends  'O' : 1  to  dict  'a'
+     What  is  dictionary  'a' ?  --->  {'A' : 3 , 'M' : 1 , 'O' : 1}
+
+10) What  is  the  7th  element  in  list ?  ---> 'R'
+      What  is  a['R']  ?  --->  a . get('R' , 0) + 1 =  0 + 1 = 1
+       What  does  a['R'] = 1  do ?  --->  Appends  'R' : 1  to  dict  'a'
+	  What  is  dictionary  'a' ?  ---> {'A' : 3 , 'M' : 1 , 'O' : 1 , 'R' : 1}
+
+11) What  is  the  last  element  in  list ?  --->  'R'
+      What  is  a['R']  ?  --->  a . get('R' , 0) + 1 =  1 + 1 = 2
+      What  does  a['R'] = 2  do ?  ---> Modifies  value  of  'R'  to  2  in dict  'a'
+      What  is  dictionary  'a' ?  --->  	{'A' : 3 , 'M' : 1 , 'O' : 1 , 'R' : 2}
+
+11) Finally  what   is  dict  'a' ?  ---> {'R' : 2 , 'A' : 3 , 'M' : 1 , 'O' : 1}
+'''
+
+Enter  mixed  case  string : RamA raO
+{'A': 3, 'M': 1, 'O': 1, 'R': 2}
+
+###############    answere           ###############
+
+s = input("Enter mixed case string : ")
+s = s.upper()
+a = {}
+for ch in sorted(s):
+    if ch.isalpha():  # Ignore spaces or non-alphabets
+        a[ch] = a.get(ch, 0) + 1
+print(a)
+
+##################################
+
+'''
+(Home  work)
+Write  a  program  to  create  a  dictionary  with  emp  names  and  salaries
+
+Hint:  Append  each  emp  name  and  salary  to  dictionary  'a'
+'''
+
+
+
+How many Employees ? : 4
+Enter Emp Name : AAA
+Enter Salary : 100000
+Enter Emp Name : BBB
+Enter Salary : 200000
+Enter Emp Name : CCC
+Enter Salary : 150000
+Enter Emp Name : DDD
+Enter Salary : 175000
+{'AAA': 100000.0, 'BBB': 200000.0, 'CCC': 150000.0, 'DDD': 175000.0}
+
+
+
+######### answere #########
+
+a = {}
+n = int(input("How many Employees ? : "))
+for i in range(n):
+    name = input("Enter Emp Name : ")
+    salary = float(input("Enter Salary : "))
+    a[name] = salary   # Append to dictionary
+print(a)
+
+######################################
+
+''' (Home  work)
+Write  a  program  to  convert  a  string  to  dictionary
+
+Let  input  be   "Emp no = 25 , Emp name = Rama  Rao , sal = 10000.0 , gender = m"
+
+What  is  the  output ?  --->  {Emp no : 25 , Emp name  :  Rama Rao , sal : 10000.0 , gender : m}
+
+Hint :  Use  split()  method  twice
+'''
+
+
+
+############# answere
+
+s = "Emp no = 25 , Emp name = Rama  Rao , sal = 10000.0 , gender = m"
+
+d = {}
+pairs = s.split(',')
+for p in pairs:
+    key, value = p.split('=')
+    d[key.strip()] = value.strip()   # remove spaces
+print(d)
+
+########################
+
+'''
+(Home  work)
+Write  a  program  to  remove  duplicate  characters  of  the  string  using  set
+
+1) Let  input  be   Rama  Rao
+    What  is  the  output  ? --->  Ram<space>o
+
+2) Both  input  and  output  are  strings
+
+3) How  to  convert  string  to  set  ?  --->  set(string)
+    How  to  convert  set  to  string ?  --->  '' . join(set)
+
+4) What  is  the  result  of  str({'H' , 'y' , 'd'})  ? --->  "{'H' , 'y' , 'd'}"  but  not  'Hyd'
+'''
+Enter  input  string :  Rama Rao
+String  without  duplicates  :   ao mR
+
+
+##### answere ######
+
+
+
+s = input("Enter input string : ")
+
+result = ""
+seen = set()
+
+for ch in s:
+    if ch not in seen:   # keep first occurrence
+        result += ch
+        seen.add(ch)
+
+print("String without duplicates :", result)
+
+
+####################################
+
+'''
+Write  a  program  to  remove  duplicate  elements  of   list  using  set
+
+1) Let  input  be  [False , 25 , 10.8 , 1  , 25 , 0 , 'Hyd' ,  10.8 , 1.0 , None , 'Sec' , 'Hyd' , True  ]
+    What  is  the  output ?  ---> [False , 25 , 10.8 , 1 , 'Hyd' , None , 'Sec']
+
+2) Both  input  and  output  are  lists
+'''
+Enter  list  with  duplicates :  [False , 25 , 10.8 , 1  , 25 , 0 , 'Hyd' ,  10.8 , 1.0 , None , 'Sec' , 'Hyd' , True  ]
+List  without  duplicates :   [False, 1, None, 'Sec', 10.8, 25, 'Hyd']
+
+
+###### answere ###########
+
+lst = [False, 25, 10.8, 1, 25, 0, 'Hyd', 10.8, 1.0, None, 'Sec', 'Hyd', True]
+
+result = list(set(lst))
+
+print("Enter list with duplicates :", lst)
+print("List without duplicates :", result)
+
+
+################################
+
+'''
+Write  a  program  to   obtain  common  elements  between  two  lists  using  sets
+
+1) Let  1st  list  be  [10 , 20 , 30 , 40 , 50 , 60]  and  2nd  list  be  [30 , 40 , 70 , 80 , 20]
+    What  is  the  output ?  --->  [20 , 30 , 40]
+
+2) Both  input  and  output  are  lists
+'''
+
+Enter  1st  list  :  [10,20,30,40,50,60]
+Enter  2nd  list  :  [30,40,70,80,20]
+Common  elements  between  the  2  lists :   [40, 20, 30]
+
+
+
+######## answere ###
+
+# Program to obtain common elements between two lists using sets
+
+list1 = [10, 20, 30, 40, 50, 60]
+list2 = [30, 40, 70, 80, 20]
+
+
+common_elements = list(set(list1) & set(list2))
+
+print("Enter 1st list :", list1)
+print("Enter 2nd list :", list2)
+print("Common elements between the 2 lists :", common_elements)

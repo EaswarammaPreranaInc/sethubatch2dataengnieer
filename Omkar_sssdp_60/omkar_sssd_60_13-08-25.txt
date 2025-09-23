@@ -1,0 +1,8 @@
+s=input("Enter any input: ")
+temp="AEIOU"
+vowel=""
+for ch in s.upper():
+    if ch in temp:
+        if ch not in vowel:
+            vowel +=ch
+print(vowel)
