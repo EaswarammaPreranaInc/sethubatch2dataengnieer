@@ -132,6 +132,97 @@ class  triangle:
 	def  get(self,a,b,c):
 		self.a=a
 		self.b=b
+		self.c=c # How  to  read  three  sides  into  object  self
+	def  test(self):
+		if  (self.a+self.b>self.c and self.b+self.c>self.a and self.a+self.c>self.b): # sum  of  every  2  sides  >=  3rd  side:
+			return True # Do  nothing
+		else:
+			print('Not  a  triangle')
+			exit() # How  to  stop  execution
+	def  area(self):
+		s=(self.a+self.b+self.c)/2
+		return   math.sqrt(s*(s-self.a)*(s-self.b)*(s-self.c))
+	def  peri(self):
+		return  self.a+self.b+self.c#perimeter  of  triangle
+# End of the class
+a=float(input("enter a: "))
+b=float(input("enter b: "))
+c=float(input("enter c: "))
+obj=triangle() # How  to  create  triangle  class  object
+obj.get(a,b,c) # How  to  read  inputs  into  object
+obj.test() # How  to  test  whether  inputs  are  valid
+print('Area : ', obj.area())
+print('Perimeter : ',  obj.peri())
+
+
+
+a=float(input("enter a: "))
+b=float(input("enter b: "))
+c=float(input("enter c: "))
+obj1=triangle() # How  to  create  triangle  class  object
+obj1.get(a,b,c) # How  to  read  inputs  into  object
+obj1.test() # How  to  test  whether  inputs  are  valid
+print('Area : ', obj1.area())
+print('Perimeter : ',  obj1.peri())
+#===============
+
+
+
+import  math
+class  triangle:
+	def  get(self):
+		self.a=float(input("enter a: "))
+		self.b=float(input("enter b: "))
+		self.c=float(input("enter c: "))#c # How  to  read  three  sides  into  object  self
+	def  test(self):
+		if  (self.a+self.b>self.c and self.b+self.c>self.a and self.a+self.c>self.b): # sum  of  every  2  sides  >=  3rd  side:
+			return True # Do  nothing
+		else:
+			print('Not  a  triangle')
+			exit() # How  to  stop  execution
+	def  area(self):
+		s=(self.a+self.b+self.c)/2
+		return   math.sqrt(s*(s-self.a)*(s-self.b)*(s-self.c))
+	def  peri(self):
+		return  self.a+self.b+self.c#perimeter  of  triangle
+# End of the class
+# a=float(input("enter a: "))
+# b=float(input("enter b: "))
+# c=float(input("enter c: "))
+obj=triangle() # How  to  create  triangle  class  object
+obj.get() # How  to  read  inputs  into  object
+obj.test() # How  to  test  whether  inputs  are  valid
+print('Area : ', obj.area())
+print('Perimeter : ',  obj.peri())
+
+
+# a=float(input("enter a: "))
+# b=float(input("enter b: "))
+# c=float(input("enter c: "))
+obj1=triangle() # How  to  create  triangle  class  object
+obj1.get() # How  to  read  inputs  into  object
+obj1.test() # How  to  test  whether  inputs  are  valid
+print('Area : ', obj1.area())
+print('Perimeter : ',  obj1.peri())
+
+
+
+#====================================== '''  (Home  work)
+'''
+Write  a  program  to  determine  area  and  perimeter  of  triangle  and  represent  triangle  by  an  object
+
+1) What  is  the  area  of  triangle ?  --->  sqrt(s * (s - a) * (s - b) * (s - c))
+
+2) What  is  the  formula  for  's' ?  ---> (a + b + c) / 2
+
+3) What  is  the  perimeter  of  triangle ?  --->  a + b + c
+'''
+
+import  math
+class  triangle:
+	def  get(self,a,b,c):
+		self.a=a
+		self.b=b
 		self.c=c# How  to  read  three  sides  into  object  self
 	def  test(self):
 		if  (a+b>c and b+c>a and a+c>b):#sum  of  every  2  sides  >=  3rd  side:
