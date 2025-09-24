@@ -206,7 +206,6 @@ print('Area : ', obj1.area())
 print('Perimeter : ',  obj1.peri())
 
 
-
 #====================================== '''  (Home  work)
 '''
 Write  a  program  to  determine  area  and  perimeter  of  triangle  and  represent  triangle  by  an  object
@@ -248,4 +247,3 @@ print('Perimeter : ',  obj.peri())
 # How  to  create  triangle  class  object
 # How  to  read  inputs  into  object
 # How  to  test  whether  inputs  are  valid
-
