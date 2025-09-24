@@ -30,9 +30,9 @@ print(a)              # 'a' is removed
 def   m1():
 		print('Function')
 class   c1:
-	def   m1(self):                      # Ignored, there is a another method m1 is declared
+	def   m1(self):                      # Discarded, there is a another method m1 is declared
 		print('1st  method')
-	def   m1(self):                      # Ignored, there is a another method m1 is declared
+	def   m1(self):                      # Discarded, there is a another method m1 is declared
 		print('2nd  method')
 	def   m1(self):
 		print('3rd  method')
@@ -52,9 +52,9 @@ Function
 #  Find  outputs  (Home  work)
 
 class   c1:
-	def   m1(self):                                     # Ignored, there is a another method m1 is declared
+	def   m1(self):                                     # Discarded, there is a another method m1 is declared
 		print('No  argument  method')               
-	def   m1(self , x):                                 # Ignored, there is a another method m1 is declared
+	def   m1(self , x):                                 # Discarded, there is a another method m1 is declared
 		print('Single  argument  method : ' , x)
 	def   m1(self , x , y):
 		print('Two  argument  method : ' , x , y)
@@ -76,9 +76,9 @@ Two  argument  method :  10 20
 
 class   c1:
 	def   m1(self):
-		print('No  argument  method')                   # Ignored, there is a another method m1 is declared
+		print('No  argument  method')                   # Discarded, there is a another method m1 is declared
 	def   m1(self , x):
-		print('Single  argument  method : ' , x)        # Ignored, there is a another method m1 is declared
+		print('Single  argument  method : ' , x)        # Discarded, there is a another method m1 is declared
 	def   m1(self , x = 1  , y = 2):
 		print('Two  argument  method : ' , x , y)
 # End  of  class  c1
@@ -98,10 +98,10 @@ Two  argument  method :  1 2
 
 # Find  outputs  (Home  work)
 
-class   c1:                                         # Ignored, there is a another class C1 is declared
+class   c1:                                         # Discarded, there is a another class C1 is declared
 	def   m1(self):
 		print('Method  of  first  c1  class')
-class   c1:                                         # Ignored, there is a another class C1 is declared
+class   c1:                                         # Discarded, there is a another class C1 is declared
 	def   m1(self):
 		print('Method  of  second  c1  class')
 class   c1:
@@ -119,10 +119,10 @@ Method  of  third  c1  class
 
 # Find  outputs  (Home  work)
 
-class   c1:                                         # Ignored, there is a another class C1 is declared
+class   c1:                                         # Discarded, there is a another class C1 is declared
 	def   m1(self):
 		print('Method  of  first  c1  class')
-class   c1:                                         # Ignored, there is a another class C1 is declared
+class   c1:                                         # Discarded, there is a another class C1 is declared
 	def   m1(self):
 		print('Method  of  second  c1  class')
 class   c1:
@@ -224,3 +224,4 @@ t.test()
 # Print area and perimeter
 print("Area:", t.area())
 print("Perimeter:", t.peri())
+
