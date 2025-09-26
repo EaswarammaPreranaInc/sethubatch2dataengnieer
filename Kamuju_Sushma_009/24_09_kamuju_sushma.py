@@ -288,3 +288,11 @@ if  f.q!=0:
 	print(f)
 else:
 	print('Division  is  not  permitted')
+
+
+
+
+
+
+
+
