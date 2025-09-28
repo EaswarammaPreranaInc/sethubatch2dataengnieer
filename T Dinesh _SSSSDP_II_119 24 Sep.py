@@ -1,0 +1,305 @@
+
+Repeat  prog5a  such  that  methods  are  called  in  another  way
+
+1) What  are  the  two  ways  to  call  a  method ?  --->  object . method()  and  classname . method(object)
+
+2) Reuse  triangle  class  defined  in  prog5a  but  do  not   define  triangle  class  again
+'''
+
+from prog5a import triangle 
+t=triangle()  #How  to  create  triangle  object
+triangle.get(t)  #How  to  call  get()  method  in  another  way
+triangle.test(t)  #How  to  call  test()  method  in  another  way
+print('Area : ', triangle.area(t))  # How  to  call  area()  method  in  another  way)
+print('Perimeter: ', triangle.peri(t))  # How  to  call  peri()  method  in  another  way)
+
+---------------------------------------------------------------------------------------------------------------
+
+
+#  Find  outputs  (Home  work)
+class   c1:
+	def  m1(self):
+		x = 10
+		self . x = 20
+		print(x)    # 10
+		print(self . x)    # 20
+		x += 5
+		self . x += 7
+	def   m2(self):
+		print(x)
+		print(self . x)   # 27
+		self . x += 6
+# End  of  the  class
+a = c1()
+a . m1()
+a . m2()
+print(a . x)     # 33
+print(self . x)  # self is  object of m1 method
+print(x)  # x is local variable of m1 method
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Write  a  program  to  add  two  objects  where  each  object  contains  three  values  and
+store  results  in   third  object
+
+1st  object   --->  x = 10 , y = 20 , z = 30
+
+2nd  object --->  x = 40 , y = 50 , z = 60
+
+3rd  object  --->  x = 10 + 40 = 50 , y = 20 + 50 = 70 , z = 30 + 60 = 90
+'''
+class  Test:
+	def   get(self):
+		 self.x = int(input("enter x value:"))
+                 self.y = int(input("enter y value:"))
+                 self.z = int(input("enter z value:"))
+	def   add(self , m , n):
+		 self.x = m.x+n.x
+                 self.y = m.y+n.y
+                 self.z = m.z+n.z
+	def  disp(self):
+		 print(f"x={self.x},y ={self.y},z ={self.z}")
+# End  of  the  class
+a = Test()
+b = Test()
+c = Test()
+print('First  Object')
+a.get()
+print('Second  Object')
+b.get()
+c.add(a,b)
+print('Addition  results')
+c.disp()
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+
+ #  Find  outputs (Home  work)
+class  Date:
+	pass
+# End of the class
+a =  Date()
+a . dd = 15
+a . mm = 8
+a . yy = 1947
+print(a)        #prints type and address
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+#  Find  outputs (Home  work)
+class   c1:
+	def  __str__(self):
+			return  '25'
+class   c2:
+	def  __str__(self):
+			return   35
+class   c3:
+	def  __str__(self):
+			print('Hyd')
+class   c4:
+	def  __str__(self , x):
+			return   F'{x}'
+#end of the class
+a = c1()
+b = c2()
+c = c3()
+d = c4()
+print(a)       # 25
+print(b)       # error
+print(c)       # error
+print(d)       # error
+print(b . __str__())   # 35
+print(c . __str__())    # Hyd and None
+print(d . __str__(50))   # 50
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Write  a  program  to  determine  total , average  and  grade  of  a  student
+Inputs  are  Roll Number , Stud  Name , Marks  of  3  subjects  and  Gender
+'''
+class   Student:
+	def   get(self):
+		self.rollno=int(input('Enter roll number:')) #How  to  read  roll  number  into  object  self
+		self.sname=input('Enter student name: ') #How  to  read  student  name  into  object  self
+		self.gender=input('Enter gender: ') #How  to  read  gender  into  object  self
+		#How  to  read  marks  of  3  subjects
+		self.marks=[]
+		for i in range(1,4):
+			mark=int(input('Enter marks of subject {i}: '))
+			self.marks.append(mark)
+			
+	def   compute(self):
+		self.total=sum(self.marks)  #How  to  calculate  total  marks
+		self.average=self.total/3 #How  to  calculate  average  marks
+		
+		if  any (m<40 for m in self.marks):
+			self.grade='Fail' #How  to  initilaize  grade  to  'Fail'
+		elif self.average >= 70:
+			self.grade='Distinction'#How  to  initilaize  grade  to  'Distinction'
+		elif self.average>= 60:
+			self.grade='first Class' #How  to  initilaize  grade  to  'First  class'
+		elif self.average>= 50:
+			self.grade='second class' #How  to  initilaize  grade  to  'Second  class'
+		else:
+			self.grade='Third class' #How  to  initilaize  grade  to  'Third  class'
+	def  disp(self):
+		print('Roll  Number  :  ' ,   self.rollno)
+		print('Student  Name  :  ' , self.sname)
+		print('Gender  :  ' ,  self.gender)
+		print('Total  Marks  :  ' , self.total)
+		print('Average  :  ' , self.average)
+		print('Grade  :  ' , self.grade)
+	def   __str__(self):
+		#return  All  the   values  of  object  self  in  the  form  of  string
+		return (f'Roll No: {self.rollno}, Name: {self.sname}, Gender: {self.gender}, '
+                f'Marks: {self.marks}, Total: {self.total}, Average: {self.average}, Grade: {self.grade}')
+#End  of  the  class
+st=Student() #How  to  create  Student  class  object
+st.get() #How  to  read  inputs  into  object
+st.compute() #How  to  store  results  in  object
+st.disp() #How  to  print  object  with  disp()  method
+print(st) #How  to  print  object  with  __str__()  method
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Write  a  program  to  add , subtract , multiply  and  divide  two  rational  numbers
+
+1) 1st  rational  number  --->  2 / 3
+    2nd  rational  number  --->   5 / 9
+    What  is  the  sum  ?  ---> 2 / 3 + 5 / 9 = (18 + 15) / 27 = 33 / 27 = 11 / 9
+    What  is  the  difference  ?  ---> 2 / 3 - 5 / 9 =  (18 - 15) / 27 =  3 / 27 = 1 / 9
+    What  is  the  product  ?  ---> 	2 / 3 * 5 / 9 =  10 / 27  =  10 / 27
+    What  is   the  division  ?  ---> 	2 / 3 /  5 / 9 =  2 / 3 * 9 / 5 =  18 / 15 =  6 / 5  --->  Succesful  division
+
+2) 1st  rational  number  --->  2 / 3
+    2nd  rational  number  --->   0 / 9
+    What  is  the  sum  ?  --->  2 / 3 + 0 / 9 = (18 + 0) / 27 =  18 / 27 =  2 / 3
+    What  is  the  difference  ?  ---> 2 / 3 - 0 / 9 =  (18 - 0) / 27 =  18 / 27 = 2 / 3
+    What  is  the  product  ?  ---> 	2 / 3 * 0 / 9 = 	0 / 27  =  	0 / 27  --->  Simplification  is  not  required  becoz  numerator  is  0
+    What  is   the  division  ?  ---> 	2 / 3 /  0 / 9 = 2 / 3 * 9 / 0 = 	18 / 0  ---> Division  is  not   permitted
+
+3) When  is  simplification  required ?  ---> When  numerator  is  non-zero
+'''
+
+
+
+import  math
+class  Rat:
+	def  get(self):
+		self.numerator=int(input('Enter a numerator number: ')) #How  to  read  numerator  into  object  self
+		self.denominator=int(input('Enter denominator number: '))  #How  to  read  denominator  into  object  self
+		self.test() #How  to  call  test()  method
+	def  test(self):
+		while self.denominator == 0:
+			self.denominator= int(input('Denominator cannot be 0. Re-enter denominator:')) #Ask  user  to  reenter  denom  when  denom  is  zero
+	def    __str__(self):
+			#return  values  of  object  in  the  form  of  rational  number  such   as  '2 / 3'
+			return f'{self.numerator / self.denominator}'
+	def   add(self , a , b):
+		self.numerator=a.numerator * b.denominator + b.numerator * a.denominator # How  to  add  objects  'a'  and  'b' and  store  results  in  object  self
+		self.denominator= a.denominator * b. denominator
+		#How  to  simplify  object  self
+		self.simplify()
+	'''
+	c . add(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  c  --->  2 / 3 + 5 / 9 = (2 * 9 + 5 * 3) / (5 * 9) = 33 / 27 = 11 / 9
+	'''
+	def   sub(self , a , b):
+		#How  to  subtract  objects  'a'  and  'b' and  store  results  in  object  self
+		self.numerator=a.numerator * b.denominator - b.numerator * a.denominator
+		self.denominator= a.denominator * b. denominator
+		# How  to  simplify  object  self
+		self.simplify() 
+	'''
+	d . sub(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  d  --->  2 / 3 - 5 / 9 = (2 * 9 - 5 * 3) / (5 * 9) = 3 / 27 = 1 / 9
+	'''
+	def   mul(self , a , b):
+		# How  to  multiply  objects  'a'  and  'b' and  store  results  in  object  self
+		self.numerator=a.numerator * b.numerator
+		self.denominator=a.denominator * b.denominator
+		# How  to  simplify  object  self
+		self.simplify()
+	'''
+	e . mul(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  e  --->  2 / 3 * 5 / 9 = (2 * 5) / (3 * 9) = 10 / 27
+	'''
+	def    div(self , a , b):
+		# How  to  divide  objects  'a'  and  'b' and  store  results  in  object  self
+		# How  to  simplify  object  self
+		# if b.numerator == 0:
+		# 	self.numerator = None
+		# 	self.denominator = None
+		# 	return False  # Division not permitted
+		self.numerator = a.numerator * b.denominator
+		self.denominator = a.denominator * b.numerator
+		self.simplify()
+		return True
+	'''
+	f . div(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  f  --->  2 / 3 / 5 / 9 = 2 / 3 * 9 / 5 = (2 * 9) / (3 * 5) = 18 / 15 = 6 / 5
+	'''
+	def   simplify(self):
+		#How  to  find  gcd  of  numerator  and   denominator
+		if self.numerator!=0:
+			gcd=math.gcd(self.numerator,self.denominator)
+			self.numerator//=gcd
+			self.denominator//=gcd
+			
+	'''
+	c . simplify()
+	1)  12 / 15  --->  4 / 5
+	2) 10 / 27   --->  10 / 27
+	3) 0 / 27  --->   0 / 27
+	'''
+# End  of the class
+# How  to  create  6  objects  a , b , c , d , e , f
+a = Rat()
+b = Rat()
+c = Rat()
+d = Rat()
+e = Rat()
+f = Rat()
+# How  to  read  rational  number  into  object  'a'
+a.get()
+# How to  read  rational  number  into  object  'b'
+b.get()
+c.add(a,b) #How  to  add  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'c'
+
+d.sub(a,b) #How  to  subtract  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'd'
+
+
+e.mul(a,b) #How  to multiply  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'e'
+
+division=f.div(a,b) #How  to  divide  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'f'
+
+print("\nAddition:", c) #How  to  print  object   'c'
+print("Subtraction:", d) #How  to  print  object   'd'
+print("Multiplication:", e) #How  to  print  object   'e'
+if division:
+    print("Division:", f) #How  to  print  object  'f
+else:
+	print('Division  is  not  permitted')
