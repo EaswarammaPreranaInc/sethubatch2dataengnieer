@@ -121,6 +121,7 @@ print(d . __str__(50))#50
 Write  a  program  to  determine  total , average  and  grade  of  a  student
 Inputs  are  Roll Number , Stud  Name , Marks  of  3  subjects  and  Gender
 '''
+
 class   Student:
 	def   get(self):
 		# How  to  read  roll  number  into  object  self
