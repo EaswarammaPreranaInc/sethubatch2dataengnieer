@@ -1,3 +1,38 @@
+# Find  outputs
+import   sys
+class   c1:
+        pass
+# End  of  the  class
+a = b = c = d = c1()
+print(sys . getrefcount(b))# 6
+print(sys . getrefcount(c1()))# 2
+print(sys . getrefcount(352))# 2
+print(sys . getrefcount([10 , 20 , 15 , 18]))# 2
+print(sys . getrefcount(10.8))# 2
+print(sys . getrefcount({10 , 20 , 15 , 18}))# 2
+print(sys . getrefcount('Hyd'))# 2
+print(sys . getrefcount({10 : 20 , 30 : 40}))# 2
+print(sys . getrefcount((10 , 20 , 30 , 40)))# 2
+
+
+# Find  outputs  (Home  work)
+import  sys
+class  Test:
+	def  _init_(self):
+		print('Constructor  :  ' , id(self))
+		return    None
+	def  _del_(self):
+		print('Destructor  :  ' , id(self))
+		return  25
+# End  of  the  class
+t = Test()
+print(t . _init_())# None
+print(sys . getrefcount(t))# 2
+print(t . _del_())# 25
+print(sys . getrefcount(t))# 2
+print('Bye')# Bye
+
+
 #  Tricky  program
 # Find  outputs (Home  work)
 class  c1:
