@@ -155,9 +155,9 @@ class   Student:
 				self.grade = 'Fail' #How  to  initilaize  grade  to  'Fail'
 		elif  self.average >= 70: #average  is  above  >= 70%
 				self.grade = 'Distinction' #How  to  initilaize  grade  to  'Distinction'
-		elif  self.average >= 70:	#average  is  above  >= 60%:
+		elif  self.average >= 60:	#average  is  above  >= 60%:
 				self.grade = 'First  class' #How  to  initilaize  grade  to  'First  class'
-		elif  self.average >= 70: #average  is  above  >= 50%:
+		elif  self.average >= 50: #average  is  above  >= 50%:
 				self.grade = 'Second  class' #How  to  initilaize  grade  to  'Second  class'
 		else:
 				self.grade = 'Third  class' #How  to  initilaize  grade  to  'Third  class'
@@ -306,4 +306,5 @@ Sum: 17 / 12
 Difference: 1 / 12
 Product: 1 / 2
 Division: 9 / 8
+
 '''
