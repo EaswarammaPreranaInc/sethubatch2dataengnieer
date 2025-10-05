@@ -1,0 +1,178 @@
+
+import sys
+
+class c1:
+    pass
+
+a = b = c = d = c1()
+print(sys.getrefcount(b))          # 5 (a,b,c,d + temp ref)
+print(sys.getrefcount(c1()))       # 1 (temp ref only)
+print(sys.getrefcount(352))        # varies (integers cached)
+print(sys.getrefcount([10,20,15,18]))   # 1
+print(sys.getrefcount(10.8))       # 1
+print(sys.getrefcount({10,20,15,18}))   # 1
+print(sys.getrefcount('Hyd'))      # may vary, usually 2
+print(sys.getrefcount({10:20,30:40}))   # 1
+print(sys.getrefcount((10,20,30,40)))   # 1
+
+
+
+import sys
+
+class Test:
+    def __init__(self):
+        print('Constructor : ', id(self))
+    def __del__(self):
+        print('Destructor : ', id(self))
+
+t = Test()
+print("Refcount after creation:", sys.getrefcount(t))
+print("Manually calling constructor:", t.__init__())
+print("Refcount after constructor call:", sys.getrefcount(t))
+print("Manually calling destructor:", t.__del__())
+print("Refcount after destructor call:", sys.getrefcount(t))
+print('Bye')
+
+
+# Constructor :  <id>
+# Refcount after creation: 2
+# Manually calling constructor: None
+# Refcount after constructor call: 2
+# Manually calling destructor: None
+# Refcount after destructor call: 2
+# Bye
+# Destructor : <id>
+
+
+
+
+class c1:
+    def __init__(self):
+        print('Object is created')
+    def __del__(self):
+        print('Object is lost')
+
+def f1():
+    print('Function Begin')
+    a = c1()
+    print(a)
+    print('Function end')
+    return a
+
+print('Program Begin')
+b = f1()
+print(b)
+print('Program End')
+# Destructor called at end of program (when b is deleted)
+
+Program Begin
+# Function Begin
+# Object is created
+# <__main__.c1 object at 0x...>
+# Function end
+# <__main__.c1 object at 0x...>
+# Program End
+# Object is lost
+
+
+
+
+class c1:
+    def __init__(self):
+        print('Object is created')
+    def __del__(self):
+        print('Object is lost')
+
+def f1():
+    print('Function begin')
+    a = c1()
+    print('Function end')
+    return
+
+print('Program Begin')
+f1()
+print('Program End')
+# Object 'a' destroyed when f1() ends
+
+# Program Begin
+# Function begin
+# Object is created
+# Function end
+# Object is lost
+# Program End
+
+
+
+class c1:
+    def __init__(self):
+        print('Object is created')
+    def __del__(self):
+        print('Object is lost')
+
+def f1():
+    print('Function begin')
+    a = c1()
+    print('Function end')
+
+print('Program Begin')
+b = f1()
+print(b)  # None
+print('Program End')
+# Object destroyed when f1() ends
+
+# Function begin
+# Object is created
+# Function end
+# Object is lost
+# None
+# Program End
+
+
+
+class c1:
+    def __init__(self, k):
+        print('c1 class object is created')
+        self.b = k
+        print('End of c1 class constructor')
+    def __del__(self):
+        print('c1 class object is lost')
+
+class c2:
+    def __init__(self):
+        print('c2 class object is created')
+        self.a = c1(self)
+        print('End of c2 class constructor')
+    def __del__(self):
+        print('c2 class object is lost')
+
+print('Program begin')
+x = c2()
+print('Program end')
+# Program begin
+# c2 class object is created
+# c1 class object is created
+# End of c1 class constructor
+# End of c2 class constructor
+# Program end
+# (c1 and c2 objects lost later, order not guaranteed)
+
+
+
+class c1:
+    def __del__(self):
+        print('Destructor')
+        global b
+        b = self    # Revives the object inside destructor
+
+a = c1()
+del a
+print('Hello')
+print('Object still alive as b')
+del b
+print('End')
+
+# Destructor
+# Hello
+# Object still alive as b
+# End
+
