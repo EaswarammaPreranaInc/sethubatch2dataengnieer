@@ -1,0 +1,217 @@
+
+
+class student:
+    def __init__(self):
+        self.roll = 0
+        self.name = ''
+        self.gender = ''
+        self.m1 = 0
+        self.m2 = 0
+        self.m3 = 0
+        self.total = 0
+        self.avg = 0.0
+        self.grade = ''
+    
+    def get(self):
+        self.roll = int(input("Enter roll number: "))
+        self.name = input("Enter name: ")
+        self.gender = input("Enter gender: ")
+        self.m1 = int(input("Enter marks of subject 1: "))
+        self.m2 = int(input("Enter marks of subject 2: "))
+        self.m3 = int(input("Enter marks of subject 3: "))
+    
+    def compute(self):
+        self.total = self.m1 + self.m2 + self.m3
+        self.avg = self.total / 3
+        if self.avg >= 75:
+            self.grade = "Distinction"
+        elif self.avg >= 60:
+            self.grade = "First class"
+        elif self.avg >= 50:
+            self.grade = "Second class"
+        else:
+            self.grade = "Fail"
+
+# OUTPUT for inputs 25, Rama Rao, male, 52, 48, 55
+# {}
+# {'roll': 25, 'name': 'Rama Rao', 'gender': 'male', 'm1': 52, 'm2': 48, 'm3': 55, 'total': 0, 'avg': 0.0, 'grade': ''}
+# {'roll': 25, 'name': 'Rama Rao', 'gender': 'male', 'm1': 52, 'm2': 48, 'm3': 55, 'total': 155, 'avg': 51.67, 'grade': 'Second class'}
+
+
+
+
+def student_list_program():
+    n = int(input("Enter number of students: "))
+    s = []
+    for i in range(n):
+        print(f"Student {i+1}")
+        obj = student()
+        obj.get()
+        obj.compute()
+        s.append(obj)
+    print("\nRoll\tName\tGender\tTotal\tAverage\t\tGrade")
+    for i in s:
+        print(f"{i.roll}\t{i.name}\t{i.gender}\t{i.total:.1f}\t{i.avg:.2f}\t\t{i.grade}")
+
+# 111      AAA     m       155.0    51.67          Second class
+# 222      BBB     f       200.0    66.67          Fail
+# 333      CCC     m       168.0    56.00          Second class
+# 444      DDD     f       234.0    78.00          Distinction
+
+
+
+
+class Rat:
+    def __init__(self):
+        self.nr = 0
+        self.dr = 0
+
+def dir_demo():
+    a = Rat()
+    a.nr = 22
+    a.dr = 7
+    print(dir(Rat))
+    print()
+    print()
+    print(dir(a))
+
+# Output: will list all class and object attributes
+
+
+
+class Rat:
+    def m1():
+        pass
+
+a = Rat()
+a.nr = 22
+print(hasattr(a, 'nr'))  # True
+print(hasattr(a, 'dr'))  # False
+print(hasattr(a, 'm1'))  # False (method not bound to instance)
+print(hasattr(a, 'm2'))  # False
+print(hasattr(Rat, 'm1'))  # True
+print(hasattr(Rat, 'm2'))  # False
+print(hasattr(Rat, 'nr'))  # False
+
+
+
+
+class Cat:
+    def talk(self):
+        print('Meow Meow Meow ....')
+class Dog:
+    def bark(self):
+        print('Bhow Bhow Bhow ....')
+class Goat:
+    def talk(self):
+        print('Mehar  Mehar  Mehar  ....')
+
+a = [Cat(), Dog(), Goat()]
+for x in a:
+    if hasattr(x, 'talk'):
+        x.talk()
+    else:
+        x.bark()
+
+# Output:
+# Meow Meow Meow ....
+# Bhow Bhow Bhow ....
+# Mehar  Mehar  Mehar  ....
+
+
+# ---------------------------
+# Question 6
+# ---------------------------
+# setattr() and getattr() demo (Find outputs)
+
+class c1:
+    pass
+
+a = c1()
+a.x = 10
+# Inputs assumed: varname='y', value=20
+varname = 'y'
+value = 20
+setattr(a, varname, value)
+print(a.__dict__)  # {'x': 10, 'y': 20}
+print(a.x)  # 10
+
+# Inputs for loop: x, y, z
+for varname in ['x', 'y', 'z']:
+    try:
+        print(getattr(a, varname))
+    except:
+        print(f'Invalid variable name : {varname}')
+        break
+
+# Output:
+# {'x': 10, 'y': 20}
+# 10
+# 10
+# 20
+# Invalid variable name : z
+
+
+
+class Emp:
+    pass
+
+dict1 = {'Empno': 25, 'Ename': 'Rama Rao', 'Sal': 10000.0}
+e = Emp()
+
+# Convert dict to object
+for key, value in dict1.items():
+    setattr(e, key, value)
+
+# Print object e using loop
+for key in dict1.keys():
+    print(f'{key} = {getattr(e, key)}')
+
+# Output:
+# Empno = 25
+# Ename = Rama Rao
+# Sal = 10000.0
+
+
+
+
+class Rat:
+    def __init__(self, nr=0, dr=1):
+        self.nr = nr
+        self.dr = dr
+    def __add__(self, other):
+        return Rat(self.nr * other.dr + other.nr * self.dr, self.dr * other.dr)
+    def __sub__(self, other):
+        return Rat(self.nr * other.dr - other.nr * self.dr, self.dr * other.dr)
+    def __mul__(self, other):
+        return Rat(self.nr * other.nr, self.dr * other.dr)
+    def __truediv__(self, other):
+        return Rat(self.nr * other.dr, self.dr * other.nr)
+    def __str__(self):
+        return f'{self.nr}/{self.dr}'
+
+a = Rat(2, 3)
+b = Rat(4, 5)
+c = a + b
+print(c)
+c = a - b
+print(c)
+c = a * b
+print(c)
+c = a / b
+print(c)
+
+# Output:
+# 22/15
+# -2/15
+# 8/15
+# 10/12
+
+
+
+
+a = [Rat(1, 2), Rat(2, 3), Rat(3, 4), Rat(4, 5), Rat(5, 6), Rat(6, 7)]
+
+# Example usage
+for i in range(6):
+    print(f"a[{i}] = {a[i]}")
