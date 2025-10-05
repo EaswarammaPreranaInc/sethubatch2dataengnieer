@@ -1,0 +1,419 @@
+
+class Rat:
+    def _init_(self, nr1=22, dr1=7):
+        self.nr = nr1
+        self.dr = dr1
+    def _str_(self):
+        return f'{self.nr} / {self.dr}'
+
+
+
+# a = 22/7
+# b = 9/7
+# c = 5/8
+# d = 22/9
+# e = 2/3
+# f = 11/15
+# After c._init_() → c = 22/7
+# After a._init_(3.8,4.6) → a = 3.8/4.6
+# g = Rat(nr1=9,5)  Error 
+# h = Rat(nr=9,dr=5)  Error 
+
+
+class Date:
+    def _init_(self, dd1, mm1, yy1):
+        self.dd = dd1
+        self.mm = mm1
+        self.yy = yy1
+
+a = Date(15, 8, 1947)
+b = Date(yy1=1950, mm1=1, dd1=26)
+c = Date(mm1=7, dd1=19, yy1=1985)
+# a : {'dd': 15, 'mm': 8, 'yy': 1947}
+# b : {'dd': 26, 'mm': 1, 'yy': 1950}
+# c : {'dd': 19, 'mm': 7, 'yy': 1985}
+# d = Date() ❌ Error (missing args)
+# e = Date(dd=30, mm=4, yy=2022)  unexpected keyword args
+# f = Date(dd1=26, mm1=8, 2023)  positional arg follows keyword
+
+
+
+class c1:
+    def _init_(self):
+        print('c1 class constructor')
+        return 25
+class c2:
+    def _init_(self):
+        print('c2 class constructor')
+        return None
+class c3:
+    def _init_(self):
+        print('c3 class constructor')
+
+a = c1()  # No constructor call
+b = c2()
+print(b)           # prints object address
+print(b._init_())  # prints 'c2 class constructor' and returns None
+c = c3()
+print(c._init_())  # prints 'c3 class constructor' and returns None
+
+
+class c1:
+    def _init_(self):
+        print('c1 class constructor')
+        b = c1()
+
+# a = c1() → prints 'c1 class constructor' infinite times (recursion) until RecursionError.
+
+
+class c1:
+    def _init_(self):
+        print('Constructor')
+        self.x = 10
+        self.y = 20
+
+class c2:
+    def init(self):
+        print('Method')
+        self.x = 30
+        self.y = 40
+
+a = c1()
+print(a.__dict__)   # {} since _init_ never runs
+b = c2()
+print(b.__dict__)   # {}
+b.init()
+print(b.__dict__)   # {'x': 30, 'y': 40}
+
+
+
+class c1:
+    def _init_(self):
+        self.a = 10
+    def m1(self):
+        self.b = 20
+
+class c2:
+    def m3(self):
+        x.e = 50
+
+def f1():
+    x.c = 30
+
+x = c1()
+print(x.__dict__)  # {}
+x.m1()
+print(x.__dict__)  # {'b': 20}
+f1()
+print(x.__dict__)  # {'b': 20, 'c': 30}
+x.d = 40
+print(x.__dict__)  # {'b': 20, 'c': 30, 'd': 40}
+y = c2()
+y.m3()
+print(x.__dict__)  # {'b': 20, 'c': 30, 'd': 40, 'e': 50}
+z = c1()
+print(z.__dict__)  # {}
+
+
+
+class c1:
+    def _init_(self):
+        self.x = 10
+        self.y = 20
+        self.z = 30
+
+a = c1()
+b = c1()
+print(a.__dict__)  # {}
+print(b.__dict__)  # {}
+del a.x
+del b.y
+print(a.__dict__)  # Error: 'x' not defined since _init_ not called
+print(b.__dict__)
+# print(a.x) → AttributeError
+# print(b.y) → AttributeError
+
+
+
+class c1:
+    def _init_(self):
+        print('1st constructor')
+    def _init_(self):
+        print('2nd constructor')
+    def _init_(self):
+        print('3rd constructor')
+
+a = c1()
+# Output: No output since _init_ not called. (If __init__, only 3rd would execute.)
+
+
+
+class c1:
+    def _init_(self):
+        print('No argument constructor')
+    def _init_(self, x):
+        print('single argument constructor :', x)
+    def _init_(self, x, y):
+        print('Two argument constructor :', x, y)
+
+a = c1(10, 20)  # prints nothing (wrong name)
+b = c1(30)
+c = c1()
+# If proper __init__, only last definition valid → error for b,c
+
+
+class c1:
+    def _init_(self):
+        print('No argument constructor')
+    def _init_(self, x):
+        print('single argument constructor :', x)
+    def _init_(self, x=100, y=200):
+        print('Two argument constructor :', x, y)
+
+a = c1(10, 20)
+b = c1(30)
+c = c1()
+# If fixed to __init__, output would be:
+# Two argument constructor : 10 20
+# Two argument constructor : 30 200
+# Two argument constructor : 100 200
+
+
+
+def f1():
+    print('Function')
+    return 25
+class f1:
+    def _init_(self):
+        print('Constructor')
+
+a = f1()
+print(a)
+# Output: prints 'Constructor' if __init__, else nothing.
+
+
+
+class c1:
+    def _init_(self):
+        print('Constructor')
+def c1():
+    print('Function')
+
+a = c1()   # Function overrides class → prints 'Function'
+print(a)   # None
+
+
+
+class c1:
+    def _init_(self):
+        print('Constructor')
+def c1(x):
+    print('Function :', x)
+
+a = c1()      # Error: missing argument
+b = c1(25)    # prints Function : 25
+print(b)      # None
+
+
+# prog9a.py
+class c1:
+    def _init_(self):
+        print('c1 class of prog9a')
+
+# prog9b
+from prog9a import c1
+class c1:
+    def _init_(self):
+        print('c1 class of prog9b')
+a = c1()
+# Output: "c1 class of prog9b"
+
+
+
+class c1:
+    def _init_(self):
+        print('c1 class of prog9c')
+from prog9a import c1
+a = c1()
+# Output: "c1 class of prog9a" (import overrides previous)
+
+
+import prog9a
+class c1:
+    def _init_(self):
+        print('c1 class of prog9d')
+
+# Current module object:
+a = c1()
+# prog9a class object:
+b = prog9a.c1()
+
+
+
+import prog9a
+class c1:
+    def _init_(self):
+        print('c1 class of prog9e')
+
+a = c1()          # current module
+b = prog9a.c1()   # from prog9a
+
+
+
+class Test:
+    def _init_(self):
+        self.x = 10            # public
+        self.__y = 20          # private
+    def m1(self):
+        print('m1 method')
+        print(self.x)
+        print(self.__y)
+        self.__m2()
+        print('Back to m1 method')
+    def __m2(self):
+        print('__m2 method')
+        print(self.x)
+        print(self.__y)
+
+t = Test()
+# Access public:
+# print(t.x)
+# Access private: print(t.__y) → AttributeError
+# Internal private accessible via t._Test__y
+# t.m1() calls private inside
+# t.__m2() → AttributeError
+
+
+
+class c1:
+    def _init_(self):
+        self.x = 10          # public
+        self.__x = 20        # private
+        self._x_ = 30        # dunder-like
+
+    def m1(self):
+        print('public method')
+
+    def __m1(self):
+        print('private method')
+
+    def _m1_(self):
+        print('public Dunder method')
+
+a = c1()
+# Access public
+# print(a.x)
+# Access dunder-like
+# print(a._x_)
+# Access private
+# print(a._c1__x)
+# a.m1()
+# a._m1_()
+# a._c1__m1()
+
+
+class c1:
+    def _init_(self):
+        print('Object is created at address :', id(self))
+    def _del_(self):
+        print(f'Object at address {id(self)} is lost')
+
+a = c1(); a = None
+b = c1(); del b
+c = c1(); c = c1()
+d = c1(); e = c1()
+# Conceptually prints constructor messages + destructor when ref lost
+
+
+class c1:
+    def _del_(self, x):
+        print('destructor :', x)
+a = c1()
+a._del_(25)
+# Works manually, but Python will never call such destructor automatically.
+
+
+class c1:
+    def _del_(self, x=35):
+        print('destructor :', x)
+a = c1()
+a._del_(25)
+# Output: destructor : 25
+
+
+
+class c1:
+    def _del_(self):
+        print('destructor')
+        b = c1()
+a = c1()
+# Prints "destructor" infinitely (recursion via destructor)
+
+
+
+class c1:
+    def _init_(self):
+        print('constructor')
+        del self
+    def _del_(self):
+        print('destructor')
+        b = c1()
+a = c1()
+# Infinite recursion
+
+
+class c1:
+    def _del_(self):
+        print('1st destructor')
+    def _del_(self):
+        print('2nd destructor')
+    def _del_(self):
+        print('3rd destructor')
+
+a = c1()
+# Only last one valid → prints nothing (since wrong name)
+
+
+class c1:
+    def _init_(self):
+        print('Object is created at address :', id(self))
+    def _del_(self):
+        print(f'Object at address {id(self)} is lost')
+
+c = b = a = c1()
+del a
+print('Hello')
+del b
+print('Hi')
+del c
+print('Bye')
+d = c1()
+print('End')
+# Destructor runs only when ref count = 0 (after last del)
+
+
+
+class c1:
+    def _init_(self):
+        print('Object is created at address :', id(self))
+    def _del_(self):
+        print(f'Object at address {id(self)} is lost')
+
+list = [c1(), c1(), c1()]
+del list
+# Destructor called for all three
+
+
+
+class c1:
+    def _del_(self):
+        print('destructor')
+        return 25
+a = c1()
+print(a._del_())
+print('Hello')
+del a
+# Output:
+# destructor
+# 25
+# Hello
