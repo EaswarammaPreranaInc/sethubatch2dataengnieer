@@ -236,9 +236,9 @@
 # def    c1(x):
 #         print('Function : ' , x)
 # # End  of  class  c1
-# a = c1()
-# b = c1(25)
-# print(b)
+# # a = c1()                  #error, missing one pos arg
+# b = c1(25)                #Function 25
+# print(b)                  #None
 
 
 
@@ -247,35 +247,36 @@
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9a')
-		
-
-# #  Find  outputs (Home  work)
-# from  prog9a  import  c1
+# # #  Find  outputs (Home  work)
+# # from  prog9a  import  c1
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9b')
-# a = c1()
+# a = c1()   #c1 class of prog9b
 
 
 
-
+# #  Save  the  program  in  prog9a.py  file
+# class   c1:
+# 	def  __init__(self):
+# 		print('c1  class  of  prog9a')
 # #  Find  outputs (Home  work)
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9c')
-# from  prog9a  import  c1
-# a = c1()
+# # from  prog9a  import  c1
+# a = c1()  #c1 class of prog9c  
 
 
 
 
 # #  How  to  use  both  the  classes (i.e.  c1  of  prog9a  and  c1  of  current  program)
-# How  to  import  class  c1  from  prog9a
+# # How  to  import  class  c1  from  prog9a
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9d')
-# How  to  create  c1  class  object  of  current  module
-# How  to  create  c1  class  object  of  prog9a
+# # How  to  create  c1  class  object  of  current  module
+# # How  to  create  c1  class  object  of  prog9a
 
 
 
@@ -283,66 +284,73 @@
 # '''
 # How  to  use  both  the  classes (i.e.  c1  of  prog9a  and  c1  of  current  program)
 # '''
-# How  to  import  prog9a
+# # How  to  import  prog9a
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9e')
-# How  to  create  c1  class  object  of  current  module
-# How  to  create  c1  class  object  of  prog9a
+# # How  to  create  c1  class  object  of  current  module
+# # How  to  create  c1  class  object  of  prog9a
+
+
+
+
+
+
+
 
 
 # # Public  and  Private  members  demo  program
 # class  Test:
 # 	def  __init__(self):
-# 		How  to  initialize  public  variable  'x'  to  10
-# 		How  to  initialize  private  variable  'y'  to  20
+# 		self.x =10             #How  to  initialize  public  variable  'x'  to  10
+# 		self.__y = 20          #How  to  initialize  private  variable  'y'  to  20
 # 	def  m1(self):
 # 		print('m1  method')
-# 		How  to  print   variable  'x'
-# 		How  to  print  private  variable  'y'
-# 		How  to  call    private  method   m2()
+# 		print(self.x)       #How  to  print   variable  'x'
+# 		print(self.__y)     #How  to  print  private  variable  'y'
+# 		self.__m2()         #How  to  call    private  method   m2()
 # 		print('Back to m1 method')
 # 	def  __m2(self):
 # 		print('__m2  method')
-# 		How  to  print   variable  'x'
-# 		How  to  print  private  variable   'y'
+# 		print(self.x)       #How  to  print   variable  'x'
+# 		print(self.__y)     #How  to  print  private  variable   'y'
 # # End  of  the  class
 # t = Test()
 # print('Outside')
-# How  to  print  variable  'x'
-# How  to  print   variable  'y'
-# print(t . __y)
-# print(t . __dict__)
-# How  to  call  method  m1()
-# How  to  call   method  m2()
-# t . __m2()
+# print(t.x)            #How  to  print  variable  'x'
+# print(t._Test__y)     #How  to  print   variable  'y'
+# # print(t . __y)        #error, not visible outside
+# print(t . __dict__)   #{'x': 10, '_Test__y': 20}, y is seen as _Test.__y
+# t.m1()                #How  to  call  method  m1()
+# t._Test__m2()         #How  to  call   method  m2()
+# # t . __m2()            #error, cannot access directly outside class methods
 # print('End')
 
 
 
 
-# #  Find  outputs
-# class  c1:
-# 	def __init__(self):
-# 		How  to  initialize  public  variable  'x'  with  10
-# 		How  to  initialize  private  variable  'x'  with  20
-# 		How  to  initialize  public  dunder  variable  'x'  with  30
-# 	def  m1(self):
-# 		print('public method')
-# 	def  __m1(self):
-# 		print('private method')
-# 	def  _m1_(self):
-# 		print('public Dunder method')
-# #  End  of  the  class
-# a = c1()
-# How  to  print   variable  'x'
-# How  to  print  public  dunder  variable  'x'
-# How  to  print   private  variable  'x'
-# print(a . __x)
-# How  to  call  public  method  m1()
-# How  to  call  public  dunder  method  m1()
-# How  to  call  private  method  m1()
-# a . __m1()
+#  Find  outputs
+class  c1:
+	def __init__(self):
+		How  to  initialize  public  variable  'x'  with  10
+		How  to  initialize  private  variable  'x'  with  20
+		How  to  initialize  public  dunder  variable  'x'  with  30
+	def  m1(self):
+		print('public method')
+	def  __m1(self):
+		print('private method')
+	def  _m1_(self):
+		print('public Dunder method')
+#  End  of  the  class
+a = c1()
+How  to  print   variable  'x'
+How  to  print  public  dunder  variable  'x'
+How  to  print   private  variable  'x'
+print(a . __x)
+How  to  call  public  method  m1()
+How  to  call  public  dunder  method  m1()
+How  to  call  private  method  m1()
+a . __m1()
 
 
 
