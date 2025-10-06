@@ -404,15 +404,15 @@
 
 
 
-# Find  outputs (Home  work)
-class   c1:
-	def  __init__(self):
-		print('constructor')
-		del  self
-	def  __del__(self):
-		print('destructor')
-		b = c1()
-a = c1()
+# # Find  outputs (Home  work)
+# class   c1:
+# 	def  __init__(self):          #mutual recursion, constructor calling destructor, destructor calling constructor
+# 		print('constructor')
+# 		del  self
+# 	def  __del__(self):
+# 		print('destructor')
+# 		b = c1()
+# a = c1()
 
 
 
@@ -425,7 +425,7 @@ a = c1()
 # 	def  __del__(self):
 # 		print('3rd  destructor')
 # # End  of  the  class
-# a = c1()
+# a = c1()               #3rd destructor
 
 
 
@@ -436,16 +436,16 @@ a = c1()
 # 	def   __del__(self):
 # 		print(F'Object  at  address  {id(self)}  is  lost  ')
 # #end  of  the  class
-# c = b = a = c1()
-# del   a
-# print('Hello')
-# del   b
+# c = b = a = c1()        #constructor of c1 executed
+# del   a                
+# print('Hello')         
+# del   b                 
 # print('Hi')
-# del   c
+# del   c                 #destructor of c1 executed 
 # print('Bye')
-# d = c1()
-# print('End')
-
+# d = c1()                #constructor of c1 executed
+# print('End')            
+# 						#destructor of c1 executed
 
 
 
@@ -456,8 +456,8 @@ a = c1()
 #         def     __del__(self):
 #                 print(F'Object  at  address  {id(self)}  is  lost ')
 # #End of the class
-# list = [c1() , c1() , c1()]
-# del  list
+# list = [c1() , c1() , c1()]       
+# del  list                         #objects are deleted in reverse fasion when they are in list
 
 
 
@@ -467,6 +467,6 @@ a = c1()
 # 		print('destructor')
 # 		return  25
 # a = c1()
-# print(a . __del__())
-# print('Hello')
-# del   a
+# print(a . __del__())     #destructor \n 25
+# print('Hello')           #Hello
+# del   a                  #destructor 
