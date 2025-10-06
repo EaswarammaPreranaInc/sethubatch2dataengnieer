@@ -82,7 +82,7 @@ class  c1:
 		print('Constructor') 
 		b = c1()                 #this is a recursive call since its calling this same constructor, this creates infinite recursion
 # End  of  class
-a = c1()
+a = c1()   
 
 
 
