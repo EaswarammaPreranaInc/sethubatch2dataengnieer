@@ -329,28 +329,28 @@
 
 
 
-#  Find  outputs
-class  c1:
-	def __init__(self):
-		How  to  initialize  public  variable  'x'  with  10
-		How  to  initialize  private  variable  'x'  with  20
-		How  to  initialize  public  dunder  variable  'x'  with  30
-	def  m1(self):
-		print('public method')
-	def  __m1(self):
-		print('private method')
-	def  _m1_(self):
-		print('public Dunder method')
-#  End  of  the  class
-a = c1()
-How  to  print   variable  'x'
-How  to  print  public  dunder  variable  'x'
-How  to  print   private  variable  'x'
-print(a . __x)
-How  to  call  public  method  m1()
-How  to  call  public  dunder  method  m1()
-How  to  call  private  method  m1()
-a . __m1()
+# #  Find  outputs
+# class  c1:
+# 	def __init__(self):
+# 		self.x = 10             #How  to  initialize  public  variable  'x'  with  10
+# 		self.__x = 20           #How  to  initialize  private  variable  'x'  with  20
+# 		self.__x__ = 30         #How  to  initialize  public  dunder  variable  'x'  with  30
+# 	def  m1(self):
+# 		print('public method')
+# 	def  __m1(self):
+# 		print('private method')
+# 	def  __m1__(self):
+# 		print('public Dunder method')
+# #  End  of  the  class
+# a = c1()
+# print(a.x)          #How  to  print   variable  'x'
+# print(a.__x__)      #How  to  print  public  dunder  variable  'x'
+# print(a._c1__x)     #How  to  print   private  variable  'x'
+# # print(a . __x)      #error, private variable not visible outside same class methods
+# a.m1()              #How  to  call  public  method  m1()
+# a.__m1__()          #How  to  call  public  dunder  method  m1()
+# a._c1__m1()          #How  to  call  private  method  m1()
+# # a . __m1()          #error, private method not visible outside
 
 
 
@@ -362,66 +362,67 @@ a . __m1()
 # class   c1:
 # 	def   __init__(self):
 # 		print('Object  is  created  at  address  :  ' , id(self))
-# 	def   _del_(self):
+# 	def   ___del___(self):
 # 		print(F'Object  at  address  {id(self)}  is  lost')
 # # End    of    the    class
-# a = c1()
-# a = None
-# b = c1()
-# del    b
-# c = c1()
-# c = c1()
-# d = c1()
-# e = c1()
+# a = c1()         #constructor of c1 executed
+# a = None         #destructor of c1 executed
+# b = c1()         #constructor of c1 executed
+# del    b         #destructor of c1 executed
+# c = c1()         #constructor of c1 executed
+# c = c1()         #constructor and destructor of c1 executed
+# d = c1()         #constructor of c1 executed
+# e = c1()         #constructor of c1 executed
+#                  #3 times destructor of c1 executed
 
 
 
 # # Identify  Error (Home  work)
 # class   c1:
-# 	def  _del_(self , x):
+# 	def  __del__(self , x):
 # 		print('destructor : ' ,  x)
 # a = c1()
-# a . _del_(25)
+# a . __del__(25)                #destructor cannot have argument, when called explicitly it executes but when obj is being destroyed by pvm it throws error
 
 
 
 # # Find  outputs (Home  work)
 # class   c1:
-# 	def  _del_(self , x = 35):
+# 	def  __del__(self , x = 35):      #destructor can have default arguments
 # 		print('destructor : ' , x)
 # a = c1()
-# a . _del_(25)
+# a . __del__(25)                       #2 times destructor is executed          
 
 
 
 # # Find  outputs (Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 			print('destructor')
-# 			b = c1()
-# a = c1()
+# 			b = c1()           #ref b will be deleted soon after method execution, so it creates a infinite recursion call as it calls this same destructor again and again
+# a = c1()                        
 
 
 
-# # Find  outputs (Home  work)
-# class   c1:
-# 	def  __init__(self):
-# 		print('constructor')
-# 		del  self
-# 	def  _del_(self):
-# 		print('destructor')
-# 		b = c1()
-# a = c1()
+# Find  outputs (Home  work)
+class   c1:
+	def  __init__(self):
+		print('constructor')
+		del  self
+	def  __del__(self):
+		print('destructor')
+		b = c1()
+a = c1()
 
 
 
 # #  Find  outputs( Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('1st  destructor')
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('2nd  destructor')
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('3rd  destructor')
 # # End  of  the  class
 # a = c1()
@@ -432,7 +433,7 @@ a . __m1()
 # class   c1:
 # 	def   __init__(self):
 # 		print('Object  is  created  at  address  :  ' , id(self))
-# 	def   _del_(self):
+# 	def   __del__(self):
 # 		print(F'Object  at  address  {id(self)}  is  lost  ')
 # #end  of  the  class
 # c = b = a = c1()
@@ -452,7 +453,7 @@ a . __m1()
 # class  c1:
 #         def     __init__(self):
 #                 print('Object  is  created  at  address  :  ' , id(self))
-#         def     _del_(self):
+#         def     __del__(self):
 #                 print(F'Object  at  address  {id(self)}  is  lost ')
 # #End of the class
 # list = [c1() , c1() , c1()]
@@ -462,10 +463,10 @@ a . __m1()
 
 # # Find  outputs  (Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('destructor')
 # 		return  25
 # a = c1()
-# print(a . _del_())
+# print(a . __del__())
 # print('Hello')
 # del   a
