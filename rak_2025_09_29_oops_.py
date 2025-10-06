@@ -76,13 +76,13 @@
 	  
 
 
-# Find  outputs (Home  work)
-class  c1:
-	def  __init__(self):    
-		print('Constructor') 
-		b = c1()                 #this is a recursive call since its calling this same constructor, this creates infinite recursion
-# End  of  class
-a = c1()   
+# # Find  outputs (Home  work)
+# class  c1:
+# 	def  __init__(self):    
+# 		print('Constructor') 
+# 		b = c1()                 #this is a recursive call since its calling this same constructor, this creates infinite recursion
+# # End  of  class
+# a = c1()   
 
 
 
@@ -97,12 +97,12 @@ a = c1()
 #         print('Method')
 #         self . x = 30
 #         self . y = 40
-# a = c1()
-# print(a . __dict__)
-# b = c2()
-# print(b . __dict__)
-# b . init()
-# print(b . __dict__)
+# a = c1()                            #Constructor
+# print(a . __dict__)                 #{'x': 10, 'y' : 20}
+# b = c2()                         
+# print(b . __dict__)                 #{}
+# b . init()                          #Method
+# print(b . __dict__)                 #{'x': 30, 'y': 40}
 	  
 
 
@@ -122,18 +122,18 @@ a = c1()
 #         x . c = 30
 # #  End  of  function  f1
 # x = c1()
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10}
 # x . m1()
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10, 'b': 20}
 # f1()
-# print(x . __dict__)
-# x . d = 40
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30}
+# x . d = 40 
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30, 'd': 40}
 # y = c2()
-# y . m3()
-# print(x . __dict__)
+# y . m3()                           
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30, 'd': 40, 'e': 50}
 # z = c1()
-# print(z . __dict__)
+# print(z . __dict__)                #{'a': 10}
 
 
 
@@ -147,14 +147,14 @@ a = c1()
 # #end  of  the  class
 # a = c1()
 # b = c1()
-# print(a . __dict__)
-# print(b . __dict__)
+# print(a . __dict__)          #{'x': 10, 'y': 20, 'z': 30}
+# print(b . __dict__)          #{'x': 10, 'y': 20, 'z': 30}
 # del  a . x
 # del  b . y
-# print(a . __dict__)
-# print(b . __dict__)
-# print(a . x)
-# print(b . y)
+# print(a . __dict__)          #{'y': 20, 'z': 30}
+# print(b . __dict__)          #{'x': 10, 'z': 30}
+# # print(a . x)                 #error, x is deleted from obj a
+# # print(b . y)                 #error, y is deleted from obj b
 	  
 
 
@@ -167,7 +167,7 @@ a = c1()
 # 	def  __init__(self):
 # 		print('3rd  constructor')
 # # End  of  the  class
-# a = c1()
+# a = c1()  #3rd constructor
 
 
 
@@ -181,9 +181,9 @@ a = c1()
 # 	def  __init__(self , x , y):
 # 		print('Two  argument  constructor : ' , x , y)
 # # End  of  the  class
-# a = c1(10 , 20)
-# b = c1(30)
-# c = c1()
+# a = c1(10 , 20)          #Two  argument  constructor : 10 20
+# # b = c1(30)               #error, one more arg is missing
+# # c = c1()                 #error, two args are missing
 
 
 
@@ -197,9 +197,9 @@ a = c1()
 # 	def  __init__(self , x = 100 , y = 200):
 # 		print('Two  argument  constructor : ' , x , y)
 # # End  of  the  class
-# a = c1(10 , 20)
-# b = c1(30)
-# c = c1()
+# a = c1(10 , 20)          #Two argument constructor: 10 20
+# b = c1(30)               #Two argument constructor: 30 200
+# c = c1()                 #Two argument constructor: 100 200
 
 
 
@@ -211,8 +211,8 @@ a = c1()
 # 	def  __init__(self):
 # 		print('Constructor')
 # #end of the  class
-# a = f1()
-# print(a)
+# a = f1()                  #constructor
+# print(a)                  #type and address of obj a
 
 
 
@@ -224,8 +224,8 @@ a = c1()
 # def  c1():
 # 	print('Function')
 # #end of the  class
-# a = c1()
-# print(a)
+# a = c1()                  #Function
+# print(a)                  #None
 
 
 
