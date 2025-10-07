@@ -2,7 +2,7 @@
 class  deque:
     def   _init_(dq):
         list = []
-    def  isempty(dq):
+    def  isempty(dq): 
         #return  True  when  deque  is  empty  and  False  otherwise
         return True if len(dq.list) == 0 else False
     def  ins_rear(dq , x):
