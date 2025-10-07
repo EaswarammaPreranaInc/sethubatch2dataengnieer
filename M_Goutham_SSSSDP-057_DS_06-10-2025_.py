@@ -294,4 +294,5 @@ What  is  the  difference  between  's'  and  s . list ?  --->
 
 
 's'  is  the  stack  object  and  s . list  is   the  list  held  by  stack  object
+
 '''
