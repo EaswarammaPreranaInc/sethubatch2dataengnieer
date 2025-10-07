@@ -1,4 +1,3 @@
-
 # Write  a  program  to  implement  queue  using  list
 class  queue:
     def  __init__(q):
