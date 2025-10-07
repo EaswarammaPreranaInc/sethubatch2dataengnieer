@@ -259,19 +259,18 @@
 # '''
 	  
 
-
-# Find  outputs  (Home  work)
-class   c1:
-	def   __init__(self , y):
-		self . x = y
-	def    __eq__(m , n):
-		print('__eq__ method  :  ' , m . x , n . x)
-#end of the class
-a = c1(25)
-b = c1(25)
-print(a == b)          #__eq__method: 25 25
-print(a != b)          #error
-print(a.x != b.x)      #False
+# # Find  outputs  (Home  work)
+# class   c1:
+# 	def   __init__(self , y):
+# 		self . x = y
+# 	def    __eq__(m , n):
+# 		print('__eq__ method  :  ' , m . x , n . x)
+# #end of the class
+# a = c1(25)
+# b = c1(25)
+# print(a == b)          #__eq__method: 25 25
+# print(a != b)          #False
+# print(a.x != b.x)      #False
 	  
 
 # # Find  outputs  (Home  work)
@@ -284,12 +283,14 @@ print(a.x != b.x)      #False
 # #end of the class
 # a = c1(10)
 # b = a
-# print(a != b)
-# print(a == b)
+# print(a != b)       #False
+# print(a == b)       #True
 	  
 
 
 # #  Is  10 > 20  a  recursion ?
+# # 10 > 20 is not recursion because it calls int class __gt__
+# # but a > b is recursion because it calss same __gt__
 # class  c1:
 # 	def   __gt__(a , b):
 # 		print(10 > 20)
@@ -320,6 +321,12 @@ print(a.x != b.x)      #False
 # n = c2(40)
 # a < m
 # n < b
+# '''
+# c1  class  __gt__  method :  10 20
+# c1  class  __gt__  method :  20 10
+# c2  class  __gt__  method :  30 10
+# c1  class  __gt__  method :  20 40
+# '''
 
 
 
@@ -330,14 +337,16 @@ print(a.x != b.x)      #False
 # 		self . hr = 250
 # 	def __mul__(x , y):
 # 		print('__mul__  method  of  class   c1')
-# 		return  hourly-rate(i.e.  25) *  number-of-hours (i.e.  8)
+# 		#return  hourly-rate(i.e.  25) *  number-of-hours (i.e.  8)
+# 		return x.hr * y.noh
 # class c2:
 # 	def __init__(self):
 # 		self . empno = 25
 # 		self . noh = 8
 # 	def __mul__(x , y):
 # 		print('__mul__  method  of  class   c2')
-# 		return  number-of-hours (i.e.  8) *  hourly-rate(i.e.  25)
+# 		#return  number-of-hours (i.e.  8) *  hourly-rate(i.e.  25)
+# 		return x.noh * y.hr
 # # End of the class
 # a = c1()
 # b = c2()
@@ -355,15 +364,15 @@ print(a.x != b.x)      #False
 # #end of the class
 # a = c1()
 # b = c1()
-# print('a + b : ' , a + b)
-# print('a + 7 : ' , a + 7)
-# print(7 + a)
-# print('7 + 8 : ' , 7 + 8)
+# print('a + b : ' , a + b)    #__add__ method  of  class   c1
+# print('a + 7 : ' , a + 7)    #__add__ method  of  class   c1
+# # print(7 + a)                 #error, int cannot be added to class c1
+# print('7 + 8 : ' , 7 + 8)    #15
 # m = c2()
 # n = c2()
-# print(m + n)
-# print('a + m : ' , a + m)
-# print(m + a)
+# # print(m + n)                 #error, no __add__ in class c2
+# print('a + m : ' , a + m)    #__add__ method  of  class   c1
+# # print(m + a)                 #error, no __add in class c2
 	  
 
 
@@ -372,7 +381,8 @@ print(a.x != b.x)      #False
 # 	def     __init__(self , y):
 # 		self . x = y
 # 	def __add__(p , q):
-# 		return  sum  of  numbers  (or)  join  of  strings
+# 		#return  sum  of  numbers  (or)  join  of  strings
+# 		return p.x + q.x
 # #end of the class
 # a = c1(10)
 # b = c1(20)
@@ -381,184 +391,3 @@ print(a.x != b.x)      #False
 # print('Sum : ' , a + b)
 # print('Join: ' , m + n)
 	  
-
-
-# # Write  a  program  to  implement  queue  using  list
-# class  queue:
-#         def  __init__(q):
-#                  How  to  create  an  empty  queue
-#         def  isempty(q):
-#                 return  True  when  queue  is  empty  and  False  otherwise
-#         def  enqueue(q , x):
-#                 How  to  insert  'x'  into  the  queue
-#         def  dequeue(q):
-#                 How  to  remove  first  element  of  the  queue  and  return  the  deleted  element
-# 				(return  -1  when  deletion  is  not  possible)
-#         def  first(q):
-#                 How  to  return  the  first  element  of  the  queue
-# 				(return  -1  when  queue  is  empty)
-# 		def  last(q):
-#                 How  to  return  the  first  element  of  the  queue
-# 				(return   -1  when  queue  is  empty)
-#         def  disp(q):
-#                 How  to  print  queue
-#         def  size(q):
-#                 How  to  return  number   of  elements  in  the  queue
-# # End  of  the  class
-# def  menu():
-#         print('1. Insertion')
-#         print('2. Deletion')
-#         print('3. Print  queue')
-#         print('4. First  element of queue')
-#         print('5. Last  element of queue')
-#         print('6. Number  of  elements  in  the  queue')
-#         print('7. Exit')
-# # End of  the  function
-# How  to  create  queue  class  object
-# menu()
-# ch = int(input('Enter  choice : ' ))
-# while  repeat  until  user  input  is  7
-# 	match  ch:
-# 		case  1:
-# 					x = eval(input('Enter  element  to  be  inserted : '))
-# 					How  to  insert  'x'  into  the  queue
-# 					How  to  print  queue
-# 		case  2:
-# 					How  to  delete  queue  element  and  print  the  deleted  element
-# 					How  to  print  queue
-# 		case  3:
-# 					How  to  print  the  queue
-# 		case  4:
-# 					How  to  print  first  element  of  the  queue
-# 		case  5:
-# 					How  to  print  last  element  of  the  queue
-# 		case  6:
-# 					How  to  print  number  of  elements  in  the  queue
-# 	# End  of  match
-# 	menu()
-# 	ch = int(input('Enter choice: '))
-
-
-
-# '''
-# Write  a  program  to  reverse  a  string  using  stack
-
-# str  object  --->  R     A      M      A
-#                            0     1       2       3
-
-# Stack   --->
-
-# Hint:  Reuse  stack  class  defined  in  prog1b.py  file  but  do  not  rewrite
-# '''
-# How  to  import  stack  class  from  prog1b  module
-# How  to  create  stack  class  object
-# How  to  read  a  string  into  a  str  object
-# How  to  push  each  char  of  string  into  the  stack
-# printf("Reverse  String :  ");
-# How  to  remove  each  char  of  stack  and  print  until   stack is empty
-
-
-
-# '''
-# Write  a  program  to  perform  parentheses  match
-
-# 1) Is  ((3 + 4)  valid ?  ---> No  due  to  excess  (
-
-# 2) Is  (3 * (4 + 5))  valid ?  --->  Yes
-
-# 3) Is  (3 * (4 + 5))) + 6 valid ? --->No  due  to  excess  ')'
-
-# 4) Is  3 + 4  valid ? --->  Yes
-
-# 5) Is  ) 3 + 4 (  valid ?  --->  No  due  to  )  before  (
-
-# 6) What  action  to  be  made  when  character  is   '(' ?  --->  Push  '('  into  the  stack
-
-# 7) What  action  to  be  made  when  character  is   ')' ?  ---> Pop  '('  from  the  stack
-
-# 8) What  action  to  be  made  when  pop()  method  returns   None ?  --->  Print  invalid  msg  and  stop  execution
-
-# 9) What  action  to  be  made  when  end  of   the  string   is  reached ? --->
-# 																						Print  valid  msg  when  stack  is   empty  and  invalid  otherwise
-
-# 10) Reuse  stack  class  defined  in  prog1b.py  file  but  do  not rewrite
-# '''
-
-
-
-
-# # Write  a  program  to  implement  stack  using  list
-# class  stack:
-# 	def  __init__(s):
-# 		s . list = []   #  How  to  create  an  empty  stack
-# 	def  isempty(s):
-# 		return  s . list ==  []   #  return  True  when  stack  is  empty  and  False  otherwise
-# 	def  push(s , x):
-# 		s . list . append(x)  #  How  to  insert  'x'  into  the  stack
-# 	def  pop(s):
-# 		try:
-# 			return  s . list . pop()  #  How  to  delete  last  element  of  the  stack  and  return  the  deleted  element
-# 		except:
-# 			return  None  #  return  None  when  deletion  is  not  possible
-# 	def  peek(s):
-# 		try:
-# 			return  s . list[-1]  #   How  to  return  the  last  element  of  the  stack
-# 		except:
-# 			return  None
-# 	def  disp(s):
-# 		print('Stack :  ' , s . list)  #  How  to  print  stack
-# 	def   size(s):
-# 		return  len(s . list) #   How  to  return  number   of  elements  in  the  stack
-# # End  of  the  class
-# def  menu():
-#         print('1. Insertion')
-#         print('2. Deletion')
-#         print('3. Print  Stack')
-#         print('4. Last  element of stack')
-#         print('5. Number  of  elements  in  the  stack')
-#         print('6. Exit')
-# # End of  the  function
-# if  _name_  ==  '_main_':
-# 	s = stack()   #  How  to  create  stack  class  object
-# 	while  True:
-# 		menu()
-# 		ch = int(input('Enter  choice : ' ))
-# 		match  ch:
-# 			case  1:
-# 						x = eval(input('Enter  element  to  be  inserted : '))
-# 						s . push(x)   #  How  to  insert  'x'  into  the  stack
-# 						s . disp()   #  How  to  print  stack
-# 			case  2:
-# 						x = s . pop() #  How  to  delete  stack  element  and  print  the  deleted  element
-# 						if  x  ==  None:
-# 							print('Stack  is  empty  , deletion  is  not  permitted')
-# 						else:
-# 							print('Deleted  element : '  , x)
-# 						s . disp()  #   How  to  print  stack
-# 			case  3:
-# 						s . disp() #   How  to  print  the  stack
-# 			case  4:
-# 						x = s . peek()  #  How  to  print  last  element  of  the  stack
-# 						if  x == None:
-# 							print('Stack  is  empty')
-# 						else:
-# 							print('Last  element :  ' , x)
-# 			case  5:
-# 						print('Number  of  elements  :  ' ,  s . size())   #  How  to  print  number  of  elements  in  the  stack
-# 			case  6:  exit()
-# 		# End  of  match
-
-
-
-
-# #Object  's'   --->  list = [25 , 10.8 , 'Hyd']
-
-
-
-
-# '''
-# What  is  the  difference  between  's'  and  s . list ?  --->
-
-
-# 's'  is  the  stack  object  and  s . list  is   the  list  held  by  stack object
-# '''
