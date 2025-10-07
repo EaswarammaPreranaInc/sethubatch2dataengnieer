@@ -1,0 +1,178 @@
+'''
+Repeat  prog5a  such  that  methods  are  called  in  another  way
+
+1) What  are  the  two  ways  to  call  a  method ?  --->  object . method()  and  classname . method(object)
+
+2) Reuse  triangle  class  defined  in  prog5a  but  do  not   define  triangle  class  again
+'''
+from tra import Triangle   # import  triangle  class  from  tra.py
+t=Triangle()  # How  to  create  triangle  object
+Triangle.get(t)     #How  to  call  get()  method  in  another  way
+Triangle.test(t)    #(t)How  to  call  test()  method  in  another  way
+print('Area : ', Triangle.area(t))  #How  to  call  area()  method  in  another  way
+print('Perimeter : ', Triangle.peri(t))   #How  to  call  peri()  method  in  another  way)
+
+
+'''  (Home  work)
+Write  a  program  to  add  two  objects  where  each  object  contains  three  values  and
+store  results  in   third  object
+
+1st  object   --->  x = 10 , y = 20 , z = 30
+
+2nd  object --->  x = 40 , y = 50 , z = 60
+
+3rd  object  --->  x = 10 + 40 = 50 , y = 20 + 50 = 70 , z = 30 + 60 = 90
+'''
+class  Test:
+	def   get(self):
+            self.x=float(input('Enter  x  value:'))
+            self.y=float(input('Enter  y  value:'))
+		# How  to  read  inputs  into  variables  x , y  and  z  of  object  self
+	def   add(self , m , n):
+            self.x=m.x+n.x
+            self.y=m.y+n.y
+		# How  to  add  objects  m  and  n  and  store  results  in  object  self
+	def  disp(self):
+            print('x =',self.x)
+            print('y =',self.y)
+		 #How  to  print  object  self
+# End  of  the  class
+a=Test()
+b=Test()
+c=Test()    #How  to  create  three  Test  class  objects  a , b  and  c
+print('First  Object')
+a.get()     #How  to  read  inputs  into  object  'a'
+print('Second  Object')
+b.get() #How  to  read  inputs  into  object  'b'
+c.add(a,b)    #How  to  add  objects  a  and  b  and  store  results in  object  'c'
+print('Addition  results')
+c.disp()    ##How  to  print  object  'c'
+
+
+#  Find  outputs (Home  work)
+class  Date:
+	pass        # Date class definition
+# End of the class
+a =  Date() # create object a for date cls object
+a . dd = 15 # add variable dd to object a with value 15
+a . mm = 8 # add variable mm to object a with value 8
+a . yy = 1947 # add variable yy to object a with value 1947
+print(a)    # prints type and address of object
+
+
+#  Find  outputs (Home  work)
+class   c1:
+	def  _str_(self):
+			return  '25'
+class   c2:
+	def  _str_(self):
+			return   35
+class   c3:
+	def  _str_(self):
+			print('Hyd')
+class   c4:
+	def  _str_(self , x):
+			return   F'{x}'
+#end of the class
+a = c1() #creating c1 class object
+b = c2() #creating c2 class object
+c = c3() #creating c3 class object
+d = c4() #creating c4 class object
+print(a)    #printing object a automatically calls __str__ method
+print(b)   #printing object b automatically calls __str__ method error as it returns int
+print(c)  #printing object c automatically calls __str__ method error as returning none
+print(d) #printing object d automatically calls __str__ method error as it requires one argument
+print(b . _str_()) #calling __str__ method of object b
+print(c . _str_()) #calling __str__ method of object c
+print(d . _str_(50)) #calling __str__ method of object d with one argument 50
+
+
+class   student:
+	def   get(self):  
+		self . rno = int(input()) 
+		self . sname = input()  
+		self . gender = input(())   
+		self . m = [] 
+		for  i  in  range(3):  #  Marks  of  3  subjects
+			marks = int(input(F'Enter  marks  of  subject  {i + 1}  :  '))  
+			self . m . append(marks) 
+	def   compute(self):  #  self  is  object  's'
+		self . tot = sum(self . m)  
+		self . avg = self . tot / 3 
+		if  min(self . m) < 40:   #  At  least  one  subject  is  below  40  marks
+				self . grade = 'Fail' 
+		elif  self . avg >= 70:
+				self . grade = 'Distinction'  
+		elif  self . avg >= 60:
+				self . grade = 'First  class'  
+		elif  self . avg  >= 50:
+				self . grade = 'Second  class' 
+		else:
+				self . grade = 'Third  class'   
+	def  disp(self): 
+		print('Roll  Number  :  ' ,  self . rno)
+		print('Student  Name  :  ' , self . sname)
+		print('Gender  :  ' ,  self . gender)
+		print('Total  Marks  :  ' , self . tot)
+		print(F'Average  :  {self . avg:.2f}')
+		print('Grade  :  ' , self . grade)
+	def   _str_(self):
+		return  F'{self . rno}  \t {self . sname}  \t  {self . gender}  \t  {self . tot}  \t  {self . avg:.2f}  \t  {self . grade}'  #  Concatenates  all  the  value  of  object  self  to  form  a  string
+#End  of  the  class
+if  __name__ == '__main__':  #  True when  prog9a  is  executed  and  False  when  prog9a  is  imported
+	s = student() #  Creates  an  empty  student class object
+	s . get() #   Reads  inputs  to  object  's'
+	s . compute()  #  Stores  results  in  object  's'
+	s . disp()  #  Prints  values  of  object  's'
+	print(s)
+
+
+import  math
+class  rat:
+	def  get(self):
+		self . nr = int(input('Enter  numerator :  '))  # Adds  variable  nr  to  object  self  with  user  input
+		self . dr = int(input('Enter  denominator :  '))  # Adds  variable  dr  to  object  self  with  user  input
+		self . test()  #  Is  denom  of  object  self  zero
+	def  test(self):
+		while  self . dr == 0:  #  Repeat  until  dr  is  non-zero
+			self . dr = int(input('Denom  can  not  be  zero , reenter :  '))  #  Reads  non-zero  denominator  to  object  self
+	def    __str__(self):
+			 return  F'{self . nr} / {self . dr}'  #   Concatenates  values  of  self  to  form  a  string  with  '/'
+	def   add(self , a , b):
+		self . nr = a . nr * b . dr + a . dr * b . nr  # Adds  variable  nr  to  object  self  with  the  result
+		self . dr = a . dr * b . dr  # Adds  variable  dr  to  object  self  with  the  result
+		
+	def   sub(self , a , b):
+		self . nr = a . nr * b . dr - a . dr * b . nr  # Adds  variable  nr  to  object  self  with  the  result
+		self . dr = a . dr * b . dr   # Adds  variable  dr  to  object  self  with  the  result
+		
+	def   mul(self , a , b):
+		self . nr = a . nr * b . nr  # Adds  variable  nr  to  object  self  with  the  result
+		self . dr = a . dr * b . dr   # Adds  variable  dr  to  object  self  with  the  result
+		
+	def    div(self , a , b):
+		self . nr = a . nr * b . dr  # Adds  variable  nr  to  object  self  with  the  result
+		self . dr = a . dr * b . nr  # Adds  variable  dr  to  object  self  with  the  result
+		
+	
+# End  of the class
+if  __name__ == '__main__': #  True  when  prog10a  is  executed  and  False  when  prog10a  is  imported
+	a = rat() #  Creates  6  empty  rat  class  objects
+	b = rat()
+	c = rat()
+	d = rat()
+	e = rat()
+	f = rat()
+	a . get()  #  Reads  inputs  to  object  'a'
+	b . get()  #  Reads  inputs  to  object  'b'
+	c . add(a , b)  #  Adds  objects  'a'  and  'b'  and  stores  results  in  object  'c'
+	d . sub(a , b)  #  Subtracts  objects  'a'  and  'b'  and  stores  results  in  object  'd'
+	e . mul(a , b)  #  Multipliees  objects  'a'  and  'b'  and  stores  results  in  object  'd'
+	f . div(a , b)  #  Divides  objects  'a'  and  'b'  and  stores  results  in  object  'f'
+	print('Sum : ' , c)  #   _str_()  method  of  rat  class  returns   values  of  object  'c'  in  the  form  of  string
+	print('Difference : ' , d)  #   _str_()  method  of  rat  class  returns   values  of  object  'd'  in  the  form  of  string
+	print('Product : ' , e)  #   _str_()  method  of  rat  class  returns   values  of  object  'e'  in  the  form  of  string
+	if  b . nr != 0:
+		print('Division : ' , f)  #   _str_()  method  of  rat  class  returns   values  of  object  'f'  in  the  form  of  string
+	else:
+		print('Division  is  not  permitted')
