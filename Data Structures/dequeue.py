@@ -6,6 +6,7 @@ class  deque:
         #return  True  when  deque  is  empty  and  False  otherwise
         return True if len(dq.list) == 0 else False
     def  ins_rear(dq , x):
+        
         #How  to  insert  'x'  at  the  end  of  deque
         dq.list.append(x)
     def  ins_front(dq , x):
