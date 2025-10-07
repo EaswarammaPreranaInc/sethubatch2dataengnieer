@@ -36,13 +36,13 @@
 # 		r.dr = self.dr * b.dr
 # 		r.simplify()
 # 		return r
-# 	def __sub__(self, b): #Modify the method
+# 	def ___sub___(self, b): #Modify the method
 # 		r = Rat()
 # 		r.nr = self.nr * b.dr - self.dr * b.nr
 # 		r.dr = self.dr * b.dr
 # 		r.simplify()
 # 		return r
-# 	def __mul__(self, b):  #Modify the method
+# 	def ___mul___(self, b):  #Modify the method
 # 		r = Rat()
 # 		r.nr = self.nr * b.nr
 # 		r.dr = self.dr * b.dr
@@ -78,16 +78,18 @@
 # 	print('Division is not permitted.')
 
 
-# Is  10 + 20  a  recursion ?
-class   c1:
-	def  __add__(a , b):
-			print(10 + 20)
-a = c1()
-b = c1()
-print(a + b)
+# # Is  10 + 20  a  recursion ?  
+# # No because 10 + 20 calls the __add__ method of other class int
+# class   c1:
+# 	def  __add__(a , b):
+# 			print(10 + 20)
+# a = c1()
+# b = c1()
+# print(a + b)
 	  
 
 # # Is  x + y  a  recursion  ?  (Home  work)
+# # Yes, because x + y calls the same class __add__
 # class   c1:
 # 	def  __add__(a , b):
 # 		x = c1()
@@ -95,7 +97,7 @@ print(a + b)
 # 		print(x + y)
 # a = c1()
 # b = c1()
-# print(a + b)
+# print(a + b)
 	  
 
 
@@ -113,18 +115,32 @@ print(a + b)
 # '''
 # import  math
 # class  complex:
-# 	def  get(self):
-# 		How  to  read  real  and  imag
-# 	def    __str__(self):
-# 		 How  to  return  real  and  imag  in  the  form  of  3 + 4i  (or)  3 - 4i
-# 	def  __add__(a ,  b):
-# 		How  to  add  objects  a  and  b
-# 	def  _sub_(a ,  b):
-# 		How  to  subtract  objects  a  and  b
-# 	def  _mul_(a ,  b):
-# 		How  to  multiply  objects  a  and   b
-# 	def  _div_(a ,  b):
-# 		How  to  divide  objects   a  and  b
+#     def  get(self):
+#         #How  to  read  real  and  imag
+#         self.real = float(input('Enter the real value'))
+#         self.imag = float(input('Enter the imag value'))
+#     def    __str__(self):
+#         #How  to  return  real  and  imag  in  the  form  of  3 + 4i  (or)  3 - 4i
+#         return f'{self.real}+{self.imag}i'
+#     def __add__(a ,  b):
+#         #How  to  add  objects  a  and  b
+#         c = complex()
+#         c.real = a.real + b.real
+#         c.imag = a.imag + b.imag
+#         return c
+#     def  __sub__(a ,  b):
+#         c = complex()
+#         c.real = a.real + b.real
+#         c.imag = a.imag + b.imag
+#         return c
+#     def  __mul__(a ,  b):
+#     #How  to  multiply  objects  a  and   b
+#         c = complex()
+#         c.real = a.real * b.real + a.real * b.imag + a.imag * b.real + a.imag * b.imag
+#         c.imag = 
+
+#     def  __truediv__(a ,  b):
+#     #How  to  divide  objects   a  and  b
 # # End  of  the  class
 # How  to  create  two  complex  class  objects
 # How  to  read   inputs  into  1st  object
@@ -149,98 +165,121 @@ print(a + b)
 
 # 2) Imp  point  is  cross  product
 
-# 3) What  is  the  method  call  to  _gt_()  method ?  --->  a > b
-#      What  is  the  method  call  to  _lt_()  method ?  ---> a < b
-#      What  is  the  method  call  to  _eq_()  method ?  --->  a == b
-#      What  is  the  method  call  to  _ge_()  method ?  --->  a >= b
-#      What  is  the  method  call  to  _le_()  method ?  --->  a <= b
-#      What  is  the  method  call  to  _ne_()  method ?  ---> a != b
+# 3) What  is  the  method  call  to  __gt__()  method ?  --->  a > b
+#      What  is  the  method  call  to  __lt__()  method ?  ---> a < b
+#      What  is  the  method  call  to  __eq__()  method ?  --->  a == b
+#      What  is  the  method  call  to  __ge__()  method ?  --->  a >= b
+#      What  is  the  method  call  to  __le__()  method ?  --->  a <= b
+#      What  is  the  method  call  to  __ne__()  method ?  ---> a != b
 # '''
 # import  math
 # class  Rat:
-# 	def  get(self):
-# 			 How  to  read  numerator  and  denominator  into  object
-# 	def _gt_(self,b):
-# 			return  true  when  rational  number  in  object self  >  that  of  'b'  and  false  otherwise
-# 	def _lt_(self,b):
-# 			return  true  when  rational  number  in  object  self  <  that  of  'b'  and  false  otherwise
-# 	def _eq_(self,b):
-# 			return  true  when  rational  numbers  in  objects  self   and  'b'  are  same  and  false  otherwise
-# 	def _ge_(self,b):
-# 			return  true  when  rational  number  in  object self  >=  that  of  'b'  and  false  otherwise
-# 	def _le_(self,b):
-# 			return  true  when  rational  number  in  object self  <=  that  of  'b'  and  false  otherwise
-# 	def _ne_(self,b):
-# 			return  true  when  rational  numbers  in  objects  self   and  'b'  are  different  and  false  otherwise
+#     def  get(self):
+#         #How  to  read  numerator  and  denominator  into  object
+#         self.n = int(input('Enter the numerator:  '))
+#         self.d = int(input('Enter the denominator:  '))
+#     def __gt__(self,b):
+#         #return  true  when  rational  number  in  object self  >  that  of  'b'  and  false  otherwise
+#         return True if self.n * b.d > self.d * b.n else False
+#     def __lt__(self,b):
+#         #return  true  when  rational  number  in  object  self  <  that  of  'b'  and  false  otherwise
+#         return True if self.n * b.d < self.d * b.n else False
+#     def __eq__(self,b):
+#         #return  true  when  rational  numbers  in  objects  self   and  'b'  are  same  and  false  otherwise
+#         return True if self.n * b.d == self.d * b.n else False
+#     def __ge__(self,b):
+#         #return  true  when  rational  number  in  object self  >=  that  of  'b'  and  false  otherwise
+#         return True if self.n * b.d >= self.d * b.n else False
+#     def __le__(self,b):
+#         #return  true  when  rational  number  in  object self  <=  that  of  'b'  and  false  otherwise
+#         return True if self.n * b.d <= self.d * b.n else False
+#     def __ne__(self,b):
+#         #return  true  when  rational  numbers  in  objects  self   and  'b'  are  different  and  false  otherwise
+#         return True if self.n * b.d != self.d * b.n else False
 # #  End  of   the  class
-# How  to  create  two  Rat   class  objects  'a'  and  'b'
-# How  to  read  1st  rational   number  into  object  'a'
-# How  to  read  2nd  rational   number  into  object  'b'
-# if  1st  rational  is  >  2nd  rational  number
-# 	print('>')
-# if  1st  rational  is  <  2nd  rational  number
-# 	print('<')
-# if  rational  numbers  are  same
-# 	print('==')
-# if  1st  rational  is  >=  2nd  rational  number
-# 	print('>=')
-# if  1st  rational  is  <=  2nd  rational  number
-# 	print('<=')
-# if  rational  numbers  are  different
-# 	print('!=')
-
+# # How  to  create  two  Rat   class  objects  'a'  and  'b'
+# a = Rat()
+# b = Rat()
+# # How  to  read  1st  rational   number  into  object  'a'
+# a.get()
+# # How  to  read  2nd  rational   number  into  object  'b'
+# b.get()
+# if a > b:
+#     print('>')
+# if a < b:
+#     print('<')
+# if a == b:
+#     print('==')
+# if a >= b:
+#     print('>=')
+# if a <= b:
+#     print('<=')
+# if a != b:
+#     print('!=')
 
 
 # # Find  outputs  (Home work)
 # class   c1:
-# 	def   _init_(self , y):
+# 	def   __init__(self , y):
 # 		self . x = y
-# 	def    _ge_(m , n):
-# 		print('_ge_ method :  ' , m . x , n . x)
+# 	def    __ge__(m , n):
+# 		print('__ge__ method :  ' , m . x , n . x)
 # 		return  m . x > n . x
 # # End  of  the  class
 # a = c1(10)
 # b = c1(20)
 # print(a >= b)
-# print(a <= b)
+# print(a <= b)
+# '''
+# __ge__ method :   10 20
+# False
+# __ge__ method :   20 10
+# True
+# '''
 	  
 
 
 # # Find  outputs  (Home  work)
 # class   c1:
-#         def   _init_(self , y):
+#         def   __init__(self , y):
 #                 self . x = y
-#         def    _eq_(m , n):
-#                 print('_eq_ method  : ' , m . x , n . x)
+#         def    __eq__(m , n):
+#                 print('__eq__ method  : ' , m . x , n . x)
 #                 return  m . x == n . x
 # #end of the class
 # a = c1(10)
 # b = c1(20)
 # print(a != b)  #  not (a == b)
 # print(a == b)
+# '''
+# __eq__ method  :  10 20
+# True
+# __eq__ method  :  10 20
+# False
+# '''
 	  
 
 
-# # Find  outputs  (Home  work)
-# class   c1:
-# 	def   _init_(self , y):
-# 		self . x = y
-# 	def    _eq_(m , n):
-# 		print('_eq_ method  :  ' , m . x , n . x)
-# #end of the class
-# a = c1(25)
-# b = c1(25)
-# print(a == b)
-# print(a != b)
-# print(a.x != b.x)
+# Find  outputs  (Home  work)
+class   c1:
+	def   __init__(self , y):
+		self . x = y
+	def    __eq__(m , n):
+		print('__eq__ method  :  ' , m . x , n . x)
+#end of the class
+a = c1(25)
+b = c1(25)
+print(a == b)          #__eq__method: 25 25
+print(a != b)          #error
+print(a.x != b.x)      #False
 	  
 
 # # Find  outputs  (Home  work)
 # class   c1:
-# 	def   _init_(self , y):
+# 	def   __init__(self , y):
 # 		self . x = y
-# 	def    _ne_(m , n):
-# 		print('_ne_ method  :  ' , m . x , n . x)
+# 	def    __ne__(m , n):
+# 		print('__ne__ method  :  ' , m . x , n . x)
 # 		return  m . x != n . x
 # #end of the class
 # a = c1(10)
@@ -252,7 +291,7 @@ print(a + b)
 
 # #  Is  10 > 20  a  recursion ?
 # class  c1:
-# 	def   _gt_(a , b):
+# 	def   __gt__(a , b):
 # 		print(10 > 20)
 # 		print(a > b)
 # a = c1()
@@ -263,15 +302,15 @@ print(a + b)
 
 # # Find  outputs  (Home  work)
 # class  c1:
-# 	def _init_(self , y):
+# 	def __init__(self , y):
 # 		self . x = y
-# 	def  _gt_(p , q):
-# 		print('c1  class  _gt_  method : ' , p . x , q . x)
+# 	def  __gt__(p , q):
+# 		print('c1  class  __gt__  method : ' , p . x , q . x)
 # class  c2:
-# 	def _init_(self , y):
+# 	def __init__(self , y):
 # 		self . x = y
-# 	def _gt_(p , q):
-# 		print('c2  class  _gt_  method : ' , p . x , q . x)
+# 	def __gt__(p , q):
+# 		print('c2  class  __gt__  method : ' , p . x , q . x)
 # #end of the class
 # a = c1(10)
 # b = c1(20)
@@ -286,18 +325,18 @@ print(a + b)
 
 # # Overload  *  operator  to  multiply  two  different  class  objects
 # class  c1:
-# 	def  _init_(self):
+# 	def  __init__(self):
 # 		self . empno = 25
 # 		self . hr = 250
-# 	def _mul_(x , y):
-# 		print('_mul_  method  of  class   c1')
+# 	def __mul__(x , y):
+# 		print('__mul__  method  of  class   c1')
 # 		return  hourly-rate(i.e.  25) *  number-of-hours (i.e.  8)
 # class c2:
-# 	def _init_(self):
+# 	def __init__(self):
 # 		self . empno = 25
 # 		self . noh = 8
-# 	def _mul_(x , y):
-# 		print('_mul_  method  of  class   c2')
+# 	def __mul__(x , y):
+# 		print('__mul__  method  of  class   c2')
 # 		return  number-of-hours (i.e.  8) *  hourly-rate(i.e.  25)
 # # End of the class
 # a = c1()
@@ -330,7 +369,7 @@ print(a + b)
 
 # # Overload  +  operator  such  that  numbers  are  added  and  strings  are  joined
 # class  c1:
-# 	def     _init_(self , y):
+# 	def     __init__(self , y):
 # 		self . x = y
 # 	def __add__(p , q):
 # 		return  sum  of  numbers  (or)  join  of  strings
@@ -346,7 +385,7 @@ print(a + b)
 
 # # Write  a  program  to  implement  queue  using  list
 # class  queue:
-#         def  _init_(q):
+#         def  __init__(q):
 #                  How  to  create  an  empty  queue
 #         def  isempty(q):
 #                 return  True  when  queue  is  empty  and  False  otherwise
@@ -450,7 +489,7 @@ print(a + b)
 
 # # Write  a  program  to  implement  stack  using  list
 # class  stack:
-# 	def  _init_(s):
+# 	def  __init__(s):
 # 		s . list = []   #  How  to  create  an  empty  stack
 # 	def  isempty(s):
 # 		return  s . list ==  []   #  return  True  when  stack  is  empty  and  False  otherwise
