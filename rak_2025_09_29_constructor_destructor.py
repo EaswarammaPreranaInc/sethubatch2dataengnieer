@@ -76,13 +76,13 @@
 	  
 
 
-# Find  outputs (Home  work)
-class  c1:
-	def  __init__(self):    
-		print('Constructor') 
-		b = c1()                 #this is a recursive call since its calling this same constructor, this creates infinite recursion
-# End  of  class
-a = c1()   
+# # Find  outputs (Home  work)
+# class  c1:
+# 	def  __init__(self):    
+# 		print('Constructor') 
+# 		b = c1()                 #this is a recursive call since its calling this same constructor, this creates infinite recursion
+# # End  of  class
+# a = c1()   
 
 
 
@@ -97,12 +97,12 @@ a = c1()
 #         print('Method')
 #         self . x = 30
 #         self . y = 40
-# a = c1()
-# print(a . __dict__)
-# b = c2()
-# print(b . __dict__)
-# b . init()
-# print(b . __dict__)
+# a = c1()                            #Constructor
+# print(a . __dict__)                 #{'x': 10, 'y' : 20}
+# b = c2()                         
+# print(b . __dict__)                 #{}
+# b . init()                          #Method
+# print(b . __dict__)                 #{'x': 30, 'y': 40}
 	  
 
 
@@ -122,18 +122,18 @@ a = c1()
 #         x . c = 30
 # #  End  of  function  f1
 # x = c1()
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10}
 # x . m1()
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10, 'b': 20}
 # f1()
-# print(x . __dict__)
-# x . d = 40
-# print(x . __dict__)
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30}
+# x . d = 40 
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30, 'd': 40}
 # y = c2()
-# y . m3()
-# print(x . __dict__)
+# y . m3()                           
+# print(x . __dict__)                #{'a': 10, 'b':20, 'c':30, 'd': 40, 'e': 50}
 # z = c1()
-# print(z . __dict__)
+# print(z . __dict__)                #{'a': 10}
 
 
 
@@ -147,14 +147,14 @@ a = c1()
 # #end  of  the  class
 # a = c1()
 # b = c1()
-# print(a . __dict__)
-# print(b . __dict__)
+# print(a . __dict__)          #{'x': 10, 'y': 20, 'z': 30}
+# print(b . __dict__)          #{'x': 10, 'y': 20, 'z': 30}
 # del  a . x
 # del  b . y
-# print(a . __dict__)
-# print(b . __dict__)
-# print(a . x)
-# print(b . y)
+# print(a . __dict__)          #{'y': 20, 'z': 30}
+# print(b . __dict__)          #{'x': 10, 'z': 30}
+# # print(a . x)                 #error, x is deleted from obj a
+# # print(b . y)                 #error, y is deleted from obj b
 	  
 
 
@@ -167,7 +167,7 @@ a = c1()
 # 	def  __init__(self):
 # 		print('3rd  constructor')
 # # End  of  the  class
-# a = c1()
+# a = c1()  #3rd constructor
 
 
 
@@ -181,9 +181,9 @@ a = c1()
 # 	def  __init__(self , x , y):
 # 		print('Two  argument  constructor : ' , x , y)
 # # End  of  the  class
-# a = c1(10 , 20)
-# b = c1(30)
-# c = c1()
+# a = c1(10 , 20)          #Two  argument  constructor : 10 20
+# # b = c1(30)               #error, one more arg is missing
+# # c = c1()                 #error, two args are missing
 
 
 
@@ -197,9 +197,9 @@ a = c1()
 # 	def  __init__(self , x = 100 , y = 200):
 # 		print('Two  argument  constructor : ' , x , y)
 # # End  of  the  class
-# a = c1(10 , 20)
-# b = c1(30)
-# c = c1()
+# a = c1(10 , 20)          #Two argument constructor: 10 20
+# b = c1(30)               #Two argument constructor: 30 200
+# c = c1()                 #Two argument constructor: 100 200
 
 
 
@@ -211,8 +211,8 @@ a = c1()
 # 	def  __init__(self):
 # 		print('Constructor')
 # #end of the  class
-# a = f1()
-# print(a)
+# a = f1()                  #constructor
+# print(a)                  #type and address of obj a
 
 
 
@@ -224,8 +224,8 @@ a = c1()
 # def  c1():
 # 	print('Function')
 # #end of the  class
-# a = c1()
-# print(a)
+# a = c1()                  #Function
+# print(a)                  #None
 
 
 
@@ -236,9 +236,9 @@ a = c1()
 # def    c1(x):
 #         print('Function : ' , x)
 # # End  of  class  c1
-# a = c1()
-# b = c1(25)
-# print(b)
+# # a = c1()                  #error, missing one pos arg
+# b = c1(25)                #Function 25
+# print(b)                  #None
 
 
 
@@ -247,35 +247,36 @@ a = c1()
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9a')
-		
-
-# #  Find  outputs (Home  work)
-# from  prog9a  import  c1
+# # #  Find  outputs (Home  work)
+# # from  prog9a  import  c1
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9b')
-# a = c1()
+# a = c1()   #c1 class of prog9b
 
 
 
-
+# #  Save  the  program  in  prog9a.py  file
+# class   c1:
+# 	def  __init__(self):
+# 		print('c1  class  of  prog9a')
 # #  Find  outputs (Home  work)
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9c')
-# from  prog9a  import  c1
-# a = c1()
+# # from  prog9a  import  c1
+# a = c1()  #c1 class of prog9c  
 
 
 
 
 # #  How  to  use  both  the  classes (i.e.  c1  of  prog9a  and  c1  of  current  program)
-# How  to  import  class  c1  from  prog9a
+# # How  to  import  class  c1  from  prog9a
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9d')
-# How  to  create  c1  class  object  of  current  module
-# How  to  create  c1  class  object  of  prog9a
+# # How  to  create  c1  class  object  of  current  module
+# # How  to  create  c1  class  object  of  prog9a
 
 
 
@@ -283,39 +284,46 @@ a = c1()
 # '''
 # How  to  use  both  the  classes (i.e.  c1  of  prog9a  and  c1  of  current  program)
 # '''
-# How  to  import  prog9a
+# # How  to  import  prog9a
 # class   c1:
 # 	def  __init__(self):
 # 		print('c1  class  of  prog9e')
-# How  to  create  c1  class  object  of  current  module
-# How  to  create  c1  class  object  of  prog9a
+# # How  to  create  c1  class  object  of  current  module
+# # How  to  create  c1  class  object  of  prog9a
+
+
+
+
+
+
+
 
 
 # # Public  and  Private  members  demo  program
 # class  Test:
 # 	def  __init__(self):
-# 		How  to  initialize  public  variable  'x'  to  10
-# 		How  to  initialize  private  variable  'y'  to  20
+# 		self.x =10             #How  to  initialize  public  variable  'x'  to  10
+# 		self.__y = 20          #How  to  initialize  private  variable  'y'  to  20
 # 	def  m1(self):
 # 		print('m1  method')
-# 		How  to  print   variable  'x'
-# 		How  to  print  private  variable  'y'
-# 		How  to  call    private  method   m2()
+# 		print(self.x)       #How  to  print   variable  'x'
+# 		print(self.__y)     #How  to  print  private  variable  'y'
+# 		self.__m2()         #How  to  call    private  method   m2()
 # 		print('Back to m1 method')
 # 	def  __m2(self):
 # 		print('__m2  method')
-# 		How  to  print   variable  'x'
-# 		How  to  print  private  variable   'y'
+# 		print(self.x)       #How  to  print   variable  'x'
+# 		print(self.__y)     #How  to  print  private  variable   'y'
 # # End  of  the  class
 # t = Test()
 # print('Outside')
-# How  to  print  variable  'x'
-# How  to  print   variable  'y'
-# print(t . __y)
-# print(t . __dict__)
-# How  to  call  method  m1()
-# How  to  call   method  m2()
-# t . __m2()
+# print(t.x)            #How  to  print  variable  'x'
+# print(t._Test__y)     #How  to  print   variable  'y'
+# # print(t . __y)        #error, not visible outside
+# print(t . __dict__)   #{'x': 10, '_Test__y': 20}, y is seen as _Test.__y
+# t.m1()                #How  to  call  method  m1()
+# t._Test__m2()         #How  to  call   method  m2()
+# # t . __m2()            #error, cannot access directly outside class methods
 # print('End')
 
 
@@ -324,25 +332,25 @@ a = c1()
 # #  Find  outputs
 # class  c1:
 # 	def __init__(self):
-# 		How  to  initialize  public  variable  'x'  with  10
-# 		How  to  initialize  private  variable  'x'  with  20
-# 		How  to  initialize  public  dunder  variable  'x'  with  30
+# 		self.x = 10             #How  to  initialize  public  variable  'x'  with  10
+# 		self.__x = 20           #How  to  initialize  private  variable  'x'  with  20
+# 		self.__x__ = 30         #How  to  initialize  public  dunder  variable  'x'  with  30
 # 	def  m1(self):
 # 		print('public method')
 # 	def  __m1(self):
 # 		print('private method')
-# 	def  _m1_(self):
+# 	def  __m1__(self):
 # 		print('public Dunder method')
 # #  End  of  the  class
 # a = c1()
-# How  to  print   variable  'x'
-# How  to  print  public  dunder  variable  'x'
-# How  to  print   private  variable  'x'
-# print(a . __x)
-# How  to  call  public  method  m1()
-# How  to  call  public  dunder  method  m1()
-# How  to  call  private  method  m1()
-# a . __m1()
+# print(a.x)          #How  to  print   variable  'x'
+# print(a.__x__)      #How  to  print  public  dunder  variable  'x'
+# print(a._c1__x)     #How  to  print   private  variable  'x'
+# # print(a . __x)      #error, private variable not visible outside same class methods
+# a.m1()              #How  to  call  public  method  m1()
+# a.__m1__()          #How  to  call  public  dunder  method  m1()
+# a._c1__m1()          #How  to  call  private  method  m1()
+# # a . __m1()          #error, private method not visible outside
 
 
 
@@ -354,53 +362,54 @@ a = c1()
 # class   c1:
 # 	def   __init__(self):
 # 		print('Object  is  created  at  address  :  ' , id(self))
-# 	def   _del_(self):
+# 	def   ___del___(self):
 # 		print(F'Object  at  address  {id(self)}  is  lost')
 # # End    of    the    class
-# a = c1()
-# a = None
-# b = c1()
-# del    b
-# c = c1()
-# c = c1()
-# d = c1()
-# e = c1()
+# a = c1()         #constructor of c1 executed
+# a = None         #destructor of c1 executed
+# b = c1()         #constructor of c1 executed
+# del    b         #destructor of c1 executed
+# c = c1()         #constructor of c1 executed
+# c = c1()         #constructor and destructor of c1 executed
+# d = c1()         #constructor of c1 executed
+# e = c1()         #constructor of c1 executed
+#                  #3 times destructor of c1 executed
 
 
 
 # # Identify  Error (Home  work)
 # class   c1:
-# 	def  _del_(self , x):
+# 	def  __del__(self , x):
 # 		print('destructor : ' ,  x)
 # a = c1()
-# a . _del_(25)
+# a . __del__(25)                #destructor cannot have argument, when called explicitly it executes but when obj is being destroyed by pvm it throws error
 
 
 
 # # Find  outputs (Home  work)
 # class   c1:
-# 	def  _del_(self , x = 35):
+# 	def  __del__(self , x = 35):      #destructor can have default arguments
 # 		print('destructor : ' , x)
 # a = c1()
-# a . _del_(25)
+# a . __del__(25)                       #2 times destructor is executed          
 
 
 
 # # Find  outputs (Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 			print('destructor')
-# 			b = c1()
-# a = c1()
+# 			b = c1()           #ref b will be deleted soon after method execution, so it creates a infinite recursion call as it calls this same destructor again and again
+# a = c1()                        
 
 
 
 # # Find  outputs (Home  work)
 # class   c1:
-# 	def  __init__(self):
+# 	def  __init__(self):          #mutual recursion, constructor calling destructor, destructor calling constructor
 # 		print('constructor')
 # 		del  self
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('destructor')
 # 		b = c1()
 # a = c1()
@@ -409,14 +418,14 @@ a = c1()
 
 # #  Find  outputs( Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('1st  destructor')
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('2nd  destructor')
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('3rd  destructor')
 # # End  of  the  class
-# a = c1()
+# a = c1()               #3rd destructor
 
 
 
@@ -424,19 +433,19 @@ a = c1()
 # class   c1:
 # 	def   __init__(self):
 # 		print('Object  is  created  at  address  :  ' , id(self))
-# 	def   _del_(self):
+# 	def   __del__(self):
 # 		print(F'Object  at  address  {id(self)}  is  lost  ')
 # #end  of  the  class
-# c = b = a = c1()
-# del   a
-# print('Hello')
-# del   b
+# c = b = a = c1()        #constructor of c1 executed
+# del   a                
+# print('Hello')         
+# del   b                 
 # print('Hi')
-# del   c
+# del   c                 #destructor of c1 executed 
 # print('Bye')
-# d = c1()
-# print('End')
-
+# d = c1()                #constructor of c1 executed
+# print('End')            
+# 						#destructor of c1 executed
 
 
 
@@ -444,20 +453,20 @@ a = c1()
 # class  c1:
 #         def     __init__(self):
 #                 print('Object  is  created  at  address  :  ' , id(self))
-#         def     _del_(self):
+#         def     __del__(self):
 #                 print(F'Object  at  address  {id(self)}  is  lost ')
 # #End of the class
-# list = [c1() , c1() , c1()]
-# del  list
+# list = [c1() , c1() , c1()]       
+# del  list                         #objects are deleted in reverse fasion when they are in list
 
 
 
 # # Find  outputs  (Home  work)
 # class   c1:
-# 	def  _del_(self):
+# 	def  __del__(self):
 # 		print('destructor')
 # 		return  25
 # a = c1()
-# print(a . _del_())
-# print('Hello')
-# del   a
+# print(a . __del__())     #destructor \n 25
+# print('Hello')           #Hello
+# del   a                  #destructor 
