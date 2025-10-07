@@ -1,0 +1,208 @@
+# Write  a  program  to  implement  queue  using  list
+class  queue:
+        def  __init__(q):
+                 How  to  create  an  empty  queue
+        def  isempty(q):
+                return  True  when  queue  is  empty  and  False  otherwise
+        def  enqueue(q , x):
+                How  to  insert  'x'  into  the  queue
+        def  dequeue(q):
+                How  to  remove  first  element  of  the  queue  and  return  the  deleted  element
+				(return  -1  when  deletion  is  not  possible)
+        def  first(q):
+                How  to  return  the  first  element  of  the  queue
+				(return  -1  when  queue  is  empty)
+		def  last(q):
+                How  to  return  the  first  element  of  the  queue
+				(return   -1  when  queue  is  empty)
+        def  disp(q):
+                How  to  print  queue
+        def  size(q):
+                How  to  return  number   of  elements  in  the  queue
+# End  of  the  class
+def  menu():
+        print('1. Insertion')
+        print('2. Deletion')
+        print('3. Print  queue')
+        print('4. First  element of queue')
+        print('5. Last  element of queue')
+        print('6. Number  of  elements  in  the  queue')
+        print('7. Exit')
+# End of  the  function
+How  to  create  queue  class  object
+menu()
+ch = int(input('Enter  choice : ' ))
+while  repeat  until  user  input  is  7
+	match  ch:
+		case  1:
+					x = eval(input('Enter  element  to  be  inserted : '))
+					How  to  insert  'x'  into  the  queue
+					How  to  print  queue
+		case  2:
+					How  to  delete  queue  element  and  print  the  deleted  element
+					How  to  print  queue
+		case  3:
+					How  to  print  the  queue
+		case  4:
+					How  to  print  first  element  of  the  queue
+		case  5:
+					How  to  print  last  element  of  the  queue
+		case  6:
+					How  to  print  number  of  elements  in  the  queue
+	# End  of  match
+	menu()
+	ch = int(input('Enter  choice : ' ))
+
+
+class queue:
+    def __init__(self):
+        self.q = []
+
+    def isempty(self):
+        return len(self.q) == 0
+
+    def enqueue(self, x):
+        self.q.append(x)
+
+    def dequeue(self):
+        if self.isempty():
+            return -1
+        return self.q.pop(0)
+
+    def first(self):
+        if self.isempty():
+            return -1
+        return self.q[0]
+
+    def last(self):
+        if self.isempty():
+            return -1
+        return self.q[-1]
+
+    def disp(self):
+        print(self.q)
+
+    def size(self):
+        return len(self.q)
+
+
+def menu():
+    print("1. Insertion")
+    print("2. Deletion")
+    print("3. Print queue")
+    print("4. First element of queue")
+    print("5. Last element of queue")
+    print("6. Number of elements in the queue")
+    print("7. Exit")
+
+
+q = queue()
+menu()
+ch = int(input("Enter choice: "))
+
+while ch != 7:
+    match ch:
+        case 1:
+            x = eval(input("Enter element to be inserted: "))
+            q.enqueue(x)
+            q.disp()
+        case 2:
+            deleted = q.dequeue()
+            q.disp()
+        case 3:
+            q.disp()
+        case 4:
+            print(q.first())
+        case 5:
+            print(q.last())
+        case 6:
+            print(q.size())
+    menu()
+    ch = int(input("Enter choice: "))
+
+'''
+Write  a  program  to  reverse  a  string  using  stack
+
+str  object  --->  R     A      M      A
+                           0     1       2       3
+
+Stack   --->
+
+Hint:  Reuse  stack  class  defined  in  prog1b.py  file  but  do  not  rewrite
+'''
+How  to  import  stack  class  from  prog1b  module
+How  to  create  stack  class  object
+How  to  read  a  string  into  a  str  object
+How  to  push  each  char  of  string  into  the  stack
+printf("Reverse  String :  ");
+How  to  remove  each  char  of  stack  and  print  until   stack  is  empty
+
+
+from prog1b import stack
+
+s = stack()
+
+
+str_obj = input("Enter a string: ")
+
+
+for ch in str_obj:
+    s.push(ch)
+
+print("Reverse String:", end=" ")
+while not s.isempty():
+    print(s.pop(), end="")
+print()
+
+
+'''
+Write  a  program  to  perform  parentheses  match
+
+1) Is  ((3 + 4)  valid ?  ---> No  due  to  excess  (
+
+2) Is  (3 * (4 + 5))  valid ?  --->  Yes
+
+3) Is  (3 * (4 + 5))) + 6 valid ? --->No  due  to  excess  ')'
+
+4) Is  3 + 4  valid ? --->  Yes
+
+5) Is  ) 3 + 4 (  valid ?  --->  No  due  to  )  before  (
+
+6) What  action  to  be  made  when  character  is   '(' ?  --->  Push  '('  into  the  stack
+
+7) What  action  to  be  made  when  character  is   ')' ?  ---> Pop  '('  from  the  stack
+
+8) What  action  to  be  made  when  pop()  method  returns   None ?  --->  Print  invalid  msg  and  stop  execution
+
+9) What  action  to  be  made  when  end  of   the  string   is  reached ? --->
+																						Print  valid  msg  when  stack  is   empty  and  invalid  otherwise
+
+10) Reuse  stack  class  defined  in  prog1b.py  file  but  do  not  rewrite
+'''
+
+
+                                                                        from prog1b import stack
+
+s = stack()
+expr = input()
+
+valid = True
+
+for ch in expr:
+    if ch == '(':
+        s.push(ch)
+    elif ch == ')':
+        if s.isempty():
+            valid = False
+            break
+        else:
+            s.pop()
+
+if not s.isempty():
+    valid = False
+
+if valid:
+    print("Valid expression")
+else:
+    print("Invalid expression")
+                                                                        
