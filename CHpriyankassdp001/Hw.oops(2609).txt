@@ -1,0 +1,154 @@
+#  What  are  the  outputs  if  inputs  are  25 , Rama  Rao ,  male , 52 , 48 , 55   (Home  work)
+from  stu import  student
+s = student()    # creating student class object
+print(s . __dict__) # orinting empty dict as s is empty object
+s . get()
+print(s . __dict__)     #{'rno': 25, 'sname': 'Rama  Rao', 'gender': 'm', 'm': [52, 48, 55]}
+s . compute()
+print(s . __dict__)     # {'rno': 25, 'sname': 'rama rao', 'gender': 'm', 'm': [52, 48, 55], 'tot': 155, 'avg': 51.666666666666664, 'grade': 'Second  class'} 
+
+
+from stu import student  
+
+n = int(input("Enter number of students: "))
+s = []  
+
+for i in range(n):
+    obj = student()
+    obj.get()
+    obj.compute()
+    s.append(obj)
+
+print(s)   
+
+
+#  dir()  function  demo  program  (Home  work)
+
+from  rational   import  rat
+
+a = rat()
+
+a . nr = 22 # adds variable nr to a with value 22
+
+a . dr = 7 # adds variable dr to a with value 7
+
+print(dir(rat))  # prints all members of class rat
+
+print()
+
+print()
+
+print(dir(a)) # prints all members of object a of class rat
+
+
+#  Find  outputs  (Home  work)
+class      Rat:
+	def    m1():
+		pass
+# End  of  the  class
+a = Rat()   # creating rat class object
+a . nr = 22 #  adding  variable  nr  to  object  a
+print(hasattr(a , 'nr')) #  True  if  object  a  has  variable  nr
+print(hasattr(a , 'dr')) #  True  if  object  a  has  variable  dr
+print(hasattr(a , 'm1')) #  True  if  object  a  has  method  m1
+print(hasattr(a , 'm2')) #  True  if  object  a  has  method  m2
+print(hasattr(Rat , 'm1')) #  True  if  class  Rat  has  method  m1 
+print(hasattr(Rat , 'm2')) #  True  if  class  Rat  has  method  m2
+print(hasattr(Rat , 'nr'))  # always false because class does not have instance variables
+
+
+# Find  outputs  (Home  work)
+class  Cat:
+	def  talk(self):
+		print('Meow Meow Meow ....')
+class  Dog:
+	def  bark(self):
+		print('Bhow Bhow Bhow ....')
+class  Goat:
+	def  talk(self):
+		print('Mehar  Mehar  Mehar  ....')
+#end of the class
+a = [Cat() , Dog() , Goat()]    # crealiting list a with 3 objects
+for  x  in   a:     # iterating through the list of each object
+	if   hasattr(x , 'talk'):   # checking  whether  object  x  has  method  talk
+		x . talk()  # if condition is true calling talk method of object x
+	else:
+		x . bark() # if condition is false calling bark method of object x
+
+
+#  Find  outputs  (Home  work)
+class    c1:
+        pass
+# End of the class
+a = c1()
+a . x = 10   #  Adding  a  variable x  to  object  a with value 20
+varname = input('Enter  variable  name  to  be  added  to  object  :  ')   #  Assume  that  input  is  'y'
+value = eval(input('Enter  value  of  the  variable  :  '))   #  Assume  that  input  is   20
+setattr(a , varname , value)    # Adds  user entered variable  to  object  a  with  value 
+print(a . __dict__) # prints all insgtance variables of object a and values
+print(a . x) # 10   # prints 10
+while  True:
+	try:
+		varname = input('Enter  variable  name  whose  value  is  to  be  retrieved  :  ')
+									#  Assume  that  input  is  x  in  1st   iteration  ,  y  in   2nd   iteration  and  z  in  3rd  iteration
+		print(getattr(a , varname))  #  retrives the vale of  user entered variable  of  object  a
+	except:
+		print(F'Invalid  variable   name   :  {varname}')
+		break
+
+
+'''
+(Home  work)
+Write  a  program  to  convert  a  dictionary  {'Empno' : 25 , 'Ename' : 'Rama  Rao' , 'Sal' : 10000.0}  to  Emp  class  object
+i.e.  object  should  contain  empno = 25 , ename = 'Rama  Rao' , Sal = 10000.0
+
+Hint:  Use  setattr()  and  getattr()  functions
+'''
+class  Emp:
+        pass
+#End  of  the  class
+e=Emp()
+dict = {'Empno' : 25 , 'Ename' : 'Rama  Rao' , 'Sal' : 10000.0}
+for x,y in dict.items():
+        setattr(e,x,y)
+    #How  to  convert  dictionary  to  object  'e'  with  for  loop
+print(getattr(e,'Empno'),getattr(e,'Ename'),getattr(e,'Sal'))   #How  to  print  object  'e'  with  for  loop
+
+
+'''
+Repeat  prog10a  with  list  of  6  objects
+
+Hint:  import  Rat  class  defined  in  prog10a  but  do  not  rewrite  the  class  again
+
+What  are  the  object  names  ?  --->  a[0] , a[1] , a[2] , .....a[5]
+'''
+
+from rational import rat
+
+if __name__ == "__main__":
+    n = 6
+    a = []  # list of 6 rat objects
+
+    # create 6 objects and take input for the first 2
+    for i in range(n):
+        obj = rat()
+        a.append(obj)
+
+    print("Enter first rational number:")
+    a[0].get()  # first number
+
+    print("Enter second rational number:")
+    a[1].get()  # second number
+
+    # Perform operations and store in remaining objects
+    a[2].add(a[0], a[1]) 
+    a[3].sub(a[0], a[1])  
+    a[4].mul(a[0], a[1])  
+    a[5].div(a[0], a[1])  
+
+    # Display results
+    print("\nResults:")
+    print('addition' ,a[2])
+    print('subraction', a[3])
+    print('multiplication', a[4])
+    print('division', a[5])
