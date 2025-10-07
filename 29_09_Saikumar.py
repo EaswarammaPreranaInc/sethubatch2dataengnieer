@@ -1,4 +1,5 @@
 # Find  outputs
+
 class  Rat:
 	def  __init__(self , nr1 = 22, dr1 = 7):
 		self . nr = nr1
@@ -28,11 +29,8 @@ g = Rat(nr1 = 9 , 5)                #Throws error as positional argument can't f
 h = Rat(nr = 9 , dr = 5)            #Throws error as the kewords aren't nr and dr
 
 
-
-
-
-
 # Find  outputs (Home  work)
+
 class  Date:
     def __init__(self , dd1 , mm1  , yy1):
         self . dd = dd1
@@ -50,11 +48,8 @@ e = Date(dd = 30 , mm = 4 , yy = 2022)      #Throws error as keywords doesn't ma
 f = Date(dd1 = 26 , mm1 = 8 , 2023)         #Throws error as positional argument can't follow keyword argument
 
 
-
-
-
-
 # Find  outputs (Home  work)
+
 class  c1:
 	def __init__(self):
 		print('c1  class constructor')
@@ -75,11 +70,8 @@ c = c3()                                #c3  class  constructor
 print(c .__init__())                    #c3  class  constructor
 
 
-
-
-
-
 # Find  outputs (Home  work)
+
 class  c1:
 	def  _init_(self):
 		print('Constructor')
@@ -88,11 +80,8 @@ class  c1:
 a = c1()                            #Constructor
 
 
-
-
-
-
 #  Difference  between  init()    and  _init_()   methods (Home  work)
+
 class c1:
     def __init__(self):
         print('Constructor')
@@ -111,11 +100,8 @@ b . init()                          #Method
 print(b .__dict__)                  #{'x': 30, 'y': 40}
 
 
-
-
-
-
 # Find  outputs (Home  work)
+
 class   c1:
     def  __init__(self):
         self . a = 10
@@ -144,11 +130,8 @@ z = c1()
 print(z .__dict__)                      #{'a': 10}
 
 
-
-
-
-
 # Find  outputs  (Home  work)
+
 class   c1:
 	def  __init__(self):
 		self . x = 10
@@ -167,11 +150,8 @@ print(a . x)                            #Throws error as a doesn't have variable
 print(b . y)                            #Throws error as b doesn't have variable y
 
 
-
-
-
-
 #  Find  outputs (Home  work)
+
 class   c1:
 	def __init__(self):
 		print('1st  constructor')
@@ -183,10 +163,8 @@ class   c1:
 a = c1()                        #3rd  constructor
 
 
-
-
-
 #  Find  outputs  (Home  work)
+
 class   c1:
 	def __init__(self):
 		print('No  argument  constructor')
@@ -218,11 +196,8 @@ b = c1(30)                              #Two  argument  constructor : 30 200
 c = c1()                                #Two  argument  constructor : 100 200
 
 
-
-
-
-
 # What  happens  when  function  and  class  have  same  name ?
+
 def   f1():
 	print('Function')
 	return  25
@@ -234,11 +209,8 @@ a = f1()                            #Constructor
 print(a)                            #<f1 object at <address of object a>>
 
 
-
-
-
-
 # Find  outputs (Home  work)
+
 class  c1:
 	def  __init__(self):
 		print('Constructor')
@@ -249,11 +221,8 @@ a = c1()                        #Function
 print(a)                        #None
 
 
-
-
-
-
 # Find outputs  (Home  work)
+
 class    c1:
     def  _init_(self):
         print('Constructor')
@@ -265,26 +234,20 @@ b = c1(25)                          #Function : 25
 print(b)                            #None
 
 
-
-
-
-
 #  Save  the  program  in  prog9a.py  file
+
 class   c1:
 	def __init__(self):
 		print('c1  class  of  prog9a')
 
 
 #  Find  outputs (Home  work)
+
 from  prog9a  import  c1
 class   c1:
 	def __init__(self):
 		print('c1  class  of  prog9b')
 a = c1()                                #c1  class  of  prog9b
-
-
-
-
 
 
 #  Find  outputs (Home  work)
@@ -295,12 +258,9 @@ from  prog9a  import  c1
 a = c1()                            #c1  class  of  prog9a
 
 
-
-
-
-
 #---How  to  use  both  the  classes (i.e.  c1  of  prog9a  and  c1  of  current  program)
 #from prog9a import c1 as c11#How  to  import  class  c1  from  prog9a
+
 class   c1:
 	def __init__(self):
 		print('c1  class  of  prog9d')
@@ -308,11 +268,8 @@ a = c1()                #How  to  create  c1  class  object  of  current  module
 b = c11()               #How  to  create  c1  class  object  of  prog9a
 
 
-
-
-
-
 # Public  and  Private  members  demo  program
+
 class  Test:
 	def __init__(self):
 		self.x = 10         #How to initialize public variable 'x' to 10
@@ -340,11 +297,8 @@ t . __m2()                      #Throws error as m2 can't be accessed directly o
 print('End')
 
 
-
-
-
-
 #  Find  outputs
+
 class  c1:
 	def __init__(self):
 		self.x = 10         #How  to  initialize  public  variable  'x'  with  10
@@ -368,15 +322,12 @@ a._c1__m1()         #How  to  call  private  method  m1()
 a . __m1()          #Throws error as private method can't be accessed directly outside class
 
 
-
-
-
-
 '''
 Tricky  program
 Find  outputs
 Assume  that  addresses  of  objects   'a' , 'b' , 'c' , 'd'  and  'e'  are  1000 , 2000 , 3000 , 4000  and  5000  respectively
 '''
+
 class   c1:
 	def  __init__(self):
 		print('Object is created at address : ', id(self))
@@ -394,10 +345,6 @@ e = c1()                '''Object is created at address : <say 6000><next_line>O
 			<next_line>Object at address 5000 is lost<next_line>Object at address 6000 is lost'''
 
 
-
-
-
-
 # Identify  Error (Home  work)
 class   c1:
 	def  __del__(self , x):
@@ -406,20 +353,12 @@ a = c1()
 a .__del__(25)                          #destructor : 25<next_line>Throws error as PVM tries to call dunder del implicitly but del expects one argument.
 
 
-
-
-
-
 # Find  outputs (Home  work)
 class   c1:
 	def __del__(self , x = 35):
 		print('destructor : ' , x)
 a = c1()
 a .__del__(25)                  #destructor : 25<next_line>destructor : 35
-
-
-
-
 
 
 # Find  outputs (Home  work)
@@ -438,10 +377,6 @@ class   c1:
 a = c1()                            #Causes infinite recursion
 
 
-
-
-
-
 # Find  outputs (Home  work)
 class   c1:
 	def  __init__(self):
@@ -451,10 +386,6 @@ class   c1:
 		print('destructor')
 		b = c1()
 a = c1()                            #Causes infinite recursion
-
-
-
-
 
 
 #  Find  outputs( Home  work)
@@ -467,10 +398,6 @@ class   c1:
 		print('3rd  destructor')
 # End  of  the  class
 a = c1()                            #3rd  destructor
-
-
-
-
 
 
 #Find  outputs (Home  work)
@@ -491,10 +418,6 @@ d = c1()                        #Object is created at address : <say 2000>
 print('End')                    #End<next_line>Object at address 2000 is lost
 
 
-
-
-
-
 # Find  outputs(Home  work)
 class  c1:
     def __init__(self):
@@ -506,10 +429,6 @@ list = [c1(), c1(), c1()]           #Object is created at address : <say 1000><n
 del  list                   #Object at address 1000 is lost<next_line>Object at address 2000 is lost<next_line>Object at address 3000 is lost
 
 
-
-
-
-
 # Find  outputs  (Home  work)
 class   c1:
 	def __del__(self):
@@ -518,4 +437,5 @@ class   c1:
 a = c1()
 print(a .__del__())                 #destructor<next_line>25
 print('Hello')                      #Hello
+
 del  a                              #destructor
