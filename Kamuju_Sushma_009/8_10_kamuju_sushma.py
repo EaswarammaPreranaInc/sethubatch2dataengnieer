@@ -385,7 +385,7 @@ class   Test:
 '''
 static   variable   --->
 
-Object  'a'  --->
+Object  'a'  --->g
 
 Object  'b'  --->
 
