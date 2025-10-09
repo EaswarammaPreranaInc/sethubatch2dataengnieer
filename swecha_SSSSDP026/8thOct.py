@@ -1,99 +1,100 @@
 # Find  outputs  (Home  work)
-# class   outer:
-# 	def  __init__(self):
-# 		print('Outer  class  constructor')
-# 	def  m1(self):
-# 		print('Outer  class  method')
-# 	class   inner:
-# 		def __init__(self):
-# 			print('Inner  class  constructor')
-# 		def m1(self):
-# 			print('Inner  class  method')
-# #end of the class
-# o = outer()
-# o.m1()#How  to  call  m1()  method  of  outer  class
-# i = outer.inner()
-# i.m1()#How  to  call  m1()  method  of  inner  class
-# outer.inner().m1()#How  to  call  m1()  method  of  inner  class  in  another  way
-# i = outer().inner()
-# outer().inner().m1()#How  to  call  m1()  method  of  inner  class  in  one  more  way
-# i = inner()#error
+class   outer:
+	def  __init__(self):
+		print('Outer  class  constructor')
+	def  m1(self):
+		print('Outer  class  method')
+	class   inner:
+		def __init__(self):
+			print('Inner  class  constructor')
+		def m1(self):
+			print('Inner  class  method')
+#end of the class
+o = outer()
+o.m1()#How  to  call  m1()  method  of  outer  class
+i = outer.inner()
+i.m1()#How  to  call  m1()  method  of  inner  class
+outer.inner().m1()#How  to  call  m1()  method  of  inner  class  in  another  way
+i = outer().inner()
+outer().inner().m1()#How  to  call  m1()  method  of  inner  class  in  one  more  way
+i = inner()#error
 
 # # Find  outputs  (Home  work)
-# class   emp:
-# 	def __init__(self):
-# 		self.empno = 25#How  to  initialize  empno , ename , sal  of  object  self  to  25 ,  'Rama  Rao' , 10000.0
-# 		self.ename = 'Rama Rao'
-# 		self.sal = 10000.0
-# 		self.d=self.date()#How  to  create  date  class  object
-# 	def  disp(self):
-# 		print('Emp No:',self.empno)#How  to  print  empno , ename , sal  of  object  self
-# 		print('ename:',self.ename)
-# 		print('sal:',self.sal)
-# 		self.d.disp()#How  to  call  disp()  method  of  date  class
-# 	class  date:
-# 		def    __init__(self):
-# 			self.dd=25#How  to  initialize  dd , mm , yy  of  object  self  to  15 , 8  , 1947
-# 			self.mm=
-# 			self.d.yy
-# 		def disp(self):
-# 			print(self.d.dd)#How  to  print  dd , mm , yy  of  object  self
-# 			print(self.d.mm)
-# 			print(self.d.yy)
-# # End  of  the  class
-#             self.d.disp()#How  to  call  disp()  method  of  emp  class
+class   emp:
+	def __init__(self):
+		self.empno = 25#How  to  initialize  empno , ename , sal  of  object  self  to  25 ,  'Rama  Rao' , 10000.0
+		self.ename = 'Rama Rao'
+		self.sal = 10000.0
+		self.d=self.date()#How  to  create  date  class  object
+	def  disp(self):
+		print('Emp No:',self.empno)#How  to  print  empno , ename , sal  of  object  self
+		print('ename:',self.ename)
+		print('sal:',self.sal)
+		self.d.disp()#How  to  call  disp()  method  of  date  class
+	class  date:
+		def    __init__(self):
+			self.dd=25#How  to  initialize  dd , mm , yy  of  object  self  to  15 , 8  , 1947
+			self.mm=8
+			self.yy=1947
+		def disp(self):
+			print(self.d.dd)#How  to  print  dd , mm , yy  of  object  self
+			print(self.d.mm)
+			print(self.d.yy)
+# End  of  the  class
+e=emp()
+e.disp()#How  to  call  disp()  method  of  emp  class
 	
 
 # # Find outputs (Home  work)
-# class  outer:
-# 	def  __init__(self):
-# 		self.x=25#How  to  initialize  variable  'x'  of  object  self  to  25
-# 		self.i1=self.inner1()#How  to  create  inner1  class  object
-# 		self.i2=self.inner2#How  to  create  inner2  class  object
-# 	def  disp(self):
-# 		print(self . x)
-# 	class   inner1:
-# 		def  disp(self):
-# 			print('1st  inner  class  method')
-# 	class  inner2:
-# 		def  disp(self):
-# 			print('2nd  inner  class  method')
-# #end of the class
-# o = outer()
-# o.disp()#How  to  call   disp()  method  of outer  class
-# o.i1.disp()#How  to  call   disp()  method  of inner1  class
-# o.i2.disp#How  to  call   disp()  method  of inner2  class
+class  outer:
+	def  __init__(self):
+		self.x=25#How  to  initialize  variable  'x'  of  object  self  to  25
+		self.i1=self.inner1()#How  to  create  inner1  class  object
+		self.i2=self.inner2#How  to  create  inner2  class  object
+	def  disp(self):
+		print(self . x)
+	class   inner1:
+		def  disp(self):
+			print('1st  inner  class  method')
+	class  inner2:
+		def  disp(self):
+			print('2nd  inner  class  method')
+#end of the class
+o = outer()
+o.disp()#How  to  call   disp()  method  of outer  class
+o.i1.disp()#How  to  call   disp()  method  of inner1  class
+o.i2.disp#How  to  call   disp()  method  of inner2  class
 
 
 # # Find  outputs  (Home  work)
-# class   c1:
-# 	def  __init__(self):
-# 		print('outer  class  c1  constructor')
-# 	class   c2:
-# 		def __init__(self):
-# 			print('inner  class  c2  constructor')
-# #end of the class
-# class  c2:
-# 	def __init__(self):
-# 		print('outer  class  c2  constructor')
-# #end of the class
-# obj = c1#How  to  create  c1  class  object
-# obj2=c1.c2()#How  to  create  inner  c2  class  object
-# obj3 = c2()#How  to  create  outer  c2  class  object
+class   c1:
+	def  __init__(self):
+		print('outer  class  c1  constructor')
+	class   c2:
+		def __init__(self):
+			print('inner  class  c2  constructor')
+#end of the class
+class  c2:
+	def __init__(self):
+		print('outer  class  c2  constructor')
+#end of the class
+obj = c1#How  to  create  c1  class  object
+obj2=c1.c2()#How  to  create  inner  c2  class  object
+obj3 = c2()#How  to  create  outer  c2  class  object
 
 
 # # Find  outputs  (Home  work)
-# class   c2:
-# 	def  __init__(self):
-# 		print('outer  class  constructor')
-# 	class   c2:
-# 		def __init__(self):
-# 			print('inner  class  constructor')
-# #end of the class
-# obj1=c2()#How  to  create  outer  c2  class  object
-# obj2=c2.c2()#How  to  create  inner  c2  class  object
-# obj_outer=c2()
-# obj3=obj_outer.c2()#How  to  create  inner  c2  class  object  in  another  way
+class   c2:
+	def  __init__(self):
+		print('outer  class  constructor')
+	class   c2:
+		def __init__(self):
+			print('inner  class  constructor')
+#end of the class
+obj1=c2()#How  to  create  outer  c2  class  object
+obj2=c2.c2()#How  to  create  inner  c2  class  object
+obj_outer=c2()
+obj3=obj_outer.c2()#How  to  create  inner  c2  class  object  in  another  way
 
 
 # Find  outputs (Home  work)
