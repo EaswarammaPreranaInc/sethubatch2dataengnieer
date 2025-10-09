@@ -355,6 +355,59 @@ Object  'c'  --->y=61,y=71,x=14
 
 '''
 
+#16th program
+'''
+Write  a  program  to  add  two  Vector  objects
+
+1) What  are  the  names  of  objects ?  ---> x , y   and  z
+
+2) What  are  the  names  of   lists  held  by  each  object ?  --->  x .  a , y . a  , z . a
+
+3) How  to  access  elements  of  1st  list ?  ---> x . a[i]
+    How  to  access  elements  of  2nd  list ?  ---> y . a[i]
+
+4) How  to  access  static  variable  'n' ?  ---> vector . n
+'''
+class  vector:
+	@staticmethod
+	def get1():
+		n=2#How  to  read  number  of  elements  into  variable  'n'
+	def get2(self):
+		self.a=eval(input('Enter the list: '))#How  to  read  the  list  into  the  object
+	def add(self , x , y):
+		self.a=[]
+		for i in range(min(len(x.a),len(y.a))):
+			self.a.append(x.a[i]+y.a[i])
+		return self#How  add  the  lists  held  by  objects  'x'  and  'y'  and  store  the  results  in  list  held  by  owner  object
+vector.get1()#How  to  call  get1()  method
+x=vector()
+y=vector()
+z=vector()
+x.get2()#How  to  read  the  list  into  1st  object
+y.get2()#How  to  read  the  list  into  2nd  object  'b'
+z.add(x,y)#How  to  add  the  lists  held  by  objects  'a'  and  'b'  and  store  the  results  in  list  of  3rd  object  'c'
+print(z.a)#How  to  print  the  list  of  3rd   object
+
+
+#17th program
+'''
+Write  a  program  to  print  only  static  variables  but  not  environment  variables  of   classname . _dict_
+
+Hint:  Use  startswith()  and  endswith()  methods
+'''
+class  c1:
+	x = 1
+	y = 2
+	z = 3
+#  End  of  the  class
+print(c1.__dict__)
+res={}
+for  i  in  c1.__dict__:
+    if  not(i.startswith('__')  and  i.endswith('__')):
+        res[i]=c1.__dict__[i]
+print("static  variables  of  class  c1 : ",res)  
+
+
 #18th program
 # What  are  k , l ,  x , y , z , m , n , p , q , s ?  (Home  work)
 class   c1:
@@ -373,4 +426,5 @@ def    f1():
 k = 80   #  What  is  variable 'k'  --->#global variable
 c1 . l = 90   #  What  is  variable  'l'  --->#static variable
 b = c1()
+
 b . n = 100   #  What  is  variable  'n' --->#instance variable
