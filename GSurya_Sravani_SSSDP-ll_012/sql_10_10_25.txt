@@ -1,0 +1,67 @@
+  
+select sal
+from employees
+where sal<
+(select max(sal) from employees);
+
+select distinct salary 
+from employees
+order by salary desc
+limit 1
+offset 1;
+
+#finding duplicates
+select name,count(*)
+from employees
+group by name
+having count(*)>1;
+
+#finding highest sal 
+select e.name,e.sal,m.sal
+from employees as e
+join managers as m
+on e.id=m.id
+where e.sal>m.sal
+
+# count employees in each department having more than 5 employees
+
+select count(employees),department_id
+from employees
+group by department_id
+having count(employees) > 5;
+
+#find the employees who joined in the last 6 months
+select employee_name
+from employees 
+where hire_date>(curdate()-interval 6 month);
+
+#get depts with no employees
+select dept_id,dt_name
+from employees
+where empl_id is null;
+
+**#write a query to find the median salary
+select avg(sal) from (
+select sal
+from emp
+order by salary
+limit 2-(select count(*) from employee)%2
+offset (select(count(*)-1)/2 from employees)
+as temp;
+
+**#running total salaries of dept
+select sum(salary)over (order by salary partition by dept),
+department
+from employees
+
+#
+
+
+
+
+
+
+
+
+
+
