@@ -1,0 +1,71 @@
+q)  Write  a  program  to  convert  postfix  to  prefix         
+Ans) def is_operator(ch):
+    return ch in ['+', '-', '*', '/', '^']
+def postfix_to_prefix(postfix):
+    stack = []
+    for ch in postfix:
+        if not is_operator(ch):
+            # if operand, push to stack
+            stack.append(ch)
+        else:
+             op1 = stack.pop()
+            op2 = stack.pop()
+            # form prefix expression
+            new_expr = ch + op2 + op1
+            stack.append(new_expr)
+    return stack[-1]
+postfix_expr = input("Enter a postfix expression: ")
+prefix_expr = postfix_to_prefix(postfix_expr)
+print("Prefix expression:", prefix_expr)
+
+q) Write  a  program  to  convert  prefix  to  postfix      
+Ans) def is_operator(ch):
+    return ch in ['+', '-', '*', '/', '^']
+def prefix_to_postfix(prefix):
+    stack = []
+    for ch in prefix[::-1]:
+        if not is_operator(ch):
+            # if operand, push to stack
+            stack.append(ch)
+        else:
+            # if operator, pop two operands from stack
+            op1 = stack.pop()
+            op2 = stack.pop()
+            # form postfix expression
+            new_expr = op1 + op2 + ch
+            # push the new expression back to stack
+            stack.append(new_expr)
+    return stack[-1]
+prefix_expr = input("Enter a prefix expression: ")
+postfix_expr = prefix_to_postfix(prefix_expr)
+print("Postfix expression:", postfix_expr)
+
+
+
+q) Write  a  program  to  implement  priority  queue  using  list      
+class PriorityQueue:
+    def _init_(self):
+        self.queue = []
+    def is_empty(self):
+        return len(self.queue) == 0
+    def insert(self, item):
+        self.queue.append(item)
+        print(f"{item} added to the queue")
+    def delete(self):
+        if self.is_empty():
+            print("Queue is empty, nothing to delete")
+            return
+        highest_priority = 0
+        for i in range(len(self.queue)):
+            if self.queue[i][1] < self.queue[highest_priority][1]:
+                highest_priority = i
+        item = self.queue.pop(highest_priority)
+        print(f"Deleted item: {item[0]} with priority {item[1]}")
+    def display(self):
+        if self.is_empty():
+            print("Queue is empty")
+        else:
+            print("Priority Queue:")
+            for item in self.queue:
+                print(f"Item: {item[0]}, Priority: {item[1]}")
+
