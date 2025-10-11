@@ -41,6 +41,30 @@ Destructor  :   address of object 't'
 Bye
 Destructor  :   address of object 't'
 '''
+# # Tricky  program
+# Find  outputs (Home  work)
+class  c1:
+	def  __init__(self):
+		print('Object  is    created')
+	def  __del__(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+        print('Function  begin')
+        a  =  c1()
+        print('Function  end')
+print('Program  Begin')
+b = f1()
+print(b)
+print('Program  End')
+'''Output:
+Program  Begin
+Function  begin
+Object  is    created
+Function  end
+Object  is  lost
+None
+Program  End'''
 #  Tricky  program
 # Find  outputs (Home  work)
 class  c1:
@@ -140,3 +164,5 @@ print('Hello') # Hello
 '''Output:
 Destructor
 Hello'''
+
+
