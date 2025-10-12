@@ -1,0 +1,134 @@
+# Find  outputs
+class  Rat:
+	def   __init__(self , nr1 = 22, dr1 = 7):
+		self . nr = nr1
+		self . dr = dr1
+	def   __str__(self):
+		return  F'{self . nr}  /  {self . dr}'
+#end  of  the  class
+a = Rat()
+b = Rat(9)
+c = Rat(5,  8)
+d = Rat(dr1 = 9)
+e = Rat(dr1 = 3 , nr1 = 2)
+x = eval(input('Enter numerator  :  '))  #  Assume  that  input  is   11
+y = eval(input('Enter Denominator  :  '))    #  Assume  that  input  is    15
+f = Rat(x , y)
+print('a  :  ' , a)
+print('b  :  ' , b)
+print('c  :  ' , c)
+print('d  :  ' , d)
+print('e  :  ' , e)
+print('f  :  ' , f)
+c . __init__()
+print('c  :  ' , c)
+a . __init__(3.8  , 4.6)
+print('a  :  ' , a)
+g = Rat(nr1 = 9 , 5)
+h = Rat(nr = 9 , dr = 5)
+output
+
+'''
+Object  'a'   --->  nr = 22 , dr = 7
+
+Object  'b'   --->  nr = 9 , dr = 
+print('a  :  ', a)  # calls a.__str__() -> "22  /  7"
+print('b  :  ', b)  # "9  /  7"
+print('c  :  ', c)  # "5  /  8"
+print('d  :  ', d)  # "22  /  9"
+print('e  :  ', e)  # "2  /  3"
+print('f  :  ', f)  # "11  /  15"
+
+'''
+# Find  outputs (Home  work)
+class  Date:
+        def   __init__(self , dd1 , mm1  , yy1):
+                self . dd = dd1
+                self . mm = mm1
+                self . yy = yy1
+# End  of  the  class
+a = Date(15 , 8 , 1947)
+b = Date(yy1 = 1950 , mm1 = 1 , dd1 = 26)
+c = Date(mm1 = 7 , dd1 = 19 , yy1 = 1985)
+print('a  :  ' , a . __dict__)
+print('b  :  ' , b . __dict__)
+print('c  :  ' , c . __dict__)
+d = Date()
+e = Date(dd = 30 , mm = 4 , yy = 2022)
+f = Date(dd1 = 26 , mm1 = 8 , 2023)
+class Date:
+    def __init__(self, dd1, mm1, yy1):
+        self.dd = dd1
+        self.mm = mm1
+        self.yy = yy1
+# End of the class
+
+a = Date(15, 8, 1947)
+b = Date(yy1=1950, mm1=1, dd1=26)
+c = Date(mm1=7, dd1=19, yy1=1985)
+
+print('a  :  ', a.__dict__)
+print('b  :  ', b.__dict__)
+print('c  :  ', c.__dict__)
+
+d = Date()
+e = Date(dd=30, mm=4, yy=2022)
+f = Date(dd1=26, mm1=8, 2023)
+# Find  outputs (Home  work)
+class  c1:
+	def  __init__(self):
+		print('Constructor')
+		b = c1()
+# End  of  class
+a = c1()
+output 
+error and recursion
+#  Difference  between  init()    and  __init__()   methods (Home  work)
+class c1:
+    def  __init__(self):
+        print('Constructor')
+        self . x = 10
+        self . y = 20
+class c2:
+    def  init(self):
+        print('Method')
+        self . x = 30
+        self . y = 40
+a = c1()
+print(a . __dict__)
+b = c2()
+print(b . __dict__)
+b . init()
+print(b . __dict__)
+the output
+Constructor
+{'x': 10, 'y': 20}
+{}
+Method
+{'x': 30, 'y': 40}
+# Find  outputs  (Home  work)
+class   c1:
+	def   __init__(self):
+		self . x = 10
+		self . y = 20
+		self . z = 30
+#end  of  the  class
+a = c1()
+b = c1()
+print(a . __dict__)
+print(b . __dict__)
+del  a . x
+del  b . y
+print(a . __dict__)
+print(b . __dict__)
+print(a . x)
+print(b . y){'x': 10, 'y': 20, 'z': 30}
+{'x': 10, 'y': 20, 'z': 30}
+{'y': 20, 'z': 30}
+{'x': 10, 'z': 30}
+Traceback (most recent call last):
+  File "script.py", line XX, in <module>
+    print(a.x)
+AttributeError: 'c1' object has no attribute 'x'
+
+
