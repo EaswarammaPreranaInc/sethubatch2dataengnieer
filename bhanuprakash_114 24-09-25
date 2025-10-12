@@ -1,0 +1,101 @@
+#  What  are  the  outputs  if  inputs  are  25 , Rama  Rao ,  male , 52 , 48 , 55   (Home  work)
+from  prog9a  import  student
+s = student()
+print(s . __dict__)
+s . get()
+print(s . __dict__)
+s . compute()
+print(s . __dict__)
+OUTPUT.......
+{
+ 'rno': 0,
+ 'name': '',
+ 'gender': '',
+ 'm1': 0,
+ 'm2': 0,
+ 'm3': 0,
+ 'total': 0,
+ 'avg': 0
+}
+Enter number of students : 4
+Student  1
+Enter  roll  number : 111
+Enter  student  name : AAA
+Enter gender (m/f) : m
+Enter  marks  of  subject 1 : 52
+Enter  marks  of  subject 2 : 48
+Enter  marks  of  subject 3 : 55
+Student  2
+Enter  roll  number : 222
+Enter  student  name : BBB
+Enter gender (m/f) : f
+Enter  marks  of  subject 1 : 100
+Enter  marks  of  subject 2 : 100
+Enter  marks  of  subject 3 : 0
+Student  3
+Enter  roll  number : 333
+Enter  student  name : CCC
+Enter gender (m/f) : m
+Enter  marks  of  subject 1 : 45
+Enter  marks  of  subject 2 : 56
+Enter  marks  of  subject 3 : 67
+Student  4
+Enter  roll  number : 444
+Enter  student  name : DDD
+Enter gender (m/f) : f
+Enter  marks  of  subject 1 : 67
+Enter  marks  of  subject 2 : 78
+Enter  marks  of  subject 3 : 89
+111      AAA     m       155.0    51.67          Second class
+222      BBB     f       200.0    66.67          Fail
+333      CCC     m       168.0    56.00          Second class
+444      DDD     f       234.0    78.00          Distinction
+THE OUT
+111      AAA     m       155.0    51.67          Second class
+222      BBB     f       200.0    66.67          Fail
+333      CCC     m       168.0    56.00          Second class
+444      DDD     f       234.0    78.00          Distinction
+#  dir()  function  demo  program  (Home  work)
+
+from  prog10a   import  Rat
+
+a = Rat()
+
+a . nr = 22
+
+a . dr = 7
+
+print(dir(Rat))
+
+print()
+
+print()
+
+print(dir(a))
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__',
+ '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
+ '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
+ '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+ '__weakref__']
+# Find  outputs  (Home  work)
+class  Cat:
+	def  talk(self):
+		print('Meow Meow Meow ....')
+class  Dog:
+	def  bark(self):
+		print('Bhow Bhow Bhow ....')
+class  Goat:
+	def  talk(self):
+		print('Mehar  Mehar  Mehar  ....')
+#end of the class
+a = [Cat() , Dog() , Goat()]
+for  x  in   a:
+	if   hasattr(x , 'talk'):
+		x . talk()
+	else:
+		x . bark()
+   OUTPUT....
+Meow Meow Meow ....
+Bhow Bhow Bhow ....
+Mehar Mehar Mehar ....
