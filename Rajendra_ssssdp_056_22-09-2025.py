@@ -1,4 +1,3 @@
-
 # Save  in  any  file  of  cwd
 import  p1 . mod1
 print(p1.mod1.x)		#How  to  print  object  'x'  of  mod1  in  package  p1#
