@@ -1,0 +1,68 @@
+
+# Find  outputs
+class  c1:
+        pass
+class  c2(c1):
+        pass
+# End of the class
+print(issubclass(c2 , c1)) #true
+print(issubclass(int , float))  #false
+print(issubclass(str , object)) #true
+print(issubclass(c1 , object))  #true
+print(issubclass(c2 , object))  #true
+a = c1()
+b = c2()
+print(issubclass(b , a)) #true
+print(issubclass(c2 , a))#true
+
+
+
+
+ # Find outputs
+class c1:
+        pass
+class  c2(c1):
+        pass
+class  c3(c2):
+        pass
+class  c4(c3):
+        pass
+print(issubclass(c4 , c3)) #true
+print(issubclass(c4 , c2))  #true
+print(issubclass(c4 , c1))  #true
+print(issubclass(c4 , object))#true
+print(issubclass(c4 , (int , float , str , bool)))#false
+print(issubclass(c4 , (int , float , c1 , str , bool)))#true
+print(issubclass(c4 , [int , float , c1 , str , bool]))#error
+
+
+
+#  Find  outputs
+class  c1:
+        pass
+class  c2(c1):
+        pass
+class  c3(c2):
+        pass
+class  c4:
+        pass
+#  End  of  the  class
+print(isinstance(25 , int))#true
+print(isinstance(10.8 , float))#true
+print(isinstance('Hyd' , str))#true
+print(isinstance(3 + 4j , complex))#true
+print(isinstance(True , bool))#true
+print(isinstance(True , int))#false
+print(isinstance('True' , str))#true
+print(isinstance(True , str))#false
+print()
+a = c3()
+print(isinstance(a , c3)) #false
+print(isinstance(a , c2)) #true
+print(isinstance(a , c1)) #true
+print(isinstance(a , object)) #false
+print(isinstance(a , c4)) #false
+print(isinstance(a , (int  ,  float  ,  str  ,  bool))) #false
+print(isinstance(a , (int  ,  float  ,  c3 , str  ,  bool))) #false
+print(isinstance(a , (int  ,  float  ,  c1  ,  str  ,  bool)))#true
+print(isinstance(a , [int  ,  float  ,  c3 , str  ,  bool]))#error
