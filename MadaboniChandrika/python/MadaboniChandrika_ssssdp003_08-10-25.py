@@ -428,3 +428,4 @@ c1 . l = 90   #  What  is  variable  'l'  --->#static variable
 b = c1()
 
 b . n = 100   #  What  is  variable  'n' --->#instance variable
+
