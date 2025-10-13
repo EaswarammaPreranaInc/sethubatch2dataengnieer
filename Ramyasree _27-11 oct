@@ -1,0 +1,139 @@
+# Find  outputs (Home work)
+class  Person:
+	def  __init__(self):
+		self . name  =  ''
+	@property
+	def   name(self):
+		print('getter  method')
+		return  self . _name
+	@name . setter
+	def   name(self , value):
+		print('Setter  Method')
+		self . _name = value
+	@name . deleter
+	def  name(self):
+		print('Deleter  method ')
+		del  self .  _name
+#end  of  the  class
+p = Person()
+print(p . name)
+p . name = 'Vamsi'
+print(p . name)
+del   p . name
+#print(p . name)
+del   p
+
+
+
+# Find outputs (Home work)
+class Person:
+	def __init__(self):
+		self.name = ''            # Setter Method
+
+	@property
+	def name(self):
+		print('getter method')
+		return self._name
+
+	@name.setter
+	def name(self, value):
+		print('Setter Method')
+		self._name = value
+
+	@name.deleter
+	def name(self):
+		print('Deleter method')
+		del self._name
+# end of the class
+
+p = Person()                    # Setter Method
+print(p.name)                   # getter method
+                               
+p.name = 'Vamsi'                # Setter Method
+print(p.name)                   # getter method
+                               
+del p.name                      # Deleter method
+# print(p.name)                 
+del p
+
+
+
+1) Write a program to validate emp number, emp name and salary and also print them
+ 2) Emp number and salary cannot be -ve
+ 3) Emp name cannot be empty string
+ 4) Class name is Emp
+ 5) 3 getter and 3 setter methods
+ 6) Constructor initializes empno, ename and sal
+ 7) Outside the class
+ a) Create Emp class object
+   b) Print empno, ename and sal
+
+class Emp:
+	def __init__(self, empno, ename, sal):
+		self.empno = empno
+		self.ename = ename
+		self.sal = sal
+
+	@property
+	def empno(self):
+		return self._empno
+
+	@empno.setter
+	def empno(self, value):
+		if value < 0:
+			raise ValueError("Employee number cannot be negative")
+		self._empno = value
+
+	@property
+	def ename(self):
+		return self._ename
+
+	@ename.setter
+	def ename(self, value):
+		if value == '':
+			raise ValueError("Employee name cannot be empty")
+		self._ename = value
+
+	@property
+	def sal(self):
+		return self._sal
+
+	@sal.setter
+	def sal(self, value):
+		if value < 0:
+			raise ValueError("Salary cannot be negative")
+		self._sal = value
+
+# end of the class
+
+# a) Create Emp class object
+e = Emp(101, 'Vamsi', 30000)
+
+# b) Print empno, ename and sal
+print("Employee Number :", e.empno)
+print("Employee Name   :", e.ename)
+print("Salary          :", e.sal)
+
+
+
+Enter  employee  number :  -25
+Empno cannot be negative
+
+
+Enter  employee  number :  25
+Enter  employee  name :
+Emp  name cannot be empty  string
+
+Enter  employee  number :  25
+Enter  employee  name :  Vamsi
+Enter  salary :  -20
+Salary cannot be negative
+
+Enter  employee  number :  25
+Enter  employee  name :  Vamsi
+Enter  salary :  10000.0
+
+
+Employee number  :  25
+Employee name  :  Vamsi
+Employee salary :   10000.0
