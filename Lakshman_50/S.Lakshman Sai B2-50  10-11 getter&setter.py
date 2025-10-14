@@ -1,77 +1,89 @@
+# Write a program to implement min priority queue using list
+class priority_queue:
+	def __init__(self):
+		self.queue = []
 
-# Write  a  program  to  implement  min  priority  queue  using  list
-class  priority_queue:
-	def  _init_(pq):
-		How  to  create  an  empty  list  in  object  pq
-	def  isempty(pq):
-		return  True  when  list  held  by  object  pq   is  empty  and  False  otherwise
-	def  insert(pq , x):
-		 How  to  insert  'x'  into  the  list  held  by  object  pq
-		 How  to  sort  the  list  held  by  object  pq
-	def  delete(pq):
-		How  to  delete  highest  priority  element  from  the  list  held  by  object  pq
-		(return  None  when  deletion  is  not  possible)
-	def  highest_priority(pq):
-		How  to  return  the  highest  priority  element  from  the  list  held  by  object  pq
-		(return  None  when  the  list  is  empty)
-	def  smallest_priority(pq):
-		How  to  return  the  highest  priority  element  from  the  list  held  by  object  pq
-		(return  None  when  the  list  is  empty)
-	def  disp(pq):
-		How  to  print  the  list  held  by  object  pq
-	def   size(pq):
-		How  to  return  number   of  elements  in  the  list  held  by  object  pq
-# End  of  the  class
-def  menu():
-        print('1. Insertion')
-        print('2. Deletion')
-        print('3. Print  priority  queue')
-        print('4. Highest  priority  element of  priority  queue')
-        print('5. Smallest  priority  element of  priority  queue')
-        print('6. Number  of  elements  in  the  priority  queue')
-        print('7. Exit')
-# End of  the  function
-if  _name_  ==  '_main_':
-	How  to  create  priority_queue  class  object
-	while  True:
+	def isempty(self):
+		return len(self.queue) == 0
+
+	def insert(self, x):
+		self.queue.append(x)
+		self.queue.sort()
+
+	def delete(self):
+		if self.isempty():
+			return None
+		return self.queue.pop(0)
+
+	def highest_priority(self):
+		if self.isempty():
+			return None
+		return self.queue[0]
+
+	def smallest_priority(self):
+		if self.isempty():
+			return None
+		return self.queue[-1]
+
+	def disp(self):
+		print("Priority Queue:", self.queue)
+
+	def size(self):
+		return len(self.queue)
+# End of the class
+
+def menu():
+	print('1. Insertion')
+	print('2. Deletion')
+	print('3. Print priority queue')
+	print('4. Highest priority element of priority queue')
+	print('5. Smallest priority element of priority queue')
+	print('6. Number of elements in the priority queue')
+	print('7. Exit')
+# End of the function
+
+if __name__ == '__main__':
+	pq = priority_queue()
+	while True:
 		menu()
-		ch = int(input('Enter  choice : ' ))
-		match  ch:
-			case  1:
-						x = eval(input('Enter  element  to  be  inserted : '))
-						How  to  insert  'x'  into  priority  queue
-						How  to  print  priority  queue
-			case  2:
-						How  to  delete  highest  priority  element  from  priority  queue  and  print
-						if  ???:
-							print('Priority  queue  is  empty  , deletion  is  not  permitted')
-						else:
-							print('Deleted  element : '  , ???)
-						How  to  print  priority  queue
-			case  3:
-						How  to  print  priority  queue
-			case  4:
-						How  to  obtain  highest  priority  element
-						if  ???
-							print('Priority  queue  is  empty')
-						else:
-							print('Highest  priority  element :  ' ,  ???)
-			case  5:
-						How  to  obtain  smallest  priority  element
-						if  ???
-							print('priority  queue  is  empty')
-						else:
-							print('Smallest  priority  element :  ' ,  ???)
-			case  6:
-						print('Number  of  elements  :  ' ,  ???)
-			case  7:  exit()
-		# End  of  match
+		ch = int(input('Enter choice : '))
+		match ch:
+			case 1:
+				x = eval(input('Enter element to be inserted : '))
+				pq.insert(x)
+				pq.disp()
+			case 2:
+				deleted = pq.delete()
+				if deleted is None:
+					print('Priority queue is empty, deletion is not permitted')
+				else:
+					print('Deleted element :', deleted)
+				pq.disp()
+			case 3:
+				pq.disp()
+			case 4:
+				hp = pq.highest_priority()
+				if hp is None:
+					print('Priority queue is empty')
+				else:
+					print('Highest priority element :', hp)
+			case 5:
+				sp = pq.smallest_priority()
+				if sp is None:
+					print('Priority queue is empty')
+				else:
+					print('Smallest priority element :', sp)
+			case 6:
+				print('Number of elements :', pq.size())
+			case 7:
+				exit()
+		# End of match
 
 
 #===================================================================================
 
 #Object  'pq'   --->  list = []
- Here  is  the  blueprint  of  priority  queue
+ #Here  is  the  blueprint  of  priority  queue
 
  # Find  outputs (Home work)
 
@@ -98,7 +110,15 @@ print(p . name)
 del   p . name
 #print(p . name)
 del   p
+'''
+Setter  Method
+getter  method
 
+Setter  Method
+getter  method
+Vamsi
+Deleter  method
+'''
 
 #=================================================================================
 '''
@@ -173,6 +193,14 @@ print("Employee name  : ", e.ename)
 print("Employee salary : ", e.sal)
 
 '''
+enter the emp id :1
+enter the emp name :sai
+enter the emp salary : 123012
+Employee number  :  1
+Employee name  :  sai
+Employee salary :  123012.0
+'''
+'''
  Enter  employee  number :  -25
 Empno cannot be negative
 
@@ -236,13 +264,13 @@ class Emp:
 e = Emp()
 while True:
    try:
-       e.empno = int(input("Enter the emp id: "))
-       e.ename = input("Enter the emp name: ")
-       e.sal = float(input("Enter the emp salary: "))
+   	e.empno = int(input("Enter the emp id: "))
+		e.ename = input("Enter the emp name: ")
+		e.sal = float(input("Enter the emp salary: "))
    except ValueError as ve:
-       print("Error:", ve)
+		print("Error:", ve)
 	else:
-		break
+		 break
 
 print("\nEmployee Details:")
 print("Employee number :", e.empno)
