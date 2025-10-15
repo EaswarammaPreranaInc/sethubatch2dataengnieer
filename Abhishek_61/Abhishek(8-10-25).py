@@ -1,0 +1,389 @@
+# Find  outputs  (Home  work)
+class   outer:
+	def  __init__(self):
+		print('Outer  class  constructor')
+	def  m1(self):
+		print('Outer  class  method')
+	class   inner:
+		def __init__(self):
+			print('Inner  class  constructor')
+		def m1(self):
+			print('Inner  class  method')
+#end of the class
+outer().m1()  #How  to  call  m1()  method  of  outer  class
+outer.inner().m1() #How  to  call  m1()  method  of  inner  class
+outer().inner().m1() ##How  to  call  m1()  method  of  inner  class  in  another  way
+o=outer()
+o.inner() .m1() #How  to  call  m1()  method  of  inner  class  in  one  more  way
+#i = inner() # error as cannot create inner class object without outer class object
+
+# Find  outputs  (Home  work)
+class   emp:
+	def __init__(self):
+		self.empno=25
+		self.ename='Rama Rao'
+		self.sal=10000.0    #How  to  initialize  empno , ename , sal  of  object  self  to  25 ,  'Rama  Rao' , 10000.0
+		self.d=emp.date()            #How  to  create  date  class  object
+	def   disp(self):
+		print(self.empno,self.ename,self.sal)   #How  to  print  empno , ename , sal  of  object  self
+		self.d.disp()                                #How  to  call  disp()  method  of  date  class
+	class   date:
+		def    __init__(self):
+			self.dd=15
+			self.mm=8
+			self.yy=1947    #How  to  initialize  dd , mm , yy  of  object  self  to  15 , 8  , 1947
+		def disp(self):
+			print(self.dd,self.mm,self.yy)   #How  to  print  dd , mm , yy  of  object  self
+# End  of  the  class
+e=emp()
+e.disp()                                #How  to  call  disp()  method  of  emp  class'
+
+# Find  outputs  (Home  work)
+class   c1:
+	def  __init__(self):
+		print('outer  class  c1  constructor')
+	class   c2:
+		def __init__(self):
+			print('inner  class  c2  constructor')
+#end of the class
+class  c2:
+	def __init__(self):
+		print('outer  class  c2  constructor')
+#end of the class
+x=c1()	#How  to  create  c1  class  object
+y=c1.c2()	#How  to  create  inner  c2  class  object
+z=c2()	#How  to  create  outer  c2  class  object
+
+# Find  outputs  (Home  work)
+class   c2:
+	def  __init__(self):
+		print('outer  class  constructor')
+	class   c2:
+		def __init__(self):
+			print('inner  class  constructor')
+#end of the class
+x=c2()	#How  to  create  outer  c2  class  object
+x.c2()	#	How  to  create  inner  c2  class  object
+c2.c2()	#How  to  create  inner  c2  class  object  in  another  way
+
+# Find  outputs (Home  work)
+class c1:
+    x = 10	# static  variable
+    def __init__(self):
+	    self . y = 20
+a = c1()	# c1 classs object with y=20
+b = c1()	# c1 classs object with y=20
+a . x += 1	# static  variable  x=11
+b . y += 1	# instance  variable  y=21
+print(a . x)	# as there is no instance  variable  x in object  a  it will take static  variable  x=11
+print(a . y)  # instance  variable  y=20
+print(b . x) # as there is no instance  variable  x in object  b  it will take static  variable  x=11
+print(b . y)	# instance  variable  y=21
+print(c1 . x)	# static  variable  x=11
+print(a . __dict__)	# dictionary of instance  variable  of object  a {'y': 20}
+print(b . __dict__)	# dictionary of instance  variable  of object  b {'y': 21}
+print(c1 . __dict__)	# dictionary of static  variable  and environment variables of class  c1  {'x': 11}
+'''
+static   variable  --->
+
+Object  'a'  --->
+
+Object  'b'  --->
+'''
+
+# Find  outputs (Home  work)
+class  c1:
+	x = 10	# static  variable
+	def  m1(self):
+		self . x = 20	# instance  variable
+a = c1()
+a . m1()
+print(c1 . x)	#static  variable 10
+print(a . x)	# instance  variable 20
+
+
+'''
+static   variable   ---> x=10
+
+object  'a'   ---> x=20
+'''
+
+# Find  outputs  (Home  work)
+class   c1:
+	x = 10
+	def  __init__(self):
+		self . y = 20
+	@classmethod
+	def   m1(cls):
+		cls . x = 30
+		cls . y = 40
+# End  of  the  class
+a = c1()	# c1 class object with y=20
+b = c1()	# c1 class object with y=20
+c1 . m1()	# calling class method m1
+print(a . x) # as there is no instance variable x of class method is printed 30
+print(a . y)	# instance variable y is printed
+print(b . x)	# as there is no instance variable x of class method is printed 30
+print(b . y)	# instance variable y is printed
+print(c1 . x , c1 . y)	# calling variables of class method x and y
+print(cls . x , cls . y)	# error as cls is not visible to outside
+print(self . x , self . y)	# error as self is not visible to outside 
+
+
+'''
+static   variable   ---> x=10
+
+object  'a'   ---> y=20
+
+object  'b'   ---> y=20
+'''
+
+#  Find  outputs
+class   c1:
+	@staticmethod
+	def   m1(self):
+		print(self)
+#  End  of  the   class
+c1 . m1(25)	# calling m1 static method of c1 class with self as 25
+a = c1()	#  c1 class object a is created
+a . m1(35)	# calling m1 static method wrt to object a
+
+
+#  Find  outputs
+class   c1:
+	@staticmethod
+	def   m1(self):	# it is ignored as there is another method with same name
+		print('static  method')
+		print(self)
+	def   m1(self):	# executed twice
+		print('static / instance  method')	
+		print(self)	# 1st tym self is 25 and 2nd tym type and  adress of object a
+#  End  of  the   class
+c1 . m1(25)		# calling m1 instance method as it is the last one created with same name of static method
+a = c1()	# c1 class object
+a . m1() 	# calling last created m1
+
+class c1:
+    # Static variable
+    x = 25
+
+    def __init__(self):
+        print(c1.x)  # How to print static variable 'x' access using class name
+        print(self.x)  # How to print static variable 'x' in another way using object reference
+        print(x)  # error as there is no local or global variable x
+    def m1(self):
+        print(c1.x)# How to print static variable 'x'
+        print(self.x)    # How to print static variable 'x' in another way
+    @classmethod
+    def m2(cls):
+        print(c1.x)# How to print static variable 'x'
+        print(cls.x)  # How to print static variable 'x' in another way  Using cls (class reference)
+    @staticmethod
+    def m3():
+        print(c1.x)  # How to print static variable 'x' Only class name works in staticmethod
+        print(self.x)  # Error: 'self' not available here
+        print(cls.x)   # Error: 'cls' not available here
+# End of the class
+
+print(c1.x)  # How to print static variable 'x'
+obj = c1()
+print(obj.x)       # How to print static variable 'x' in another way
+print(x)          # Error: no local/global x
+print(self.x)     # Error: self only inside methods
+print(cls.x)      # Error: cls only inside classmethod
+
+obj.m1()# How to call method m1()
+c1.m2()# How to call method m2()
+c1.m3()# How to call method m3()
+
+
+
+class c1:
+    a = 10       # How to add static variable 'a' with value 10
+
+    def __init__(self):
+        c1.b = 20        # How to add static variable 'b' with value 20
+        self.c = 30      # How to add instance variable 'c' with value 30
+        c1.k = 25        # cls.k = 25 (using class name instead, works the same)
+
+    def m1(self):
+        c1.d = 40        # How to add static variable 'd' with value 40
+        self.e = 50      # How to add instance variable 'e' with value 50
+
+    @classmethod
+    def m2(cls):
+        cls.f = 60       # How to add static variable 'f' with value 60
+        c1.g = 70        # How to add static variable 'g' with value 70 in another way
+        # self.k = 25    # Not valid here (self not available in classmethod)
+
+    @staticmethod
+    def m3():
+        c1.h = 80        # How to add static variable 'h' with value 80
+        # self.k = 25    # Error: self not available in staticmethod
+        # cls.k = 35     # Error: cls not available in staticmethod
+
+# End of the class
+
+print('Begin')
+print(c1.__dict__)
+print()
+print()
+
+x = c1()
+print('Constructor')
+print(c1.__dict__)
+print()
+print()
+
+x.m1()     # How to call m1() method
+print('Instance method m1')
+print(c1.__dict__)
+print()
+print()
+
+c1.m2()    # How to call m2() method
+print('class method m2')
+print(c1.__dict__)
+print()
+print()
+
+c1.m3()    # How to call m3() method
+print('static method m3')
+print(c1.__dict__)
+print()
+print()
+
+c1.i = 90         # How to add static variable 'i' with value 90
+x.j = 100         # How to add instance variable 'j' with value 100
+
+print('Outside the class')
+print(c1.__dict__)
+print()
+print()
+
+print("Object 'x' ")
+print(x.__dict__)
+
+
+# Find  outputs  (Home  work)
+class  c1:
+        a , b , c  = range(1 , 4)
+# End  of  the  class
+print(c1.a)	#How  to  print  variable  'a'
+print(c1.b)	#How  to  print  variable  'b'
+print(c1.c)	#How  to  print  variable  'c'
+
+#  Tricky  program
+# What  are  the  outputs  if  inputs  are  10 , 20 , 30 , 40 , 50 , 60 , 70 (Home  work)
+class   Test:
+	@classmethod
+	def  get1(cls):
+		cls . x = int(input('Enter  any  number    :  '))
+	def  get2(self):
+		self . y = int(input('Enter  any  number  :  '))
+		self . z = int(input('Enter  any  number  :  '))
+	def   compute(self):
+		Test . x += 1
+		self . y  += 1
+		self . z  += 1
+		self . x  += 1	# there is no instance variable x so adds instance variable x to object with value x+1 (static)
+	def    disp(self):
+		print(Test . x , self . y , self . z ,  self . x , sep = '\t')
+# End  of  the  class
+Test . get1()	# calling class method and adds static variable
+a = Test()	# test cls object
+b = Test()	# test cls object
+c = Test()	# test cls object
+a . get2()	# calling get2 mthod with obj a
+b . get2()	# calling get2 mthod with obj b
+c . get2()	# calling get2 mthod with obj c
+a . compute()	# calling compute method with obj a
+b . compute()	# calling compute method with obj b
+c . compute() 	# calling compute method with obj c
+a . disp() 	# calling disp method with obj a
+b . disp() 	# calling disp method with obj b
+c . disp() 	# calling disp method with obj c
+
+
+'''
+static   variable   --->	x=10 updated to 11  to 12 to 13 so final static variable is 13
+
+Object  'a'  ---> y=20,z=30 updated to y=21,z=31
+
+Object  'b'  --->y=40,z=50 updated to y=41,z=51
+
+Object  'c'  --->y=60,z=70	updated to y=61,z=71
+'''
+
+#
+
+
+'''
+Write  a  program  to  add  two  Vector  objects
+
+1) What  are  the  names  of  objects ?  ---> x , y   and  z
+
+2) What  are  the  names  of   lists  held  by  each  object ?  --->  x .  a , y . a  , z . a
+
+3) How  to  access  elements  of  1st  list ?  ---> x . a[i]
+    How  to  access  elements  of  2nd  list ?  ---> y . a[i]
+
+4) How  to  access  static  variable  'n' ?  ---> vector . n
+'''
+class  vector:
+	@staticmethod
+	def get1():
+		vector.n=int(input())	#How  to  read  number  of  elements  into  variable  'n'
+	def get2(self):
+		self.a=[]
+		for i in range(vector.n):
+			self.a.append(int(input()))	#How  to  read  the  list  into  the  object
+	def add(self , x , y):
+		z.a=[]
+		for i in range(vector.n):
+			self.a.append(x.a[i]+y.a[i])	 #How  add  the  lists  held  by  objects  'x'  and  'y'  and  store  the  results  in  list  held  by  owner  object
+vector.get1()	#How  to  call  get1()  method
+x=vector()	
+x.get2()	#read  the  list  into  1st  object
+y=vector()
+y.get2()	#How  to  read  the  list  into  2nd  object  'b'
+z=vector()
+z.add(x,y)	#How  to  add  the  lists  held  by  objects  'a'  and  'b'  and  store  the  results  in  list  of  3rd  object  'c'
+print(z.a)#How  to  print  the  list  of  3rd   object
+
+'''
+Write  a  program  to  print  only  static  variables  but  not  environment  variables  of   classname . _dict_
+
+Hint:  Use  startswith()  and  endswith()  methods
+'''
+class  c1:
+	x = 1
+	y = 2
+	z = 3
+a=c1.__dict__
+for i,j in a.items():
+	if i.startswith('__') and i.endswith('__'):
+		pass
+	else:
+		print(i,':',j)
+
+#  End  of  the  class
+
+# What  are  k , l ,  x , y , z , m , n , p , q , s ?  (Home  work)
+class   c1:
+	x = 10  #  What  is  variable  'x'  ---> static
+	def    m1(self):
+		self . y = 20   #  What  is  variable  'y'  ---> instance variable of object b
+		z = 30   #  What  is  variable   'z'  ---> local variable of mehod m1
+		c1 . m = 40   #  What  is  variable   'm'  --->	statci variable of class c1
+#end of the class
+def    f1():
+	a = c1()
+	a . p = 50   #  What  is   variable  'p'  ---> instance variable of object a
+	c1 . q = 60   #  What  is  variable   'q'  ---> static variable of class c1
+	s = 70   #  What  is  variable   's'  ---> local varibale of function f1
+#end of the function
+k = 80   #  What  is  variable 'k'  ---> global variable
+c1 . l = 90   #  What  is  variable  'l'  --->  static variable as created using class
+b = c1()
+b . n = 100   #  What  is  variable  'n' ---> instancevariable of object b
