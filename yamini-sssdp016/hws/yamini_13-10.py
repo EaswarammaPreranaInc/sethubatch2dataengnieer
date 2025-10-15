@@ -184,4 +184,235 @@ c.disp()    #How  to  print  object  'c'
 print('Sum of  the  values  in  child  object :  ' ,  c.total())    #How  to  obtain  sum of  values  of  object  'c')
 
 
+'''
+Write  a  program  to  determine  area  and  circumference  of  circle.
+Also  find  area  and  volume  of  cylinder
 
+1) What  is  the  area  of  circle ?  --->  3.14159 * r ^ 2
+    What  is  the  circumference  of  circle ?  ---> 2 * 3.14159 * r
+
+2) What  is  the  area  of  cylinder ?  --->  2 * 3.14159 * r ^ 2 + 2 * 3.14159 * r * h
+     What  is  the  volume  of  cylinder ?  ---> 3.14159 * r ^ 2 *  h
+
+3) Reuse  parent  class  methods  in  child  class  but  do  not  rewrite
+'''
+import  math
+class   circle:
+	def   get(self):
+		self.r=int(input('Enter radius: '))
+	def   area(self):
+		return  3.14159 *( self.r ^ 2)
+	def   cir(self):
+		return  2 * 3.14159 * self.r
+# End  of  circle  class
+class  cylinder(circle):
+	def   get(self):
+		super().get()
+		self.h=int(input('Enter height: '))	#How  to  read  height  into  object  self
+	def  area(self):
+		return   2 * 3.14159 * (self.r ^ 2 )+ 2 * 3.14159 * self.r * self.h
+	def  volume(self):
+		return   3.14159 * (self.r ^ 2) *  self.h
+# End of cylinder class
+def    menu():
+	print('1 . Circle')
+	print('2 . Cylinder')
+	print('3 . Exit')
+#end of menu function
+c=circle()
+cy=cylinder()
+while  True:
+	menu()
+	ch = eval(input('Enter choice : '))
+	match  ch:
+		case  1:
+				c.get()   #How  to  read  raidus  into  circle  object
+				print('Area  :  ' , c.area())
+				print('Circumference :  ' ,  c.cir())
+		case  2:
+				cy.get()   #How  to  read  raidus  and  height  into  cylinder  object
+				print('Area : ' ,  cy.area())
+				print('Volume :  ' , cy.volume())
+		case  3:
+				exit()	#How  to  stop  execution
+	# End  of  match
+
+
+'''
+Write  a  program  to  determine  area  and  perimeter  of  rectangle  and  square.
+Also  find  surface  area  and  volume  of  cube
+
+1) What  is  the  area  of  square ?  ---> a ^ 2
+    What  is  the  perimeter  of  square ?  --->  4 *  a
+
+2) What  is  the  area  of  rectangle ?  --->  a * b
+    What  is  the  perimeter  of  rectangle ?  --->  2 * (a + b)
+
+3) What  is  the  surface  area  of  cube ? --->  6 * a ^ 2
+     What  is  the  volume  of  cube  ?  --->  a ^ 3
+
+4) Reuse  parent  class  methods  in  child   classes  but  do  not  rewrite
+'''
+class   square:
+	def   get(self):
+		self.s=int(input('enter side'))	#How  to  read  side  of  square
+	def   area(self):
+		return   self.s*self.s	#How  to  calculate  area  of  square
+	def   peri(self):
+		return  4*self.s
+class   rectangle(square):
+	def   get(self):
+		self.l=int(input('enter length'))	#How  to  read  length  of  rectangle
+		self.b=int(input('enter breadth'))	#How  to  read  breadth  of  rectangle
+	def   area(self):
+		return   self.l*self.b	#area  of  rectangle
+	def   peri(self):
+		return  2*(self.l+self.b)	#perimeter  of   rectangle
+class   cube(square):
+	def   get(self):
+		self.s=int(input('enter side of cube'))	#How  to  read  side  of  cube
+	def   area(self):
+		return  6*(self.s*self.s)	#surface  rea  of  cube
+	def   volume(self):
+		return  (self.s*self.s*self.s)
+def  menu():
+	print('1 . Square')
+	print('2 . Rectangle')
+	print('3 . Cube')
+	print('4 . Exit')
+# End  of  the  function
+s=square()
+r=rectangle()
+c=cube()
+while  True:
+	menu()
+	ch = int(input('Enter  choice : '))
+	match   ch:
+		case   1:
+			s.get()	#How  to  read  side  into   square  object  's'
+			print('Area   :  ' ,  s.area())
+			print('Perimeter  :  ' ,  s.peri())
+		case   2:
+			r.get()	#How  to  read  length  and  breadth  into   rectangle  object  'r'
+			print('Area  :  ' ,  r.area())
+			print('Perimeter  :  ' ,  r.peri())
+		case   3:
+			c.get()	##How  to  read  side  into  cube  object  'c'
+			print('Area  :   ' ,  c.area())
+			print('Volume  :  ' , c.volume())
+		case  4:
+			exit()	#How  to  stop  execution
+
+# Find  outputs
+class  c1:
+	def  m1(self):
+		print('m1  method  of  class  c1')
+class  c2:
+	def  m1(self):
+		print('m1 method of class c2')
+class  c3:
+	@classmethod
+	def  m1(cls):
+		print('m1 method of  class c3')
+class  c4:
+	@staticmethod
+	def  m1():
+		print('m1 method of  class c4')
+class  c5(c1):
+	def  m1(self):
+		print('m1 method of class c5')
+	def  m2(self):
+		c3.m1()	#How  to  call  m1()  method  of  class  c3
+		c4.m1()	#How  to  call  m1()  method  of  class  c4
+		c2().m1()	#How  to  call  m1()  method  of  class  c2
+		c1().m1()	#How  to  call  m1()  method  of  class  c1
+		self.m1()	##How  to  call  m1()  method  of  class  c5
+		m1()	#How  to  call  m1()  function
+# End  of  class  c5
+def  m1():
+	print('m1 function')
+# End  of  the  function
+c5=c5()
+c5.m2()	#How  to  call  m2()  method  of  class  c5
+
+# Find  outputs
+class  c1:
+        pass
+class  c2(c1):
+        pass
+# End of the class
+print(issubclass(c2 , c1))	# true
+print(issubclass(int , float))	# false
+print(issubclass(str , object)) # true
+print(issubclass(c1 , object)) # true
+print(issubclass(c2 , object))  # true
+a = c1()
+b = c2()
+#print(issubclass(b , a))	# error as arg1 should be class not object
+#print(issubclass(c2 , a))# error as arg2 should be class or tuple of classesnot object
+
+# Find outputs
+class c1:
+        pass
+class  c2(c1):
+        pass
+class  c3(c2):
+        pass
+class  c4(c3):
+        pass
+print(issubclass(c4 , c3)) # true
+print(issubclass(c4 , c2))	 # true
+print(issubclass(c4 , c1)) # true
+print(issubclass(c4 , object)) # true
+print(issubclass(c4 , (int , float , str , bool))) # false
+print(issubclass(c4 , (int , float , c1 , str , bool)))  # false
+#print(issubclass(c4 , [int , float , c1 , str , bool]))	# error as arg2 should be tuple not list
+
+#  Find  outputs
+class  c1:
+        pass
+class  c2(c1):
+        pass
+class  c3(c2):
+        pass
+class  c4:
+        pass
+#  End  of  the  class
+print(isinstance(25 , int))
+print(isinstance(10.8 , float))
+print(isinstance('Hyd' , str))
+print(isinstance(3 + 4j , complex))
+print(isinstance(True , bool))
+print(isinstance(True , int))
+print(isinstance('True' , str))
+print(isinstance(True , str))
+print()
+a = c3()
+print(isinstance(a , c3))
+print(isinstance(a , c2))
+print(isinstance(a , c1))
+print(isinstance(a , object))
+print(isinstance(a , c4))
+print(isinstance(a , (int  ,  float  ,  str  ,  bool)))
+print(isinstance(a , (int  ,  float  ,  c3 , str  ,  bool)))
+print(isinstance(a , (int  ,  float  ,  c1  ,  str  ,  bool)))
+#print(isinstance(a , [int  ,  float  ,  c3 , str  ,  bool]))# error as arg2 should be tuple not list
+'''
+True
+True
+True
+True
+True
+True
+True
+False
+
+True
+True
+True
+True
+False
+False
+True
+True
+'''
