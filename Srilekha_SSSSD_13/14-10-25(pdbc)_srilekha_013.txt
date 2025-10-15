@@ -1,0 +1,218 @@
+
+Write  a  program  to  print  emp  table  of  the  database  with  fetchone()   method
+
+emp  table ----------------> cursor  object -----------------> tpl ---------> monitor
+                     execute()                                 fetchone()             print()
+'''
+[14/10, 11:34 am] SRINIVAS Sir Python Ssssdp Gullapally: Emp Number       Emp Name                Salary
+10                Rama Rao               10000.0
+15                Kiran                  15000.0
+20                Sita           20000.0
+Number  of  tuples :   3
+
+
+#programme---
+
+import mysql.connector
+
+conn = mysql.connector.connect(
+
+    user="root",
+    password="root@12345",
+    database="college"
+)
+
+cursor = conn.cursor()
+cursor.execute("SELECT * FROM emp")
+for x in cursor.description:
+    print(x[0],end="\t")
+while row:=cursor.fetchone():
+    for tpl in row:
+        print(tpl,end="\t")
+    print()
+print("number of rows:",cursor.rowcount)
+
+conn.close()
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Write  a  program  to  print  emp  table  based  on  user  condition
+
+1) How  to  call  execute()  method ?  ---> cur . execute(F'select  *  from  emp  where  {cond}')
+
+2) What  is  the  pre-requisite  to  call  execute()  method ?  --->  Read  the  condition  from  the  user
+
+3) emp  table ----------------> cursor  object -----------------> tpl ---------> monitor
+                         execute()                                 fetchone()              print()
+
+'''
+[14/10, 11:41 am] SRINIVAS Sir Python Ssssdp Gullapally: Enter  any  condition : sal > 12000
+Emp Number       Emp Name                Salary
+  15             Kiran                   15000.0
+  20             Sita                    20000.0
+Number  of  tuples  :  2
+
+
+#programme----
+
+
+import mysql.connector
+
+con = mysql.connector.connect(
+    host="localhost",
+    user ="root",
+    password ="root@12345",
+    database ="college"
+)
+user_con = input("enter where condition:")
+cur = con.cursor()
+cur.execute(f"select * from emp where {user_con}")
+for row in cur.description:
+    print(row[0],end="\t")
+print()
+while tpl:=cur.fetchone():
+    for x in tpl:
+        print(x,end="\t")
+    print()
+print("number of rows:",cur.rowcount)
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+Write  a  program  to  print  emp  table  in  sorted  order
+
+1) How  to  call  execute()  method ?  --->  cur . execute(F'select  *  from  emp  order  by  {colname}')
+
+2) What  is  the  pre-requisite  to  call  execute()  method ?  --->  Read  the  colname
+
+3) emp  table ----------------> cursor  object ----------------> tpl ---------> monitor
+                          execute()                                  fetchone()             print()
+'''
+[14/10, 11:49 am] SRINIVAS Sir Python Ssssdp Gullapally: Enter column name: sal desc
+Emp Number       Emp Name                Salary
+  20             Sita                    20000.0
+  15             Kiran                   15000.0
+  10             Rama Rao                10000.0
+Num  of rows :  3
+
+
+#programme-----
+
+
+
+import mysql.connector
+
+con = mysql.connector.connect(
+    host="localhost",
+    user ="root",
+    password ="root@12345",
+    database ="college"
+)
+user_con = input("ente column name:")
+cur = con.cursor()
+cur.execute(f"select * from emp order by {user_con}")
+for row in cur.description:
+    print(row[0],end="\t")
+print()
+while tpl:=cur.fetchone():
+    for x in tpl:
+        print(x,end="\t")
+    print()
+print("number of rows:",cur.rowcount)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+Write  a  program  to  print  user  input  table  with  next()  function
+
+1) How  to  call  execute()  method ?  ---> cur . execute(F'select  *  from  {table}')
+
+2) What  is  the  pre-requisite  to  call  execute()  method ?  --->  Read  the   table  name
+
+3) What  does  next(cur)  do ?  --->  Yields  the  next  tuple  of  cursor  object
+
+4) What  does   next()  function  do  when  end  of   the  cursor  is  reached ?  ---> Throws StopIteration  error
+
+5) emp  table ----------------> cursor  object -----------------> tpl ---------> monitor
+                          execute()                                   next()                  print()
+'''
+Enter   table  name :  emp
+Emp  Number      Emp  Name       Salary
+  10             Rama Rao        10000.00
+  15             Kiran           15000.00
+  20             Sita            20000.00
+Number  of  tuples :   3
+Enter   table  name :  stud
+1146 (42S02): Table 'empdb.stud' doesn't exist
+
+#programme-----
+
+
+import mysql.connector
+
+con = mysql.connector.connect(
+    host="localhost",
+    user ="root",
+    password ="root@12345",
+    database ="college"
+)
+try:
+    user_con = input("ente column name:")
+    cur = con.cursor()
+    cur.execute(f"select * from {user_con}")
+    for row in cur.description:
+        print(row[0],end="\t")
+    print()
+
+    while tpl:= next(cur):
+        for x in tpl:
+            print(x,end="\t")
+        print()
+    print("number of rows:",cur.rowcount)
+except mysql.connector.Error as e:
+    print(e)
+except StopIteration:
+    pass
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Write  a  program  to  print  cursor  with  fetchall()  method
+
+ emp   table  --------------->   cur  object  --------------->    list   ------------->    tpl   ------------>   monitor
+                       execute()                               fetchall()                    for  loop                print()
+'''
+ Emp Number       Emp Name        Salary
+  10             Rama Rao          10000.00
+  15             Kiran             15000.00
+  20             Sita              20000.00
+Number  of  tuples  :  3
+
+
+
+import mysql.connector
+
+con = mysql.connector.connect(
+    host="localhost",
+    user ="root",
+    password ="root@12345",
+    database ="college"
+)
+try:
+    user_con = input("ente table name:")
+    cur = con.cursor()
+    
+    cur.execute(f"select * from {user_con}")
+    list =cur.fetchall()
+    for row in cur.description:
+        print(row[0],end="\t")
+    print()
+
+    for tpl in list:
+        for x in tpl:
+            print(x,end="\t")
+        print()
+    print("number of rows:",cur.rowcount)
+except mysql.connector.Error as e:
+    print(e)
+except StopIteration:
+    pass
