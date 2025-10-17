@@ -1,6 +1,6 @@
-RAKSHITH_14-08.pyModify  following  program  with  walrus  operator
+#Modify  following  program  with  walrus  operator
 
-Hint:  Combine  lines  7 , 8  and  10  to  a  single  line  with  walrus  operator
+#Hint:  Combine  lines  7 , 8  and  10  to  a  single  line  with  walrus  operator
 
 a = 'hYd is green city. Hyd is hitec city. Hyd is his cityi'
 index=-1
@@ -11,7 +11,7 @@ print('End')
 
 index()  method  demo  program
 
-Modify  the  following  program  with  index()  method
+#Modify  the  following  program  with  index()  method
 
 try:
     a='Hyd is green city. Hyd is hitech city. Hyd is his city'
@@ -529,4 +529,5 @@ a=sorted(n)
 b=""
 for i in range(len(a)):
     b +=a[i]
+
 print(b)
