@@ -1,0 +1,422 @@
+# Multilevel inheritance demo program
+class A:
+	def m1(self):
+		print('class A method')
+class B(A):
+	def m1(self):
+		print('class B method')
+class C(B):
+	def m1(self):
+		print('class C method')
+class D(C):
+	def m1(self):
+		print('class D method')
+		C.m1(self)          # How to call method m1() of class C
+		super(C, self).m1() # How to call method m1() of class C in another way without creating an object
+		B.m1(self)          # How to call method m1() of class B
+		A.m1(self)          # How to call method m1() of class A
+		super(A, self).m1() # Another way
+		super(C).m1()       # Another way
+# End of the class
+
+d = D()
+d.m1()  # How to call method m1() of class D
+
+
+
+
+# Find outputs (Home work)
+class father:
+    def height(self):
+        print('Father Height')
+
+class mother:
+    def color(self):
+        print('Mother Color')
+
+class child(mother, father):
+    def qualification(self):
+        print('Child Qualification')
+
+# End of the class
+c = child()
+c.qualification()  #  Child Qualification
+c.color()          #  Mother Color
+c.height()         # Father Height
+c.m1()           # Error
+
+
+
+# Find outputs
+class uncle:
+    def m1(self):
+        print('Uncle Method')
+
+class mother:
+    def m1(self):
+        print('Mother Method')
+
+class father:
+    def m1(self):
+        print('Father Method')
+
+class child(father, mother, uncle):
+    def m1(self):
+        print('Child Method')
+
+# End of the class
+c = child()
+c.m1()  #  Child Method
+
+
+# Find outputs
+class uncle:
+    def m1(self):
+        print('Uncle Method')
+
+class mother:
+    def m1(self):
+        print('Mother Method')
+
+class father:
+    def m1(self):
+        print('Father Method')
+
+class child(father, mother, uncle):
+    pass
+# end of the class
+
+c = child()
+c.m1()  #  Father Method
+
+
+# Find outputs
+class uncle:
+    def m1(self):
+        print('Uncle Method')
+
+class mother:
+    def m1(self):
+        print('Mother Method')
+
+class father:
+    pass
+
+class child(father, mother, uncle):
+    pass
+# end of the class
+
+c = child()
+c.m1()  # Mother Method
+
+
+
+# Find outputs
+class uncle:
+    def m1(self):
+        print('Uncle Method')
+
+class mother:
+    pass
+
+class father:
+    pass
+
+class child(father, mother, uncle):
+    pass
+# end of the class
+
+c = child()
+c.m1()  #  Uncle Method
+
+
+
+# Find outputs
+class uncle:
+    pass
+
+class mother:
+    pass
+
+class father:
+    pass
+
+class child(father, mother, uncle):
+    pass
+# end of the class
+
+c = child()
+c.m1()  # Error
+
+
+
+# Find outputs and demonstrate method calls in multiple inheritance
+
+class father:  #  Which class defines m1() method for father?
+    def m1(self):
+        print('m1 method of Father class')
+        
+class mother:  #  Which class defines m1() method for mother?
+    def m1(self):
+        print('m1 method of Mother class')
+        
+class uncle:   #  Which class defines m1() method for uncle?
+    def m1(self):
+        print('m1 method of Uncle class')
+        
+class child(father, mother, uncle):  # What is the method resolution order (MRO) here?
+    def m1(self):
+        print('m1 method of child class') # How to call m1() of father class?
+        father.m1(self)#  How to call m1() of mother class?
+        mother.m1(self)#  How to call m1() of uncle class?
+        uncle.m1(self)# How to call parent class method using super?
+        super(father, self).m1()
+
+# End of the class
+
+print(child.__mro__)  # What is the method resolution order of class child?
+
+c = child()
+c.m1()  #  What happens when we call m1() on child object?
+
+print('Bye')  #  What is printed here?
+
+
+
+# Parent and child class constructors (Home work)
+
+class parent:  # What does the parent constructor do?
+    def __init__(self):
+        print('parent constructor')
+    def __del__(self):
+        print('parent destructor')
+
+class child(parent):  # What does the child constructor do?
+    def __init__(self):
+        print('child constructor')
+    def __del__(self):
+        print('child destructor')
+
+# End of the class
+
+c = child()  # What happens when we create an object of child class?
+print('Bye')  # What is printed here?
+
+
+
+
+# Find outputs (Home work)
+class parent:
+    def __init__(self):
+        print('parent constructor')
+    def __del__(self):
+        print('parent destructor')
+
+class child(parent):
+    def __init__(self):
+        print('child constructor')
+    def __del__(self):
+        print('child destructor')
+# End of the class
+
+c = child()  #  child constructor
+
+print('Bye')  #  Bye
+
+
+
+# Find outputs (Home work)
+class parent:
+    def __init__(self):
+        print('parent constructor')
+    def __del__(self):
+        print('parent destructor')
+
+class child(parent):
+    pass
+# End of the class
+
+c = child()  #  parent constructor
+
+print('Bye')  #  Bye
+
+
+
+# Parent and Child constructor demo program (Home work)
+
+class parent:
+    def __init__(self, a1, b1):
+        self.a = a1
+        self.b = b1
+    def disp(self):
+        print(self.a, self.b, sep='\t', end='\t')
+
+class child(parent):
+    def __init__(self, a2=0, b2=0, c2=0, d2=0):
+        # How to call parent class constructor with a2, b2
+        parent.__init__(self, a2, b2)
+        self.c = c2
+        self.d = d2
+    def disp(self):
+        # How to call parent class disp() method
+        parent.disp(self)
+        print(self.c, self.d, sep='\t')
+
+# end of the class
+
+x = child(10, 20, 30, 40)
+y = child()
+
+print('Object x')
+x.disp()
+print('Object y')
+y.disp()
+
+
+
+# Find outputs (Home work)
+
+class parent:
+    x = 100
+    def __init__(self):
+        self.x = 10
+
+class child(parent):
+    def __init__(self):
+        super().__init__()
+        self.y = 20
+    def disp(self):
+        # How to print static variable 'x'
+        print(parent.x)
+        # How to print static variable 'x' in another way
+        print(self.__class__.x)
+        # How to print static variable 'x' in one more way
+        print(child.x)
+        # How to print variable 'x' of object 'c'
+        print(self.x)
+        # How to print variable 'y' of object 'c'
+        print(self.y)
+
+# end of the class
+
+c = child()
+# How to call disp() method of child class
+c.disp()
+
+
+
+
+
+
+# Find outputs
+
+class parent:
+    x = 10  # Static (class) variable
+    def __init__(self):
+        self.x = 20  # Instance variable
+
+class child(parent):
+    def __init__(self):
+        self.x = 30  # Instance variable of child object
+        print(self.x)  # Prints 30
+        super().__init__()  # Calls parent constructor, changes self.x to 20
+
+    def disp(self):
+        print(self.x)      # Prints instance variable 'x' of the object (after parent constructor, 20)
+        print(super().x)   # Prints class variable 'x' from parent (10)
+
+# End of the class
+
+c = child()  # Create child object
+c.disp()     # Call disp() method
+
+'''
+static variable ---> parent.x = 10
+
+Object 'c' instance variables:
+self.x = 20 (after parent constructor)
+'''
+
+
+
+# Find outputs (Home work)
+
+class parent:
+    a = 10  # Static variable 'a' of parent class
+    
+    def __init__(self):
+        print('Parent constructor')
+        self.x = 30  # Instance variable 'x' of parent object
+
+    def m1(self):
+        # How to print instance variable 'x'
+        print('Parent class instance method:', self.x)
+
+    @classmethod
+    def m2(cls):
+        # How to print static variable 'a'
+        print('Parent class "class" method:', cls.a)
+        # Another way
+        print('Parent class "class" method another way:', parent.a)
+
+    @staticmethod
+    def m3():
+        # How to print static variable 'a' inside static method
+        print('Parent class static method:', parent.a)
+
+    def __del__(self):
+        # How to print instance variable 'x' in destructor
+        print('Parent destructor:', self.x)
+
+
+class child(parent):
+    b = 20  # Static variable 'b' of child class
+
+    def __init__(self):
+        super().__init__()  # Call parent class constructor
+        print('Child constructor')
+        self.y = 40  # Instance variable 'y' of child object
+
+    def m1(self):
+        super().m1()  # Call m1() of parent class
+        print('Child class instance method')
+        print(self.y)  # Print instance variable 'y'
+
+    @classmethod
+    def m2(cls):
+        # Call parent class m2()
+        super(child, cls).m2()
+        # Another way without creating object
+        parent.m2()
+        print('Child class "class" method')
+        # Print static variables
+        print(cls.a)
+        print(parent.a)
+        print(cls.b)
+
+    @staticmethod
+    def m3():
+        # Call parent class m3()
+        parent.m3()
+        print('Child class static method')
+        print(child.a)
+        print(child.b)
+
+    def __del__(self):
+        # Call parent destructor
+        super().__del__()
+        print('Child destructor:', self.y)
+
+
+# end of the class
+
+# How to call m2() method of child class
+child.m2()
+# How to call m3() method of child class
+child.m3()
+# How to call m1() method of child class
+c = child()
+c.m1()
+
+
+
