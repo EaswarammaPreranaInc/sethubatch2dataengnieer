@@ -1,21 +1,20 @@
-'''
-Write  a  program  to  concatenate  two  strings  separated  by  space  but  swap  first  two
-characters  of  the  two  strings.
-Assume  that  each  string  has  a   minimum  of  two  characters
+#Write  a  funciton  to  concatenate  two  linked  lists
+from linked_list import *
+class llist(linked_list):
+    def concat(a,b):
+        if a.isempty():
+            a.first=b.first
+        else:
+            p=a.first
+            while p.link:
+                p=p.link
+            p.link=b.first
+a=llist()
+b=llist()
+a.create()
+b.create()
+a.concat(b)
+print("Linked List is : ")
+a.disp()
 
-Let  inputs  be  Java  and  Python
-What  are  the  outputs ?  --->  Pyva<space>Jathon
-
-Hint:  Use  slice
-'''
-from sys import argv
-
-try:
-    str1 = argv[1]
-    str2 = argv[2]
-    if len(str1) < 2 or len(str2) < 2:
-        raise ValueError
-    result = str2[:2] + str1[2:] + " and " + str1[:2] + str2[2:]
-    print(result)
-except ValueError:
-    print("Input has a minimum of two characters")
+    
