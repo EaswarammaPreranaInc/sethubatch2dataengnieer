@@ -1,0 +1,15 @@
+#  Write  a  program   to  determine  length  of  linked  list
+from  LinkedList   import  * 
+class  sll(linked_list):  
+	def  length(a):
+			p = a . first  
+			ctr = 0
+			while   p  != None: 
+				ctr += 1  
+				p = p . link  
+			return  ctr
+# End  of  the  class
+if  __name__  ==  '__main__':
+	a = sll()   
+	a . create() 
+	print('Number  of  nodes : ' , a . length())
