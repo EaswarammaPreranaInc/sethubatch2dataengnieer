@@ -1,0 +1,94 @@
+# Find  outputs  (Home  work)
+class  D:
+        def _init_(self):
+                super() . _init_()
+                print('class D constructor')
+class  E:
+        def _init_(self):
+                super() . _init_()
+                print('class E constructor')
+class  F:
+        def _init_(self):
+                super() . _init_()
+                print('class F constructor')
+class  B(D , E):
+        def _init_(self):
+                super() . _init_()
+                print('class B constructor')
+class  C(D , E , F):
+        def _init_(self):
+                super() . _init_()
+                print('class C constructor')
+class  A(B , C):
+        def _init_(self):
+                super() . _init_()
+                print('class A constructor')
+#end of the class
+print(A . mro()) #[A,B,C,D,E,F,O]
+obj = A() 
+print('Bye')
+'''
+#[A,B,C,D,E,F,O]
+class F constructor
+class E constructor
+class D constructor
+class C constructor
+class B constructor
+class A constructor
+Bye
+
+'''
+
+class node:
+    def _init_(self, x):
+        self.data = x
+        self.link = None   # important to initialize link
+
+class linkedlist:
+    def _init_(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+    def append(self, new):
+        if self.isempty():
+            self.first = new
+            new.link = self.first  # circular link to itself
+        else:
+            last = self.first
+            while last.link != self.first:
+                last = last.link
+            last.link = new
+            new.link = self.first   # close the circle
+
+    def create(self):
+        try:
+            self.first = None
+            print("Enter values terminated by Ctrl+Z :")
+            while True:
+                x = eval(input())  # example: 10 ↵ 20 ↵ 30 ↵ Ctrl+Z
+                new = node(x)
+                self.append(new)
+        except EOFError:
+            pass
+
+    def disp(self):
+        if self.isempty():
+            print('Linked List is empty')
+            return
+        else:
+            p = self.first
+            while True:
+                print(p.data, end='\t')
+                p = p.link
+                if p == self.first:
+                    break
+            print()
+
+# ---- Main Program ----
+if _name_ == '_main_':
+    ll = linkedlist()
+    ll.create()   # create circular linked list
+    print("Circular Linked List elements:")
+    ll.disp()     # display circular linked list
