@@ -1,0 +1,212 @@
+Python Homework Solutions
+
+================================= Part 1: cal.py Module
+================================= # cal.py def add(a, b): return a + b
+
+def sub(a, b): return a - b
+
+def mul(a, b): return a * b
+
+def div(a, b): return a / b
+
+class c1: def m1(self): pass
+
+x = 100 y = 200
+
+if name == “main”: # <– must be name, not name print(‘Hyd’) print(‘Sec’)
+print(‘Cyb’)
+
+================================= Part 2: Printing members of a module
+without environment variables ================================= import
+cal
+
+a = [] for item in dir(cal): if not item.startswith(“_“): # filtering
+environment variables a.append(item)
+
+print(a) # Output: [‘add’, ‘c1’, ‘div’, ‘mul’, ‘sub’, ‘x’, ‘y’]
+
+================================= Part 3: sys.path Program
+================================= import sys
+
+print(“Original sys.path:”) for d in sys.path: print(d) print(“No. of
+directories:”, len(sys.path))
+
+Append a new folder
+
+sys.path.append(r”c:“)
+
+print(“Updated sys.path:”) for d in sys.path: print(d) print(“No. of
+directories:”, len(sys.path))
+
+Usage of sample module
+
+import sample print(sample.x) # object x from sample.py sample.f1() #
+call function obj = sample.c1() obj.m1() # call method
+
+================================= Part 4: Random Programs
+================================= (a) Print random character of string
+10 times ————————————————- import random
+
+s = input(“Enter any string:”) for i in range(10):
+print(random.choice(s))
+
+(b) Generate 10 passwords (6 chars: odd positions → alphabets, even positions → digits)
+
+import random import string
+
+for i in range(10): pwd = “” for j in range(3): pwd +=
+random.choice(string.ascii_uppercase) # alphabet pwd +=
+str(random.randint(0,9)) # digit print(pwd)
+
+(c) Print random element of list 10 times
+
+import random
+
+lst = eval(input(“Enter a List:”)) for i in range(10):
+print(random.choice(lst))
+
+(d) Generate 10 six-digit OTPs
+
+import random
+
+for i in range(10): otp = random.randint(100000, 999999) print(otp)
+
+================================= Part 5: Open Websites with 5–20 sec
+gap ================================= import webbrowser, random, time
+
+sites = [‘google.com’, ‘rediff.com’, ‘gmail.com’, ‘amazon.com’,
+‘netflix.com’]
+
+for site in sites: webbrowser.open(“http://” + site)
+time.sleep(random.randint(5, 20)) # delay between 5–20 sec
+
+================================= Part 6: Rock–Paper–Scissors Game
+================================= import random
+
+while True: user = int(input(“What do you want to select (0 - Rock , 1 -
+Paper , 2 - Scissors):”)) choices = [“Rock”, “Paper”, “Scissors”]
+print(“User :”, choices[user])
+
+    comp = random.randint(0, 2)
+    print("Computer :", choices[comp])
+
+    if user == comp:
+        print("Draw")
+    elif (user == 0 and comp == 2) or (user == 1 and comp == 0) or (user == 2 and comp == 1):
+        print("User wins")
+    else:
+        print("Computer wins")
+
+    ch = input("Continue (y/n)? ")
+    if ch.lower() != 'y':
+        print("End of the game")
+        break
+---------------------------------------------
+import random
+
+for i in range(10):
+    otp = random.randint(0, 999999)   # includes 000000 to 999999
+    print(str(otp).zfill(6))          # ensures always 6 digits with leading zeros
+====================================================================
+import os
+
+# -------------------------------
+# 1) Run system commands
+# -------------------------------
+os.system('dir')      # lists files and folders
+os.system('pause')    # waits for a key press
+os.system('cls')      # clears screen
+os.system('py test.py')   # runs another python file
+
+
+# -------------------------------
+# 2) Create a single directory
+# -------------------------------
+path = input("Enter directory name (or) path: ")
+if not os.path.exists(path):
+    os.mkdir(path)
+    print(f"Directory {path} created")
+else:
+    print(f"Directory {path} already exists")
+
+
+# -------------------------------
+# 3) Create a group of directories (nested)
+# -------------------------------
+path = input("Enter directory path: ")
+if not os.path.exists(path):
+    os.makedirs(path)   # creates intermediate directories also
+    print("Directory (or) directories created")
+else:
+    print("Directory already exists")
+
+
+# -------------------------------
+# 4) Delete a directory
+# -------------------------------
+path = input("Enter directory name (or) path: ")
+if not os.path.exists(path):
+    print(f"Directory {path} does not exist")
+else:
+    try:
+        os.rmdir(path)   # only works if directory is empty
+        print(f"Directory {path} is removed")
+    except OSError:
+        print(f"Directory {path} is non-empty")
+
+
+# -------------------------------
+# 5) Delete a group of directories (nested)
+# -------------------------------
+import shutil
+path = input("Enter directory path: ")
+if not os.path.exists(path):
+    print("Directory does not exist")
+else:
+    shutil.rmtree(path)   # deletes including sub-directories and files
+    print("Directories removed")
+
+
+# -------------------------------
+# 6) Rename a file or directory
+# -------------------------------
+old = input("Enter filename (or) directory name to rename: ")
+new = input("Enter new name: ")
+if os.path.exists(old):
+    os.rename(old, new)
+    print(f"{old} renamed to {new}")
+else:
+    print(f"{old} does not exist")
+
+
+# -------------------------------
+# 7) Print all files & sub-directories of input directory
+# -------------------------------
+path = input("Enter directory name (or) path: ")
+if os.path.exists(path):
+    files = []
+    dirs = []
+    for item in os.listdir(path):
+        full_path = os.path.join(path, item)
+        if os.path.isfile(full_path):
+            files.append(item)
+        elif os.path.isdir(full_path):
+            dirs.append(item)
+
+    print("List of the files :", files)
+    print("List of the directories :", dirs)
+else:
+    print("Directory does not exist")
+========================================================
+Directory Path : sairam
+Sub Directories : ['karnataka', 'Telangana']
+Files : ['file1.txt', 'file2.txt', 'file3.txt']
+
+Directory Path : sairam\karnataka
+Sub Directories : ['banglore']
+Files : ['file1.txt']
+
+Directory Path : sairam\karnataka\banglore
+Sub Directories : []
+Files : []
+=================================================

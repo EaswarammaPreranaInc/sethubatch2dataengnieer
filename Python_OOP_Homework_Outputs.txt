@@ -1,0 +1,284 @@
+=== Python OOP Homework with Outputs ===
+
+--- Part 1: Outer & Inner Class ---
+class outer:
+    def __init__(self):
+        print('Outer class constructor')
+
+    def m1(self):
+        print('Outer class method')
+
+    class inner:
+        def __init__(self):
+            print('Inner class constructor')
+
+        def m1(self):
+            print('Inner class method')
+
+o = outer()
+o.m1()
+i = outer.inner()
+i.m1()
+outer().inner().m1()
+outer.inner().m1()
+
+# Output:
+# Outer class constructor
+# Outer class method
+# Inner class constructor
+# Inner class method
+# Inner class constructor
+# Inner class method
+# Inner class constructor
+# Inner class method
+
+--- Part 2: Employee with Inner Date Class ---
+class emp:
+    def __init__(self):
+        self.empno = 25
+        self.ename = 'Rama Rao'
+        self.sal = 10000.0
+        self.d = emp.date()
+
+    def disp(self):
+        print(self.empno, self.ename, self.sal)
+        self.d.disp()
+
+    class date:
+        def __init__(self):
+            self.dd = 15
+            self.mm = 8
+            self.yy = 1947
+
+        def disp(self):
+            print(self.dd, self.mm, self.yy)
+
+e = emp()
+e.disp()
+
+# Output:
+# 25 Rama Rao 10000.0
+# 15 8 1947
+
+--- Part 3: Outer Class with Two Inner Classes ---
+class outer:
+    def __init__(self):
+        self.x = 25
+        self.i1 = outer.inner1()
+        self.i2 = outer.inner2()
+
+    def disp(self):
+        print(self.x)
+
+    class inner1:
+        def disp(self):
+            print('1st inner class method')
+
+    class inner2:
+        def disp(self):
+            print('2nd inner class method')
+
+o = outer()
+o.disp()
+o.i1.disp()
+o.i2.disp()
+
+# Output:
+# 25
+# 1st inner class method
+# 2nd inner class method
+
+--- Part 4: c1 & c2 Classes ---
+class c1:
+    def __init__(self):
+        print('outer class c1 constructor')
+    class c2:
+        def __init__(self):
+            print('inner class c2 constructor')
+
+class c2:
+    def __init__(self):
+        print('outer class c2 constructor')
+
+c1()
+c1.c2()
+c2()
+
+# Output:
+# outer class c1 constructor
+# inner class c2 constructor
+# outer class c2 constructor
+
+--- Part 5: Class c2 with Inner Same Name ---
+class c2:
+    def __init__(self):
+        print('outer class constructor')
+    class c2:
+        def __init__(self):
+            print('inner class constructor')
+
+c2()
+c2.c2()
+c2().c2()
+
+# Output:
+# outer class constructor
+# inner class constructor
+# outer class constructor
+# inner class constructor
+
+--- Part 6: Static & Instance Variables ---
+class c1:
+    x = 10
+    def __init__(self):
+        self.y = 20
+
+a = c1()
+b = c1()
+
+a.x += 1
+b.y += 1
+
+print(a.x)
+print(a.y)
+print(b.x)
+print(b.y)
+print(c1.x)
+print(a.__dict__)
+print(b.__dict__)
+print(c1.__dict__)
+
+# Output:
+# 11
+# 20
+# 10
+# 21
+# 10
+# {'y': 20, 'x': 11}
+# {'y': 21}
+# {...}
+
+--- Part 7: Static vs Instance Variable Shadowing ---
+class c1:
+    x = 10
+    def m1(self):
+        self.x = 20
+
+a = c1()
+a.m1()
+print(c1.x)
+print(a.x)
+
+# Output:
+# 10
+# 20
+
+--- Part 8: Class Method Modifying Variables ---
+class c1:
+    x = 10
+    def __init__(self):
+        self.y = 20
+
+    @classmethod
+    def m1(cls):
+        cls.x = 30
+        cls.y = 40
+
+a = c1()
+b = c1()
+c1.m1()
+
+print(a.x)
+print(a.y)
+print(b.x)
+print(b.y)
+print(c1.x, c1.y)
+
+# Output:
+# 30
+# 20
+# 30
+# 20
+# 30 40
+
+--- Part 9: Static Method ---
+class c1:
+    @staticmethod
+    def m1(self):
+        print(self)
+
+c1.m1(25)
+a = c1()
+a.m1(35)
+
+# Output:
+# 25
+# 35
+
+--- Part 10: Instance Method with Wrong Call ---
+class c1:
+    def m1(self):
+        print(self)
+
+a = c1()
+a.m1()
+a.m1(35)
+
+# Output:
+# <__main__.c1 object at ...>
+# 35
+
+--- Part 11: Duplicate Method Definitions ---
+class c1:
+    @staticmethod
+    def m1(self):
+        print('static method')
+        print(self)
+
+    def m1(self):
+        print('static / instance method')
+        print(self)
+
+c1.m1(25)
+a = c1()
+a.m1()
+
+# Output:
+# static / instance method
+# 25
+# static / instance method
+# <__main__.c1 object at ...>
+
+--- Part 12: Access Static Variables in Different Ways ---
+class c1:
+    x = 25
+    def __init__(self):
+        print(c1.x)
+        print(self.x)
+
+    def m1(self):
+        print(c1.x)
+        print(self.x)
+
+    @classmethod
+    def m2(cls):
+        print(c1.x)
+        print(cls.x)
+
+    @staticmethod
+    def m3():
+        print(c1.x)
+
+a = c1()
+a.m1()
+c1.m2()
+c1.m3()
+
+# Output:
+# 25
+# 25
+# 25
+# 25
+# 25
+# 25
+# 25

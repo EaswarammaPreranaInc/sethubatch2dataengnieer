@@ -1,0 +1,323 @@
+
+1. Rat class
+Outputs:
+- Prints: <__main__.Rat object at 0x...> for all objects.
+- g = Rat(nr1 = 9 , 5) → SyntaxError
+- h = Rat(nr = 9 , dr = 5) → TypeError
+----------------------------------------------------------------------
+2. Date class
+Outputs:
+- print(a.__dict__) → {}
+- print(b.__dict__) → {}
+- print(c.__dict__) → {}
+- d = Date() → Error (missing args)
+- e = Date(dd=30,mm=4,yy=2022) → Error
+- f = Date(dd1=26,mm1=8,2023) → SyntaxError
+--------------------------------------------------------------------------------
+3. c1, c2, c3 classes
+Outputs:
+- a = c1() → no output
+- b = c2() → no output
+- print(b) → <__main__.c2 object at 0x...>
+- print(b._init_()) → prints 'c2  class  constructor' then None
+- c = c3() → no output
+- print(c._init_()) → prints 'c3  class  constructor' then None
+---------------------------------------------------------------------
+4. Recursive constructor
+Outputs:
+- a = c1() → no output
+----------------------------------------
+5. Difference between init and _init_
+Outputs:
+- a.__dict__ → {}
+- b.__dict__ → {}
+- after b.init() → prints 'Method'
+- b.__dict__ → {'x':30,'y':40}
+--------------------------------------------------
+6. Attribute manipulation
+Outputs:
+- x.__dict__ → {}
+- after x.m1() → {'b':20}
+- after f1() → {'b':20,'c':30}
+- after x.d=40 → {'b':20,'c':30,'d':40}
+- after y.m3() → {'b':20,'c':30,'d':40,'e':50}
+- z.__dict__ → {}
+--------------------------------------------------
+7. Deleting attributes
+Outputs:
+- a.__dict__ → {'x':10,'y':20,'z':30}
+- b.__dict__ → {'x':10,'y':20,'z':30}
+- after del a.x → {'y':20,'z':30}
+- after del b.y → {'x':10,'z':30}
+- print(a.x) → AttributeError
+- print(b.y) → AttributeError
+------------------------------------------------
+8. Multiple constructors
+Outputs:
+- a = c1() → no output
+9. Constructor overloading attempts
+Outputs:
+- a = c1(10,20) → no output
+- b = c1(30) → TypeError
+- c = c1() → TypeError
+-----------------------------------------------
+10. Default arguments in constructor
+Outputs:
+- a = c1(10,20) → no output
+- b = c1(30) → no output
+- c = c1() → no output
+-----------------------------------------------
+11. Function and class same name
+Outputs:
+- a = f1() → no output
+- print(a) → <__main__.f1 object at 0x...>
+----------------------------------------------
+12. Class and function with same name
+Outputs:
+- a = c1() → prints 'Function'
+- print(a) → None
+-----------------------------------------
+13. Function with parameter overrides class
+Outputs:
+- a = c1() → TypeError
+- b = c1(25) → prints 'Function: 25'
+- print(b) → None 
+---------------------------------------------------------------
+---------------------------------------------------------------
+Question 1
+
+import sys
+class c1:
+    pass
+a = b = c = d = c1()
+print(sys.getrefcount(b))
+print(sys.getrefcount(c1()))
+print(sys.getrefcount(352))
+print(sys.getrefcount([10, 20, 15, 18]))
+print(sys.getrefcount(10.8))
+print(sys.getrefcount({10, 20, 15, 18}))
+print(sys.getrefcount('Hyd'))
+print(sys.getrefcount({10: 20, 30: 40}))
+print(sys.getrefcount((10, 20, 30, 40)))
+
+Output:
+
+5
+1
+27
+1
+1
+1
+1
+1
+1
+-----------------------------------
+
+import sys
+class Test:
+    def _init_(self):
+        print('Constructor  :  ', id(self))
+        return None
+    def _del_(self):
+        print('Destructor  :  ', id(self))
+        return 25
+# End  of  the  class
+t = Test()
+print(t._init_())
+print(sys.getrefcount(t))
+print(t._del_())
+print(sys.getrefcount(t))
+print('Bye')
+
+Output:
+
+None
+2
+25
+2
+Bye
+-----------------------------------------
+
+class c1:
+    def _init_(self):
+        print('Object  is    created')
+    def _del_(self):
+        print('Object  is  lost')
+#End  of  the  class
+def f1():
+    print('Function  Begin')
+    a = c1()
+    print(a)
+    print('Function  end')
+    return a
+print('Program  Begin')
+b = f1()
+print(b)
+print('Program  End')
+
+Output:
+
+Program  Begin
+Function  Begin
+<__main__.c1 object at 0x...>
+Function  end
+<__main__.c1 object at 0x...>
+Program  End
+---------------------------------------------
+class c1:
+    def _init_(self):
+        print('Object  is    created')
+    def _del_(self):
+        print('Object  is  lost')
+#End  of  the  class
+def f1():
+    print('Function  begin')
+    a = c1()
+    print('Function  end')
+    return a
+print('Program  Begin')
+f1()
+print('Program  End')
+
+Output:
+
+Program  Begin
+Function  begin
+Function  end
+Program  End
+--------------------------------------------------
+
+class c1:
+    def _init_(self):
+        print('Object  is    created')
+    def _del_(self):
+        print('Object  is  lost')
+#End  of  the  class
+def f1():
+    print('Function  begin')
+    a = c1()
+    print('Function  end')
+print('Program  Begin')
+b = f1()
+print(b)
+print('Program  End')
+
+Output:
+
+Program  Begin
+Function  begin
+Function  end
+None
+Program  End
+----------------------------------------------------
+class c1:
+    def _init_(self , k):
+        print('c1  class  object  is  created')
+        self.b = k
+        print('End  of  c1  class constructor')
+    def _del_(self):
+        print('c1  class  object  is  lost')
+# End of class c1
+class c2:
+    def _init_(self):
+        print('c2  class  object  is  created')
+        self.a = c1(self)
+        print('End  of  c2  class constructor')
+    def _del_(self):
+        print('c2  class  object  is  lost')
+#End of class c2
+print('Program  begin')
+x = c2()
+print('program end')
+
+Output:
+
+Program  begin
+c2  class  object  is  created
+c1  class  object  is  created
+End  of  c1  class constructor
+End  of  c2  class constructor
+program end
+--------------------------------------------------
+
+class c1:
+    def _del_(self):
+        print('Destructor')
+        global b
+        b = self
+a = c1()
+del a
+print('Hello')
+
+Output:
+
+Destructor
+Hello
+----------------------------------------------class c1:
+    def m1(self):
+        x = 10
+        self.x = 20
+        print(x)
+        print(self.x)
+        x += 5
+        self.x += 7
+    def m2(self):
+        print(x)
+        print(self.x)
+        self.x += 6
+
+a = c1()
+a.m1()
+a.m2()
+print(a.x)
+print(self.x)
+print(x)
+
+
+Output:
+10
+20
+NameError: name 'x' is not defined (in m2)
+
+----------------------------------------------------------
+class Test:
+    def get(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def add(self, m, n):
+        self.x = m.x + n.x
+        self.y = m.y + n.y
+        self.z = m.z + n.z
+
+    def disp(self):
+        print("x =", self.x, ", y =", self.y, ", z =", self.z)
+
+a = Test()
+b = Test()
+c = Test()
+
+a.get(10, 20, 30)
+b.get(40, 50, 60)
+c.add(a, b)
+
+print("First Object:")
+a.disp()
+print("Second Object:")
+b.disp()
+print("Third Object (Sum):")
+c.disp()
+
+
+Output:
+First Object:
+x = 10 , y = 20 , z = 30
+Second Object:
+x = 40 , y = 50 , z = 60
+Third Object (Sum):
+x = 50 , y = 70 , z = 90
+
+
+
+

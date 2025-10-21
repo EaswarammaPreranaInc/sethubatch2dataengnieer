@@ -1,0 +1,150 @@
+Generators Homework - Outputs and Explanations
+
+---------------------------------------------------
+1) Generator yielding different objects
+
+def f1():
+    yield [10, 20]
+    yield {30, 40, 50}
+    yield 60, 70, 80, 90
+    yield 100
+
+g = f1()
+for x in g:
+    print(x)
+    print(type(x))
+
+Output:
+[10, 20]
+<class 'list'>
+{40, 50, 30}
+<class 'set'>
+(60, 70, 80, 90)
+<class 'tuple'>
+100
+<class 'int'>
+
+---------------------------------------------------
+2) Very large generator with print(*g)
+
+def f1():
+    x = 1
+    while x <= 100000000000000000000:
+        yield x
+        x += 1
+
+g = f1()
+print('Begin')
+print(*g)
+print('End')
+
+Output:
+Begin
+(then hangs forever, "End" is never printed)
+
+---------------------------------------------------
+3) Huge generator expression
+
+g = (x * x for x in range(500000000000000000))
+print(*g)
+
+Output:
+Hangs forever (too large to compute/print)
+
+---------------------------------------------------
+4) Generator with print inside
+
+def f1(begin, end):
+    while begin <= end:
+        print('Hello')
+        yield begin
+        begin += 1
+    print('End of generator')
+
+g = f1(10, 20)
+print('Before')
+print(list(g))
+print('After')
+print(next(g))
+
+Output:
+Before
+Hello
+Hello
+... (11 times total)
+Hello
+End of generator
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+After
+StopIteration
+
+---------------------------------------------------
+5) Simple yield with unpacking
+
+def f1():
+    print('One')
+    yield 1
+    print('Two')
+    yield 2
+    print('Three')
+    yield 3
+    print('End')
+
+g = f1()
+for m in g:
+    print(m)
+
+x, y, z = f1()
+print(x)
+print(y)
+print(z)
+
+Output:
+One
+1
+Two
+2
+Three
+3
+End
+One
+Two
+Three
+End
+1
+2
+3
+
+---------------------------------------------------
+6) Identify error (unpacking mismatch)
+
+def f1():
+    yield 10
+    yield 20
+    yield 30
+    yield 40
+
+a, b, c = f1()
+p, q, r, s, m = f1()
+
+Output:
+Error: too many values to unpack (expected 3)
+---------------------------------------------------
+7) Invalid operations on generator
+
+def f1():
+    yield 1
+    yield 2
+    yield 3
+
+g = f1()
+print(len(g))
+print(g * 3)
+print(g[0])
+print(g[1:3])
+print(*g)
+
+Output:
+Error:   no len()
+(Execution stops at first error, so nothing else runs)
+

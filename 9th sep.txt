@@ -1,0 +1,31 @@
+# Recursive function to determine gcd (hcf) of 2 numbers
+def gcd(m, n):
+    if n == 0:                 
+        return m
+    else:
+        return gcd(n, m % n)   
+# Example calculation: gcd(4, 6)
+# gcd(4, 6) = gcd(6, 4) = gcd(4, 2) = gcd(2, 0) = 2
+
+m = int(input('Enter any number : '))
+n = int(input('Enter any number : '))
+print('Gcd : ', gcd(m, n))
+-------------------------------------------------------------------
+# Recursive function to find sum of the digits of a number
+def sod(n):
+    if n == 0:                  
+        return 0
+    else:
+        return (n % 10) + sod(n // 10) 
+
+# Example: sod(9427)
+# sod(9427) = 9427 % 10 + sod(942)
+#           = 7 + sod(942)
+#           = 7 + (2 + sod(94))
+#           = 7 + 2 + (4 + sod(9))
+#           = 7 + 2 + 4 + (9 + sod(0))
+#           = 7 + 2 + 4 + 9 + 0
+#           = 22
+
+n = int(input('Enter any number : '))
+print('Sum of the digits : ', sod(n))

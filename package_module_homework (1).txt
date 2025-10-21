@@ -1,0 +1,74 @@
+# Package and Module Homework Solutions
+
+# ----------------- Case 1: Importing mod1 and mod2 of package p1 -----------------
+from p1 import mod1, mod2
+
+print(mod1.x)              # 10
+mod1.f1()                  # p1 ---> mod1 ---> f1 function
+a1 = mod1.c1()
+a1.m1()                    # p1 ---> mod1 ---> c1 ---> m1 method
+
+print()
+print(mod2.x)              # 20
+mod2.f1()                  # p1 ---> mod2 ---> f1
+a2 = mod2.c1()
+a2.m1()                    # p1 ---> mod2 ---> c1 ---> m1
+
+# ----------------- Case 2: Importing members of mod1 and mod2 -----------------
+from p1.mod1 import *
+from p1.mod2 import *
+
+print(x)                   # Conflict possible (last imported wins → 20)
+f1()                       # From mod2 (last imported)
+a = c1()
+a.m1()                     # From mod2 (last imported)
+
+# ----------------- Case 3: Reverse order -----------------
+from p1.mod2 import *
+from p1.mod1 import *
+
+print(x)                   # Now x = 10 (last imported)
+f1()                       # From mod1
+a = c1()
+a.m1()                     # From mod1
+
+# ----------------- Case 4: Define own variables after import -----------------
+from p1.mod1 import *
+from p1.mod2 import *
+
+x = 30
+def f1():
+    print('Function of same module')
+
+class c1:
+    def m1(self):
+        print('Method of class c1 in same module')
+
+print(x)                   # 30
+f1()                       # Function of same module
+a = c1()
+a.m1()                     # Method of class c1 in same module
+
+# ----------------- Case 5: With sub-package p2 -----------------
+from p1 import mod1
+from p1.p2 import mod2
+
+print(mod1.x)              # 10
+mod1.f1()                  # p1 ---> mod1 ---> f1 function
+a1 = mod1.c1()
+a1.m1()
+
+print()
+print(mod2.x)              # 20
+mod2.f1()                  # p1 ---> p2 ---> mod2 ---> f1 function
+a2 = mod2.c1()
+a2.m1()
+
+# ----------------- Case 6: Import members directly -----------------
+from p1.mod1 import *
+from p1.p2.mod2 import *
+
+print(x)                   # Again last import wins
+f1()
+a = c1()
+a.m1()

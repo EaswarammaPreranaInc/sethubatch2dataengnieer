@@ -1,0 +1,223 @@
+Program 1
+---------
+Code:
+import time
+def f1():
+    print('One')
+    yield 25
+    print('Two')
+    yield 10.8
+    print('Three')
+    yield 'Hyd'
+    print('Four')
+
+g = f1()
+for x in g:
+    print(x)
+    time.sleep(1)
+    print('Hello')
+print('End')
+print(g)
+print(next(g))
+g = f1()
+print(next(g))
+
+Output:
+One
+25
+Hello
+Two
+10.8
+Hello
+Three
+Hyd
+Hello
+Four
+End
+  ...
+StopIteration
+
+========================================
+
+Program 2 (Tricky)
+------------------
+Code:
+import time
+def f1():
+    yield 25
+    yield 10.8
+    yield 'Hyd'
+
+g = f1()
+print(next(g))
+for x in g:
+    print(x)
+print()
+for x in f1():
+    print(x)
+print()
+gen = f1()
+print(next(gen))
+for x in f1():
+    print(x)
+print(next(gen))
+
+Output:
+25
+10.8
+Hyd
+
+25
+10.8
+Hyd
+
+25
+25
+10.8
+Hyd
+10.8
+
+========================================
+
+Program 3
+---------
+Code:
+import time
+g = (x * x for x in range(5))
+for y in g:
+    print(y)
+    time.sleep(2)
+    print('Hello')
+for y in g:
+    print(y)
+
+Output:
+0
+Hello
+1
+Hello
+4
+Hello
+9
+Hello
+16
+Hello
+
+========================================
+
+Program 4
+---------
+Code:
+import time
+for y in (x * x for x in range(5)):
+    print(y)
+    time.sleep(2)
+for y in (x * x for x in range(5)):
+    print(y)
+    time.sleep(2)
+
+Output:
+0
+1
+4
+9
+16
+0
+1
+4
+9
+16
+
+========================================
+
+Program 5
+---------
+Code:
+import time
+g1 = (x * x for x in range(5))
+g2 = g1
+for y in g1:
+    print(y)
+    time.sleep(2)
+for y in g2:
+    print(y)
+print(g1 is g2)
+
+Output:
+0
+1
+4
+9
+16
+True
+
+========================================
+
+Program 6
+---------
+Code:
+l = [x * x for x in range(5)]
+print(l)
+print(type(l))
+
+s = {x * x for x in range(5)}
+print(s)
+print(type(s))
+
+d = {x : x * x for x in range(5)}
+print(d)
+print(type(d))
+
+g = (x * x for x in range(5))
+print(g)
+print(type(g))
+
+Output:
+[0, 1, 4, 9, 16]
+<class 'list'>
+{0, 1, 4, 16, 9}
+<class 'set'>
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+<class 'dict'>
+<generator object <genexpr> at 0x...>
+<class 'generator'>
+
+========================================
+
+Program 7
+---------
+Code:
+def f1():
+    return 10
+    return 20
+    return 30
+def f2():
+    yield 10
+    yield 20
+    yield 30
+
+print(f1())
+print(f1())
+print(f1())
+print()
+
+g = f2()
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+
+Output:
+10
+10
+10
+
+10
+20
+30
+
+  ...
+StopIteration
+
+========================================
+

@@ -1,0 +1,112 @@
+class Deque:
+    def __init__(self):   # create an empty deque
+        self.dq = []
+
+    def isempty(self):
+        return len(self.dq) == 0
+
+    def ins_rear(self, x):   # insert at end
+        self.dq.append(x)
+
+    def ins_front(self, x):  # insert at beginning
+        self.dq.insert(0, x)
+
+    def del_front(self):     # delete from beginning
+        if self.isempty():
+            return None
+        return self.dq.pop(0)
+
+    def del_rear(self):      # delete from end
+        if self.isempty():
+            return None
+        return self.dq.pop()
+
+    def disp(self):          # display deque
+        print("Deque:", self.dq)
+
+    def size(self):
+        return len(self.dq)
+
+    def left_most(self):     # get first element
+        if self.isempty():
+            return None
+        return self.dq[0]
+
+    def right_most(self):    # get last element
+        if self.isempty():
+            return None
+        return self.dq[-1]
+
+
+def menu():
+    print("\n---- MENU ----")
+    print("1. Insert element at the end of deque")
+    print("2. Insert element at the beginning of deque")
+    print("3. Delete left most element")
+    print("4. Delete right most element")
+    print("5. Print Deque")
+    print("6. Print left most element")
+    print("7. Print right most element")
+    print("8. Number of elements in deque")
+    print("9. Exit")
+
+# Create deque object
+dq = Deque()
+
+while True:
+    menu()
+    ch = int(input("Enter Choice: "))
+
+    match ch:
+        case 1:
+            x = eval(input("Enter element to be inserted: "))
+            dq.ins_rear(x)
+            dq.disp()
+
+        case 2:
+            x = eval(input("Enter element to be inserted: "))
+            dq.ins_front(x)
+            dq.disp()
+
+        case 3:
+            val = dq.del_front()
+            if val is None:
+                print("Deletion not possible (Deque Empty)")
+            else:
+                print("Deleted element:", val)
+            dq.disp()
+
+        case 4:
+            val = dq.del_rear()
+            if val is None:
+                print("Deletion not possible (Deque Empty)")
+            else:
+                print("Deleted element:", val)
+            dq.disp()
+
+        case 5:
+            dq.disp()
+
+        case 6:
+            val = dq.left_most()
+            if val is None:
+                print("Deque is empty")
+            else:
+                print("Left most element:", val)
+
+        case 7:
+            val = dq.right_most()
+            if val is None:
+                print("Deque is empty")
+            else:
+                print("Right most element:", val)
+
+        case 8:
+            print("Number of elements in deque:", dq.size())
+
+        case 9:
+            print("Exiting...")
+            break
+
+        case _:
+            print("Invalid choice! Try again.")

@@ -1,0 +1,76 @@
+Program 1 Output:
+Begin
+f2  function
+f1  function
+Back  to  f2  function
+End
+
+Program 2 Output:
+Begin
+f1  function
+f2  function
+Error: 'NoneType' 
+End
+
+Program 3 Output:
+Outer  Function
+Hello
+Inner function
+Bye
+Error: name 'inner' is not defined
+
+Program 4 Output:
+Outer  Function
+Outer  Function
+1st  inner  function
+2nd  inner  function
+
+Program 5 Output:
+Hi
+Hello
+
+Program 6 Output:
+End
+
+Program 7 Output:
+12
+
+Program 8 Output:
+Hello Python
+Hi Java
+
+Program 9 Output:
+3.3333333333333335
+Division   by  0  is  not  permitted
+Error: name 'inner' is not defined
+
+Program 10 Output:
+4.5
+4.5
+
+Program 11 Output:
+Decorating  f1  function
+Hello
+Decoration  is  finished
+Bye
+
+Program 12 Output:
+(10,)
+f1  function  :   10
+End  of  decoration
+(25, 10.8)
+f2  function  :   25 10.8
+End  of  decoration
+('Hyd', True, (3+4j))
+f3 function :  Hyd True (3+4j)
+End  of  decoration
+()
+f4 function
+End  of  decoration
+
+Program 13 Output:
+200
+
+Program 14 Output:
+<b><i><u>Hello  World</u></i></b>
+

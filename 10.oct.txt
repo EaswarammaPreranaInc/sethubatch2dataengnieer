@@ -1,0 +1,133 @@
+Write a program to overload + , - , * and / operators on rational class objects.
+
+Example:
+First rational number ---> 2 / 3
+Second rational number ---> 5 / 9
+Answer:
+Sum: 11 / 9
+Difference: 1 / 9
+Product: 10 / 27
+Division: 6 / 5
+Question:
+Is 10 + 20 a recursion?
+Answer:
+No. It simply prints 30.
+Question:
+Is x + y a recursion?
+class c1:
+    def __add__(a , b):
+        x = c1()
+        y = c1()
+        print(x + y)
+
+Write a program to overload + , - , * and / operators on complex class objects without using predefined complex object.
+
+Example: (3+4i) and (5+6i)
+
+Sum: 8 + 10i
+Difference: -2 - 2i
+Product: -9 + 38i
+Division: 39/61 + 2i/61
+Question:
+Overload > , < , == , >= , <= , != on Rational class objects (2/3 and 5/9).
+
+a > b → True
+a < b → False
+a == b → False
+a >= b → True
+a <= b → False
+a != b → True
+Find output:
+class c1:
+    def __init__(self,y):
+        self.x = y
+    def __ge__(m,n):
+        print('__ge__ method:',m.x,n.x)
+        return m.x > n.x
+
+a=c1(10); b=c1(20)
+print(a>=b); print(a<=b)
+Answer:
+__ge__ method: 10 20
+False
+True
+Find output:
+class c1:
+    def __init__(self,y):
+        self.x = y
+    def __eq__(m,n):
+        print('__eq__ method:',m.x,n.x)
+        return m.x==n.x
+
+a=c1(10); b=c1(20)
+print(a!=b); print(a==b)
+
+__eq__ method: 10 20
+True
+False
+Question:
+Find output:
+class c1:
+    def __init__(self,y):
+        self.x=y
+    def __eq__(m,n):
+        print('__eq__ method:',m.x,n.x)
+
+a=c1(25); b=c1(25)
+print(a==b); print(a!=b); print(a.x!=b.x)
+
+__eq__ method: 25 25
+False
+True
+False
+Question:
+Find output:
+class c1:
+    def __init__(self,y): self.x=y
+    def __ne__(m,n):
+        print('__ne__ method:',m.x,n.x)
+        return m.x!=n.x
+
+a=c1(10); b=a
+print(a!=b); print(a==b)
+
+__ne__ method: 10 10
+False
+True
+Question:
+Is 10 > 20 a recursion?
+class c1:
+    def __gt__(a,b):
+        print(10>20)
+        print(a>b)
+
+a=c1(); b=c1(); print(a>b)
+
+It causes recursion because inside __gt__ we again do a>b.
+Question:
+Overload * operator to multiply two different class objects (c1 with hr, c2 with noh).
+
+Output: 25 * 8 = 200 (both a*b and b*a)
+Question:
+Find output:
+class c1:
+    def __add__(x,y): return '__add__ method of class c1'
+class c2: pass
+
+a=c1(); b=c1()
+print('a+b:',a+b); print('a+7:',a+7); print(7+a); print('7+8:',7+8)
+m=c2(); n=c2()
+print(m+n); print('a+m:',a+m); print(m+a)
+Answer:
+a+b: __add__ method of class c1
+a+7: __add__ method of class c1
+7+a: Error (unsupported)
+7+8: 15
+m+n: Error (unsupported)
+a+m: __add__ method of class c1
+m+a: Error (unsupported)
+
+Overload + operator such that numbers are added and strings are joined.
+
+Sum: 30
+Join: '1020'

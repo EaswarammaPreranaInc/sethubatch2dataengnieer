@@ -1,0 +1,191 @@
+
+---
+Q1:
+# Find outputs (Home work)
+def outer():
+    x = 10
+    def inner():
+        nonlocal x
+        print(x)
+        x = 20
+        print(x)
+        x += 5
+    # End of inner function
+    print(x)
+    x += 5
+    inner()
+    print(x)
+# End of outer function
+outer()
+print(x)
+
+Output:
+10
+15
+2
+Error: 'x' is not defined
+
+--------------------------------------------------
+Q2:
+# Find outputs (Home work)
+def outer():
+    x = 10
+    def inner():
+        print(x)
+        nonlocal x
+        x = 20
+        print(x)
+        x += 5
+    # End of inner function
+    print(x)
+    x += 5
+    inner()
+    print(x)
+# End of outer function
+outer()
+
+Output:
+Error
+---------------------------------------------------------
+Q3:
+def outer():
+    x = 10
+    def inner():
+        global x
+        x = 20
+        print(x)
+        x += 5
+    print(x)
+    x += 5
+    inner()
+    print(x)
+outer()
+print(x)
+
+Output:
+10
+20
+15
+25
+-----------------------------------------------------------
+
+Q4:
+def outer():
+    def inner():
+        nonlocal x
+        x = 20
+        print(x)
+    inner()
+    print(x)
+# End of the function
+outer()
+print(x)
+
+Output:
+Error
+----------------------------------
+Q5:
+def outer():
+    def inner():
+        global x
+        x = 20
+        print(x)
+        x = x + 5
+    inner()
+    print(x)
+# End of the function
+outer()
+print(x)
+
+Output:
+20
+25
+25
+
+---
+Q6:
+# Identify Error
+def f1():
+    nonlocal x
+
+Output:
+Error
+-----------------------------------------
+Q7:
+def outer():
+    a = 10
+    b = 20
+    def inner():
+        nonlocal a
+        a = 100
+        b = 200
+        print(a, b)
+    print(a, b)
+    inner()
+    print(a, b)
+# end of outer function
+outer()
+
+Output:
+10 20
+100 200
+100 20
+-------------------------------------------------------------
+
+Q8:
+def f1():
+    x = 'John'
+    def f2():
+        nonlocal x
+        x = 'Hello'
+    # end of inner function
+    f2()
+    return x
+# End of f1() function
+print(f1())
+
+Output:
+Hello
+
+----------------------------------------------------
+Q9:
+def fun():
+    x = 10
+    def gun():
+        x = x + 20
+        print(x)
+    # end of inner function
+    gun()
+# end of outer function
+fun()
+
+Output:
+Error
+----------------------------------------------------
+Q10:
+# Identify Error
+x = 10
+def outer():
+    x = 20
+    def inner():
+        global x
+        nonlocal x
+
+Output:
+Error
+-------------------------------------------------------
+Q11:
+def f1():
+    x = 10
+    def f2():
+        nonlocal x
+        def f3():
+            nonlocal x
+            print(x)
+        f3()
+    f2()
+f1()
+
+Output:
+10
+
