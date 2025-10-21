@@ -448,3 +448,142 @@ Child  class  instance  method  :   40
 Parent  destructor  :   20
 child  destructor  :   40
 '''
+
+# Find outputs  (Home  work)
+class  A:
+	def  m1(self):
+		super() . m1()
+		print('class A method')
+class  B:
+	def m1(self):
+		super() . m1()
+		print('class B method')
+class  C:
+	def m1(self):
+		super() . m1()
+		print('class C method')
+class  D:
+	def m1(self):
+		#super() . m1()
+		print('class D method')
+class  X(A , B):
+        def m1(self):
+                super() . m1()
+                print('class X method')
+class  Y(B , C , D):
+        def m1(self):
+                super() . m1()
+                print('class Y method')
+class  P(X , Y , C):
+        def m1(self):
+                super() . m1()
+                print('class P method')
+#end of the class
+print(P . mro())
+obj = P()
+obj . m1()
+print('Bye')
+'''
+outputs  :
+[class P, class X, class A, class Y, class B, class C, class D, class object]
+class D method
+class C method
+class B method
+class Y method
+class A method
+class X method
+class P method
+Bye
+'''
+
+
+# Find  outputs  (Home  work)
+class  D:
+        def _init_(self):
+                super() . _init_()
+                print('class D constructor')
+class  E:
+        def _init_(self):
+                super() . _init_()
+                print('class E constructor')
+class  F:
+        def _init_(self):
+                super() . _init_()
+                print('class F constructor')
+class  B(D , E):
+        def _init_(self):
+                super() . _init_()
+                print('class B constructor')
+class  C(D , E , F):
+        def _init_(self):
+                super() . _init_()
+                print('class C constructor')
+class  A(B , C):
+        def _init_(self):
+                super() . _init_()
+                print('class A constructor')
+#end of the class
+print(A . mro())
+obj = A()
+print('Bye')
+'''
+outputs  :
+[class A, class B, class D, class C, class E, class F, class object]
+class D constructor
+'''
+# Identify  Error
+class  c1(c1):
+	pass
+'''
+outputs  :
+Error
+'''
+
+
+# Find  outputs
+class   c1:
+	def  m1(self):
+			print('Parent  Method')
+class  c1(c1):
+	def  m1(self):
+		super() . m1()
+		print('Child  Method')
+a = c1()
+a . m1()
+
+'''outputs  :   
+Parent  Method
+Child  Method
+'''
+
+
+ # Identify  Error
+class   c1(c2):
+	pass
+class  c2(c1):
+	pass
+'''
+outputs  :  Error
+'''
+
+
+ # Find  outputs
+class   c2:
+	def  m1(self):
+			print('Parent  Method')
+class   c1(c2):
+	def  m1(self):
+			super() . m1()
+			print('Child  Method')
+class  c2(c1):
+	def  m1(self):
+			super() . m1()
+			print('Grand  Child  Method')
+a = c2()
+a . m1()
+
+'''outputs  :
+Parent  Method
+Child  Method
+Grand  Child  Method
+'''
