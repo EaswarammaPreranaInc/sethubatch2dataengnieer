@@ -1,0 +1,218 @@
+'''
+Write  a  funciton  to  concatenate  two  linked  lists
+
+How  to  concatenate  two  linked list's ?  ---> Modify  last  node  link  of  1st  linked list  to  first  node  of  2nd  linked list
+'''
+class  sll(linked_list):
+	def  concat(a , b):
+		if  first  linked  list  is  empty:
+			2nd  linked  list  is  the   result
+		else:
+			How  to  attach  last  node  of  1st  LL  with  first  node  of  2nd  LL
+#  End  of  the  class
+How  to  create  1st  LL
+How  to  create  2nd  LL
+How  to  concatenate  the  2  LL's
+print('Linked  List  :  ' , end = '')
+How  to  print  final  linked  list
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=' ')
+            temp = temp.next
+        print()
+
+    def concat(self, other):
+        if self.head is None:           
+            self.head = other.head
+        else:
+            temp = self.head
+            while temp.next:            
+                temp = temp.next
+            temp.next = other.head
+
+
+#  Write  a  method  to  copy  a  linked  list
+class  sll(linked_list):
+	def  copy(a):
+			How  to  create  a  local  object  for  2nd  linked  list
+			How  to  copy  each  node  of  1st  LL  to  2nd  LL  until   LL  is  exhausted
+			How  to   return  2nd  linked  list
+#  End  of  the  clas
+How  to  create  1st  linked  list
+How  to  copy  1st  linked  list  to  2nd  linked  list
+print('Original  linked   list  :  ' , end = '')
+How  to  print  1st  linked  list
+print('Copied  linked   list  :  ' , end = '')
+How  to  print  2nd  linked  list
+
+
+
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=' ')
+            temp = temp.next
+        print()
+
+    def copy(self):
+        copied_list = LinkedList()      
+        temp = self.head
+        while temp:                    
+            copied_list.append(temp.data)  
+            temp = temp.next
+        return copied_list
+
+
+
+
+
+#  Write  destructor  to  delete  whole  linked  list
+class  sll(linked_list):
+	def    __del__(a):
+			How  to  remove  each  node  of  LL  until  LL  is  empty
+			print('Linked  list  is  empty')
+#  End  of  the  clas
+How  to  create  linked  list
+
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=' ')
+            temp = temp.next
+        print()
+    def __del__(self):
+        temp = self.head
+        while temp:                    
+            next_node = temp.next
+            print(f'Deleting node: {temp.data}')
+            del temp
+            temp = next_node
+        self.head = None
+        print('Linked list is empty')
+
+
+
+'''
+Write  a  method  to  reverse  linked  list
+
+1) How  to  reverse  the  linked  list ?  ---> Modify  4th  node  link  to  3rd  node,
+															        modify  3rd  node  link  to  2nd  node,
+															        modify  2nd  node  link  to  1st  node,
+															        modify  1st  node  link  to  NULL  and
+															        modify  first  pointer  to  last  node
+
+2) How  many  references  are  needed  to  reverse  a  linked  list  ?  ---> Three  i.e.  prev , cur , next
+
+3) Where  does  ref  cur   points  to  (in  general) ?  ---> Current  node  i.e.  ith  node
+    Where  does  ref  prev   points  to ?  ---> Previous  node  i.e.  (i - 1)th  node
+    Where  does  ref  next  points  to ?  ---> Next  node  i.e.  (i + 1)th  node
+'''
+class  sll(linked_list):
+		def  reverse(a):
+				How  to  reverse  each  node  of  linked  list
+				How  to  modify  ref  a . frist   to   last  node  of  linked  list
+# End  of  the  class
+How  to  create  linked  list
+print('Input  Linked  List')
+How  to  print  linked  list
+How  to  reverse  linked  list
+print('Reverse  Linked  List')
+How  to  print  reverse  linked  list
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=' ')
+            temp = temp.next
+        print()
+    def reverse(self):
+        prev = None       
+        cur = self.head      
+        while cur:
+            next = cur.next
+            cur.next = prev 
+            prev = cur     
+            cur = next    
+        self.head = prev
