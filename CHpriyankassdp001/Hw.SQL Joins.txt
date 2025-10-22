@@ -1,0 +1,109 @@
+
+CREATE DATABASE IF NOT EXISTS joins;
+use joins;
+-- Departments Table
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50),
+    location VARCHAR(50)
+);
+
+-- Projects Table
+CREATE TABLE Projects (
+    project_id INT PRIMARY KEY,
+    dept_id INT,
+    project_name VARCHAR(100),
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
+);
+
+-- Employees Table
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    dept_id INT,
+    project_id INT,
+    manager_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id),
+    FOREIGN KEY (project_id) REFERENCES Projects(project_id),
+    FOREIGN KEY (manager_id) REFERENCES Employees(emp_id)
+);
+
+-- Sales Table
+CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    emp_id INT,
+    sale_date DATE,
+    sale_amount DECIMAL(10,2),
+    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id)
+);
+
+-- Departments
+INSERT INTO Departments (dept_id, dept_name, location) VALUES
+(10, 'HR',        'New York'),
+(20, 'Finance',   'London'),
+(30, 'IT',        'New York'),
+(40, 'Sales',     'Chicago'),
+(50, 'Marketing', 'Chicago');
+
+-- Projects
+INSERT INTO Projects (project_id, dept_id, project_name) VALUES
+(100, 20, 'Budgeting'),
+(101, 10, 'Recruitment'),
+(102, 30, 'Migration'),
+(103, 50, 'Campaign'),
+(104, 40, 'Client Acquisition');
+
+-- Employees
+INSERT INTO Employees (emp_id, emp_name, dept_id, project_id, manager_id) VALUES
+(1, 'Alice',   10, 101, NULL),
+(2, 'Bob',     10, 101, 1),
+(3, 'Charlie', 20, 100, 1),
+(4, 'David',   30, 102, 2),
+(5, 'Eve',     40, NULL, 3),
+(6, 'Frank',   50, 103, 3),
+(7, 'Grace',   20, 104, 1),
+(8, 'Hannah',  30, NULL, 4);
+
+-- Sales
+INSERT INTO Sales (sale_id, emp_id, sale_date, sale_amount) VALUES
+(1, 2, '2025-01-01', 500),
+(2, 2, '2025-01-05', 700),
+(3, 2, '2025-01-10', 400),
+(4, 3, '2025-01-03', 600),
+(5, 3, '2025-01-07', 800),
+(6, 3, '2025-01-12', 750),
+(7, 5, '2025-01-04', 300),
+(8, 5, '2025-01-08', 450),
+(9, 6, '2025-01-06', 900),
+(10, 6, '2025-01-11', 1200);
+
+SELECT e.emp_id, e.emp_name, d.dept_name FROM Employees e JOIN Departments d ON e.dept_id = d.dept_id;
+
+SELECT e.emp_id, e.emp_name, p.project_name FROM Employees e LEFT JOIN Projects p ON e.project_id = p.project_id;
+
+SELECT d.dept_name, e.emp_name FROM Departments d LEFT JOIN Employees e ON d.dept_id = e.dept_id;
+
+SELECT p.project_name, e.emp_name FROM Projects p LEFT JOIN Employees e ON p.project_id = e.project_id;
+
+SELECT e.emp_id, e.emp_name, d.dept_name, p.project_name FROM Employees e LEFT JOIN Departments d ON e.dept_id = d.dept_id LEFT JOIN Projects p ON e.project_id = p.project_id;
+
+SELECT e.emp_id, e.emp_name, e.dept_id AS emp_dept, p.dept_id AS project_dept FROM Employees e
+JOIN Projects p ON e.project_id = p.project_id WHERE e.dept_id != p.dept_id;
+
+SELECT e.emp_name AS employee, m.emp_name AS manager FROM Employees e LEFT JOIN Employees m ON e.manager_id = m.emp_id;
+
+SELECT d.dept_name, COUNT(e.emp_id) AS employee_count FROM Departments d LEFT JOIN Employees e ON d.dept_id = e.dept_id GROUP BY d.dept_name;
+
+SELECT d.dept_name FROM Departments d LEFT JOIN Employees e ON d.dept_id = e.dept_id WHERE e.emp_id IS NULL;
+
+SELECT d.dept_name, p.project_name FROM Departments d CROSS JOIN Projects p;
+
+-- WINDOW FUNCTIONs
+
+SELECT emp_id, sale_date, sale_amount, LAG(sale_amount) OVER (PARTITION BY emp_id ORDER BY sale_date) AS prev_sale FROM Sales;
+
+SELECT emp_id, sale_date, sale_amount, LEAD(sale_amount) OVER (PARTITION BY emp_id ORDER BY sale_date) AS next_sale FROM Sales;
+
+SELECT emp_id, sale_date, sale_amount, sale_amount - LAG(sale_amount) OVER (PARTITION BY emp_id ORDER BY sale_date) AS diff_from_prev FROM Sales;
+
+SELECT emp_id, sale_date, sale_amount, ROW_NUMBER() OVER (PARTITION BY emp_id ORDER BY sale_date) AS sale_rank FROM Sales;
