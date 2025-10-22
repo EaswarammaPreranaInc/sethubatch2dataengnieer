@@ -1,0 +1,501 @@
+#  Write  a  method  to  determine  length  of  circular  linked  list
+class  cll(linkedlist):
+	def  length(a):
+			How  to  return  number  of  nodes  in  circular  linked  list
+# End  of  the  class
+if  __name__  ==  '__main__':
+	How  to   create  circular  linked   list
+	print('Number  of  nodes : ' , ???)
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head
+        else:
+            temp = self.head
+            while temp.next != self.head:
+                temp = temp.next
+            temp.next = new_node
+            new_node.next = self.head
+
+class CLL(LinkedList):
+    def length(self):
+        if not self.head:
+            return 0
+        count = 1
+        temp = self.head
+        while temp.next != self.head:
+            count += 1
+            temp = temp.next
+        return count
+
+if __name__ == '__main__':
+    cll = CLL()
+    cll.append(10)
+    cll.append(20)
+    cll.append(30)
+    cll.append(40)
+    print('Number of nodes :', cll.length())
+
+
+class  circular_linked_list(cll):
+	def  find(a , i):
+			return   data  of  ith  node  and  None  when  ith  node  does  not  exist
+# End  of  the  class
+How  to   create  circular  linked   list
+while  True:
+	i = int(input("Enter  value  of  'i':  "))
+	How  to  obtain  data  of  ith  node
+	if  ???
+		print(F'Node  {i}  does  not  exist')
+	else:
+		print(F'Data   of  node  {i}  is  :  {x}')
+	ch = input('Do  you  wish  to  continue (y / n) :  ')
+	if  ch == 'N'  or  ch == 'n':
+			break
+# End  of  while  loop
+print('Good  Bye')
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class CLL:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head
+        else:
+            temp = self.head
+            while temp.next != self.head:
+                temp = temp.next
+            temp.next = new_node
+            new_node.next = self.head
+
+class CircularLinkedList(CLL):
+    def find(self, i):
+        if not self.head or i <= 0:
+            return None
+        temp = self.head
+        count = 1
+        while True:
+            if count == i:
+                return temp.data
+            temp = temp.next
+            count += 1
+            if temp == self.head:
+                break
+        return None
+
+cll = CircularLinkedList()
+cll.append(10)
+cll.append(20)
+cll.append(30)
+cll.append(40)
+
+while True:
+    i = int(input("Enter value of 'i': "))
+    x = cll.find(i)
+    if x is None:
+        print(f'Node {i} does not exist')
+    else:
+        print(f'Data of node {i} is : {x}')
+    ch = input('Do you wish to continue (y / n) : ')
+    if ch.lower() == 'n':
+        break
+
+print('Good Bye')
+
+
+
+
+# Write  a  method  to  search  for  a  value  in  the  linked  list.
+class  circular_linked_list(linkedlist):
+	def  search(a , x):
+			How  to   return  the  node  when  'x'  is   found  in  the  linked  list  and  None  otherwise
+# End  of  the  class
+How  to   create  circular  linked   list
+while  True:
+	x = eval(input("Enter  value  to  be  searched :  "))
+	How  to  search  for  'x'  in  the  linked  list
+	if ??
+		print(F'{x}  is  not  found')
+	else:
+		print(F'Found  at  address  :  ??? ')
+	ch = input('Do  you  wish  to  continue (y / n) :  ')
+	if  ch == 'N'  or  ch == 'n':
+			break
+# End  of  while  loop
+print('Good  Bye')
+
+
+
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+class circular_linked_list(linkedlist):
+    def search(self, x):
+        if self.first is None:
+            return None
+        current = self.first
+        while True:
+            if current.data == x:
+                return current
+            current = current.next
+            if current == self.first:
+                break
+        return None
+
+cll = circular_linked_list()
+values = [10, 20, 30, 40]
+prev = None
+for val in values:
+    new_node = node(val)
+    if cll.first is None:
+        cll.first = new_node
+        prev = new_node
+    else:
+        prev.next = new_node
+        prev = new_node
+prev.next = cll.first
+
+while True:
+    x = eval(input("Enter value to be searched: "))
+    result = cll.search(x)
+    if result is None:
+        print(f'{x} is not found')
+    else:
+        print(f'Found at address: {id(result)}')
+    ch = input('Do you wish to continue (y / n): ')
+    if ch in ('N', 'n'):
+        break
+
+print('Good Bye')
+
+
+
+# Write a program to insert a node in the circular linked list
+
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+class circular_linked_list(linkedlist):
+    def insert(self, i, x):
+        new_node = node(x)  # How to create a new node
+        
+        if self.first is None:  # If cll is empty
+            self.first = new_node
+            new_node.next = new_node
+            return
+        
+        count = 1
+        current = self.first
+        while True:
+            if count == i:  # Insert after ith node
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+            count += 1
+            if current == self.first:
+                break
+        print(F'Node {i} does not exist')  # If i is invalid
+
+    def printlist(self):
+        if self.first is None:
+            print("List is empty")
+            return
+        current = self.first
+        while True:
+            print(current.data, end=' ')
+            current = current.next
+            if current == self.first:
+                break
+        print()
+
+cll = circular_linked_list()  # How to create circular linked list
+
+while True:
+    i = int(input("Enter value of 'i': "))  # Enter value of 'i'
+    x = eval(input("Enter value to be inserted: "))  # Enter value to be inserted
+    cll.insert(i, x)  # Insert 'x' after ith node
+    cll.printlist()  # Print linked list
+    ch = input("Would you like to insert another node (Y or N)? : ")
+    if ch in ('n', 'N'):
+        break
+
+
+
+# Write a method to delete ith node of linked list
+
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+class circular_linked_list(linkedlist):
+    def delete(self, i):
+        if self.first is None:
+            return None  # i is invalid because list is empty
+
+        if self.first.next == self.first:  # cll has single node
+            if i == 1:
+                data = self.first.data
+                self.first = None
+                return data
+            else:
+                return None  # i is invalid
+
+        if i == 1:  # deletion of first node
+            current = self.first
+            while current.next != self.first:
+                current = current.next
+            data = self.first.data
+            current.next = self.first.next
+            self.first = self.first.next
+            return data
+
+        count = 1
+        prev = self.first
+        current = self.first.next
+        while current != self.first:
+            count += 1
+            if count == i:
+                prev.next = current.next  # delete ith node
+                return current.data
+            prev = current
+            current = current.next
+
+        return None  # i is invalid
+
+    def printlist(self):
+        if self.first is None:
+            print("List is empty")
+            return
+        current = self.first
+        while True:
+            print(current.data, end=' ')
+            current = current.next
+            if current == self.first:
+                break
+        print()
+
+cll = circular_linked_list()
+
+
+
+# Tricky
+# Write destructor to delete whole linked list
+
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+class circular_linked_list(linkedlist):
+    def __del__(self):
+        if self.first is None:  # linked list is empty
+            print('Linked list is already empty')
+            return
+        current = self.first.next
+        while current != self.first:  # delete each node of cll
+            prev = current
+            current = current.next
+            del prev
+        del self.first
+        self.first = None
+        print('Linked list is empty')
+
+# End of the class
+
+cll = circular_linked_list()  # How to create circular linked list
+
+# Sample nodes to test destructor
+values = [10, 20, 30]
+prev = None
+for val in values:
+    new_node = node(val)
+    if cll.first is None:
+        cll.first = new_node
+        prev = new_node
+    else:
+        prev.next = new_node
+        prev = new_node
+prev.next = cll.first
+
+# Delete whole circular linked list
+del cll
+
+
+
+
+# Write a method to copy a linked list
+
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist:
+    def __init__(self):
+        self.first = None
+
+    def isempty(self):
+        return self.first is None
+
+class circular_linked_list(linkedlist):
+    def copy(self):
+        b = circular_linked_list()  # How to create a new cll object to hold the result
+        if self.first is None:  # If input cll is empty
+            print("Output cll is empty")
+            return b
+        current = self.first
+        prev = None
+        while True:  # How to copy each node of cll held by object 'a' to 'b'
+            new_node = node(current.data)
+            if b.first is None:
+                b.first = new_node
+                prev = new_node
+            else:
+                prev.next = new_node
+                prev = new_node
+            current = current.next
+            if current == self.first:
+                break  # End of while loop
+        prev.next = b.first  # Make the copied list circular
+        return b  # Return output cll
+
+# End of the class
+
+cll = circular_linked_list()  # How to create circular linked list
+
+# Sample nodes to test copy
+values = [10, 20, 30]
+prev = None
+for val in values:
+    new_node = node(val)
+    if cll.first is None:
+        cll.first = new_node
+        prev = new_node
+    else:
+        prev.next = new_node
+        prev = new_node
+prev.next = cll.first
+
+# How to copy linked list
+cll_copy = cll.copy()
+
+# How to print input cll
+current = cll.first
+while True:
+    print(current.data, end=' ')
+    current = current.next
+    if current == cll.first:
+        break
+print()
+
+# How to print output cll
+current = cll_copy.first
+while True:
+    print(current.data, end=' ')
+    current = current.next
+    if current == cll_copy.first:
+        break
+print()
+
+
+
+
+# Write methods to create and print linked list
+
+class node:
+    def __init__(new, x):
+        new.data = x  # How to add data field to new node with 'x'
+        new.l = None
+        new.r = None
+        # new = node(25)
+
+class linkedlist:
+    def __init__(a):
+        a.l = None  # How to add 'l' to object 'a'
+        a.r = None  # How to add 'r' to object 'a'
+        a.first = None
+        # a = linkedlist()
+
+    def isempty(a):
+        return a.first is None  # Return True when dll is empty, False otherwise
+        # a.isempty() ---> True / False
+
+    def disp_left_right(a):
+        if a.first is None:
+            print('Linked List is empty')
+        else:
+            current = a.first
+            while current:
+                print(current.data, end=' ')
+                current = current.r  # How to print data field of each node from left to right
+            print()
+
+    def disp_right_left(a):
+        if a.first is None:
+            print('Linked List is empty')
+        else:
+            current = a.first
+            while current.r:
+                current = current.r
+            while current:
+                print(current.data, end=' ')
+                current =
+
+
+
+
