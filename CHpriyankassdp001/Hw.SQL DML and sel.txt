@@ -1,0 +1,65 @@
+
+CREATE DATABASE IF NOT EXISTS Courses;
+use Courses;
+CREATE TABLE Course(
+course_id INT,
+course_name VARCHAR(100),
+credits INT
+);
+
+
+insert into Course values(03,'dsa',3),(05,'python',4);
+insert into Course values(13,'dbms',2),(21,'java',4);
+insert into Course values(13,'dbms',10),(21,'java',8);
+insert into Course values(9,'oops',4),(11,'ui',3);
+insert into Course values(11,'sts',1),(41,'mgt',2);
+insert into Course values(Null,'sts',null);
+
+update  Course set credits=15 where course_id='13';
+update  Course set credits=6 where course_name='dsa';
+ALTER TABLE Course ADD CONSTRAINT  PRIMARY KEY (course_id);
+ALTER TABLE Course drop   PRIMARY KEY ;
+update  Course set credits=6 ;
+
+truncate table Course;
+select * from Course;
+drop table Course;
+delete from course where course_name='dbms';
+delete from course where course_id<6;
+delete from course;
+
+select course_name,credits from Course;
+SELECT sum(credits) from Course;
+select course_name,course_id from Course where course_id>10;
+select course_name,sum(credits) from Course group by(course_name);
+
+select course_name,sum(credits) as cr from Course  group by(course_name) having(cr>8);
+select * from Course order by(credits) ASC;
+select * from Course order by(credits) DESC;
+select distinct course_name from Course;
+select * from Course order by(credits) limit 3;
+select * from Course order by credits limit 4 offset 2;
+
+
+# logical operators
+
+select course_name from Course where course_id<10 and credits=4;
+select * from Course where course_id<10 or credits=10;
+select * from Course where not(course_id>10) ;
+select * from Course where course_id between 10 and 14;
+
+select * from Course where course_name like 's%';	# starts with s
+select * from Course where course_name like '%a';	# ends with a
+select * from Course where course_name like '%op%';	# contains op
+
+select * from Course where course_name not like 'd%';	# exclude all that starts with d
+
+select course_name,credits, ifnull(course_id,'0' )  as course_id from Course;
+select course_name,course_id, ifnull(credits,0) as credits from Course;
+
+select * from Course where credits in(10,12,13,4);
+select * from Course where credits not in(10,12,13,4);
+select * from Course where course_id is false or credits is null;
+
+select * from Course where credits is null;
+select * from Course where credits is not null;
