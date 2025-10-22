@@ -1,0 +1,44 @@
+
+CREATE DATABASE IF NOT EXISTS Students;
+use Students;
+CREATE TABLE Students_info (
+student_id INT PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50),
+dob DATE NOT NULL,
+gender CHAR(1), check (gender in('M' ,'F'))
+);
+CREATE TABLE Courses(
+course_id INT,
+course_name VARCHAR(100),
+credits INT
+);
+ALTER TABLE Courses ADD CONSTRAINT pk_course_id PRIMARY KEY (course_id);
+ALTER TABLE Courses MODIFY course_name VARCHAR(100) NOT NULL;
+ALTER TABLE Courses ADD CONSTRAINT credits check(credits BETWEEN  1 and 6);
+
+CREATE TABLE enrollments(
+enroll_id INT Primary Key,
+student_id INT,
+course_id INT,
+CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES Students_info(student_id),
+CONSTRAINT fk_course FOREIGN KEY (course_id)	 REFERENCES Courses(course_id)
+);
+
+ALTER TABLE Students_info ADD email VARCHAR(100);
+ALTER TABLE Students_info RENAME COLUMN dob TO date_of_birth;
+ALTER TABLE Courses DROP COLUMN credits;
+
+INSERT INTO Students_info (student_id,first_name,last_name,date_of_birth,gender,email)
+VALUES (01,'ch','yamini','2001-01-01','f','chyamini353@gmail.com'),
+(02,'ab','cd','2011-10-11','m','abcd12@gmail.com'),
+(03,'ef','gh','2035-03-29','f','ghij456@gmail.com');
+
+INSERT INTO Courses (course_id, course_name)
+VALUES 	(4003, 'DSA'), 
+		(2005, 'DBMS'),
+		(1001, 'OOPS'); 
+        
+TRUNCATE TABLE enrollments;
+
+ALTER TABLE Students_info DROP COLUMN email;
