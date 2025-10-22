@@ -1,0 +1,62 @@
+use Courses;
+CREATE TABLE joining(
+join_date date,
+name VARCHAR(100),
+salary INT,
+last_name varchar(100),
+email varchar(100)
+);
+INSERT INTO joining VALUES ('2023-01-10', 'Avi', 45000, 'Patel', 'avi.patel@example.com');
+INSERT INTO joining VALUES ('2023-02-14', 'Neha', 52000, 'Reddy', 'neha.reddy@example.com');
+INSERT INTO joining VALUES ('2023-03-20', 'Raj', 48000, 'Singh', 'raj.singh@example.com');
+INSERT INTO joining VALUES ('2023-04-05', 'Sim', 60000, 'Kumar', 'sim.kumar@example.com');
+INSERT INTO joining VALUES ('2023-05-18', 'Zed', 47000, 'Shah', 'zed.shah@example.com');
+INSERT INTO joining VALUES ('2023-06-22', 'Tia', 53000, 'Iyer', 'tia.iyer@example.com');
+INSERT INTO joining VALUES ('2023-07-30', 'Leo', 49000, 'Khan', 'leo.khan@example.com');
+# date functions
+select current_date();
+select current_time();
+select current_timestamp();
+
+select year(join_date) from joining;
+select month(join_date) from joining;
+select monthname(join_date) from joining;
+
+select quarter(join_date) from joining;
+
+select join_date,week(join_date) from joining;
+
+select(makedate(2025,200));
+select maketime(09,15,00);
+
+select timediff('14:45:00','09:30:00');
+select str_to_date('15/08/2025','%d/%m/%y');
+
+select join_date,day(join_date),month(join_date),year(join_date) from joining;
+select name from joining where month(join_date)=1;
+
+#numeric functions
+select abs(-1000);
+select ceil(123.45),floor(123.45);
+select round(98.7654,2);
+select mod(55,6);
+select sqrt(121);
+select pow(2,8);
+select log(1000,-10);
+select sign(-45),sign(0),sign(20);
+select rand(),rand(),rand();
+select max(salary),min(Salary) from joining;
+SELECT name, TRUNCATE(salary, 2) FROM joining;
+
+# string functions
+
+SELECT CONCAT(name, ' ', last_name) AS full_name FROM joining;
+SELECT LEFT(last_name, 3) FROM joining;
+SELECT UPPER(name) AS name_upper, LOWER(name) AS name_lower FROM joining;
+SELECT POSITION('@' IN email) AS at_position FROM joining;
+SELECT REPLACE(email, 'example.com', 'company.org') AS updated_email FROM joining;
+SELECT REVERSE(name) AS reversed_name FROM joining;
+SELECT LENGTH(email) AS email_length FROM joining;
+SELECT TRIM(' SQL Practice ') AS trimmed_text;
+SELECT RIGHT(email, 4) AS domain_suffix FROM joining;
+SELECT *  FROM joining WHERE last_name LIKE 'S%';
