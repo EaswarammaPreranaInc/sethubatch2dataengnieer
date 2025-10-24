@@ -1,0 +1,127 @@
+# Find  outputs
+import   sys
+class   c1:
+        pass
+# End  of  the  class
+a = b = c = d = c1() # 5
+print(sys . getrefcount(b)) # 1 or sometimes 2
+print(sys . getrefcount(c1())) # 2
+print(sys . getrefcount(352)) # 2
+print(sys . getrefcount([10 , 20 , 15 , 18])) # 2
+print(sys . getrefcount(10.8)) # 2
+print(sys . getrefcount({10 , 20 , 15 , 18})) # 2
+print(sys . getrefcount('Hyd')) # 2 or 3
+print(sys . getrefcount({10 : 20 , 30 : 40})) # 2
+print(sys . getrefcount((10 , 20 , 30 , 40))) # 2
+
+# Find  outputs  (Home  work)
+import  sys
+class  Test:
+	def  _init_(self):
+		print('Constructor  :  ' , id(self))
+		return    None
+	def  _del_(self):
+		print('Destructor  :  ' , id(self))
+		return  25
+# End  of  the  class
+t = Test() # Constructor  :  <id_of_t>
+print(t . _init_()) # Constructor  :  <id_of_t>
+None
+print(sys . getrefcount(t)) # 2 
+print(t . _del_()) # Destructor  :  <id_of_t>
+25
+print(sys . getrefcount(t)) #  2 
+print('Bye') # Bye Destructor  :  <id_of_t>
+
+#  Tricky  program
+# Find  outputs (Home  work)
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+	print('Function  Begin')
+	a  =  c1() # object is created 
+	print(a) # <_main_.c1 object at 0x00000123456789>
+	print('Function  end') # Function end
+	return   a
+print('Program  Begin') # Program Begin
+b = f1() # Function Begin 
+print(b) # <_main_.c1 object at 0x00000123456789>
+print('Program  End') # Program End
+Object is lost
+
+#  Tricky  program
+# Find  outputs (Home  work)
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+        print('Function  begin') # Function begin 
+        a  =  c1() # object is created 
+        print('Function  end') # Function end 
+        return   a # object is lost 
+print('Program  Begin')
+f1() # Function begin 
+print('Program  End') # Program End
+
+
+#  Tricky  program
+# Find  outputs (Home  work)
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+        print('Function  begin') # 
+        a  =  c1() # Object is created 
+        print('Function  end')
+print('Program  Begin') # Program Begin 
+b = f1() # Function begin 
+print(b) # None 
+print('Program  End') # Program End
+
+# Most  tricky  program
+# Circular  reference (Home  work)
+class   c1:
+	def   _init_(self , k):
+		print('c1  class  object  is  created') # c1 class object is created 
+		self . b = k
+		print('End  of  c1  class constructor') # End of c1 class constructor 
+	def   _del_(self):
+		print('c1  class  object  is  lost')
+# End of class c1
+class  c2:
+	def  _init_(self):
+		print('c2  class  object  is  created')
+		self . a = c1(self) 
+		print('End  of  c2  class constructor') # End of c2 class constructor 
+	def  _del_(self):
+		print('c2  class  object  is  lost')
+#End of class c2
+
+
+#  Lucky  object
+# Find  outputs (Home  work)
+class   c1:
+	def  _del_(self):
+		print('Destructor')
+		global  b
+		b = self
+a = c1() # create one object of class c1
+del  a # Destructor 
+print('Hello') # Hello
+print('Program  begin') # Program begin 
+x = c2() # c2 class object is created 
+print('program end') # program end
+
+
+
+	
