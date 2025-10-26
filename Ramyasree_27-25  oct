@@ -1,0 +1,33 @@
+'''
+Repeat prog7b such that
+1) If input is number, number class objects should be added
+2) If input is string, string class objects should be joined
+
+3) Import number and string classes defined in prog7b but do not rewrite
+4) Refer to prog8
+'''
+
+from prog7b import number, string
+
+if __name__ == '__main__':
+	while True:
+		data = input("Enter data (or 'exit' to stop): ")
+
+		if data.lower() == 'exit':
+			break
+
+		if data.isdigit():
+			a = [number(), number(), number()]
+			a[0].x = int(data)
+			a[1].get()
+			a[2].add(a[0], a[1])
+			a[2].display()
+
+		else:
+			a = [string(), string(), string()]
+			a[0].x = data
+			a[1].get()
+			a[2].add(a[0], a[1])
+			a[2].display()
+
+	print("Good Bye")
