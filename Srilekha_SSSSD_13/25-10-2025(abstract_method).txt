@@ -1,0 +1,82 @@
+#  Write  a  program  to  determine  total  and  average  of  student  and  gross pay  and  net  pay  of  teacher
+from  abc  import  *
+class  person(ABC):
+	def   get(self):
+		self.no = int(input("enter number"))                                                                                                                                                                                                                                                                                                                        
+		self.name = input("enter name")
+		self.age = int(input("enter age:"))
+		self.gender = input("enter gender:")
+	def   disp(self):
+		print(self.no, self.name, self.age, self.gender ,sep="\t",end="\t")   #How  to  print  number , name , age , gender  in  same  line  separated  by  tab
+	@abstractmethod
+	def   compute(self):
+                pass
+class  student(person):
+	def  get(self):
+		
+                super.get()   #How  to  read   number , name , age , gender
+		self.marks =[]  
+                for i in range(3):
+                     self.marks.append(i) #How  to  read  marks  of  3  subjects  into  a  list
+	def  compute(self):
+		self.total = sum(self.marks) 
+                self.avg = self.total/3   #  	How  to  calculate  average  marks
+                                                 #How  to  calculate  total  marks
+	
+	def  disp(self):
+		super.disp()  #How  to  print  number , name , age , gender
+		print(self.total,self.avg ,sep="\t")  #How  to  print  total  and  average  in  same  line separated  by  tab
+class  teacher(person):
+	def   get(self):
+		super.get()  #How  to  read  number , name , age  and  gender
+		self.sub = input("enter subject:")  #How  to  read   subject
+	        self.salary =int(input("enter salary:"))   #How  to  read   salary
+		self.city = input("enetr city:")  #How  to  read   city
+	def   compute(self):
+		da = 0.50/self.salary  #da = 50%  of  salary
+		hra = 0.2/self/self.salary  #20%  of  salary
+		if city =='Hyd':
+                   cca = 1000  
+                else :
+                   cca =800    #if  employee  lives  in  'Hyd'  and  800  otherwise
+		self.grosspay = self.salary +da+hra+cca   #How  to  calculate  grosspay  i.e. salary + da + hra + cca
+		pf = 0.8 *self.grosspay 
+                if pf >400:
+                      pf=400  # of  grosspay  but  a  max  of  400
+		if grosspay <10000 :
+                    tax = 0.10*self.grosspay  
+                else:
+                    tax =0.15 * self.grosspay      #of  grosspay  if  grosspay is  < 10000  and  15%  otherwise
+		self.netpay =grosspay- pf-tax    #How  to  calculate  netpay  i.e. grosspay - pf - tax
+	def   disp(self):
+		super.get()  #How  to  print  number , name , age , gender
+		print(self.subject,self.salary,grosspay,netpay, sep="\t")  #How  to  print  subject , salary , grosspay , netpay  in  same  line   separated  by  tab
+def  menu():
+	print('1. Teacher')
+	print('2. Student')
+	print('3. Exit')
+# End  of  the  function
+a = []
+while  True:
+	menu()
+	ch = eval(input('Enter choice : '))
+	if   ch == 1:
+		a.append(teacher())  #How  to  append  teacher  object  to  list  'a'
+	elif  ch == 2:
+		a.append(student()) #How  to  append  student  object  to  list  'a'
+	else:
+			exit()  #How  to  stop  execution
+	a[-1].get()  #How  to  read  inputs  into  object
+	a[-1].compute()  #How  to  store   results  in  object
+	
+#end of loop
+print('Teachers')
+for x in a  :
+    if isinstance(x,teacher)
+         x.disp()  #How  to  print  all  teacher  objects
+print()
+print('Students')
+for x in a :
+     if isinstance(x,student)  #
+            x.disp()  #How  to  print  all  student  objects
+print('Good  Bye')
