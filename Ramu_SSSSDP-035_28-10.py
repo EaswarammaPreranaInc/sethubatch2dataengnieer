@@ -1,4 +1,4 @@
-#Ramu(29-10)
+#Ramu(28-10)
 
 #Tricky Programs on  Threads  (Home  work)
 from  threading  import  *
