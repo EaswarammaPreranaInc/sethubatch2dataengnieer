@@ -1,0 +1,5 @@
+{
+    "editor.inlineSuggest.edits.allowCodeShifting": "always",
+    "editor.inlineSuggest.edits.renderSideBySide": "auto",
+    "editor.formatOnSave": true
+}

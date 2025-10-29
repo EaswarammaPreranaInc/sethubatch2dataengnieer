@@ -361,8 +361,14 @@ class c2:
 # End of the class
 a = c1()
 b = c2()
-print(a * b)
-print(b * a)
+print(a * b) # 2000
+print(b * a) # 2000
+
+
+
+
+
+
 
 '''
 __mul__ method of class c1
