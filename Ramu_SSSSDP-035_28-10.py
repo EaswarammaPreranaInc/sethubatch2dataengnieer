@@ -1,0 +1,99 @@
+#Ramu(29-10)
+
+#Tricky Programs on  Threads  (Home  work)
+from  threading  import  *
+class  MyThread(Thread):
+        def  run(self):
+                for  i  in  range(10):
+                        print('run   method  of  MyThread  class')
+        def  m1(self):
+                for  i  in  range(10):
+                        print('m1  method  of  MyThread  class')
+class  c1(Thread):
+        def  m1(self):
+                for  i  in  range(10):
+                        print('m1  method  of  class  c1')
+        def   f1(self):
+                 for  i  in  range(10):
+                         print('f1  method  of  class  c1')
+# end of class
+def   f1():
+        for  i  in  range(10):
+                print('f1  function')
+#end of f1 function
+t1 = Thread(target = f1)
+t2 = Thread(target = c1() . m1)
+t3 = Thread()
+t4 = MyThread()
+t5 = MyThread(target = f1)
+t6 = c1(target =  f1)
+t7 = c1()
+t8 = MyThread(target = c1() . m1)
+t9 = c1(target = c1() . m1)
+t10 = MyThread(target = t4 . run)
+t11 = c1(target = t7 . run)
+t12 = c1(target = t4 . m1)
+t13 = c1(target = t7 . f1)
+# Run  with  any  one  of  the  following  stmts
+t1 . start() #  What  does  thread  t1  do ? # Excutes  f1 function  output is f1 function print 10 times
+t2 . start()  #  What  does  thread  t2  do ? #Executes  m1 method of class c1 output is m1 method of class c1 print 10 times
+t3 . start()   #  What  does  thread  t3  do ? #Executes Empty run method of thread class output is nothing
+t4 . start()   #  What  does  thread  t4  do ?# Executes the run method of MyThread class output is run method of MyThread class print 10 times
+t5 . start()   #  What  does  thread  t5  do ? #Executes f1 function output is f1 function print 10 times
+t6 . start()  #  What  does  thread  t6  do ? #Executes f1 function output is f1 function print 10 times
+t7 . start() #  What  does  thread  t7  do ? #Executes Empty run method of thread class output is nothing
+t8 . start()   #  What  does  thread  t8  do ? #Executes m1 method of class c1 output is m1 method of class c1 print 10 times
+t9 . start()   #  What  does  thread  t9  do ? #Executes m1 method of class c1 output is m1 method of class c1 print 10 times
+t10 . start()  #  What  does  thread  t10  do ? #Executes run method of MyThread class output is run method of MyThread class print 10 times
+t11 . start()   #  What  does  thread  t11  do ? #Executes Empty run method of thread class output is nothing
+t12 . start()  #  What  does  thread  t12  do ? #Executes m1 method of MyThread class output is m1 method of MyThread class print 10 times
+t13 . start()   #  What  does  thread  t13  do ? #Executes f1 method of class c1 output is f1  method  of  class  c1  print 10 times
+
+
+#  What  are  the  outputs  when  start()  method  is  overridden  ?  (Home  work)
+from  threading  import  *
+class  MyThread(Thread):
+	def   start(self):
+		super() . start()
+		print('Start Method')
+	def   run(self):
+		print('Run Method')
+child = MyThread()
+child . start()
+print('Main  Thread')
+'''
+Run  Method
+Start  Method
+Main  Thread
+'''
+
+# Find  outputs (Home  work)
+from threading import *
+
+#  main  thread  executes  all  the  following  statements
+main = current_thread()
+print(main.name) #How  to  print  name  of  main  thread
+main.name = 'Hyd' #How  to  modify  name  of  main  thread  to   'Hyd'
+print(main.name) #How  to  print  new  name  of  main  thread
+child=Thread(name='Sec')#How  to  create  a  new  child  thread  with  name  "Sec"
+print(child.name) #How  to  print  name  of  child  thread
+child.name='Cyb' #How  to  modify  name  of  child  thread  to   'Cyb'
+print(child.name) #How  to  print  new  name  of  child  thread
+print(active_count()) #How  to  print  number  of  threads  under  execution
+
+# Find  outputs (Home  work)
+from threading import *
+t1=Thread()
+t2=Thread()
+t3=Thread()
+print('Names of Threads')
+print(t1.name, t2.name, t3.name)
+# How  to  modify  name  of  each  thread  to  "One" , "Two"   and  "Three"
+t1.name='One'
+t2.name='Two'
+t3.name='Three'
+print('New Names of Threads')
+print(t1.name)
+print(t2.name)
+print(t3.name)
+print(active_count()) #How  to  print  number  of  threads  under  execution
