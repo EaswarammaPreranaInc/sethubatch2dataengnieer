@@ -1,0 +1,987 @@
+# Find  outputs  (Home  work)
+def  f1():
+	try:
+		print('f1  function')
+		raise  ValueError('Hyd')
+		print('Hi')
+	finally:
+		print("f1's  finally")
+	print('End  of  f1  function')
+def  f2():
+	try:
+		print('f2  function')
+		return
+		print('Hello')
+	finally:
+		print("f2's  finally")
+	print('End  of  f2  function')
+def  f3():
+	try:
+		print('f3  function')
+		raise   KeyError(25)
+		print('Hello')
+	except KeyError as  msg:
+		print('Caught  by  f3  function :  ' , msg)
+	finally:
+		print("f3's  finally")
+	print('End of f3 function')
+def  f4():
+	try:
+		print('f4 function')
+		exit()
+	finally:
+		print("f4's  finally")
+	print('End of f4 function')
+# End  of  all  the  functions
+try:
+	print('Begin')
+	f1()
+	print('Hello')
+except  ValueError  as  msg:
+	print('ValueError  is  caught  outside :  ' , msg)
+f2()
+f3()
+try:
+	f4()
+finally:
+		print('Outside  finally')
+print('End  of  the  program')
+
+outputs :  
+Begin
+f1  function
+f1's  finally
+ValueError  is  caught  outside :   Hyd
+f2  function
+f2's  finally
+f3  function
+Caught  by  f3  function :   25
+f3's  finally
+End of f3 function
+f4 function
+Outside  finally
+
+# Find  outputs  (Home  work)
+import sys
+def  f1():
+	try:
+		print('f1  function')
+		raise  ValueError('Hyd')
+		print('Hi')
+	finally:
+		print("f1's  finally")
+	print('End  of  f1  function')
+def  f2():
+	try:
+		print('f2  function')
+		return
+		print('Hello')
+	finally:
+		print("f2's  finally")
+	print('End  of  f2  function')
+def  f3():
+	try:
+		print('f3  function')
+		raise   KeyError(25)
+		print('Hello')
+	except  KeyError  as  msg:
+		print('Caught  by  f3  function : ' , msg)
+	finally:
+		print("f3's  finally")
+	print('End  of  f3  function')
+def  f4():
+	try:
+		print("f4  function")
+		sys.exit()
+	finally:
+		print("f4's  finally")
+	print('End  of  f4  function')
+#End  of  all  the  functions
+try:
+	print('Begin')
+	f1()
+	f2()
+	f3()
+	f4()
+	print('Hello')
+except  ValueError  as  msg:
+	print('ValueError  is  caught  outside :  ' , msg)
+print('End  of  the  program')
+
+outputs :
+Begin
+f1  function
+f1's  finally
+ValueError  is  caught  outside :   Hyd
+End  of  the  program
+
+# Find  outputs (Home  work)
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		raise  Exception()
+	except:
+		print('Sec')
+	finally:
+		print("f1's  finally")
+	print('End  of  f1  function')
+#End  of  the  function
+try:
+	print('Begin')
+	f1()
+	print('Hello')
+except  ValueError:
+	print('Hello')
+except  Exception:
+	print('Recaught  Exception')
+finally:
+	print('Outside  finally')
+print('End  of  the  program')
+
+outputs :
+Begin
+f1  function
+Caught  KeyError
+f1's  finally
+Recaught  Exception
+Outside  finally
+End  of  the  program
+
+# Find outputs (Home  work)
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		raise  NameError()
+	except  NameError:
+		print('Sec')
+	finally:
+		print('f1 finally')
+	print('End  of  f1 function')
+#outside function
+try:
+	print('Begin')
+	f1()
+	print('Hello')
+except ValueError:
+	print('Hello')
+except   Exception:
+	print('Recaught  Exception')
+except  NameError:
+	print('Caught  Name Error  outside')
+finally:
+	print('Outside  finally')
+print('End of the program')
+
+outputs :
+Begin
+f1  function
+Caught  KeyError
+f1 finally
+Recaught  Exception
+Outside  finally
+End of the program
+
+# Find  outputs  (Home   work)
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		# raise   NameError()  # Error: NameError raised but not handled outside, so it cannot be executed further
+	except  NameError:
+		print('Sec')
+	finally:
+		print('f1 finally')
+	print('End  of  f1 function')
+#outside function
+try:
+	print('Begin')
+	f1()
+	print('Hello')
+except  ValueError:
+	print('Hello')
+except   KeyError:
+	print('Recaught  KeyError')
+finally:
+	print('Outside  finally')
+print('End of the program')
+
+outputs :
+Begin
+f1  function
+Caught  KeyError
+f1 finally
+End  of  f1 function
+Hello
+Outside  finally
+End of the program
+
+
+try:
+	print('try')
+	print(7 / 0)
+except:
+	print('except')
+else:
+	print('else')
+finally:
+	print('finally')
+print('End')
+
+outputs :
+try
+except
+finally
+End
+
+try:
+	print('try')
+except:
+	print('except')
+else:
+	print('else')
+finally:
+	print('finally')
+print('End')
+
+outputs :
+try
+else
+finally
+End
+
+try:
+print('try')
+else:
+    print('else')
+finally:
+    print('finally')
+print('End')
+
+#Error: 'else' cannot appear without an 'except' block
+
+try:
+	print('try')
+except:
+	print('except')
+else:
+	print('else1')
+else:
+	print('else2')
+finally:
+	print('finally')
+print('end')
+
+# Error: multiple 'else' blocks not allowed in try-except structure
+
+try:
+	print('try')
+else:
+	print('else')
+except:
+	print('except')
+finally:
+	print('finally')
+print('end')
+
+# Error: 'except' must come before 'else' in try-except structure
+
+try:
+	print('try')
+except:
+	print('except')
+if   10 > 20:
+	print('if')
+else:
+	print('else')
+
+outputs :
+try
+else
+
+def f1():
+	try:
+		return 10 + '20'
+	except:
+		return 10 + 20
+print(f1())
+
+outputs :  
+30
+
+def f1():
+	try:
+		return 10
+	except:
+		return 20
+	else:
+		return 30
+print(f1())
+
+outputs :  
+10
+
+def f1():
+	try:
+		return 10 + '20'
+	except:
+		return 20
+	else:
+		return 30
+print(f1())
+
+outputs :  
+20
+
+def f1():
+	try:
+		pass
+	except:
+		return 20
+	else:
+		return 30
+print(f1())
+
+outputs :  
+30
+
+def f1():
+	try:
+		return 10
+	except:
+		return 20
+	else:
+		return 30
+	finally:
+		return 40
+print(f1())
+
+outputs : 
+40
+
+try:
+	x = eval(input('Enter  any  number  :  '))
+	assert x >= 25 , 'Hyd'
+	print('Sec')
+except AssertionError as msg:
+	print(msg)
+print('End')
+
+outputs :
+If input = 24:
+Hyd
+End
+If input = 25:
+Sec
+End
+
+try:
+	x = eval(input('Enter  any  number  :  '))
+	assert x >= 25
+	print('Sec')
+except AssertionError as msg:
+	print(msg)
+print('End')
+
+outputs : 
+If input = 24:
+<Blank>
+End
+If input = 25:
+Sec
+End
+
+# Find  outputs   (Home  work)
+try:
+	print('Outer   try')
+	try:
+		print('Inner    try')
+		print(7 / 0)
+		int('Hyd')
+		'Hyd'[5]
+		eval('Hyd')
+	except   ZeroDivisionError:
+		print('ZDE   of   inner   try')
+		# int('Ten')                                                                        # Error: ValueError raised here, not handled inside inner try
+	except  ValueError:
+		print('ValueError  of  inner  try')
+	finally:
+		print('Inner  try  finally')
+	print('End  of  inner  try')
+except   ValueError:
+	print('ValueError  of  outer  try')
+except   IndexError:
+	print('IndexError  of  outer  try')
+except:
+	print('default  except  of  outer  try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+outputs :
+ Outer   try
+ Inner    try
+ ZDE   of   inner   try
+ Inner  try  finally
+ default  except  of  outer  try
+ Outer  try  finally
+ End  of  outer  try
+
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		int('Hyd')                 
+		'Hyd'[5]                   
+		eval('Hyd')               
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except  ValueError:
+		print('ValueError  of  inner  try ')   
+	finally:
+		print('Inner  try  finally')           
+	print('End  of  inner  try')              
+except  ValueError:
+	print('ValueError  of  outer try')        
+except  IndexError:
+	print('IndexError of outer try')
+except:
+	print('default except of outer try')
+finally:
+	print('Outer try finally')
+print('End of outer try')
+
+outputs :
+Outer  try
+Inner  try
+ValueError  of  inner  try 
+Inner  try  finally
+End  of  inner  try
+Outer try finally
+End of outer try
+
+#  Find outputs   (Home  work)
+try:
+	print('Outer  try')                                                             
+	try:
+		print('Inner  try')                                                           
+		'Hyd'[3]
+		eval('Hyd')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except  ValueError:
+		print('ValueError  of  inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End  of  inner  try')
+except  ValueError:
+	print('ValueError  of  outer  try')
+except  IndexError:
+	print('IndexError  of  outer  try')
+except:
+	print('default except of outer try')
+finally:
+	print('Outer try finally')
+print('End  of  outer  try')
+
+output:
+Outer try
+Inner try
+Inner try finally
+IndexError of outer try
+outer try finally
+End of oter try
+
+#  Find  outputs (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		eval('Hyd')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except ValueError:
+		print('ValueError  of   inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End of inner try')
+except  ValueError:
+	print('ValueError  of  outer try')
+except  IndexError:
+	print('IndexError of outer try')
+except:
+	print('default  except  of  outer  try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+output:
+Outer try
+Inner try
+Inner try finally
+default except of outer try
+
+#  Find  outputs (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		print(10 + '20')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except ValueError:
+		print('ValueError  of   inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End of inner try')
+except  ValueError:
+	print('ValueError  of  outer try')
+except  IndexError:
+	print('IndexError of outer try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+output:
+Outer try
+Inner try
+Inner try finally
+Outer try finally
+Error
+Outer try finally
+End of outer try
+
+# Find  outputs   (Home  work)
+class   MyError(BaseException):
+	def    _init_(self , y):
+		self . a = y
+		print('Constructor')
+# End of  the class
+def  compute(x):
+	print(x)
+	if  x > 20:
+		raise   MyError(x)
+	print('Hello')
+# End of  the functrion
+try:
+	compute(10)
+	compute(30)
+except  MyError  as  msg:
+	print('Caught  MyError  outside  :  ' ,  msg)
+print('End')
+
+output:
+10
+Hello
+30
+Caught MyError outside:
+End
+
+# Find  outputs   (Home  work)
+class   MyError(NameError):
+	def    _init_(self):
+		self . a =  25
+		print('Constructor')
+# End of  the class
+def  compute(x):
+	print(x)
+	if  x > 20:
+		raise   MyError()
+	print('Hello')
+#end of  the functrion
+try:
+	compute(30)
+	compute(10)
+except  MyError  as  msg:
+	print('Caught  MyError  outside  :  ' ,  msg)
+print('End')
+
+output:
+30
+Caught MyError outside:
+End
+
+# Find  outputs (Home  work)
+try:
+	print(1)
+	print(2)
+	print(3)
+except:
+	print(4)
+else:
+	print(5)
+finally:
+	print(6)
+print(7)
+
+output:
+1
+2
+3
+4
+5
+6
+7
+
+# Find  outputs   (Home  work)
+try:
+	print(1)
+	print(7 / 0)
+	print(3)
+except:
+	print(4)
+else:
+	print(5)
+finally:
+	print(6)
+print(7)
+
+output:
+1
+4
+6
+7
+
+# Find  outputs   (Home  work)
+try:
+	print(1)
+	print(7 / 0)
+	print(3)
+except:
+	int('Two')
+else:
+        print(5)
+finally:
+        print(6)
+print(7)
+
+output:
+1
+6
+Error
+
+# Find  outputs (Home  work)
+from  threading  import  *
+def  f1():
+	How  to  print  name  of  child  thread                                                          print('Child Thread Name:',current_thread().name)
+# main  thread  executes  following  statements
+How  to  create  a  new  thread  with  name  'new'   and  target  f1                               t=Thread(target=f1,name='new')
+How  to  start  the  new  thread                                                                   t.start()
+How  to  print  name  of   main  thread                                                            print('Main Thread Name:',current_thread().name)
+ 
+# Find  outputs (Home  work)
+How  to  create  a  thread  t1  with  name  'Hyd'                              t1=Thread(name='Hyd')
+How  to  create  another  thread  t2  without  a  name                         t2=Thread()
+How  to  print  name  of  main  thread                                         print('Main Thread Name:',current_thread().name)
+How  to  print  name  of  thread  t1                                           print('Thread t1 Name:',t1.name)
+How  to  print  name  of  thread  t2                                           print('Thread t2 Name:',t2.name)
+How  to  modify  name  of  main  thread  to  'India'                           current_thread().name='India'
+How  to  modify  name  of  thread  t1  to  'Sec'                               t1.name='Sec'
+How  to  modify  name  of  thread  t2  to  'Cyb'                               t2.name='Cyb'
+How  to  print  name  of  main  thread                                         print('Modified Main Thread Name:',current_thread().name)
+How  to  print  name  of  thread  t1                                           print('Modified Thread t1 Name:',t1.name)
+How  to  print  name  of  thread  t2                                           print('Modified Thread t2 Name:',t2.name)
+How  to  print  number  of  threads  under  execution                          print('Number of active threads:',active_count())
+
+# Find  outputs  (Home  work)
+from  threading  import  *
+def   f1(x):
+	s = current_thread() . name
+	while   True:
+		print(s , ' : ' , x)
+#  main  thread  executes  following  statements
+t1 = Thread(target = f1 , name = 'Hyd' , args = (10,))
+t2 = Thread(target = f1 , name = 'Sec' , args =  [20])
+t1 . start()
+t2 . start()
+print(active_count())
+print('Press  ctrl + break  or  Fn + b  to  stop ')
+
+output:
+Hyd:10
+Sec:20
+3
+press ctrl+break or Fn+b to stop
+Hyd:10
+Sec:20
+Hyd:10
+Sec:20
+....
+
+# Find  outputs (Home  work)
+from  threading  import  Thread , current_thread
+from  random  import  randint
+def   f1(n):
+	ctr = 0
+	s = current_thread() . name
+	while  True:
+		x = randint(1 , 100)
+		ctr += 1
+		print(F'{s}  guess  {x}   in  attempt  :  {ctr}')
+		if   x ==  n:
+			break
+	#end of while loop
+	print(F'{s}  finish  in  {ctr}  attempts')
+# End  of  function   f1()
+t1 = Thread(target = f1 , args = [75] , name = 'Rama')
+t2 = Thread(target = f1 , args = [50] , name = 'Sita')
+t1 . start() #   t1  executes  f1(75)
+t2 . start()  #   t2  executes  f1(50)
+
+output:
+Rama guess 12 in attempt : 1
+Sita guess 85 in attempt : 1
+Rama guess 44 in attempt : 2
+Sita guess 32 in attempt : 2
+Rama guess 75 in attempt : 3
+Rama finish in 3 attempts
+Sita guess 50 in attempt : 3
+Sita finish in 3 attempts
+
+# Find  outputs (Home  work)
+from threading import *
+def   disp():
+	for  i  in  range(10):
+		print('new  thread')
+#  child  thread  is  dead
+new = Thread(target = disp)
+new . start()
+new . join()
+for  i  in  range(10):
+	print('main  thread')
+# main   thread is  dead
+
+output:
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+
+#  Find  outputs (Home  work)
+from  threading  import *
+import  time
+def   disp():
+	for  i  in  range(10):
+		print('new  thread')
+		time . sleep(2)
+new = Thread(target = disp)
+new . start()
+new . join(10)
+for  i  in  range(10):
+	print('main  thread')
+
+output:
+new  thread
+new  thread
+new  thread
+new  thread
+new  thread
+(main thread resumes now)
+main  thread
+main  thread
+new  thread
+main  thread
+new  thread
+main  thread
+new  thread
+main  thread
+...
+
+# Find  outputs (Home  work)
+from threading import *
+import time
+def   double():
+	for   i  in  range(1 , 7):
+		print('Double : ' , 2 * i)
+		time . sleep(1)
+def   square():
+	for   i  in   range(1 , 7):
+		print('Square : ' , i * i)
+		time . sleep(1)
+start = time . time()
+double()
+square()
+end = time . time()
+print(end - start)
+
+output:
+Double :  2
+Double :  4
+Double :  6
+Double :  8
+Double :  10
+Double :  12
+Square :  1
+Square :  4
+Square :  9
+Square :  16
+Square :  25
+Square :  36
+12.0   
+
+# Find  outputs  (Home  work)
+from  threading  import  *
+import  time
+def   display():
+        name = current_thread() . name
+        print(name , ' is  started')
+        time . sleep(3)
+        print(name , ' is  ended')
+# End  of  the  function
+print(active_count())
+t1 = Thread(target = display , name = 'One')
+t2 = Thread(target = display , name = 'Two')
+t3 = Thread(target = display , name = 'Three')
+print(active_count())
+t1 . start()
+t2 . start()
+t3 . start()
+print(active_count())
+t1 . join()
+t2 . join()
+t3 . join()
+print(active_count())
+
+output:
+1
+1
+4
+One is started
+Two is started
+Three is started
+One is ended
+Two is ended
+Three is ended
+1
+
+# Find  outputs  (Home  work)
+from  threading  import  *
+import  time
+def   disp():
+	name = current_thread() . name
+	print(name , ' is  started')
+	time . sleep(3)
+	print(name , '  is  ended')
+# End  of  the  function
+t1 = Thread(target = disp , name = 'One')
+t2 = Thread(target = disp , name = 'Two')
+t3 = Thread(target = disp , name = 'Three')
+t1 . start()
+t2 . start()
+t3 . start()
+list = enumerate()
+for  t  in   list:
+	print(t . name)
+t1 . join()
+t2 . join()
+t3 . join()
+list = enumerate()
+for  t  in  list:
+	print(t . name)
+
+output:
+One is started
+Two is started
+Three is started
+MainThread
+One
+Two
+Three
+One is ended
+Two is ended
+Three is ended
+MainThread
+
+# is_alive()  method   demo  program
+from  threading  import *
+import  time
+def   disp():
+	name =  current_thread() . name
+	print(name , 'is   started')
+	time . sleep(3)
+	print(name , '   is    ended')
+t1 = Thread(target = disp , name = 'One')
+t2 = Thread(target = disp , name = 'Two')
+t3 = Thread(target = disp , name = 'Three')
+t1 . start()
+t2 . start()
+t3 . start()
+print(t1 . is_alive())
+print(t2 . is_alive())
+print(t3 . is_alive())
+t1 . join()
+t2 . join()
+t3 . join()
+print(t1 . is_alive())
+print(t2 . is_alive())
+print(t3 . is_alive())
+
+output:
+One is started
+Two is started
+Three is started
+True
+True
+True
+One is ended
+Two is ended
+Three is ended
+False
+False
+False
+
+# Find  outputs (Home  work)
+from  threading  import  *
+import  time
+def   table(n):
+	print('Table  :  ' , n)
+	for i  in  range(1 , 11):
+		print(F'{n}  *  {i}    =   {n * i}')
+		time . sleep(1)
+t1 = Thread(target = table , args = (7,))
+t2 = Thread(target = table , args = (4,))
+t1 . start()
+t2 . start()
+
+output:
+Table : 7
+Table : 4
+7 * 1 = 7
+4 * 1 = 4
+7 * 2 = 14
+4 * 2 = 8
+7 * 3 = 21
+4 * 3 = 12
+7 * 4 = 28
+4 * 4 = 16
+...
