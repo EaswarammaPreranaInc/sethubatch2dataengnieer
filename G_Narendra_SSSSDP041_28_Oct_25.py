@@ -171,3 +171,17 @@ Two
 Three
 Number  of  Threads  under  execution  : 1
 '''
+#  Find  outputs  (Home  work)
+try:
+	raise  ArithmeticError
+except   ZeroDivisionError:
+	print('Zero Division  Error')
+except   ArithmeticError:
+	print('Arithmetic Error')
+print('End')
+
+'''
+outputs:
+Arithmetic Error
+End
+'''
