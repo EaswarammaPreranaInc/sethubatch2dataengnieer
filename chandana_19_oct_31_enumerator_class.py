@@ -1,0 +1,128 @@
+#Find outputs 
+import   time
+list = [25 , 10.8 , 'Hyd' , True]
+e = enumerate(list,start = 5) # index start from 5 and elements are yielded one at a time on demand. 
+while   True:
+	try:
+		print(next(e)) # prints one tuple and sleeps for 1 second
+		time.sleep(1)
+	except  StopIteration:
+		break
+#print(list[5]) # error : there is no index 5 in the list
+'''
+o/p:
+(5, 25)
+(6, 10.8)
+(7, 'Hyd')
+(8, True)
+'''
+
+
+''' 
+Can  string  be  enumerated ?
+'''
+import   time
+a = input('Enter any string :')
+e = enumerate(a)
+while   True:
+	try:
+		print(next(e))
+		time.sleep(1)
+	except  StopIteration:
+		break
+'''
+o/p:
+Enter any string :Hyd
+(0, 'H')
+(1, 'y')
+(2, 'd')
+'''
+
+
+#Can  set  be  enumerated  ? 
+import  time
+a = {25,10.8,'Hyd',True}
+print(a)
+b = enumerate(a)
+while   True:
+	try:
+		print(next(b))
+		time.sleep(1)
+	except  StopIteration:
+		break
+'''
+o/p:
+{25, 10.8, 'Hyd', True}
+(0, 25)
+(1, 10.8)
+(2, 'Hyd')
+(3, True)
+'''
+
+
+# Can  dictionary  be  enumerated ? 
+import   time
+def  disp(e):
+	while  True:
+		try:
+			print(next(e))
+			time.sleep(1)
+		except:
+			break
+	print()
+a = {'Empno':25 , 'Emp Name': 'Rama Rao' ,'Sal' : 10000.0}
+e1 = enumerate(a.keys())
+disp(e1)
+e2 = enumerate(a.values())
+disp(e2)
+e3 = enumerate(a.items())
+disp(e3)
+e4 = enumerate(a,start = 5)
+disp(e4)
+'''
+o/p:
+(0, 'Empno')
+(1, 'Emp Name')
+(2, 'Sal')
+
+(0, 25)
+(1, 'Rama Rao')
+(2, 10000.0)
+
+(0, ('Empno', 25))
+(1, ('Emp Name', 'Rama Rao'))
+(2, ('Sal', 10000.0))
+
+(5, 'Empno')
+(6, 'Emp Name')
+(7, 'Sal')
+'''
+
+
+# Find  outputs 
+import   time
+a = ['Telangana' , 'Andhra  Pradesh' , 'Karnataka' , 'TamilNadu' , 'Maharashtra']
+b = ['Hyderabad' , 'Amaravathi' , 'Bangalore' , 'Chennai' , 'Mumbai']
+'''
+Write code to print the  following outputs using enumerate iterator
+Telangana        ... Hyderabad
+Andhra  Pradesh  ... Amaravathi
+Karnataka        ... Bangalore
+TamilNadu        ... Chennai
+Maharashtra       ... Mumbai
+'''
+for i,state in enumerate(a):
+	print(f'{state} ... {b[i]}')
+	time.sleep(1)
+'''
+o/p:
+Telangana ... Hyderabad
+Andhra  Pradesh ... Amaravathi
+Karnataka ... Bangalore
+TamilNadu ... Chennai
+Maharashtra ... Mumbai
+'''
+
+
+
+
