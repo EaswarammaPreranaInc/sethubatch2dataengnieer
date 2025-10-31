@@ -1,0 +1,325 @@
+MAIN.PY.............
+
+import mysql.connector as msc
+import pandas as pd
+from sqlalchemy import create_engine
+ 
+oltp_config = {
+    'host': '35.222.34.151',
+    'user': 'team3',
+    'password': 't3ssss_DP',
+    'database': 'OLTP'
+}
+
+olap_config = {
+    'host': '35.222.34.151',
+    'user': 'team3',
+    'password': 't3ssss_DP',
+    'database': 'Team3'
+}
+
+def get_connection(config):
+    try:
+        return msc.connect(**config)
+    except msc.Error as e:
+        print('Error connecting to database server', e)
+        exit()
+
+def injest_data():
+    con = get_connection(oltp_config)
+    cur = con.cursor()
+
+    cur.execute('select * from customers')
+    customers = pd.DataFrame(cur.fetchall(), columns=['customer_id', 'first_name', 'last_name', 'email', 'phone', 'phone_norm', 'city', 'state', 'signup_date', 'is_active', 'external_id', 'guest_flag', 'created_at', 'updated_at'])
+    print(customers)
+
+    cur.execute('select * from products')
+    products = pd.DataFrame(cur.fetchall(), columns=['product_id', 'product_name', 'product_category_raw', 'product_category', 'list_price', 'cost_price', 'is_active', 'created_at', 'updated_at'])
+    print(products)
+
+    cur.execute('select * from orders')
+    orders = pd.DataFrame(cur.fetchall(), columns=['order_id', 'customer_id', 'order_date', 'status', 'order_placed_at', 'payment_initiated_at', 'payment_completed_at', 'shipped_at', 'delivered_at', 'channel', 'user_agent', 'device_type', 'utm_source', 'coupon_code', 'applied_promo_id', 'order_value', 'num_items', 'ship_address_id', 'bill_address_id', 'created_at', 'updated_at'])
+    print(orders)
+
+    cur.execute('select * from order_items')
+    order_items = pd.DataFrame(cur.fetchall(), columns=['order_item_id', 'order_id', 'product_id', 'quantity', 'unit_price', 'line_total', 'is_bundle_item', 'bundle_id'])
+    print(order_items)
+
+    cur.execute('select * from payments')
+    payments = pd.DataFrame(cur.fetchall(), columns=['payment_id', 'order_id', 'payment_method', 'amount', 'payment_date', 'is_refunded', 'refund_txn_id'])
+    print(payments)
+
+    return customers, products, orders, order_items, payments
+
+def clean_phone(ph):
+    s = ''
+    for c in ph:
+        if c.isdigit():
+            s += c
+    s = s[-10:]
+    return s
+
+category_map = {'ks': 'books', 'eau': 'beauty', 'me': 'home', 'ery': 'grocery', 'rts': 'sports', 'ect': 'electronics', 'ys': 'toys', 'rel': 'apparel'}
+def clean_category(ctg):
+    for k, v in category_map.items():
+        if k.lower() in ctg.lower():
+            return v
+    return 'Unknown'
+
+def transform_data(customers, products):
+    customers['phone_new'] = customers['phone'].apply(clean_phone)
+    products['category_new'] = products['product_category_raw'].apply(clean_category)
+    return customers, products
+
+def load_data(customers, products, orders, order_items, payments):
+    dim_customers = customers[['customer_id', 'first_name', 'last_name', 'email', 'phone_new', 'city', 'state', 'signup_date']]
+    dim_customers = dim_customers[dim_customers['customer_id'] != 0]
+    dim_customers = dim_customers[dim_customers['customer_id'].notna()]
+
+    dim_products = products[['product_id', 'product_name', 'category_new', 'list_price', 'cost_price', 'is_active', 'created_at']]
+    dim_products = dim_products[dim_products['product_id'] != 0]
+    dim_products = dim_products[dim_products['product_id'].notna()]
+
+    order_fact = pd.merge(orders, order_items, on=['order_id'], how='inner')
+    order_fact = pd.merge(order_fact, payments, on=['order_id'], how='inner')
+    order_fact = order_fact[['order_id', 'customer_id', 'order_date', 'status', 'order_placed_at', 
+                             'order_item_id', 'product_id', 'quantity', 'unit_price', 'line_total', 
+                             'payment_id', 'payment_method', 'amount', 'payment_date']]
+    order_fact = order_fact[order_fact['order_id'] != 0]
+    order_fact = order_fact[order_fact['order_id'].notna()]
+    
+    engine = create_engine('mysql+pymysql://team3:t3ssss_DP@35.222.34.151:3306/Team3')
+    try:
+        dim_products.to_sql('dim_products', engine, if_exists='append', index=False)
+        dim_customers.to_sql('dim_customers', engine, if_exists='append', index=False)
+        order_fact.to_sql('order_fact', engine, if_exists='append', index=False)
+        print('Loading Complete!')
+    except Exception as e:
+        print('Error loading data!', e)
+
+customers, products, orders, order_items, payments = injest_data()
+customers, products = transform_data(customers, products)
+load_data(customers, products, orders, order_items, payments)
+
+
+
+#####################################################
+
+--------------- database_operations.sql --------------------
+
+
+
+use ECOMM;
+ 
+select * from bundle_items;
+select * from customers;
+select * from order_items;
+select * from order_sessions;
+select * from orders;
+select * from payments;
+select * from product_bundles;
+select * from product_price_history;
+select * from products;
+select * from returns;
+select * from sessions;
+select * from shipments;
+
+
+
+
+use OLTP;
+
+select * from bundle_items;
+select * from customers;
+select * from order_items;
+select * from order_sessions;
+select * from orders;
+select * from payments;
+select * from product_bundles;
+select * from product_price_history;
+select * from products;
+select * from returns;
+select * from sessions;
+select * from shipments;
+
+
+
+
+
+use Team3;
+
+create table dim_customers (
+    customer_id BIGINT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(150),
+    phone_new VARCHAR(50),
+    city VARCHAR(100),
+    state VARCHAR(100),
+    signup_date DATE
+);
+
+create table dim_products (
+    product_id BIGINT PRIMARY KEY,
+    product_name VARCHAR(255),
+    category_new VARCHAR(100),
+    list_price DECIMAL(10,2),
+    cost_price DECIMAL(10,2),
+    is_active BOOLEAN,
+    created_at DATE
+);
+
+create table order_fact(        
+order_id BIGINT,            
+customer_id BIGINT,          
+order_date DATE, 
+status VARCHAR(20),
+order_placed_at DATETIME ,
+order_item_id BIGINT,       
+product_id BIGINT ,         
+quantity INT,
+unit_price DECIMAL(10,2) , 
+line_total DECIMAL(12,2),
+payment_id BIGINT,          
+payment_method VARCHAR(50),
+amount DECIMAL(12,2),
+payment_date DATE
+);
+
+show tables;
+
+truncate dim_customers;
+truncate dim_products;
+truncate order_fact;
+
+select * from dim_customers;
+select * from dim_products;
+select * from order_fact;
+
+
+
+-- Insights
+-- 1. no. of orders per customer
+SELECT 
+	dc.customer_id, 
+    dc.first_name,
+    dc.last_name,
+	COUNT(odf.order_id) as total_orders
+FROM dim_customers dc
+JOIN order_fact odf ON dc.customer_id = odf.customer_id
+GROUP BY dc.customer_id, dc.first_name, dc.last_name
+ORDER BY total_orders DESC;
+
+-- 2. most selling products (quantity not price)
+SELECT
+	dp.product_id,
+    dp.product_name,
+    SUM(odf.quantity) AS total_sold
+FROM dim_products dp
+JOIN order_fact odf ON dp.product_id = odf.product_id
+GROUP BY dp.product_id, dp.product_name
+ORDER BY total_sold DESC;
+
+
+-- 3. orders per month
+SELECT
+	YEAR(order_date) AS year,
+    MONTH(order_date) AS month,
+    COUNT(order_id) AS total_orders
+FROM order_fact
+GROUP BY YEAR(order_date), MONTH(order_date)
+ORDER BY YEAR(order_date), MONTH(order_date);
+
+-- 4. most selling categories
+SELECT 
+	dp.category_new,
+    SUM(odf.quantity) AS total_sold
+FROM dim_products dp
+JOIN order_fact odf ON dp.product_id = odf.product_id
+GROUP BY dp.category_new
+ORDER BY total_sold DESC;
+
+-- 5. revenue per category
+SELECT 
+	dp.category_new,
+    SUM(odf.line_total) AS total_revenue
+FROM dim_products dp
+JOIN order_fact odf ON dp.product_id = odf.product_id
+GROUP BY dp.category_new
+ORDER BY total_revenue DESC;
+
+-- 6. total revenue per each month
+SELECT
+	YEAR(order_date) AS year,
+    MONTH(order_date) AS month,
+    SUM(line_total) AS total_revenue
+FROM order_fact
+GROUP BY YEAR(order_date), MONTH(order_date)
+ORDER BY year, month;
+
+-- 7. difference between revenue of current month with previous month
+SELECT
+	YEAR(order_date) AS year,
+    MONTH(order_date) AS month,
+	SUM(line_total) AS current_month_revenue,
+    SUM(line_total) - LAG(SUM(line_total), 1, 0) OVER (ORDER BY year(order_date), month(order_date)) AS diff_from_prev
+FROM order_fact
+GROUP BY YEAR(order_date), MONTH(order_date)
+ORDER BY year, month
+########################################################
+
+
+
+---------------------- OLTP to OLAP Data Pipeline Project --------------------------
+
+
+
+OLTP to OLAP Data Pipeline Project
+Overview
+This project designs and implements a star-schema OLAP (Online Analytical Processing) model to transform data from an OLTP (Online Transactional Processing) system. It includes an ETL (Extract, Transform, Load) pipeline that ingests, transforms, and loads OLTP data into OLAP tables, enabling efficient analytical reporting and insights.
+
+Features
+Star-Schema Design: A robust OLAP model with fact and dimension tables optimized for analytical queries.
+ETL Pipeline: Extracts data from an OLTP source, applies transformations (e.g., data cleansing, aggregation), and loads it into the OLAP database.
+Analytical Insights: Supports reporting and querying for business intelligence and decision-making.
+ETL Pipeline Details
+The ETL pipeline (src/etl_pipeline.py) performs the following steps:
+
+Extract: Connects to the OLTP MySQL database and retrieves data from the following tables:
+
+customers: Customer details (e.g., ID, name, email, phone, city).
+products: Product details (e.g., ID, name, category, prices).
+orders: Order details (e.g., ID, customer ID, order date, status).
+order_items: Order item details (e.g., item ID, order ID, product ID, quantity).
+returns: Return details (e.g., return ID, order ID, reason code).
+payments: Payment details (e.g., payment ID, order ID, amount).
+Transform:
+
+Cleans phone numbers in the customers table to a standardized 10-digit format.
+Maps raw product categories to standardized categories using a predefined mapping.
+Merges orders, order_items, returns, and payments into a fact table for the OLAP schema.
+Load:
+
+Loads transformed data into the OLAP database (Team3) with the following structure:
+dim_customers: Customer dimension table (e.g., customer ID, name, email, phone, city).
+dim_products: Product dimension table (e.g., product ID, name, category, prices).
+order_fact: Fact table combining order, item, return, and payment details (e.g., order ID, customer ID, product ID, order value, refund amount).
+Uses SQLAlchemy to write data to the OLAP database.
+Example SQL Query
+To generate a sales report by region and product category:
+
+SELECT
+    dc.city,
+    dp.category_new,
+    SUM(of.order_value) as total_sales,
+    SUM(of.refund_amount) as total_refunded
+FROM
+    order_fact of
+    JOIN dim_customers dc ON of.customer_id = dc.customer_id
+    JOIN dim_products dp ON of.product_id = dp.product_id
+GROUP BY
+    dc.city,
+    dp.category_new;
+
+
+
