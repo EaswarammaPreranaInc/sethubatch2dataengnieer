@@ -1,0 +1,102 @@
+'''
+Write  a  program  to  convert  infix  to  prefix
+
+Hint:  Modify  following  program  to  convert  infix  to  prefix
+'''
+
+from prog1 import stack
+
+def icp(operator):
+    if operator in '+-':
+        return 1
+    if operator in '*/%':
+        return 2
+    if operator in '^(':
+        return 4
+
+def isp(operator):
+    match operator:
+        case '+' | '-':
+            return 1
+        case '*' | '/' | '%':
+            return 2
+        case '^':
+            return 3
+        case '(':
+            return 0
+        case '#':
+            return -1
+
+def convert(infix):
+    infix = infix[::-1]
+    s = stack()
+    s.push('#')
+    prefix = ''
+    for ch in infix:
+        if ch.isalnum():
+            prefix += ch
+        elif ch == ')':
+            s.push(ch)
+        elif ch == '(':
+            while s.peek() != ')' and s.peek() != '#':
+                prefix += s.pop()
+            s.pop()
+        elif icp(ch) > isp(s.peek()):
+            s.push(ch)
+        else:
+            while icp(ch) <= isp(s.peek()):
+                prefix += s.pop()
+            s.push(ch)
+    while s.peek() != '#':
+        prefix += s.pop()
+    prefix = prefix[::-1]
+    return prefix
+
+if __name__ == '__main__':
+    infix = input('Enter infix expression: ')
+    prefix = convert(infix)
+    print('Prefix Expression:', prefix)
+
+
+'''
+Write  a  program  to  evaluate  prefix  expression
+
+Prefix  expression :   -  +  3  *  4  5  /  6  2
+Reverse  of  prefix :   2  6  /  5  4  *  3  +  -
+'''
+
+
+class stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+def eval(prefix):
+    prefix = prefix.split()[::-1]
+    s = stack()
+    for ch in prefix:
+        if ch.isdigit():
+            s.push(int(ch))
+        else:
+            x = s.pop()
+            y = s.pop()
+            match ch:
+                case '+':
+                    s.push(x + y)
+                case '-':
+                    s.push(x - y)
+                case '*':
+                    s.push(x * y)
+                case '/':
+                    s.push(int(x / y))
+                case '^':
+                    s.push(x ** y)
+    return s.pop()
+
+prefix = "- + 3 * 4 5 / 6 2"
+print(eval(prefix))
