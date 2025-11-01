@@ -1,0 +1,348 @@
+# Find   outputs (Home  work)
+from threading import *
+import time
+
+def disp():
+	main_thread().join(10)                  #  Error
+	for i in range(10):
+		print('new  thread')                # This line will never execute (due to error)
+
+new = Thread(target = disp)
+new.start()                                # Starts child thread 
+for i in range(10):
+	print('main  thread')                  #  main thread prints 10 times (since child thread crashed)
+	time.sleep(2)
+
+
+#  Find  outputs  (Home  work)
+from threading import *
+import time
+
+def disp():
+	main_thread().join()                     #  Error
+	for i in range(10):
+		print('child  thread')               
+
+child = Thread(target = disp)
+child.start()                                # Starts child thread
+child.join()                                 #  Main thread waits for child thread to finish
+for i in range(10):
+	print('main  thread')                    #  Never executes
+
+
+
+# Find  outputs (Home  work)
+from  threading  import *
+import  time
+
+def disp(s):
+	print('[', s, end='')       # [ Hyd   or   [ Sec   or   [ Cyb   (order not fixed — depends on thread scheduling)
+	time.sleep(3)              # Each thread waits for 3 seconds
+	print(']')                 # ]   (each closes its own bracket after 3 seconds)
+
+t1 = Thread(target=disp, args=('Hyd',))
+t2 = Thread(target=disp, args=('Sec',))
+t3 = Thread(target=disp, args=('Cyb',))
+t1.start()                     # Starts thread t1 (may print first)
+t2.start()                     # Starts thread t2 (may print second)
+t3.start()                     # Starts thread t3 (may print third)
+
+
+
+#  Find  outputs (Home  work)
+from  threading  import *
+import  time
+
+class Account:
+	def __init__(self, acno1, bal1):
+		self.acno = acno1
+		self.bal = bal1
+
+	def credit(self, amt):
+		s = current_thread().name
+		print(F'{s} is depositing Rs. {amt} into account {self.acno}')   # Rama / Sita depositing messages
+		x = self.bal                                                     # Reads current balance
+		time.sleep(1)                                                    # Thread delay — may cause race condition
+		self.bal = x + amt                                               # Updates balance
+# End of the class
+
+
+ac = Account(25, 1000.0)
+print('Initial  Balance : ', ac.bal)                                    # Initial  Balance :  1000.0
+
+t1 = Thread(target=ac.credit, args=[100], name='Rama')
+t2 = Thread(target=ac.credit, args=(200,), name='Sita')
+
+t1.start()                                                              # Rama  is  depositing  Rs. 100 into account 25
+t2.start()                                                              # Sita  is  depositing  Rs. 200 into account 25
+t1.join()
+t2.join()
+
+print('Final  Balance  :  ', ac.bal)                                    # Final  Balance  :  1100.0  or  1200.0 (depends on race condition)
+
+
+
+# Find  outputs (Home  work)
+import time
+
+list = [25, 10.8, 'Hyd', True]
+e = enumerate(list, start=5)
+
+while True:
+	try:
+		print(next(e))                    # (5, 25)
+		                                 # (6, 10.8)
+		                                 # (7, 'Hyd')
+		                                 # (8, True)
+		time.sleep(1)
+	except StopIteration:
+		break
+
+print(list[5])                           #  IndexError
+
+
+
+
+'''  (Home  work)
+Can  string  be  enumerated ?
+'''
+import time
+
+a = input('Enter  any  string  :  ')     # Assume that input is 'Hyd'
+e = enumerate(a)
+
+while True:
+	try:
+		print(next(e))                    # (0, 'H')
+		                                 # (1, 'y')
+		                                 # (2, 'd')
+		time.sleep(1)
+	except StopIteration:
+		break
+
+
+
+
+#  Can  set  be  enumerated  ?  (Home  work)
+import time
+a = {25, 10.8, 'Hyd', True}
+print(a)                     #  {'Hyd', 10.8, 25}  (order may vary)
+
+b = enumerate(a)
+while True:
+	try:
+		print(next(b))        # (0, 'Hyd')
+		                      # (1, 10.8)
+		                      # (2, 25)
+		                      # (order is NOT fixed)
+		time.sleep(1)
+	except StopIteration:
+		break
+
+
+
+
+# Can  dictionary  be  enumerated ?   (Home  work)
+import time
+def disp(e):
+	while True:
+		try:
+			print(next(e))         # prints each enumerated element
+			time.sleep(1)
+		except:
+			break
+	print()
+
+a = {'Empno': 25, 'Emp Name': 'Rama Rao', 'Sal': 10000.0}
+
+e1 = enumerate(a.keys())
+disp(e1)
+# Output:
+# (0, 'Empno')
+# (1, 'Emp Name')
+# (2, 'Sal')
+
+e2 = enumerate(a.values())
+disp(e2)
+# Output:
+# (0, 25)
+# (1, 'Rama Rao')
+# (2, 10000.0)
+
+e3 = enumerate(a.items())
+disp(e3)
+# Output:
+# (0, ('Empno', 25))
+# (1, ('Emp Name', 'Rama Rao'))
+# (2, ('Sal', 10000.0))
+
+e4 = enumerate(a, start=5)
+disp(e4)
+# Output:
+# (5, 'Empno')
+# (6, 'Emp Name')
+# (7, 'Sal')
+
+
+
+# Find outputs (Home work)
+import time
+a = ['Telangana', 'Andhra  Pradesh', 'Karnataka', 'TamilNadu', 'Maharastra']
+b = ['Hyderabad', 'Amaravathi', 'Bangalore', 'Chennai', 'Mumbai']
+
+e = enumerate(a)
+for i, state in e:
+	print(state, '...', b[i])      # Telangana ... Hyderabad
+	time.sleep(1)
+
+Telangana        ... Hyderabad
+Andhra  Pradesh  ... Amaravathi
+Karnataka        ... Bangalore
+TamilNadu        ... Chennai
+Maharastra       ... Mumbai
+
+
+
+
+# How  to  iterate  zip  object  in  differenet  ways  (Home  work)
+import time
+a = ['Telangana', 'Andhra Pradesh', 'Karnataka', 'Tamilnadu']
+b = ['Hyderabad', 'Amaravathi', 'Bangalore', 'Chennai']
+z1 = zip(a, b)
+print(type(z1))
+print(z1)
+
+print('Iterate  thru  zip  object  with   next()   function')
+# How  to   iterate  thru  zip  object  with  next()  function
+z2 = zip(a, b)
+while True:
+	try:
+		print(next(z2))
+		time.sleep(1)
+	except StopIteration:
+		break
+print()
+
+print('Iterate  thru  zip  object  with  __next__  method')
+# How  to   iterate  thru  zip  object  with  __next__()  method
+z3 = zip(a, b)
+while True:
+	try:
+		print(z3.__next__())
+		time.sleep(1)
+	except StopIteration:
+		break
+print()
+
+print('Iterate  thru  zip  object  with   for  loop')
+# How  to   iterate  thru  zip  object  with  for  loop
+z4 = zip(a, b)
+for i in z4:
+	print(i)
+	time.sleep(1)
+print()
+
+print('Iterate  thru  elements  of  each  tuple  in  zip  object')
+# How  to   iterate  thru  elements  of  each  tuple  of  zip  object  with  for  loop
+z5 = zip(a, b)
+for state, capital in z5:
+	print(state, '...', capital)
+	time.sleep(1)
+print()
+
+print('Unpacks  zip  object  with   *  operator  :  ', list(zip(*zip(a, b))))  # How  to  unpack  zip  object  with  *  operator
+print()
+print('zip   object  in  the  form  of   list  :  ', list(zip(a, b)))           # How  to  convert  zip  object  into  list
+print()
+print('zip   object  in  the  form  of   dictionary :  ', dict(zip(a, b)))     # How  to  convert  zip  object  into  dictionary
+
+
+
+
+
+#  Find  outputs  (Home  work)
+import time
+a = ['Empno', 'Emp Name', 'Salary']         # List 'a' with 3 elements
+b = [25, 'Rama Rao', 10000.0, 'Male', True] # List 'b' with 5 elements
+c = zip(a, b)                               # zip() pairs elements till shortest list ends → 3 pairs only
+
+while True:
+	try:
+		print(next(c))                       # Prints one pair (tuple) each time
+		time.sleep(1)                        # Wait 1 second between prints
+	except StopIteration:                    # When zip object is exhausted → StopIteration occurs
+		break
+
+
+
+
+#  Find  outputs  (Home  work)
+import time
+a = ['Telangana', 'Andhra  Pradesh', 'Karnataka', 'TamilNadu', 'Maharastra']   # List of states
+b = ['Hyderabad', 'Amaravathi', 'Banglore', 'Chennai', 'Mumbai']               # List of capitals
+c = [50000000, 40000000, 70000000, 60000000, 30000000]                         # List of populations
+
+for x in zip(a, b, c):     # zip() combines one element from each list into a tuple
+	print(x)               # Prints the tuple of (state, capital, population)
+	time.sleep(1)           # Waits 1 second between each print
+
+
+
+# Find  outputs   (Home  work)
+import time
+a = [1, 2, 3]                # List 'a' has 3 elements
+b = [4, 5, 6, 7, 8]          # List 'b' has 5 elements
+for x, y in zip(a, b):       # zip() stops when the shortest list ends (3 elements)
+	print(x + y)             # 1+4=5, 2+5=7, 3+6=9
+	time.sleep(1)
+
+
+
+
+# Find outputs  (Home  work)
+import time
+
+def disp(z):
+	while True:
+		try:
+			print(next(z))
+			time.sleep(1)
+		except:
+			break
+	print()
+
+a = [10, 20, 30]
+b = {1: 2, 3: 4, 5: 6}
+
+z1 = zip(a, b.keys())      # (10, 1), (20, 3), (30, 5)
+disp(z1)
+
+z2 = zip(a, b.values())    # (10, 2), (20, 4), (30, 6)
+disp(z2)
+
+z3 = zip(a, b.items())     # (10, (1,2)), (20, (3,4)), (30, (5,6))
+disp(z3)
+
+z4 = zip(a, b)             # (10, 1), (20, 3), (30, 5)
+disp(z4)
+
+z5 = zip(a)                # (10,), (20,), (30,)
+disp(z5)
+
+z6 = zip(b)                # (1,), (3,), (5,)
+disp(z6)
+
+z7 = zip()                 # No arguments 
+disp(z7)
+
+
+
+
+# Find  outputs  (Home  work)
+
+z = zip(range(5), range(20, 25))       #  zip object containing pairs: (0,20), (1,21), (2,22), (3,23), (4,24)
+
+a = [[x, y] for x, y in z]             # [[0,20], [1,21], [2,22], [3,23], [4,24]]
+
+print(a)                               #  [[0, 20], [1, 21], [2, 22], [3, 23], [4, 24]]
+     
