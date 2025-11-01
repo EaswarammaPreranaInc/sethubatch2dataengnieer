@@ -1,0 +1,74 @@
+#  Write  a  program  to  convert  postfix  to  prefix
+
+def postfix_to_prefix(postfix):
+    stack = []
+    operators = set(['+', '-', '*', '/', '^'])
+
+    for char in postfix.split():
+        if char not in operators:
+            stack.append(char)
+        else:
+            op1 = stack.pop()
+            op2 = stack.pop()
+            expr = char + " " + op2 + " " + op1
+            stack.append(expr)
+
+    return stack[0]
+
+
+postfix_expr = "3 4 5 * + 6 2 / -"
+prefix_expr = postfix_to_prefix(postfix_expr)
+print("Prefix Expression:", prefix_expr)
+
+
+#  Write  a  program  to  convert  prefix  to  postfix
+
+
+def prefix_to_postfix(prefix):
+    stack = []
+    operators = set(['+', '-', '*', '/', '^'])
+
+    for char in prefix.split()[::-1]:
+        if char not in operators:
+            stack.append(char)
+        else:
+            op1 = stack.pop()
+            op2 = stack.pop()
+            expr = op1 + " " + op2 + " " + char
+            stack.append(expr)
+
+    return stack[0]
+
+prefix_expr = "- + 3 * 4 5 / 6 2"
+postfix_expr = prefix_to_postfix(prefix_expr)
+print("Postfix Expression:", postfix_expr)
+
+
+# Write  a  program  to  implement  priority  queue  using  list
+
+class PriorityQueue:
+    def __init__(self):
+        self.queue = []
+
+    def insert(self, item):
+        self.queue.append(item)
+
+    def delete(self):
+        if not self.queue:
+            return None
+        highest = max(self.queue)
+        self.queue.remove(highest)
+        return highest
+
+    def display(self):
+        print(self.queue)
+
+
+pq = PriorityQueue()
+pq.insert(3)
+pq.insert(1)
+pq.insert(5)
+
+pq.display()
+print("Deleted:", pq.delete())
+pq.display()
