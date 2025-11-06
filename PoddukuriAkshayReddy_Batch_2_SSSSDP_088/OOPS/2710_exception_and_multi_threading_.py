@@ -913,6 +913,9 @@ child = MyThread(target = f1)
 child . start()
 print('Main  Thread')
 '''
+
+
+
 run method
 Main method
 '''
@@ -942,4 +945,14 @@ child . start()
 print('Main  Thread')
 '''
 Main Thread
+'''
+
+
+'''
+thread implementation is of 3 types 
+with function
+method and
+run() method 
+
+
 '''
