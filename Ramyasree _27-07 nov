@@ -1,0 +1,179 @@
+'''
+Producer  Consumer  problem  with  Queue  class  (Home  work)
+
+1. What  does  thread  'p'  do  ?   --->   Inserts  a  random  number  between  1  and  100   into  Queue  object  and  sleeps
+
+
+2. Why  thread  'p'  sleeps   after  insertion ? --->  So  that  thread  'c'  gets  a  chance  to  remove  the  element
+
+
+3. What  does  thread  'c'  do ?   --->  Removes  the  element  from  Queue  object  and  prints
+
+
+4. When  can  thread  'c'  remove  an  element  from  Queue  object ?  --->  When  Queue  object  is  not  empty
+
+
+5. What  does  thread  'c'  do  when  object  is  empty ?  --->
+Automatically  waits  as  get()  method  can  not  remove  an  element  empty  Queue
+
+
+6. How  long  are  the  two  threads   executed ?  --->  Infinite  times
+'''
+
+
+
+
+
+
+
+
+
+from queue import Queue
+from threading import Thread
+import random
+import time
+
+q = Queue()
+
+def producer():
+    while True:
+        num = random.randint(1, 100)
+        q.put(num)
+        time.sleep(1)
+
+def consumer():
+    while True:
+        item = q.get()
+        print(f"Consumed: {item}")
+        time.sleep(1)
+
+t1 = Thread(target=producer)
+t2 = Thread(target=consumer)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+
+
+
+
+def create(f):  
+    try:  
+        print('Type  text  terminated  by  ctrl+z')  # Type  text  terminated  by  ctrl+z
+        while line := input():  
+            f.write(line + '\n')  
+    except EOFError:  
+        print(F'File  {f.name}  is  created')  # File myfile.txt is created
+
+fname = input('Enter  filename :  ')  # Enter  filename : 
+f = open(fname, 'w')  
+create(f)  
+f.close()
+
+
+
+
+
+
+# Repeat prog5b(File-Create) with writelines() method
+
+def create(f):
+    print('Enter text terminated by ctrl + z')
+    lines = []                                     # How to read each line from keyboard and write to the list until user strikes ctrl+z
+    while True:
+        try:
+            line = input()
+            lines.append(line + '\n')
+        except EOFError:
+            break
+    f.writelines(lines)                            # How to write list to the file
+    print(f'File {f.name} is created')
+# End of the function
+
+fname = input('Enter filename : ')                 # How to read the filename
+f = open(fname, 'w')                               # How to open the file
+create(f)                                          # How to call create() function
+f.close()                                          # How to close the file
+
+
+
+
+
+
+''' (Home work)
+Write a program to print data of the file
+
+File
+-----
+Rama Rao
+9247
++-$
+Hyd is green city
+
+1) Which method is used to read data of the file? ---> read()
+2) Which function is used to print whole data of the file? ---> print()
+3) In which mode is file opened? ---> read mode
+'''
+
+def disp(f):
+    data = f.read()                                  # How to read the whole file
+    print(f'Data of the file {f.name}')              # Message showing which file
+    print(data)                                      # How to print the file
+# End of the function
+
+fname = input('Enter filename : ')                   # How to read the filename
+f = open(fname, 'r')                                 # How to open the file
+disp(f)                                              # How to call disp() function
+f.close()                                            # How to close the file
+
+
+
+
+
+
+'''  (Home work)
+Write a program to print file pagewise and page length = 20 lines
+
+File
+-----
+Rama Rao
+9247
++-$
+Hyd is green city
+
+1) Which function is used to read each line of the file ? ---> readline()
+2) Which function is used to print each line ? ---> print()
+3) How long is the procedure repeated ? ---> Until end of the file is reached
+4) In which mode is file opened ? ---> read mode
+5) How to pause execution for every 20 lines ? ---> os.system('pause')
+6) How to clear the 20 lines before printing next 20 lines ? ---> os.system('cls')
+'''
+
+import os
+
+def disp(f):
+    count = 0
+    while True:
+        line = f.readline()                           # Which function is used to read each line of the file ? ---> readline()
+        if not line:                                  # How long is the procedure repeated ? ---> Until end of the file is reached
+            break
+        print(line, end='')                           # Which function is used to print each line ? ---> print()
+        count += 1
+        if count == 20:                               # Page length = 20 lines
+            os.system('pause')                        # How to pause execution for every 20 lines ? ---> os.system('pause')
+            os.system('cls')                          # How to clear the 20 lines before printing next 20 lines ? ---> os.system('cls')
+            count = 0
+# End of the function
+
+fname = input('Enter filename : ')                    # How to read filename
+f = open(fname, 'r')                                  # In which mode is file opened ? ---> read mode
+disp(f)                                               # How to call disp() function
+f.close()                                             # How to close the file
+
+
+
+
+
