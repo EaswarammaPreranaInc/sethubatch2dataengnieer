@@ -1,0 +1,431 @@
+Microsoft Windows [Version 10.0.26100.4946]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\pajju>mysql -u root -p;
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+
+C:\Users\pajju>mysql -u root -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+
+C:\Users\pajju>Charan@123
+'Charan@123' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\pajju>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use student;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| course            |
+| student           |
++-------------------+
+2 rows in set (0.03 sec)
+
+mysql> select* from student;
++------------+------------+-----------+------------+--------+
+| student_id | first_name | last_name | dob        | gender |
++------------+------------+-----------+------------+--------+
+|          1 | charan     | teja      | 2003-07-20 | m      |
+|          2 | yameen     | shareef   | 2003-10-03 | m      |
+|          3 | dilip      | goud      | 2004-05-09 | m      |
+|          4 | sri        | veena     | 2003-11-03 | f      |
+|          5 | tharuni    | reddy     | 2003-04-12 | f      |
++------------+------------+-----------+------------+--------+
+5 rows in set (0.04 sec)
+
+mysql> select* from course;
++-----------+-------------+---------+
+| course_id | course_name | credits |
++-----------+-------------+---------+
+|         1 | CSE         |     119 |
+|         2 | CSD         |      87 |
+|         3 | EEE         |     109 |
+|         4 | ECE         |     104 |
+|         5 | EEE         |     104 |
++-----------+-------------+---------+
+5 rows in set (0.03 sec)
+
+mysql> create table enrollments(enroll_id int(10) primary key,student_id int(10) foreign key(student_id) references student(student_id),course_id int(10) foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'foreign key(student_id) references student(student_id),course_id int(10) foreign' atline 1
+mysql> CREATE TABLE enrollments (
+    ->     enroll_id INT(10) PRIMARY KEY,
+    ->     student_id INT(10),
+    ->     course_id INT(10),
+    ->     FOREIGN KEY (student_id) REFERENCES student(student_id),
+    ->     FOREIGN KEY (course_id) REFERENCES course(course_id)
+    -> );
+Query OK, 0 rows affected, 3 warnings (0.10 sec)
+
+mysql> desc enrollments;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| enroll_id  | int  | NO   | PRI | NULL    |       |
+| student_id | int  | YES  | MUL | NULL    |       |
+| course_id  | int  | YES  | MUL | NULL    |       |
++------------+------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> alter table student add column email varchar(100);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| student_id | int          | NO   | PRI | NULL    |       |
+| first_name | varchar(50)  | YES  |     | NULL    |       |
+| last_name  | varchar(50)  | YES  |     | NULL    |       |
+| dob        | date         | YES  |     | NULL    |       |
+| gender     | char(1)      | YES  |     | NULL    |       |
+| email      | varchar(100) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from student;
++------------+------------+-----------+------------+--------+-------+
+| student_id | first_name | last_name | dob        | gender | email |
++------------+------------+-----------+------------+--------+-------+
+|          1 | charan     | teja      | 2003-07-20 | m      | NULL  |
+|          2 | yameen     | shareef   | 2003-10-03 | m      | NULL  |
+|          3 | dilip      | goud      | 2004-05-09 | m      | NULL  |
+|          4 | sri        | veena     | 2003-11-03 | f      | NULL  |
+|          5 | tharuni    | reddy     | 2003-04-12 | f      | NULL  |
++------------+------------+-----------+------------+--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into student (email) values(charan@gmail.com) where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com) where student_id=1' at line 1
+mysql> update table  student (email) values(charan@gmail.com) where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table  student (email) values(charan@gmail.com) where student_id=1' at line 1
+mysql> update table  student (email) values(charan@gmail.com);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table  student (email) values(charan@gmail.com)' at line 1
+mysql> update table  student (email) values('charan@gmail.com');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table  student (email) values('charan@gmail.com')' at line 1
+mysql> update table  student (email) values('charan@gmail.com') where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table  student (email) values('charan@gmail.com') where student_id=1' at line 1
+mysql> alter table  student (email) values('charan@gmail.com') where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(email) values('charan@gmail.com') where student_id=1' at line 1
+mysql> alter table  student email'charan@gmail.com' where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'email'charan@gmail.com' where student_id=1' at line 1
+mysql> UPDATE table_name
+    -> SET column_name = value
+    -> WHERE condition;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'condition' at line 3
+mysql> UPDATE student set email='charan@gmail.com' where student_id=1;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE student set email='yameen@gmail.com' where student_id=2;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE student set email='dilip@gmail.com' where student_id=3;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE student set email='vinni@gmail.com' where student_id=4;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE student set email='pakala@gmail.com' where student_id=5;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++------------+------------+-----------+------------+--------+------------------+
+| student_id | first_name | last_name | dob        | gender | email            |
++------------+------------+-----------+------------+--------+------------------+
+|          1 | charan     | teja      | 2003-07-20 | m      | charan@gmail.com |
+|          2 | yameen     | shareef   | 2003-10-03 | m      | yameen@gmail.com |
+|          3 | dilip      | goud      | 2004-05-09 | m      | dilip@gmail.com  |
+|          4 | sri        | veena     | 2003-11-03 | f      | vinni@gmail.com  |
+|          5 | tharuni    | reddy     | 2003-04-12 | f      | pakala@gmail.com |
++------------+------------+-----------+------------+--------+------------------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+
+Microsoft Windows [Version 10.0.26100.5074]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\pajju>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use student;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| course            |
+| enrollments       |
+| student           |
++-------------------+
+3 rows in set (0.04 sec)
+
+mysql> select* from course;
++-----------+-------------+---------+
+| course_id | course_name | credits |
++-----------+-------------+---------+
+|         1 | CSE         |     119 |
+|         2 | CSD         |      87 |
+|         3 | EEE         |     109 |
+|         4 | ECE         |     104 |
+|         5 | EEE         |     104 |
++-----------+-------------+---------+
+5 rows in set (0.03 sec)
+
+mysql> select* from student;
++------------+------------+-----------+------------+--------+------------------+
+| student_id | first_name | last_name | dob        | gender | email            |
++------------+------------+-----------+------------+--------+------------------+
+|          1 | charan     | teja      | 2003-07-20 | m      | charan@gmail.com |
+|          2 | yameen     | shareef   | 2003-10-03 | m      | yameen@gmail.com |
+|          3 | dilip      | goud      | 2004-05-09 | m      | dilip@gmail.com  |
+|          4 | sri        | veena     | 2003-11-03 | f      | vinni@gmail.com  |
+|          5 | tharuni    | reddy     | 2003-04-12 | f      | pakala@gmail.com |
++------------+------------+-----------+------------+--------+------------------+
+5 rows in set (0.03 sec)
+
+mysql> desc enrollments;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| enroll_id  | int  | NO   | PRI | NULL    |       |
+| student_id | int  | YES  | MUL | NULL    |       |
+| course_id  | int  | YES  | MUL | NULL    |       |
++------------+------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> alter student column name dob as date_of_birth date;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student column name dob as date_of_birth date' at line 1
+mysql> update student column name dob as date_of_birth date;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column name dob as date_of_birth date' at line 1
+mysql> alter table student rename column dob to date_of_birth;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select* from student;
++------------+------------+-----------+---------------+--------+------------------+
+| student_id | first_name | last_name | date_of_birth | gender | email            |
++------------+------------+-----------+---------------+--------+------------------+
+|          1 | charan     | teja      | 2003-07-20    | m      | charan@gmail.com |
+|          2 | yameen     | shareef   | 2003-10-03    | m      | yameen@gmail.com |
+|          3 | dilip      | goud      | 2004-05-09    | m      | dilip@gmail.com  |
+|          4 | sri        | veena     | 2003-11-03    | f      | vinni@gmail.com  |
+|          5 | tharuni    | reddy     | 2003-04-12    | f      | pakala@gmail.com |
++------------+------------+-----------+---------------+--------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> drop column credits from course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column credits from course' at line 1
+mysql> drop column name credits from course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column name credits from course' at line 1
+mysql> drop credits from course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'credits from course' at line 1
+mysql> drop credits from table course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'credits from table course' at line 1
+mysql> alter table course drop column credits;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from course;
++-----------+-------------+
+| course_id | course_name |
++-----------+-------------+
+|         1 | CSE         |
+|         2 | CSD         |
+|         3 | EEE         |
+|         4 | ECE         |
+|         5 | EEE         |
++-----------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into student values(6,'minish','k','2003-07-07','m','minish@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(7,'nithik','monu','2003-08-10','m','monu@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into course values(6,'CSE');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into course values(7,'CSE');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from course;
++-----------+-------------+
+| course_id | course_name |
++-----------+-------------+
+|         1 | CSE         |
+|         2 | CSD         |
+|         3 | EEE         |
+|         4 | ECE         |
+|         5 | EEE         |
+|         6 | CSE         |
+|         7 | CSE         |
++-----------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student;
++------------+------------+-----------+---------------+--------+------------------+
+| student_id | first_name | last_name | date_of_birth | gender | email            |
++------------+------------+-----------+---------------+--------+------------------+
+|          1 | charan     | teja      | 2003-07-20    | m      | charan@gmail.com |
+|          2 | yameen     | shareef   | 2003-10-03    | m      | yameen@gmail.com |
+|          3 | dilip      | goud      | 2004-05-09    | m      | dilip@gmail.com  |
+|          4 | sri        | veena     | 2003-11-03    | f      | vinni@gmail.com  |
+|          5 | tharuni    | reddy     | 2003-04-12    | f      | pakala@gmail.com |
+|          6 | minish     | k         | 2003-07-07    | m      | minish@gmail.com |
+|          7 | nithik     | monu      | 2003-08-10    | m      | monu@gmail.com   |
++------------+------------+-----------+---------------+--------+------------------+
+7 rows in set (0.00 sec)
+
+mysql> show create table enrollments;
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table       | Create Table              |
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| enrollments | CREATE TABLE `enrollments` (
+  `enroll_id` int NOT NULL,
+  `student_id` int DEFAULT NULL,
+  `course_id` int DEFAULT NULL,
+  PRIMARY KEY (`enroll_id`),
+  KEY `student_id` (`student_id`),
+  KEY `course_id` (`course_id`),
+  CONSTRAINT `enrollments_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
+  CONSTRAINT `enrollments_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table enrollments drop foreign key student_id;
+ERROR 1091 (42000): Can't DROP 'student_id'; check that column/key exists
+mysql> alter table enrollments drop foreign key student_id;
+ERROR 1091 (42000): Can't DROP 'student_id'; check that column/key exists
+mysql> alter table enrollments drop foreign key course_id;
+ERROR 1091 (42000): Can't DROP 'course_id'; check that column/key exists
+mysql> insert into enrollments values(1,1,1);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into enrollments values(2,2,2);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into enrollments values(3,3,3);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into enrollments values(4,4,4);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select email from enrollments where student_id=1;
+ERROR 1054 (42S22): Unknown column 'email' in 'field list'
+mysql> select student(email) from  where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where student_id=1' at line 1
+mysql> select email(student) from  where student_id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where student_id=1' at line 1
+mysql> select * from enrollments;
++-----------+------------+-----------+
+| enroll_id | student_id | course_id |
++-----------+------------+-----------+
+|         1 |          1 |         1 |
+|         2 |          2 |         2 |
+|         3 |          3 |         3 |
+|         4 |          4 |         4 |
++-----------+------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> truncate enrollments;
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> select * from enrollments;
+Empty set (0.00 sec)
+
+mysql> select * from course;
++-----------+-------------+
+| course_id | course_name |
++-----------+-------------+
+|         1 | CSE         |
+|         2 | CSD         |
+|         3 | EEE         |
+|         4 | ECE         |
+|         5 | EEE         |
+|         6 | CSE         |
+|         7 | CSE         |
++-----------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> drop course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'course' at line 1
+mysql> drop table course;
+ERROR 3730 (HY000): Cannot drop table 'course' referenced by a foreign key constraint 'enrollments_ibfk_2' on table 'enrollments'.
+mysql> alter table enrollments drop foreign key course_id;
+ERROR 1091 (42000): Can't DROP 'course_id'; check that column/key exists
+mysql> SHOW CREATE TABLE enrollments;
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table       | Create Table              |
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| enrollments | CREATE TABLE `enrollments` (
+  `enroll_id` int NOT NULL,
+  `student_id` int DEFAULT NULL,
+  `course_id` int DEFAULT NULL,
+  PRIMARY KEY (`enroll_id`),
+  KEY `student_id` (`student_id`),
+  KEY `course_id` (`course_id`),
+  CONSTRAINT `enrollments_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
+  CONSTRAINT `enrollments_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++-------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> alter table enrollments drop foreign key enrollments_ibfk_2;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc enrollments;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| enroll_id  | int  | NO   | PRI | NULL    |       |
+| student_id | int  | YES  | MUL | NULL    |       |
+| course_id  | int  | YES  | MUL | NULL    |       |
++------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> drop course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'course' at line 1
+mysql> drop table course;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc course;
+ERROR 1146 (42S02): Table 'student.course' doesn't exist
+mysql>
