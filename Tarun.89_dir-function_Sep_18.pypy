@@ -1,0 +1,150 @@
+#TARUN BANALA    18-09-2025
+#  Find  outputs  (Home  work)
+import  sys , time , math
+print(dir(sys))  # Prints all attributes and methods of sys module
+print()  # Prints empty line
+print()  # Prints empty line
+print(dir(time))  # Prints all attributes and methods of time module
+print()  # Prints empty line
+print(dir(math))  # Prints all attributes and methods of math module
+
+ #  Find  outputs  (Home  work)
+import  cal  # Imports cal module
+print(dir(cal))  # Prints all attributes and methods of cal module
+
+#  Find  outputs  (Home  work)
+x = 25  # Defines variable x
+def  disp():  # Defines function disp
+	print('Hello')  # Function prints 'Hello'
+class  c1:  # Defines class c1
+        def  m1(self):  # Defines method m1
+                pass  # Empty method
+print(dir())  # Prints current namespace symbols
+print(type(dir()))  # Prints <class 'list'> (type of dir() result)
+print(type(dir))  # Prints <class 'builtin_function_or_method'> (type of dir function)
+
+ #  Find  outputs
+print(dir())  # Prints current namespace before import
+print()  # Prints empty line
+import  cal  # Imports cal module
+print()  # Prints empty line
+print(dir())  # Prints current namespace after import (includes cal)
+
+#  Find  outputs
+print(dir())  # Prints current namespace before import
+print()  # Prints empty line
+from  cal  import  *  # Imports all symbols from cal
+print()  # Prints empty line
+print(dir())  # Prints current namespace after import (includes all cal symbols)
+
+#  Find  outputs
+print(dir())  # Prints current namespace before import
+print()  # Prints empty line
+from  cal  import  add , mul , x  # Imports specific symbols from cal
+print()  # Prints empty line
+print(dir())  # Prints current namespace after import (includes add, mul, x)
+
+# sys . path  demo   program
+import  sys  # Imports sys module
+print('Original  sys.path')  # Prints header
+for  x  in   sys . path:  # Iterates through sys.path
+	print(x)  # Prints each path entry
+print(len(sys . path))  # Prints number of paths in sys.path
+#import  cal  # Commented out import
+from  random  import  *  # Imports all from random module
+print(random())  # Prints random float between 0 and 1
+print(randint(1 , 100))  # Prints random integer between 1 and 100
+print(uniform(1 , 100))  # Prints random float between 1 and 100
+print(randrange(10))  # Prints random integer from 0 to 9
+print(randrange(1 , 11))  # Prints random integer from 1 to 10
+print(randrange(1 , 11 , 2))  # Prints random odd number from 1 to 9
+list = [10 , 20 , 15 , 12 , 18]  # Defines list
+print(choice(list))  # Prints random element from list
+print(choice('RAJESH'))  # Prints random character from string
+set  =  {10 , 20 , 30 , 40}  # Defines set
+print(choice(set))  # Prints random element from set (Note: sets are unordered)
+
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)
+Enter  any  string :  Rama Rao  # User input prompt
+R  # Random character output
+a  # Random character output
+R  # Random character output
+R  # Random character output
+a  # Random character output
+R  # Random character output
+R  # Random character output
+m  # Random character output
+
+Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits
+U7U2X8  # Example password output
+V9I6X8  # Example password output
+G4M8S2  # Example password output
+M4U3C3  # Example password output
+I7K2B8  # Example password output
+F0E9Q1  # Example password output
+Y8H8L7  # Example password output
+K1U5S0  # Example password output
+W7G0J3  # Example password output
+Y9B9J6  # Example password output
+
+# Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
+Enter a List : [25,10.8,'Hyd',True,3+4j,None]  # User input prompt
+True  # Random element output
+Hyd  # Random element output
+Hyd  # Random element output
+None  # Random element output
+Hyd  # Random element output
+(3+4j)  # Random element output
+None  # Random element output
+True  # Random element output
+25  # Random element output
+
+# Write  a  program  to  generate  ten  six-digit  OTP's  (Home  work)
+700690  # Example OTP output
+664735  # Example OTP output
+472299  # Example OTP output
+820818  # Example OTP output
+886311  # Example OTP output
+912752  # Example OTP output
+323114  # Example OTP output
+971162  # Example OTP output
+930848  # Example OTP output
+404338  # Example OTP output
+
+'''
+(Home  work)
+Write  a  program  to  implement  Rock , paper  and  scissors  game  between  user  and  computer
+
+1) What  is  the  result  if  user  input  and  computer  random  number  are  same  ?  ---> Draw  # Answer: It's a draw
+
+2) What  is  the  result  if  computer  selects  paper  and  user  input  is  rock ?  ---> Computer  wins  becoz  parer  dominates  rock  # Answer: Computer wins
+
+3) What  is  the  result  if  computer  selects  scissors  and  user  input  is  paper ?  ---> Computer  wins  becoz  scissors  dominates  paper  # Answer: Computer wins
+
+4) What  is  the  result  if  computer  selects  rock  and  user  input  is  scissors ?  ---> Computer  wins  becoz  rock  dominates  scissors  # Answer: Computer wins
+
+5) What  is  the  result  in  all  other  cases  ?  --->  User  wins  # Answer: User wins
+'''
+
+ What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1  # User input
+User  :   Paper  # Program output
+Computer  :   Rock  # Program output
+User  wins  # Program output
+Continue  (  y / n)  ?  y  # User input
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  2  # User input
+User  :   Scissors  # Program output
+Computer  :   Scissors  # Program output
+Draw  # Program output
+Continue  (  y / n)  ?  y  # User input
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  0  # User input
+User  :   Rock  # Program output
+Computer  :   Rock  # Program output
+Draw  # Program output
+Continue  (  y / n)  ?  y  # User input
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1  # User input
+User  :   Paper  # Program output
+Computer  :   Scissors  # Program output
+Computer  wins  # Program output
+Continue  (  y / n)  ?  n  # User input
+End  of  the  game  # Program output
