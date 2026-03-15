@@ -1,0 +1,231 @@
+
+# Threading & Queue Homework Solutions
+
+
+# ---------- 1. Synchronize Thread Outputs ----------
+from threading import *
+import time
+
+def disp(s):
+    print('[', s, end='')
+    time.sleep(3)
+    print(']')
+
+# Lock object for synchronization
+l = Lock()
+
+def sync_disp(s):
+    with l:
+        disp(s)
+
+t1 = Thread(target=sync_disp, args=('Hyd',))
+t2 = Thread(target=sync_disp, args=('Sec',))
+t3 = Thread(target=sync_disp, args=('Cyb',))
+t1.start(); t2.start(); t3.start()
+t1.join(); t2.join(); t3.join()
+
+# Output:
+# [Hyd]
+# [Sec]
+# [Cyb]
+
+# ---------- 2. Final Balance should be 1300 ----------
+class Account:
+    def __init__(self, acno1, bal1):
+        self.acno = acno1
+        self.bal = bal1
+        self.l = Lock()
+
+    def credit(self, amt):
+        with self.l:
+            s = current_thread().name
+            print(f'{s} is depositing Rs.{amt} into account {self.acno}')
+            x = self.bal
+            time.sleep(1)
+            self.bal = x + amt
+
+ac = Account(25, 1000.0)
+print('Initial Balance:', ac.bal)
+t1 = Thread(target=ac.credit, name='Rama', args=(100,))
+t2 = Thread(target=ac.credit, name='Sita', args=(200,))
+t1.start(); t2.start()
+t1.join(); t2.join()
+print('Final balance:', ac.bal)
+# Output: Final balance: 1300.0
+
+# ---------- 3. RLock ----------
+from threading import RLock
+r = RLock()
+r.acquire(); print('Locked')
+r.acquire(); print('Locked')
+r.release(); print('Unlocked')
+r.release(); print('Unlocked')
+try:
+    r.release()
+except RuntimeError:
+    print('RuntimeError: cannot release un-acquired lock')
+# Output shows nested lock handling, final extra release gives RuntimeError
+
+# ---------- 4. Normal Lock ----------
+l = Lock()
+l.acquire(); print('Locked')
+# l.acquire()  # Deadlock if uncommented
+l.release(); print('Unlocked')
+# Output: Locked then Unlocked (Deadlock avoided)
+
+# ---------- 5. Semaphore Example ----------
+def f1():
+    sem.acquire()
+    name = current_thread().name
+    print(name, 'is under execution')
+    time.sleep(1)
+    print(name, 'finished execution')
+    sem.release()
+
+sem = Semaphore(3)
+threads = [Thread(target=f1, name=f'Thread-{i}') for i in range(1, 10)]
+for t in threads: t.start()
+for t in threads: t.join()
+# Output: 3 threads execute concurrently each time.
+
+# ---------- 6. Recursive Factorial with Semaphore ----------
+def fact(n):
+    sem.acquire()
+    if n > 0:
+        x = n * fact(n - 1)
+    else:
+        x = 1
+    sem.release()
+    return x
+
+def disp(n):
+    print(n, '!=', fact(n))
+
+sem = Semaphore(8)
+Thread(target=disp, args=(4,)).start()
+Thread(target=disp, args=(7,)).start()
+# Output:
+# 4 != 24
+# 7 != 5040
+
+# ---------- 7. Deadlock Example ----------
+def f1():
+    l1.acquire()
+    print('1st thread locks object l1')
+    time.sleep(1)
+    l2.acquire()
+    print('1st thread is under execution')
+    l2.release()
+    l1.release()
+    print('End of the 1st thread')
+
+def f2():
+    l2.acquire()
+    print('2nd thread locks object l2')
+    time.sleep(1)
+    l1.acquire()
+    print('2nd thread is under execution')
+    l1.release()
+    l2.release()
+    print('End of the 2nd thread')
+
+l1 = Lock()
+l2 = Lock()
+t1 = Thread(target=f1); t2 = Thread(target=f2)
+t1.start(); t2.start()
+time.sleep(1)
+print('Deadlock')
+# Output: 1st thread locks l1, 2nd locks l2, Deadlock occurs
+
+# ---------- 8. Stack using LifoQueue ----------
+from queue import LifoQueue
+stack = LifoQueue()
+for i in [10, 20, 30, 40, 50]:
+    stack.put(i)
+print('Deleted elements:')
+while not stack.empty():
+    print(stack.get())
+print('End')
+# Output: 50, 40, 30, 20, 10
+
+# ---------- 9. PriorityQueue with Random Numbers ----------
+from queue import PriorityQueue
+import random
+pq = PriorityQueue()
+for i in range(5):
+    pq.put(random.randint(1, 100))
+print('Deleted elements:')
+while not pq.empty():
+    print(pq.get())
+print('End')
+# Output: Elements printed in ascending order
+
+# ---------- 10. Queue of Tuples ----------
+from queue import Queue
+q = Queue()
+for item in [('Hyd',10),('Delhi',20),('Chennai',15),('Pune',5),('Mumbai',12)]:
+    q.put(item)
+while not q.empty():
+    print(q.get())
+# Output: Tuples printed in inserted order
+
+# ---------- 11. LifoQueue of Tuples ----------
+stack = LifoQueue()
+for item in [('Hyd',10),('Delhi',20),('Chennai',15),('Pune',5),('Mumbai',12)]:
+    stack.put(item)
+while not stack.empty():
+    print(stack.get())
+# Output: Tuples printed in reverse order
+
+# ---------- 12. PriorityQueue of Tuples ----------
+pq = PriorityQueue()
+for item in [('Hyd',10),('Delhi',20),('Chennai',15),('Pune',5),('Mumbai',12)]:
+    pq.put(item)
+while not pq.empty():
+    print(pq.get())
+# Output: Sorted alphabetically by city name
+
+# ---------- 13. PriorityQueue (same city, different values) ----------
+pq = PriorityQueue()
+for item in [('Hyd',10),('Hyd',20),('Hyd',15),('Hyd',5),('Hyd',12)]:
+    pq.put(item)
+print('Deleted tuples:')
+while not pq.empty():
+    print(pq.get())
+# Output: Sorted by second value -> 5,10,12,15,20
+
+# ---------- 14. Daemon Thread Example ----------
+def f1():
+    for i in range(10):
+        print('child thread')
+        time.sleep(2)
+
+main = main_thread()
+print(main.daemon)
+try:
+    main.daemon = True
+except RuntimeError:
+    pass
+new = Thread(target=f1)
+print(new.daemon)
+new.daemon = True
+print(new.daemon)
+new.start()
+time.sleep(5)
+print('End of main thread')
+# Output: Main False, Thread daemon True, child thread prints 2-3 times then ends
+
+# ---------- 15. Daemon Thread Auto-stop ----------
+def f1():
+    name = current_thread().name
+    for i in range(1, 11):
+        print(name, ':', i)
+    print(name, 'is dead')
+
+t1 = Thread(target=f1, name='One')
+t2 = Thread(target=f1, name='Two')
+t3 = Thread(target=f1, name='Three')
+t3.daemon = True
+t1.start(); t2.start(); t3.start()
+print('main thread is dead')
+# Output: main thread ends, One and Two finish fully, daemon Three stops early
